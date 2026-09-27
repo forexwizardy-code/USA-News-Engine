@@ -5,7 +5,7 @@ description: "The NWS said minor flooding is forecast along Taunton River near B
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-27T19:30:10.564Z
-updatedAt: 2026-09-27T20:28:01.139Z
+updatedAt: 2026-09-27T21:28:07.797Z
 
 image: "/images/flood-warning-bristol-county-massachusetts-september-27-2026-map.png"
 imageAlt: "Flood Warning map for Bristol County, Massachusetts."
