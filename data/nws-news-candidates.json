@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-27T19:55:39.096Z",
+  "generatedAt": "2026-09-27T20:03:00.109Z",
   "source": "National Weather Service",
-  "inputAlertCount": 354,
-  "candidateCount": 33,
+  "inputAlertCount": 352,
+  "candidateCount": 32,
   "highPriorityCount": 32,
-  "mediumPriorityCount": 1,
+  "mediumPriorityCount": 0,
   "candidates": [
     {
       "id": "urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1",
@@ -1004,45 +1004,6 @@
         "https://api.weather.gov/zones/forecast/AZZ040"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e50ed3715982b7d38f6d11c8fb3fa472fd629878.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.53083a8e6814e3694e3d66ab0e5c9cf321a7ee8a.001.1",
-      "storyKey": "heat-advisory__san-juan-and-vicinity__2026-09-27",
-      "priority": "medium",
-      "selectedReason": "Moderate alert in approved category (Heat Advisory)",
-      "event": "Heat Advisory",
-      "headline": "Heat Advisory issued September 27 at 10:11AM AST until September 27 at 4:00PM AST by NWS San Juan PR",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "areaDesc": "San Juan and Vicinity; Northeast; Southeast; Eastern Interior; North Central; Central Interior; Ponce and Vicinity; Northwest; Western Interior; Mayaguez and Vicinity; Southwest; Culebra; Vieques; St.Thomas...St. John.. and Adjacent Islands; St Croix",
-      "senderName": "NWS San Juan PR",
-      "effective": "2026-09-27T10:11:00-04:00",
-      "onset": "2026-09-27T10:11:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-27T16:00:00-04:00",
-      "description": "* WHAT...This level of heat affects most individuals sensitive to\nheat, especially those without effective cooling and/or adequate\nhydration.\n\n* WHERE...Puerto Rico and the US Virgin Islands.\n\n* WHEN...Until 4 PM AST this afternoon.\n\n* IMPACTS...High temperatures or elevated heat indices can worsen\nsymptoms in people with chronic conditions. They can also increase\nthe risk of heat-related illness among individuals sensitive to\nheat with inadequate cooling or hydration. These risks are highest\nacross coastal areas, lowlands, interior valleys, and urban zones.",
-      "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to early morning\nor evening. Take action when you see symptoms of heat exhaustion and\nheat stroke.",
-      "response": "Execute",
-      "status": "Actual",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PRZ001",
-        "https://api.weather.gov/zones/forecast/PRZ002",
-        "https://api.weather.gov/zones/forecast/PRZ003",
-        "https://api.weather.gov/zones/forecast/PRZ004",
-        "https://api.weather.gov/zones/forecast/PRZ005",
-        "https://api.weather.gov/zones/forecast/PRZ006",
-        "https://api.weather.gov/zones/forecast/PRZ007",
-        "https://api.weather.gov/zones/forecast/PRZ008",
-        "https://api.weather.gov/zones/forecast/PRZ009",
-        "https://api.weather.gov/zones/forecast/PRZ010",
-        "https://api.weather.gov/zones/forecast/PRZ011",
-        "https://api.weather.gov/zones/forecast/PRZ012",
-        "https://api.weather.gov/zones/forecast/PRZ013",
-        "https://api.weather.gov/zones/forecast/VIZ001",
-        "https://api.weather.gov/zones/forecast/VIZ002"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.53083a8e6814e3694e3d66ab0e5c9cf321a7ee8a.001.1"
     }
   ]
 }

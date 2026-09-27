@@ -18,10 +18,12 @@
     "resolve-image:nws": "node scripts/resolve-nws-real-image.mjs",
     "prepare:nws": "npm run fetch:nws && npm run filter:nws && npm run stories:nws",
     "validate:publishing": "node scripts/validate-publishing.mjs",
-    "update:nws": "node scripts/update-nws-lifecycle.mjs"
+    "update:nws": "node scripts/update-nws-lifecycle.mjs",
+    "newsroom:nws": "node scripts/run-nws-newsroom.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.5"
+    "astro": "^7.3.5",
+    "tweetnacl": "^1.0.3"
   }
 }

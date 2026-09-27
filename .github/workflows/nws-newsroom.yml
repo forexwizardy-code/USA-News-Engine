@@ -1,0 +1,80 @@
+name: NWS Newsroom Automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run at minute 17 of every hour (offset to avoid top-of-hour load)
+    - cron: '17 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  newsroom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run NWS Newsroom Automation
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npm run newsroom:nws
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "NO CHANGES — skipping commit and deploy"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "US News Engine Bot"
+          git config user.email "newsroom@users.noreply.github.com"
+          git add -A
+          git commit -m "Automated NWS newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Deploy to Cloudflare Workers
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
+
+      - name: Verify live site
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          sleep 8
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://usa-news-engine.forexwizardy.workers.dev/")
+          echo "Homepage HTTP status: $HTTP_CODE"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "LIVE CHECK FAILED — homepage returned $HTTP_CODE"
+            exit 1
+          fi
+          echo "LIVE CHECK: PASS"
+
+      - name: No-change notification
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "✓ Run completed — no changes to publish or deploy."
