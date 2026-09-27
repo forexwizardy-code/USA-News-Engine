@@ -594,3 +594,179 @@ In `public/preview-images/` (copied so the preview route can serve them):
   bare `www.` URLs is a future enhancement.
 
 ---
+
+## Phase 7B.1 — Extend recall validation script (Task 7B.1-validation)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-27 (simulated project timeline)
+**Scope:** Extend `scripts/validate-recalls.mjs` with 15 new Phase 7B.1
+checks against `data/recalls/recall-story-clusters.json`.
+
+### Files modified
+
+- `scripts/validate-recalls.mjs`
+  Previously had 9 checks operating on the recall snapshots
+  (`cpsc-recalls.json`, `fda-food-recalls.json`, `fda-device-recalls.json`)
+  and the older `recall-story-records.json`. Extended with 15 new checks
+  (numbered 10-24) that operate on `recall-story-clusters.json` (the
+  Phase 7B.1 output of `cluster-recall-stories.mjs`). The existing 9
+  checks and their semantics are unchanged; the new 15 checks are added
+  alongside them and the script now reports a single combined
+  PASS/FAIL summary across all 24 checks.
+
+### New constants added
+
+- `CLUSTERS_FILE` — points to `data/recalls/recall-story-clusters.json`.
+- `HAZARD_KEYWORDS` — table mapping each normalized hazard label (e.g.
+  "Fire Hazard", "Salmonella Risk", "Contamination Risk",
+  "Potential Device Failure") to the keyword(s) that must appear
+  (case-insensitive) in the `hazardEvidence` text for the label to be
+  considered source-backed. Kept in sync with the
+  `extractHazard`/`normalizeCpscHazard`/`normalizeFdaHazard` functions
+  in `cluster-recall-stories.mjs`.
+- `HAZARD_EVIDENCE_PREFIXES` — the three valid `hazardEvidence` source-
+  field prefixes produced by `extractHazard`:
+  `CPSC Hazards[].Name:`, `FDA reason_for_recall:`, `CPSC Title:`.
+- `CPSC_IMAGE_URL_PREFIXES` — `https?://(www.)?cpsc.gov/` variants.
+
+### New helper / loader
+
+- `loadClusters()` — loads `recall-story-clusters.json` and returns the
+  `stories` array (empty + warning if the file is missing or unreadable).
+- `isNonEmptyString(v)` — small helper used across the new checks.
+
+### The 15 new checks (numbered 10-24 in the script)
+
+10. **No duplicate recallStoryKey** — collects all `recallStoryKey`
+    values across the 138 cluster stories and fails on any duplicate.
+11. **No empty key components** — splits each key on `__` and fails if
+    any segment is empty (catches e.g. `cpsc____2026-09-17____fire`).
+12. **Every story has sourceRecallIds** — fails if `sourceRecallIds`
+    is missing or empty.
+13. **No cluster with unrelated firms** — for clusters with 2+ records,
+    fails if there is more than one distinct non-null `recallingFirm`
+    or `manufacturer` value across the cluster's `rawSourceData` array.
+14. **No unsupported normalized hazard** — if `hazardNormalized` is set,
+    `hazardEvidence` must be a non-empty string starting with one of the
+    three known source-field prefixes.
+15. **Headline hazard supported by evidence** — if `hazardNormalized` is
+    set, the corresponding keyword(s) from `HAZARD_KEYWORDS` must appear
+    (case-insensitive) in `hazardEvidence`. For unknown labels (raw CPSC
+    hazard names passed through), requires the label text itself to
+    appear in the evidence.
+16. **No unsupported injury claim** — if `injuries` is set on a story,
+    at least one record in `rawSourceData` must have non-empty
+    `injuries` text.
+17. **No unsupported death claim** — same as above for `deaths`.
+18. **No FDA external/unverified photo** — FDA stories must have an
+    empty `imageUrls` array (FDA openFDA does not provide images).
+19. **CPSC photo has source metadata** — for CPSC stories, every
+    `imageUrls` entry must start with one of the `CPSC_IMAGE_URL_PREFIXES`.
+20. **reportDate present when expected** — FDA stories must have a
+    non-empty `fdaReportDates` array.
+21. **No recall initiation/report date confusion** — for FDA stories,
+    checks each `rawSourceData` record's `recallDate` <= `reportDate`
+    (recall happens before report). Flags any pair where recall is
+    later than report as a possible swap.
+22. **No empty source URLs** — every entry in `sourceUrls` must be a
+    non-empty string.
+23. **No duplicate article slug** — checks for a `slug` field on
+    cluster stories; if none exists (current state — slugs are generated
+    later, at the draft/preview stage), the check passes with a warning
+    explaining it's a no-op at this stage.
+24. **No malformed source IDs** — every entry in `sourceRecallIds`
+    must be a non-empty string.
+
+### Run results
+
+1. `npm run validate:recalls` — **FAIL (exit 1)**
+   - **24 total checks** (9 existing + 15 new).
+   - **22 passed, 2 failed.**
+   - The 9 existing checks all PASS (snapshot data is clean).
+   - The 15 new checks: 13 PASS, 2 FAIL.
+
+   **Failures (both are real data-quality issues in the upstream
+   pipeline — the validation script is correctly flagging them):**
+
+   - **Check 15 (Headline hazard supported by evidence): 12 stories FAIL.**
+     All 12 are FDA device stories with `hazardNormalized="Contamination
+     Risk"` (Z-3048 through Z-3061, all BD ChloraPrep / FREPP
+     applicator kit recalls). The `cluster-recall-stories.mjs`
+     `extractHazard` function truncates the FDA `reason_for_recall`
+     text to 200 characters in the `hazardEvidence` field. The full
+     reason_for_recall text DOES contain "microbial contamination"
+     (around character 240), so the cluster script correctly maps it
+     to "Contamination Risk" — but the 200-char truncation cuts off
+     the supporting keyword, so the visible `hazardEvidence` no longer
+     contains "contamination". Fix would be in `cluster-recall-stories.mjs`:
+     either increase the truncation length (e.g. 500 chars), or extract
+     a context window around the matched keyword.
+
+   - **Check 20 (reportDate present when expected): 90 stories FAIL.**
+     Every FDA story (32 food + 58 device = 90) has
+     `fdaReportDates: null` and `recallInitiationDates: null`. Root
+     cause: in `cluster-recall-stories.mjs`'s `extractFdaDates(record)`
+     function (line ~277), the code reads
+     `record.rawSourceData?.recall_initiation_date` and
+     `record.rawSourceData?.report_date` — but the candidate records
+     passed to `buildClusterStory` have an EMPTY `rawSourceData: {}`
+     object. The fetcher / filter pipeline normalized FDA's
+     `recall_initiation_date` and `report_date` into the top-level
+     `recallDate` and `reportDate` fields (which ARE populated on
+     every FDA story), but did not preserve them inside
+     `rawSourceData`. Fix would be in `cluster-recall-stories.mjs`:
+     change `extractFdaDates` to read from `record.recallDate` and
+     `record.reportDate` directly (or, more robustly, fall back to
+     those fields when `rawSourceData` is empty).
+
+   **Check 21 (No recall initiation/report date confusion) PASSes
+   trivially** because `recallInitiationDates` is null everywhere —
+   there are no records to compare. Once check 20 is fixed and the
+   cluster script populates `recallInitiationDates` / `fdaReportDates`,
+   this check will actually do real work.
+
+### Verification
+
+- Confirmed the script prints PASS/FAIL for each of the 24 checks with
+  clear messages (each FAIL lists up to 20 specific offending story
+  keys + a "... and N more errors" summary when over the cap).
+- Confirmed the summary line: `Summary: 22/24 checks passed, 2 failed.`
+- Confirmed the script exits with code 1 when any check fails (and
+  would exit 0 if all passed).
+- The 9 existing checks remain byte-identical in behavior — only the
+  `checks` array and `main()` were extended to also run the 15 new
+  checks.
+- No NWS/weather files were touched.
+- `config/automation.json` was not modified.
+- `DEMO_NOINDEX` was not touched.
+
+### Next actions for a future agent
+
+1. **Fix check 15 failures (12 stories)** — in
+   `scripts/cluster-recall-stories.mjs`'s `extractHazard` function,
+   increase the FDA `reason_for_recall` truncation length in
+   `hazardEvidence` from 200 to ~500 characters (or extract a window
+   around the matching keyword). Re-run `npm run cluster:recalls` then
+   `npm run validate:recalls` to confirm check 15 turns green.
+
+2. **Fix check 20 failures (90 stories)** — in
+   `scripts/cluster-recall-stories.mjs`'s `extractFdaDates(record)`
+   function, read from `record.recallDate` and `record.reportDate`
+   (top-level normalized fields) instead of
+   `record.rawSourceData?.recall_initiation_date` and
+   `record.rawSourceData?.report_date` (which are empty on candidate
+   records). Re-run `npm run cluster:recalls` then
+   `npm run validate:recalls`. This will also activate check 21 —
+   verify it stays green.
+
+3. **Optional cleanup** — the `HAZARD_KEYWORDS` table at the top of
+   `validate-recalls.mjs` and the hazard-mapping logic in
+   `cluster-recall-stories.mjs` are a third copy of the hazard-label
+   mapping (the other two being `generate-recall-draft.mjs` and
+   `generate-recall-image.mjs`, as noted in the previous worklog
+   entry). A future refactor could move this to a shared module under
+   `scripts/lib/recall-hazards.mjs` and have all four files import
+   from it. For now the duplication is intentional and the lists are
+   kept in sync.
+
+---

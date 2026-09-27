@@ -1,0 +1,24 @@
+{
+  "storyKey": "cpsc__11000",
+  "slug": "newdery-power-banks-2026-09-24",
+  "status": "draft",
+  "type": "official-recall-photo",
+  "visualType": "cpsc-recall-photo",
+  "imageMode": "cpsc-photo",
+  "width": 1200,
+  "height": 675,
+  "source": "Consumer Product Safety Commission (official recall photo)",
+  "dataSource": "Consumer Product Safety Commission",
+  "agency": "Consumer Product Safety Commission",
+  "agencyShort": "CPSC",
+  "sourceUrl": "https://cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon",
+  "originalImageUrl": "https://cpsc.gov/s3fs-public/NEWDERY1.png?VersionId=PA7LZmrWkOiKIP2IuxG.enYs4Q5eB9Mn",
+  "caption": "Recalled NEWDERY power banks. Photo: Consumer Product Safety Commission.",
+  "alt": "Official CPSC recall photo: Recalled NEWDERY power banks",
+  "copyrightRisk": "none-known (U.S. government work — CPSC recall photos are public domain)",
+  "licenseNotes": "Official CPSC recall photo. CPSC recall images are works of the U.S. federal government and are in the public domain.",
+  "generatedAt": "2026-09-27T21:36:35.763Z",
+  "files": {
+    "image": "data/draft-images/newdery-power-banks-2026-09-24.jpg"
+  }
+}

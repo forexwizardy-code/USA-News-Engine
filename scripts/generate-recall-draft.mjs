@@ -278,7 +278,9 @@ function recallingFirmDisplay(story) {
  * Keeps the headline under ~80 chars (truncates the product name if needed).
  */
 function buildHeadline(story) {
-  const hazardLabel = deriveHazardLabel(story.hazard, story.reason);
+  // Use the story's hazardNormalized from the clustering pipeline (source-backed).
+  // Fall back to deriveHazardLabel only if hazardNormalized is null.
+  const hazardLabel = story.hazardNormalized || deriveHazardLabel(story.hazard, story.reason);
 
   // --- CPSC path ---
   if (story.source === 'CPSC') {
@@ -314,7 +316,16 @@ function buildHeadline(story) {
   // --- FDA path ---
   const firm = story.recallingFirm || 'Firm';
   // Use the slug-style product name embedded in the recallStoryKey.
-  const product = shortProductName(story) || story.headlineSeed || 'Product';
+  let product = shortProductName(story) || story.headlineSeed || 'Product';
+
+  // Strip the firm name from the beginning of the product to avoid duplication
+  // (e.g. "Medline Industries, LP Medline breathing circuits" → "breathing circuits")
+  const firmLower = firm.toLowerCase();
+  if (product.toLowerCase().startsWith(firmLower)) {
+    product = product.slice(firm.length).replace(/^[\s,-]+/, '').trim();
+  }
+  // Also strip common firm suffixes from the product
+  product = product.replace(/^(medline|hudson rci)\s+/i, '').trim();
 
   let headline = `${firm} ${product} Recalled Over ${hazardLabel}`;
   if (headline.length > 80) {
@@ -424,7 +435,7 @@ function buildLeadParagraph(story, agencyFullName) {
   const product = story.source === 'FDA'
     ? (shortProductName(story) || story.headlineSeed || story.primaryProductName || 'a product')
     : (story.headlineSeed || story.primaryProductName || 'a product');
-  const hazardLabel = deriveHazardLabel(story.hazard, story.reason);
+  const hazardLabel = story.hazardNormalized || deriveHazardLabel(story.hazard, story.reason);
 
   // Two natural variants depending on whether we have a firm name.
   const actor = firm || 'A manufacturer';
@@ -667,7 +678,7 @@ function generateDraft(story, now) {
   const sourceOffice = agencyFullName;
 
   // --- Description (1-2 sentence deck) ------------------------------------
-  const hazardLabel = deriveHazardLabel(story.hazard, story.reason);
+  const hazardLabel = story.hazardNormalized || deriveHazardLabel(story.hazard, story.reason);
   const firm = recallingFirmDisplay(story) || 'A manufacturer';
   // Use the short product name for FDA (the long primaryProductName can be a
   // multi-SKU manifest that doesn't read well in a deck). For CPSC, the

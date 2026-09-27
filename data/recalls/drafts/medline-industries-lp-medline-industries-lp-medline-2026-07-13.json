@@ -1,0 +1,111 @@
+{
+  "draftVersion": 1,
+  "generatedAt": "2026-09-27T21:35:06.072Z",
+  "storyKey": "fda-device__cluster__dfe5b4e87f8d",
+  "sourceRecallIds": [
+    "Z-2992-2026",
+    "Z-2993-2026"
+  ],
+  "status": "draft",
+  "title": "Medline Industries, LP Medline Industries, LP Medline… Recalled Over Burn Hazard",
+  "description": "Medline Industries, LP is recalling Medline Industries, LP Medline breathing circuits labeled as:   1) HUDSON RCI over a burn hazard. Distribution: worldwide distribution.",
+  "slug": "medline-industries-lp-medline-industries-lp-medline-2026-07-13",
+  "category": "recalls",
+  "location": "Worldwide distribution",
+  "publishedAt": "2026-09-27T21:35:06.072Z",
+  "updatedAt": null,
+  "breaking": false,
+  "author": "US News Engine Consumer Safety Desk",
+  "sourceName": "U.S. Food and Drug Administration",
+  "sourceUrl": "https://open.fda.gov/data/downloads/device/enforcement/",
+  "sourceOffice": "U.S. Food and Drug Administration",
+  "hasUpdates": false,
+  "seo": {
+    "title": "Medline Industries, LP Medline Industries, LP Medline… Recal",
+    "description": "Medline Industries, LP is recalling Medline Industries, LP Medline breathing circuits labeled as:   1) HUDSON RCI over a burn hazard. Distribution: worldwide di"
+  },
+  "image": {
+    "status": "pending",
+    "url": null,
+    "alt": null,
+    "source": null,
+    "license": null
+  },
+  "body": [
+    {
+      "heading": null,
+      "paragraphs": [
+        "Medline Industries, LP is recalling Medline Industries, LP Medline breathing circuits labeled as:   1) HUDSON RCI because of a burn hazard, according to the U.S. Food and Drug Administration. The recall was initiated on July 13, 2026."
+      ]
+    },
+    {
+      "heading": "What is being recalled",
+      "paragraphs": [
+        "Medline breathing circuits labeled as: 1) HUDSON RCI, CIRCUIT, HTD, DL, NEONATE, 48, Medline Product Number/SKU HUD78007 (Teleflex Product Number/SKU 780-07); 2) HUDSON RCI, DBM-CIRCUIT,VENT,NEONAT"
+      ]
+    },
+    {
+      "heading": "Why it is being recalled",
+      "paragraphs": [
+        "Neonatal and infant heated wire breathing circuits may experience sporadic failure. The heated wire connector (pigtail) at the humidifier may exhibit discoloration, melting, smoke, burning odor, or other signs of localized thermal damage. Device failure may predispose infant to bronchospasm, inspissated secretions, and airway obstruction, as well as inadvertent positive end-expiratory pressure (PEEP), circuit obstruction, or accidental lavage of pooled fluid into the airway, elevated oxygen consumption, and worsening respiratory distress."
+      ]
+    },
+    {
+      "heading": "Where it was sold or distributed",
+      "paragraphs": [
+        "Worldwide distribution - US Nationwide and the country of Panama."
+      ]
+    },
+    {
+      "heading": "What consumers should do",
+      "paragraphs": [
+        "Consumers can review the FDA recall record for product and distribution details."
+      ]
+    },
+    {
+      "heading": "Source",
+      "paragraphs": [
+        "This article was produced from an official FDA recall record initiated on July 13, 2026. U.S. Food and Drug Administration is the original source of this recall notice."
+      ]
+    }
+  ],
+  "recallMetadata": {
+    "source": "FDA",
+    "sourceType": "device",
+    "recallingFirm": "Medline Industries, LP",
+    "manufacturer": null,
+    "brands": [],
+    "primaryProductName": "Medline breathing circuits labeled as:   1) HUDSON RCI, CIRCUIT, HTD, DL, NEONATE, 48, Medline Product Number/SKU HUD78007 (Teleflex Product Number/SKU 780-07);  2) HUDSON RCI, DBM-CIRCUIT,VENT,NEONAT",
+    "hazard": null,
+    "reason": "Neonatal and infant heated wire breathing circuits may experience sporadic failure. The heated wire connector (pigtail) at the humidifier may exhibit discoloration, melting, smoke, burning odor, or other signs of localized thermal damage. Device failure may predispose infant to bronchospasm, inspissated secretions, and airway obstruction, as well as inadvertent positive end-expiratory pressure (PEEP), circuit obstruction, or accidental lavage of pooled fluid into the airway, elevated oxygen consumption, and worsening respiratory distress.",
+    "classification": "Class II",
+    "recallDates": [
+      "2026-07-13T00:00:00.000Z"
+    ],
+    "reportDates": [
+      "2026-09-02T00:00:00.000Z"
+    ],
+    "distribution": "Worldwide distribution - US Nationwide and the country of Panama.",
+    "affectedStates": null,
+    "units": "416931",
+    "modelNumbers": [],
+    "lotNumbers": [],
+    "upcs": [],
+    "incidents": null,
+    "injuries": null,
+    "deaths": null,
+    "consumerAction": null,
+    "recordCount": 2,
+    "storyScore": 74,
+    "storyScoreReasons": [
+      "Class II",
+      "device failure",
+      "nationwide distribution",
+      "416,931+ units",
+      "children/infants involved"
+    ],
+    "storyStatus": "new",
+    "firstSeenAt": "2026-09-27T21:34:54.816Z",
+    "latestSeenAt": "2026-09-27T21:34:54.816Z"
+  }
+}
