@@ -57,6 +57,31 @@ interface Draft {
     license: string;
   };
   body: DraftSection[];
+  heroImage?: {
+    mode: string;
+    relation: string;
+    path: string;
+    alt: string;
+    caption: string;
+    creator: string;
+    license: string;
+    licenseUrl: string;
+    sourcePageUrl: string;
+    originalDate: string;
+    attributionRequired: boolean;
+    attributionText: string;
+  };
+  secondaryImage?: {
+    mode: string;
+    relation: string;
+    path: string;
+    alt: string;
+    caption: string;
+    source: string;
+    dataSource: string;
+    geographicDataSource: string;
+    attributionText: string;
+  };
   weatherMetadata: {
     event: string;
     severity: string;
@@ -111,9 +136,16 @@ try {
 }
 const draft: Draft = JSON.parse(draftRaw);
 
-// The hero image lives in public/preview-images/ (copied from data/draft-images/).
-// Use the draft's slug for the filename.
-const heroImage = `/preview-images/${draft.slug}.png`;
+// Hero image — use the real licensed photo if the draft has heroImage metadata,
+// otherwise fall back to the generic graphic.
+const heroImage = draft.heroImage?.path || `/preview-images/${draft.slug}.png`;
+const heroImageAlt = draft.heroImage?.alt || draft.image?.alt || '';
+const heroImageCaption = draft.heroImage?.caption || '';
+const heroAttribution = draft.heroImage?.attributionText || '';
+const heroLicenseUrl = draft.heroImage?.licenseUrl || '';
+
+// Secondary image — the NWS alert map (placed after "Areas affected")
+const secondaryImage = draft.secondaryImage || null;
 
 // Parse timestamps.
 // publishedAt = when this website first publishes (for previews, = generatedAt).
@@ -122,9 +154,6 @@ const publishedAt = new Date(draft.publishedAt);
 const updatedAt = draft.updatedAt ? new Date(draft.updatedAt) : null;
 const effectiveDate = new Date(draft.weatherMetadata.effective);
 const endsDate = new Date(draft.weatherMetadata.ends);
-
-// Image caption — natural style, not copied from alt text.
-const imageCaption = `${draft.title}. Graphic: US News Engine / NWS data.`;
 
 // Build the preview path (self-referencing canonical).
 const previewPath = `/preview/${storyKey}/`;
@@ -184,28 +213,56 @@ const breadcrumbs = [
       <figure class="article-figure">
         <img
           src={heroImage}
-          alt={draft.image.alt}
+          alt={heroImageAlt}
           width="1200"
           height="675"
           loading="eager"
           fetchpriority="high"
         />
         <figcaption>
-          {draft.image.alt}
-          <span class="figcaption-source"> — {draft.image.source}</span>
+          <span class="figcaption-text">{heroImageCaption}</span>
+          {heroAttribution && (
+            <span class="figcaption-attribution">
+              {heroLicenseUrl ? (
+                <a href={heroLicenseUrl} rel="nofollow noopener" target="_blank">{heroAttribution}</a>
+              ) : (
+                heroAttribution
+              )}
+            </span>
+          )}
         </figcaption>
       </figure>
 
       <div class="article-columns">
         <div class="article-content">
           <div class="article-body">
-            {draft.body.map((section) => (
-              <div class="draft-section">
-                {section.heading && <h2>{section.heading}</h2>}
-                {section.paragraphs.map((p) => (
-                  <p set:html={p}></p>
-                ))}
-              </div>
+            {draft.body.map((section, i) => (
+              <>
+                <div class="draft-section">
+                  {section.heading && <h2>{section.heading}</h2>}
+                  {section.paragraphs.map((p) => (
+                    <p set:html={p}></p>
+                  ))}
+                </div>
+                {secondaryImage && section.heading === 'Areas affected' && (
+                  <div class="secondary-visual">
+                    <h3 class="secondary-heading">Flood Warning area</h3>
+                    <figure class="secondary-figure">
+                      <img
+                        src={secondaryImage.path}
+                        alt={secondaryImage.alt}
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                      />
+                      <figcaption>
+                        <span class="figcaption-text">{secondaryImage.caption}</span>
+                        <span class="figcaption-attribution">{secondaryImage.attributionText}</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                )}
+              </>
             ))}
           </div>
 
@@ -350,9 +407,62 @@ const breadcrumbs = [
     padding-left: 12px;
     border-left: 3px solid var(--color-border-strong);
   }
+  .figcaption-text {
+    display: block;
+  }
+  .figcaption-attribution {
+    display: block;
+    margin-top: 3px;
+    color: var(--color-text-soft);
+    font-style: italic;
+  }
+  .figcaption-attribution a {
+    color: var(--color-text-soft);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .figcaption-attribution a:hover {
+    color: var(--color-red);
+  }
   .figcaption-source {
     color: var(--color-text-soft);
     font-style: italic;
+  }
+
+  /* Secondary map figure (inline in article body) */
+  .secondary-visual {
+    margin: 28px 0;
+  }
+  .secondary-heading {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--color-text);
+  }
+  .secondary-figure {
+    padding: 16px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+  }
+  .secondary-figure img {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+  .secondary-figure figcaption {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+    padding-left: 12px;
+    border-left: 3px solid var(--color-border-strong);
+  }
+  .secondary-figure .figcaption-attribution {
+    color: var(--color-text-soft);
   }
 
   .article-columns {

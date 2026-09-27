@@ -1,5 +1,5 @@
 {
-  "draftVersion": 7,
+  "draftVersion": 8,
   "generatedAt": "2026-09-27T17:03:56.456Z",
   "storyKey": "flood-warning__lake-il__2026-09-27",
   "sourceAlertIds": [
@@ -93,5 +93,30 @@
     "updateCount": 2,
     "firstEffectiveAt": "2026-09-27T15:28:00.000Z",
     "latestEffectiveAt": "2026-09-27T15:28:00.000Z"
+  },
+  "heroImage": {
+    "mode": "licensed-photo",
+    "relation": "exact-location",
+    "path": "/preview-images/flood-warning-lake-county-illinois-real.jpg",
+    "alt": "File photo of the Des Plaines River near Gurnee, Illinois (Lake County).",
+    "caption": "File photo of flooding along the Des Plaines River in Gurnee, Illinois.",
+    "creator": "LakeCountyIL",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:052_Des_Plaines_(8675577986).jpg",
+    "originalDate": "2013-04-23",
+    "attributionRequired": true,
+    "attributionText": "Photo: LakeCountyIL / CC BY 2.0"
+  },
+  "secondaryImage": {
+    "mode": "map-data",
+    "relation": "current-alert-data",
+    "path": "/preview-images/flood-warning-lake-county-illinois-september-27-2026-map.png",
+    "alt": "Flood Warning alert area map for Lake County, Illinois, covering the Des Plaines River.",
+    "caption": "National Weather Service alert area for Lake County, Illinois.",
+    "source": "US News Engine",
+    "dataSource": "National Weather Service",
+    "geographicDataSource": "NWS alert geometry + NWS zone boundaries + public-domain state outline",
+    "attributionText": "Map: US News Engine using NWS geographic data"
   }
 }
