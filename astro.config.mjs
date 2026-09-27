@@ -20,7 +20,8 @@ export default defineConfig({
     sitemap({
       // Sitemap is generated automatically at /sitemap-index.xml on build.
       // Individual article + category pages are included by default.
-      filter: (page) => !page.includes('/draft/'),
+      // Exclude draft/preview pages from the sitemap.
+      filter: (page) => !page.includes('/draft/') && !page.includes('/preview/'),
     }),
   ],
   image: {

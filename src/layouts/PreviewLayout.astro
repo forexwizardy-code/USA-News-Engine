@@ -1,0 +1,175 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_NAME, SITE_LOCALE, DEFAULT_SHARE_IMAGE, ORG } from '../consts';
+import { iso } from '../lib/articles';
+
+interface Crumb {
+  name: string;
+  path: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Path beginning with "/" — used only for the self-referencing canonical. */
+  previewPath: string;
+  ogImage?: string;
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+  section?: string;
+}
+
+const {
+  title,
+  description,
+  previewPath,
+  ogImage = DEFAULT_SHARE_IMAGE,
+  publishedTime,
+  modifiedTime,
+  author,
+  section,
+} = Astro.props;
+
+const fullTitle = `${title} | PREVIEW | ${SITE_NAME}`;
+
+// Preview pages use a self-referencing canonical (the preview URL itself) so
+// search engines never confuse this with a future published article URL.
+const canonical = new URL(previewPath, Astro.site).href;
+const imageUrl = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, Astro.site).href;
+
+// Minimal website schema only (NO NewsArticle — this is not a published article).
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: Astro.site?.href || 'https://www.usnewsengine.com',
+  inLanguage: 'en-US',
+};
+
+// Breadcrumb schema for the preview itself (self-referencing).
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Preview',
+      item: canonical,
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <!-- Preview pages: hard noindex. Do not canonicalize to a future public URL. -->
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- OpenGraph (for testing only — page remains noindex) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={SITE_LOCALE} />
+    {publishedTime && (
+      <meta property="article:published_time" content={iso(publishedTime)} />
+    )}
+    {modifiedTime && (
+      <meta property="article:modified_time" content={iso(modifiedTime)} />
+    )}
+    {author && <meta property="article:author" content={author} />}
+    {section && <meta property="article:section" content={section} />}
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <meta name="theme-color" content="#c8102e" />
+
+    <!-- NO NewsArticle structured data on preview pages. -->
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Preview banner — temporary, only on preview pages -->
+    <div class="preview-banner" role="status" aria-live="polite">
+      <div class="container preview-banner-inner">
+        <span class="preview-banner-dot" aria-hidden="true"></span>
+        <strong>PREVIEW — NOT PUBLISHED</strong>
+        <span class="preview-banner-text">This is a private editorial review page. It is not indexed and not linked from the public site.</span>
+      </div>
+    </div>
+
+    <Header currentPath={Astro.url.pathname} />
+    <main id="main" class="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .preview-banner {
+    background: #7a1f3a;
+    color: #fff;
+    border-bottom: 2px solid #4a0f22;
+    position: relative;
+    z-index: 60;
+  }
+  .preview-banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding-block: 8px;
+    flex-wrap: wrap;
+  }
+  .preview-banner-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff9aa6;
+    animation: preview-pulse 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes preview-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .preview-banner strong {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .preview-banner-text {
+    font-size: 0.82rem;
+    color: #f0d4dc;
+  }
+  @media (max-width: 600px) {
+    .preview-banner-text {
+      display: none;
+    }
+  }
+</style>
