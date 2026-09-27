@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Flood Warning editorial map for Lake County, Illinois">
+  <defs>
+    <linearGradient id="edHeaderGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f4a5e"/>
+      <stop offset="1" stop-color="#1f6f8b"/>
+    </linearGradient>
+    <clipPath id="edMapClip">
+      <rect x="480" y="90" width="720" height="525"/>
+    </clipPath>
+  </defs>
+
+  <!-- Left editorial panel (dark) -->
+  <rect x="0" y="0" width="480" height="675" fill="#0f4a5e"/>
+
+  <!-- Top accent strip -->
+  <rect x="0" y="0" width="1200" height="6" fill="#1f6f8b"/>
+
+  <!-- Severity chip -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="76.80000000000001" height="28" rx="3" fill="#1f6f8b"/>
+    <text x="38.400000000000006" y="19" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">SEVERE</text>
+  </g>
+
+  <!-- Event headline (large, white on dark) -->
+  <text x="50" y="130" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="0.5">FLOOD WARNING</text>
+  <rect x="50" y="142" width="70" height="4" fill="#1f6f8b"/>
+
+  <!-- Location -->
+  <text x="50" y="185" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#ffffff">Lake County, Illinois</text>
+  <text x="50" y="215" font-family="Georgia, serif" font-size="18" font-weight="400" fill="#b8c4cc">Des Plaines River</text>
+
+  <!-- Data callouts -->
+  <g transform="translate(50, 270)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#8ab4c8" letter-spacing="1.5">URGENCY</text>
+    <text x="0" y="22" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Immediate</text>
+  </g>
+  <g transform="translate(50, 320)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#8ab4c8" letter-spacing="1.5">IN EFFECT</text>
+    <text x="0" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">In effect through Monday afternoon</text>
+  </g>
+
+  <!-- NWS attribution on dark panel -->
+  <g transform="translate(50, 585)">
+    <rect x="0" y="0" width="4" height="36" fill="#1f6f8b"/>
+    <text x="14" y="14" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" letter-spacing="0.5">NATIONAL WEATHER SERVICE</text>
+    <text x="14" y="30" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#8a949c">Source: NWS alert</text>
+  </g>
+
+  <!-- US News Engine branding -->
+  <text x="50" y="645" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#ffffff">US News Engine</text>
+  <text x="160" y="645" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#6a747c" letter-spacing="0.5">EDITORIAL</text>
+
+  <!-- Right map area (light) -->
+  <rect x="480" y="0" width="720" height="675" fill="#e8ebe6"/>
+
+  <!-- Map -->
+  <g clip-path="url(#edMapClip)">
+    <rect x="480" y="90" width="720" height="525" fill="#e8ebe6"/>
+
+    <!-- State outline (faded context) -->
+    <path d="M-2309.2 2086.9 L-1533.2 1953.1 L-1336.9 1409.0 L-1069.3 1150.3 L-1060.4 632.9 L-694.7 588.3 L-444.9 195.8 L759.4 204.7 L1000.2 204.7 L1241.1 302.9 L1267.8 855.9 L1241.1 1266.3 L1134.0 1355.5 L973.4 1391.2 L1000.2 1756.9 L982.4 2069.1 L928.8 2871.9 L732.6 3228.7 L402.5 3585.6 L402.5 3942.4 L795.0 4397.3 L696.9 4673.8 L295.5 4905.8 L108.2 4968.2 L-204.0 5030.7 L-453.8 5102.0 L-534.1 5110.9 L-1096.1 5110.9 L-1515.3 5592.6 L-1658.1 5592.6 L-1916.8 5414.2 L-2184.4 5548.0 L-2229.0 2086.9 L-2309.2 2086.9 Z" fill="#d8dcd4" stroke="#c0c4b8" stroke-width="1" stroke-linejoin="round" opacity="0.5"/>
+
+    <!-- County boundary (highlighted) -->
+    <path d="M719.0 199.2 L749.1 199.7 L759.6 199.7 L798.4 200.3 L816.3 200.7 L819.8 200.6 L830.3 200.7 L847.4 201.2 L894.9 202.0 L913.1 202.1 L985.6 203.0 L991.6 203.1 L995.6 202.9 L995.4 203.0 L997.4 203.0 L997.2 203.2 L996.8 203.3 L997.0 205.2 L998.9 208.4 L1000.4 211.6 L1000.9 214.8 L1001.9 221.0 L1001.2 230.3 L1001.0 231.0 L1000.7 234.6 L1000.2 238.0 L998.4 247.1 L996.7 260.1 L997.2 266.6 L996.8 272.7 L996.7 277.3 L995.7 292.4 L995.4 298.7 L988.3 299.9 L987.1 301.2 L990.1 301.5 L993.1 300.0 L990.4 305.0 L985.4 316.6 L986.6 319.4 L981.7 319.4 L980.2 318.3 L981.4 313.5 L979.3 313.1 L979.7 315.2 L977.4 315.7 L978.9 317.9 L978.0 321.7 L977.0 324.3 L976.2 337.3 L972.0 348.8 L981.0 348.8 L980.2 352.2 L980.2 354.9 L981.5 363.3 L981.6 364.9 L979.1 367.8 L978.6 369.8 L970.2 369.8 L969.2 372.9 L970.4 378.2 L969.9 379.3 L970.3 381.3 L971.0 382.7 L971.4 385.8 L972.6 389.8 L973.2 391.0 L974.0 395.3 L974.7 401.1 L977.5 407.8 L980.8 412.9 L984.2 420.3 L989.3 435.0 L992.5 441.4 L994.0 443.0 L997.6 451.6 L1000.1 456.3 L1003.0 460.2 L1007.4 467.0 L1007.8 468.2 L1009.8 469.8 L1011.5 471.6 L1011.4 472.3 L1012.0 473.5 L1018.7 481.6 L1019.4 483.1 L1019.9 483.7 L1020.9 484.6 L1022.9 486.9 L1024.5 489.0 L1026.5 490.9 L1028.8 493.8 L1031.2 497.5 L1036.7 505.7 L1034.4 505.8 L1024.6 505.6 L992.0 505.7 L976.7 505.6 L969.6 505.4 L963.0 505.5 L957.0 505.4 L948.9 505.5 L921.4 505.5 L918.2 505.4 L895.1 505.3 L885.2 505.1 L856.1 504.9 L849.2 505.0 L842.1 504.8 L834.9 504.9 L828.7 504.6 L823.4 504.9 L813.4 504.9 L791.6 504.8 L783.1 504.6 L760.2 504.7 L691.6 504.2 L661.5 504.4 L643.8 504.3 L644.0 497.9 L643.7 491.3 L644.0 484.7 L644.1 467.9 L644.4 452.8 L644.3 448.6 L644.6 446.1 L644.6 442.3 L644.6 430.7 L644.8 422.7 L645.4 416.2 L645.5 403.7 L645.4 386.2 L645.1 381.7 L644.5 376.1 L644.4 351.4 L644.7 344.1 L644.7 329.1 L643.9 315.1 L643.7 284.0 L644.1 270.9 L643.9 258.5 L644.2 253.4 L644.4 235.7 L644.2 229.2 L644.1 212.8 L643.3 199.4 L719.0 199.2 Z" fill="#1f6f8b" fill-opacity="0.25" stroke="#1f6f8b" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- NWS alert polygon (strong) -->
+    <path d="M857.5 293.9 L937.8 293.9 L902.1 374.2 L928.8 427.8 L848.6 427.8 L821.8 374.2 L857.5 293.9 Z" fill="#1f6f8b" fill-opacity="0.6" stroke="#0f4a5e" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- County marker + label -->
+    
+    <circle cx="840" cy="352.5" r="6" fill="#0f4a5e" stroke="#ffffff" stroke-width="2"/>
+    <line x1="840" y1="352.5" x2="780" y2="397.5" stroke="#0f4a5e" stroke-width="1.5"/>
+    <text x="776" y="394.5" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0f4a5e" text-anchor="end">LAKE COUNTY</text>
+    <text x="776" y="408.5" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#0f4a5e" text-anchor="end" opacity="0.8">Warned area</text>
+    
+  </g>
+
+  <!-- Map label -->
+  <text x="500" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#5b6168" letter-spacing="1.5">AFFECTED AREA</text>
+</svg>
