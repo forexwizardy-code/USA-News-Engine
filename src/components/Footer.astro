@@ -1,0 +1,162 @@
+---
+import { SITE_NAME, SITE_TAGLINE, CATEGORIES, LATEST } from '../consts';
+
+const year = new Date().getFullYear();
+
+const policyLinks = [
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Editorial Policy', href: '/editorial-policy/' },
+  { label: 'Corrections Policy', href: '/corrections-policy/' },
+  { label: 'Terms', href: '/terms/' },
+];
+
+const sectionLinks = [
+  { label: 'Home', href: '/' },
+  ...CATEGORIES.map((c) => ({ label: c.label, href: `/${c.slug}/` })),
+  { label: LATEST.label, href: `/${LATEST.slug}/` },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-mark" aria-hidden="true">US</span>
+          <span class="footer-name">{SITE_NAME}</span>
+        </div>
+        <p class="footer-tagline">{SITE_TAGLINE}. A demonstration news engine built for automated publishing — Phase 1.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Sections">
+        <h2 class="footer-heading">Sections</h2>
+        <ul>
+          {sectionLinks.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Company">
+        <h2 class="footer-heading">Company</h2>
+        <ul>
+          {policyLinks.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {year} {SITE_NAME}. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="/terms/">Terms</a> &middot;
+        <a href="/privacy-policy/">Privacy</a> &middot;
+        <a href="/corrections-policy/">Corrections</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-ink);
+    color: #d7dbe0;
+    margin-top: auto; /* sticky footer: push to bottom on short pages */
+    padding: 48px 0 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 48px;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .footer-mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    background: var(--color-red);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+  .footer-name {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .footer-tagline {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-ink-muted);
+    max-width: 36ch;
+  }
+  .footer-heading {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a {
+    color: #c7ccd3;
+    font-size: 0.92rem;
+  }
+  .footer-col a:hover {
+    color: #fff;
+  }
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #23282e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--color-ink-muted);
+  }
+  .footer-legal a {
+    color: var(--color-ink-muted);
+  }
+  .footer-legal a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+  @media (max-width: 520px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

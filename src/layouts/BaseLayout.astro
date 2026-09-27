@@ -1,0 +1,75 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BreakingNews from '../components/BreakingNews.astro';
+import type { Article } from '../lib/articles';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+  section?: string;
+  tags?: string[];
+  breadcrumbs?: { name: string; path?: string }[];
+  noindex?: boolean;
+  breakingArticles?: Article[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogImage,
+  type,
+  publishedTime,
+  modifiedTime,
+  author,
+  section,
+  tags,
+  breadcrumbs,
+  noindex,
+  breakingArticles = [],
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      ogImage={ogImage}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      author={author}
+      section={section}
+      tags={tags}
+      breadcrumbs={breadcrumbs}
+      noindex={noindex}
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header currentPath={currentPath} />
+    {breakingArticles.length > 0 && <BreakingNews articles={breakingArticles} />}
+    <main id="main" class="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  href?: string;
+  linkLabel?: string;
+  /** Optional small descriptor under the title. */
+  subtitle?: string;
+}
+const { title, href, linkLabel = 'See all', subtitle } = Astro.props;
+---
+
+<div class="section-head">
+  <div class="section-head-titles">
+    <h2 class="section-head-title">{title}</h2>
+    {subtitle && <p class="section-head-sub">{subtitle}</p>}
+  </div>
+  {href && (
+    <a class="section-head-link" href={href}>
+      {linkLabel} <span aria-hidden="true">&rarr;</span>
+    </a>
+  )}
+</div>
+
+<style>
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid var(--color-text);
+    position: relative;
+  }
+  .section-head::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 72px;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .section-head-title {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+  }
+  .section-head-sub {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+  .section-head-link {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    white-space: nowrap;
+    padding-bottom: 2px;
+  }
+  .section-head-link:hover {
+    color: var(--color-red-dark);
+  }
+</style>

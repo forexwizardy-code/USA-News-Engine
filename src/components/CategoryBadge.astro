@@ -1,0 +1,51 @@
+---
+import { categoryLabel } from '../consts';
+
+interface Props {
+  category: string;
+  href?: string;
+  variant?: 'solid' | 'outline' | 'light';
+}
+const { category, href, variant = 'solid' } = Astro.props;
+const label = categoryLabel(category);
+const Tag = href ? 'a' : 'span';
+---
+
+<Tag
+  class:list={['cat-badge', `cat-badge--${variant}`]}
+  {...(href ? { href } : {})}
+>
+  {label}
+</Tag>
+
+<style>
+  .cat-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 2px;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .cat-badge--solid {
+    background: var(--color-red);
+    color: #fff;
+  }
+  .cat-badge--solid:hover {
+    background: var(--color-red-dark);
+    color: #fff;
+  }
+  .cat-badge--outline {
+    background: transparent;
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+  }
+  .cat-badge--light {
+    background: var(--color-red-soft);
+    color: var(--color-red-dark);
+  }
+</style>

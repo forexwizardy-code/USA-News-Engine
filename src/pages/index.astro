@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CategoryBadge from '../components/CategoryBadge.astro';
+import {
+  getBreaking,
+  getFeatured,
+  getLatest,
+  getByCategory,
+  getMostRead,
+  getAcrossAmerica,
+  relativeTime,
+} from '../lib/articles';
+import { SITE_NAME, SITE_DESCRIPTION } from '../consts';
+
+// ---- Data: every section reads from the content collection ----
+const breaking = await getBreaking();
+const featured = await getFeatured();
+const featuredSlug = featured.data.slug;
+
+// 4 smaller stories for the hero rail (exclude the featured one).
+const heroRail = await getLatest(4, new Set([featuredSlug]));
+
+// Latest News grid (exclude hero stories already shown).
+const heroSlugs = new Set([featuredSlug, ...heroRail.map((a) => a.data.slug)]);
+const latest = await getLatest(6, heroSlugs);
+
+// Weather & Alerts
+const weather = await getByCategory('weather');
+
+// Recalls & Safety
+const recalls = await getByCategory('recalls');
+
+// Across America (stories tagged with a U.S. state)
+const acrossAmerica = await getAcrossAmerica(6);
+
+// Most Read (ranked)
+const mostRead = await getMostRead(5);
+---
+
+<BaseLayout
+  title={SITE_NAME}
+  description={SITE_DESCRIPTION}
+  canonicalPath="/"
+  breakingArticles={breaking}
+>
+  <!-- =================== HERO =================== -->
+  <section class="hero" aria-label="Top stories">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <ArticleCard article={featured} variant="hero" />
+        </div>
+        <aside class="hero-rail" aria-label="Latest headlines">
+          <p class="rail-title">Latest Headlines</p>
+          <ul class="rail-list">
+            {
+              heroRail.map((a) => (
+                <li>
+                  <ArticleCard article={a} variant="compact" showDescription={false} />
+                </li>
+              ))
+            }
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== LATEST NEWS =================== -->
+  <section class="section" aria-label="Latest news">
+    <div class="container">
+      <SectionHeader title="Latest News" href="/latest/" linkLabel="All latest" />
+      <div class="grid grid--3">
+        {latest.map((a) => <ArticleCard article={a} variant="default" />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== WEATHER & ALERTS =================== -->
+  <section class="section section--alt" aria-label="Weather and alerts">
+    <div class="container">
+      <SectionHeader title="Weather & Alerts" href="/weather/" linkLabel="All weather" />
+      {
+        weather.length > 0 && (
+          <div class="split">
+            <div class="split-lead">
+              <ArticleCard article={weather[0]} variant="default" />
+            </div>
+            <div class="split-list">
+              {weather.slice(1, 5).map((a) => (
+                <ArticleCard article={a} variant="compact" showDescription={false} />
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- =================== RECALLS & SAFETY =================== -->
+  <section class="section" aria-label="Recalls and safety">
+    <div class="container">
+      <SectionHeader title="Recalls & Safety" href="/recalls/" linkLabel="All recalls" />
+      <div class="grid grid--3">
+        {recalls.slice(0, 3).map((a) => <ArticleCard article={a} variant="default" />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== ACROSS AMERICA =================== -->
+  <section class="section section--alt" aria-label="Across America">
+    <div class="container">
+      <SectionHeader
+        title="Across America"
+        subtitle="Stories from states across the country"
+      />
+      <div class="grid grid--3">
+        {
+          acrossAmerica.map((a) => (
+            <article class="state-card">
+              <a href={`/news/${a.data.slug}/`} class="state-card-media" tabindex="-1" aria-hidden="true">
+                <img src={a.data.image} alt={a.data.imageAlt} loading="lazy" width="600" height="400" />
+              </a>
+              <div class="state-card-body">
+                <span class="state-pin" aria-hidden="true">&#128205;</span>
+                <span class="state-name">{a.data.state}</span>
+                <CategoryBadge category={a.data.category} href={`/${a.data.category}/`} variant="light" />
+                <h3 class="state-card-title">
+                  <a href={`/news/${a.data.slug}/`}>{a.data.title}</a>
+                </h3>
+                <p class="byline">
+                  <time datetime={a.data.publishedAt.toISOString()}>
+                    {relativeTime(a.data.publishedAt)}
+                  </time>
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== MOST READ =================== -->
+  <section class="section" aria-label="Most read">
+    <div class="container">
+      <SectionHeader title="Most Read" />
+      <ol class="mostread-list">
+        {
+          mostRead.map((a, i) => (
+            <li>
+              <ArticleCard article={a} variant="list" rank={i + 1} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 28px 0 40px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+  }
+  .hero-rail {
+    border-left: 1px solid var(--color-border);
+    padding-left: 24px;
+  }
+  .rail-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-text);
+  }
+  .rail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* Sections */
+  .section {
+    padding: 44px 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .section--alt {
+    background: var(--color-surface-alt);
+  }
+
+  /* Grids */
+  .grid {
+    display: grid;
+    gap: 32px 28px;
+  }
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Weather split */
+  .split {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .split-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-left: 1px solid var(--color-border);
+    padding-left: 24px;
+  }
+
+  /* Across America state cards */
+  .state-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .state-card-media {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--color-surface-alt);
+  }
+  .state-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .state-card:hover .state-card-media img {
+    transform: scale(1.04);
+  }
+  .state-card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .state-pin {
+    display: none;
+  }
+  .state-name {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-red);
+  }
+  .state-card-title {
+    font-size: 1.12rem;
+    line-height: 1.25;
+  }
+  .state-card-title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .state-card-title a:hover {
+    color: var(--color-red);
+  }
+
+  /* Most Read */
+  .mostread-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .mostread-list li {
+    list-style: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .grid--3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .split {
+      grid-template-columns: 1fr;
+    }
+    .split-list {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid var(--color-border);
+      padding-top: 18px;
+    }
+  }
+  @media (max-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-rail {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid var(--color-border);
+      padding-top: 20px;
+    }
+  }
+  @media (max-width: 620px) {
+    .grid--3 {
+      grid-template-columns: 1fr;
+    }
+    .section {
+      padding: 32px 0;
+    }
+  }
+</style>

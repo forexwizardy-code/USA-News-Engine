@@ -1,0 +1,18 @@
+---
+import CategoryListing from '../../components/CategoryListing.astro';
+import { getAllArticles } from '../../lib/articles';
+import { LATEST } from '../../consts';
+
+// "Latest" is a reverse-chronological feed of every article, regardless of category.
+const items = await getAllArticles();
+
+const breadcrumbs = [{ name: LATEST.label }];
+---
+
+<CategoryListing
+  title="Latest News"
+  description={LATEST.description}
+  items={items}
+  canonicalPath={`/${LATEST.slug}/`}
+  breadcrumbs={breadcrumbs}
+/>

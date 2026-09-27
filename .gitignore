@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# environment / secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# os
+.DS_Store
+
+# editor
+.vscode/
+.idea/
+
+# ---- sandbox / runtime infrastructure (not part of the news site project) ----
+# These directories exist in the local development workspace but are not part
+# of the US News Engine codebase and should not be pushed to GitHub.
+skills/
+.zscripts/
+examples/
+mini-services/
+upload/
+Caddyfile

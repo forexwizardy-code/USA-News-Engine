@@ -1,0 +1,61 @@
+---
+import StaticPage from '../layouts/StaticPage.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<StaticPage
+  title="Terms"
+  description={`Terms of use for ${SITE_NAME}.`}
+  canonicalPath="/terms/"
+  updated="September 2026"
+>
+  <p>
+    These Terms govern your use of {SITE_NAME} (the "Site"). By accessing the Site,
+    you agree to these Terms. If you do not agree, please do not use the Site.
+  </p>
+
+  <h2>Use of content</h2>
+  <p>
+    Editorial content on this Site is made available for your personal,
+    non-commercial reading. You may share links and brief excerpts with attribution.
+    Republishing full articles, in whole or in part, requires prior written
+    permission.
+  </p>
+
+  <h2>Automated and AI-assisted content</h2>
+  <p>
+    Some content may be produced or assisted by automated systems. Such content is
+    labeled accordingly and is subject to editorial review before publication.
+  </p>
+
+  <h2>Acceptable use</h2>
+  <ul>
+    <li>Do not attempt to disrupt or compromise the Site or its servers.</li>
+    <li>Do not scrape content at scale without permission.</li>
+    <li>Do not misrepresent your affiliation with the Site.</li>
+  </ul>
+
+  <h2>Third-party links</h2>
+  <p>
+    The Site may link to third-party websites. We are not responsible for the
+    content or practices of those sites.
+  </p>
+
+  <h2>Disclaimer</h2>
+  <p>
+    Content is provided "as is" without warranties of any kind. In Phase 1, articles
+    are fictional sample content and should not be relied upon as factual news.
+  </p>
+
+  <h2>Limitation of liability</h2>
+  <p>
+    To the fullest extent permitted by law, {SITE_NAME} is not liable for any
+    indirect or consequential damages arising from your use of the Site.
+  </p>
+
+  <h2>Changes</h2>
+  <p>
+    We may revise these Terms from time to time. Continued use after changes
+    constitutes acceptance of the revised Terms.
+  </p>
+</StaticPage>

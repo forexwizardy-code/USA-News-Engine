@@ -1,0 +1,57 @@
+---
+import StaticPage from '../layouts/StaticPage.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<StaticPage
+  title="Editorial Policy"
+  description={`The editorial standards and practices of ${SITE_NAME}.`}
+  canonicalPath="/editorial-policy/"
+  updated="September 2026"
+>
+  <p>
+    {SITE_NAME} is committed to accuracy, fairness, and transparency in everything
+    we publish. This policy outlines the standards that guide our reporting.
+  </p>
+
+  <h2>Accuracy and verification</h2>
+  <p>
+    We strive to verify facts before publication using primary sources, official
+    records, and on-the-record contacts. When information is developing, we label
+    it clearly and update stories as confirmed details emerge.
+  </p>
+
+  <h2>Sourcing</h2>
+  <ul>
+    <li>Every story attributes its originating source by name and, where applicable, link.</li>
+    <li>We prefer on-the-record sources and identify them whenever possible.</li>
+    <li>Anonymous sources are used only when information cannot be obtained otherwise and the reason is explained to readers.</li>
+  </ul>
+
+  <h2>Independence</h2>
+  <p>
+    Editorial content is produced independently of advertising, sponsorship, or
+    commercial relationships. Sponsors have no influence over story selection,
+    framing, or conclusions.
+  </p>
+
+  <h2>Balance and fairness</h2>
+  <p>
+    On contested matters of public interest, we seek relevant perspectives and give
+    subjects of reporting a meaningful opportunity to respond.
+  </p>
+
+  <h2>Updates and transparency</h2>
+  <p>
+    Material updates to a story are noted with a revised timestamp and, where
+    appropriate, a correction notice. See our{' '}
+    <a href="/corrections-policy/">Corrections Policy</a>.
+  </p>
+
+  <h2>Sponsored and generated content</h2>
+  <p>
+    Any sponsored or partnered content is clearly labeled and kept visually distinct
+    from editorial reporting. Automated content, when introduced, will be labeled
+    and subject to human editorial review before publication.
+  </p>
+</StaticPage>

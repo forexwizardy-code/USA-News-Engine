@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="U.S. Energy placeholder image">
+  <defs>
+    <linearGradient id="g-grid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b5560f"/>
+      <stop offset="1" stop-color="#5e2c06"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g-grid)"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#c8102e"/>
+  <g opacity="0.16" fill="#ffffff">
+    <circle cx="1080" cy="150" r="180"/>
+  </g>
+  <g transform="translate(600 300)" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M-30 -120 L30 -120 L40 -40 L-40 -40 Z M-20 -120 L-20 -40 M20 -120 L20 -40"/>
+    <path d="M-150 60 L-40 -40 M150 60 L40 -40"/>
+    <path d="M-150 -30 L-40 -30 M150 -30 L40 -30"/>
+    <path d="M0 60 L0 100"/>
+  </g>
+  <rect x="0" y="585" width="1200" height="90" fill="#0f1115" opacity="0.82"/>
+  <text x="60" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#ffffff" font-weight="700">US News Engine</text>
+  <text x="60" y="653" font-family="Arial, sans-serif" font-size="18" fill="#b8bdc4" letter-spacing="2">U.S. ENERGY</text>
+</svg>

@@ -1,0 +1,60 @@
+---
+import { SITE_NAME } from '../consts';
+
+interface Props {
+  items: { name: string; path?: string }[];
+}
+const { items } = Astro.props;
+const trail = [{ name: 'Home', path: '/' }, ...items];
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs-list">
+    {
+      trail.map((item, i) => {
+        const last = i === trail.length - 1;
+        return (
+          <li class="breadcrumbs-item">
+            {item.path && !last ? (
+              <a href={item.path}>{item.name}</a>
+            ) : (
+              <span aria-current="page">{item.name}</span>
+            )}
+            {!last && <span class="breadcrumbs-sep" aria-hidden="true">/</span>}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    padding: 14px 0;
+    font-size: 0.82rem;
+  }
+  .breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .breadcrumbs-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .breadcrumbs-item a {
+    color: var(--color-text-muted);
+  }
+  .breadcrumbs-item a:hover {
+    color: var(--color-red);
+  }
+  .breadcrumbs-item span[aria-current='page'] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  .breadcrumbs-sep {
+    color: var(--color-border-strong);
+  }
+</style>

@@ -1,0 +1,300 @@
+---
+import { SITE_NAME, SITE_TAGLINE, CATEGORIES, LATEST, categoryLabel } from '../consts';
+
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = '' } = Astro.props;
+
+// Normalize path for active-link matching (ignore trailing slash + index).
+const norm = (p: string) => p.replace(/\/+$/, '') || '/';
+const here = norm(currentPath);
+
+const today = new Date().toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const navItems = [
+  { label: 'Home', href: '/', match: '/' },
+  ...CATEGORIES.map((c) => ({
+    label: c.label,
+    href: `/${c.slug}/`,
+    match: `/${c.slug}`,
+  })),
+  { label: LATEST.label, href: `/${LATEST.slug}/`, match: `/${LATEST.slug}` },
+];
+
+const isActive = (match: string) =>
+  match === '/' ? here === '/' : here.startsWith(match);
+---
+
+<header class="site-header">
+  <!-- Utility bar -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <p class="utility-date">{today}</p>
+      <p class="utility-tag">{SITE_TAGLINE}</p>
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="container masthead-inner">
+      <a href="/" class="logo" aria-label={`${SITE_NAME} home`}>
+        <span class="logo-mark" aria-hidden="true">US</span>
+        <span class="logo-text">
+          <span class="logo-name">US News Engine</span>
+          <span class="logo-sub">Independent reporting from across America</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Primary navigation (sticky) -->
+  <nav class="primary-nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="visually-hidden">Toggle menu</span>
+      </button>
+      <ul id="primary-menu" class="nav-list" data-open="false">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={['nav-link', { active: isActive(item.match) }]}
+                aria-current={isActive(item.match) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Utility bar */
+  .utility-bar {
+    background: var(--color-ink);
+    color: #fff;
+    font-size: 0.78rem;
+  }
+  .utility-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 34px;
+    gap: 1rem;
+  }
+  .utility-date {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .utility-tag {
+    color: var(--color-ink-muted);
+    font-style: italic;
+  }
+
+  /* Masthead */
+  .masthead {
+    padding: 18px 0;
+    border-bottom: 3px solid var(--color-text);
+  }
+  .masthead-inner {
+    display: flex;
+    justify-content: center;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .logo:hover {
+    color: inherit;
+  }
+  .logo-mark {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: var(--color-red);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+  .logo-name {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .logo-sub {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+
+  /* Primary nav */
+  .primary-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    gap: 0.75rem;
+  }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    padding: 0 10px;
+  }
+  .nav-toggle-bar {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--color-text);
+    border-radius: 2px;
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 14px 14px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+  }
+  .nav-link:hover {
+    color: var(--color-red);
+  }
+  .nav-link.active {
+    color: var(--color-red);
+    border-bottom-color: var(--color-red);
+  }
+
+  /* Mobile / small tablets: below 768px the full 7-link nav no longer fits
+     comfortably, so we switch to the hamburger menu. Tablets (768px+) and
+     desktops keep the full horizontal navigation. */
+  @media (max-width: 767px) {
+    .masthead-inner {
+      justify-content: flex-start;
+    }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      font-size: 0.95rem;
+    }
+    .logo-sub {
+      display: none;
+    }
+    .nav-toggle {
+      display: flex;
+    }
+    .nav-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+      padding: 0.5rem var(--gutter);
+      gap: 0;
+      display: none;
+    }
+    .nav-list[data-open='true'] {
+      display: flex;
+    }
+    .nav-link {
+      padding: 14px 4px;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 0;
+    }
+    .nav-link:last-child {
+      border-bottom: none;
+    }
+    .nav-link.active {
+      border-bottom-color: var(--color-border);
+      border-left: 3px solid var(--color-red);
+      padding-left: 8px;
+    }
+    .utility-tag {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Minimal mobile-menu toggle — the only interactive JS on the site.
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const menu = document.querySelector<HTMLUListElement>('#primary-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.getAttribute('data-open') === 'true';
+    menu?.setAttribute('data-open', String(!open));
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  // Close on resize to desktop/tablet (where the hamburger is hidden).
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 767) {
+      menu?.setAttribute('data-open', 'false');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

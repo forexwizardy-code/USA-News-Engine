@@ -1,0 +1,29 @@
+---
+import CategoryListing from '../../components/CategoryListing.astro';
+import { getByCategory } from '../../lib/articles';
+import { CATEGORIES } from '../../consts';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () => {
+  return CATEGORIES.map((c) => ({
+    params: { category: c.slug },
+    props: { category: c },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  category: (typeof CATEGORIES)[number];
+}
+const { category } = Astro.props;
+const items = await getByCategory(category.slug);
+
+const breadcrumbs = [{ name: category.label }];
+---
+
+<CategoryListing
+  title={category.label}
+  description={category.description}
+  items={items}
+  canonicalPath={`/${category.slug}/`}
+  breadcrumbs={breadcrumbs}
+/>

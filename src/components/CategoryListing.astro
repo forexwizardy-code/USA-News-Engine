@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import SectionHeader from './SectionHeader.astro';
+import ArticleCard from './ArticleCard.astro';
+import type { Article } from '../lib/articles';
+
+interface Props {
+  title: string;
+  description: string;
+  items: Article[];
+  canonicalPath: string;
+  breadcrumbs: { name: string; path?: string }[];
+  /** Optional secondary rail of compact cards. */
+  showLead?: boolean;
+}
+
+const {
+  title,
+  description,
+  items,
+  canonicalPath,
+  breadcrumbs,
+  showLead = true,
+} = Astro.props;
+
+const lead = showLead ? items[0] : null;
+const rest = showLead ? items.slice(1) : items;
+---
+
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} breadcrumbs={breadcrumbs}>
+  <div class="container">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="listing-head">
+      <h1 class="listing-title">{title}</h1>
+      <p class="listing-desc">{description}</p>
+      <p class="listing-count">{items.length} stor{items.length === 1 ? 'y' : 'ies'}</p>
+    </header>
+
+    {
+      lead && (
+        <div class="listing-lead">
+          <ArticleCard article={lead} variant="hero" />
+        </div>
+      )
+    }
+
+    <div class="listing-grid">
+      {rest.map((a) => <ArticleCard article={a} variant="default" />)}
+    </div>
+
+    {
+      items.length === 0 && (
+        <div class="empty">
+          <p>No stories in this section yet. Check back soon.</p>
+          <a href="/" class="empty-link">&larr; Back to homepage</a>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .listing-head {
+    padding: 16px 0 28px;
+    border-bottom: 2px solid var(--color-text);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .listing-head::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 80px;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .listing-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  .listing-desc {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+    max-width: 70ch;
+  }
+  .listing-count {
+    margin-top: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .listing-lead {
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .listing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 28px;
+    padding-bottom: 48px;
+  }
+  .empty {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--color-text-muted);
+  }
+  .empty-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--color-red);
+    font-weight: 700;
+  }
+
+  @media (max-width: 980px) {
+    .listing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 620px) {
+    .listing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

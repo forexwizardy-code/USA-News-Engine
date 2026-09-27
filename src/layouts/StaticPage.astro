@@ -1,0 +1,93 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  updated?: string;
+}
+const { title, description, canonicalPath, updated } = Astro.props;
+const breadcrumbs = [{ name: title }];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="static">
+      <header class="static-head">
+        <h1>{title}</h1>
+        {updated && <p class="static-updated">Last updated: {updated}</p>}
+      </header>
+      <div class="static-body">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .static {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 0 64px;
+  }
+  .static-head {
+    border-bottom: 2px solid var(--color-text);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .static-head::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 72px;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .static-head h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+  .static-updated {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+  .static-body {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: #23262b;
+  }
+  .static-body :global(h2) {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    margin: 32px 0 10px;
+  }
+  .static-body :global(p) {
+    margin-top: 14px;
+  }
+  .static-body :global(ul) {
+    margin-top: 14px;
+    padding-left: 1.3rem;
+    list-style: disc;
+  }
+  .static-body :global(li) {
+    margin-top: 8px;
+  }
+  .static-body :global(li)::marker {
+    color: var(--color-red);
+  }
+  .static-body :global(a) {
+    color: var(--color-red-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

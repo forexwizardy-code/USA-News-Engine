@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Food Recall placeholder image">
+  <defs>
+    <linearGradient id="g-food-recall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6d8c"/>
+      <stop offset="1" stop-color="#163645"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g-food-recall)"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#c8102e"/>
+  <g opacity="0.16" fill="#ffffff">
+    <circle cx="1080" cy="150" r="180"/>
+  </g>
+  <g transform="translate(600 300)" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M0 -120 L0 120 M-104 -60 L104 60 M-104 60 L104 -60"/>
+    <path d="M0 -120 L-20 -100 M0 -120 L20 -100 M0 120 L-20 100 M0 120 L20 100"/>
+    <path d="M-104 -60 L-90 -35 M-104 -60 L-80 -75 M104 60 L90 35 M104 60 L80 75"/>
+    <path d="M104 -60 L90 -35 M104 -60 L80 -75 M-104 60 L-90 35 M-104 60 L-80 75"/>
+  </g>
+  <rect x="0" y="585" width="1200" height="90" fill="#0f1115" opacity="0.82"/>
+  <text x="60" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#ffffff" font-weight="700">US News Engine</text>
+  <text x="60" y="653" font-family="Arial, sans-serif" font-size="18" fill="#b8bdc4" letter-spacing="2">FOOD RECALL</text>
+</svg>

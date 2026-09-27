@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="ogbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14161a"/>
+      <stop offset="1" stop-color="#0a0c0f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#c8102e"/>
+  <g transform="translate(120 200)">
+    <rect width="86" height="86" rx="6" fill="#c8102e"/>
+    <text x="43" y="62" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff" text-anchor="middle">US</text>
+  </g>
+  <text x="120" y="370" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" fill="#ffffff">US News Engine</text>
+  <text x="122" y="430" font-family="Arial, sans-serif" font-size="30" fill="#b8bdc4">Independent reporting from across America</text>
+  <rect x="120" y="470" width="180" height="6" fill="#c8102e"/>
+</svg>

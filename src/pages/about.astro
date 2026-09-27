@@ -1,0 +1,51 @@
+---
+import StaticPage from '../layouts/StaticPage.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<StaticPage
+  title="About"
+  description={`About ${SITE_NAME}: an independent, automated-ready American news publishing platform.`}
+  canonicalPath="/about/"
+  updated="September 2026"
+>
+  <p>
+    {SITE_NAME} is an independent American news publication built on a modern,
+    static-first publishing engine. Our mission is to deliver fast, factual, and
+    clearly-sourced coverage of the stories that shape life across the United
+    States — from national politics and severe weather to product recalls,
+    consumer affairs, and science.
+  </p>
+
+  <h2>How we are built</h2>
+  <p>
+    This website is generated as static HTML for maximum speed, accessibility, and
+    search performance. Every story is stored as a structured article record with a
+    consistent schema — headline, description, author, timestamps, hero image,
+    body, source attribution, tags, and more. Homepage sections, category pages,
+    related stories, and search-engine metadata are all derived automatically from
+    that single source of truth.
+  </p>
+
+  <h2>Editorial independence</h2>
+  <p>
+    {SITE_NAME} is not affiliated with any political party, government agency, or
+    commercial advertiser. Editorial decisions are made independently of
+    advertising or sponsorship considerations. See our{' '}
+    <a href="/editorial-policy/">Editorial Policy</a> for details.
+  </p>
+
+  <h2>Phase 1 notice</h2>
+  <p>
+    The articles currently visible on this site are fictional sample content
+    created to demonstrate the publishing platform. They are not real news reports
+    and should not be cited as such. Automated, real-world article generation is
+    planned for a later phase.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions, corrections, or story tips? Visit our{' '}
+    <a href="/contact/">Contact</a> page.
+  </p>
+</StaticPage>

@@ -1,0 +1,171 @@
+---
+import { SITE_NAME, SITE_URL, SITE_LOCALE, SITE_DESCRIPTION, DEFAULT_SHARE_IMAGE, ORG, DEMO_NOINDEX } from '../consts';
+import { iso } from '../lib/articles';
+
+interface Crumb {
+  name: string;
+  path: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Path beginning with "/" — canonical is derived from SITE_URL. */
+  canonicalPath: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  author?: string;
+  section?: string;
+  tags?: string[];
+  breadcrumbs?: Crumb[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  canonicalPath,
+  ogImage = DEFAULT_SHARE_IMAGE,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  section,
+  tags = [],
+  breadcrumbs = [],
+  noindex = false,
+} = Astro.props;
+
+// While DEMO_NOINDEX is true (Phase 1, fictional content), the whole site is
+// blocked from indexing. Individual pages can still opt out via `noindex`,
+// but nothing can opt IN while the demo flag is on. Flip DEMO_NOINDEX to false
+// in src/consts.ts when real content is live.
+const blockRobots = DEMO_NOINDEX || noindex;
+
+const canonical = new URL(canonicalPath, SITE_URL).href;
+const imageUrl = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, SITE_URL).href;
+const fullTitle =
+  title === SITE_NAME ? `${SITE_NAME} — Independent U.S. News` : `${title} | ${SITE_NAME}`;
+
+// ---- Structured data -------------------------------------------------------
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsMediaOrganization',
+  name: ORG.name,
+  url: ORG.url,
+  logo: {
+    '@type': 'ImageObject',
+    url: ORG.logo,
+  },
+  sameAs: ORG.sameAs,
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: 'en-US',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE_URL}/?s={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const articleSchema =
+  type === 'article'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: title,
+        description,
+        image: [imageUrl],
+        datePublished: publishedTime ? iso(publishedTime) : undefined,
+        dateModified: modifiedTime ? iso(modifiedTime) : undefined,
+        author: {
+          '@type': 'Person',
+          name: author || SITE_NAME,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          logo: { '@type': 'ImageObject', url: ORG.logo },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonical,
+        },
+        articleSection: section,
+        keywords: tags.length ? tags.join(', ') : undefined,
+        inLanguage: 'en-US',
+        isAccessibleForFree: true,
+      }
+    : null;
+
+const breadcrumbSchema =
+  breadcrumbs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((c, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: c.name,
+          item: new URL(c.path, SITE_URL).href,
+        })),
+      }
+    : null;
+---
+
+<!-- Primary meta -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{blockRobots && <meta name="robots" content="noindex,nofollow" />}
+<meta name="generator" content={Astro.generator} />
+
+<!-- OpenGraph -->
+<meta property="og:type" content={type === 'article' ? 'article' : 'website'} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content={SITE_LOCALE} />
+{type === 'article' && publishedTime && (
+  <meta property="article:published_time" content={iso(publishedTime)} />
+)}
+{type === 'article' && modifiedTime && (
+  <meta property="article:modified_time" content={iso(modifiedTime)} />
+)}
+{type === 'article' && author && (
+  <meta property="article:author" content={author} />
+)}
+{type === 'article' && section && (
+  <meta property="article:section" content={section} />
+)}
+{type === 'article' && tags.map((t) => <meta property="article:tag" content={t} />)}
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Theme color -->
+<meta name="theme-color" content="#c8102e" />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+{articleSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}

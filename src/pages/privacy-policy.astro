@@ -1,0 +1,61 @@
+---
+import StaticPage from '../layouts/StaticPage.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<StaticPage
+  title="Privacy Policy"
+  description={`How ${SITE_NAME} collects, uses, and protects visitor information.`}
+  canonicalPath="/privacy-policy/"
+  updated="September 2026"
+>
+  <p>
+    This Privacy Policy describes how {SITE_NAME} ("we", "us") handles information
+    when you visit this website. We are committed to minimizing data collection
+    and being transparent about what we gather.
+  </p>
+
+  <h2>Information we collect</h2>
+  <ul>
+    <li><strong>Log data:</strong> standard server logs (IP address, browser type, pages visited, timestamp).</li>
+    <li><strong>Analytics:</strong> aggregate, privacy-respecting analytics to understand traffic patterns.</li>
+    <li><strong>Newsletter (when active):</strong> your email address, if you choose to subscribe.</li>
+  </ul>
+
+  <h2>How we use information</h2>
+  <ul>
+    <li>To operate, secure, and improve the website.</li>
+    <li>To understand which stories readers find useful.</li>
+    <li>To deliver newsletters you have explicitly requested.</li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>
+    We use a minimal set of cookies for essential functionality and aggregate
+    analytics. We do not sell personal data to third parties.
+  </p>
+
+  <h2>Third-party content</h2>
+  <p>
+    Some pages may embed third-party content (such as share tools). Those providers
+    may set their own cookies subject to their own privacy policies.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    You may request access to, correction of, or deletion of personal data we hold
+    about you by contacting privacy@example.com.
+  </p>
+
+  <h2>Children's privacy</h2>
+  <p>
+    This site is not directed at children under 13, and we do not knowingly collect
+    their personal information.
+  </p>
+
+  <h2>Changes</h2>
+  <p>
+    We may update this policy from time to time. Material changes will be reflected
+    by the "Last updated" date above.
+  </p>
+</StaticPage>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Consumer placeholder image">
+  <defs>
+    <linearGradient id="g-ftc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b3a8c"/>
+      <stop offset="1" stop-color="#2e1d49"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g-ftc)"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#c8102e"/>
+  <g opacity="0.16" fill="#ffffff">
+    <circle cx="1080" cy="150" r="180"/>
+  </g>
+  <g transform="translate(600 300)" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <rect x="-130" y="-90" width="260" height="160" rx="10"/>
+    <path d="M-60 70 L60 70 L70 100 L-70 100 Z"/>
+    <text x="0" y="20" font-family="Georgia, serif" font-size="90" fill="#ffffff" stroke="none" text-anchor="middle" font-weight="700">$</text>
+  </g>
+  <rect x="0" y="585" width="1200" height="90" fill="#0f1115" opacity="0.82"/>
+  <text x="60" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#ffffff" font-weight="700">US News Engine</text>
+  <text x="60" y="653" font-family="Arial, sans-serif" font-size="18" fill="#b8bdc4" letter-spacing="2">CONSUMER</text>
+</svg>

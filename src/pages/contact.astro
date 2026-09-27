@@ -1,0 +1,43 @@
+---
+import StaticPage from '../layouts/StaticPage.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<StaticPage
+  title="Contact"
+  description={`Contact the ${SITE_NAME} newsroom with tips, corrections, and inquiries.`}
+  canonicalPath="/contact/"
+  updated="September 2026"
+>
+  <p>
+    We welcome story tips, feedback, and corrections from our readers. Please use
+    the appropriate channel below.
+  </p>
+
+  <h2>Newsroom</h2>
+  <ul>
+    <li><strong>General news tips:</strong> tips@example.com</li>
+    <li><strong>Breaking news desk:</strong> breaking@example.com</li>
+    <li><strong>Weather & alerts:</strong> weather@example.com</li>
+    <li><strong>Recalls & safety:</strong> recalls@example.com</li>
+  </ul>
+
+  <h2>Corrections</h2>
+  <p>
+    Spotted an error? Please tell us. Describe the story, the issue, and how we can
+    reach you. See our <a href="/corrections-policy/">Corrections Policy</a> for
+    how we handle updates.
+  </p>
+
+  <h2>Business & legal</h2>
+  <ul>
+    <li><strong>Editorial:</strong> editor@example.com</li>
+    <li><strong>Legal / takedown:</strong> legal@example.com</li>
+    <li><strong>Privacy inquiries:</strong> privacy@example.com</li>
+  </ul>
+
+  <p>
+    This is a demonstration platform; the addresses above are illustrative and not
+    actively monitored in Phase 1.
+  </p>
+</StaticPage>

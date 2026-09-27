@@ -1,0 +1,130 @@
+---
+import type { Article } from '../lib/articles';
+import { relativeTime } from '../lib/articles';
+
+interface Props {
+  articles: Article[];
+}
+const { articles } = Astro.props;
+const items = articles.slice(0, 4);
+---
+
+{
+  items.length > 0 && (
+    <div class="breaking" role="region" aria-label="Breaking news">
+      <div class="container breaking-inner">
+        <span class="breaking-label">
+          <span class="breaking-dot" aria-hidden="true" />
+          Breaking
+        </span>
+        <ul class="breaking-list">
+          {items.map((a) => (
+            <li class="breaking-item">
+              <a href={`/news/${a.data.slug}/`}>
+                <span class="breaking-text">{a.data.title}</span>
+                <time class="breaking-time" datetime={a.data.publishedAt.toISOString()}>
+                  {relativeTime(a.data.publishedAt)}
+                </time>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .breaking {
+    background: var(--color-red);
+    color: #fff;
+    border-bottom: 1px solid var(--color-red-dark);
+  }
+  .breaking-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 42px;
+    padding-block: 6px;
+  }
+  .breaking-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff;
+    color: var(--color-red);
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .breaking-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-red);
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+  .breaking-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .breaking-list::-webkit-scrollbar {
+    display: none;
+  }
+  .breaking-item {
+    flex-shrink: 0;
+  }
+  .breaking-item::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.35);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .breaking-item:last-child::after {
+    display: none;
+  }
+  .breaking-item a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    color: #fff;
+    font-size: 0.86rem;
+    line-height: 1.3;
+  }
+  .breaking-item a:hover {
+    color: #ffe7eb;
+  }
+  .breaking-text {
+    font-weight: 600;
+  }
+  .breaking-time {
+    font-size: 0.74rem;
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .breaking-time {
+      display: none;
+    }
+  }
+</style>
