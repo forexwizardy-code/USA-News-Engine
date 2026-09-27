@@ -966,3 +966,233 @@ Added two npm scripts (no existing entries modified):
    the script will exit with code 1 at Step 13 because those two
    checks still fail. Fix the two upstream issues (per the Phase 7B.1
    "Next actions" list) BEFORE enabling `recallPublishingEnabled`.
+
+---
+
+## Phase 8A — USGS earthquake ingestion foundation (Task 8A-pipeline)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-27 (simulated project timeline)
+**Scope:** Create the four-script earthquake pipeline (fetch → filter →
+stories → validate), wire it into the npm script registry, and run it
+end-to-end against the live USGS GeoJSON feeds. No article files,
+automation.json, workflows, or other-domain (NWS / recall) scripts are
+touched.
+
+### Files created
+
+- `scripts/fetch-usgs-earthquakes.mjs`
+  Fetches BOTH USGS Earthquake Hazards Program GeoJSON feeds with a single
+  HTTP request each (2 total, aborts after 45 s):
+    * `2.5_week` — all M2.5+ earthquakes, past 7 days.
+    * `significant_week` — significant earthquakes, past 7 days (PAGER
+      events; can include sub-M2.5 noteworthy quakes).
+  User-Agent is `USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)`.
+  Each GeoJSON Feature is normalized into the shared earthquake schema
+  (source/sourceId/earthquakeKey/magnitude/place/time/url/alert/tsunami/
+  significance/depth/lat/lon/isUS/state/country/nearestPlace/
+  rawSourceData…). U.S. relevance is detected deterministically from the
+  `place` field — every U.S. state name (Alaska, Hawaii, California,
+  Puerto Rico, etc.) and every U.S. territory (Guam, U.S. Virgin Islands,
+  American Samoa, Northern Mariana Islands) is matched longest-key-first
+  so multi-word names like "New Mexico" beat shorter substrings. The
+  nearest place name is parsed from the canonical USGS place format
+  ("X km DIR of PlaceName, State"). Events from both feeds are merged and
+  de-duplicated by USGS event ID (preferring the significant_week entry
+  when the same event appears in both feeds). Output is written atomically
+  to `data/earthquakes/usgs-earthquakes.json` with metadata wrapper
+  (fetchedAt, source, sourceUrls, feedsUsed, totalEvents,
+  usRelevantCount, earthquakes[]). If one feed fails the other is still
+  processed; if both fail the script exits with code 1.
+
+- `scripts/filter-earthquake-news.mjs`
+  Reads `usgs-earthquakes.json` and applies the documented newsworthiness
+  filter. INCLUDE if ANY of: M5+ & isUS / M4+ & isUS with felt≥100 or
+  alert∈{yellow,orange,red} or tsunami / M6+ anywhere / PAGER alert
+  yellow-orange-red / tsunami / significance≥500 & isUS / M3.5+ & isUS &
+  felt≥500 / M4.5+ in Alaska/Hawaii/Puerto Rico. EXCLUDE if status=deleted,
+  magnitude<3.0, or magnitude is null. Each candidate gets a
+  `selectedReason` (semicolon-joined list of triggers) and a `priority`
+  ("high" for M5+ or alert/tsunami events; "medium" otherwise). Output is
+  sorted high-priority first, then magnitude desc, then newest first.
+  Writes `data/earthquakes/earthquake-news-candidates.json` atomically.
+
+- `scripts/build-earthquake-stories.mjs`
+  Reads candidates, deduplicates by `earthquakeKey`, and writes
+  `data/earthquakes/earthquake-story-records.json`. Story score (0-100,
+  deterministic):
+    * Base 20
+    * Magnitude tiered bonus (highest applicable only): +30 (M7+), +20
+      (M6+), +12 (M5+), +6 (M4+)
+    * PAGER alert: +20 (red), +15 (orange), +8 (yellow)
+    * Tsunami: +15
+    * Felt (stacks): +10 (≥1000), +5 (≥100)
+    * isUS: +8
+    * Shallow depth (<10 km): +5
+    * USGS significance ≥1000: +5
+    * Cap 100
+  Cross-snapshot tracking: firstSeenAt, latestSeenAt, updateCount
+  (incremented each run the story reappears), previousMagnitude (set to
+  the prior run's magnitude only when it changed; null on first run / no
+  change), currentMagnitude, storyStatus ("new" on first run;
+  "updated"/"unchanged" by SHA-256 content signature on subsequent runs).
+  Content signature excludes volatile time/updated fields and focuses on
+  magnitude/alert/tsunami/status/felt/cdi/mmi/place/depth/coordinates.
+  Sorted by storyScore desc, then latestSeenAt desc.
+
+- `scripts/validate-earthquakes.mjs`
+  Runs the 12 documented checks against all three Phase 8A files. The
+  record-level checks (1-10 and 12) run against BOTH the fetched snapshot
+  and the candidates file, and are then re-run against the story-records
+  file (so every story also has a valid key/id/url/magnitude/coordinates/
+  depth/timestamp/boolean isUS/boolean tsunami). Check 11 (storyScore
+  0-100) runs against the story-records file only. Exits with code 1 on
+  any failure, 0 otherwise. 34 total checks (11 per file × 3 files plus
+  the stories-file storyScore check, with the "file exists" check firing
+  only when a file is missing). All 34 passed in the live run.
+
+### package.json changes
+
+Added five npm scripts:
+- `"fetch:earthquakes": "node scripts/fetch-usgs-earthquakes.mjs"`
+- `"filter:earthquakes": "node scripts/filter-earthquake-news.mjs"`
+- `"stories:earthquakes": "node scripts/build-earthquake-stories.mjs"`
+- `"validate:earthquakes": "node scripts/validate-earthquakes.mjs"`
+- `"prepare:earthquakes": "npm run fetch:earthquakes && npm run filter:earthquakes && npm run stories:earthquakes && npm run validate:earthquakes"`
+
+### Data files produced (live run on 2026-09-27)
+
+- `data/earthquakes/usgs-earthquakes.json` (742,656 bytes, 320 events)
+- `data/earthquakes/earthquake-news-candidates.json` (3,122 bytes, 2 candidates)
+- `data/earthquakes/earthquake-story-records.json` (3,644 bytes, 2 stories)
+
+### Run results
+
+1. `npm run fetch:earthquakes` — fetched 320 events from `2.5_week`
+   (320 features) + 1 event from `significant_week` (1 feature). After
+   dedup by USGS event ID, 320 total events (the significant_week M6.6
+   New Caledonia event was already present in 2.5_week). 126 U.S.-relevant,
+   194 non-U.S. Top 5 by magnitude all non-U.S. (New Caledonia M6.6,
+   Tonga M5.7, Papua New Guinea M5.6, New Caledonia M5.5, Indonesia M5.5).
+   Sample U.S.-relevant events all M2.5-2.6 quakes in Alaska and New
+   Mexico.
+
+2. `npm run filter:earthquakes` — selected 2 of 320 candidates:
+    * `usgs__us6000txpi` — M6.6 New Caledonia (high priority,
+      "M6.6 >= 6.0 (major global event)"), alert=green, tsunami=false.
+    * `usgs__us6000txxm` — M4.6 Rat Islands, Aleutian Islands, Alaska
+      (medium priority, "M4.6 >= 4.5 in active U.S. seismic zone"), isUS
+      true, state=Alaska, alert=null.
+   318 excluded: 226 "no newsworthiness trigger matched", 92 "magnitude <
+   3.0 (too small)". 1 U.S.-relevant candidate, 1 high-priority candidate,
+   1 medium-priority candidate.
+
+3. `npm run stories:earthquakes` — 2 unique stories, both "new" on first
+   run. Story scores:
+    * `usgs__us6000txpi` — score=40 (base 20 + M6 tier 20; alert=green
+      gives no bonus, felt=11 doesn't hit 100, depth=10 doesn't hit <10,
+      sig=678 doesn't hit 1000).
+    * `usgs__us6000txxm` — score=34 (base 20 + M4 tier 6 + isUS 8).
+   Verified second-run behavior: re-running stories marked both as
+   "unchanged" with updateCount=2 and previousMagnitude=null (no magnitude
+   change between runs).
+
+4. `npm run validate:earthquakes` — all 34 checks PASS across all three
+   data files (11 record-level checks × 3 files + 1 storyScore check).
+   Exit code 0.
+
+### Design decisions
+
+1. **Magnitude bonuses are tiered (highest applicable only).** An M7.0
+   event is also ≥6.0 and ≥5.0 and ≥4.0, but the spec lists each tier as
+   a separate line without a "stacks" annotation. Tiering prevents an
+   M7 from picking up +30+20+12+6=68 magnitude points alone (which would
+   saturate the cap). Felt bonuses ARE stacked (felt≥1000 implies
+   felt≥100), mirroring the Phase 7A precedent where BONUS_UNITS_GT_10K
+   and BONUS_UNITS_GT_100K explicitly stack.
+
+2. **previousMagnitude is null on first run AND when magnitude is
+   unchanged.** The literal reading of "previousMagnitude (if changed
+   from last run — use null on first run)" is: only populate
+   previousMagnitude when the prior run's magnitude differs from the
+   current run's magnitude. On first run (no prior) or when magnitudes
+   match, previousMagnitude stays null. This makes the field a discrete
+   "magnitude-changed-from-last-run" signal rather than a copy of the
+   previous value.
+
+3. **Both feeds fetched even on partial failure.** If `2.5_week` succeeds
+   but `significant_week` fails (or vice versa), the script continues
+   with whichever feeds returned data and records the failures in
+   `feedErrors[]` in the output document. Only if BOTH feeds fail does
+   the script exit with code 1. This matches the spirit of "Handle API
+   errors gracefully" while still surfacing failures.
+
+4. **Feed-source preference for dedup.** When the same USGS event ID
+   appears in both feeds, the `significant_week` entry wins over the
+   `2.5_week` entry (significant_week is the more curated feed). Same-feed
+   duplicates are first-seen-wins to preserve stable ordering.
+
+5. **U.S. territory country value.** For territories (Puerto Rico, Guam,
+   U.S. Virgin Islands, American Samoa, Northern Mariana Islands), the
+   task spec lists "United States", "Puerto Rico", or the country name
+   as valid `country` values. We set `country` to the territory display
+   name (e.g. "Puerto Rico", "Guam") and leave `state` null (these are
+   not U.S. states). `isUS` is true.
+
+6. **locationType stays null in the fetcher.** The task spec marks
+   `locationType` as "determined later by filter" but the filter does
+   not actually set it (no locationType thresholds in the spec). It
+   remains null in all three output files. A future phase can populate
+   it if needed.
+
+7. **Validate re-runs record checks on stories.** The story-records file
+   denormalizes the canonical candidate fields, so it can be validated
+   with the same record-level checks as the fetched snapshot. This gives
+   us 11 × 3 = 33 record checks plus the stories-only storyScore check
+   for 34 total. All checks pass.
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched.
+- ✅ Recall scripts untouched.
+- ✅ `.github/workflows/` untouched.
+- ✅ `config/automation.json` untouched.
+- ✅ No public article files created.
+- ✅ DEMO_NOINDEX untouched.
+- ✅ All new scripts are `.mjs` ES modules.
+- ✅ Only Node.js built-in modules used (`node:fs/promises`, `node:path`,
+  `node:url`, `node:crypto`).
+- ✅ API errors handled gracefully (per-feed try/catch, atomic writes,
+  non-zero exit on total failure).
+- ✅ User-Agent matches the spec exactly.
+- ✅ Exactly one HTTP request per feed (2 total).
+
+### Next actions (for a future phase)
+
+1. **Wire `prepare:earthquakes` into `config/automation.json` and the
+   GitHub Actions workflow.** Phase 8A deliberately does NOT touch those
+   files per the constraints; a future Phase 8B should add the hourly /
+   sub-daily schedule and any required kill switch.
+
+2. **Build a draft/article pipeline for earthquakes** mirroring the NWS
+   `generate-nws-draft.mjs` / `generate-nws-image.mjs` /
+   `resolve-nws-real-image.mjs` trio. Earthquake stories have natural
+   map-based imagery (USGS ShakeMap, epicenter maps) that could be
+   fetched directly from the `detailUrl` GeoJSON endpoint rather than
+   needing a real-image search.
+
+3. **Expand the U.S. relevance detector with coordinate-based fallback.**
+   Phase 8A relies entirely on the `place` field. A future enhancement
+   could use the USGS `geometry.coordinates` against a state-shape
+   boundary file to catch events that are U.S.-relevant but whose `place`
+   field is generic (e.g. "off the west coast of the United States").
+
+4. **Add a `run-earthquake-newsroom.mjs` orchestrator** that mirrors
+   `run-recall-newsroom.mjs` once a draft pipeline exists, and a
+   `validate:earthquakes` kill-switch in the newsroom runner.
+
+5. **Track felt/tsunami/alert changes between runs.** Phase 8A only
+   surfaces `previousMagnitude`. A richer lifecycle would also flag when
+   `felt` jumps, `alert` escalates (green→yellow→orange→red), or
+   `tsunami` flips from false→true, so the newsroom can re-promote an
+   evolving story to breaking-news status.

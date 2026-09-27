@@ -32,7 +32,12 @@
     "draft:recall": "node scripts/generate-recall-draft.mjs",
     "image:recall": "node scripts/generate-recall-image.mjs",
     "previews:recalls": "node scripts/generate-recall-previews.mjs",
-    "newsroom:recalls": "node scripts/run-recall-newsroom.mjs"
+    "newsroom:recalls": "node scripts/run-recall-newsroom.mjs",
+    "fetch:earthquakes": "node scripts/fetch-usgs-earthquakes.mjs",
+    "filter:earthquakes": "node scripts/filter-earthquake-news.mjs",
+    "stories:earthquakes": "node scripts/build-earthquake-stories.mjs",
+    "validate:earthquakes": "node scripts/validate-earthquakes.mjs",
+    "prepare:earthquakes": "npm run fetch:earthquakes && npm run filter:earthquakes && npm run stories:earthquakes && npm run validate:earthquakes"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
