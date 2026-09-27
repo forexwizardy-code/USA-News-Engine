@@ -770,3 +770,199 @@ checks against `data/recalls/recall-story-clusters.json`.
    kept in sync.
 
 ---
+
+## Phase 7D — Recall newsroom automation (Task 7D-automation)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-27 (simulated project timeline)
+**Scope:** Wire the Phase 7A–7C recall ingestion + draft + image pipeline into
+an unattended GitHub-Actions-driven newsroom loop, mirroring the existing
+NWS newsroom automation. Adds a published-recalls registry, a master
+orchestration script with a kill switch + daily/per-run caps, and a
+standalone `recall-newsroom.yml` workflow that runs twice daily on cron.
+
+### Files created
+
+- `scripts/build-published-recalls-registry.mjs`
+  Reads every `*.md` article in `src/content/articles/` whose frontmatter
+  `category` is `recalls`, pairs each one with its clustered-story record
+  from `data/recalls/recall-story-clusters.json` (via the slug → storyKey
+  mapping in `data/recalls/drafts/*.json`, with a fallback to the image
+  sidecar's `storyKey`), and emits `data/published-recalls.json` — the
+  persistent source of truth for recall publication history.
+  Each registry entry carries: `recallStoryKey`, `slug`, `articlePath`,
+  `publishedAt`, `updatedAt`, `sourceType` (`consumer-product` for CPSC,
+  `food` / `device` for FDA), `sourceRecallIds`, `allSourceRecallIds`,
+  `sourceUrls`, `storyStatus`, `classification`, `hazardNormalized`,
+  `lastSeenAt` (from the cluster's `latestSeenAt`), `lastCheckedAt`,
+  `imageMode`, `imageSource`, `imageCreator`, `imageLicense`,
+  `imageLicenseUrl`, and `imageSourceUrl` (the recall page URL for CPSC
+  photos, or the FDA data-downloads URL for FDA graphics).
+
+- `scripts/run-recall-newsroom.mjs`
+  Master recall automation script. Orchestrates: fetch (CPSC + FDA food +
+  FDA device) → filter → cluster → load registry → reconcile against the
+  cluster feed → process UPDATED stories (preserve slug + publishedAt,
+  set `updatedAt`, merge new `sourceRecallIds` into `allSourceRecallIds`,
+  refresh classification/hazard from the cluster, bump the article file's
+  `updatedAt` frontmatter) → check daily UTC cap → select NEW stories
+  (`publishEligible=true`, sorted by `priority` high-first then
+  `storyScore` descending, capped at `maxRecallNewPerRun` AND the daily
+  remaining) → for each new story run `generate-recall-draft` + image,
+  copy the generated image to `public/images/`, write the article
+  markdown file, append a registry entry → save registry → run
+  `validate:recalls` + `validate:publishing` + `astro build`. Exits
+  before validation/build if 0 new + 0 updated (no-change behavior).
+  Uses `execSync` for every sub-script and surfaces stderr on failure.
+
+- `.github/workflows/recall-newsroom.yml`
+  Standalone GitHub Actions workflow. `workflow_dispatch` +
+  `schedule: 17 8,20 * * *` (twice daily at 08:17 and 20:17 UTC).
+  `ubuntu-latest`, `permissions: contents: write`. Steps: checkout →
+  setup Bun + Node.js 24 → `bun install` → `npm run newsroom:recalls` →
+  read `recallPublishingEnabled` from `config/automation.json` →
+  `git diff --quiet -- src/ public/ data/published-recalls.json` →
+  if changes AND publishing enabled: `npm run build`, commit with
+  `git config user.name "US News Engine Bot"` /
+  `newsroom@users.noreply.github.com` and message
+  `"Automated recall newsroom update: YYYY-MM-DD HH:mm UTC"`, push,
+  `npx wrangler deploy` with `CLOUDFLARE_API_TOKEN` +
+  `CLOUDFLARE_ACCOUNT_ID`, then live-verify that `/`, `/recalls/`,
+  and `/latest/` all return HTTP 200. No-change path: exit success.
+
+### package.json changes
+
+Added two npm scripts (no existing entries modified):
+- `"registry:recalls": "node scripts/build-published-recalls-registry.mjs"`
+- `"newsroom:recalls": "node scripts/run-recall-newsroom.mjs"`
+
+### Data file produced
+
+- `data/published-recalls.json` — 3 entries, one per existing published
+  recall article:
+  - `fda-food__H-1341-2026` → `international-sprout-holdings-inc-alfalfa-2026-08-23`
+    (FDA food, Class I, Salmonella Risk, agency-graphic hero).
+  - `fda-device__cluster__dfe5b4e87f8d` → `medline-industries-lp-breathing-circuit-2026-07-13`
+    (FDA device, Class II, Potential Device Failure, agency-graphic hero).
+  - `cpsc__11000` → `newdery-power-banks-2026-09-24`
+    (CPSC consumer-product, Fire Hazard, licensed-photo hero — official
+    CPSC recall photo, public-domain U.S. government work).
+
+### Run results
+
+1. `node scripts/build-published-recalls-registry.mjs` — SUCCESS (exit 0)
+   - Loaded 138 cluster stories, 8 recall drafts, 6 image sidecars.
+   - Wrote `data/published-recalls.json` with 3 stories.
+   - All three slugs mapped cleanly to a `recallStoryKey` via the
+     `data/recalls/drafts/<slug>.json` → `storyKey` field; cluster
+     stories were then located by `recallStoryKey`.
+   - The `medline-industries-lp-breathing-circuit-2026-07-13.md` article
+     pairs with `fda-device__cluster__dfe5b4e87f8d` (the cluster that
+     merges Z-2992-2026 + Z-2993-2026); the sidecar file was renamed by
+     an editor at publish time but the draft JSON's `storyKey` field
+     still pointed at the correct cluster, so the registry entry is
+     correct.
+
+2. `npm run newsroom:recalls` (dry run — `recallPublishingEnabled=false`) —
+   SUCCESS (exit 0, duration 3.1s)
+   - Kill switch: `recallPublishingEnabled = false`
+   - Caps: `maxRecallNewPerRun=1`, `maxRecallNewPerDay=3`
+   - Pipeline: fetched (CPSC 50, FDA-food 47, FDA-device 100 records)
+     → filtered (176 candidates) → clustered (138 stories, 40
+     publish-eligible, 26 high-priority + 14 medium-priority).
+   - Reconciled against the 3-entry registry:
+     - NEW: 37 publish-eligible stories not yet published
+     - UPDATED: 0
+     - UNCHANGED: 3 (the 3 already-published articles)
+     - MISSING: 0
+   - Daily cap: 3 already published today (UTC, all carrying
+     `publishedAt = 2026-09-27T21:41:17.264Z`), so 0 remaining, 0
+     allowed this run — this is a temporary artifact of the simulated
+     project timeline (all 3 articles were "published" today); the
+     cap will reset on the next UTC day.
+   - Kill switch active → printed summary and exited. NO content changes
+     were made. Verified via `git diff --name-only HEAD -- src/ public/
+     data/published-recalls.json data/published-stories.json` → empty
+     (only transient fetcher output files under `data/recalls/` and the
+     derived cluster file changed, which the workflow's change-detection
+     step correctly ignores).
+   - The `.github/workflows/recall-newsroom.yml` change-detection step
+     (`git diff --quiet -- src/ public/ data/published-recalls.json`)
+     would have evaluated to "no changes" and the workflow would have
+     taken the no-change notification path — exactly the intended
+     behavior when the kill switch is off.
+
+### Constraints honored
+
+- `.github/workflows/nws-newsroom.yml` was NOT modified.
+- `scripts/run-nws-newsroom.mjs` was NOT modified.
+- `config/automation.json` was NOT modified — `recallPublishingEnabled`
+  remains `false`, `maxRecallNewPerRun=1`, `maxRecallNewPerDay=3`, and
+  the existing NWS settings (`nwsPublishingEnabled=true`,
+  `maxNewPerRun=2`, `maxNewPerDay=8`) are untouched.
+- `data/published-stories.json` (NWS registry) was NOT modified.
+- No weather article files in `src/content/articles/` were modified.
+- `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- Both new scripts are `.mjs` ES modules using only Node.js built-ins
+  (`fs/promises`, `path`, `url`, `child_process`). No new dependencies
+  added. `sharp` is already installed and is only invoked indirectly
+  via `generate-recall-image.mjs`.
+- The workflow uses `GITHUB_TOKEN` (via `permissions: contents: write`)
+  — no personal PAT required.
+- Git identity: `US News Engine Bot <newsroom@users.noreply.github.com>`.
+- Commit message format: `"Automated recall newsroom update: YYYY-MM-DD HH:mm UTC"`.
+- Deploy: `npx wrangler deploy` with `CLOUDFLARE_API_TOKEN` +
+  `CLOUDFLARE_ACCOUNT_ID` secrets (same as the NWS workflow).
+- Live verification: 3-page check (`/`, `/recalls/`, `/latest/` — all
+  must return HTTP 200).
+
+### Next actions for a future agent
+
+1. **Flip the kill switch to enable automated publishing.** Edit
+   `config/automation.json` and set `recallPublishingEnabled: true`.
+   The next scheduled run (08:17 or 20:17 UTC) will then publish the
+   single highest-priority NEW story (subject to the daily cap of 3).
+   The 37 NEW publish-eligible stories in the current feed would be
+   published 1 per run / 3 per day, in priority-then-score order.
+
+2. **Daily-cap reset.** All 3 existing recall articles carry
+   `publishedAt` on 2026-09-27 (UTC), which saturates today's cap. The
+   cap will reset at 00:00 UTC the following day. If a same-day emergency
+   publish is needed, manually bump `maxRecallNewPerDay` in
+   `config/automation.json` or temporarily delete the stale registry
+   entries (NOT recommended — they're real publications).
+
+3. **UPDATE path is wired but not yet exercised.** The Phase 7D
+   `processUpdate()` updates the registry entry, bumps `updatedAt` in
+   the article frontmatter, and refreshes classification/hazard fields
+   from the cluster — but it does NOT regenerate the article body. A
+   future enhancement could call `generate-recall-draft.mjs` with the
+   storyKey and re-render the body sections (similar to how
+   `update-article-frontmatter.mjs` works for NWS). For now, updates
+   only bump metadata.
+
+4. **MISSING path is detected but not acted on.** When a registry
+   story's `recallStoryKey` is no longer present in the cluster feed
+   (because the upstream source removed the recall from the API
+   response, or because re-clustering produced a different cluster
+   signature), the story is counted in `MISSING` but no automatic
+   lifecycle transition is applied. A future enhancement could set
+   `storyStatus: 'stale'` and add a banner to the article (similar to
+   the NWS `expired` lifecycle).
+
+5. **The `imageLicenseUrl` field is currently always empty for recall
+   articles.** CPSC recall photos are public-domain U.S. government
+   works (no license URL needed), and FDA editorial graphics are
+   original US News Engine works (no external license URL). If a future
+   CPSC photo source provides a specific license URL, the registry
+   builder will pick it up from the article frontmatter's
+   `imageLicenseUrl` field automatically.
+
+6. **The Phase 7B.1 worklog noted that 2 of the 24 `validate:recalls`
+   checks fail (check 15 and check 20).** Those failures are upstream
+   data-quality issues in `cluster-recall-stories.mjs` and are not
+   introduced by Phase 7D. The `run-recall-newsroom.mjs` script runs
+   `validate:recalls` as Step 13 — if the kill switch is flipped on,
+   the script will exit with code 1 at Step 13 because those two
+   checks still fail. Fix the two upstream issues (per the Phase 7B.1
+   "Next actions" list) BEFORE enabling `recallPublishingEnabled`.

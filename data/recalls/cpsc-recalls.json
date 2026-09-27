@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T20:37:03.634Z",
+  "fetchedAt": "2026-09-27T22:14:24.600Z",
   "source": "CPSC",
   "sourceUrl": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallDateStart=2026-08-28",
   "count": 50,
@@ -37,7 +37,7 @@
         "https://cpsc.gov/s3fs-public/5Color1.jpg?VersionId=atSu6_Bv4DlP1J_K78WbQQJAQhdw9JUP",
         "https://cpsc.gov/s3fs-public/5Color2.jpg?VersionId=ZWuv6bs5xXdfyiOT.9yKdKcrqGdi12a0"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.681Z",
       "rawSourceData": {
         "RecallID": 10992,
         "RecallNumber": "26789",
@@ -145,7 +145,7 @@
         "https://cpsc.gov/s3fs-public/ABC3.png?VersionId=YznyGDlwDP5iz4.7.f1yb1fVUIIdp8i.",
         "https://cpsc.gov/s3fs-public/ABC4.png?VersionId=Y3fYRIc9N4sziVdHnucQsyyg5PpLdk62"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10999,
         "RecallNumber": "26799",
@@ -260,7 +260,7 @@
         "https://cpsc.gov/s3fs-public/Hyperfuels1.png?VersionId=TkNwKeGuM8xIoxK5DBTc8_axN_mwIK0l",
         "https://cpsc.gov/s3fs-public/Hyperfuels2.png?VersionId=DQRXV2un4y_EuBA2OQUpy_KG2VV2oVCR"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10996,
         "RecallNumber": "26790",
@@ -372,7 +372,7 @@
         "https://cpsc.gov/s3fs-public/INMOAir3%20-1.jpg?VersionId=tJh4ZtshcDqM1cvtpHG._BH.qX_Ybvsa",
         "https://cpsc.gov/s3fs-public/INMOAir3-2.png?VersionId=gN3AsNY.r8NRpT5ILfEMGiqY91HG4sFk"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10995,
         "RecallNumber": "26797",
@@ -484,7 +484,7 @@
         "https://cpsc.gov/s3fs-public/Love2.png?VersionId=12kWfVOjnKtYYeBB4PFi8ESlCp6ooEbj",
         "https://cpsc.gov/s3fs-public/Love3.png?VersionId=RJAKY.O.mpiJXDuO0AeUDMvp3uG_MIkE"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 11001,
         "RecallNumber": "26798",
@@ -595,7 +595,7 @@
         "https://cpsc.gov/s3fs-public/NEWDERY1.png?VersionId=PA7LZmrWkOiKIP2IuxG.enYs4Q5eB9Mn",
         "https://cpsc.gov/s3fs-public/NEWDERY2.png?VersionId=xND6xHyAzC66ZbsuYy5OZDvyndfFgVAi"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 11000,
         "RecallNumber": "26792",
@@ -702,7 +702,7 @@
         "https://cpsc.gov/s3fs-public/Emerspring1.png?VersionId=8JqFtjAPn714Lob_dSiK1iYUQ7V483Xn",
         "https://cpsc.gov/s3fs-public/Emerspring2.png?VersionId=csYQKXIGpU3x3UY10A.VAR5Tjw7sZ3xP"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10993,
         "RecallNumber": "26796",
@@ -809,7 +809,7 @@
         "https://cpsc.gov/s3fs-public/BlueCactus2.jpg?VersionId=ghrQbVriy0pTXQKS1nOL35Op5A98mmit",
         "https://cpsc.gov/s3fs-public/BlueCactus3.png?VersionId=88V.PoWTBABVCdNdFMblyOqfOkoUHSKd"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10997,
         "RecallNumber": "26791",
@@ -917,7 +917,7 @@
         "https://cpsc.gov/s3fs-public/Xinan2.png?VersionId=YnVSWSsLjZHatHLz2c8kT8bvghGijy.H",
         "https://cpsc.gov/s3fs-public/Xinan3.png?VersionId=Q82bZ0jHzBdldQXJ4ES85YUNlSF1Kwu_"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10994,
         "RecallNumber": "26793",
@@ -1030,7 +1030,7 @@
         "https://cpsc.gov/s3fs-public/Yuyitop3.jpg?VersionId=UgWyaDPL.QYmVMit01WZMMOPxzlDYgIO",
         "https://cpsc.gov/s3fs-public/Yuyitop4.jpg?VersionId=cnX3Mbr59UWCOnD.Upzo7baRjpV68gcs"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10998,
         "RecallNumber": "26794",
@@ -1149,7 +1149,7 @@
         "https://cpsc.gov/s3fs-public/Picture1_180.png?VersionId=KWs.1PNeGccPcCOmkrByLF8LDUgZecSs",
         "https://cpsc.gov/s3fs-public/Picture2_146.png?VersionId=NcV7z_JNgu7QaqtBMH7Gc87ORjUnTCIa"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10991,
         "RecallNumber": "26788",
@@ -1259,7 +1259,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledBistroProTabletopElecGrillRed.png",
         "https://www.cpsc.gov/s3fs-public/LabelLocationwithModelSerialNum.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10986,
         "RecallNumber": "26773",
@@ -1383,7 +1383,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledJerifyMagneticHumanoidToySize.png",
         "https://www.cpsc.gov/s3fs-public/JerifyMagneticHumanoidToyPackageJerifynumberX003ADA3TD.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10974,
         "RecallNumber": "26774",
@@ -1494,7 +1494,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledEsjayBusyBoard.png",
         "https://www.cpsc.gov/s3fs-public/RecalledEsjayBusyBoardPageRedKnobs.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10982,
         "RecallNumber": "26775",
@@ -1605,7 +1605,7 @@
         "https://cpsc.gov/s3fs-public/ModelSerialK%C3%9CHLSAirConditioner.png?VersionId=GRnrcdwPSeBHhHHzwD_W3J5oG3rK05Bv",
         "https://cpsc.gov/s3fs-public/CloseUpModelSerialInsideK%C3%9CHLSAirConditioner.png?VersionId=fm9oCAmgcA26QSMBDf4_WzgUqy6F5xlP"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10985,
         "RecallNumber": "26776",
@@ -1731,7 +1731,7 @@
         "https://www.cpsc.gov/s3fs-public/LocationofNamePlate.png",
         "https://www.cpsc.gov/s3fs-public/RecalledHaywardUniversalHCSeriesPoolHeater.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10987,
         "RecallNumber": "26777",
@@ -1843,7 +1843,7 @@
         "https://www.cpsc.gov/s3fs-public/JKMAX6.png",
         "https://www.cpsc.gov/s3fs-public/JKMAX7.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10975,
         "RecallNumber": "26778",
@@ -1971,7 +1971,7 @@
         "https://www.cpsc.gov/s3fs-public/LANCHEZ2.jpg",
         "https://www.cpsc.gov/s3fs-public/LANCHEZ3.jpg"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10983,
         "RecallNumber": "26779",
@@ -2084,7 +2084,7 @@
         "https://www.cpsc.gov/s3fs-public/melissa3.png",
         "https://www.cpsc.gov/s3fs-public/melissa4.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10976,
         "RecallNumber": "26780",
@@ -2204,7 +2204,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture3_111.png",
         "https://www.cpsc.gov/s3fs-public/Picture4_76.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10981,
         "RecallNumber": "26781",
@@ -2322,7 +2322,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledSaunaModelKirunaHybrid2.png?VersionId=yUNya7d1dr3SsHjV4UDOknAELQC_Ti7d",
         "https://www.cpsc.gov/s3fs-public/RecalledSaunaModelKirunaHybrid3.png?VersionId=_1TnwgsC1H3xmL85nGuZEKlXpIl4fjqX"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10979,
         "RecallNumber": "26783",
@@ -2443,7 +2443,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledIGSeriesSauna.png?VersionId=yvu5VyPS_i2.cpv6CsUGoYEPR7mrkMkk",
         "https://www.cpsc.gov/s3fs-public/RecalledIRSaunaKitwithpanels.png?VersionId=NChnjyx9aW8XeewvxfnVGyeIBtbJwlH3"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10984,
         "RecallNumber": "26784",
@@ -2563,7 +2563,7 @@
         "https://www.cpsc.gov/s3fs-public/FrontofPackaging.png?VersionId=Kl0lWM2n8v1lbiiB_r.no8LArTcBVvUb",
         "https://www.cpsc.gov/s3fs-public/BackofPackaging.png?VersionId=BGQ_Af5oWZ_4C84_SXBEtYAhqNJrqgCZ"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10977,
         "RecallNumber": "26782",
@@ -2674,7 +2674,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledBasecampBicycleHelmet.png?VersionId=8_iN7P2rfNDK5U0eM.YsTPfkqPElecMj",
         "https://www.cpsc.gov/s3fs-public/RecalledBasecampBicycleHelmetFrontView.png?VersionId=_5SYKGAqaVbiq0paaE7xVgYE.__D9qaB"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10978,
         "RecallNumber": "26785",
@@ -2782,7 +2782,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledRainbowMysterySquishyBun%20andtancontainer.png",
         "https://www.cpsc.gov/s3fs-public/RecalledRainbowMysterySquishyBun.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10980,
         "RecallNumber": "26786",
@@ -2894,7 +2894,7 @@
         "https://www.cpsc.gov/s3fs-public/cade-2_0.jpg?VersionId=9oqiqb5s66FqPlI3lL7PUOercpwDNHXK",
         "https://www.cpsc.gov/s3fs-public/cade-3_0.png?VersionId=qa1HllNULoolrMWkyyk2GUSI_7XnEfn2"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10964,
         "RecallNumber": "26761",
@@ -3010,7 +3010,7 @@
         "https://www.cpsc.gov/s3fs-public/dual6.png?VersionId=4q6vpUj9ZTDAOxcYedmpDF1RO0rKjRcH",
         "https://www.cpsc.gov/s3fs-public/dual7.png?VersionId=QfKdQXxONHq_oV359BLMFvG5nccHG2bk"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10968,
         "RecallNumber": "26756",
@@ -3141,7 +3141,7 @@
         "https://www.cpsc.gov/s3fs-public/FJT1.png",
         "https://www.cpsc.gov/s3fs-public/FJT2.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10973,
         "RecallNumber": "26764",
@@ -3251,7 +3251,7 @@
         "https://www.cpsc.gov/s3fs-public/guang4.gif?VersionId=Hk6fmFiACPoym4_JrzXQ8KPra.G2xdVW",
         "https://www.cpsc.gov/s3fs-public/guang5.gif?VersionId=nioUsdizjwyhbNWEX8h9BbeEA0Aqaf7k"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10967,
         "RecallNumber": "26754",
@@ -3373,7 +3373,7 @@
         "https://www.cpsc.gov/s3fs-public/junkins4.gif?VersionId=K54WyixwheD.UsFTmE7jGPJlY48s_pHF",
         "https://www.cpsc.gov/s3fs-public/junkins5.gif?VersionId=kDseYuqEnUbv2AlJ.aksbnkgLh6MNAh8"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10971,
         "RecallNumber": "26750",
@@ -3492,7 +3492,7 @@
         "https://www.cpsc.gov/s3fs-public/PreparedHero1.png?VersionId=4WMyFUseyYOC9RxDa1IIu4cq9nRS.r1q",
         "https://www.cpsc.gov/s3fs-public/PreparedHero2.png?VersionId=J2hbSUHjRGuYaZQo1Z63IQ54ifHExPwc"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10963,
         "RecallNumber": "26755",
@@ -3599,7 +3599,7 @@
         "https://www.cpsc.gov/s3fs-public/ricky1.png",
         "https://www.cpsc.gov/s3fs-public/ricky2.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10962,
         "RecallNumber": "26748",
@@ -3705,7 +3705,7 @@
       "imageUrls": [
         "https://www.cpsc.gov/s3fs-public/SQT1.png?VersionId=d9xWpvX_nU8QpaVc6XM_d8xH2XNzINMe"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10965,
         "RecallNumber": "26753",
@@ -3809,7 +3809,7 @@
         "https://www.cpsc.gov/s3fs-public/sweetcubby2.png?VersionId=x2fLHZn9Au5FKde4gInegI4DveTWafpd",
         "https://www.cpsc.gov/s3fs-public/sweetcubby3.jpg?VersionId=p849Mr.3WcOzLAdv35bIBco6RE3LOykT"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10972,
         "RecallNumber": "26752",
@@ -3919,7 +3919,7 @@
       "imageUrls": [
         "https://www.cpsc.gov/s3fs-public/triumph1.png?VersionId=2heZTaR9AWOD.ivzUP_FbalRUuVyJNbk"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10966,
         "RecallNumber": "26763",
@@ -4028,7 +4028,7 @@
         "https://www.cpsc.gov/s3fs-public/victgoal3_0.jpg",
         "https://www.cpsc.gov/s3fs-public/victgoal4_0.jpg"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10969,
         "RecallNumber": "26749",
@@ -4153,7 +4153,7 @@
         "https://www.cpsc.gov/s3fs-public/ZMC6.png?VersionId=e.1JJjhZ3Emqabi_oh4PztVjfBLOlaMN",
         "https://www.cpsc.gov/s3fs-public/ZMC7.png?VersionId=i_wwYh1MUflfft7.dzesFSaj1NlwqT0H"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10970,
         "RecallNumber": "26766",
@@ -4282,7 +4282,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture14_6.jpg?VersionId=FuLeMv5ZJY5WP5f_SiVLsWKYLLs4GAdB",
         "https://www.cpsc.gov/s3fs-public/Picture15_6.jpg?VersionId=Q66gGZ_S2LZ3WCD_5DAxoYHc9s4YIGb_"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10949,
         "RecallNumber": "26733",
@@ -4403,7 +4403,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture6_43.png",
         "https://www.cpsc.gov/s3fs-public/Picture7_32.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10948,
         "RecallNumber": "26731",
@@ -4525,7 +4525,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture21_8.png",
         "https://www.cpsc.gov/s3fs-public/Picture22_7.png"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10944,
         "RecallNumber": "26735",
@@ -4645,7 +4645,7 @@
         "https://cpsc.gov/s3fs-public/UPCCodeLabel.png?VersionId=5O6bOv1YGgNAjLE_NdH34Wzo4nUvzhza",
         "https://cpsc.gov/s3fs-public/DateCodeLocationOnBottle.png?VersionId=i.yHdM2CVeCGMkW8zgCUr4odk302YrMW"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10940,
         "RecallNumber": "26741",
@@ -4757,7 +4757,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture17_1.gif?VersionId=YBOcGZsVQLKV6RN0rSLyQf.k8jB6RHs8",
         "https://www.cpsc.gov/s3fs-public/Picture18_1.gif?VersionId=MH7k4ldQrWX9a92LxCbo6TQeKCA6wV5B"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.713Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10947,
         "RecallNumber": "26734",
@@ -4872,7 +4872,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture28_3.png?VersionId=Mn30te1YcddFAWLjo_Y6U.UFKc13tgz9",
         "https://www.cpsc.gov/s3fs-public/Picture29_2.png?VersionId=Klkqym_2XxOT3ZW2bTbTG6.apCWIAHCC"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10945,
         "RecallNumber": "26738",
@@ -4979,7 +4979,7 @@
         "https://cpsc.gov/s3fs-public/Picture23_2.jpg?VersionId=qKYa5xa8yU7nil8lqdPOIehxWs0EGf4f",
         "https://cpsc.gov/s3fs-public/Picture24_1.jpg?VersionId=4SMofg8ANzuIDnemxgCAdGHf1b.6sGes"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10942,
         "RecallNumber": "26736",
@@ -5097,7 +5097,7 @@
         "https://www.cpsc.gov/s3fs-public/RecalledZenditRR2027.png?VersionId=pPOtP6JHTFgGRhSCeS2tBDHUKBo1fxr.",
         "https://www.cpsc.gov/s3fs-public/RecalledZenditXR2027.png?VersionId=4qKZe9Fo8.512vO3jgouU0PiXW64CiwQ"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10946,
         "RecallNumber": "26746",
@@ -5265,7 +5265,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture2_56.jpg",
         "https://cpsc.gov/s3fs-public/Picture3_110.png?VersionId=aPlJe.aMk5E0DEG6w.z1KqPZ0hXMbw3r"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10941,
         "RecallNumber": "26730",
@@ -5377,7 +5377,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture26_5.png?VersionId=KEru87lPLRsL0UGCbv_o5j0.IKUY3pgJ",
         "https://www.cpsc.gov/s3fs-public/Picture27_4.png?VersionId=6npUXR2vfXMJy6Pmxuxl.VH7ewZrmMbV"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10950,
         "RecallNumber": "26737",
@@ -5490,7 +5490,7 @@
         "https://www.cpsc.gov/s3fs-public/Picture10_14.jpg?VersionId=OYT70_oZMNLXeMUAxKheD3o8RhxBtktg",
         "https://www.cpsc.gov/s3fs-public/Picture11_12.png?VersionId=fIlz093ogrHozaGmH5CdO6txGXE5sXe4"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10938,
         "RecallNumber": "26732",
@@ -5604,7 +5604,7 @@
       "imageUrls": [
         "https://www.cpsc.gov/s3fs-public/RecalledBabySesameStreetElmoSiliconeTeether_0.png?VersionId=byxbtFY6tfobY6K1mG8R3b.hqkN_7BN5"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10943,
         "RecallNumber": "26739",
@@ -5717,7 +5717,7 @@
         "https://cpsc.gov/s3fs-public/XOpoppyPowerBank_BowPrint.png?VersionId=uVVdxV.mt1Fpve4yfck99yxtFUIGRbmM",
         "https://cpsc.gov/s3fs-public/XOpoppyPowerBank_Cream.png?VersionId=u.1Pfyvum2YSW6Eje3ZZldItRmed8y8W"
       ],
-      "lastUpdatedAt": "2026-09-27T20:37:03.714Z",
+      "lastUpdatedAt": "2026-09-27T22:14:24.682Z",
       "rawSourceData": {
         "RecallID": 10939,
         "RecallNumber": "26740",

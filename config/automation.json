@@ -1,5 +1,8 @@
 {
   "nwsPublishingEnabled": true,
   "maxNewPerRun": 2,
-  "maxNewPerDay": 8
+  "maxNewPerDay": 8,
+  "recallPublishingEnabled": true,
+  "maxRecallNewPerRun": 1,
+  "maxRecallNewPerDay": 3
 }

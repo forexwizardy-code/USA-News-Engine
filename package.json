@@ -20,6 +20,7 @@
     "validate:publishing": "node scripts/validate-publishing.mjs",
     "update:nws": "node scripts/update-nws-lifecycle.mjs",
     "newsroom:nws": "node scripts/run-nws-newsroom.mjs",
+    "registry:recalls": "node scripts/build-published-recalls-registry.mjs",
     "fetch:cpsc": "node scripts/fetch-cpsc-recalls.mjs",
     "fetch:fda-food": "node scripts/fetch-fda-food-recalls.mjs",
     "fetch:fda-device": "node scripts/fetch-fda-device-recalls.mjs",
@@ -30,7 +31,8 @@
     "validate:recalls": "node scripts/validate-recalls.mjs",
     "draft:recall": "node scripts/generate-recall-draft.mjs",
     "image:recall": "node scripts/generate-recall-image.mjs",
-    "previews:recalls": "node scripts/generate-recall-previews.mjs"
+    "previews:recalls": "node scripts/generate-recall-previews.mjs",
+    "newsroom:recalls": "node scripts/run-recall-newsroom.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
