@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-09-27T19:23:44.322Z",
+  "fetchedAt": "2026-09-27T19:55:38.934Z",
   "source": "National Weather Service",
   "sourceUrl": "https://api.weather.gov/alerts/active",
-  "count": 353,
+  "count": 354,
   "alerts": [
     {
-      "id": "urn:oid:2.49.0.1.840.0-KEEPALIVE-43809",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-43809",
+      "id": "urn:oid:2.49.0.1.840.0-KEEPALIVE-18305",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-18305",
       "event": "Test Message",
       "headline": null,
       "description": "Monitoring message only. Please disregard.",
@@ -14,9 +14,9 @@
       "severity": "Unknown",
       "certainty": "Unknown",
       "urgency": "Unknown",
-      "effective": "2026-09-27T19:23:09+00:00",
+      "effective": "2026-09-27T19:53:10+00:00",
       "onset": null,
-      "expires": "2026-09-27T19:33:09+00:00",
+      "expires": "2026-09-27T20:03:10+00:00",
       "ends": null,
       "areaDesc": "Montgomery",
       "senderName": "NWS",
@@ -27,7 +27,433 @@
       "affectedZones": [
         "https://api.weather.gov/zones/county/MDC031"
       ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-43809"
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0-KEEPALIVE-18305"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.003.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.003.1",
+      "event": "Coastal Flood Advisory",
+      "headline": "Coastal Flood Advisory issued September 27 at 3:52PM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
+      "description": "* WHAT...Up to one to two feet of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures.\n\n* WHERE...Areas along the beaches, Pamlico Sound, and adjacent\ntidal creeks.\n\n* WHEN...Until midnight EDT tonight.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Portions of Highway 12 remain\nclosed between Pony Pens and the ferry dock. Low lying\nproperty including homes, businesses, and some critical\ninfrastructure may still be inundated. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:52:00-04:00",
+      "onset": "2026-09-27T15:52:00-04:00",
+      "expires": "2026-09-28T00:00:00-04:00",
+      "ends": "2026-09-28T00:00:00-04:00",
+      "areaDesc": "Ocracoke Island",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "Monitor",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ204"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.003.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.1",
+      "event": "Coastal Flood Advisory",
+      "headline": "Coastal Flood Advisory issued September 27 at 3:52PM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
+      "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves, and hazardous debris in the\nsurf zone. For the Coastal Flood Advisory, up to one to two\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways with compromised\ndune structures.\n\n* WHERE...Hatteras Island.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Numerous roads may be closed. NC-12\nremains closed from the Basnight Bridge to Rodanthe. Dangerous\nswimming and surfing conditions.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.\nThe most likely time for strong rip currents to occur is a\ncouple hours either side of low tide, which will occur around\n2:30 PM Sunday.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:52:00-04:00",
+      "onset": "2026-09-27T15:52:00-04:00",
+      "expires": "2026-09-28T00:00:00-04:00",
+      "ends": "2026-09-28T00:00:00-04:00",
+      "areaDesc": "Hatteras Island",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "Monitor",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ205"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.1",
+      "event": "Coastal Flood Advisory",
+      "headline": "Coastal Flood Advisory issued September 27 at 3:52PM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
+      "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level low-lying areas near shorelines\nand tidal waterways with compromised dune structures. Elevated\nwater levels due to high astronomical tides and moderate west\nwinds may lead to localized minor flooding of low-lying areas\nprone to soundside flooding. For the Beach Hazards Statement,\ndangerous rip currents, large breaking waves, and hazardous\ndebris expected in the surf zone.\n\n* WHERE...Northern Outer Banks ocean-side locales that\nexperienced weakening of dune structures over the last few\ndays. For soundside localized flooding, low-lying areas prone\nto sound- side flooding in and near Manteo.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...The next oceanside high tide times are\naround 8:30 PM Sunday. The soundside high times are around\n11:30 AM Sunday and midnight Sunday night. The most likely\ntime for strong rip currents to occur is a couple hours either\nside of low tide, which will occur around 2:30 PM Sunday.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:52:00-04:00",
+      "onset": "2026-09-27T15:52:00-04:00",
+      "expires": "2026-09-28T00:00:00-04:00",
+      "ends": "2026-09-28T00:00:00-04:00",
+      "areaDesc": "Northern Outer Banks",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "Monitor",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ203"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.2",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.2",
+      "event": "Beach Hazards Statement",
+      "headline": "Beach Hazards Statement issued September 27 at 3:52PM EDT until September 27 at 8:00PM EDT by NWS Newport/Morehead City NC",
+      "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level low-lying areas near shorelines\nand tidal waterways with compromised dune structures. Elevated\nwater levels due to high astronomical tides and moderate west\nwinds may lead to localized minor flooding of low-lying areas\nprone to soundside flooding. For the Beach Hazards Statement,\ndangerous rip currents, large breaking waves, and hazardous\ndebris expected in the surf zone.\n\n* WHERE...Northern Outer Banks ocean-side locales that\nexperienced weakening of dune structures over the last few\ndays. For soundside localized flooding, low-lying areas prone\nto sound- side flooding in and near Manteo.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...The next oceanside high tide times are\naround 8:30 PM Sunday. The soundside high times are around\n11:30 AM Sunday and midnight Sunday night. The most likely\ntime for strong rip currents to occur is a couple hours either\nside of low tide, which will occur around 2:30 PM Sunday.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:52:00-04:00",
+      "onset": "2026-09-27T15:52:00-04:00",
+      "expires": "2026-09-28T00:00:00-04:00",
+      "ends": "2026-09-27T20:00:00-04:00",
+      "areaDesc": "Northern Outer Banks",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ203"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.001.2"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.2",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.2",
+      "event": "Beach Hazards Statement",
+      "headline": "Beach Hazards Statement issued September 27 at 3:52PM EDT until September 27 at 8:00PM EDT by NWS Newport/Morehead City NC",
+      "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves, and hazardous debris in the\nsurf zone. For the Coastal Flood Advisory, up to one to two\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways with compromised\ndune structures.\n\n* WHERE...Hatteras Island.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Numerous roads may be closed. NC-12\nremains closed from the Basnight Bridge to Rodanthe. Dangerous\nswimming and surfing conditions.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.\nThe most likely time for strong rip currents to occur is a\ncouple hours either side of low tide, which will occur around\n2:30 PM Sunday.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:52:00-04:00",
+      "onset": "2026-09-27T15:52:00-04:00",
+      "expires": "2026-09-28T00:00:00-04:00",
+      "ends": "2026-09-27T20:00:00-04:00",
+      "areaDesc": "Hatteras Island",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ205"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.327b613d8cf6b1b5df1671085e0b79d280f3e27d.002.2"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.001.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 3:42PM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
+      "description": "* WHAT...Northeast winds 15 to 25 knots and waves 4 to 7 feet.\n\n* WHERE...The nearshore waters of Lake Ontario from Hamlin Beach\nto Mexico Bay.\n\n* WHEN...Until 4 AM EDT Monday.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:42:00-04:00",
+      "onset": "2026-09-27T15:42:00-04:00",
+      "expires": "2026-09-27T23:45:00-04:00",
+      "ends": "2026-09-28T04:00:00-04:00",
+      "areaDesc": "Hamlin Beach to Sodus Bay NY; Sodus Bay to Mexico Bay NY",
+      "senderName": "NWS Buffalo NY",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/LOZ043",
+        "https://api.weather.gov/zones/forecast/LOZ044"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.002.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 3:42PM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
+      "description": "* WHAT...Northeast winds 15 to 20 knots and waves 3 to 6 feet.\n\n* WHERE...The nearshore waters of Lake Ontario from the Niagara\nRiver to Hamlin Beach.\n\n* WHEN...Until 4 AM EDT Monday.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:42:00-04:00",
+      "onset": "2026-09-27T15:42:00-04:00",
+      "expires": "2026-09-27T23:45:00-04:00",
+      "ends": "2026-09-28T04:00:00-04:00",
+      "areaDesc": "Niagara River to Hamlin Beach NY",
+      "senderName": "NWS Buffalo NY",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/LOZ042"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.002.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.003.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.003.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 3:42PM EDT until September 27 at 10:00PM EDT by NWS Buffalo NY",
+      "description": "* WHAT...Northeast winds 15 to 20 knots.\n\n* WHERE...The nearshore waters of Lake Ontario from Mexico Bay\nto the Saint Lawrence River.\n\n* WHEN...Until 10 PM EDT this evening.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:42:00-04:00",
+      "onset": "2026-09-27T15:42:00-04:00",
+      "expires": "2026-09-27T22:00:00-04:00",
+      "ends": "2026-09-27T22:00:00-04:00",
+      "areaDesc": "Mexico Bay NY to the St. Lawrence River",
+      "senderName": "NWS Buffalo NY",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/LOZ045"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a485aa212bf7099f9ffaee60d4c6dc4e0f462128.003.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.58e14e4af76976c1608462eac6efb89769919e84.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.58e14e4af76976c1608462eac6efb89769919e84.001.1",
+      "event": "Beach Hazards Statement",
+      "headline": "Beach Hazards Statement issued September 27 at 3:42PM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
+      "description": "* WHAT...Strong currents and dangerous swimming conditions.\n\n* WHERE...Beaches of Orleans, Monroe, Wayne, Northern Cayuga,\nand Oswego counties.\n\n* WHEN...Through late tonight.\n\n* IMPACTS...Strong currents and dangerous swimming conditions.",
+      "instruction": "Stay out of the water to avoid dangerous swimming conditions.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:42:00-04:00",
+      "onset": "2026-09-27T15:42:00-04:00",
+      "expires": "2026-09-28T04:00:00-04:00",
+      "ends": "2026-09-28T04:00:00-04:00",
+      "areaDesc": "Orleans; Monroe; Wayne; Northern Cayuga; Oswego",
+      "senderName": "NWS Buffalo NY",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NYZ002",
+        "https://api.weather.gov/zones/forecast/NYZ003",
+        "https://api.weather.gov/zones/forecast/NYZ004",
+        "https://api.weather.gov/zones/forecast/NYZ005",
+        "https://api.weather.gov/zones/forecast/NYZ006"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.58e14e4af76976c1608462eac6efb89769919e84.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.2",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.2",
+      "event": "Hazardous Seas Warning",
+      "headline": "Hazardous Seas Warning issued September 27 at 12:41PM PDT until September 28 at 8:00PM PDT by NWS Medford OR",
+      "description": "* WHAT...North winds 20 to 30 kt with gusts up to 35 kt and steep\nto very steep wind-driven seas 7 to 10 ft at 7 seconds.\n\n* WHERE...Very steep and hazardous seas are expected south of Port\nOrford and beyond 3 nm from shore, with Small Craft Advisory\nconditions elsewhere.\n\n* WHEN...For the Small Craft Advisory, until 11 AM PDT Tuesday.\nFor the Hazardous Seas Warning, from 5 PM this afternoon to 8\nPM PDT Monday.\n\n* IMPACTS...Very steep and hazardous seas could capsize or damage\nvessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+      "instruction": "Recreational boaters should remain in port. Commercial vessels\nshould prepare for very steep seas and consider remaining in port\nuntil conditions improve.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T12:41:00-07:00",
+      "onset": "2026-09-27T17:00:00-07:00",
+      "expires": "2026-09-28T01:45:00-07:00",
+      "ends": "2026-09-28T20:00:00-07:00",
+      "areaDesc": "Coastal waters from Cape Blanco OR to Pt. St. George CA out 10 nm; Waters from Cape Blanco OR to Pt. St. George CA from 10 to 60 nm",
+      "senderName": "NWS Medford OR",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PZZ356",
+        "https://api.weather.gov/zones/forecast/PZZ376"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.2"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 12:41PM PDT until September 29 at 11:00AM PDT by NWS Medford OR",
+      "description": "* WHAT...North winds 20 to 30 kt with gusts up to 35 kt and steep\nto very steep wind-driven seas 7 to 10 ft at 7 seconds.\n\n* WHERE...Very steep and hazardous seas are expected south of Port\nOrford and beyond 3 nm from shore, with Small Craft Advisory\nconditions elsewhere.\n\n* WHEN...For the Small Craft Advisory, until 11 AM PDT Tuesday.\nFor the Hazardous Seas Warning, from 5 PM this afternoon to 8\nPM PDT Monday.\n\n* IMPACTS...Very steep and hazardous seas could capsize or damage\nvessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+      "instruction": "Recreational boaters should remain in port. Commercial vessels\nshould prepare for very steep seas and consider remaining in port\nuntil conditions improve.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T12:41:00-07:00",
+      "onset": "2026-09-27T12:41:00-07:00",
+      "expires": "2026-09-28T01:45:00-07:00",
+      "ends": "2026-09-29T11:00:00-07:00",
+      "areaDesc": "Coastal waters from Cape Blanco OR to Pt. St. George CA out 10 nm; Waters from Cape Blanco OR to Pt. St. George CA from 10 to 60 nm",
+      "senderName": "NWS Medford OR",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PZZ356",
+        "https://api.weather.gov/zones/forecast/PZZ376"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.002.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 12:41PM PDT until September 28 at 8:00PM PDT by NWS Medford OR",
+      "description": "* WHAT...North winds 15 to 25 kt and steep seas 7 to 9 ft at 7\nseconds.\n\n* WHERE...All waters north of Cape Blanco.\n\n* WHEN...Until 8 PM PDT Monday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+      "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T12:41:00-07:00",
+      "onset": "2026-09-27T12:41:00-07:00",
+      "expires": "2026-09-28T01:45:00-07:00",
+      "ends": "2026-09-28T20:00:00-07:00",
+      "areaDesc": "Coastal waters from Florence to Cape Blanco OR out 10 nm; Waters from Florence to Cape Blanco OR from 10 to 60 nm",
+      "senderName": "NWS Medford OR",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PZZ350",
+        "https://api.weather.gov/zones/forecast/PZZ370"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.002.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.c7264fc2c970b479c64989dbb00cca0cd994a333.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c7264fc2c970b479c64989dbb00cca0cd994a333.001.1",
+      "event": "Wind Advisory",
+      "headline": "Wind Advisory issued September 27 at 3:40PM EDT until September 27 at 4:00PM EDT by NWS Mount Holly NJ",
+      "description": "Winds will continue to diminish. Therefore the wind advisory will\nexpire at 4 PM.",
+      "instruction": null,
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:40:00-04:00",
+      "onset": "2026-09-27T15:40:00-04:00",
+      "expires": "2026-09-27T16:45:00-04:00",
+      "ends": "2026-09-27T16:00:00-04:00",
+      "areaDesc": "Western Monmouth; Eastern Monmouth; Ocean; Coastal Ocean",
+      "senderName": "NWS Mount Holly NJ",
+      "response": "Execute",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NJZ013",
+        "https://api.weather.gov/zones/forecast/NJZ014",
+        "https://api.weather.gov/zones/forecast/NJZ020",
+        "https://api.weather.gov/zones/forecast/NJZ026"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c7264fc2c970b479c64989dbb00cca0cd994a333.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1",
+      "event": "Flood Warning",
+      "headline": "Flood Warning issued September 27 at 2:37PM CDT until September 28 at 10:00AM CDT by NWS Topeka KS",
+      "description": "...The National Weather Service in Topeka has issued a Flood Warning\nfor the following rivers in Kansas...\n\nBig Blue River near Blue Rapids affecting Marshall County.\n\n* WHAT...Minor flooding is forecast.\n\n* WHERE...Big Blue River near Blue Rapids.\n\n* WHEN...Until Monday morning.\n\n* IMPACTS...At 26.0 feet, Minor lowland flooding occurs from\nMarysville to Tuttle Creek Lake.\n\n* ADDITIONAL DETAILS...\n- At 2:15 PM CDT Sunday the stage was 25.9 feet.\n- Forecast...The river is expected to rise above flood stage late\nthis afternoon to a crest of 26.1 feet this evening. It will then\nfall below flood stage late this evening.\n- Flood stage is 26.0 feet.",
+      "instruction": "Motorists should not attempt to drive around barricades or drive cars\nthrough flooded areas.\n\nThis product along with additional weather and stream information is\navailable at www.weather.gov/top/.",
+      "severity": "Severe",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T14:37:00-05:00",
+      "onset": "2026-09-27T16:12:00-05:00",
+      "expires": "2026-09-28T05:45:00-05:00",
+      "ends": "2026-09-28T10:00:00-05:00",
+      "areaDesc": "Marshall, KS",
+      "senderName": "NWS Topeka KS",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/county/KSC117"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.f715693282ed3a0b0fdf747cd0d5b74a4dd3f141.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f715693282ed3a0b0fdf747cd0d5b74a4dd3f141.001.1",
+      "event": "Flood Watch",
+      "headline": "Flood Watch issued September 27 at 12:29PM MST until September 29 at 9:00PM MST by NWS Phoenix AZ",
+      "description": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...A portion of south central Arizona, including the following\nareas, Aguila Valley, Apache Junction/Gold Canyon, Cave Creek/New\nRiver, Deer Valley, Dripping Springs, Fountain Hills/East Mesa,\nGlobe/Miami, Mazatzal Mountains, New River Mesa, Northwest Valley,\nPinal/Superstition Mountains, Rio Verde/Salt River, San Carlos,\nSoutheast Gila County, Superior and Tonto Basin.\n\n* WHEN...From late Monday night through Tuesday evening.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- The combination of deep tropical moisture moving into the area\nfrom the south and an approaching weather disturbance from the\nwest will result in showers and thunderstorms capable of\nproducing localized heavy rainfall. Moderate to heavy rainfall\nrates in excess of 1-2 inches per hour are expected. Some areas\nwill see training of storms leading to heavier rainfall\naccumulations.\n\n- Http://www.weather.gov/safety/flood",
+      "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
+      "severity": "Severe",
+      "certainty": "Possible",
+      "urgency": "Future",
+      "effective": "2026-09-27T12:29:00-07:00",
+      "onset": "2026-09-29T00:00:00-07:00",
+      "expires": "2026-09-28T05:00:00-07:00",
+      "ends": "2026-09-29T21:00:00-07:00",
+      "areaDesc": "Aguila Valley; Northwest Valley; Cave Creek/New River; Deer Valley; New River Mesa; Rio Verde/Salt River; Fountain Hills/East Mesa; Superior; Apache Junction/Gold Canyon; Tonto Basin; Mazatzal Mountains; Pinal/Superstition Mountains; San Carlos; Dripping Springs; Globe/Miami; Southeast Gila County",
+      "senderName": "NWS Phoenix AZ",
+      "response": "Prepare",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/AZZ534",
+        "https://api.weather.gov/zones/forecast/AZZ537",
+        "https://api.weather.gov/zones/forecast/AZZ541",
+        "https://api.weather.gov/zones/forecast/AZZ542",
+        "https://api.weather.gov/zones/forecast/AZZ545",
+        "https://api.weather.gov/zones/forecast/AZZ547",
+        "https://api.weather.gov/zones/forecast/AZZ549",
+        "https://api.weather.gov/zones/forecast/AZZ552",
+        "https://api.weather.gov/zones/forecast/AZZ555",
+        "https://api.weather.gov/zones/forecast/AZZ556",
+        "https://api.weather.gov/zones/forecast/AZZ557",
+        "https://api.weather.gov/zones/forecast/AZZ558",
+        "https://api.weather.gov/zones/forecast/AZZ560",
+        "https://api.weather.gov/zones/forecast/AZZ561",
+        "https://api.weather.gov/zones/forecast/AZZ562",
+        "https://api.weather.gov/zones/forecast/AZZ563"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f715693282ed3a0b0fdf747cd0d5b74a4dd3f141.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.965dd741fa0b3d6ef93bdb182f5bce72d39c1368.001.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.965dd741fa0b3d6ef93bdb182f5bce72d39c1368.001.1",
+      "event": "Flood Warning",
+      "headline": "Flood Warning issued September 27 at 3:29PM EDT until September 29 at 8:00AM EDT by NWS Mount Holly NJ",
+      "description": "...The National Weather Service in Mount Holly has issued a Flood\nWarning for the following rivers in New Jersey...\n\nMillstone River At Blackwells Mills affecting Somerset County.\n\nFor the Millstone River...including Blackwells Mills...Minor flooding\nis forecast.\n\n* WHAT...Minor flooding is forecast.\n\n* WHERE...Millstone River at Blackwells Mills.\n\n* WHEN...From late tonight to Tuesday morning.\n\n* IMPACTS...At 10.0 feet, The D&R Canal is flooded by the Millstone\nRiver.\n\n* ADDITIONAL DETAILS...\n- At 2:15 PM EDT Sunday the stage was 5.8 feet.\n- Forecast...The river is expected to rise above flood stage just\nafter midnight tonight to a crest of 9.7 feet early tomorrow\nafternoon. It will then fall below flood stage early Tuesday\nmorning.\n- Flood stage is 9.0 feet.\n- Flood History...This crest compares to a previous crest of 9.7\nfeet on 05/11/1998.\n- http://www.weather.gov/safety/flood",
+      "instruction": "Turn around, don't drown when encountering flooded roads. Most flood\ndeaths occur in vehicles.\n\nAdditional information is available at www.weather.gov/phi.\n\nThe next statement will be issued late tonight by 330 AM EDT.",
+      "severity": "Severe",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:29:00-04:00",
+      "onset": "2026-09-28T01:27:00-04:00",
+      "expires": "2026-09-28T03:30:00-04:00",
+      "ends": "2026-09-29T08:00:00-04:00",
+      "areaDesc": "Somerset, NJ",
+      "senderName": "NWS Mount Holly NJ",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/county/NJC035"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.965dd741fa0b3d6ef93bdb182f5bce72d39c1368.001.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.095a4940570f12f23bbcca83cc06a56e2a9c9c3f.003.1",
@@ -212,6 +638,32 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.001.2"
     },
     {
+      "id": "urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1",
+      "event": "Beach Hazards Statement",
+      "headline": "Beach Hazards Statement issued September 27 at 12:18PM PDT until September 30 at 4:00PM PDT by NWS Los Angeles/Oxnard CA",
+      "description": "* WHAT...Dangerous rip currents and breaking waves of 3 to 5\nfeet. Minor tidal overflows possible, especially Monday and\nTuesday.\n\n* WHERE...Santa Barbara County Southwestern Coast and Santa\nBarbara County Southeastern Coast.\n\n* WHEN...Through Wednesday afternoon.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Pooling of sea water is possible around high tide\nat beach and harbor areas (including Santa Barbara Harbor).\nEnhanced beach erosion is also possible. No significant damage\nis expected.\n\n* ADDITIONAL DETAILS...Locally moderate coastal flooding impacts\npossible but unlikely for areas such as Santa Barbara Harbor.\nThese impacts may include moderate flooding of sea water over\nsome vulnerable low-lying coastal areas, especially around the\ntime of high tide, including over beach parking lots, bike\npaths, and harbor walkways. Additionally, locally moderate\nbeach erosion is possible.",
+      "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T12:18:00-07:00",
+      "onset": "2026-09-27T12:18:00-07:00",
+      "expires": "2026-09-27T22:00:00-07:00",
+      "ends": "2026-09-30T16:00:00-07:00",
+      "areaDesc": "Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast",
+      "senderName": "NWS Los Angeles/Oxnard CA",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/CAZ349",
+        "https://api.weather.gov/zones/forecast/CAZ350"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1"
+    },
+    {
       "id": "urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.001.3",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.001.3",
       "event": "Beach Hazards Statement",
@@ -238,32 +690,6 @@
         "https://api.weather.gov/zones/forecast/CAZ366"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.001.3"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1",
-      "event": "Beach Hazards Statement",
-      "headline": "Beach Hazards Statement issued September 27 at 12:18PM PDT until September 30 at 4:00PM PDT by NWS Los Angeles/Oxnard CA",
-      "description": "* WHAT...Dangerous rip currents and breaking waves of 3 to 5\nfeet. Minor tidal overflows possible, especially Monday and\nTuesday.\n\n* WHERE...Santa Barbara County Southwestern Coast and Santa\nBarbara County Southeastern Coast.\n\n* WHEN...Through Wednesday afternoon.\n\n* IMPACTS...There is an increased risk of ocean drowning. Rip\ncurrents can pull swimmers and surfers out to sea. Waves can\nwash people off beaches and rocks, and capsize small boats\nnearshore. Pooling of sea water is possible around high tide\nat beach and harbor areas (including Santa Barbara Harbor).\nEnhanced beach erosion is also possible. No significant damage\nis expected.\n\n* ADDITIONAL DETAILS...Locally moderate coastal flooding impacts\npossible but unlikely for areas such as Santa Barbara Harbor.\nThese impacts may include moderate flooding of sea water over\nsome vulnerable low-lying coastal areas, especially around the\ntime of high tide, including over beach parking lots, bike\npaths, and harbor walkways. Additionally, locally moderate\nbeach erosion is possible.",
-      "instruction": "Remain out of the water due to hazardous swimming conditions, or\nstay near occupied lifeguard towers. Rock jetties can be deadly\nin such conditions, stay off the rocks.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T12:18:00-07:00",
-      "onset": "2026-09-27T12:18:00-07:00",
-      "expires": "2026-09-27T22:00:00-07:00",
-      "ends": "2026-09-30T16:00:00-07:00",
-      "areaDesc": "Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast",
-      "senderName": "NWS Los Angeles/Oxnard CA",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/CAZ349",
-        "https://api.weather.gov/zones/forecast/CAZ350"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b924f36a1e5250c15212d46a72bbbe86fea6fb21.002.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.82ce844d83e40fe7a054e714b6f65b86bb2f72c4.001.2",
@@ -732,31 +1158,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.001.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 3:09PM EDT until September 28 at 8:00AM EDT by NWS Boston/Norton MA",
-      "description": "* WHAT...East winds 10 to 20 kt with gusts up to 25 kt and seas\n4 to 6 feet.\n\n* WHERE...Nantucket Sound.\n\n* WHEN...Until 8 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T15:09:00-04:00",
-      "onset": "2026-09-27T15:09:00-04:00",
-      "expires": "2026-09-28T08:00:00-04:00",
-      "ends": "2026-09-28T08:00:00-04:00",
-      "areaDesc": "Nantucket Sound",
-      "senderName": "NWS Boston/Norton MA",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/ANZ232"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.002.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.002.1",
       "event": "Gale Warning",
@@ -780,6 +1181,31 @@
         "https://api.weather.gov/zones/forecast/ANZ230"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.002.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 3:09PM EDT until September 28 at 8:00AM EDT by NWS Boston/Norton MA",
+      "description": "* WHAT...East winds 10 to 20 kt with gusts up to 25 kt and seas\n4 to 6 feet.\n\n* WHERE...Nantucket Sound.\n\n* WHEN...Until 8 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T15:09:00-04:00",
+      "onset": "2026-09-27T15:09:00-04:00",
+      "expires": "2026-09-28T08:00:00-04:00",
+      "ends": "2026-09-28T08:00:00-04:00",
+      "areaDesc": "Nantucket Sound",
+      "senderName": "NWS Boston/Norton MA",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/ANZ232"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.004.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.006.1",
@@ -886,6 +1312,31 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0efc3b02866697d0b6ff44d6c82979f34163078.003.1"
     },
     {
+      "id": "urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1",
+      "event": "Small Craft Advisory",
+      "headline": "The Small Craft Advisory has been cancelled.",
+      "description": "The Small Craft Advisory has been cancelled and is no longer in effect.",
+      "instruction": null,
+      "severity": "Minor",
+      "certainty": "Observed",
+      "urgency": "Past",
+      "effective": "2026-09-27T15:06:00-04:00",
+      "onset": "2026-09-27T15:06:00-04:00",
+      "expires": "2026-09-27T15:21:36-04:00",
+      "ends": "2026-09-27T20:00:00-04:00",
+      "areaDesc": "S of Currituck Beach Light NC to Oregon Inlet NC out to 20 NM",
+      "senderName": "NWS Newport/Morehead City NC",
+      "response": "AllClear",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/AMZ150"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1"
+    },
+    {
       "id": "urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.001.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.001.1",
       "event": "Small Craft Advisory",
@@ -910,31 +1361,6 @@
         "https://api.weather.gov/zones/forecast/AMZ154"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1",
-      "event": "Small Craft Advisory",
-      "headline": "The Small Craft Advisory has been cancelled.",
-      "description": "The Small Craft Advisory has been cancelled and is no longer in effect.",
-      "instruction": null,
-      "severity": "Minor",
-      "certainty": "Observed",
-      "urgency": "Past",
-      "effective": "2026-09-27T15:06:00-04:00",
-      "onset": "2026-09-27T15:06:00-04:00",
-      "expires": "2026-09-27T15:21:36-04:00",
-      "ends": "2026-09-27T20:00:00-04:00",
-      "areaDesc": "S of Currituck Beach Light NC to Oregon Inlet NC out to 20 NM",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "AllClear",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/AMZ150"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29da8a3f413b09e8fe381ae0e1a13e0c47696ed3.002.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.6f90a7785df2214dfb3e8cecdb61ac0d80a7ddf1.001.1",
@@ -2168,32 +2594,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.006.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 2:24PM EDT until September 28 at 1:00AM EDT by NWS Wakefield VA",
-      "description": "* WHAT...West winds 15 to 25 kt with gusts up to 30 kt and seas\n5 to 8 ft.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...Until 1 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T14:24:00-04:00",
-      "onset": "2026-09-27T14:24:00-04:00",
-      "expires": "2026-09-27T22:30:00-04:00",
-      "ends": "2026-09-28T01:00:00-04:00",
-      "areaDesc": "Coastal waters from Fenwick Island DE to Chincoteague VA out 20 NM; Coastal waters from Chincoteague to Parramore Island VA out 20 NM",
-      "senderName": "NWS Wakefield VA",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/ANZ650",
-        "https://api.weather.gov/zones/forecast/ANZ652"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.8df76a553dddde68e97bad6b53fa4d68cfbc6b10.001.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8df76a553dddde68e97bad6b53fa4d68cfbc6b10.001.1",
       "event": "Flood Warning",
@@ -2218,6 +2618,32 @@
         "https://api.weather.gov/zones/county/MOC163"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8df76a553dddde68e97bad6b53fa4d68cfbc6b10.001.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 2:24PM EDT until September 28 at 1:00AM EDT by NWS Wakefield VA",
+      "description": "* WHAT...West winds 15 to 25 kt with gusts up to 30 kt and seas\n5 to 8 ft.\n\n* WHERE...Coastal waters from Fenwick Island DE to Chincoteague\nVA out 20 NM and Coastal waters from Chincoteague to Parramore\nIsland VA out 20 NM.\n\n* WHEN...Until 1 AM EDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T14:24:00-04:00",
+      "onset": "2026-09-27T14:24:00-04:00",
+      "expires": "2026-09-27T22:30:00-04:00",
+      "ends": "2026-09-28T01:00:00-04:00",
+      "areaDesc": "Coastal waters from Fenwick Island DE to Chincoteague VA out 20 NM; Coastal waters from Chincoteague to Parramore Island VA out 20 NM",
+      "senderName": "NWS Wakefield VA",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/ANZ650",
+        "https://api.weather.gov/zones/forecast/ANZ652"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.008.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.f47eaa8a69661b9a73d431c959a307422a668d33.005.1",
@@ -2649,32 +3075,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b2c30f270aa6c8768be046b93230ea3271cf9a0b.001.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.663eb22a4799694c2c1db1b6d7322ef1b28d334a.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.663eb22a4799694c2c1db1b6d7322ef1b28d334a.001.1",
-      "event": "Flood Advisory",
-      "headline": "Flood Advisory issued September 27 at 2:06PM AST until September 27 at 4:00PM AST by NWS San Juan PR",
-      "description": "* WHAT...Urban area and small stream flooding caused by excessive\nrainfall is expected.\n\n* WHERE...Arecibo County in Puerto Rico...\nHatillo County in Puerto Rico...\n\n* WHEN...Until 400 PM AST.\n\n* IMPACTS...Rises in small streams and normally dry arroyos. Water\nover roadways.\n\n* ADDITIONAL DETAILS...\n- At 206 PM AST, Doppler radar indicated heavy rain due to\nthunderstorms. This  will cause urban and small stream flooding.\nUp to 2 inches of rain have fallen.\n- Additional rainfall amounts of 1 to 2 inches are expected over\nthe area. This additional rain will result in minor flooding.\n- http://www.weather.gov/safety/flood",
-      "instruction": "Be aware of your surroundings and do not drive on flooded roads.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T14:06:00-04:00",
-      "onset": "2026-09-27T14:06:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-27T16:00:00-04:00",
-      "areaDesc": "Arecibo, PR; Hatillo, PR",
-      "senderName": "NWS San Juan PR",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/county/PRC013",
-        "https://api.weather.gov/zones/county/PRC065"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.663eb22a4799694c2c1db1b6d7322ef1b28d334a.001.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.a0ef678f4b242a02fc1e2b1d75121a59919f4d92.001.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a0ef678f4b242a02fc1e2b1d75121a59919f4d92.001.1",
       "event": "Coastal Flood Advisory",
@@ -2935,6 +3335,31 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1884f9806ffdda13a55f432c459f35ea4938f3a3.001.2"
     },
     {
+      "id": "urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1",
+      "event": "Coastal Flood Advisory",
+      "headline": "Coastal Flood Advisory issued September 27 at 1:08PM EDT until September 28 at 1:00AM EDT by NWS Wilmington NC",
+      "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...The lower Cape Fear River including downtown\nWilmington.\n\n* WHEN...From 9 PM this evening to 1 AM EDT Monday.\n\n* IMPACTS...Portions of Battleship Road and USS North Carolina\nRoad observe minor coastal flooding up to one half foot in\ndepth. In downtown Wilmington, a block of Water Street\nobserves minor flooding up to one quarter foot in depth.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
+      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T13:08:00-04:00",
+      "onset": "2026-09-27T21:00:00-04:00",
+      "expires": "2026-09-27T22:00:00-04:00",
+      "ends": "2026-09-28T01:00:00-04:00",
+      "areaDesc": "Inland New Hanover",
+      "senderName": "NWS Wilmington NC",
+      "response": "Monitor",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NCZ107"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1"
+    },
+    {
       "id": "urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.002.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.002.1",
       "event": "Coastal Flood Advisory",
@@ -2959,31 +3384,6 @@
         "https://api.weather.gov/zones/forecast/SCZ056"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.002.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1",
-      "event": "Coastal Flood Advisory",
-      "headline": "Coastal Flood Advisory issued September 27 at 1:08PM EDT until September 28 at 1:00AM EDT by NWS Wilmington NC",
-      "description": "* WHAT...Up to one half foot of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways.\n\n* WHERE...The lower Cape Fear River including downtown\nWilmington.\n\n* WHEN...From 9 PM this evening to 1 AM EDT Monday.\n\n* IMPACTS...Portions of Battleship Road and USS North Carolina\nRoad observe minor coastal flooding up to one half foot in\ndepth. In downtown Wilmington, a block of Water Street\nobserves minor flooding up to one quarter foot in depth.\n\n* ADDITIONAL DETAILS...Affected areas listed are based on\naverage tide conditions. Additional locations may experience\nflooding during periods of heavy rainfall, high winds, or\nother factors.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T13:08:00-04:00",
-      "onset": "2026-09-27T21:00:00-04:00",
-      "expires": "2026-09-27T22:00:00-04:00",
-      "ends": "2026-09-28T01:00:00-04:00",
-      "areaDesc": "Inland New Hanover",
-      "senderName": "NWS Wilmington NC",
-      "response": "Monitor",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ107"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.003.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.ba2f495eda466a9b204b360c7f617a401a74a706.001.1",
@@ -3266,31 +3666,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.001.4"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3",
-      "event": "Rip Current Statement",
-      "headline": "Rip Current Statement issued September 27 at 12:48PM EDT until September 27 at 8:00PM EDT by NWS Mount Holly NJ",
-      "description": "* WHAT...For the Coastal Flood Warning, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 4 to 8 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents.\n\n* WHERE...Coastal Ocean.\n\n* WHEN...For the Coastal Flood Warning, until 2 PM EDT Monday.\nFor the High Surf Advisory, until 8 PM EDT this evening. For\nthe High Rip Current Risk, until 8 PM EDT this evening.\n\n* IMPACTS...Numerous roads may be closed. Low lying property\nincluding homes, businesses, and some critical infrastructure\nwill be inundated. Some shoreline erosion will occur. Dangerous\nswimming and surfing conditions and localized beach erosion. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.\n\n* ADDITIONAL DETAILS...Back bay flooding may persist beyond Monday\nafternoon.",
-      "instruction": "A Coastal Flood Warning means that moderate or major tidal\nflooding is occurring or imminent. Be prepared for rising water\nlevels and take appropriate action to protect life and property.\nFollow the recommendations of local emergency management\nofficials.\n\nDo not drive your vehicle through flood waters. The water may be\ndeeper than you think it is. You will be putting yourself in\ndanger and your vehicle may be damaged, leading to costly\nrepairs.\n\nVisit the National Water Prediction Service at\nhttps://water.noaa.gov/wfo/phi for additional water level and\nflood impact information for your local tide gauge.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nAlways obey posted Beach Flags. If you enter the surf zone,\nalways have a floatation device with you and swim near a\nlifeguard if possible. If caught in a rip current, relax and\nfloat and do not swim against the current. If able, swim parallel\nto the shoreline. If unable to escape, face the shore and call or\nwave for help.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T12:48:00-04:00",
-      "onset": "2026-09-27T12:48:00-04:00",
-      "expires": "2026-09-28T02:00:00-04:00",
-      "ends": "2026-09-27T20:00:00-04:00",
-      "areaDesc": "Coastal Ocean",
-      "senderName": "NWS Mount Holly NJ",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NJZ026"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.001.2",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.001.2",
       "event": "Coastal Flood Advisory",
@@ -3314,6 +3689,31 @@
         "https://api.weather.gov/zones/forecast/NJZ014"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.001.2"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3",
+      "event": "Rip Current Statement",
+      "headline": "Rip Current Statement issued September 27 at 12:48PM EDT until September 27 at 8:00PM EDT by NWS Mount Holly NJ",
+      "description": "* WHAT...For the Coastal Flood Warning, up to one foot of\ninundation above ground level in low-lying areas near shorelines\nand tidal waterways. For the High Surf Advisory, large breaking\nwaves of 4 to 8 feet in the surf zone. For the High Rip Current\nRisk, dangerous rip currents.\n\n* WHERE...Coastal Ocean.\n\n* WHEN...For the Coastal Flood Warning, until 2 PM EDT Monday.\nFor the High Surf Advisory, until 8 PM EDT this evening. For\nthe High Rip Current Risk, until 8 PM EDT this evening.\n\n* IMPACTS...Numerous roads may be closed. Low lying property\nincluding homes, businesses, and some critical infrastructure\nwill be inundated. Some shoreline erosion will occur. Dangerous\nswimming and surfing conditions and localized beach erosion. Rip\ncurrents can sweep even the best swimmers away from shore into\ndeeper water.\n\n* ADDITIONAL DETAILS...Back bay flooding may persist beyond Monday\nafternoon.",
+      "instruction": "A Coastal Flood Warning means that moderate or major tidal\nflooding is occurring or imminent. Be prepared for rising water\nlevels and take appropriate action to protect life and property.\nFollow the recommendations of local emergency management\nofficials.\n\nDo not drive your vehicle through flood waters. The water may be\ndeeper than you think it is. You will be putting yourself in\ndanger and your vehicle may be damaged, leading to costly\nrepairs.\n\nVisit the National Water Prediction Service at\nhttps://water.noaa.gov/wfo/phi for additional water level and\nflood impact information for your local tide gauge.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nAlways obey posted Beach Flags. If you enter the surf zone,\nalways have a floatation device with you and swim near a\nlifeguard if possible. If caught in a rip current, relax and\nfloat and do not swim against the current. If able, swim parallel\nto the shoreline. If unable to escape, face the shore and call or\nwave for help.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T12:48:00-04:00",
+      "onset": "2026-09-27T12:48:00-04:00",
+      "expires": "2026-09-28T02:00:00-04:00",
+      "ends": "2026-09-27T20:00:00-04:00",
+      "areaDesc": "Coastal Ocean",
+      "senderName": "NWS Mount Holly NJ",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/NJZ026"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.006.3"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.6cc1bc79aa9bb729f250773026d5205c6370a437.005.2",
@@ -3394,31 +3794,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.005.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 8:32AM AKDT until September 27 at 7:00PM AKDT by NWS Juneau AK",
-      "description": "* WHAT...Southeast winds 15 to 25 kt expected.\n\n* WHERE...Icy Strait.\n\n* WHEN...From 1 PM this afternoon to 7 PM AKDT this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T08:32:00-08:00",
-      "onset": "2026-09-27T13:00:00-08:00",
-      "expires": "2026-09-27T16:45:00-08:00",
-      "ends": "2026-09-27T19:00:00-08:00",
-      "areaDesc": "Icy Strait",
-      "senderName": "NWS Juneau AK",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ021"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.011.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.011.1",
       "event": "Small Craft Advisory",
@@ -3442,6 +3817,31 @@
         "https://api.weather.gov/zones/forecast/PKZ036"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.011.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 8:32AM AKDT until September 27 at 7:00PM AKDT by NWS Juneau AK",
+      "description": "* WHAT...Southeast winds 15 to 25 kt expected.\n\n* WHERE...Icy Strait.\n\n* WHEN...From 1 PM this afternoon to 7 PM AKDT this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T08:32:00-08:00",
+      "onset": "2026-09-27T13:00:00-08:00",
+      "expires": "2026-09-27T16:45:00-08:00",
+      "ends": "2026-09-27T19:00:00-08:00",
+      "areaDesc": "Icy Strait",
+      "senderName": "NWS Juneau AK",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ021"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.012.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.008.1",
@@ -3547,31 +3947,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.003.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 8:32AM AKDT until September 27 at 7:00PM AKDT by NWS Juneau AK",
-      "description": "* WHAT...Southeast winds 20 to 30 kt with gusts up to 40 kt.\n\n* WHERE...Northern Chatham Strait.\n\n* WHEN...Until 7 PM AKDT this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T08:32:00-08:00",
-      "onset": "2026-09-27T08:32:00-08:00",
-      "expires": "2026-09-27T16:45:00-08:00",
-      "ends": "2026-09-27T19:00:00-08:00",
-      "areaDesc": "Northern Chatham Strait",
-      "senderName": "NWS Juneau AK",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ032"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.010.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.010.1",
       "event": "Small Craft Advisory",
@@ -3595,6 +3970,31 @@
         "https://api.weather.gov/zones/forecast/PKZ035"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.010.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 8:32AM AKDT until September 27 at 7:00PM AKDT by NWS Juneau AK",
+      "description": "* WHAT...Southeast winds 20 to 30 kt with gusts up to 40 kt.\n\n* WHERE...Northern Chatham Strait.\n\n* WHEN...Until 7 PM AKDT this evening.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T08:32:00-08:00",
+      "onset": "2026-09-27T08:32:00-08:00",
+      "expires": "2026-09-27T16:45:00-08:00",
+      "ends": "2026-09-27T19:00:00-08:00",
+      "areaDesc": "Northern Chatham Strait",
+      "senderName": "NWS Juneau AK",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ032"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.002.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.004.1",
@@ -3677,31 +4077,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6160b790bdbd8435afb993c1d5e51612d49e3cde.007.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 8:30AM AKDT until September 28 at 5:00PM AKDT by NWS Juneau AK",
-      "description": "Southeast Alaska Inside Waters from Dixon Entrance to Skagway\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\n.TODAY...S wind 15 kt. Seas 9 ft. Showers and slight chance of\nthunderstorms.\n.TONIGHT...S wind 10 kt. Seas 8 ft. Showers.\n.MON...S wind 10 kt. Seas 7 ft. W swell. Showers.\n.MON NIGHT...E wind 10 kt. Seas 7 ft. W swell. Showers.\n.TUE...SE wind 10 kt. Seas 7 ft.\n.WED...E wind 10 kt. Seas 5 ft.\n.THU...S wind 10 kt. Seas 4 ft.",
-      "instruction": null,
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T08:30:00-08:00",
-      "onset": "2026-09-27T08:00:00-08:00",
-      "expires": "2026-09-27T18:30:00-08:00",
-      "ends": "2026-09-28T17:00:00-08:00",
-      "areaDesc": "Cross Sound",
-      "senderName": "NWS Juneau AK",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ022"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.012.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.012.1",
       "event": "Small Craft Advisory",
@@ -3725,6 +4100,31 @@
         "https://api.weather.gov/zones/forecast/PKZ036"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.012.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 8:30AM AKDT until September 28 at 5:00PM AKDT by NWS Juneau AK",
+      "description": "Southeast Alaska Inside Waters from Dixon Entrance to Skagway\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\n.TODAY...S wind 15 kt. Seas 9 ft. Showers and slight chance of\nthunderstorms.\n.TONIGHT...S wind 10 kt. Seas 8 ft. Showers.\n.MON...S wind 10 kt. Seas 7 ft. W swell. Showers.\n.MON NIGHT...E wind 10 kt. Seas 7 ft. W swell. Showers.\n.TUE...SE wind 10 kt. Seas 7 ft.\n.WED...E wind 10 kt. Seas 5 ft.\n.THU...S wind 10 kt. Seas 4 ft.",
+      "instruction": null,
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T08:30:00-08:00",
+      "onset": "2026-09-27T08:00:00-08:00",
+      "expires": "2026-09-27T18:30:00-08:00",
+      "ends": "2026-09-28T17:00:00-08:00",
+      "areaDesc": "Cross Sound",
+      "senderName": "NWS Juneau AK",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ022"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cef6051e56df8d1c8d1a2527cc2ff0d0e943a97.006.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.4e0b211dcd7bab58026a9cb01526038e869174d9.001.1",
@@ -4249,58 +4649,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.110b2d77e32aa712dc5d42f2a9d99cdf21eeaa76.001.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.003.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.003.1",
-      "event": "Wind Advisory",
-      "headline": "Wind Advisory issued September 27 at 11:43AM EDT until September 27 at 4:00PM EDT by NWS Mount Holly NJ",
-      "description": "* WHAT...Northeast winds 15 to 20 mph with gusts up to 45 mph.\n\n* WHERE...Western Monmouth and Ocean Counties.\n\n* WHEN...Until 4 PM EDT this afternoon.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...Winds will be gradually diminishing over the\nnext few hours.",
-      "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.\n\nSecure outdoor objects.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T11:43:00-04:00",
-      "onset": "2026-09-27T11:43:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-27T16:00:00-04:00",
-      "areaDesc": "Western Monmouth; Ocean",
-      "senderName": "NWS Mount Holly NJ",
-      "response": "Execute",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NJZ013",
-        "https://api.weather.gov/zones/forecast/NJZ020"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.003.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.001.2",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.001.2",
-      "event": "Wind Advisory",
-      "headline": "Wind Advisory issued September 27 at 11:43AM EDT until September 27 at 4:00PM EDT by NWS Mount Holly NJ",
-      "description": "* WHAT...East winds 15 to 25 mph with gusts up to 45 mph.\n\n* WHERE...Eastern Monmouth and Coastal Ocean Counties.\n\n* WHEN...Until 4 PM EDT this afternoon.\n\n* IMPACTS...Gusty winds will blow around unsecured objects. Tree\nlimbs could be blown down and a few power outages may result.\n\n* ADDITIONAL DETAILS...Winds will be gradually diminishing over the\nnext few hours.",
-      "instruction": "Winds this strong can make driving difficult, especially for high\nprofile vehicles. Use extra caution.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T11:43:00-04:00",
-      "onset": "2026-09-27T11:43:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-27T16:00:00-04:00",
-      "areaDesc": "Eastern Monmouth; Coastal Ocean",
-      "senderName": "NWS Mount Holly NJ",
-      "response": "Execute",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NJZ014",
-        "https://api.weather.gov/zones/forecast/NJZ026"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cd98ed5f26831d2d826f6ba265c0c846e842f949.001.2"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.7100a3566974619f3066d9efe1f8c3f6c7299223.001.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7100a3566974619f3066d9efe1f8c3f6c7299223.001.1",
       "event": "Flood Watch",
@@ -4498,131 +4846,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.db60aabc5e5fc05a360ce2fd38e8089e65219f4b.001.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.1",
-      "event": "Coastal Flood Advisory",
-      "headline": "Coastal Flood Advisory issued September 27 at 10:55AM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
-      "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level low-lying areas near shorelines\nand tidal waterways with compromised dune structures. Elevated\nwater levels due to high astronomical tides and moderate west\nwinds may lead to localized minor flooding of low-lying areas\nprone to soundside flooding. For the Beach Hazards Statement,\ndangerous rip currents, large breaking waves, and hazardous\ndebris expected in the surf zone.\n\n* WHERE...Northern Outer Banks ocean-side locales that\nexperienced weakening of dune structures over the last few\ndays. For soundside localized flooding, low-lying areas prone\nto sound- side flooding in and near Manteo.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...The next oceanside high tide times are\naround 8:30 PM Sunday. The soundside high times are around\n11:30 AM Sunday and midnight Sunday night. The most likely time\nfor strong rip currents to occur is a couple hours either side\nof low tide, which will occur around 2:30 PM Sunday.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:55:00-04:00",
-      "onset": "2026-09-27T10:55:00-04:00",
-      "expires": "2026-09-28T00:00:00-04:00",
-      "ends": "2026-09-28T00:00:00-04:00",
-      "areaDesc": "Northern Outer Banks",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "Monitor",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ203"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.2",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.2",
-      "event": "Beach Hazards Statement",
-      "headline": "Beach Hazards Statement issued September 27 at 10:55AM EDT until September 27 at 8:00PM EDT by NWS Newport/Morehead City NC",
-      "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves, and hazardous debris in the\nsurf zone. For the Coastal Flood Advisory, up to one to two\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways with compromised\ndune structures.\n\n* WHERE...Hatteras Island.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Numerous roads may be closed. NC-12\nremains closed from the Basnight Bridge to Rodanthe. Dangerous\nswimming and surfing conditions.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.\nThe most likely time for strong rip currents to occur is a\ncouple hours either side of low tide, which will occur around\n2:30 PM Sunday.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:55:00-04:00",
-      "onset": "2026-09-27T10:55:00-04:00",
-      "expires": "2026-09-28T00:00:00-04:00",
-      "ends": "2026-09-27T20:00:00-04:00",
-      "areaDesc": "Hatteras Island",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ205"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.2"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.2",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.2",
-      "event": "Beach Hazards Statement",
-      "headline": "Beach Hazards Statement issued September 27 at 10:55AM EDT until September 27 at 8:00PM EDT by NWS Newport/Morehead City NC",
-      "description": "* WHAT...For the Coastal Flood Advisory, 1 to 2 feet of\ninundation above ground level low-lying areas near shorelines\nand tidal waterways with compromised dune structures. Elevated\nwater levels due to high astronomical tides and moderate west\nwinds may lead to localized minor flooding of low-lying areas\nprone to soundside flooding. For the Beach Hazards Statement,\ndangerous rip currents, large breaking waves, and hazardous\ndebris expected in the surf zone.\n\n* WHERE...Northern Outer Banks ocean-side locales that\nexperienced weakening of dune structures over the last few\ndays. For soundside localized flooding, low-lying areas prone\nto sound- side flooding in and near Manteo.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Dangerous swimming and surfing\nconditions and localized beach erosion.\n\n* ADDITIONAL DETAILS...The next oceanside high tide times are\naround 8:30 PM Sunday. The soundside high times are around\n11:30 AM Sunday and midnight Sunday night. The most likely time\nfor strong rip currents to occur is a couple hours either side\nof low tide, which will occur around 2:30 PM Sunday.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:55:00-04:00",
-      "onset": "2026-09-27T10:55:00-04:00",
-      "expires": "2026-09-28T00:00:00-04:00",
-      "ends": "2026-09-27T20:00:00-04:00",
-      "areaDesc": "Northern Outer Banks",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ203"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.001.2"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.003.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.003.1",
-      "event": "Coastal Flood Advisory",
-      "headline": "Coastal Flood Advisory issued September 27 at 10:55AM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
-      "description": "* WHAT...Up to one to two feet of inundation above ground level\nexpected in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures.\n\n* WHERE...Areas along the beaches, Pamlico Sound, and adjacent\ntidal creeks.\n\n* WHEN...Until midnight EDT tonight.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Portions of Highway 12 remain\nclosed between Pony Pens and the ferry dock. Low lying\nproperty including homes, businesses, and some critical\ninfrastructure may still be inundated. Some roads and low\nlying property including parking lots, parks, lawns, and homes\nadjacent to the waterfront will experience shallow flooding.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:55:00-04:00",
-      "onset": "2026-09-27T10:55:00-04:00",
-      "expires": "2026-09-28T00:00:00-04:00",
-      "ends": "2026-09-28T00:00:00-04:00",
-      "areaDesc": "Ocracoke Island",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "Monitor",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ204"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.003.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.1",
-      "event": "Coastal Flood Advisory",
-      "headline": "Coastal Flood Advisory issued September 27 at 10:55AM EDT until September 28 at 12:00AM EDT by NWS Newport/Morehead City NC",
-      "description": "* WHAT...For the Beach Hazards Statement, dangerous rip\ncurrents, large breaking waves, and hazardous debris in the\nsurf zone. For the Coastal Flood Advisory, up to one to two\nfeet of inundation above ground level expected in low-lying\nareas near shorelines and tidal waterways with compromised\ndune structures.\n\n* WHERE...Hatteras Island.\n\n* WHEN...For the Coastal Flood Advisory, until midnight EDT\ntonight. For the Beach Hazards Statement, through this evening.\n\n* IMPACTS...Up to 1 to 2 feet of inundation above ground level\nis possible in low-lying areas near shorelines and tidal\nwaterways with compromised dune structures resulting in a low\nthreat of property damage. Numerous roads may be closed. NC-12\nremains closed from the Basnight Bridge to Rodanthe. Dangerous\nswimming and surfing conditions.\n\n* ADDITIONAL DETAILS...High tides on Sunday are around 8:40 PM.\nThe most likely time for strong rip currents to occur is a\ncouple hours either side of low tide, which will occur around\n2:30 PM Sunday.",
-      "instruction": "If travel is required, allow extra time as some roads may be\nclosed. Do not drive around barricades or through water of\nunknown depth. Take the necessary actions to protect flood-prone\nproperty.\n\nInexperienced swimmers should remain out of the water due to\ndangerous surf conditions.\n\nWatch out for debris that may be in the water.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:55:00-04:00",
-      "onset": "2026-09-27T10:55:00-04:00",
-      "expires": "2026-09-28T00:00:00-04:00",
-      "ends": "2026-09-28T00:00:00-04:00",
-      "areaDesc": "Hatteras Island",
-      "senderName": "NWS Newport/Morehead City NC",
-      "response": "Monitor",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NCZ205"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9e01047dde66f68daf7fcf915879a3a5212c78d.002.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.a3bb7e197c251f419d30dca337f9e6974e58fc6f.001.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a3bb7e197c251f419d30dca337f9e6974e58fc6f.001.1",
       "event": "Small Craft Advisory",
@@ -4727,31 +4950,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.005.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1",
-      "event": "Gale Warning",
-      "headline": "Gale Warning issued September 27 at 10:43AM EDT until September 27 at 6:00PM EDT by NWS Mount Holly NJ",
-      "description": "* WHAT...Northwest winds 20 to 25 kt with gusts up to 35 kt and\nrough waters.\n\n* WHERE...Delaware Bay waters south of East Point NJ to\nSlaughter Beach DE.\n\n* WHEN...Until 6 PM EDT this evening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
-      "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T10:43:00-04:00",
-      "onset": "2026-09-27T10:43:00-04:00",
-      "expires": "2026-09-27T18:00:00-04:00",
-      "ends": "2026-09-27T18:00:00-04:00",
-      "areaDesc": "Delaware Bay waters south of East Point NJ to Slaughter Beach DE",
-      "senderName": "NWS Mount Holly NJ",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/ANZ431"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.006.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.006.1",
       "event": "Gale Warning",
@@ -4778,6 +4976,31 @@
         "https://api.weather.gov/zones/forecast/ANZ453"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.006.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1",
+      "event": "Gale Warning",
+      "headline": "Gale Warning issued September 27 at 10:43AM EDT until September 27 at 6:00PM EDT by NWS Mount Holly NJ",
+      "description": "* WHAT...Northwest winds 20 to 25 kt with gusts up to 35 kt and\nrough waters.\n\n* WHERE...Delaware Bay waters south of East Point NJ to\nSlaughter Beach DE.\n\n* WHEN...Until 6 PM EDT this evening.\n\n* IMPACTS...Strong winds will cause hazardous seas which could\ncapsize or damage vessels and reduce visibility.",
+      "instruction": "Mariners should alter plans to avoid these hazardous conditions.\nRemain in port, seek safe harbor, alter course, and/or secure the\nvessel for hazardous conditions.",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T10:43:00-04:00",
+      "onset": "2026-09-27T10:43:00-04:00",
+      "expires": "2026-09-27T18:00:00-04:00",
+      "ends": "2026-09-27T18:00:00-04:00",
+      "areaDesc": "Delaware Bay waters south of East Point NJ to Slaughter Beach DE",
+      "senderName": "NWS Mount Holly NJ",
+      "response": "Avoid",
+      "messageType": "Update",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/ANZ431"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.003.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.9fe6f69dff78844467c9b54decc5d8745d5fa919.001.2",
@@ -4984,31 +5207,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.008.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 6:41AM AKDT until September 28 at 5:00AM AKDT by NWS Juneau AK",
-      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...SW wind 15 kt. Seas 12 ft. Slight chance of\nthunderstorms.\n.TODAY...SW wind 15 kt. Seas 11 ft. Slight chance of\nthunderstorms. Showers in the morning.\n.TONIGHT...SW wind 15 kt. Seas 10 ft.\n.MON...SW wind 15 kt. Seas 10 ft. Showers in the afternoon.\n.MON NIGHT...S wind 15 kt. Seas 9 ft. Showers.\n.TUE...SW wind 15 kt. Seas 8 ft.\n.WED...S wind 15 kt. Seas 7 ft.\n.THU...S wind 15 kt. Seas 5 ft.",
-      "instruction": null,
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T06:41:00-08:00",
-      "onset": "2026-09-27T06:00:00-08:00",
-      "expires": "2026-09-28T00:45:00-08:00",
-      "ends": "2026-09-28T05:00:00-08:00",
-      "areaDesc": "Cape Edgecumbe to Cape Spencer from 15 to 80 NM",
-      "senderName": "NWS Juneau AK",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ663"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.005.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.005.1",
       "event": "Small Craft Advisory",
@@ -5032,6 +5230,31 @@
         "https://api.weather.gov/zones/forecast/PKZ662"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.005.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 6:41AM AKDT until September 28 at 5:00AM AKDT by NWS Juneau AK",
+      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...SW wind 15 kt. Seas 12 ft. Slight chance of\nthunderstorms.\n.TODAY...SW wind 15 kt. Seas 11 ft. Slight chance of\nthunderstorms. Showers in the morning.\n.TONIGHT...SW wind 15 kt. Seas 10 ft.\n.MON...SW wind 15 kt. Seas 10 ft. Showers in the afternoon.\n.MON NIGHT...S wind 15 kt. Seas 9 ft. Showers.\n.TUE...SW wind 15 kt. Seas 8 ft.\n.WED...S wind 15 kt. Seas 7 ft.\n.THU...S wind 15 kt. Seas 5 ft.",
+      "instruction": null,
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T06:41:00-08:00",
+      "onset": "2026-09-27T06:00:00-08:00",
+      "expires": "2026-09-28T00:45:00-08:00",
+      "ends": "2026-09-28T05:00:00-08:00",
+      "areaDesc": "Cape Edgecumbe to Cape Spencer from 15 to 80 NM",
+      "senderName": "NWS Juneau AK",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ663"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.007.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.011.1",
@@ -5084,11 +5307,11 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.003.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1",
+      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1",
       "event": "Small Craft Advisory",
       "headline": "Small Craft Advisory issued September 27 at 6:41AM AKDT until September 28 at 5:00AM AKDT by NWS Juneau AK",
-      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...S wind 30 kt. Seas 13 ft. Showers and slight\nchance of thunderstorms.\n.TODAY...S wind 25 kt. Seas 12 ft. Slight chance of\nthunderstorms. Showers.\n.TONIGHT...S wind 25 kt becoming W 15 kt late. Seas 12 ft.\nShowers in the evening. Slight chance of thunderstorms.\n.MON...SW wind 15 kt. Seas 9 ft.\n.MON NIGHT...S wind 15 kt. Seas 8 ft. W swell. Showers.\n.TUE...SW wind 15 kt. Seas 8 ft.\n.WED...S wind 10 kt. Seas 7 ft.\n.THU...S wind 10 kt. Seas 5 ft.",
+      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...SE wind 15 kt. Seas 10 ft. Showers and chance of\nthunderstorms.\n.TODAY...SE wind 15 kt. Seas 10 ft. Showers.\n.TONIGHT...SE wind 20 kt. Seas 9 ft. Showers.\n.MON...SE wind 20 kt. Seas 9 ft. Showers.\n.MON NIGHT...E wind 20 kt. Seas 8 ft. Rain showers.\n.TUE...E wind 15 kt. Seas 7 ft.\n.WED...E wind 15 kt. Seas 6 ft.\n.THU...SE wind 15 kt. Seas 4 ft.",
       "instruction": null,
       "severity": "Minor",
       "certainty": "Likely",
@@ -5097,16 +5320,16 @@
       "onset": "2026-09-27T06:00:00-08:00",
       "expires": "2026-09-28T00:45:00-08:00",
       "ends": "2026-09-28T05:00:00-08:00",
-      "areaDesc": "Dixon Entrance to Cape Decision out to 15 NM",
+      "areaDesc": "Cape Fairweather to Icy Cape out to 15 NM",
       "senderName": "NWS Juneau AK",
       "response": "Avoid",
       "messageType": "Alert",
       "status": "Actual",
       "category": "Met",
       "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ641"
+        "https://api.weather.gov/zones/forecast/PKZ651"
       ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1"
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.013.1",
@@ -5134,11 +5357,11 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.013.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1",
+      "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1",
       "event": "Small Craft Advisory",
       "headline": "Small Craft Advisory issued September 27 at 6:41AM AKDT until September 28 at 5:00AM AKDT by NWS Juneau AK",
-      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...SE wind 15 kt. Seas 10 ft. Showers and chance of\nthunderstorms.\n.TODAY...SE wind 15 kt. Seas 10 ft. Showers.\n.TONIGHT...SE wind 20 kt. Seas 9 ft. Showers.\n.MON...SE wind 20 kt. Seas 9 ft. Showers.\n.MON NIGHT...E wind 20 kt. Seas 8 ft. Rain showers.\n.TUE...E wind 15 kt. Seas 7 ft.\n.WED...E wind 15 kt. Seas 6 ft.\n.THU...SE wind 15 kt. Seas 4 ft.",
+      "description": "Southeast Alaska Coastal Waters from Dixon Entrance to\nCape Suckling out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Seas forecasts represent the average of the highest\none-third of the combined windwave and swell height.\n\nUPDATED\n\n...SMALL CRAFT ADVISORY THROUGH LATE TONIGHT...\n\n.REST OF TODAY...S wind 30 kt. Seas 13 ft. Showers and slight\nchance of thunderstorms.\n.TODAY...S wind 25 kt. Seas 12 ft. Slight chance of\nthunderstorms. Showers.\n.TONIGHT...S wind 25 kt becoming W 15 kt late. Seas 12 ft.\nShowers in the evening. Slight chance of thunderstorms.\n.MON...SW wind 15 kt. Seas 9 ft.\n.MON NIGHT...S wind 15 kt. Seas 8 ft. W swell. Showers.\n.TUE...SW wind 15 kt. Seas 8 ft.\n.WED...S wind 10 kt. Seas 7 ft.\n.THU...S wind 10 kt. Seas 5 ft.",
       "instruction": null,
       "severity": "Minor",
       "certainty": "Likely",
@@ -5147,16 +5370,16 @@
       "onset": "2026-09-27T06:00:00-08:00",
       "expires": "2026-09-28T00:45:00-08:00",
       "ends": "2026-09-28T05:00:00-08:00",
-      "areaDesc": "Cape Fairweather to Icy Cape out to 15 NM",
+      "areaDesc": "Dixon Entrance to Cape Decision out to 15 NM",
       "senderName": "NWS Juneau AK",
       "response": "Avoid",
       "messageType": "Alert",
       "status": "Actual",
       "category": "Met",
       "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ651"
+        "https://api.weather.gov/zones/forecast/PKZ641"
       ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.010.1"
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.002.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.0dbb44bf00f9ef105e1704d5cac0769d82368236.004.1",
@@ -5320,6 +5543,31 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.004.1"
     },
     {
+      "id": "urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2",
+      "event": "High Surf Advisory",
+      "headline": "High Surf Advisory issued September 27 at 3:49AM HST until September 27 at 6:00PM HST by NWS Honolulu HI",
+      "description": "...HIGH SURF ADVISORY IN EFFECT FOR EAST FACING SHORES OF MOLOKAI,\nMAUI, AND THE BIG ISLAND THROUGH THIS EVENING...\n\n...HIGH SURF ADVISORY IN EFFECT FOR SOUTHEAST FACING SHORES OF\nTHE BIG ISLAND THROUGH THIS EVENING...\n\n...HIGH SURF ADVISORY IN EFFECT FOR EAST FACING SHORES OF KAUAI\nAND OAHU THROUGH MONDAY MORNING...\n\n.Southeast swell generated by Hurricane Nolo is beginning to decline\nfor the Big Island, but continues to produce advisory level surf for\neast and southeast facing shores. This swell combined with\ngale-force trades is producing advisory level surf along east\nfacing shores of Maui, Molokai, Oahu and Kauai. Surf will\ndiminish below advisory criteria later today for the eastern\nislands but will likely continue through tonight for Oahu and\nKauai as Nolo moves westward away from the islands.\n\n* WHAT...Large breaking waves of 9 to 12 feet in the morning,\ndiminishing to 7 to 10 ft by this evening.\n\n* WHERE...Southeast facing shores of the Big Island.\n\n* WHEN...Until 6 PM HST this evening.\n\n* IMPACTS...Moderate to high. Strong breaking waves and strong\ncurrents will make swimming dangerous. Waves breaking in\nchannel entrances may make navigating the channels dangerous.",
+      "instruction": "Heed all advice from ocean safety officials. When in doubt, don't\ngo out.",
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T03:49:00-10:00",
+      "onset": "2026-09-27T03:49:00-10:00",
+      "expires": "2026-09-27T17:00:00-10:00",
+      "ends": "2026-09-27T18:00:00-10:00",
+      "areaDesc": "Big Island Southeast",
+      "senderName": "NWS Honolulu HI",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/HIZ052"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2"
+    },
+    {
       "id": "urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.003.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.003.1",
       "event": "High Surf Advisory",
@@ -5346,31 +5594,6 @@
         "https://api.weather.gov/zones/forecast/HIZ035"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.003.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2",
-      "event": "High Surf Advisory",
-      "headline": "High Surf Advisory issued September 27 at 3:49AM HST until September 27 at 6:00PM HST by NWS Honolulu HI",
-      "description": "...HIGH SURF ADVISORY IN EFFECT FOR EAST FACING SHORES OF MOLOKAI,\nMAUI, AND THE BIG ISLAND THROUGH THIS EVENING...\n\n...HIGH SURF ADVISORY IN EFFECT FOR SOUTHEAST FACING SHORES OF\nTHE BIG ISLAND THROUGH THIS EVENING...\n\n...HIGH SURF ADVISORY IN EFFECT FOR EAST FACING SHORES OF KAUAI\nAND OAHU THROUGH MONDAY MORNING...\n\n.Southeast swell generated by Hurricane Nolo is beginning to decline\nfor the Big Island, but continues to produce advisory level surf for\neast and southeast facing shores. This swell combined with\ngale-force trades is producing advisory level surf along east\nfacing shores of Maui, Molokai, Oahu and Kauai. Surf will\ndiminish below advisory criteria later today for the eastern\nislands but will likely continue through tonight for Oahu and\nKauai as Nolo moves westward away from the islands.\n\n* WHAT...Large breaking waves of 9 to 12 feet in the morning,\ndiminishing to 7 to 10 ft by this evening.\n\n* WHERE...Southeast facing shores of the Big Island.\n\n* WHEN...Until 6 PM HST this evening.\n\n* IMPACTS...Moderate to high. Strong breaking waves and strong\ncurrents will make swimming dangerous. Waves breaking in\nchannel entrances may make navigating the channels dangerous.",
-      "instruction": "Heed all advice from ocean safety officials. When in doubt, don't\ngo out.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T03:49:00-10:00",
-      "onset": "2026-09-27T03:49:00-10:00",
-      "expires": "2026-09-27T17:00:00-10:00",
-      "ends": "2026-09-27T18:00:00-10:00",
-      "areaDesc": "Big Island Southeast",
-      "senderName": "NWS Honolulu HI",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/HIZ052"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.04c2b99b56a556b222fb16bb9c979318f26c9668.001.1",
@@ -6110,31 +6333,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.007.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 3:46AM AKDT until September 28 at 5:00AM AKDT by NWS Fairbanks AK",
-      "description": "Northwestern Alaska Coastal Waters out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent the average of the highest one-\nthird of the combined wind-wave and swell height.\n\n.TODAY...N winds 30 kt. Seas 8 ft.\n.TONIGHT...N winds 30 kt. Seas 9 ft.\n.MON...N winds 30 kt. Seas 9 ft.\n.MON NIGHT...N winds 25 kt. Seas 7 ft.\n.TUE...N winds 25 kt. Seas 6 ft.\n.TUE NIGHT...N winds 25 kt. Seas 5 ft.\n.WED...N winds 20 kt. Seas 5 ft.\n.THU...N winds 15 kt. Seas 4 ft.",
-      "instruction": null,
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T03:46:00-08:00",
-      "onset": "2026-09-27T03:00:00-08:00",
-      "expires": "2026-09-27T18:00:00-08:00",
-      "ends": "2026-09-28T05:00:00-08:00",
-      "areaDesc": "Sledge Island to Wales greater than 15 NM",
-      "senderName": "NWS Fairbanks AK",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ854"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.012.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.012.1",
       "event": "Small Craft Advisory",
@@ -6158,6 +6356,31 @@
         "https://api.weather.gov/zones/forecast/PKZ817"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.012.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 27 at 3:46AM AKDT until September 28 at 5:00AM AKDT by NWS Fairbanks AK",
+      "description": "Northwestern Alaska Coastal Waters out 100 NM\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent the average of the highest one-\nthird of the combined wind-wave and swell height.\n\n.TODAY...N winds 30 kt. Seas 8 ft.\n.TONIGHT...N winds 30 kt. Seas 9 ft.\n.MON...N winds 30 kt. Seas 9 ft.\n.MON NIGHT...N winds 25 kt. Seas 7 ft.\n.TUE...N winds 25 kt. Seas 6 ft.\n.TUE NIGHT...N winds 25 kt. Seas 5 ft.\n.WED...N winds 20 kt. Seas 5 ft.\n.THU...N winds 15 kt. Seas 4 ft.",
+      "instruction": null,
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-27T03:46:00-08:00",
+      "onset": "2026-09-27T03:00:00-08:00",
+      "expires": "2026-09-27T18:00:00-08:00",
+      "ends": "2026-09-28T05:00:00-08:00",
+      "areaDesc": "Sledge Island to Wales greater than 15 NM",
+      "senderName": "NWS Fairbanks AK",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ854"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.017.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.a36c8f8dec20b52e0f7e9ed7cea0230d7614d39b.008.1",
@@ -6758,203 +6981,6 @@
         "https://api.weather.gov/zones/forecast/PKZ642"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf3af8d527d942bf23b3f64dee6a947f75275162.004.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.002.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 1:47AM PDT until September 28 at 11:00PM PDT by NWS Medford OR",
-      "description": "* WHAT...Steep seas 6 to 10 feet at 7 seconds through Monday\nevening. North winds 15 to 25 kt with gusts to 35 kt,\nstrongest during the afternoon and evening hours.\n\n* WHERE...All waters south of Cape Blanco.\n\n* WHEN...Until 11 PM PDT Monday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
-      "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T01:47:00-07:00",
-      "onset": "2026-09-27T01:47:00-07:00",
-      "expires": "2026-09-27T15:00:00-07:00",
-      "ends": "2026-09-28T23:00:00-07:00",
-      "areaDesc": "Coastal waters from Cape Blanco OR to Pt. St. George CA out 10 nm; Waters from Cape Blanco OR to Pt. St. George CA from 10 to 60 nm",
-      "senderName": "NWS Medford OR",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PZZ356",
-        "https://api.weather.gov/zones/forecast/PZZ376"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.002.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.001.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 1:47AM PDT until September 28 at 8:00AM PDT by NWS Medford OR",
-      "description": "* WHAT...Steep seas 6 to 8 feet at 7 seconds into Monday morning.\nNorth winds 15 to 25 kt into this evening, then 10 to 20 kt\nlater tonight into Monday morning.\n\n* WHERE...All waters north of Cape Blanco.\n\n* WHEN...Until 8 AM PDT Monday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
-      "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T01:47:00-07:00",
-      "onset": "2026-09-27T01:47:00-07:00",
-      "expires": "2026-09-27T15:00:00-07:00",
-      "ends": "2026-09-28T08:00:00-07:00",
-      "areaDesc": "Coastal waters from Florence to Cape Blanco OR out 10 nm; Waters from Florence to Cape Blanco OR from 10 to 60 nm",
-      "senderName": "NWS Medford OR",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PZZ350",
-        "https://api.weather.gov/zones/forecast/PZZ370"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.46aea81f6b9c938b59b4b328b6498e5f9846d590.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.46aea81f6b9c938b59b4b328b6498e5f9846d590.001.1",
-      "event": "Flood Watch",
-      "headline": "Flood Watch issued September 27 at 1:44AM MST until September 29 at 9:00PM MST by NWS Phoenix AZ",
-      "description": "* WHAT...Flooding caused by excessive rainfall is possible.\n\n* WHERE...A portion of south central Arizona, including the following\nareas, Aguila Valley, Apache Junction/Gold Canyon, Cave Creek/New\nRiver, Deer Valley, Dripping Springs, Fountain Hills/East Mesa,\nGlobe/Miami, Mazatzal Mountains, New River Mesa, Northwest Valley,\nPinal/Superstition Mountains, Rio Verde/Salt River, San Carlos,\nSoutheast Gila County, Superior and Tonto Basin.\n\n* WHEN...From late Monday night through Tuesday evening.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- The combination of deep tropical moisture moving into the area\nfrom the south and an approaching weather disturbance from the\nwest will result in showers and thunderstorms capable of\nproducing localized heavy rainfall. Moderate to heavy rainfall\nrates in excess of 1-2 inches per hour are expected. Some areas\nwill see training of storms leading to heavier rainfall\naccumulations.\n\n- Http://www.weather.gov/safety/flood",
-      "instruction": "You should monitor later forecasts and be alert for possible Flood\nWarnings. Those living in areas prone to flooding should be prepared\nto take action should flooding develop.",
-      "severity": "Severe",
-      "certainty": "Possible",
-      "urgency": "Future",
-      "effective": "2026-09-27T01:44:00-07:00",
-      "onset": "2026-09-29T00:00:00-07:00",
-      "expires": "2026-09-27T17:00:00-07:00",
-      "ends": "2026-09-29T21:00:00-07:00",
-      "areaDesc": "Aguila Valley; Northwest Valley; Cave Creek/New River; Deer Valley; New River Mesa; Rio Verde/Salt River; Fountain Hills/East Mesa; Superior; Apache Junction/Gold Canyon; Tonto Basin; Mazatzal Mountains; Pinal/Superstition Mountains; San Carlos; Dripping Springs; Globe/Miami; Southeast Gila County",
-      "senderName": "NWS Phoenix AZ",
-      "response": "Prepare",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/AZZ534",
-        "https://api.weather.gov/zones/forecast/AZZ537",
-        "https://api.weather.gov/zones/forecast/AZZ541",
-        "https://api.weather.gov/zones/forecast/AZZ542",
-        "https://api.weather.gov/zones/forecast/AZZ545",
-        "https://api.weather.gov/zones/forecast/AZZ547",
-        "https://api.weather.gov/zones/forecast/AZZ549",
-        "https://api.weather.gov/zones/forecast/AZZ552",
-        "https://api.weather.gov/zones/forecast/AZZ555",
-        "https://api.weather.gov/zones/forecast/AZZ556",
-        "https://api.weather.gov/zones/forecast/AZZ557",
-        "https://api.weather.gov/zones/forecast/AZZ558",
-        "https://api.weather.gov/zones/forecast/AZZ560",
-        "https://api.weather.gov/zones/forecast/AZZ561",
-        "https://api.weather.gov/zones/forecast/AZZ562",
-        "https://api.weather.gov/zones/forecast/AZZ563"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.46aea81f6b9c938b59b4b328b6498e5f9846d590.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.002.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.002.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 4:16AM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
-      "description": "* WHAT...Northeast winds 15 to 20 knots and waves 3 to 6 feet\nexpected.\n\n* WHERE...The nearshore waters of Lake Ontario from the Niagara\nRiver to Hamlin Beach.\n\n* WHEN...Until 4 AM EDT Monday.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T04:16:00-04:00",
-      "onset": "2026-09-27T05:00:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-28T04:00:00-04:00",
-      "areaDesc": "Niagara River to Hamlin Beach NY",
-      "senderName": "NWS Buffalo NY",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/LOZ042"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.002.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.003.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.003.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 4:16AM EDT until September 27 at 10:00PM EDT by NWS Buffalo NY",
-      "description": "* WHAT...Northeast winds 15 to 25 knots and waves up to 4 feet.\n\n* WHERE...The nearshore waters of Lake Ontario from Mexico Bay\nto the Saint Lawrence River.\n\n* WHEN...Until 10 PM EDT this evening.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T04:16:00-04:00",
-      "onset": "2026-09-27T04:16:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-27T22:00:00-04:00",
-      "areaDesc": "Mexico Bay NY to the St. Lawrence River",
-      "senderName": "NWS Buffalo NY",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/LOZ045"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.003.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.001.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 27 at 4:16AM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
-      "description": "* WHAT...Northeast winds 15 to 25 knots and waves 5 to 8 feet.\n\n* WHERE...The nearshore waters of Lake Ontario from Hamlin Beach\nto Mexico Bay.\n\n* WHEN...Until 4 AM EDT Monday.\n\n* IMPACTS...Winds and/or waves will cause hazardous conditions\nthat could capsize or damage small craft.",
-      "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T04:16:00-04:00",
-      "onset": "2026-09-27T04:16:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-28T04:00:00-04:00",
-      "areaDesc": "Hamlin Beach to Sodus Bay NY; Sodus Bay to Mexico Bay NY",
-      "senderName": "NWS Buffalo NY",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/LOZ043",
-        "https://api.weather.gov/zones/forecast/LOZ044"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d554133eed3907474f7b6013e0271a493ca8ca21.001.1"
-    },
-    {
-      "id": "urn:oid:2.49.0.1.840.0.9bad3b499c4b86aa297f2befd2ee68a1a40f3f3e.001.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9bad3b499c4b86aa297f2befd2ee68a1a40f3f3e.001.1",
-      "event": "Beach Hazards Statement",
-      "headline": "Beach Hazards Statement issued September 27 at 4:15AM EDT until September 28 at 4:00AM EDT by NWS Buffalo NY",
-      "description": "* WHAT...Strong currents and dangerous swimming conditions.\n\n* WHERE...Beaches of Orleans, Monroe, Wayne, Northern Cayuga,\nand Oswego counties.\n\n* WHEN...Through late tonight.\n\n* IMPACTS...Strong currents and dangerous swimming conditions.",
-      "instruction": "Stay out of the water to avoid dangerous swimming conditions.",
-      "severity": "Moderate",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-27T04:15:00-04:00",
-      "onset": "2026-09-27T04:15:00-04:00",
-      "expires": "2026-09-27T16:00:00-04:00",
-      "ends": "2026-09-28T04:00:00-04:00",
-      "areaDesc": "Orleans; Monroe; Wayne; Northern Cayuga; Oswego",
-      "senderName": "NWS Buffalo NY",
-      "response": "Avoid",
-      "messageType": "Update",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/NYZ002",
-        "https://api.weather.gov/zones/forecast/NYZ003",
-        "https://api.weather.gov/zones/forecast/NYZ004",
-        "https://api.weather.gov/zones/forecast/NYZ005",
-        "https://api.weather.gov/zones/forecast/NYZ006"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9bad3b499c4b86aa297f2befd2ee68a1a40f3f3e.001.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.502052aea489cc6714da12d1b9b26725753af794.001.1",
@@ -7978,31 +8004,6 @@
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.002.1"
     },
     {
-      "id": "urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1",
-      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1",
-      "event": "Small Craft Advisory",
-      "headline": "Small Craft Advisory issued September 26 at 2:49PM AKDT until September 28 at 5:00AM AKDT by NWS Anchorage AK",
-      "description": "Coastal Waters Forecast for Southwest Alaska+Bristol Bay+The\nAlaska Peninsula Waters and the Aleutian Islands up to 100 nm out.\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent an average of the highest\none-third of the combined wind wave and swell height.\n\n.TONIGHT...W wind 30 kt. Seas 5 ft. Rain showers.\n.SUN...W wind 25 kt. Seas 4 ft. Rain showers.\n.SUN NIGHT...NW wind 25 kt. Seas 8 ft subsiding to 4 ft after\nmidnight.\n.MON...W wind 25 kt. Seas 4 ft.\n.MON NIGHT...W wind 20 kt. Seas 3 ft.\n.TUE...W wind 15 kt. Seas 2 ft.\n.WED...S wind 20 kt. Seas 2 ft.\n.THU...NE wind 25 kt. Seas 7 ft.",
-      "instruction": null,
-      "severity": "Minor",
-      "certainty": "Likely",
-      "urgency": "Expected",
-      "effective": "2026-09-26T14:49:00-08:00",
-      "onset": "2026-09-27T05:00:00-08:00",
-      "expires": "2026-09-27T03:45:00-08:00",
-      "ends": "2026-09-28T05:00:00-08:00",
-      "areaDesc": "Unalaska Bay",
-      "senderName": "NWS Anchorage AK",
-      "response": "Avoid",
-      "messageType": "Alert",
-      "status": "Actual",
-      "category": "Met",
-      "affectedZones": [
-        "https://api.weather.gov/zones/forecast/PKZ771"
-      ],
-      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1"
-    },
-    {
       "id": "urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.021.1",
       "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.021.1",
       "event": "Small Craft Advisory",
@@ -8026,6 +8027,31 @@
         "https://api.weather.gov/zones/forecast/PKZ778"
       ],
       "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.021.1"
+    },
+    {
+      "id": "urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1",
+      "alertUri": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1",
+      "event": "Small Craft Advisory",
+      "headline": "Small Craft Advisory issued September 26 at 2:49PM AKDT until September 28 at 5:00AM AKDT by NWS Anchorage AK",
+      "description": "Coastal Waters Forecast for Southwest Alaska+Bristol Bay+The\nAlaska Peninsula Waters and the Aleutian Islands up to 100 nm out.\n\nWind forecasts reflect the predominant speed and direction\nexpected. Sea forecasts represent an average of the highest\none-third of the combined wind wave and swell height.\n\n.TONIGHT...W wind 30 kt. Seas 5 ft. Rain showers.\n.SUN...W wind 25 kt. Seas 4 ft. Rain showers.\n.SUN NIGHT...NW wind 25 kt. Seas 8 ft subsiding to 4 ft after\nmidnight.\n.MON...W wind 25 kt. Seas 4 ft.\n.MON NIGHT...W wind 20 kt. Seas 3 ft.\n.TUE...W wind 15 kt. Seas 2 ft.\n.WED...S wind 20 kt. Seas 2 ft.\n.THU...NE wind 25 kt. Seas 7 ft.",
+      "instruction": null,
+      "severity": "Minor",
+      "certainty": "Likely",
+      "urgency": "Expected",
+      "effective": "2026-09-26T14:49:00-08:00",
+      "onset": "2026-09-27T05:00:00-08:00",
+      "expires": "2026-09-27T03:45:00-08:00",
+      "ends": "2026-09-28T05:00:00-08:00",
+      "areaDesc": "Unalaska Bay",
+      "senderName": "NWS Anchorage AK",
+      "response": "Avoid",
+      "messageType": "Alert",
+      "status": "Actual",
+      "category": "Met",
+      "affectedZones": [
+        "https://api.weather.gov/zones/forecast/PKZ771"
+      ],
+      "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.015.1"
     },
     {
       "id": "urn:oid:2.49.0.1.840.0.a4b3463273ed957e8516bef981f6a1d4ad24bb1a.017.1",

@@ -1,6 +1,85 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 export type Article = CollectionEntry<'articles'>;
+
+// ===========================================================================
+// Lifecycle types and helpers (Phase 5B)
+// ===========================================================================
+
+export type LifecycleStatus = 'active' | 'ending-soon' | 'expired' | 'cancelled' | 'superseded';
+
+export interface PublishedStory {
+  storyKey: string;
+  slug: string;
+  articlePath: string;
+  publishedAt: string;
+  updatedAt: string | null;
+  currentAlertIds: string[];
+  allAlertIds: string[];
+  event: string;
+  location: string;
+  sourceOffice: string;
+  lifecycleStatus: LifecycleStatus;
+  lastNwsEffectiveAt: string | null;
+  lastNwsExpiresAt: string | null;
+  lastNwsEndsAt: string | null;
+  lastCheckedAt: string;
+  heroImageMode: string;
+  heroImageSource: string;
+  heroImageRelation: string;
+  heroImageCreator: string;
+  heroImageLicense: string;
+  heroImageLicenseUrl: string;
+  heroImageSourcePageUrl: string;
+  breaking: boolean;
+}
+
+export interface PublishedRegistry {
+  generatedAt: string;
+  storyCount: number;
+  stories: PublishedStory[];
+}
+
+/**
+ * Load the published-stories registry from data/published-stories.json.
+ * Returns null if the file doesn't exist.
+ */
+export async function getPublishedRegistry(): Promise<PublishedRegistry | null> {
+  try {
+    const raw = await readFile(join(process.cwd(), 'data', 'published-stories.json'), 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Find a published story by its slug in the registry.
+ */
+export function findPublishedStory(
+  registry: PublishedRegistry | null,
+  slug: string,
+): PublishedStory | null {
+  if (!registry) return null;
+  return registry.stories.find((s) => s.slug === slug) || null;
+}
+
+/**
+ * A story is "current" if it is active or ending-soon.
+ * Archived stories (expired, cancelled, superseded) are NOT current.
+ */
+export function isCurrentStory(status: LifecycleStatus | undefined): boolean {
+  return status === 'active' || status === 'ending-soon';
+}
+
+/**
+ * A story is "archived" if it has expired, been cancelled, or been superseded.
+ */
+export function isArchivedStory(status: LifecycleStatus | undefined): boolean {
+  return status === 'expired' || status === 'cancelled' || status === 'superseded';
+}
 
 /**
  * Return all articles, newest first. Collection entries are keyed by `slug`

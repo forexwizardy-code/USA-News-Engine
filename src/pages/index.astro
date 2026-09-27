@@ -10,13 +10,37 @@ import {
   getByCategory,
   getMostRead,
   getAcrossAmerica,
+  getPublishedRegistry,
+  isCurrentStory,
   relativeTime,
 } from '../lib/articles';
 import { SITE_NAME, SITE_DESCRIPTION } from '../consts';
 
+// ---- Load the published-stories registry for lifecycle filtering ----
+const registry = await getPublishedRegistry();
+
+/**
+ * Filter helper: exclude archived (expired/cancelled/superseded) stories
+ * from "current" homepage surfaces like Breaking, Featured, and Weather.
+ * Archived stories remain accessible via their URL but don't appear as
+ * current alerts.
+ */
+function isCurrentArticle(slug: string): boolean {
+  if (!registry) return true; // No registry — show all (backwards compatible)
+  const story = registry.stories.find((s) => s.slug === slug);
+  if (!story) return true; // Not in registry — show (may be a non-NWS article)
+  return isCurrentStory(story.lifecycleStatus);
+}
+
 // ---- Data: every section reads from the content collection ----
-const breaking = await getBreaking();
-const featured = await getFeatured();
+const allBreaking = await getBreaking();
+const breaking = allBreaking.filter((a) => isCurrentArticle(a.data.slug));
+
+const allFeatured = await getFeatured();
+// If the featured story is archived, fall back to the newest current article
+const featured = isCurrentArticle(allFeatured.data.slug)
+  ? allFeatured
+  : allBreaking.find((a) => isCurrentArticle(a.data.slug)) || allFeatured;
 const featuredSlug = featured.data.slug;
 
 // 4 smaller stories for the hero rail (exclude the featured one).
@@ -26,8 +50,9 @@ const heroRail = await getLatest(4, new Set([featuredSlug]));
 const heroSlugs = new Set([featuredSlug, ...heroRail.map((a) => a.data.slug)]);
 const latest = await getLatest(6, heroSlugs);
 
-// Weather & Alerts
-const weather = await getByCategory('weather');
+// Weather & Alerts — only show current (non-archived) stories
+const allWeather = await getByCategory('weather');
+const weather = allWeather.filter((a) => isCurrentArticle(a.data.slug));
 
 // Recalls & Safety
 const recalls = await getByCategory('recalls');

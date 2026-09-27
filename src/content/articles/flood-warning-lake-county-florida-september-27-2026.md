@@ -7,9 +7,9 @@ author: "US News Engine Weather Desk"
 publishedAt: 2026-09-27T19:29:26.533Z
 
 image: "/images/flood-warning-lake-county-florida-september-27-2026-real.jpg"
-imageAlt: "File photo of the Des Plaines River near Gurnee, Illinois (Lake County)."
+imageAlt: "File photo of the St Johns River near Astor, Florida (Lake County)."
 imageMode: "licensed-photo"
-imageCaption: "File photo of the Des Plaines River near Gurnee, Illinois. Photo: Ebyabe, CC BY-SA 3.0."
+imageCaption: "File photo of the St Johns River near Astor, Florida. Photo: Ebyabe, CC BY-SA 3.0."
 imageCreator: "Ebyabe"
 imageLicense: "CC BY-SA 3.0"
 imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"

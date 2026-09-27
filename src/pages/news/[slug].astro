@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
-import { getAllArticles, getRelated, formatDateTime, formatDateTimeTZ, iso, type Article } from '../../lib/articles';
+import { getAllArticles, getRelated, formatDateTime, formatDateTimeTZ, iso, getPublishedRegistry, findPublishedStory, isArchivedStory, type Article } from '../../lib/articles';
 import { categoryLabel } from '../../consts';
 
 export async function getStaticPaths() {
@@ -24,6 +24,12 @@ const a = article.data;
 const { Content } = await render(article);
 
 const related = await getRelated(article, 3);
+
+// --- Lifecycle status from the published-stories registry ---
+const registry = await getPublishedRegistry();
+const publishedStory = findPublishedStory(registry, a.slug);
+const lifecycleStatus = publishedStory?.lifecycleStatus;
+const isArchived = isArchivedStory(lifecycleStatus);
 
 const categoryHref = `/${a.category}/`;
 const breadcrumbs = [
@@ -83,6 +89,28 @@ const attributionText = a.imageLicense
   <article class="article">
     <div class="container">
       <Breadcrumbs items={breadcrumbs.slice(0, 1)} />
+
+      {isArchived && lifecycleStatus === 'expired' && (
+        <div class="lifecycle-notice lifecycle-notice--expired" role="status">
+          <strong>This National Weather Service warning has expired.</strong>
+          {publishedStory?.lastNwsEndsAt && (
+            <span> The warning ended {formatDateTime(new Date(publishedStory.lastNwsEndsAt))}.</span>
+          )}
+          {' '}This article is preserved for reference.
+        </div>
+      )}
+      {isArchived && lifecycleStatus === 'cancelled' && (
+        <div class="lifecycle-notice lifecycle-notice--cancelled" role="status">
+          <strong>The National Weather Service has cancelled this warning.</strong>
+          {' '}This article is preserved for reference.
+        </div>
+      )}
+      {isArchived && lifecycleStatus === 'superseded' && (
+        <div class="lifecycle-notice lifecycle-notice--superseded" role="status">
+          <strong>This warning has been superseded by a newer alert.</strong>
+          {' '}This article is preserved for reference.
+        </div>
+      )}
 
       <header class="article-head">
         <CategoryBadge category={a.category} href={categoryHref} variant="solid" />
@@ -248,6 +276,32 @@ const attributionText = a.imageLicense
   .article {
     padding-bottom: 8px;
   }
+
+  /* Lifecycle notices (expired, cancelled, superseded) */
+  .lifecycle-notice {
+    max-width: 820px;
+    margin: 16px auto 24px;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .lifecycle-notice--expired {
+    background: #fff3e0;
+    border-left: 4px solid #e65100;
+    color: #5d2900;
+  }
+  .lifecycle-notice--cancelled {
+    background: #e8f3ec;
+    border-left: 4px solid #2e7d32;
+    color: #1a4a28;
+  }
+  .lifecycle-notice--superseded {
+    background: #e3f2fd;
+    border-left: 4px solid #1565c0;
+    color: #0d2c52;
+  }
+
   .article-head {
     max-width: 820px;
     margin: 8px auto 24px;
