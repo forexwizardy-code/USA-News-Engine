@@ -10,7 +10,9 @@
     "build": "astro build",
     "preview": "astro preview --port 3000",
     "check": "astro check",
-    "fetch:nws": "node scripts/fetch-nws-alerts.mjs"
+    "fetch:nws": "node scripts/fetch-nws-alerts.mjs",
+    "filter:nws": "node scripts/filter-nws-news.mjs",
+    "prepare:nws": "npm run fetch:nws && npm run filter:nws"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
