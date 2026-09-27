@@ -1,0 +1,99 @@
+{
+  "draftVersion": 1,
+  "generatedAt": "2026-09-27T16:55:36.944Z",
+  "storyKey": "flood-warning__lake-il__2026-09-27",
+  "sourceAlertIds": [
+    "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
+    "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+  ],
+  "status": "draft",
+  "title": "National Weather Service Issues Flood Warning for Lake County, Illinois",
+  "description": "The National Weather Service has issued a Flood Warning for Lake County, Illinois. The alert remains in effect until September 28, 2026 at 9:30 AM (UTC-05:00), according to the latest NWS alert.",
+  "slug": "flood-warning-lake-county-illinois-september-27-2026",
+  "category": "weather",
+  "location": "Lake County, Illinois",
+  "publishedAt": "2026-09-27T16:55:36.944Z",
+  "updatedAt": "2026-09-27T15:28:00.000Z",
+  "breaking": true,
+  "author": "US News Engine Weather Desk",
+  "sourceName": "National Weather Service",
+  "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
+  "sourceOffice": "NWS Chicago IL",
+  "hasUpdates": true,
+  "seo": {
+    "title": "Flood Warning: Lake County, Illinois",
+    "description": "The National Weather Service has issued a Flood Warning for Lake County, Illinois. In effect until September 28, 2026 at 9:30 AM (UTC-05:00)."
+  },
+  "image": {
+    "status": "pending",
+    "url": null,
+    "alt": null,
+    "source": null,
+    "license": null
+  },
+  "body": [
+    {
+      "heading": null,
+      "paragraphs": [
+        "The National Weather Service has issued a Flood Warning for Lake County, Illinois. The alert was issued at September 27, 2026 at 3:28 PM (UTC-05:00), according to the official NWS alert.",
+        "The NWS classifies the urgency of this alert as \"Immediate\"."
+      ]
+    },
+    {
+      "heading": "What the alert says",
+      "paragraphs": [
+        "According to the NWS alert, minor flooding is occurring and minor flooding is forecast.",
+        "The affected area is described as des plaines river from us-41 in gurnee downstream to townline road in vernon hills, including the gurnee gauge.",
+        "The alert timing, as stated by the NWS: until monday afternoon.",
+        "The NWS notes the following potential impacts: at 7.0 feet, forest land inundated near the river in gurnee."
+      ]
+    },
+    {
+      "heading": "Areas affected",
+      "paragraphs": [
+        "The alert covers Lake County, Illinois.",
+        "The NWS lists the area as \"Lake, IL\".",
+        "The alert references 1 NWS forecast zone."
+      ]
+    },
+    {
+      "heading": "When the alert is in effect",
+      "paragraphs": [
+        "Effective: September 27, 2026 at 3:28 PM (UTC-05:00).",
+        "Scheduled to expire: September 28, 2026 at 9:30 AM (UTC-05:00).",
+        "Ends: September 28, 2026 at 9:00 PM (UTC-05:00)."
+      ]
+    },
+    {
+      "heading": "What residents should know",
+      "paragraphs": [
+        "The National Weather Service provides the following safety guidance:",
+        "A Flood Warning means water levels above flood stage are imminent or\nmay already be occurring. Persons along rivers and streams in the\nwarned area should take immediate precautions to protect life and\nproperty.\n\nThese forecasts are based almost entirely on observed precipitation\nas little to no additional precipitation is currently expected over\nthe next 24 to 48 hours.\n\nAdditional information is available at www.weather.gov.\n\nThe next statement will be issued by late tonight."
+      ]
+    },
+    {
+      "heading": "Source",
+      "paragraphs": [
+        "This report is based on an official alert issued by the NWS Chicago IL. The original alert is published by the National Weather Service.",
+        "Source: https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
+        "Official NWS alert IDs: urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1, urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+      ]
+    }
+  ],
+  "weatherMetadata": {
+    "event": "Flood Warning",
+    "severity": "Severe",
+    "certainty": "Observed",
+    "urgency": "Immediate",
+    "effective": "2026-09-27T10:28:00-05:00",
+    "onset": "2026-09-27T10:28:00-05:00",
+    "expires": "2026-09-28T04:30:00-05:00",
+    "ends": "2026-09-28T16:00:00-05:00",
+    "affectedZones": [
+      "https://api.weather.gov/zones/county/ILC097"
+    ],
+    "priority": "high",
+    "storyScore": 130,
+    "updateCount": 2
+  }
+}
