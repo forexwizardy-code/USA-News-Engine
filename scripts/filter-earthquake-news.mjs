@@ -1,243 +1,293 @@
 /**
- * US News Engine — Earthquake newsworthiness filter (Phase 8A).
+ * US News Engine — Earthquake newsworthiness filter (Phase 8A.1).
  *
  * Reads data/earthquakes/usgs-earthquakes.json (produced by the fetcher),
- * applies a documented newsworthiness filter, and writes the selected
- * candidates to data/earthquakes/earthquake-news-candidates.json.
+ * applies a U.S.-focused newsworthiness filter with publishEligible gating,
+ * and writes candidates to data/earthquakes/earthquake-news-candidates.json.
  *
- * Newsworthiness thresholds (INCLUDE if ANY of):
- *   - Magnitude >= 5.0 AND isUS                        (significant U.S. earthquake)
- *   - Magnitude >= 4.0 AND isUS AND (felt >= 100
- *       OR alert in [yellow,orange,red] OR tsunami)   (impact-bearing U.S. event)
- *   - Magnitude >= 6.0                                  (major global event)
- *   - USGS alert level is yellow, orange, or red        (PAGER impact)
- *   - tsunami === true                                  (tsunami warning)
- *   - USGS significance >= 500 AND isUS                 (notable U.S. event)
- *   - Magnitude >= 3.5 AND isUS AND felt >= 500         (widely felt)
- *   - Magnitude >= 4.5 AND place mentions Alaska,
- *       Hawaii, or Puerto Rico                          (active U.S. seismic zones)
+ * KEY CHANGE from Phase 8A:
+ *   - Removed "M6+ anywhere" and "alert/tsunami anywhere" as publication triggers
+ *   - publishEligible requires isUSRelevant = true
+ *   - International events are retained internally but publishEligible = false
+ *   - Added scope, eligibilityReasons, exclusionReasons fields
+ *   - Added USGS detail product metadata (ShakeMap, DYFI, etc.)
+ *
+ * PUBLICATION THRESHOLDS (require isUSRelevant = true):
+ *   - M5.0+ U.S.-relevant
+ *   - M4.0+ plus >=100 felt reports
+ *   - M4.0+ plus Yellow/Orange/Red USGS alert
+ *   - tsunami flag affecting U.S.-relevant event
+ *   - significance >=500 and U.S.-relevant
+ *   - M3.5+ with >=500 felt reports
+ *   - M4.5+ Alaska/Hawaii/Puerto Rico/U.S. territory
  *
  * EXCLUDE if:
  *   - status === "deleted"
- *   - Magnitude < 3.0 (too small)
+ *   - Magnitude < 3.0
  *   - Magnitude is null
  *
- * Each selected candidate gets `selectedReason` and `priority`
- * ("high" for M5+ or alert/tsunami, "medium" for M4+ felt).
- *
- * This script does NOT create article files, does NOT touch the website,
- * and does NOT use AI. It is a pure data-selection step.
- *
- * Run manually:
+ * Run:
  *   npm run filter:earthquakes
  */
 
-import { readFile, writeFile, mkdir, rename, stat } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
-
 const INPUT_FILE = join(PROJECT_DIR, 'data', 'earthquakes', 'usgs-earthquakes.json');
 const OUTPUT_FILE = join(PROJECT_DIR, 'data', 'earthquakes', 'earthquake-news-candidates.json');
 
-// Active U.S. seismic zones that get an expanded threshold for inclusion.
-const ACTIVE_US_SEISMIC_ZONES = ['alaska', 'hawaii', 'puerto rico'];
-
-// Alert levels that imply real PAGER impact.
 const IMPACT_ALERT_LEVELS = new Set(['yellow', 'orange', 'red']);
+const ACTIVE_US_SEISMIC_ZONES = ['alaska', 'hawaii', 'puerto rico', 'guam', 'northern mariana', 'american samoa', 'virgin islands'];
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
+// ===========================================================================
+// Newsworthiness evaluation (U.S.-focused)
+// ===========================================================================
 
-function fail(message, detail) {
-  console.error(`\n[filter-earthquake-news] ERROR: ${message}`);
-  if (detail) console.error(`  Detail: ${detail}`);
-  process.exit(1);
-}
-
-function lower(s) {
-  return (s == null ? '' : String(s)).toLowerCase();
-}
-
-function num(value) {
-  if (value == null) return null;
-  if (typeof value === 'number') return Number.isFinite(value) ? value : null;
-  if (typeof value === 'string') {
-    const m = value.replace(/,/g, '').match(/-?\d+(\.\d+)?/);
-    return m ? Number(m[0]) : null;
-  }
-  return null;
-}
-
-function parseDate(value) {
-  if (!value) return null;
-  const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? null : d;
-}
-
-/**
- * The core newsworthiness decision.
- *
- * Returns:
- *   { include: true,  priority: 'high'|'medium', selectedReason: string }
- *   { include: false, selectedReason: string }
- */
 function evaluate(eq) {
-  // --- EXCLUDE checks (these short-circuit before any INCLUDE check) -------
-
-  if (eq.status === 'deleted') {
-    return {
-      include: false,
-      selectedReason: 'Excluded: status=deleted',
-    };
-  }
-
-  const mag = num(eq.magnitude);
-
-  if (mag == null) {
-    return {
-      include: false,
-      selectedReason: 'Excluded: magnitude is null or non-numeric',
-    };
-  }
-
-  if (mag < 3.0) {
-    return {
-      include: false,
-      selectedReason: `Excluded: magnitude ${mag} < 3.0 (too small)`,
-    };
-  }
-
-  // --- INCLUDE checks -----------------------------------------------------
-  const reasons = [];
-  const felt = num(eq.felt);
-  const sig = num(eq.significance);
-  const alert = lower(eq.alert);
-  const tsunami = eq.tsunami === true;
+  const mag = eq.magnitude;
   const isUS = eq.isUS === true;
-  const placeLower = lower(eq.place);
+  const felt = eq.felt;
+  const alert = eq.alert;
+  const tsunami = eq.tsunami === true;
+  const sig = eq.significance;
+  const placeLower = (eq.place || '').toLowerCase();
+  const status = eq.status;
 
-  // 1) M5+ and US.
-  if (mag >= 5.0 && isUS) {
-    reasons.push(`M${mag} >= 5.0 and isUS`);
+  // --- EXCLUDE: deleted, too small, null magnitude ---
+  if (status === 'deleted') {
+    return { include: false, publishEligible: false, reason: 'Excluded: deleted event' };
+  }
+  if (mag == null || isNaN(mag)) {
+    return { include: false, publishEligible: false, reason: 'Excluded: magnitude is null' };
+  }
+  if (mag < 3.0) {
+    return { include: false, publishEligible: false, reason: 'Excluded: magnitude < 3.0' };
   }
 
-  // 2) M4+ and US with felt/alert/tsunami impact.
-  if (mag >= 4.0 && isUS) {
-    const subReasons = [];
-    if (felt != null && felt >= 100) subReasons.push(`felt=${felt} >= 100`);
-    if (IMPACT_ALERT_LEVELS.has(alert)) subReasons.push(`alert=${alert}`);
-    if (tsunami) subReasons.push('tsunami=true');
-    if (subReasons.length) {
-      reasons.push(`M${mag} >= 4.0 and isUS with ${subReasons.join('; ')}`);
+  // --- Determine U.S. relevance and scope ---
+  const scope = isUS ? 'us' : 'international';
+
+  // --- Evaluate publication eligibility (REQUIRES isUS) ---
+  const eligibilityReasons = [];
+  const exclusionReasons = [];
+
+  // Rule 1: M5.0+ U.S.-relevant
+  if (mag >= 5.0 && isUS) {
+    eligibilityReasons.push(`M${mag} >= 5.0 and U.S.-relevant`);
+  }
+
+  // Rule 2: M4.0+ plus >=100 felt reports (U.S.)
+  if (mag >= 4.0 && isUS && felt != null && felt >= 100) {
+    eligibilityReasons.push(`M${mag} >= 4.0, U.S., felt=${felt} >= 100`);
+  }
+
+  // Rule 3: M4.0+ plus alert (U.S.)
+  if (mag >= 4.0 && isUS && IMPACT_ALERT_LEVELS.has(alert)) {
+    eligibilityReasons.push(`M${mag} >= 4.0, U.S., alert=${alert}`);
+  }
+
+  // Rule 4: tsunami affecting U.S.-relevant event
+  if (tsunami && isUS) {
+    eligibilityReasons.push('tsunami flag and U.S.-relevant');
+  }
+
+  // Rule 5: significance >= 500 and U.S.
+  if (sig != null && sig >= 500 && isUS) {
+    eligibilityReasons.push(`significance ${sig} >= 500 and U.S.`);
+  }
+
+  // Rule 6: M3.5+ with >=500 felt (U.S.)
+  if (mag >= 3.5 && isUS && felt != null && felt >= 500) {
+    eligibilityReasons.push(`M${mag} >= 3.5, U.S., felt=${felt} >= 500`);
+  }
+
+  // Rule 7: M4.5+ Alaska/Hawaii/Puerto Rico/U.S. territory
+  if (mag >= 4.5 && ACTIVE_US_SEISMIC_ZONES.some((z) => placeLower.includes(z))) {
+    eligibilityReasons.push(`M${mag} >= 4.5 in active U.S. seismic zone`);
+  }
+
+  // --- Determine include (newsworthy enough to track) vs exclude ---
+  // Include if ANY eligibility reason OR if it's a notable global event (M6+)
+  // for internal tracking, but publishEligible requires isUS.
+  const isNotableGlobal = mag >= 6.0;
+  const hasAlertGlobal = IMPACT_ALERT_LEVELS.has(alert);
+  const hasTsunamiGlobal = tsunami;
+
+  const include = eligibilityReasons.length > 0 || isNotableGlobal || hasAlertGlobal || hasTsunamiGlobal;
+
+  if (!include) {
+    return {
+      include: false,
+      publishEligible: false,
+      reason: 'Excluded: no newsworthiness trigger matched',
+    };
+  }
+
+  // --- Determine publishEligible ---
+  const publishEligible = isUS && eligibilityReasons.length > 0;
+
+  if (!publishEligible) {
+    if (!isUS) {
+      exclusionReasons.push('Not U.S.-relevant (international scope)');
+    } else if (eligibilityReasons.length === 0) {
+      exclusionReasons.push('U.S. event but below publication thresholds');
     }
   }
 
-  // 3) M6+ anywhere.
-  if (mag >= 6.0) {
-    reasons.push(`M${mag} >= 6.0 (major global event)`);
-  }
-
-  // 4) PAGER alert yellow/orange/red.
-  if (IMPACT_ALERT_LEVELS.has(alert)) {
-    reasons.push(`USGS alert level ${alert}`);
-  }
-
-  // 5) Tsunami.
-  if (tsunami) {
-    reasons.push('tsunami warning issued');
-  }
-
-  // 6) USGS significance >= 500 and US.
-  if (sig != null && sig >= 500 && isUS) {
-    reasons.push(`USGS significance ${sig} >= 500 and isUS`);
-  }
-
-  // 7) M3.5+ and US and widely felt (>=500 felt reports).
-  if (mag >= 3.5 && isUS && felt != null && felt >= 500) {
-    reasons.push(`M${mag} >= 3.5, isUS, felt=${felt} >= 500 (widely felt)`);
-  }
-
-  // 8) M4.5+ in Alaska/Hawaii/Puerto Rico.
-  if (mag >= 4.5 && ACTIVE_US_SEISMIC_ZONES.some((z) => placeLower.includes(z))) {
-    reasons.push(`M${mag} >= 4.5 in active U.S. seismic zone (${placeLower})`);
-  }
-
-  if (reasons.length === 0) {
-    return {
-      include: false,
-      selectedReason: 'Excluded: no newsworthiness trigger matched',
-    };
-  }
-
-  // --- Priority decision --------------------------------------------------
-  // "high" for M5+ events (significant), or any PAGER alert yellow/orange/red,
-  // or any tsunami event.
-  // "medium" otherwise (e.g., M4+ felt events in the U.S.).
-  const highPriority =
-    (mag >= 5.0) ||
-    IMPACT_ALERT_LEVELS.has(alert) ||
-    tsunami;
-
+  // --- Priority ---
+  const highPriority = (mag >= 5.0 && isUS) || (isUS && IMPACT_ALERT_LEVELS.has(alert)) || (tsunami && isUS);
   const priority = highPriority ? 'high' : 'medium';
+
+  // --- Build selected reason ---
+  const allReasons = [...eligibilityReasons];
+  if (isNotableGlobal && !isUS) allReasons.push(`M${mag} >= 6.0 (notable global, internal only)`);
+  if (hasAlertGlobal && !isUS) allReasons.push(`alert=${alert} (global, internal only)`);
+  if (hasTsunamiGlobal && !isUS) allReasons.push('tsunami (global, internal only)');
 
   return {
     include: true,
+    publishEligible,
     priority,
-    selectedReason: `Selected: ${reasons.join('; ')}`,
+    scope,
+    isUSRelevant: isUS,
+    eligibilityReasons,
+    exclusionReasons,
+    selectedReason: `Selected: ${allReasons.join('; ')}`,
   };
 }
 
-// ---------------------------------------------------------------------------
+// ===========================================================================
+// USGS detail product inspection
+// ===========================================================================
+
+/**
+ * Fetch the USGS detail JSON for an earthquake and inspect its products.
+ * Records ShakeMap, DYFI, moment tensor, and tsunami product availability.
+ * Does NOT fabricate URLs — only records what USGS explicitly provides.
+ */
+async function inspectUsgsProducts(eq) {
+  const detailUrl = eq.detailUrl;
+  if (!detailUrl) {
+    return {
+      hasShakeMap: false,
+      shakeMapProductUrl: null,
+      shakeMapImageUrl: null,
+      hasDyfi: false,
+      hasMomentTensor: false,
+      hasTsunamiProduct: false,
+    };
+  }
+
+  try {
+    const res = await fetch(detailUrl, {
+      headers: { 'User-Agent': 'USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)' },
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!res.ok) {
+      return {
+        hasShakeMap: false,
+        shakeMapProductUrl: null,
+        shakeMapImageUrl: null,
+        hasDyfi: false,
+        hasMomentTensor: false,
+        hasTsunamiProduct: false,
+        detailFetchError: `HTTP ${res.status}`,
+      };
+    }
+    const data = await res.json();
+    const products = data.properties?.products || {};
+
+    const hasShakeMap = !!products.shakemap;
+    let shakeMapProductUrl = null;
+    let shakeMapImageUrl = null;
+
+    if (hasShakeMap) {
+      const sm = products.shakemap;
+      // Get the first available ShakeMap product
+      const firstKey = Object.keys(sm)[0];
+      const smEntry = sm[firstKey]?.[0];
+      if (smEntry) {
+        shakeMapProductUrl = smEntry.properties?.map || smEntry.properties?.url || null;
+        // Look for the intensity image
+        if (smEntry.contents) {
+          const intensityImage = smEntry.contents['intensity.jpg'] || smEntry.contents['download/intensity.jpg'];
+          if (intensityImage?.url) {
+            shakeMapImageUrl = intensityImage.url;
+          }
+        }
+      }
+    }
+
+    return {
+      hasShakeMap,
+      shakeMapProductUrl,
+      shakeMapImageUrl,
+      hasDyfi: !!products.dyfi,
+      hasMomentTensor: !!products['moment-tensor'],
+      hasTsunamiProduct: !!products.tsunami,
+    };
+  } catch {
+    return {
+      hasShakeMap: false,
+      shakeMapProductUrl: null,
+      shakeMapImageUrl: null,
+      hasDyfi: false,
+      hasMomentTensor: false,
+      hasTsunamiProduct: false,
+      detailFetchError: 'fetch failed',
+    };
+  }
+}
+
+// ===========================================================================
 // Main
-// ---------------------------------------------------------------------------
+// ===========================================================================
 
 async function main() {
-  console.log('[filter-earthquake-news] Starting newsworthiness filter.');
+  console.log('[filter-earthquake-news] Starting newsworthiness filter (Phase 8A.1).');
   console.log(`  Input:  ${INPUT_FILE}`);
   console.log(`  Output: ${OUTPUT_FILE}`);
 
-  // --- Load input ---------------------------------------------------------
   let raw;
   try {
     raw = await readFile(INPUT_FILE, 'utf8');
   } catch (err) {
-    if (err && err.code === 'ENOENT') {
-      return fail(
-        'Could not read input file. Run `npm run fetch:earthquakes` first.',
-        String(err),
-      );
-    }
-    return fail('Could not read input file.', String(err));
+    console.error('  ERROR: usgs-earthquakes.json not found. Run fetch:earthquakes first.');
+    process.exit(1);
   }
-  let doc;
-  try {
-    doc = JSON.parse(raw);
-  } catch (err) {
-    return fail('Input file is not valid JSON.', String(err));
-  }
-
+  const doc = JSON.parse(raw);
   const earthquakes = Array.isArray(doc.earthquakes) ? doc.earthquakes : [];
-  const now = new Date();
   console.log(`  Input earthquakes: ${earthquakes.length}`);
-  console.log(`  Filter time (UTC): ${now.toISOString()}`);
 
-  // --- Evaluate every earthquake ------------------------------------------
   const candidates = [];
   const exclusionBreakdown = {};
+  let usRelevantCount = 0;
+  let publishEligibleCount = 0;
+  let internationalNotableCount = 0;
+
   for (const eq of earthquakes) {
     const decision = evaluate(eq);
     if (!decision.include) {
-      const key = decision.selectedReason
-        .replace(/^Excluded:\s*/, '')
-        .split(/[(.]/)[0]
-        .trim();
+      const key = decision.reason.replace(/^Excluded:\s*/, '').split(/[(.]/)[0].trim();
       exclusionBreakdown[key] = (exclusionBreakdown[key] || 0) + 1;
       continue;
     }
+
+    if (decision.isUSRelevant) usRelevantCount++;
+    if (decision.publishEligible) publishEligibleCount++;
+    if (decision.scope === 'international') internationalNotableCount++;
+
+    // For publishEligible candidates, fetch USGS detail products
+    let usgsProducts = null;
+    if (decision.publishEligible) {
+      console.log(`  Fetching USGS detail for ${eq.earthquakeKey}...`);
+      usgsProducts = await inspectUsgsProducts(eq);
+      console.log(`    ShakeMap: ${usgsProducts.hasShakeMap} | DYFI: ${usgsProducts.hasDyfi} | MT: ${usgsProducts.hasMomentTensor} | Tsunami: ${usgsProducts.hasTsunamiProduct}`);
+    }
+
     candidates.push({
       earthquakeKey: eq.earthquakeKey,
       source: eq.source,
@@ -274,101 +324,71 @@ async function main() {
       state: eq.state,
       nearestPlace: eq.nearestPlace,
       isUS: eq.isUS,
+      isUSRelevant: decision.isUSRelevant,
+      scope: decision.scope,
+      publishEligible: decision.publishEligible,
       priority: decision.priority,
+      eligibilityReasons: decision.eligibilityReasons,
+      exclusionReasons: decision.exclusionReasons,
       selectedReason: decision.selectedReason,
+      // USGS detail product metadata (only for publishEligible candidates)
+      hasShakeMap: usgsProducts?.hasShakeMap ?? false,
+      shakeMapProductUrl: usgsProducts?.shakeMapProductUrl ?? null,
+      shakeMapImageUrl: usgsProducts?.shakeMapImageUrl ?? null,
+      hasDyfi: usgsProducts?.hasDyfi ?? false,
+      hasMomentTensor: usgsProducts?.hasMomentTensor ?? false,
+      hasTsunamiProduct: usgsProducts?.hasTsunamiProduct ?? false,
     });
   }
 
-  // --- Sort: high priority first, then magnitude desc, then newest time --
+  // Sort: publishEligible first, then priority, then magnitude desc
   candidates.sort((a, b) => {
-    if (a.priority !== b.priority) {
-      return a.priority === 'high' ? -1 : 1;
-    }
-    const ma = num(a.magnitude) ?? -Infinity;
-    const mb = num(b.magnitude) ?? -Infinity;
-    if (mb !== ma) return mb - ma;
-    const ta = parseDate(a.time)?.getTime() ?? 0;
-    const tb = parseDate(b.time)?.getTime() ?? 0;
-    return tb - ta;
+    if (a.publishEligible !== b.publishEligible) return b.publishEligible ? 1 : -1;
+    if (a.priority !== b.priority) return a.priority === 'high' ? -1 : 1;
+    return (b.magnitude || 0) - (a.magnitude || 0);
   });
 
-  // --- Assemble output document -------------------------------------------
-  const highPriorityCount = candidates.filter((c) => c.priority === 'high').length;
-  const mediumPriorityCount = candidates.filter((c) => c.priority === 'medium').length;
-  const usCandidateCount = candidates.filter((c) => c.isUS).length;
-
   const output = {
-    generatedAt: now.toISOString(),
-    source: doc.source || 'U.S. Geological Survey',
-    sourceUrls: doc.sourceUrls || [],
-    feedsUsed: doc.feedsUsed || [],
+    generatedAt: new Date().toISOString(),
+    source: 'U.S. Geological Survey',
     inputEarthquakeCount: earthquakes.length,
     candidateCount: candidates.length,
-    highPriorityCount,
-    mediumPriorityCount,
-    usCandidateCount,
+    usRelevantCount,
+    publishEligibleCount,
+    internationalNotableCount,
+    exclusionBreakdown,
     candidates,
   };
 
-  // --- Atomic write --------------------------------------------------------
   await mkdir(dirname(OUTPUT_FILE), { recursive: true });
   const tmp = `${OUTPUT_FILE}.tmp`;
   await writeFile(tmp, JSON.stringify(output, null, 2) + '\n', 'utf8');
   await rename(tmp, OUTPUT_FILE);
 
-  const stats = await stat(OUTPUT_FILE);
-  console.log('\n[filter-earthquake-news] SUCCESS');
-  console.log(`  Output file:          ${OUTPUT_FILE}`);
-  console.log(`  File size:            ${stats.size.toLocaleString()} bytes`);
-  console.log(`  Generated at (UTC):   ${output.generatedAt}`);
-  console.log(`  Input earthquakes:    ${output.inputEarthquakeCount}`);
-  console.log(`  Candidates selected:  ${output.candidateCount}`);
-  console.log(`    high priority:      ${highPriorityCount}`);
-  console.log(`    medium priority:    ${mediumPriorityCount}`);
-  console.log(`    U.S.-relevant:      ${usCandidateCount}`);
-  console.log(`  Excluded:             ${earthquakes.length - candidates.length}`);
-
+  console.log(`\n  Output: ${OUTPUT_FILE}`);
+  console.log(`  Total candidates: ${candidates.length}`);
+  console.log(`  U.S.-relevant: ${usRelevantCount}`);
+  console.log(`  publishEligible: ${publishEligibleCount}`);
+  console.log(`  International notable (internal only): ${internationalNotableCount}`);
+  console.log(`  Excluded: ${earthquakes.length - candidates.length}`);
   console.log('\n  Exclusion breakdown:');
-  const exclusionEntries = Object.entries(exclusionBreakdown).sort((a, b) => b[1] - a[1]);
-  if (exclusionEntries.length === 0) {
-    console.log('    (none)');
-  } else {
-    for (const [reason, count] of exclusionEntries) {
-      console.log(`    ${String(count).padStart(4)}  ${reason}`);
-    }
+  for (const [reason, count] of Object.entries(exclusionBreakdown).sort((a, b) => b[1] - a[1])) {
+    console.log(`    ${String(count).padStart(4)}  ${reason}`);
   }
 
-  // --- Top 10 candidates --------------------------------------------------
-  console.log('\n  Top 10 candidates:');
-  if (candidates.length === 0) {
-    console.log('    (no candidates selected)');
-  } else {
-    candidates.slice(0, 10).forEach((c, i) => {
-      const placePreview = (c.place || c.title || '(no place)').slice(0, 60);
-      console.log(
-        `    ${String(i + 1).padStart(2)}. [${c.priority}] M${c.magnitude} | ${placePreview} | ${c.isUS ? 'US' : 'non-US'}`,
-      );
-      console.log(`        key: ${c.earthquakeKey}`);
-      console.log(`        why: ${c.selectedReason}`);
-    });
-  }
-
-  // --- Group by alert level ----------------------------------------------
-  const byAlert = {};
-  for (const c of candidates) {
-    const a = c.alert || '(none)';
-    byAlert[a] = (byAlert[a] || 0) + 1;
-  }
-  console.log('\n  Candidates grouped by alert level:');
-  const alertEntries = Object.entries(byAlert).sort((a, b) => b[1] - a[1]);
-  if (alertEntries.length === 0) {
-    console.log('    (none)');
-  } else {
-    for (const [alert, count] of alertEntries) {
-      console.log(`    ${String(count).padStart(4)}  ${alert}`);
+  // Top candidates
+  console.log('\n  Top candidates:');
+  candidates.slice(0, 10).forEach((c, i) => {
+    const status = c.publishEligible ? `[${c.priority}, eligible]` : `[${c.scope}, not eligible]`;
+    console.log(`    ${i + 1}. ${status} M${c.magnitude} — ${c.place} (key=${c.earthquakeKey})`);
+    if (c.publishEligible) {
+      console.log(`        ShakeMap: ${c.hasShakeMap} | DYFI: ${c.hasDyfi} | felt: ${c.felt || 0}`);
     }
-  }
+  });
   console.log('');
 }
 
-main().catch((err) => fail('Unexpected failure.', String(err && err.stack ? err.stack : err)));
+main().catch((err) => {
+  console.error(`[filter-earthquake-news] FATAL: ${err.message}`);
+  process.exit(1);
+});

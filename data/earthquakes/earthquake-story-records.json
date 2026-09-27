@@ -1,8 +1,11 @@
 {
-  "generatedAt": "2026-09-27T22:44:16.687Z",
+  "generatedAt": "2026-09-27T23:01:52.984Z",
   "source": "U.S. Geological Survey",
   "inputCandidateCount": 2,
   "uniqueStoryCount": 2,
+  "publishEligibleCount": 1,
+  "usRelevantCount": 1,
+  "internationalNotableCount": 1,
   "newCount": 0,
   "updatedCount": 0,
   "unchangedCount": 2,
@@ -14,9 +17,9 @@
       "eventId": "us6000txpi",
       "storyStatus": "unchanged",
       "storyScore": 40,
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-27T22:42:49.252Z",
-      "latestSeenAt": "2026-09-27T22:44:16.687Z",
+      "latestSeenAt": "2026-09-27T23:01:52.984Z",
       "previousMagnitude": null,
       "currentMagnitude": 6.6,
       "contentSignature": "a1edcb95ed9bebf46d1a8c6d66b089bdd677c1309e4825fe3cc7271a39362a21",
@@ -54,17 +57,30 @@
       "state": null,
       "nearestPlace": "Tadine",
       "isUS": false,
-      "priority": "high",
-      "selectedReason": "Selected: M6.6 >= 6.0 (major global event)"
+      "isUSRelevant": false,
+      "scope": "international",
+      "publishEligible": false,
+      "eligibilityReasons": [],
+      "exclusionReasons": [
+        "Not U.S.-relevant (international scope)"
+      ],
+      "priority": "medium",
+      "selectedReason": "Selected: M6.6 >= 6.0 (notable global, internal only)",
+      "hasShakeMap": false,
+      "shakeMapProductUrl": null,
+      "shakeMapImageUrl": null,
+      "hasDyfi": false,
+      "hasMomentTensor": false,
+      "hasTsunamiProduct": false
     },
     {
       "earthquakeKey": "usgs__us6000txxm",
       "eventId": "us6000txxm",
       "storyStatus": "unchanged",
       "storyScore": 34,
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-27T22:42:49.252Z",
-      "latestSeenAt": "2026-09-27T22:44:16.687Z",
+      "latestSeenAt": "2026-09-27T23:01:52.984Z",
       "previousMagnitude": null,
       "currentMagnitude": 4.6,
       "contentSignature": "bd452295d0b7a1362bab0eae90e93b0b5e1933dba3ddc5ebb9a22f7a61538517",
@@ -102,8 +118,21 @@
       "state": "Alaska",
       "nearestPlace": "Rat Islands, Aleutian Islands, Alaska",
       "isUS": true,
+      "isUSRelevant": true,
+      "scope": "us",
+      "publishEligible": true,
+      "eligibilityReasons": [
+        "M4.6 >= 4.5 in active U.S. seismic zone"
+      ],
+      "exclusionReasons": [],
       "priority": "medium",
-      "selectedReason": "Selected: M4.6 >= 4.5 in active U.S. seismic zone (rat islands, aleutian islands, alaska)"
+      "selectedReason": "Selected: M4.6 >= 4.5 in active U.S. seismic zone",
+      "hasShakeMap": true,
+      "shakeMapProductUrl": null,
+      "shakeMapImageUrl": null,
+      "hasDyfi": false,
+      "hasMomentTensor": false,
+      "hasTsunamiProduct": false
     }
   ]
 }

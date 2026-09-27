@@ -336,8 +336,20 @@ async function main() {
       state: canonical.state ?? null,
       nearestPlace: canonical.nearestPlace ?? null,
       isUS: canonical.isUS === true,
+      isUSRelevant: canonical.isUSRelevant === true,
+      scope: canonical.scope ?? null,
+      publishEligible: canonical.publishEligible === true,
+      eligibilityReasons: canonical.eligibilityReasons ?? [],
+      exclusionReasons: canonical.exclusionReasons ?? [],
       priority: canonical.priority ?? null,
       selectedReason: canonical.selectedReason ?? null,
+      // USGS detail product metadata
+      hasShakeMap: canonical.hasShakeMap === true,
+      shakeMapProductUrl: canonical.shakeMapProductUrl ?? null,
+      shakeMapImageUrl: canonical.shakeMapImageUrl ?? null,
+      hasDyfi: canonical.hasDyfi === true,
+      hasMomentTensor: canonical.hasMomentTensor === true,
+      hasTsunamiProduct: canonical.hasTsunamiProduct === true,
     });
   }
 
@@ -366,6 +378,9 @@ async function main() {
     source: 'U.S. Geological Survey',
     inputCandidateCount: candidates.length,
     uniqueStoryCount: stories.length,
+    publishEligibleCount: stories.filter(s => s.publishEligible).length,
+    usRelevantCount: stories.filter(s => s.isUSRelevant).length,
+    internationalNotableCount: stories.filter(s => s.scope === 'international').length,
     newCount,
     updatedCount,
     unchangedCount,
