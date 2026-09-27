@@ -331,3 +331,266 @@ Added seven npm scripts:
   article.
 
 ---
+
+## Phase 7B — Recall story clustering + editorial preview system (Task 7B-generators)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-27 (simulated project timeline)
+**Scope:** Build the article-generation + image-generation + preview-route
+layer on top of the Phase 7A recall-ingestion pipeline. The new layer turns
+clustered recall stories into private editorial-review article drafts (with
+hero images and a hidden preview route) — analogous to the existing
+`generate-nws-draft.mjs` + `generate-nws-image.mjs` + `src/pages/preview/[slug].astro`
+pipeline for NWS weather stories. No public article files are created; every
+output is a private draft or a hidden preview page.
+
+### Files created
+
+- `scripts/generate-recall-draft.mjs`
+  Reads `data/recalls/recall-story-clusters.json`, takes the top story
+  (or a `storyKey` passed as `argv[2]`), and writes exactly ONE private
+  article draft to `data/recalls/drafts/<slug>.json`. The draft schema
+  mirrors the NWS draft schema but adds a `recallMetadata` block
+  (source, sourceType, recallingFirm, manufacturer, brands,
+  primaryProductName, hazard, reason, classification, recallDates,
+  reportDates, distribution, affectedStates, units, modelNumbers,
+  lotNumbers, upcs, incidents, injuries, deaths, consumerAction,
+  recordCount, storyScore, storyScoreReasons, storyStatus, firstSeenAt,
+  latestSeenAt).
+  Headline generation:
+    * CPSC — parses the brand out of the CPSC recall title
+      ("X Recalls Y Due to Z") and combines it with the
+      `headlineSeed`/`primaryProductName` to produce
+      "{Brand} {Product} Recalled Over {Hazard}".
+    * FDA — combines `recallingFirm` with the slug-style product name
+      embedded in `recallStoryKey` (the 4th `__`-segment) to produce
+      "{Firm} {Product} Recalled Over {Hazard}".
+  Hazard labels are derived from a keyword table (choking, fire, burn,
+  salmonella, listeria, E. coli, lead, undeclared allergen, foreign
+  material, etc.) — first match wins, falls back to "Safety Risk".
+  Body sections (adapt by source, skip empty):
+    1. Lead paragraph (no heading) — what / product / hazard / agency.
+    2. "What is being recalled" — CPSC rawSourceData.Description or FDA
+       primaryProductName.
+    3. "Why it is being recalled" — CPSC hazard field; FDA reason field.
+    4. "Products and models affected" — model/lot/UPC bullets (cluster
+       arrays + CPSC rawSourceData.ProductUPCs/Products[].Model).
+    5. "Where it was sold or distributed" — CPSC SoldAtLabel + Retailers;
+       FDA distribution_pattern.
+    6. "What consumers should do" — CPSC: preserve official remedy
+       verbatim (URLs linkified). FDA: factual fallback
+       "Consumers can review the FDA recall record for product and
+       distribution details." (never invents "throw it away").
+    7. "Reported incidents or injuries" — only emitted if source
+       explicitly reports incidents/injuries/deaths (None-reported
+       patterns are skipped). Distinguishes Deaths / Injuries / Incidents
+       as separate labeled sentences — never inflates "one minor cut"
+       into a serious-injury claim.
+    8. "Source" — attribution paragraph naming the agency.
+  `breaking` is true ONLY for explicit deaths OR hazard text containing
+  "death"/"fatal"/"life-threatening" OR CPSC titles with "Serious Injury
+  or Death". A Class I classification alone does NOT trigger breaking.
+  HTML-escapes all source text and linkifies `http(s)://` URLs in the
+  consumer-action paragraph.
+
+- `scripts/generate-recall-image.mjs`
+  Generates a 1200×675 hero image for a recall story in two paths:
+    * CPSC photo path — if the story has `imageUrls` from the official
+      CPSC record, downloads the first image, cover-crops to 1200×675
+      (no distortion, sharp `position: 'attention'` for smart-crop
+      focus), and saves as `data/draft-images/<slug>.jpg`. Preserves
+      the original image URL, source URL, agency, caption, and alt text
+      in the metadata sidecar. Looks up the original CPSC image caption
+      (the `Images[].Caption` field) when available. CPSC recall photos
+      are works of the U.S. federal government and are in the public
+      domain — this is noted in `copyrightRisk` + `licenseNotes`.
+    * Editorial graphic path — for FDA recalls (no images available)
+      and CPSC recalls without `imageUrls`, generates a clean
+      newsroom-style recall notice as SVG → PNG via sharp. The SVG has:
+        - Dark left panel with "RECALL NOTICE" eyebrow, "RECALL" big
+          headline, PRODUCT label + product name, RECALLING FIRM label
+          + firm name, agency attribution, US News Engine branding.
+        - Light right panel with HAZARD chip, REASON FOR RECALL text,
+          and bottom data callouts (CLASSIFICATION, RECALL DATE, UNITS,
+          DISTRIBUTION) — each emitted only when the source has it.
+        - Subtle US News Engine branding (small text bottom-right).
+      CPSC palette uses red (#c8102e, matches site `--color-red`);
+      FDA palette uses navy blue (#0f4d8a). No fake product photography.
+      No fake agency logos. Saves as `data/draft-images/<slug>.png`.
+  The metadata sidecar (`data/draft-images/<slug>.json`) records
+  storyKey, slug, type (`official-recall-photo` or
+  `generated-editorial-graphic`), visualType, imageMode, dimensions,
+  source, dataSource, agency, agencyShort, sourceUrl, originalImageUrl,
+  caption, alt, copyrightRisk, licenseNotes, generatedAt, files.
+
+- `scripts/generate-recall-previews.mjs`
+  Batch script. Selects exactly 3 stories from recall-story-clusters.json:
+    * ONE CPSC story (highest score)
+    * ONE FDA food story (highest score)
+    * ONE FDA device story (highest score)
+  For each story, runs `node scripts/generate-recall-draft.mjs "<storyKey>"`
+  and `node scripts/generate-recall-image.mjs "<storyKey>"` as child
+  processes (stdio inherited so output streams to the parent), then
+  copies the generated image from `data/draft-images/<slug>.{jpg|png}`
+  into `public/preview-images/`. At the end, prints a summary table
+  with each story's storyKey, slug, draft path, image path, preview
+  image path, and preview URL.
+
+- `src/pages/preview/recall/[slug].astro`
+  Hidden preview route for recall article drafts. Uses the existing
+  `PreviewLayout` (which already emits
+  `<meta name="robots" content="noindex,nofollow,noarchive">`,
+  self-referencing canonical, and NO NewsArticle schema — only WebSite
+  + BreadcrumbList). Key differences from the weather preview at
+  `src/pages/preview/[slug].astro`:
+    * Category badge: "Recalls" (not "Weather").
+    * Author: "US News Engine Consumer Safety Desk" (from the draft).
+    * Source box: shows Organization (CPSC or FDA), Office, "Original
+      recall →" link to the source URL, and "Official records: N" when
+      the cluster has multiple source IDs.
+    * Hero image: resolves `<slug>.jpg` first (CPSC photo path), then
+      falls back to `<slug>.png` (FDA editorial graphic path).
+    * Image caption: loaded from the image metadata sidecar (proper
+      attribution — "Photo: Consumer Product Safety Commission" for
+      CPSC photos; "Editorial graphic" license note for the generated
+      graphics).
+    * Aside card ("Recall details"): shows Category, Agency,
+      Classification (when known), Distribution, Units, Recalling firm,
+      Published, Updated, and Recall IDs (the latter on its own line
+      with `word-break: break-all` so long ID lists wrap).
+    * Breaking badge: shown when `draft.breaking === true` (red dot +
+      "Breaking" label, next to the Recalls category badge).
+  `getStaticPaths()` reads `data/recalls/drafts/` and emits one route
+  per draft JSON file (drops a new draft in → it gets a preview page on
+  the next build).
+
+### package.json changes
+
+Added three npm scripts (no existing entries modified):
+- `"draft:recall": "node scripts/generate-recall-draft.mjs"`
+- `"image:recall": "node scripts/generate-recall-image.mjs"`
+- `"previews:recalls": "node scripts/generate-recall-previews.mjs"`
+
+### Constraints honored
+
+- No existing NWS/weather scripts or files were modified.
+- `.github/workflows/nws-newsroom.yml` was not modified.
+- `config/automation.json` was not modified.
+- `src/consts.ts` (DEMO_NOINDEX) was not modified.
+- No public article files were created or modified in
+  `src/content/articles/`.
+- All three new scripts are `.mjs` ES modules using only Node.js
+  built-ins (`fs/promises`, `path`, `url`, `child_process`) plus `sharp`
+  (already installed at `node_modules/sharp`).
+- The preview route emits `noindex,nofollow,noarchive`, a
+  self-referencing canonical to the preview URL, NO NewsArticle schema,
+  and is excluded from the sitemap (verified — `dist/sitemap-0.xml`
+  contains zero `/preview/` URLs after the build).
+- The `node scripts/generate-recall-image.mjs` HTTP fetcher sends the
+  shared `User-Agent: USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)`
+  header and uses `AbortSignal.timeout(30000)` so a hung download
+  fails fast and falls back to the editorial-graphic path.
+- All source text is HTML-escaped before being embedded in draft
+  paragraphs (set:html in the preview route renders the escaped text
+  faithfully — no XSS risk from CPSC/FDA source content).
+
+### Data files produced
+
+In `data/recalls/drafts/`:
+- `melissa-and-doug-fire-truck-activity-board-toys-2026-09-17.json` (6,152 bytes)
+- `international-sprout-holdings-inc-alfalfa-2026-08-23.json` (3,829 bytes)
+- `medline-industries-lp-breathing-circuits-2026-07-13.json` (4,875 bytes)
+
+In `data/draft-images/`:
+- `melissa-and-doug-fire-truck-activity-board-toys-2026-09-17.jpg` (98,298 bytes) — official CPSC recall photo (cover-cropped)
+- `melissa-and-doug-fire-truck-activity-board-toys-2026-09-17.json` (1,366 bytes) — metadata sidecar
+- `international-sprout-holdings-inc-alfalfa-2026-08-23.png` (15,655 bytes) — FDA editorial graphic
+- `international-sprout-holdings-inc-alfalfa-2026-08-23.svg` (5,439 bytes) — source SVG
+- `international-sprout-holdings-inc-alfalfa-2026-08-23.json` (1,181 bytes) — metadata sidecar
+- `medline-industries-lp-breathing-circuits-2026-07-13.png` (21,123 bytes) — FDA editorial graphic
+- `medline-industries-lp-breathing-circuits-2026-07-13.svg` (6,040 bytes) — source SVG
+- `medline-industries-lp-breathing-circuits-2026-07-13.json` (1,184 bytes) — metadata sidecar
+
+In `public/preview-images/` (copied so the preview route can serve them):
+- `melissa-and-doug-fire-truck-activity-board-toys-2026-09-17.jpg`
+- `international-sprout-holdings-inc-alfalfa-2026-08-23.png`
+- `medline-industries-lp-breathing-circuits-2026-07-13.png`
+
+### Run results
+
+1. `node scripts/generate-recall-previews.mjs` — SUCCESS (exit 0)
+   - Selected stories (highest-scored per source/sourceType):
+     * [CPSC]      score=72 — `CPSC____2026-09-17__lights sounds fire truck activity board__fire`
+       (Melissa & Doug Fire Truck Activity Board, choking hazard, 26 incident reports + 1 minor cut)
+     * [FDA Food]  score=79 — `FDA__international-sprout-holdings__2026-08-23__alfalfa__salmonella`
+       (International Sprout Holdings alfalfa, Class I, potential E. coli + Salmonella, 43,799 units, 16 states)
+     * [FDA Device] score=91 — `FDA__medline-industries__2026-07-13__breathing circuits__failure`
+       (Medline Industries breathing circuits, Class II, thermal-damage risk, 416,931 units, worldwide)
+   - For each story, generated the draft JSON, the hero image (+ sidecar),
+     and copied the image into `public/preview-images/`.
+   - Final preview URLs (all noindex,nofollow,noarchive; not in sitemap):
+     * `/preview/recall/melissa-and-doug-fire-truck-activity-board-toys-2026-09-17/`
+     * `/preview/recall/international-sprout-holdings-inc-alfalfa-2026-08-23/`
+     * `/preview/recall/medline-industries-lp-breathing-circuits-2026-07-13/`
+
+2. `npx astro build` — SUCCESS (exit 0)
+   - 31 pages built in ~1.1s. Three new preview routes emitted:
+     * `/preview/recall/international-sprout-holdings-inc-alfalfa-2026-08-23/index.html`
+     * `/preview/recall/medline-industries-lp-breathing-circuits-2026-07-13/index.html`
+     * `/preview/recall/melissa-and-doug-fire-truck-activity-board-toys-2026-09-17/index.html`
+   - Verified per-page: `<meta name="robots" content="noindex,nofollow,noarchive">`,
+     self-referencing canonical (preview URL only), `og:image` pointing
+     at the local preview-image, only WebSite + BreadcrumbList JSON-LD
+     (no NewsArticle), source box with "View official recall →" link.
+   - Verified the FDA-device preview shows "Official records: 2" in the
+     source box (cluster has Z-2992-2026 + Z-2993-2026); the CPSC and
+     FDA-food previews correctly omit that row (recordCount=1).
+   - Verified the FDA-device aside renders Classification (Class II),
+     Distribution (Worldwide distribution), Units (416931), Recalling
+     firm (Medline Industries, LP), and Recall IDs
+     (Z-2992-2026, Z-2993-2026).
+   - Verified the CPSC preview renders the "Reported incidents or
+     injuries" section (source explicitly reports 26 incident reports +
+     one minor cut); the FDA previews correctly skip that section.
+   - Verified the CPSC preview renders the official CPSC photo with the
+     caption "Recalled Lights & Sounds Fire Truck Activity Board. Photo:
+     Consumer Product Safety Commission." and the attribution note
+     "Official CPSC recall photo. CPSC recall images are works of the
+     U.S. federal government and are in the public domain."
+   - `dist/sitemap-0.xml` contains zero `/preview/` URLs (the existing
+     `/preview/` filter in astro.config.mjs covers the new
+     `/preview/recall/` subroute automatically).
+
+3. `npm run validate:publishing` — SUCCESS (32/32 checks pass, 0 fail)
+4. `npm run validate:recalls` — SUCCESS (9/9 checks pass, 0 fail)
+
+### Next actions for a future agent
+
+- The Phase 7B pipeline is wired end-to-end: recall-story-clusters.json →
+  draft JSON + hero image + hidden preview page. An operator can now run
+  `npm run previews:recalls` after each `npm run cluster:recalls` to
+  refresh the 3 highest-priority previews for editorial review.
+- The preview route at `/preview/recall/<slug>/` is intentionally NOT
+  linked from the public site. Operators must know the slug to view a
+  preview. The `getStaticPaths()` reads `data/recalls/drafts/` at build
+  time, so dropping a new draft JSON into that directory will produce a
+  new preview page on the next `astro build`.
+- A future "publish" task could extend this layer to convert approved
+  drafts into public `src/content/articles/<slug>.md` files (analogous
+  to the existing `publish-5a-batch.mjs` for NWS weather stories). That
+  step is intentionally out of scope here — Phase 7B only produces
+  private editorial-review assets.
+- The hazard-label keyword table at the top of both
+  `generate-recall-draft.mjs` and `generate-recall-image.mjs` is a
+  duplicated constant. If the lists drift out of sync, the headline
+  hazard label and the image hazard chip could disagree. A future
+  refactor could move this to a shared module under `src/lib/` or
+  `scripts/lib/`. For now the duplication is intentional and the lists
+  are byte-identical.
+- The image generator's `linkifyUrls` only matches `http(s)://` URLs;
+  bare `www.` URLs in CPSC consumer-action text are NOT linkified (the
+  Melissa & Doug text mentions "www.melissaanddoug.com/recall" without
+  a scheme). The text is preserved verbatim per spec; linkification of
+  bare `www.` URLs is a future enhancement.
+
+---

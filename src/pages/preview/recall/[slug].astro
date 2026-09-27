@@ -1,0 +1,667 @@
+---
+import { readFile, readdir } from 'node:fs/promises';
+import { join } from 'node:path';
+import PreviewLayout from '../../../layouts/PreviewLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { formatDateTime, iso } from '../../../lib/articles';
+
+/**
+ * Hidden preview route for recall article drafts (Phase 7B).
+ *
+ * This route is NOT linked anywhere on the public site. It is only accessible
+ * when someone knows the exact URL. It renders a private recall draft using
+ * the production article design so editors can review the article + image
+ * before publication.
+ *
+ * Key differences from the weather preview (src/pages/preview/[slug].astro):
+ *   - Category label: "RECALLS" (not "Weather")
+ *   - Author: "US News Engine Consumer Safety Desk"
+ *   - Source box: shows organization (CPSC or FDA), a "View official recall →"
+ *     link, and "Official records: N" when multiple records are in the cluster.
+ *   - Hero image: CPSC photo or FDA editorial graphic.
+ *   - Image caption: proper attribution.
+ *   - <meta name="robots" content="noindex,nofollow,noarchive">
+ *   - NO NewsArticle schema (handled by PreviewLayout).
+ *   - Self-referencing canonical.
+ *   - Excluded from sitemap (handled by the existing /preview/ filter).
+ *
+ * Reads the draft JSON from data/recalls/drafts/<slug>.json.
+ * Reads the image from /preview-images/<slug>.jpg or .png.
+ */
+
+interface DraftSection {
+  heading: string | null;
+  paragraphs: string[];
+}
+
+interface RecallMetadata {
+  source: string;
+  sourceType: string;
+  recallingFirm: string | null;
+  manufacturer: string | null;
+  brands: string[];
+  primaryProductName: string | null;
+  hazard: string | null;
+  reason: string | null;
+  classification: string | null;
+  recallDates: string[];
+  reportDates: string[];
+  distribution: string | null;
+  affectedStates: string | null;
+  units: string | null;
+  modelNumbers: string[];
+  lotNumbers: string[];
+  upcs: string[];
+  incidents: string | null;
+  injuries: string | null;
+  deaths: string | null;
+  consumerAction: string | null;
+  recordCount: number;
+  storyScore: number;
+  storyScoreReasons: string[];
+  storyStatus: string;
+  firstSeenAt: string | null;
+  latestSeenAt: string | null;
+}
+
+interface Draft {
+  draftVersion: number;
+  generatedAt: string;
+  storyKey: string;
+  sourceRecallIds: string[];
+  status: string;
+  title: string;
+  description: string;
+  slug: string;
+  category: string;
+  location: string | null;
+  publishedAt: string;
+  updatedAt: string | null;
+  breaking: boolean;
+  author: string;
+  sourceName: string;
+  sourceUrl: string;
+  sourceOffice: string;
+  hasUpdates: boolean;
+  seo: { title: string; description: string };
+  image: {
+    status: string;
+    url: string | null;
+    alt: string | null;
+    source: string | null;
+    license: string | null;
+  };
+  body: DraftSection[];
+  recallMetadata: RecallMetadata;
+}
+
+export async function getStaticPaths() {
+  // Only generate preview pages for recall drafts that actually exist.
+  const draftsDir = join(process.cwd(), 'data', 'recalls', 'drafts');
+  let files: string[] = [];
+  try {
+    files = await readdir(draftsDir);
+  } catch {
+    // No drafts directory — no preview pages.
+    return [];
+  }
+  return files
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
+      const slug = f.replace(/\.json$/, '');
+      return { params: { slug }, props: { slug } };
+    });
+}
+
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+
+// Load the draft JSON.
+const draftPath = join(process.cwd(), 'data', 'recalls', 'drafts', `${slug}.json`);
+let draftRaw: string;
+try {
+  draftRaw = await readFile(draftPath, 'utf8');
+} catch {
+  return Astro.redirect('/404');
+}
+const draft: Draft = JSON.parse(draftRaw);
+
+// Resolve the hero image: prefer .jpg (CPSC photo), fall back to .png
+// (editorial graphic). Both live under /preview-images/.
+let heroImage: string | null = null;
+let heroImageExt: string | null = null;
+const previewImagesDir = join(process.cwd(), 'public', 'preview-images');
+try {
+  const allImages = await readdir(previewImagesDir);
+  if (allImages.includes(`${slug}.jpg`)) {
+    heroImage = `/preview-images/${slug}.jpg`;
+    heroImageExt = 'jpg';
+  } else if (allImages.includes(`${slug}.png`)) {
+    heroImage = `/preview-images/${slug}.png`;
+    heroImageExt = 'png';
+  }
+} catch {
+  // No preview-images directory — fall through to no image.
+}
+
+// Load image metadata sidecar (if it exists) to get caption + attribution.
+let imageCaption = '';
+let imageAttribution = '';
+let imageAlt = draft.image?.alt || '';
+let originalImageUrl: string | null = null;
+let imageMode: string | null = null;
+let imageAgency: string | null = null;
+let imageSourceUrl: string | null = null;
+if (heroImageExt) {
+  const metaPath = join(process.cwd(), 'data', 'draft-images', `${slug}.json`);
+  try {
+    const metaRaw = await readFile(metaPath, 'utf8');
+    const meta = JSON.parse(metaRaw);
+    imageCaption = meta.caption || '';
+    imageAttribution = meta.licenseNotes || '';
+    imageAlt = meta.alt || imageAlt;
+    originalImageUrl = meta.originalImageUrl || null;
+    imageMode = meta.imageMode || null;
+    imageAgency = meta.agency || null;
+    imageSourceUrl = meta.sourceUrl || null;
+  } catch {
+    // No metadata sidecar — use minimal caption.
+  }
+}
+
+// Parse timestamps.
+const publishedAt = new Date(draft.publishedAt);
+const updatedAt = draft.updatedAt ? new Date(draft.updatedAt) : null;
+const publishedDisplay = formatDateTime(publishedAt);
+const updatedDisplay = updatedAt ? formatDateTime(updatedAt) : null;
+
+// Build the preview path (self-referencing canonical).
+const previewPath = `/preview/recall/${slug}/`;
+
+// Source attribution — adapt to CPSC vs FDA.
+const sourceOrganization = draft.sourceName;
+const sourceUrl = draft.sourceUrl;
+const sourceUrlLabel = 'View official recall \u2192';
+const officialRecordCount = draft.sourceRecallIds?.length || 1;
+const hasMultipleRecords = officialRecordCount > 1;
+
+// Recall agency short label for the source box.
+const sourceIsCpsc = draft.recallMetadata?.source === 'CPSC';
+const sourceIsFda = draft.recallMetadata?.source === 'FDA';
+
+// Breadcrumbs — preview only.
+const breadcrumbs = [
+  { name: 'Preview' },
+  { name: draft.title },
+];
+---
+
+<PreviewLayout
+  title={draft.title}
+  description={draft.description}
+  previewPath={previewPath}
+  ogImage={heroImage || undefined}
+  publishedTime={publishedAt}
+  modifiedTime={updatedAt || undefined}
+  author={draft.author}
+  section="Recalls"
+>
+  <article class="article">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbs} />
+
+      <header class="article-head">
+        <span class="cat-badge cat-badge--solid">Recalls</span>
+        {draft.breaking && (
+          <span class="breaking-tag" aria-label="Breaking news">
+            <span class="breaking-dot" aria-hidden="true"></span>
+            Breaking
+          </span>
+        )}
+        <h1 class="article-title">{draft.title}</h1>
+        <p class="article-dek">{draft.description}</p>
+
+        <div class="article-meta">
+          <div class="meta-block meta-byline">
+            <span class="meta-label">By</span>
+            <span class="meta-author">{draft.author}</span>
+          </div>
+          <div class="meta-dates">
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <time class="meta-value" datetime={iso(publishedAt)}>
+                {publishedDisplay}
+              </time>
+            </div>
+            {
+              updatedDisplay && updatedAt && updatedAt.getTime() > publishedAt.getTime() && (
+                <div class="meta-block">
+                  <span class="meta-label">Updated</span>
+                  <time class="meta-value" datetime={iso(updatedAt)}>
+                    {updatedDisplay}
+                  </time>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </header>
+
+      {heroImage && (
+        <figure class="article-figure">
+          <img
+            src={heroImage}
+            alt={imageAlt}
+            width="1200"
+            height="675"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <figcaption>
+            <span class="figcaption-text">{imageCaption}</span>
+            {imageAttribution && (
+              <span class="figcaption-attribution">{imageAttribution}</span>
+            )}
+          </figcaption>
+        </figure>
+      )}
+
+      <div class="article-columns">
+        <div class="article-content">
+          <div class="article-body">
+            {draft.body.map((section) => (
+              <div class="draft-section">
+                {section.heading && <h2>{section.heading}</h2>}
+                {section.paragraphs.map((p) => (
+                  <p set:html={p}></p>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div class="article-source">
+            <p class="source-label">Source</p>
+            <div class="source-grid">
+              <div class="source-row">
+                <span class="source-key">Organization</span>
+                <span class="source-val">{sourceOrganization}</span>
+              </div>
+              <div class="source-row">
+                <span class="source-key">Office</span>
+                <span class="source-val">{draft.sourceOffice}</span>
+              </div>
+              {hasMultipleRecords && (
+                <div class="source-row">
+                  <span class="source-key">Official records</span>
+                  <span class="source-val">{officialRecordCount}</span>
+                </div>
+              )}
+              {sourceUrl && (
+                <div class="source-row">
+                  <span class="source-key">Original recall</span>
+                  <a
+                    class="source-link"
+                    href={sourceUrl}
+                    rel="nofollow noopener"
+                    target="_blank"
+                  >
+                    {sourceUrlLabel}
+                  </a>
+                </div>
+              )}
+            </div>
+            <p class="source-note">
+              This article was produced from an official {sourceIsCpsc ? 'CPSC' : sourceIsFda ? 'FDA' : 'agency'} recall record. US News Engine is not the original source of this recall notice.
+            </p>
+          </div>
+        </div>
+
+        <aside class="article-aside" aria-label="Article details">
+          <div class="aside-card">
+            <p class="aside-title">Recall details</p>
+            <dl class="aside-list">
+              <div>
+                <dt>Category</dt>
+                <dd>Recalls</dd>
+              </div>
+              <div>
+                <dt>Agency</dt>
+                <dd>{sourceOrganization}</dd>
+              </div>
+              {draft.recallMetadata?.classification && (
+                <div>
+                  <dt>Classification</dt>
+                  <dd>{draft.recallMetadata.classification}</dd>
+                </div>
+              )}
+              {draft.location && (
+                <div>
+                  <dt>Distribution</dt>
+                  <dd>{draft.location}</dd>
+                </div>
+              )}
+              {draft.recallMetadata?.units && (
+                <div>
+                  <dt>Units</dt>
+                  <dd>{draft.recallMetadata.units}</dd>
+                </div>
+              )}
+              {draft.recallMetadata?.recallingFirm && (
+                <div>
+                  <dt>Recalling firm</dt>
+                  <dd>{draft.recallMetadata.recallingFirm}</dd>
+                </div>
+              )}
+              <div>
+                <dt>Published</dt>
+                <dd>{publishedDisplay}</dd>
+              </div>
+              <div>
+                <dt>Updated</dt>
+                <dd>{updatedDisplay || 'Not yet updated'}</dd>
+              </div>
+              <div>
+                <dt>Recall IDs</dt>
+                <dd class="recall-ids">{draft.sourceRecallIds.join(', ')}</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</PreviewLayout>
+
+<style>
+  .article {
+    padding-bottom: 8px;
+  }
+  .article-head {
+    max-width: 820px;
+    margin: 8px auto 24px;
+  }
+  .article-title {
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1.08;
+    margin: 16px 0 14px;
+  }
+  .article-dek {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-border);
+  }
+  .meta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .meta-label {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .meta-author {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .meta-value {
+    font-size: 0.92rem;
+    color: var(--color-text);
+  }
+
+  .cat-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 2px;
+    line-height: 1;
+  }
+  .cat-badge--solid {
+    background: var(--color-red);
+    color: #fff;
+  }
+
+  .breaking-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 8px;
+    padding: 4px 8px;
+    background: #7a1f3a;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    line-height: 1;
+  }
+  .breaking-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff9aa6;
+    animation: breaking-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes breaking-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .article-figure {
+    margin: 8px 0 32px;
+  }
+  .article-figure img {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+  .article-figure figcaption {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+    padding-left: 12px;
+    border-left: 3px solid var(--color-border-strong);
+  }
+  .figcaption-text {
+    display: block;
+  }
+  .figcaption-attribution {
+    display: block;
+    margin-top: 3px;
+    color: var(--color-text-soft);
+    font-style: italic;
+  }
+
+  .article-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 48px;
+    align-items: start;
+  }
+  .article-content {
+    max-width: 720px;
+  }
+
+  .article-body {
+    font-size: 1.075rem;
+    line-height: 1.75;
+    color: #23262b;
+  }
+  .article-body > * + * {
+    margin-top: 1.25rem;
+  }
+  .article-body h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  .article-body p {
+    margin-top: 1.15rem;
+  }
+  .draft-section {
+    margin-top: 1.5rem;
+  }
+  .draft-section:first-child {
+    margin-top: 0;
+  }
+
+  /* Source box */
+  .article-source {
+    margin-top: 36px;
+    padding: 24px;
+    background: var(--color-surface-alt);
+    border-left: 4px solid var(--color-red);
+    border-radius: var(--radius);
+  }
+  .source-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+  }
+  .source-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .source-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .source-key {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    min-width: 130px;
+    flex-shrink: 0;
+  }
+  .source-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .source-link {
+    font-size: 0.9rem;
+    color: var(--color-red-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .source-link:hover {
+    color: var(--color-red);
+  }
+  .source-note {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.82rem;
+    color: var(--color-text-soft);
+    font-style: italic;
+  }
+
+  /* Aside */
+  .aside-card {
+    position: sticky;
+    top: 72px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .aside-title {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-text);
+    margin-bottom: 14px;
+  }
+  .aside-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .aside-list dt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .aside-list dd {
+    font-size: 0.92rem;
+    margin-top: 2px;
+  }
+  .aside-list .recall-ids {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+
+  @media (max-width: 860px) {
+    .article-columns {
+      grid-template-columns: 1fr;
+    }
+    .aside-card {
+      position: static;
+    }
+  }
+  @media (max-width: 620px) {
+    .article-meta {
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .meta-byline {
+      width: 100%;
+    }
+    .meta-dates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      width: 100%;
+    }
+    .meta-dates .meta-block {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .meta-dates .meta-label {
+      font-size: 0.62rem;
+    }
+    .meta-dates .meta-value {
+      font-size: 0.85rem;
+    }
+    .source-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .source-key {
+      min-width: 0;
+    }
+  }
+</style>

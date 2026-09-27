@@ -26,7 +26,11 @@
     "fetch:recalls": "npm run fetch:cpsc && npm run fetch:fda-food && npm run fetch:fda-device",
     "filter:recalls": "node scripts/filter-recall-news.mjs",
     "stories:recalls": "node scripts/build-recall-stories.mjs",
-    "validate:recalls": "node scripts/validate-recalls.mjs"
+    "cluster:recalls": "node scripts/cluster-recall-stories.mjs",
+    "validate:recalls": "node scripts/validate-recalls.mjs",
+    "draft:recall": "node scripts/generate-recall-draft.mjs",
+    "image:recall": "node scripts/generate-recall-image.mjs",
+    "previews:recalls": "node scripts/generate-recall-previews.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
