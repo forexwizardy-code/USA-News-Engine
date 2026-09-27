@@ -116,10 +116,15 @@ const draft: Draft = JSON.parse(draftRaw);
 const heroImage = `/preview-images/${draft.slug}.png`;
 
 // Parse timestamps.
+// publishedAt = when this website first publishes (for previews, = generatedAt).
+// updatedAt = when this website last materially updated (null on first publish).
 const publishedAt = new Date(draft.publishedAt);
-const updatedAt = new Date(draft.updatedAt);
+const updatedAt = draft.updatedAt ? new Date(draft.updatedAt) : null;
 const effectiveDate = new Date(draft.weatherMetadata.effective);
 const endsDate = new Date(draft.weatherMetadata.ends);
+
+// Image caption — natural style, not copied from alt text.
+const imageCaption = `${draft.title}. Graphic: US News Engine / NWS data.`;
 
 // Build the preview path (self-referencing canonical).
 const previewPath = `/preview/${storyKey}/`;
@@ -151,26 +156,28 @@ const breadcrumbs = [
         <p class="article-dek">{draft.description}</p>
 
         <div class="article-meta">
-          <div class="meta-block">
+          <div class="meta-block meta-byline">
             <span class="meta-label">By</span>
             <span class="meta-author">{draft.author}</span>
           </div>
-          <div class="meta-block">
-            <span class="meta-label">Published</span>
-            <time class="meta-value" datetime={iso(publishedAt)}>
-              {formatDateTime(publishedAt)}
-            </time>
+          <div class="meta-dates">
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <time class="meta-value" datetime={iso(publishedAt)}>
+                {formatDateTime(publishedAt)}
+              </time>
+            </div>
+            {
+              updatedAt && updatedAt.getTime() > publishedAt.getTime() && (
+                <div class="meta-block">
+                  <span class="meta-label">Updated</span>
+                  <time class="meta-value" datetime={iso(updatedAt)}>
+                    {formatDateTime(updatedAt)}
+                  </time>
+                </div>
+              )
+            }
           </div>
-          {
-            updatedAt.getTime() !== publishedAt.getTime() && (
-              <div class="meta-block">
-                <span class="meta-label">Updated</span>
-                <time class="meta-value" datetime={iso(updatedAt)}>
-                  {formatDateTime(updatedAt)}
-                </time>
-              </div>
-            )
-          }
         </div>
       </header>
 

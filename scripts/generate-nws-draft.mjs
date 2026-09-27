@@ -349,6 +349,47 @@ function extractDetailBullets(description) {
 }
 
 /**
+ * Transform an NWS IMPACTS fragment into natural reader-facing prose.
+ *
+ * NWS impacts typically read like:
+ *   "At 7.0 feet, Forest land inundated near the river in Gurnee."
+ *
+ * We rewrite this deterministically into:
+ *   "The NWS says forest land near the river in Gurnee may be inundated
+ *    when the river reaches 7.0 feet."
+ *
+ * The transformation:
+ *   1. Extract the stage value (e.g. "7.0 feet") and the impact description.
+ *   2. Lowercase the first word of the impact description (it's usually a
+ *      common noun like "Forest" which NWS capitalizes).
+ *   3. Reassemble as natural prose with "The NWS says ... may be ... when
+ *      the river reaches [stage]."
+ *
+ * If the fragment doesn't match the expected pattern, fall back to a simpler
+ * but still natural form.
+ */
+function transformImpact(impactsFrag) {
+  if (!impactsFrag) return null;
+  const text = tidyFragment(impactsFrag);
+  if (!text) return null;
+
+  // Match "At <stage>, <description>" — the most common NWS impacts pattern.
+  const m = text.match(/^At\s+([\d.]+\s*(?:feet|ft)),\s*(.+)$/i);
+  if (m) {
+    const stage = m[1].replace(/\bft\b/i, 'feet');
+    let desc = m[2].trim().replace(/\.$/, '');
+    // Lowercase the first word if it's a common noun (NWS capitalizes "Forest",
+    // "Roads", "Water", etc.). Preserve proper nouns by checking against a
+    // small whitelist of known proper nouns that should stay capitalized.
+    desc = lowercaseFirst(desc);
+    return `The NWS says ${desc} may occur when the river reaches ${stage}.`;
+  }
+
+  // Fallback: present the fragment as a natural sentence with attribution.
+  return `The NWS notes potential impacts: ${lowercaseFirst(text)}.`;
+}
+
+/**
  * Build a concise summary of the official NWS instruction text.
  * Extracts actionable guidance sentences and presents them with attribution.
  * Drops boilerplate ("Additional information", "next statement") from the
@@ -451,8 +492,19 @@ function generateDraft(story, now) {
   const sourceOffice = story.senderName || 'National Weather Service';
 
   // --- Timestamps ----------------------------------------------------------
+  // Publication semantics for US News Engine:
+  //   publishedAt = the time THIS WEBSITE first publishes the article.
+  //   updatedAt   = the time THIS WEBSITE last materially updated an
+  //                 already-published article (null on first publish).
+  //
+  // For private previews, generatedAt serves as the temporary publishedAt.
+  // NWS effective/onset timestamps remain in weatherMetadata only and are
+  // NEVER used as the website's Published or Updated time.
+  //
+  // updatedAt is null on first generation — it will only be set when a
+  // future regeneration meaningfully modifies an already-published article.
   const publishedAt = now.toISOString();
-  const updatedAt = story.latestEffectiveAt || publishedAt;
+  const updatedAt = null;
 
   // --- SEO -----------------------------------------------------------------
   const seoTitle = `${event}: ${locationDisplay}`.slice(0, 60);
@@ -506,7 +558,15 @@ function generateDraft(story, now) {
     }
   }
   if (impactsFrag) {
-    whatParas.push(`Potential impacts, per the NWS: ${lowercaseFirst(impactsFrag)}.`);
+    // Transform the NWS IMPACTS fragment into natural prose.
+    // NWS impacts typically read like "At 7.0 feet, Forest land inundated
+    // near the river in Gurnee." We rewrite this as:
+    // "The NWS says forest land near the river in Gurnee may be inundated
+    //  when the river reaches 7.0 feet."
+    const impactText = transformImpact(impactsFrag);
+    if (impactText) {
+      whatParas.push(impactText);
+    }
   }
   body.push({
     heading: `What the ${event.toLowerCase().includes('warning') ? 'warning' : 'alert'} says`,
@@ -567,7 +627,7 @@ function generateDraft(story, now) {
 
   // --- Assemble draft ------------------------------------------------------
   return {
-    draftVersion: 2,
+    draftVersion: 3,
     generatedAt: now.toISOString(),
     storyKey: story.storyKey,
     sourceAlertIds: story.alertIds,
