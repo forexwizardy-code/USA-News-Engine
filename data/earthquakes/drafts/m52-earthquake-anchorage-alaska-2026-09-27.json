@@ -1,0 +1,119 @@
+{
+  "draftVersion": 1,
+  "generatedAt": "2026-09-27T23:34:55.181Z",
+  "earthquakeKey": "usgs__TEST_FIXTURE_001",
+  "eventId": "TEST_FIXTURE_001",
+  "status": "draft",
+  "title": "M5.2 Earthquake Strikes Anchorage, USGS Says",
+  "description": "A magnitude 5.2 earthquake was reported near Anchorage, Alaska, according to the U.S. Geological Survey. USGS assigned a yellow PAGER alert.",
+  "slug": "m52-earthquake-anchorage-alaska-2026-09-27",
+  "category": "weather",
+  "location": "Anchorage",
+  "publishedAt": "2026-09-27T23:34:55.181Z",
+  "updatedAt": null,
+  "breaking": true,
+  "author": "US News Engine Weather Desk",
+  "sourceName": "U.S. Geological Survey",
+  "sourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/TEST_FIXTURE_001",
+  "sourceOffice": "U.S. Geological Survey",
+  "hasUpdates": false,
+  "seo": {
+    "title": "M5.2 Earthquake Strikes Anchorage, USGS Says",
+    "description": "A magnitude 5.2 earthquake was reported near Anchorage, Alaska, according to the U.S. Geological Survey. USGS assigned a yellow PAGER alert."
+  },
+  "image": {
+    "status": "pending",
+    "url": null,
+    "alt": null,
+    "source": null,
+    "license": null
+  },
+  "body": [
+    {
+      "heading": null,
+      "paragraphs": [
+        "A magnitude 5.2 earthquake struck Anchorage, Alaska on Sunday, September 27, 2026 at 10:00 a.m. UTC, the U.S. Geological Survey reported. USGS assigned a yellow PAGER alert level for the event."
+      ]
+    },
+    {
+      "heading": "What USGS reported",
+      "paragraphs": [
+        "The U.S. Geological Survey recorded the earthquake at magnitude 5.2 at a depth of 28.5 kilometers centered near 12 km NNE of Anchorage, Alaska.",
+        "USGS listed the event status as &quot;reviewed,&quot; indicating that a seismologist had reviewed the automated solution.",
+        "USGS assigned the event a significance score of 650."
+      ]
+    },
+    {
+      "heading": "Magnitude and depth",
+      "paragraphs": [
+        "The earthquake had a magnitude of 5.2 on the local magnitude (ML) scale.",
+        "The hypocenter was located at a depth of 28.5 kilometers, within the shallow-to-intermediate range typical of crustal activity."
+      ]
+    },
+    {
+      "heading": "Where the earthquake occurred",
+      "paragraphs": [
+        "The epicenter was located near 12 km NNE of Anchorage, Alaska.",
+        "USGS listed the coordinates as 61.2250°N, 149.7350°W."
+      ]
+    },
+    {
+      "heading": "Felt reports",
+      "paragraphs": [
+        "As of the most recent USGS update, 342 &quot;Did You Feel It?&quot; reports were submitted by residents near the epicenter.",
+        "USGS computed a Community Determined Intensity (CDI) of 4.2 from those reports."
+      ]
+    },
+    {
+      "heading": "USGS alert and tsunami information",
+      "paragraphs": [
+        "USGS assigned a yellow (limited impact expected) PAGER alert level for the earthquake through its Prompt Assessment of Global Earthquakes for Response (PAGER) system.",
+        "USGS did not flag the event with a tsunami marker."
+      ]
+    },
+    {
+      "heading": "Source",
+      "paragraphs": [
+        "This article was produced from data published by the U.S. Geological Survey Earthquake Hazards Program. The original event page is published by USGS at earthquake.usgs.gov."
+      ]
+    }
+  ],
+  "earthquakeMetadata": {
+    "magnitude": 5.2,
+    "magnitudeType": "ml",
+    "magnitudeTypeLabel": "local magnitude (ML)",
+    "depth": 28.5,
+    "depthKm": 28.5,
+    "place": "12 km NNE of Anchorage, Alaska",
+    "state": "Alaska",
+    "country": "United States",
+    "nearestPlace": "Anchorage, Alaska",
+    "latitude": 61.225,
+    "longitude": -149.735,
+    "felt": 342,
+    "cdi": 4.2,
+    "mmi": null,
+    "alert": "yellow",
+    "tsunami": false,
+    "significance": 650,
+    "status": "reviewed",
+    "time": "2026-09-27T10:00:00.000Z",
+    "updated": "2026-09-27T10:30:00.000Z",
+    "eventId": "TEST_FIXTURE_001",
+    "hasShakeMap": false,
+    "shakeMapProductUrl": null,
+    "shakeMapImageUrl": null,
+    "hasDyfi": true,
+    "hasMomentTensor": false,
+    "hasTsunamiProduct": false,
+    "isUS": true,
+    "isUSRelevant": true,
+    "impactRelevant": true,
+    "publishEligible": true,
+    "scope": "us",
+    "priority": "high",
+    "storyScore": 65,
+    "storyStatus": "new",
+    "testOnly": true
+  }
+}

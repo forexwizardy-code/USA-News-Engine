@@ -1196,3 +1196,448 @@ Added five npm scripts:
    `felt` jumps, `alert` escalates (green→yellow→orange→red), or
    `tsunami` flips from false→true, so the newsroom can re-promote an
    evolving story to breaking-news status.
+
+---
+
+## Phase 8B — Dormant earthquake publishing engine (Task 8B-engine)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-27 (simulated project timeline)
+**Scope:** Build the dormant earthquake publishing engine on top of the
+Phase 8A ingestion pipeline. Draft generator + image generator + master
+newsroom script + test fixture + GitHub Actions workflow + hidden preview
+page + 5 new validation checks. Kill switch
+(`earthquakePublishingEnabled: false`) keeps the engine dormant until a
+future phase explicitly enables automated publishing.
+
+### Files created
+
+- `scripts/generate-earthquake-draft.mjs`
+  Reads `data/earthquakes/earthquake-story-records.json`, picks the first
+  `publishEligible` story (or accepts a `earthquakeKey` as `argv[2]`, or
+  uses the test fixture when `--fixture` is passed), and writes exactly
+  ONE private article draft to `data/earthquakes/drafts/<slug>.json`.
+  The draft includes draftVersion, generatedAt, earthquakeKey, eventId,
+  status, title, description, slug, category (`weather` — there's no
+  earthquake category yet), location, publishedAt, updatedAt, breaking,
+  author (`US News Engine Weather Desk`), sourceName
+  (`U.S. Geological Survey`), sourceUrl (USGS event page), sourceOffice,
+  hasUpdates, seo, image (pending), body sections, and a full
+  earthquakeMetadata block (magnitude, magnitudeType, magnitudeTypeLabel,
+  depth, depthKm, place, state, country, nearestPlace, latitude,
+  longitude, felt, cdi, mmi, alert, tsunami, significance, status, time,
+  updated, eventId, hasShakeMap, shakeMapProductUrl, shakeMapImageUrl,
+  hasDyfi, hasMomentTensor, hasTsunamiProduct, isUS, isUSRelevant,
+  impactRelevant, publishEligible, scope, priority, storyScore,
+  storyStatus, testOnly).
+  Headline rule: `M{mag} Earthquake Strikes {PlaceShort}, USGS Says` —
+  under ~80 chars, no sensationalism ("massive", "devastating", "major"
+  are not used unless officially classified), no damage/injury claims
+  unless officially reported. Article body structure: lead (no heading)
+  → "What USGS reported" → "Magnitude and depth" → "Where the earthquake
+  occurred" → "Felt reports" (only if felt > 0) → "USGS alert and
+  tsunami information" (only if alert or tsunami) → "Source". Empty
+  sections are skipped. Every factual statement is traceable to USGS
+  data. Place deduplication logic avoids "Anchorage, Alaska (Alaska)"
+  and "Anchorage, Alaska in Alaska" by checking whether the USGS place
+  string already contains the state name before appending it.
+
+- `scripts/generate-earthquake-image.mjs`
+  Generates hero images for earthquake article drafts in three modes:
+  (1) ShakeMap path — if `hasShakeMap=true` and `shakeMapImageUrl` is
+  present, download the official USGS ShakeMap image, cover-crop to
+  1200x675 using sharp, save as `data/draft-images/<slug>.jpg`.
+  (2) Coordinate-map path — for stories with lat/lon but no ShakeMap,
+  generate an SVG showing the epicenter marker at lat/lon, a state/
+  region viewport (CONUS / Alaska / Hawaii / Puerto Rico / international
+  window), lat/lon gridlines, "M{mag} EARTHQUAKE" headline, place name,
+  depth, USGS attribution, and US News Engine branding. Render to PNG
+  via sharp at 1200x675. Save as `data/draft-images/<slug>.png`.
+  (3) Fallback earthquake-data graphic — when no coordinates are
+  available, render a two-panel SVG with the magnitude, place, date,
+  depth, PAGER alert chip, tsunami flag, and USGS attribution. Render
+  to PNG via sharp.
+  Outputs the SVG source (for editability) and a metadata JSON sidecar
+  with provenance (source, agency, originalImageUrl, caption, alt,
+  copyrightRisk, licenseNotes). The `--fixture` flag forces use of the
+  test fixture.
+
+- `data/published-earthquakes.json`
+  Empty initial registry: `{ generatedAt, storyCount: 0, stories: [] }`.
+  The newsroom script appends one entry per published earthquake article
+  with: earthquakeKey, eventId, slug, articlePath, publishedAt,
+  updatedAt, lastMagnitude, lastAlert, lastTsunami, lastFelt,
+  storyStatus, lastSeenAt, lastCheckedAt, imageMode, imageSource,
+  imageCreator, imageLicense, imageLicenseUrl, imageSourceUrl, breaking.
+
+- `scripts/run-earthquake-newsroom.mjs`
+  Master automation script. Pipeline: read config (kill switch) →
+  fetch USGS (`npm run fetch:earthquakes`) → filter
+  (`npm run filter:earthquakes`) → stories
+  (`npm run stories:earthquakes`) → validate
+  (`npm run validate:earthquakes`) → load published-earthquakes.json
+  registry → reconcile NEW / UPDATED / UNCHANGED / MISSING → if kill
+  switch off: print summary and exit (no changes) → process UPDATED
+  stories first (preserve slug, publishedAt; set updatedAt; refresh
+  lastMagnitude/lastAlert/lastTsunami/lastFelt; bump article file's
+  updatedAt frontmatter) → check daily UTC cap from registry → select
+  NEW stories (publishEligible=true, testOnly!=true, sorted by priority
+  then storyScore descending, capped at maxEarthquakeNewPerRun AND the
+  daily remaining) → for each: generate draft, generate image, copy
+  image to public/images/, write article markdown file, append a
+  registry entry → save registry → validate:earthquakes +
+  validate:publishing → astro build. Exits before validation/build if
+  0 new + 0 updated (no-change behavior). Uses `execSync` for every
+  sub-script and surfaces stderr on failure.
+  Test mode: `--test-date=YYYY-MM-DD`, `--ignore-daily-cap`,
+  `--fixture`, and `--allow-test-publish` flags. When ANY test flag is
+  present without `--allow-test-publish`, enters DRY RUN mode — no
+  production files modified. The test fixture is also explicitly
+  filtered out of the eligibleStories set (testOnly !== true) so even
+  with `--allow-test-publish`, the fixture cannot reach the publishing
+  path.
+
+- `data/earthquakes/test-fixture.json`
+  Synthetic publishEligible U.S. earthquake: M5.2, 12 km NNE of
+  Anchorage, Alaska, depth 28.5 km, alert=yellow, significance 650,
+  felt=342, CDI=4.2, storyScore=65, priority=high. `testOnly: true`
+  and `eventId: TEST_FIXTURE_001` mark it as a non-real event. Includes
+  `_fixtureNote` explaining it must never appear in the production
+  article collection, registry, or live site. The fixture is loaded by
+  `generate-earthquake-draft.mjs --fixture` and
+  `generate-earthquake-image.mjs --fixture` and by the preview page at
+  `src/pages/preview/earthquake-test.astro`, but is filtered out of the
+  newsroom's eligibleStories set.
+
+- `.github/workflows/earthquake-newsroom.yml`
+  Standalone GitHub Actions workflow. `workflow_dispatch` +
+  `schedule: 47 * * * *` (hourly at minute 47, offset from NWS at 17
+  and recall at 17 8,20). `ubuntu-latest`, `permissions: contents:
+  write`, `timeout-minutes: 15`. Steps: checkout → setup Bun + Node 24
+  → `bun install` → `npm run newsroom:earthquakes` → read
+  `earthquakePublishingEnabled` from `config/automation.json` →
+  `git diff --quiet -- src/ public/ data/published-earthquakes.json` →
+  if changes AND publishing enabled: `npm run build`, commit with
+  `git config user.name "US News Engine Bot"` /
+  `newsroom@users.noreply.github.com` and message
+  `"Automated earthquake newsroom update: YYYY-MM-DD HH:mm UTC"`,
+  push, `npx wrangler deploy` with `CLOUDFLARE_API_TOKEN` +
+  `CLOUDFLARE_ACCOUNT_ID`, then live-verify that `/`, `/weather/`, and
+  `/latest/` all return HTTP 200. No-change path: exit success.
+
+- `src/pages/preview/earthquake-test.astro`
+  Hidden preview route at `/preview/earthquake-test/` that renders the
+  test fixture using the production article design. Shows a prominent
+  orange "TEST FIXTURE — NOT A REAL EARTHQUAKE" banner above the
+  article. Uses `PreviewLayout` (which emits
+  `<meta name="robots" content="noindex,nofollow,noarchive">` and a
+  self-referencing canonical and NO NewsArticle schema). The page is
+  excluded from the sitemap by the existing
+  `filter: (page) => !page.includes('/preview/')` rule in
+  `astro.config.mjs`. The source box links to
+  `https://earthquake.usgs.gov/earthquakes/eventpage/TEST_FIXTURE_001`
+  (a non-existent USGS event page) with `rel="nofollow noopener"` so
+  clicks are harmless. The page loads the test fixture JSON, the
+  generated draft JSON (matching by earthquakeKey), and the image
+  sidecar; gracefully falls back to a placeholder section if the draft
+  or image are missing (instructs the editor to run the test commands).
+  Article aside displays all earthquake metadata fields (magnitude,
+  depth, place, state, coordinates, felt, CDI, PAGER alert, tsunami,
+  significance, status, story score, priority, hasShakeMap, hasDYFI,
+  testOnly).
+
+### package.json changes
+
+Added three npm scripts (no existing entries modified):
+- `"draft:earthquake": "node scripts/generate-earthquake-draft.mjs"`
+- `"image:earthquake": "node scripts/generate-earthquake-image.mjs"`
+- `"newsroom:earthquakes": "node scripts/run-earthquake-newsroom.mjs"`
+
+### validate-earthquakes.mjs extensions
+
+Added 5 new publishing-pipeline checks (Phase 8B):
+- **Check 13** — no testOnly fixture in the public article collection.
+  Scans every `src/content/articles/*.md` file for the markers
+  `TEST_FIXTURE`, `usgs__TEST`, `testOnly: true`. Fails if any article
+  file contains any marker.
+- **Check 14** — no testOnly fixture in the publication registry.
+  Scans `data/published-earthquakes.json` for any entry whose
+  `earthquakeKey` contains `TEST`, `eventId` contains `TEST_FIXTURE`,
+  or `testOnly === true`.
+- **Check 15** — non-U.S. event is not publishEligible. Scans both
+  `earthquake-news-candidates.json` and `earthquake-story-records.json`
+  for any record with `publishEligible=true` and `isUSRelevant !== true`.
+- **Check 16** — impactRelevant=false event is not publishEligible.
+  Same files; fails if any record has `publishEligible=true` and
+  `impactRelevant === false`.
+- **Check 17** — ShakeMap claimed without USGS product evidence. Same
+  files; fails if any record has `hasShakeMap=true` but
+  `shakeMapImageUrl` is missing, empty, or not an absolute `http(s)://`
+  URL.
+
+Total check count went from 34 (Phase 8A) to 39 (Phase 8B). All 39
+passed in the live run.
+
+### Run results
+
+1. `npm run newsroom:earthquakes` (dry run — `earthquakePublishingEnabled=false`)
+   — SUCCESS (exit 0, duration 1.4-1.6s across runs)
+   - Kill switch: `earthquakePublishingEnabled = false`
+   - Caps: `maxEarthquakeNewPerRun=1`, `maxEarthquakeNewPerDay=3`
+   - Pipeline: fetched (320 events from `2.5_week` + 1 from
+     `significant_week` after dedup) → filtered (2 candidates) →
+     stories (2 stories, 0 publishEligible) → validate (PASS).
+   - Reconciled against the empty registry:
+     - NEW: 0 publish-eligible stories (the 2 live stories are
+       non-U.S. New Caledonia M6.6 and remote Rat Islands M4.6 —
+       both filtered as not publishEligible by Phase 8A.1)
+     - UPDATED: 0
+     - UNCHANGED: 0
+     - MISSING: 0
+   - Daily cap: 0 published today (UTC), 3 remaining, 1 allowed this run
+   - Kill switch active → printed summary and exited. NO content changes
+     were made. Verified that no article files were created in
+     `src/content/articles/`, no images were copied to `public/images/`,
+     and the published-earthquakes.json registry remained empty (0
+     stories).
+
+2. `node scripts/generate-earthquake-draft.mjs --fixture` — SUCCESS
+   (exit 0)
+   - Loaded the test fixture (earthquakeKey `usgs__TEST_FIXTURE_001`,
+     testOnly=true).
+   - Output: `data/earthquakes/drafts/m52-earthquake-anchorage-alaska-2026-09-27.json`
+     (4,335 bytes).
+   - Title: "M5.2 Earthquake Strikes Anchorage, USGS Says" (44 chars).
+   - Slug: `m52-earthquake-anchorage-alaska-2026-09-27`.
+   - Breaking: true (M5.2 ≥ 5.0).
+   - 7 body sections (lead + What USGS reported + Magnitude and depth +
+     Where the earthquake occurred + Felt reports + USGS alert and
+     tsunami information + Source).
+   - Word count: ~241.
+   - earthquakeMetadata block fully populated (magnitude=5.2, ml,
+     depth=28.5km, place, state=Alaska, coordinates, felt=342, cdi=4.2,
+     alert=yellow, tsunami=false, significance=650, status=reviewed,
+     eventId=TEST_FIXTURE_001, testOnly=true, etc.).
+
+3. `node scripts/generate-earthquake-image.mjs --fixture` — SUCCESS
+   (exit 0)
+   - Loaded the test fixture.
+   - Chose coordinate-map path (hasShakeMap=false, shakeMapImageUrl=null).
+   - Generated SVG: `data/draft-images/m52-earthquake-anchorage-alaska-2026-09-27.svg`
+     (4,747 bytes, 82 lines). SVG includes dark header band with
+     "U.S. GEOLOGICAL SURVEY · EARTHQUAKE" eyebrow + "M5.2 EARTHQUAKE"
+     headline, date + coordinates readout, map window with gridlines
+     (every 10° lat/lon), epicenter marker (concentric rings + cross
+     hairs) at 61.2250°N 149.7350°W, place + depth callout, magnitude +
+     PAGER alert callout, bottom USGS attribution + US News Engine
+     branding.
+   - Rendered PNG via sharp: 1200x675, 14,553 bytes.
+   - Metadata sidecar:
+     `data/draft-images/m52-earthquake-anchorage-alaska-2026-09-27.json`
+     (1,240 bytes). Carries earthquakeKey, eventId, slug, type
+     (`generated-coordinate-map`), visualType
+     (`earthquake-coordinate-map`), source (`US News Engine (editorial
+     data graphic)`), agency, sourceUrl, originalImageUrl=null,
+     caption, alt, copyrightRisk, licenseNotes, magnitude, depth,
+     place, testOnly=true.
+
+4. `npm run validate:earthquakes` — SUCCESS (exit 0, 39/39 checks pass)
+   - All 34 Phase 8A checks continue to pass.
+   - All 5 Phase 8B checks pass (no testOnly fixture in article
+     collection; no testOnly fixture in registry; no non-U.S.
+     publishEligible events; no impactRelevant=false publishEligible
+     events; no ShakeMap-claimed-without-evidence records).
+
+5. `npm run build` — SUCCESS (exit 0, 36 pages built in 1.13s)
+   - `/preview/earthquake-test/index.html` generated.
+   - Sitemap (`dist/sitemap-0.xml`) excludes all `/preview/` URLs (0
+     occurrences of "preview" — correct).
+   - Preview page HTML correctly includes:
+     - `<title>M5.2 Earthquake Strikes Anchorage, USGS Says | PREVIEW | US News Engine</title>`
+     - `<meta name="robots" content="noindex,nofollow,noarchive">`
+     - Self-referencing canonical to
+       `https://usa-news-engine.forexwizardy.workers.dev/preview/earthquake-test/`
+     - NO NewsArticle JSON-LD (only WebSite + BreadcrumbList schemas)
+     - TEST FIXTURE banner with "TEST FIXTURE — NOT A REAL EARTHQUAKE"
+       text
+     - Article body with all 7 sections rendered
+     - Hero image: `/preview-images/m52-earthquake-anchorage-alaska-2026-09-27.png`
+       with caption + attribution
+     - Source box: "U.S. Geological Survey" organization + office +
+       "TEST_FIXTURE_001" event ID + "View official USGS event →" link
+       (rel="nofollow noopener" target="_blank") + source note
+       explaining the link is fake
+     - Article aside with 17 metadata fields (category, source,
+       magnitude, depth, place, state, coordinates, felt, CDI, PAGER
+       alert, tsunami flag, significance, status, story score,
+       priority, has ShakeMap, has DYFI, test only)
+
+### Design decisions
+
+1. **Earthquake category = `weather`.** The existing CATEGORIES array
+   in `src/consts.ts` does not include an "earthquakes" category, and
+   the content collection Zod schema validates `category` against the
+   enum `['us', 'weather', 'recalls', 'consumer', 'science']`. The
+   task spec explicitly says "use 'weather' since there's no earthquake
+   category in the existing CATEGORIES array." So earthquake articles
+   are filed under `weather`. A future phase can add an
+   `earthquakes` category if editorial decides earthquakes deserve
+   their own section.
+
+2. **Draft slug format: `m{mag}-{earthquake}-{place}-{date}`.** The
+   slug strips the "X km DIR of" prefix from the USGS place string so
+   the URL reads `m52-earthquake-anchorage-alaska-2026-09-27` rather
+   than `m52-earthquake-12-km-nne-of-anchorage-alaska-alaska-...`. The
+   slug is generated identically by both `generate-earthquake-draft.mjs`
+   and `generate-earthquake-image.mjs` (using the same `buildSlug`
+   formula) so the draft JSON, image files, and image sidecar all
+   share the slug.
+
+3. **Dry-run safety for test fixture.** The newsroom script applies
+   TWO filters to the test fixture: (a) `testOnly !== true` in the
+   eligibleStories filter, and (b) the test-only `--fixture` flag
+   triggers DRY RUN mode unless `--allow-test-publish` is also passed.
+   Even with `--allow-test-publish`, the testOnly filter would prevent
+   the fixture from reaching the publishing path. This is belt-and-
+   suspenders: a future agent cannot accidentally publish the test
+   fixture to production.
+
+4. **Headline places use the clean place name (no "12 km NNE of"
+   prefix).** The lead sentence uses `placeInfo.place` (e.g.
+   "Anchorage, Alaska") rather than the raw `story.place` (e.g.
+   "12 km NNE of Anchorage, Alaska"). The "What USGS reported" and
+   "Where the earthquake occurred" sections DO use the full USGS place
+   string because those sections are about official USGS-reported
+   location details.
+
+5. **State deduplication.** USGS place strings like
+   "12 km NNE of Anchorage, Alaska" already include the state name.
+   The draft generator checks whether the place string already contains
+   the state name (case-insensitive) before appending "(Alaska)" or
+   "in Alaska" — preventing "Anchorage, Alaska (Alaska)" and
+   "Anchorage, Alaska in Alaska" repetitions. The same check is
+   applied to the description deck.
+
+6. **Coordinate-map viewport selection.** The image generator chooses
+   a viewport based on the story's state and coordinates: Alaska
+   viewport for events in/near Alaska (lat ≥ 55 and lon ≤ -130, or
+   state=Alaska); Hawaii viewport for Hawaii events; Puerto Rico
+   viewport for PR events; CONUS viewport for all other U.S. events;
+   and a 30°-span international viewport centered on the epicenter for
+   non-U.S. events. The viewport bounds drive the equirectangular
+   projection used to place the epicenter marker.
+
+7. **ShakeMap fallback chain.** If `hasShakeMap=true` but the download
+   fails (network error, content-type mismatch, etc.), the image
+   generator falls back to the coordinate-map path rather than
+   failing the entire image generation. This keeps the newsroom
+   resilient to transient USGS CDN issues.
+
+8. **Earthquake times are always UTC.** USGS publishes event times in
+   UTC. The draft generator formats them as "Sunday, September 27,
+   2026 at 10:00 a.m. UTC" rather than trying to derive a local
+   timezone from the coordinates (which would require a timezone
+   lookup service or polygon matching). This is the safest approach
+   for earthquake reporting — the time is what USGS reported, in the
+   timezone USGS uses.
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched (`run-nws-newsroom.mjs`,
+  `generate-nws-draft.mjs`, `generate-nws-image.mjs`,
+  `resolve-nws-real-image.mjs`, etc.).
+- ✅ Recall scripts untouched (`run-recall-newsroom.mjs`,
+  `generate-recall-draft.mjs`, `generate-recall-image.mjs`, etc.).
+- ✅ `.github/workflows/nws-newsroom.yml` NOT modified.
+- ✅ `.github/workflows/recall-newsroom.yml` NOT modified.
+- ✅ `config/automation.json` NOT modified —
+  `earthquakePublishingEnabled` remains `false`,
+  `maxEarthquakeNewPerRun=1`, `maxEarthquakeNewPerDay=3`. The existing
+  NWS settings (`nwsPublishingEnabled=true`, `maxNewPerRun=2`,
+  `maxNewPerDay=8`) and recall settings (`recallPublishingEnabled=true`,
+  `maxRecallNewPerRun=1`, `maxRecallNewPerDay=3`) are untouched.
+- ✅ `data/published-stories.json` (NWS registry) NOT modified.
+- ✅ `data/published-recalls.json` (recall registry) NOT modified.
+- ✅ No public article files created in `src/content/articles/`.
+- ✅ `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- ✅ All new scripts are `.mjs` ES modules using only Node.js built-ins
+  (`node:fs/promises`, `node:path`, `node:url`, `node:child_process`)
+  + `sharp` (already installed, no new dependencies added).
+- ✅ The new GitHub Actions workflow uses `GITHUB_TOKEN` (via
+  `permissions: contents: write`) — no personal PAT required.
+- ✅ Git identity: `US News Engine Bot <newsroom@users.noreply.github.com>`.
+- ✅ Commit message format:
+  `"Automated earthquake newsroom update: YYYY-MM-DD HH:mm UTC"`.
+- ✅ Deploy: `npx wrangler deploy` with `CLOUDFLARE_API_TOKEN` +
+  `CLOUDFLARE_ACCOUNT_ID` secrets (same as the NWS and recall workflows).
+- ✅ Live verification: 3-page check (`/`, `/weather/`, `/latest/` —
+  all must return HTTP 200). The `/weather/` path is used instead of
+  `/earthquakes/` because earthquakes are filed under the existing
+  Weather category.
+- ✅ The preview page uses `PreviewLayout` (which emits
+  `noindex,nofollow,noarchive` and NO NewsArticle schema).
+- ✅ The preview page is excluded from the sitemap by the existing
+  `/preview/` filter in `astro.config.mjs` — verified by inspecting
+  `dist/sitemap-0.xml` (0 occurrences of "preview").
+- ✅ The test fixture carries `testOnly: true` and is filtered out of
+  the newsroom's eligibleStories set.
+- ✅ The earthquake category is `weather` (no earthquake category in
+  the existing CATEGORIES array).
+
+### Next actions for a future agent
+
+1. **Flip the kill switch to enable automated publishing.** Edit
+   `config/automation.json` and set `earthquakePublishingEnabled: true`.
+   The next scheduled run (minute 47 of any hour) will then publish
+   the single highest-priority NEW publishEligible story (subject to
+   the daily cap of 3). Currently the live USGS feed has 0
+   publishEligible U.S. stories (the two notable events — New Caledonia
+   M6.6 and Rat Islands M4.6 — are non-U.S. and remote-Alaska
+   respectively, both filtered out by Phase 8A.1's publishEligible
+   gate). The first publishable U.S. M5+ earthquake will trigger the
+   first publication.
+
+2. **Verify the ShakeMap download path end-to-end.** The Phase 8B
+   image generator implements the ShakeMap download path but the test
+   fixture has `hasShakeMap=false`, so the path was not exercised in
+   the live run. The first real publishEligible earthquake with a
+   ShakeMap product will exercise this path. If the USGS ShakeMap CDN
+   returns an unexpected content-type or the cover-crop fails, the
+   generator falls back to the coordinate-map path — but the
+   fallback should be verified against a real ShakeMap URL.
+
+3. **Add a dedicated `earthquakes` category.** If editorial decides
+   earthquakes deserve their own section (separate from Weather),
+   add a new category slug to `CATEGORIES` in `src/consts.ts` and
+   to the Zod enum in `src/content.config.ts`, then update the draft
+   generator + newsroom script to use `category: 'earthquakes'`
+   instead of `category: 'weather'`. The `/earthquakes/` index page
+   would automatically render via the existing `[category]/index.astro`
+   route. The live-verification check in the workflow would also need
+   to swap `/weather/` → `/earthquakes/`.
+
+4. **Surface felt/alert/tsunami changes in the UPDATE path.** The
+   Phase 8B `processUpdate()` detects updates by checking magnitude,
+   alert, tsunami, and felt-jump (≥1.5x). When an update is detected,
+   it bumps `updatedAt` in the registry and the article frontmatter
+   but does NOT regenerate the article body. A future enhancement
+   could call `generate-earthquake-draft.mjs` with the earthquakeKey
+   and re-render the body sections (similar to how the NWS pipeline
+   regenerates alerts). For now, updates only bump metadata.
+
+5. **Add an "earthquake lifecycle" status similar to NWS.** NWS
+   articles carry a `lifecycleStatus` (`active` / `ending-soon` /
+   `expired` / `cancelled` / `superseded`). Earthquake articles
+   currently only carry `storyStatus: 'active'`. A future enhancement
+   could add a `lifecycleStatus` field that transitions to `archived`
+   when the USGS event is older than 30 days and no further updates
+   have been received, so the article can be moved out of the active
+   news feed.
+
+6. **Coordinate-map state boundary polygons.** The current
+   coordinate-map graphic uses a generic gridline backdrop without
+   actual state boundary polygons. A future enhancement could trace
+   simplified state outlines from public-domain U.S. Census
+   cartographic boundary data (similar to how the NWS image generator
+   uses `data/geo-cache/state-*.json` for state shapes) to give the
+   epicenter map more geographic context.

@@ -25,7 +25,7 @@
  *   npm run validate:earthquakes
  */
 
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -37,6 +37,9 @@ const INPUT_FILES = {
   candidates: join(PROJECT_DIR, 'data', 'earthquakes', 'earthquake-news-candidates.json'),
   stories: join(PROJECT_DIR, 'data', 'earthquakes', 'earthquake-story-records.json'),
 };
+
+const REGISTRY_FILE = join(PROJECT_DIR, 'data', 'published-earthquakes.json');
+const ARTICLES_DIR = join(PROJECT_DIR, 'src', 'content', 'articles');
 
 const VALID_ALERT_LEVELS = new Set([null, 'green', 'yellow', 'orange', 'red']);
 const VALID_STATUSES = new Set([null, 'automatic', 'reviewed', 'deleted']);
@@ -295,6 +298,95 @@ function runStoryChecks(stories) {
   return checks;
 }
 
+/**
+ * Publishing-pipeline checks (Phase 8B):
+ *   13. No testOnly fixture in public article collection
+ *   14. No testOnly fixture in publication registry
+ *   15. Non-U.S. event is not publishEligible (across candidates + stories)
+ *   16. impactRelevant=false event is not publishEligible
+ *   17. ShakeMap claimed without USGS product evidence
+ *       (hasShakeMap=true but no shakeMapImageUrl)
+ */
+async function runPublishingChecks({ candidates, stories, registryStories, articleFiles }) {
+  const checks = [];
+
+  // Check 13 — no testOnly fixture in the public article collection.
+  // We scan every article markdown file for the test fixture's markers.
+  // The test fixture has eventId="TEST_FIXTURE_001" and earthquakeKey=
+  // "usgs__TEST_FIXTURE_001". A leaked article would carry the slug
+  // derived from that fixture (e.g. "m52-earthquake-anchorage-alaska-...")
+  // and would contain "TEST_FIXTURE" somewhere in its frontmatter or body.
+  const c13 = new CheckResult(13, 'publishing: no testOnly fixture in public article collection');
+  const TEST_FIXTURE_MARKERS = ['TEST_FIXTURE', 'usgs__TEST', 'testOnly: true', 'testOnly:true'];
+  for (const { filename, content } of articleFiles) {
+    for (const marker of TEST_FIXTURE_MARKERS) {
+      if (content.includes(marker)) {
+        c13.fail(`Article file ${filename} contains test-fixture marker "${marker}"`);
+      }
+    }
+  }
+  checks.push(c13);
+
+  // Check 14 — no testOnly fixture in the publication registry.
+  const c14 = new CheckResult(14, 'publishing: no testOnly fixture in publication registry');
+  for (const s of registryStories) {
+    const key = String(s.earthquakeKey || '');
+    const eventId = String(s.eventId || '');
+    if (s.testOnly === true || key.includes('TEST') || eventId.includes('TEST_FIXTURE')) {
+      c14.fail(`Registry entry carries test-fixture marker: earthquakeKey=${key}, eventId=${eventId}`);
+    }
+  }
+  checks.push(c14);
+
+  // Check 15 — non-U.S. event is not publishEligible (across candidates + stories)
+  const c15 = new CheckResult(15, 'publishing: non-U.S. event is not publishEligible');
+  const scanForUsEligibility = (records, label) => {
+    for (const r of records) {
+      if (r.publishEligible === true && r.isUSRelevant !== true) {
+        c15.fail(`${label} record is publishEligible but isUSRelevant is not true: ${r.earthquakeKey} (isUSRelevant=${r.isUSRelevant})`);
+      }
+      if (r.publishEligible === true && r.isUS === false && r.isUSRelevant !== true) {
+        c15.fail(`${label} record is publishEligible but isUS=false and isUSRelevant not true: ${r.earthquakeKey}`);
+      }
+    }
+  };
+  scanForUsEligibility(candidates, 'candidates');
+  scanForUsEligibility(stories, 'stories');
+  checks.push(c15);
+
+  // Check 16 — impactRelevant=false event is not publishEligible
+  const c16 = new CheckResult(16, 'publishing: impactRelevant=false event is not publishEligible');
+  const scanForImpactEligibility = (records, label) => {
+    for (const r of records) {
+      if (r.publishEligible === true && r.impactRelevant === false) {
+        c16.fail(`${label} record is publishEligible but impactRelevant=false: ${r.earthquakeKey}`);
+      }
+    }
+  };
+  scanForImpactEligibility(candidates, 'candidates');
+  scanForImpactEligibility(stories, 'stories');
+  checks.push(c16);
+
+  // Check 17 — ShakeMap claimed without USGS product evidence
+  // (hasShakeMap=true but shakeMapImageUrl is missing/empty)
+  const c17 = new CheckResult(17, 'publishing: ShakeMap claimed without USGS product evidence (hasShakeMap=true requires shakeMapImageUrl)');
+  const scanForShakemapEvidence = (records, label) => {
+    for (const r of records) {
+      if (r.hasShakeMap === true) {
+        const url = r.shakeMapImageUrl;
+        if (typeof url !== 'string' || url.trim() === '' || !/^https?:\/\//i.test(url)) {
+          c17.fail(`${label} record hasShakeMap=true but shakeMapImageUrl is missing or not an absolute URL: ${r.earthquakeKey} (shakeMapImageUrl=${JSON.stringify(url)})`);
+        }
+      }
+    }
+  };
+  scanForShakemapEvidence(candidates, 'candidates');
+  scanForShakemapEvidence(stories, 'stories');
+  checks.push(c17);
+
+  return checks;
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -306,6 +398,7 @@ async function main() {
   const fetchedRes = await loadJsonOptional(INPUT_FILES.fetched);
   const candidatesRes = await loadJsonOptional(INPUT_FILES.candidates);
   const storiesRes = await loadJsonOptional(INPUT_FILES.stories);
+  const registryRes = await loadJsonOptional(REGISTRY_FILE);
 
   const allChecks = [];
 
@@ -323,8 +416,9 @@ async function main() {
 
   // Candidates — same record checks (the candidate file carries the same
   // canonical fields, minus rawSourceData).
+  let candidates = [];
   if (candidatesRes.ok) {
-    const candidates = Array.isArray(candidatesRes.doc.candidates) ? candidatesRes.doc.candidates : [];
+    candidates = Array.isArray(candidatesRes.doc.candidates) ? candidatesRes.doc.candidates : [];
     console.log(`  Candidates: ${candidates.length} candidates`);
     allChecks.push(...runRecordChecks(candidates, 'candidates'));
   } else {
@@ -335,8 +429,9 @@ async function main() {
   }
 
   // Stories — story checks (record checks + storyScore).
+  let stories = [];
   if (storiesRes.ok) {
-    const stories = Array.isArray(storiesRes.doc.stories) ? storiesRes.doc.stories : [];
+    stories = Array.isArray(storiesRes.doc.stories) ? storiesRes.doc.stories : [];
     console.log(`  Stories:   ${stories.length} stories`);
     allChecks.push(...runStoryChecks(stories));
   } else {
@@ -345,6 +440,44 @@ async function main() {
     c.fail(`Stories file is missing or unreadable: ${INPUT_FILES.stories} (${storiesRes.reason})`);
     allChecks.push(c);
   }
+
+  // --- Phase 8B publishing-pipeline checks --------------------------------
+  // Load the publication registry (testOnly + non-U.S. / impactRelevant
+  // gates + ShakeMap evidence + article-collection scan).
+  let registryStories = [];
+  if (registryRes.ok) {
+    registryStories = Array.isArray(registryRes.doc.stories) ? registryRes.doc.stories : [];
+    console.log(`  Registry:  ${registryStories.length} published earthquakes`);
+  } else {
+    console.log(`  Registry:  [missing] ${REGISTRY_FILE} (acceptable on first run)`);
+  }
+
+  // Scan the article collection for test-fixture leakage.
+  let articleFiles = [];
+  try {
+    const filenames = await readdir(ARTICLES_DIR);
+    articleFiles = [];
+    for (const filename of filenames) {
+      if (!filename.endsWith('.md')) continue;
+      try {
+        const content = await readFile(join(ARTICLES_DIR, filename), 'utf8');
+        articleFiles.push({ filename, content });
+      } catch {
+        // skip unreadable file
+      }
+    }
+    console.log(`  Articles:  ${articleFiles.length} markdown files scanned`);
+  } catch {
+    console.log(`  Articles:  [missing] ${ARTICLES_DIR}`);
+  }
+
+  const publishingChecks = await runPublishingChecks({
+    candidates,
+    stories,
+    registryStories,
+    articleFiles,
+  });
+  allChecks.push(...publishingChecks);
 
   // --- Report -------------------------------------------------------------
   console.log('');

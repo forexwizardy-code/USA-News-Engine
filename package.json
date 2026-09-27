@@ -37,6 +37,9 @@
     "filter:earthquakes": "node scripts/filter-earthquake-news.mjs",
     "stories:earthquakes": "node scripts/build-earthquake-stories.mjs",
     "validate:earthquakes": "node scripts/validate-earthquakes.mjs",
+    "draft:earthquake": "node scripts/generate-earthquake-draft.mjs",
+    "image:earthquake": "node scripts/generate-earthquake-image.mjs",
+    "newsroom:earthquakes": "node scripts/run-earthquake-newsroom.mjs",
     "prepare:earthquakes": "npm run fetch:earthquakes && npm run filter:earthquakes && npm run stories:earthquakes && npm run validate:earthquakes"
   },
   "dependencies": {
