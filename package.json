@@ -19,7 +19,14 @@
     "prepare:nws": "npm run fetch:nws && npm run filter:nws && npm run stories:nws",
     "validate:publishing": "node scripts/validate-publishing.mjs",
     "update:nws": "node scripts/update-nws-lifecycle.mjs",
-    "newsroom:nws": "node scripts/run-nws-newsroom.mjs"
+    "newsroom:nws": "node scripts/run-nws-newsroom.mjs",
+    "fetch:cpsc": "node scripts/fetch-cpsc-recalls.mjs",
+    "fetch:fda-food": "node scripts/fetch-fda-food-recalls.mjs",
+    "fetch:fda-device": "node scripts/fetch-fda-device-recalls.mjs",
+    "fetch:recalls": "npm run fetch:cpsc && npm run fetch:fda-food && npm run fetch:fda-device",
+    "filter:recalls": "node scripts/filter-recall-news.mjs",
+    "stories:recalls": "node scripts/build-recall-stories.mjs",
+    "validate:recalls": "node scripts/validate-recalls.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
