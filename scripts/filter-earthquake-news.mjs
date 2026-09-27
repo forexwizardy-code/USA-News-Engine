@@ -42,9 +42,142 @@ const OUTPUT_FILE = join(PROJECT_DIR, 'data', 'earthquakes', 'earthquake-news-ca
 const IMPACT_ALERT_LEVELS = new Set(['yellow', 'orange', 'red']);
 const ACTIVE_US_SEISMIC_ZONES = ['alaska', 'hawaii', 'puerto rico', 'guam', 'northern mariana', 'american samoa', 'virgin islands'];
 
+// Remote Alaskan/Aleutian regions where M4.5 alone is not consumer-relevant
+const REMOTE_ALASKA_REGIONS = [
+  'rat islands', 'aleutian islands', 'andreanof islands', 'fox islands',
+  'near islands', 'komandorski', 'kodiak island', 'shumagin',
+  'semisopochnoi', 'amchitka', 'buldir', 'tanaga', 'adak',
+  'attu', 'kiska', 'amukta', 'chaluka',
+];
+
+// Lower 48 state names (for region-based threshold logic)
+const LOWER_48_STATES = [
+  'alabama', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut',
+  'delaware', 'florida', 'georgia', 'idaho', 'illinois', 'indiana', 'iowa',
+  'kansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts',
+  'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska',
+  'nevada', 'new hampshire', 'new jersey', 'new mexico', 'new york',
+  'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon',
+  'pennsylvania', 'rhode island', 'south carolina', 'south dakota',
+  'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington',
+  'west virginia', 'wisconsin', 'wyoming',
+];
+
 // ===========================================================================
-// Newsworthiness evaluation (U.S.-focused)
+// Remote region detection
 // ===========================================================================
+
+/**
+ * Determine if an earthquake is in a remote region with no demonstrated
+ * consumer impact. Remote regions are areas far from populated communities
+ * where routine M4-M5 activity has little news value.
+ */
+function detectRemoteRegion(place, state) {
+  const placeLower = (place || '').toLowerCase();
+  const stateLower = (state || '').toLowerCase();
+
+  // Remote Alaska/Aleutian
+  for (const region of REMOTE_ALASKA_REGIONS) {
+    if (placeLower.includes(region)) {
+      return { remoteRegion: true, remoteReason: `Remote Alaska region: ${region}` };
+    }
+  }
+
+  // Remote offshore events (no named populated place nearby)
+  if (placeLower.includes('offshore') && !placeLower.match(/of\s+\w+,\s*(alaska|hawaii|california|oregon|washington|puerto rico)/i)) {
+    // Offshore but not near a named populated U.S. community
+    if (stateLower === 'alaska' || placeLower.includes('aleutian') || placeLower.includes('rat islands')) {
+      return { remoteRegion: true, remoteReason: 'Remote offshore Alaska' };
+    }
+  }
+
+  return { remoteRegion: false, remoteReason: null };
+}
+
+// ===========================================================================
+// Impact relevance evaluation (consumer/news value)
+// ===========================================================================
+
+/**
+ * Determine if a U.S.-relevant earthquake has enough consumer/news impact
+ * to be worth publishing. This is the SECOND gate after U.S. relevance.
+ *
+ * Remote Alaska/Aleutian events require stronger signals (M5+, felt 100+,
+ * alert, tsunami, or sig 500+).
+ * Hawaii/Puerto Rico/territories: M4+ with some impact signal.
+ * Lower 48: M4+ near populated areas, or M3.5+ with strong felt reports.
+ */
+function evaluateImpactRelevance(eq, remoteInfo) {
+  const mag = eq.magnitude;
+  const felt = eq.felt;
+  const alert = eq.alert;
+  const tsunami = eq.tsunami === true;
+  const sig = eq.significance;
+  const placeLower = (eq.place || '').toLowerCase();
+  const stateLower = (eq.state || '').toLowerCase();
+  const isRemote = remoteInfo.remoteRegion;
+
+  const impactReasons = [];
+  const impactExclusions = [];
+
+  // --- Strong impact signals (apply to ALL U.S. regions) ---
+  if (mag >= 5.0) impactReasons.push(`M${mag} >= 5.0`);
+  if (felt != null && felt >= 100) impactReasons.push(`felt=${felt} >= 100`);
+  if (IMPACT_ALERT_LEVELS.has(alert)) impactReasons.push(`alert=${alert}`);
+  if (tsunami) impactReasons.push('tsunami flag');
+  if (sig != null && sig >= 500) impactReasons.push(`significance ${sig} >= 500`);
+
+  // --- Region-specific impact thresholds ---
+
+  if (isRemote) {
+    // Remote Alaska/Aleutian: require stronger signals (already checked above)
+    // M4.5 alone is NOT enough for remote regions
+    if (impactReasons.length === 0) {
+      impactExclusions.push(`Remote region (${remoteInfo.remoteReason}) without strong impact signals (M5+, felt 100+, alert, tsunami, or sig 500+)`);
+    }
+  } else if (stateLower === 'alaska' || placeLower.includes('alaska')) {
+    // Non-remote Alaska: M4.5+ may qualify if near populated areas
+    if (mag >= 4.5 && impactReasons.length === 0) {
+      // Check if near a populated Alaska community
+      const populatedAlaska = ['anchorage', 'fairbanks', 'juneau', 'wasilla', 'kenai', 'kodiak city', 'sitka', 'ketchikan', 'palmer', 'homer', 'valdez'];
+      const nearPopulated = populatedAlaska.some(p => placeLower.includes(p));
+      if (nearPopulated) {
+        impactReasons.push(`M${mag} near populated Alaska community`);
+      } else {
+        impactExclusions.push('Alaska event but not near populated community and no strong impact signals');
+      }
+    }
+  } else if (stateLower === 'hawaii' || placeLower.includes('hawaii')) {
+    // Hawaii: M4+ with some impact signal
+    if (mag >= 4.0 && (felt != null && felt >= 10 || IMPACT_ALERT_LEVELS.has(alert) || tsunami)) {
+      impactReasons.push(`M${mag} in Hawaii with impact signal`);
+    } else if (impactReasons.length === 0) {
+      impactExclusions.push('Hawaii event below impact threshold (M4+ with felt/alert/tsunami)');
+    }
+  } else if (stateLower === 'puerto rico' || placeLower.includes('puerto rico')) {
+    // Puerto Rico: M4+ with some impact signal
+    if (mag >= 4.0 && (felt != null && felt >= 10 || IMPACT_ALERT_LEVELS.has(alert) || tsunami)) {
+      impactReasons.push(`M${mag} in Puerto Rico with impact signal`);
+    } else if (impactReasons.length === 0) {
+      impactExclusions.push('Puerto Rico event below impact threshold');
+    }
+  } else if (LOWER_48_STATES.some(s => stateLower === s || placeLower.includes(s))) {
+    // Lower 48: M4+ near populated area, or M3.5+ with strong felt reports
+    if (mag >= 4.0 && impactReasons.length === 0) {
+      // M4+ in lower 48 is generally impactful near populated areas
+      impactReasons.push(`M${mag} in continental U.S.`);
+    }
+    if (mag >= 3.5 && felt != null && felt >= 500) {
+      impactReasons.push(`M${mag} with felt=${felt} >= 500 (widely felt)`);
+    }
+    if (impactReasons.length === 0) {
+      impactExclusions.push('Lower 48 event below impact threshold (M4+ or M3.5+ with 500+ felt)');
+    }
+  }
+
+  const impactRelevant = impactReasons.length > 0;
+  return { impactRelevant, impactReasons, impactExclusions };
+}
 
 function evaluate(eq) {
   const mag = eq.magnitude;
@@ -58,63 +191,43 @@ function evaluate(eq) {
 
   // --- EXCLUDE: deleted, too small, null magnitude ---
   if (status === 'deleted') {
-    return { include: false, publishEligible: false, reason: 'Excluded: deleted event' };
+    return { include: false, publishEligible: false, impactRelevant: false, reason: 'Excluded: deleted event' };
   }
   if (mag == null || isNaN(mag)) {
-    return { include: false, publishEligible: false, reason: 'Excluded: magnitude is null' };
+    return { include: false, publishEligible: false, impactRelevant: false, reason: 'Excluded: magnitude is null' };
   }
   if (mag < 3.0) {
-    return { include: false, publishEligible: false, reason: 'Excluded: magnitude < 3.0' };
+    return { include: false, publishEligible: false, impactRelevant: false, reason: 'Excluded: magnitude < 3.0' };
   }
 
   // --- Determine U.S. relevance and scope ---
   const scope = isUS ? 'us' : 'international';
 
-  // --- Evaluate publication eligibility (REQUIRES isUS) ---
-  const eligibilityReasons = [];
-  const exclusionReasons = [];
+  // --- Detect remote region ---
+  const remoteInfo = detectRemoteRegion(eq.place, eq.state);
 
-  // Rule 1: M5.0+ U.S.-relevant
-  if (mag >= 5.0 && isUS) {
-    eligibilityReasons.push(`M${mag} >= 5.0 and U.S.-relevant`);
-  }
+  // --- Evaluate impact relevance (second gate) ---
+  const impactResult = evaluateImpactRelevance(eq, remoteInfo);
+  const impactRelevant = impactResult.impactRelevant;
 
-  // Rule 2: M4.0+ plus >=100 felt reports (U.S.)
-  if (mag >= 4.0 && isUS && felt != null && felt >= 100) {
-    eligibilityReasons.push(`M${mag} >= 4.0, U.S., felt=${felt} >= 100`);
-  }
-
-  // Rule 3: M4.0+ plus alert (U.S.)
-  if (mag >= 4.0 && isUS && IMPACT_ALERT_LEVELS.has(alert)) {
-    eligibilityReasons.push(`M${mag} >= 4.0, U.S., alert=${alert}`);
-  }
-
-  // Rule 4: tsunami affecting U.S.-relevant event
-  if (tsunami && isUS) {
-    eligibilityReasons.push('tsunami flag and U.S.-relevant');
-  }
-
-  // Rule 5: significance >= 500 and U.S.
-  if (sig != null && sig >= 500 && isUS) {
-    eligibilityReasons.push(`significance ${sig} >= 500 and U.S.`);
-  }
-
-  // Rule 6: M3.5+ with >=500 felt (U.S.)
-  if (mag >= 3.5 && isUS && felt != null && felt >= 500) {
-    eligibilityReasons.push(`M${mag} >= 3.5, U.S., felt=${felt} >= 500`);
-  }
-
-  // Rule 7: M4.5+ Alaska/Hawaii/Puerto Rico/U.S. territory
-  if (mag >= 4.5 && ACTIVE_US_SEISMIC_ZONES.some((z) => placeLower.includes(z))) {
-    eligibilityReasons.push(`M${mag} >= 4.5 in active U.S. seismic zone`);
-  }
-
-  // --- Determine include (newsworthy enough to track) vs exclude ---
-  // Include if ANY eligibility reason OR if it's a notable global event (M6+)
-  // for internal tracking, but publishEligible requires isUS.
+  // --- Determine include (newsworthy enough to track internally) ---
+  // Include U.S. events that pass the old eligibility rules OR have impact signals
+  // Include notable global events (M6+) for internal tracking
   const isNotableGlobal = mag >= 6.0;
   const hasAlertGlobal = IMPACT_ALERT_LEVELS.has(alert);
   const hasTsunamiGlobal = tsunami;
+
+  // For inclusion: U.S. events with any eligibility reason OR notable global events
+  const eligibilityReasons = [];
+  if (mag >= 5.0 && isUS) eligibilityReasons.push(`M${mag} >= 5.0 and U.S.-relevant`);
+  if (mag >= 4.0 && isUS && felt != null && felt >= 100) eligibilityReasons.push(`M${mag} >= 4.0, U.S., felt=${felt} >= 100`);
+  if (mag >= 4.0 && isUS && IMPACT_ALERT_LEVELS.has(alert)) eligibilityReasons.push(`M${mag} >= 4.0, U.S., alert=${alert}`);
+  if (tsunami && isUS) eligibilityReasons.push('tsunami flag and U.S.-relevant');
+  if (sig != null && sig >= 500 && isUS) eligibilityReasons.push(`significance ${sig} >= 500 and U.S.`);
+  if (mag >= 3.5 && isUS && felt != null && felt >= 500) eligibilityReasons.push(`M${mag} >= 3.5, U.S., felt=${felt} >= 500`);
+  if (mag >= 4.5 && ACTIVE_US_SEISMIC_ZONES.some((z) => placeLower.includes(z))) {
+    eligibilityReasons.push(`M${mag} >= 4.5 in active U.S. seismic zone`);
+  }
 
   const include = eligibilityReasons.length > 0 || isNotableGlobal || hasAlertGlobal || hasTsunamiGlobal;
 
@@ -122,23 +235,25 @@ function evaluate(eq) {
     return {
       include: false,
       publishEligible: false,
+      impactRelevant: false,
       reason: 'Excluded: no newsworthiness trigger matched',
     };
   }
 
-  // --- Determine publishEligible ---
-  const publishEligible = isUS && eligibilityReasons.length > 0;
+  // --- Determine publishEligible (requires BOTH isUS AND impactRelevant) ---
+  const exclusionReasons = [];
+  const publishEligible = isUS && impactRelevant;
 
   if (!publishEligible) {
     if (!isUS) {
       exclusionReasons.push('Not U.S.-relevant (international scope)');
-    } else if (eligibilityReasons.length === 0) {
-      exclusionReasons.push('U.S. event but below publication thresholds');
+    } else if (!impactRelevant) {
+      exclusionReasons.push(...impactResult.impactExclusions);
     }
   }
 
   // --- Priority ---
-  const highPriority = (mag >= 5.0 && isUS) || (isUS && IMPACT_ALERT_LEVELS.has(alert)) || (tsunami && isUS);
+  const highPriority = (mag >= 5.0 && isUS && impactRelevant) || (isUS && IMPACT_ALERT_LEVELS.has(alert)) || (tsunami && isUS);
   const priority = highPriority ? 'high' : 'medium';
 
   // --- Build selected reason ---
@@ -150,9 +265,13 @@ function evaluate(eq) {
   return {
     include: true,
     publishEligible,
+    impactRelevant,
     priority,
     scope,
     isUSRelevant: isUS,
+    remoteRegion: remoteInfo.remoteRegion,
+    remoteReason: remoteInfo.remoteReason,
+    impactReasons: impactResult.impactReasons,
     eligibilityReasons,
     exclusionReasons,
     selectedReason: `Selected: ${allReasons.join('; ')}`,
@@ -325,6 +444,10 @@ async function main() {
       nearestPlace: eq.nearestPlace,
       isUS: eq.isUS,
       isUSRelevant: decision.isUSRelevant,
+      impactRelevant: decision.impactRelevant,
+      remoteRegion: decision.remoteRegion,
+      remoteReason: decision.remoteReason,
+      impactReasons: decision.impactReasons,
       scope: decision.scope,
       publishEligible: decision.publishEligible,
       priority: decision.priority,
