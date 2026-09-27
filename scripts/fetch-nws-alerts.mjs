@@ -31,7 +31,7 @@ const SOURCE_NAME = 'National Weather Service';
 
 // NWS asks clients to identify themselves with a User-Agent that includes
 // the app name and a way to be contacted. No secret is included.
-const USER_AGENT = 'USNewsEngine/1.0 (https://www.usnewsengine.com)';
+const USER_AGENT = 'USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)';
 const ACCEPT = 'application/geo+json';
 const FETCH_TIMEOUT_MS = 30_000;
 

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Change this to your production domain before launch.
 // Used for canonical URLs, sitemap, OpenGraph, and structured data.
-const SITE = 'https://www.usnewsengine.com';
+const SITE = 'https://usa-news-engine.forexwizardy.workers.dev';
 
 // https://astro.build/config
 export default defineConfig({

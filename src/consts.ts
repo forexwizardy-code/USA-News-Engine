@@ -9,7 +9,7 @@
  * of truth for site metadata.
  */
 
-export const SITE_URL = 'https://www.usnewsengine.com';
+export const SITE_URL = 'https://usa-news-engine.forexwizardy.workers.dev';
 export const SITE_NAME = 'US News Engine';
 export const SITE_TAGLINE = 'Independent reporting from across America';
 export const SITE_DESCRIPTION =
