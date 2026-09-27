@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T19:52:40.225Z",
-  "imageCount": 5,
+  "generatedAt": "2026-09-27T20:09:29.184Z",
+  "imageCount": 6,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -22,6 +22,17 @@
       "sourceOrganization": "Unknown authorUnknown author (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:26:35.706Z",
+      "storiesUsingImage": []
+    },
+    "https://upload.wikimedia.org/wikipedia/commons/d/d6/Floods_-_Mississippi_River_Flood_-_NARA_-_68158366.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFloods%20-%20Mississippi%20River%20Flood%20-%20NARA%20-%2068158366.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Floods_-_Mississippi_River_Flood_-_NARA_-_68158366.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "creator": "Unknown authorUnknown author or not provided",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceOrganization": "Unknown authorUnknown author or not provided (Wikimedia Commons)",
+      "imageRelation": "exact-location",
+      "firstUsedAt": "2026-09-27T20:09:21.396Z",
       "storiesUsingImage": []
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a2/Astor_FL_St_Johns_river_south01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
