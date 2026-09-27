@@ -1,0 +1,237 @@
+---
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_NAME } from '../../consts';
+
+/**
+ * Hidden image comparison page for Phase 4A weather image review.
+ *
+ * This page is NOT linked anywhere on the public site. It is only accessible
+ * when someone knows the exact URL. It displays both generated weather image
+ * versions side-by-side for editorial review.
+ *
+ * Constraints:
+ *   - NOT in the sitemap (excluded by /preview/ filter)
+ *   - noindex,nofollow,noarchive
+ *   - NO NewsArticle structured data
+ *   - NOT linked from homepage, category pages, navigation, etc.
+ */
+
+const imageA = {
+  label: 'VERSION A — MAP DATA',
+  src: '/preview-images/flood-warning-lake-county-illinois-september-27-2026-map.png',
+  desc: 'Factual map with full Illinois state outline, Lake County highlighted, and NWS alert polygon.',
+};
+
+const imageB = {
+  label: 'VERSION B — EDITORIAL',
+  src: '/preview-images/flood-warning-lake-county-illinois-september-27-2026-editorial.png',
+  desc: 'Split-screen editorial layout with dark info panel, severity chip, data callouts, and zoomed map.',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Image Comparison — Phase 4A | {SITE_NAME}</title>
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="preview-banner" role="status" aria-live="polite">
+      <div class="container preview-banner-inner">
+        <span class="preview-banner-dot" aria-hidden="true"></span>
+        <strong>PREVIEW — NOT PUBLISHED</strong>
+        <span class="preview-banner-text">Private image comparison page for editorial review.</span>
+      </div>
+    </div>
+
+    <Header currentPath={Astro.url.pathname} />
+    <main id="main" class="main">
+      <div class="container comparison-page">
+        <header class="comparison-head">
+          <p class="kicker">Phase 4A Review</p>
+          <h1>Weather Image Comparison</h1>
+          <p class="comparison-sub">
+            Two generated hero image versions for the Flood Warning — Lake County, Illinois story.
+            Both use real NWS alert geometry and zone data. Neither replaces the approved preview image.
+          </p>
+        </header>
+
+        <section class="image-block" aria-labelledby="version-a-label">
+          <div class="image-header">
+            <h2 id="version-a-label" class="version-label">VERSION A — MAP DATA</h2>
+            <p class="image-desc">{imageA.desc}</p>
+          </div>
+          <figure class="image-figure">
+            <img
+              src={imageA.src}
+              alt="Version A: Flood Warning map-data graphic for Lake County, Illinois"
+              width="1200"
+              height="675"
+              loading="eager"
+            />
+          </figure>
+        </section>
+
+        <section class="image-block" aria-labelledby="version-b-label">
+          <div class="image-header">
+            <h2 id="version-b-label" class="version-label">VERSION B — EDITORIAL</h2>
+            <p class="image-desc">{imageB.desc}</p>
+          </div>
+          <figure class="image-figure">
+            <img
+              src={imageB.src}
+              alt="Version B: Flood Warning editorial graphic for Lake County, Illinois"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+
+        <footer class="comparison-footer">
+          <p>Both images are 1200×675 (16:9), generated from NWS alert geometry + zone boundaries + public-domain state outline.</p>
+        </footer>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .preview-banner {
+    background: #7a1f3a;
+    color: #fff;
+    border-bottom: 2px solid #4a0f22;
+    position: relative;
+    z-index: 60;
+  }
+  .preview-banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding-block: 8px;
+    flex-wrap: wrap;
+  }
+  .preview-banner-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff9aa6;
+    animation: preview-pulse 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes preview-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .preview-banner strong {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .preview-banner-text {
+    font-size: 0.82rem;
+    color: #f0d4dc;
+  }
+  @media (max-width: 600px) {
+    .preview-banner-text {
+      display: none;
+    }
+  }
+
+  .comparison-page {
+    max-width: 1100px;
+    padding-block: 32px 64px;
+  }
+  .comparison-head {
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-text);
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .comparison-head::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 72px;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .kicker {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    margin-bottom: 8px;
+  }
+  .comparison-head h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 10px;
+  }
+  .comparison-sub {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    max-width: 70ch;
+  }
+
+  .image-block {
+    margin-bottom: 56px;
+  }
+  .image-block:last-of-type {
+    margin-bottom: 40px;
+  }
+  .image-header {
+    margin-bottom: 16px;
+  }
+  .version-label {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    padding: 8px 14px;
+    background: var(--color-surface-alt);
+    border-left: 4px solid var(--color-red);
+    display: inline-block;
+  }
+  .image-desc {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+  .image-figure {
+    margin: 0;
+  }
+  .image-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    display: block;
+  }
+
+  .comparison-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    text-align: center;
+  }
+</style>
