@@ -21,12 +21,16 @@ const {
 const a = article.data;
 const href = `/news/${a.slug}/`;
 const hasImage = showImage && !!a.image;
+// Map/graphics need object-fit: contain so labels aren't cropped.
+// Photos use object-fit: cover for a visually filled card.
+const imageMode = (a as any).imageMode || 'fallback-graphic';
+const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(imageMode);
 ---
 
 {
   variant === 'hero' && (
     <article class="card card--hero">
-      <a href={href} class="card-media" tabindex="-1" aria-hidden="true">
+      <a href={href} class:list={["card-media", { "card-media--map": isMapImage }]} tabindex="-1" aria-hidden="true">
         {hasImage ? (
           <img src={a.image} alt={a.imageAlt} loading="eager" width="1200" height="675" />
         ) : (
@@ -52,7 +56,7 @@ const hasImage = showImage && !!a.image;
 {
   variant === 'default' && (
     <article class="card card--default">
-      <a href={href} class="card-media" tabindex="-1" aria-hidden="true">
+      <a href={href} class:list={["card-media", { "card-media--map": isMapImage }]} tabindex="-1" aria-hidden="true">
         {hasImage ? (
           <img src={a.image} alt={a.imageAlt} loading="lazy" width="600" height="400" />
         ) : (
@@ -77,7 +81,7 @@ const hasImage = showImage && !!a.image;
 {
   variant === 'compact' && (
     <article class="card card--compact">
-      <a href={href} class="card-media card-media--small" tabindex="-1" aria-hidden="true">
+      <a href={href} class:list={["card-media", "card-media--small", { "card-media--map": isMapImage }]} tabindex="-1" aria-hidden="true">
         {hasImage ? (
           <img src={a.image} alt={a.imageAlt} loading="lazy" width="160" height="120" />
         ) : (
@@ -129,6 +133,13 @@ const hasImage = showImage && !!a.image;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
+  }
+  /* Map/graphics use contain so labels and boundaries aren't cropped */
+  .card-media--map {
+    background: var(--color-surface-alt, #f6f6f4);
+  }
+  .card-media--map img {
+    object-fit: contain;
   }
   .card-media-fallback {
     width: 100%;

@@ -28,16 +28,28 @@ const articles = defineCollection({
     author: z.string(),
     /** ISO 8601 publish time. */
     publishedAt: z.coerce.date(),
-    /** ISO 8601 last-updated time. */
-    updatedAt: z.coerce.date(),
+    /** ISO 8601 last-updated time. Omitted/null on first publication. */
+    updatedAt: z.coerce.date().optional(),
     /** Hero image path (lives in /public). */
     image: z.string(),
     /** Accessibility text for the hero image. */
     imageAlt: z.string(),
+    /** Image mode: licensed-photo, map-data, agency-graphic, fallback-graphic. */
+    imageMode: z.string().optional(),
+    /** Image caption for display beneath the hero. */
+    imageCaption: z.string().optional(),
+    /** Image creator/photographer for attribution. */
+    imageCreator: z.string().optional(),
+    /** Image license (e.g. "CC BY 2.0"). */
+    imageLicense: z.string().optional(),
+    /** Image license URL. */
+    imageLicenseUrl: z.string().optional(),
     /** Originating source attribution name. */
     sourceName: z.string(),
     /** Originating source URL. */
     sourceUrl: z.string().url(),
+    /** Source office (e.g. "NWS Chicago IL"). Optional. */
+    sourceOffice: z.string().optional(),
     /** Free-form tags for related-story matching and discovery. */
     tags: z.array(z.string()).default([]),
     /** U.S. state associated with the story (for "Across America"). Optional. */

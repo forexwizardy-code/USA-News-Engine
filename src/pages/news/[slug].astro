@@ -5,7 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
-import { getAllArticles, getRelated, formatDateTime, iso, type Article } from '../../lib/articles';
+import { getAllArticles, getRelated, formatDateTime, formatDateTimeTZ, iso, type Article } from '../../lib/articles';
 import { categoryLabel } from '../../consts';
 
 export async function getStaticPaths() {
@@ -30,6 +30,41 @@ const breadcrumbs = [
   { name: categoryLabel(a.category), path: categoryHref },
   { name: a.title, path: `/news/${a.slug}/` },
 ];
+
+// --- Timestamp logic ---
+// publishedAt = when this website first published.
+// updatedAt = when this website last materially updated (undefined on first publish).
+// Never show Updated when updatedAt is missing or <= publishedAt.
+const publishedAt = a.publishedAt;
+const updatedAt = a.updatedAt;
+const hasRealUpdate = updatedAt && updatedAt.getTime() > publishedAt.getTime();
+
+// --- Safe timezone derivation from source office ---
+// "NWS Chicago IL" → America/Chicago, "NWS Boston/Norton MA" → America/New_York, etc.
+const office = a.sourceOffice || '';
+let displayTimezone: string | null = null;
+if (/NWS Chicago/i.test(office)) displayTimezone = 'America/Chicago';
+else if (/NWS Boston|NWS Norton|NWS New York|NWS Philadelphia|NWS Washington/i.test(office)) displayTimezone = 'America/New_York';
+else if (/NWS Melbourne|NWS Miami|NWS Tampa|NWS Jacksonville|NWS Key West/i.test(office)) displayTimezone = 'America/New_York';
+else if (/NWS Honolulu/i.test(office)) displayTimezone = 'Pacific/Honolulu';
+else if (/NWS Wakefield|NWS Norfolk/i.test(office)) displayTimezone = 'America/New_York';
+
+const publishedDisplay = displayTimezone
+  ? formatDateTimeTZ(publishedAt, displayTimezone)
+  : formatDateTime(publishedAt);
+const updatedDisplay = hasRealUpdate && displayTimezone
+  ? formatDateTimeTZ(updatedAt!, displayTimezone)
+  : hasRealUpdate ? formatDateTime(updatedAt!) : null;
+
+// --- Image mode for object-fit behavior ---
+const imageMode = a.imageMode || 'fallback-graphic';
+const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(imageMode);
+
+// --- Photo attribution ---
+const hasPhotoAttribution = a.imageMode === 'licensed-photo' && a.imageCreator;
+const attributionText = a.imageLicense
+  ? `Photo: ${a.imageCreator} / ${a.imageLicense}`
+  : `Photo: ${a.imageCreator}`;
 ---
 
 <BaseLayout
@@ -38,8 +73,8 @@ const breadcrumbs = [
   canonicalPath={`/news/${a.slug}/`}
   ogImage={a.image}
   type="article"
-  publishedTime={a.publishedAt}
-  modifiedTime={a.updatedAt}
+  publishedTime={publishedAt}
+  modifiedTime={hasRealUpdate ? updatedAt! : undefined}
   author={a.author}
   section={categoryLabel(a.category)}
   tags={a.tags}
@@ -55,30 +90,32 @@ const breadcrumbs = [
         <p class="article-dek">{a.description}</p>
 
         <div class="article-meta">
-          <div class="meta-block">
+          <div class="meta-block meta-byline">
             <span class="meta-label">By</span>
             <span class="meta-author">{a.author}</span>
           </div>
-          <div class="meta-block">
-            <span class="meta-label">Published</span>
-            <time class="meta-value" datetime={iso(a.publishedAt)}>
-              {formatDateTime(a.publishedAt)}
-            </time>
+          <div class="meta-dates">
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <time class="meta-value" datetime={iso(publishedAt)}>
+                {publishedDisplay}
+              </time>
+            </div>
+            {
+              hasRealUpdate && updatedDisplay && (
+                <div class="meta-block">
+                  <span class="meta-label">Updated</span>
+                  <time class="meta-value" datetime={iso(updatedAt!)}>
+                    {updatedDisplay}
+                  </time>
+                </div>
+              )
+            }
           </div>
-          {
-            a.updatedAt.getTime() !== a.publishedAt.getTime() && (
-              <div class="meta-block">
-                <span class="meta-label">Updated</span>
-                <time class="meta-value" datetime={iso(a.updatedAt)}>
-                  {formatDateTime(a.updatedAt)}
-                </time>
-              </div>
-            )
-          }
         </div>
       </header>
 
-      <figure class="article-figure">
+      <figure class="article-figure" class:list={[{ 'figure--map': isMapImage }]}>
         <img
           src={a.image}
           alt={a.imageAlt}
@@ -87,7 +124,18 @@ const breadcrumbs = [
           loading="eager"
           fetchpriority="high"
         />
-        <figcaption>{a.imageAlt}</figcaption>
+        <figcaption>
+          {a.imageCaption && <span class="figcaption-text">{a.imageCaption}</span>}
+          {hasPhotoAttribution && (
+            <span class="figcaption-attribution">
+              {a.imageLicenseUrl ? (
+                <a href={a.imageLicenseUrl} rel="nofollow noopener" target="_blank">{attributionText}</a>
+              ) : (
+                attributionText
+              )}
+            </span>
+          )}
+        </figcaption>
       </figure>
 
       <div class="article-columns">
@@ -112,13 +160,35 @@ const breadcrumbs = [
             )
           }
 
-          <!-- Source attribution -->
+          <!-- Clean source attribution box -->
           <div class="article-source">
             <p class="source-label">Source</p>
-            <p class="source-name">{a.sourceName}</p>
-            <a class="source-url" href={a.sourceUrl} rel="nofollow noopener" target="_blank">
-              {a.sourceUrl}
-            </a>
+            <div class="source-grid">
+              <div class="source-row">
+                <span class="source-key">Organization</span>
+                <span class="source-val">{a.sourceName}</span>
+              </div>
+              {a.sourceOffice && (
+                <div class="source-row">
+                  <span class="source-key">Office</span>
+                  <span class="source-val">{a.sourceOffice}</span>
+                </div>
+              )}
+              <div class="source-row">
+                <span class="source-key">Original alert</span>
+                <a
+                  class="source-link"
+                  href={a.sourceUrl}
+                  rel="nofollow noopener"
+                  target="_blank"
+                >
+                  View official NWS alert &rarr;
+                </a>
+              </div>
+            </div>
+            <p class="source-note">
+              This article was produced from official National Weather Service alert data. US News Engine is not the original source of this alert.
+            </p>
           </div>
         </div>
 
@@ -142,12 +212,14 @@ const breadcrumbs = [
               </div>
               <div>
                 <dt>Published</dt>
-                <dd>{formatDateTime(a.publishedAt)}</dd>
+                <dd>{publishedDisplay}</dd>
               </div>
-              <div>
-                <dt>Updated</dt>
-                <dd>{formatDateTime(a.updatedAt)}</dd>
-              </div>
+              {hasRealUpdate && updatedDisplay && (
+                <div>
+                  <dt>Updated</dt>
+                  <dd>{updatedDisplay}</dd>
+                </div>
+              )}
             </dl>
           </div>
         </aside>
@@ -228,12 +300,35 @@ const breadcrumbs = [
     width: 100%;
     border-radius: var(--radius);
   }
+  /* Map graphics need contain to avoid cropping labels */
+  .figure--map img {
+    object-fit: contain;
+    background: var(--color-surface-alt);
+    aspect-ratio: 16 / 9;
+  }
   .article-figure figcaption {
     font-size: 0.82rem;
     color: var(--color-text-muted);
     margin-top: 8px;
     padding-left: 12px;
     border-left: 3px solid var(--color-border-strong);
+  }
+  .figcaption-text {
+    display: block;
+  }
+  .figcaption-attribution {
+    display: block;
+    margin-top: 3px;
+    color: var(--color-text-soft);
+    font-style: italic;
+  }
+  .figcaption-attribution a {
+    color: var(--color-text-soft);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .figcaption-attribution a:hover {
+    color: var(--color-red);
   }
 
   .article-columns {
@@ -244,6 +339,23 @@ const breadcrumbs = [
   }
   .article-content {
     max-width: 720px;
+  }
+
+  .article-body {
+    font-size: 1.075rem;
+    line-height: 1.75;
+    color: #23262b;
+  }
+  .article-body > * + * {
+    margin-top: 1.25rem;
+  }
+  .article-body h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  .article-body p {
+    margin-top: 1.15rem;
   }
 
   .article-tags {
@@ -277,9 +389,10 @@ const breadcrumbs = [
     border-radius: 999px;
   }
 
+  /* Source box */
   .article-source {
-    margin-top: 28px;
-    padding: 18px 20px;
+    margin-top: 36px;
+    padding: 24px;
     background: var(--color-surface-alt);
     border-left: 4px solid var(--color-red);
     border-radius: var(--radius);
@@ -290,19 +403,46 @@ const breadcrumbs = [
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-text-muted);
+    margin-bottom: 14px;
   }
-  .source-name {
+  .source-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .source-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .source-key {
+    font-size: 0.82rem;
     font-weight: 700;
-    margin-top: 4px;
+    color: var(--color-text-muted);
+    min-width: 110px;
+    flex-shrink: 0;
   }
-  .source-url {
-    display: inline-block;
-    margin-top: 4px;
-    font-size: 0.85rem;
+  .source-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .source-link {
+    font-size: 0.9rem;
     color: var(--color-red-dark);
     text-decoration: underline;
     text-underline-offset: 2px;
-    word-break: break-all;
+  }
+  .source-link:hover {
+    color: var(--color-red);
+  }
+  .source-note {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.82rem;
+    color: var(--color-text-soft);
+    font-style: italic;
   }
 
   /* Aside */
@@ -376,7 +516,36 @@ const breadcrumbs = [
       grid-template-columns: 1fr;
     }
     .article-meta {
-      gap: 18px;
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .meta-byline {
+      width: 100%;
+    }
+    .meta-dates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      width: 100%;
+    }
+    .meta-dates .meta-block {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .meta-dates .meta-label {
+      font-size: 0.62rem;
+    }
+    .meta-dates .meta-value {
+      font-size: 0.85rem;
+    }
+    .source-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .source-key {
+      min-width: 0;
     }
   }
 </style>

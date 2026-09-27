@@ -69,14 +69,16 @@ const mostRead = await getMostRead(5);
   </section>
 
   <!-- =================== LATEST NEWS =================== -->
-  <section class="section" aria-label="Latest news">
-    <div class="container">
-      <SectionHeader title="Latest News" href="/latest/" linkLabel="All latest" />
-      <div class="grid grid--3">
-        {latest.map((a) => <ArticleCard article={a} variant="default" />)}
+  {latest.length > 0 && (
+    <section class="section" aria-label="Latest news">
+      <div class="container">
+        <SectionHeader title="Latest News" href="/latest/" linkLabel="All latest" />
+        <div class="grid grid--3">
+          {latest.map((a) => <ArticleCard article={a} variant="default" />)}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- =================== WEATHER & ALERTS =================== -->
   <section class="section section--alt" aria-label="Weather and alerts">
@@ -100,22 +102,25 @@ const mostRead = await getMostRead(5);
   </section>
 
   <!-- =================== RECALLS & SAFETY =================== -->
-  <section class="section" aria-label="Recalls and safety">
-    <div class="container">
-      <SectionHeader title="Recalls & Safety" href="/recalls/" linkLabel="All recalls" />
-      <div class="grid grid--3">
-        {recalls.slice(0, 3).map((a) => <ArticleCard article={a} variant="default" />)}
+  {recalls.length > 0 && (
+    <section class="section" aria-label="Recalls and safety">
+      <div class="container">
+        <SectionHeader title="Recalls & Safety" href="/recalls/" linkLabel="All recalls" />
+        <div class="grid grid--3">
+          {recalls.slice(0, 3).map((a) => <ArticleCard article={a} variant="default" />)}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- =================== ACROSS AMERICA =================== -->
-  <section class="section section--alt" aria-label="Across America">
-    <div class="container">
-      <SectionHeader
-        title="Across America"
-        subtitle="Stories from states across the country"
-      />
+  {acrossAmerica.length > 0 && (
+    <section class="section section--alt" aria-label="Across America">
+      <div class="container">
+        <SectionHeader
+          title="Across America"
+          subtitle="Stories from states across the country"
+        />
       <div class="grid grid--3">
         {
           acrossAmerica.map((a) => (
@@ -142,6 +147,7 @@ const mostRead = await getMostRead(5);
       </div>
     </div>
   </section>
+  )}
 
   <!-- =================== MOST READ =================== -->
   <section class="section" aria-label="Most read">
