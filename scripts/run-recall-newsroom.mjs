@@ -118,6 +118,16 @@ async function main() {
     : 3;
   console.log(`Kill switch: recallPublishingEnabled = ${publishingEnabled}`);
   console.log(`Caps: maxRecallNewPerRun=${maxPerRun}, maxRecallNewPerDay=${maxPerDay}`);
+
+  // --- Test clock / cap override (for dry-run testing ONLY) ---
+  // Supports: --test-date=YYYY-MM-DD and --ignore-daily-cap
+  // These NEVER modify stored publishedAt values.
+  const args = process.argv.slice(2);
+  const testDateArg = args.find((a) => a.startsWith('--test-date='));
+  const ignoreDailyCap = args.includes('--ignore-daily-cap');
+  const testDate = testDateArg ? testDateArg.split('=')[1] : null;
+  if (testDate) console.log(`TEST MODE: using test date ${testDate} (does not modify stored timestamps)`);
+  if (ignoreDailyCap) console.log('TEST MODE: ignoring daily cap (does not modify stored timestamps)');
   console.log('');
 
   // --- Steps 1-4: Fetch → Filter → Cluster ---
@@ -204,12 +214,13 @@ async function main() {
   console.log(`  MISSING (registry entries not in feed): ${categories.MISSING.length}`);
 
   // --- Step 7: Check daily cap ---
-  const today = new Date().toISOString().slice(0, 10);
+  // Use test date if provided (for dry-run testing only — never modifies stored timestamps)
+  const today = (testDate || new Date().toISOString()).slice(0, 10);
   const publishedToday = registry.stories.filter(
     (s) => s.publishedAt && s.publishedAt.startsWith(today),
   ).length;
-  const remainingDaily = Math.max(0, maxPerDay - publishedToday);
-  const newAllowed = Math.min(maxPerRun, remainingDaily);
+  const remainingDaily = ignoreDailyCap ? maxPerDay : Math.max(0, maxPerDay - publishedToday);
+  const newAllowed = ignoreDailyCap ? maxPerRun : Math.min(maxPerRun, remainingDaily);
   console.log(
     `\n  Daily cap: ${publishedToday} published today (UTC), ${remainingDaily} remaining, ${newAllowed} allowed this run`,
   );

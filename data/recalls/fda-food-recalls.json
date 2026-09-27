@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T22:14:24.846Z",
+  "fetchedAt": "2026-09-27T22:25:46.464Z",
   "source": "FDA",
   "sourceUrl": "https://api.fda.gov/food/enforcement.json?search=report_date%3A%5B20260828+TO+20260927%5D&limit=100",
   "count": 47,
@@ -33,7 +33,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.327Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Bronx",
@@ -89,7 +89,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.327Z",
       "rawSourceData": {
         "status": "Terminated",
         "city": "Honolulu",
@@ -145,7 +145,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.327Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Union City",
@@ -200,7 +200,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.327Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "North Chesterfield",
@@ -256,7 +256,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.327Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Santa Rosa",
@@ -311,7 +311,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -367,7 +367,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -423,7 +423,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -478,7 +478,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Totowa",
@@ -534,7 +534,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Sacramento",
@@ -590,7 +590,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Sunbury",
@@ -646,7 +646,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Bronx",
@@ -702,7 +702,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Terminated",
         "city": "Laval",
@@ -759,7 +759,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.716Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -814,7 +814,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Los Angeles",
@@ -870,7 +870,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "North Chesterfield",
@@ -926,7 +926,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Carlsbad",
@@ -981,7 +981,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Savage",
@@ -1036,7 +1036,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -1092,7 +1092,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Montauk",
@@ -1148,7 +1148,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -1203,7 +1203,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Arlington",
@@ -1258,7 +1258,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Bronx",
@@ -1314,7 +1314,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -1369,7 +1369,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Arlington",
@@ -1424,7 +1424,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Etobicoke",
@@ -1480,7 +1480,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Broomfield",
@@ -1535,7 +1535,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Terminated",
         "city": "Houston",
@@ -1592,7 +1592,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -1647,7 +1647,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Union City",
@@ -1702,7 +1702,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Bronx",
@@ -1758,7 +1758,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -1814,7 +1814,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -1870,7 +1870,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Batavia",
@@ -1926,7 +1926,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Austin",
@@ -1981,7 +1981,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -2037,7 +2037,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Santa Rosa",
@@ -2092,7 +2092,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Laurel",
@@ -2147,7 +2147,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Santa Rosa",
@@ -2202,7 +2202,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Terminated",
         "city": "Houston",
@@ -2259,7 +2259,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Brooklyn",
@@ -2315,7 +2315,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Ravenna",
@@ -2370,7 +2370,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Lancaster",
@@ -2425,7 +2425,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Hauppauge",
@@ -2480,7 +2480,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Cookeville",
@@ -2536,7 +2536,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "Iowa City",
@@ -2591,7 +2591,7 @@
       "deaths": null,
       "sourceUrl": "https://open.fda.gov/data/downloads/food/enforcement/",
       "imageUrls": [],
-      "lastUpdatedAt": "2026-09-27T22:14:25.717Z",
+      "lastUpdatedAt": "2026-09-27T22:25:47.328Z",
       "rawSourceData": {
         "status": "Ongoing",
         "city": "North Canton",

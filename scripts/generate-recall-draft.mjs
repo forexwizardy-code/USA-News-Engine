@@ -237,14 +237,37 @@ function deriveHazardLabel(hazard, reason) {
 // ===========================================================================
 
 /**
- * Derive a clean, short product display name from the recallStoryKey.
- * Pattern: SOURCE__firm-slug__date__product-slug__hazard-slug
- * Returns a title-cased product name (e.g. "Breathing Circuits", "Alfalfa").
+ * Derive a clean, short product display name from the recallStoryKey or
+ * primaryProductName. Strips the firm name to avoid duplication.
+ * Pattern for cluster keys: SOURCE__firm-slug__date__product-slug__hazard-slug
+ * For single FDA records: SOURCE__recall_number (no product slug in key)
+ * Falls back to primaryProductName with firm name stripped.
  */
 function shortProductName(story) {
+  // Try extracting from the recallStoryKey first
   const storyKeyParts = String(story.recallStoryKey || '').split('__');
   const productSlug = storyKeyParts[3] || '';
-  return titleCaseProduct(productSlug);
+  if (productSlug && productSlug !== 'unknown') {
+    return titleCaseProduct(productSlug);
+  }
+
+  // Fall back to primaryProductName, stripping the firm name
+  const firm = story.recallingFirm || story.manufacturer || '';
+  let product = story.primaryProductName || story.headlineSeed || '';
+
+  if (product && firm) {
+    const firmLower = firm.toLowerCase();
+    if (product.toLowerCase().startsWith(firmLower)) {
+      product = product.slice(firm.length).replace(/^[\s,-]+/, '').trim();
+    }
+    // Strip common firm prefixes
+    product = product.replace(/^(medline|hudson rci|international sprout holdings,?\s*inc|sirna\s*&?\s*sons\s*produce,?\s*inc)\s+/i, '').trim();
+  }
+
+  // Take the first meaningful part (before comma/semicolon)
+  product = product.split(',')[0].split(';')[0].trim();
+
+  return product || '';
 }
 
 /**
@@ -337,18 +360,24 @@ function buildHeadline(story) {
 }
 
 /**
- * Build a clean URL slug from the headline + recall date.
+ * Build a clean URL slug from the headline + FDA report date.
  * Pattern: "{headline-slug}-{YYYY-MM-DD}" for uniqueness across recalls.
+ *
+ * IMPORTANT: Use the FDA report date (when FDA published the recall), NOT the
+ * recall initiation date (when the firm started the recall). The report date
+ * is more relevant for news freshness and avoids misleading old dates.
  */
 function buildSlug(story, headline) {
   // Strip the "Recalled Over ..." tail so the slug focuses on identity.
   const baseName = headline.replace(/\s+Recalled Over\s+.+$/i, '');
-  const date = parseDate(story.recallDates?.[0]);
-  const dateStr = date
+  // Prefer FDA report date; fall back to recall date
+  const dateStr = story.fdaReportDates?.[0] || story.reportDates?.[0] || story.recallDates?.[0];
+  const date = parseDate(dateStr);
+  const datePart = date
     ? `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`
     : '';
   const slugBase = slugify(baseName);
-  return dateStr ? `${slugBase}-${dateStr}` : slugBase;
+  return datePart ? `${slugBase}-${datePart}` : slugBase;
 }
 
 // ===========================================================================
