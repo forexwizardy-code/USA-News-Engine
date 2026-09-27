@@ -12,7 +12,8 @@
     "check": "astro check",
     "fetch:nws": "node scripts/fetch-nws-alerts.mjs",
     "filter:nws": "node scripts/filter-nws-news.mjs",
-    "prepare:nws": "npm run fetch:nws && npm run filter:nws"
+    "stories:nws": "node scripts/build-nws-stories.mjs",
+    "prepare:nws": "npm run fetch:nws && npm run filter:nws && npm run stories:nws"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
