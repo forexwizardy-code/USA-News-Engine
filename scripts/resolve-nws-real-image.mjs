@@ -240,22 +240,37 @@ async function main() {
     .join(' ')
     .match(/(?:along|applies to|covers|near)\s+(?:the\s+)?((?:[A-Z][a-zA-Z]+\s+){1,3}(?:River|Creek|Bayou))/);
   const river = waterBody ? waterBody[1].trim() : null;
+
+  // Build story-specific keywords from the draft location and event
+  const event = draft.weatherMetadata?.event || 'Weather Alert';
+  const location = draft.location || '';
+  const firstArea = String(draft.weatherMetadata?.areaDesc || '').split(';')[0].trim();
+
   const storyKeywords = [
-    'Des Plaines River',
-    'Gurnee',
-    'Lake County',
-    'Illinois',
-    'flood',
     river,
-  ].filter(Boolean);
+    firstArea,
+    location,
+    event.replace(/warning|watch|advisory/i, '').trim().toLowerCase() || 'weather',
+    'flood',
+  ].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i); // dedupe
   console.log(`  Keywords: ${storyKeywords.join(', ')}`);
 
-  // --- Search Wikimedia Commons --------------------------------------------
+  // --- Search Wikimedia Commons with story-specific queries ----------------
+  // Build queries from the actual story location, not hardcoded.
+  const locationParts = firstArea.split(',').map((s) => s.trim());
+  const stateName = locationParts.length > 1 ? locationParts[1] : '';
+  const countyName = locationParts[0] || firstArea;
+  const eventType = event.replace(/warning|watch|advisory/i, '').trim().toLowerCase();
+
   const queries = [
-    'Des Plaines River Gurnee Illinois flood',
-    'Des Plaines River Lake County Illinois',
-    'Gurnee Illinois flooding',
-  ];
+    // Try specific location + event
+    `${countyName} ${stateName} ${eventType}`.trim(),
+    // Try just the location
+    `${countyName} ${stateName}`.trim(),
+    // Try river name if available
+    river ? `${river} ${eventType}` : null,
+    river ? river : null,
+  ].filter(Boolean).slice(0, 3); // max 3 queries
 
   let allCandidates = [];
   for (const q of queries) {
@@ -305,7 +320,7 @@ async function main() {
     console.log('  Phase 4A map-data image remains the correct fallback.');
 
     // Write a "not found" metadata file for the record
-    const notFoundPath = join(OUTPUT_DIR, 'flood-warning-lake-county-illinois-real.json');
+    const notFoundPath = join(OUTPUT_DIR, `${draft.slug}-real.json`);
     await mkdir(OUTPUT_DIR, { recursive: true });
     await writeFile(
       notFoundPath,
@@ -335,7 +350,7 @@ async function main() {
 
   // --- Download ------------------------------------------------------------
   await mkdir(OUTPUT_DIR, { recursive: true });
-  const originalPath = join(OUTPUT_DIR, 'flood-warning-lake-county-illinois-real-original.jpg');
+  const originalPath = join(OUTPUT_DIR, `${draft.slug}-real-original.jpg`);
   const downloadUrl = selected.thumbUrl || selected.originalUrl;
   console.log(`  Downloading from: ${downloadUrl}`);
   await downloadImage(downloadUrl, originalPath);
@@ -343,7 +358,7 @@ async function main() {
   console.log(`  Downloaded: ${dlStats.size.toLocaleString()} bytes`);
 
   // --- Process to 1200x675 -------------------------------------------------
-  const heroPath = join(OUTPUT_DIR, 'flood-warning-lake-county-illinois-real.jpg');
+  const heroPath = join(OUTPUT_DIR, `${draft.slug}-real.jpg`);
   const { width, height } = await processToHero(originalPath, heroPath);
   const heroStats = await stat(heroPath);
   console.log(`  Hero image: ${heroPath} (${width}x${height}, ${heroStats.size.toLocaleString()} bytes)`);
@@ -381,12 +396,12 @@ async function main() {
     selectionReason: best.reasons.join('; '),
     suitabilityScore: best.score,
     files: {
-      heroJpg: 'data/draft-images/flood-warning-lake-county-illinois-real.jpg',
-      originalJpg: 'data/draft-images/flood-warning-lake-county-illinois-real-original.jpg',
+      heroJpg: `data/draft-images/${draft.slug}-real.jpg`,
+      originalJpg: `data/draft-images/${draft.slug}-real-original.jpg`,
     },
   };
 
-  const metaPath = join(OUTPUT_DIR, 'flood-warning-lake-county-illinois-real.json');
+  const metaPath = join(OUTPUT_DIR, `${draft.slug}-real.json`);
   await writeFile(metaPath, JSON.stringify(metadata, null, 2) + '\n', 'utf8');
   console.log(`  Metadata: ${metaPath}`);
 

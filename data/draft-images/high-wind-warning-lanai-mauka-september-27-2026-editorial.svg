@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="High Wind Warning editorial map for Lanai Mauka">
+  <defs>
+    <linearGradient id="edHeaderGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4e3a1c"/>
+      <stop offset="1" stop-color="#7a5a2f"/>
+    </linearGradient>
+    <clipPath id="edMapClip">
+      <rect x="480" y="90" width="720" height="525"/>
+    </clipPath>
+  </defs>
+
+  <!-- Left editorial panel (dark) -->
+  <rect x="0" y="0" width="480" height="675" fill="#4e3a1c"/>
+
+  <!-- Top accent strip -->
+  <rect x="0" y="0" width="1200" height="6" fill="#7a5a2f"/>
+
+  <!-- Severity chip -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="76.80000000000001" height="28" rx="3" fill="#7a5a2f"/>
+    <text x="38.400000000000006" y="19" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">SEVERE</text>
+  </g>
+
+  <!-- Event headline (large, white on dark) -->
+  <text x="50" y="130" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="0.5">HIGH WIND WARNING</text>
+  <rect x="50" y="142" width="70" height="4" fill="#7a5a2f"/>
+
+  <!-- Location -->
+  <text x="50" y="185" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#ffffff">Lanai Mauka</text>
+  
+
+  <!-- Data callouts -->
+  <g transform="translate(50, 270)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#8ab4c8" letter-spacing="1.5">URGENCY</text>
+    <text x="0" y="22" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Expected</text>
+  </g>
+  <g transform="translate(50, 320)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#8ab4c8" letter-spacing="1.5">IN EFFECT</text>
+    <text x="0" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">In effect through Sunday evening</text>
+  </g>
+
+  <!-- NWS attribution on dark panel -->
+  <g transform="translate(50, 585)">
+    <rect x="0" y="0" width="4" height="36" fill="#7a5a2f"/>
+    <text x="14" y="14" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#ffffff" letter-spacing="0.5">NATIONAL WEATHER SERVICE</text>
+    <text x="14" y="30" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#8a949c">Source: NWS alert</text>
+  </g>
+
+  <!-- US News Engine branding -->
+  <text x="50" y="645" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#ffffff">US News Engine</text>
+  <text x="160" y="645" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#6a747c" letter-spacing="0.5">EDITORIAL</text>
+
+  <!-- Right map area (light) -->
+  <rect x="480" y="0" width="720" height="675" fill="#e8ebe6"/>
+
+  <!-- Map -->
+  <g clip-path="url(#edMapClip)">
+    <rect x="480" y="90" width="720" height="525" fill="#e8ebe6"/>
+
+    <!-- State outline (faded context) -->
+    
+
+    <!-- County boundary (highlighted) -->
+    <path d="M913.0 436.0 L881.6 443.7 L851.2 443.0 L833.4 439.6 L805.9 437.1 L788.2 429.8 L781.2 419.8 L785.1 398.2 L787.1 369.4 L782.0 346.7 L769.1 320.0 L753.1 302.5 L736.4 286.0 L724.6 272.7 L721.8 267.2 L723.1 261.3 L733.9 263.3 L750.3 263.6 L781.5 266.5 L812.1 271.0 L839.6 281.7 L865.4 293.2 L893.9 308.4 L918.6 324.6 L936.6 337.4 L952.3 354.0 L958.2 376.9 L954.4 402.0 L937.4 420.8 L913.0 436.0 Z" fill="#7a5a2f" fill-opacity="0.25" stroke="#7a5a2f" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- NWS alert polygon (strong) -->
+    
+
+    <!-- County marker + label -->
+    
+    <circle cx="840" cy="352.5" r="6" fill="#4e3a1c" stroke="#ffffff" stroke-width="2"/>
+    <line x1="840" y1="352.5" x2="780" y2="397.5" stroke="#4e3a1c" stroke-width="1.5"/>
+    <text x="776" y="394.5" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#4e3a1c" text-anchor="end">LAKE COUNTY</text>
+    <text x="776" y="408.5" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#4e3a1c" text-anchor="end" opacity="0.8">Warned area</text>
+    
+  </g>
+
+  <!-- Map label -->
+  <text x="500" y="115" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#5b6168" letter-spacing="1.5">AFFECTED AREA</text>
+</svg>

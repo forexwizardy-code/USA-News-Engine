@@ -1,0 +1,30 @@
+{
+  "storyKey": "coastal-flood-warning__surry__2026-09-27",
+  "realPhotoFound": true,
+  "imageMode": "licensed-photo",
+  "imageRelation": "exact-location",
+  "status": "draft",
+  "width": 1200,
+  "height": 675,
+  "source": "Wikimedia Commons",
+  "sourceOrganization": "Lake County, Illinois (LakeCountyIL)",
+  "dataSource": "Wikimedia Commons API",
+  "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
+  "creator": "NPS Climate Change Response",
+  "credit": "Asan Beach flooding",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "attributionRequired": false,
+  "originalDate": "2009-02-03 13:58",
+  "downloadedAt": "2026-09-27T19:28:47.231Z",
+  "alt": "File photo of the Des Plaines River near Gurnee, Illinois (Lake County).",
+  "caption": "File photo of the Des Plaines River near Gurnee, Illinois. Photo: NPS Climate Change Response, Public domain.",
+  "copyrightCheck": "passed — CC BY 2.0, attribution required, non-free=false",
+  "selectionReason": "keyword match: \"coastal flood\"; keyword match: \"flood\"; public domain; landscape orientation; high res (2304x1728)",
+  "suitabilityScore": 100,
+  "files": {
+    "heroJpg": "data/draft-images/coastal-flood-warning-surry-september-27-2026-real.jpg",
+    "originalJpg": "data/draft-images/coastal-flood-warning-surry-september-27-2026-real-original.jpg"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "draftVersion": 4,
+  "generatedAt": "2026-09-27T19:25:03.050Z",
+  "storyKey": "high-wind-warning__lanai-mauka__2026-09-27",
+  "sourceAlertIds": [
+    "urn:oid:2.49.0.1.840.0.fcd74ce29a63dcdce14e9c7a21f98f098224d2b6.001.1"
+  ],
+  "status": "draft",
+  "title": "High Wind Warning Issued for Lanai Mauka",
+  "description": "The NWS said east winds 30 to 45 mph with gusts up to 75 mph along Portions of Maui, Big Island, Molokai, and Lanai over and downwind of terrain, especially in west Maui and Kohala. The alert remains in effect until 6 PM HST this evening.",
+  "slug": "high-wind-warning-lanai-mauka-september-27-2026",
+  "category": "weather",
+  "location": "Lanai Mauka",
+  "publishedAt": "2026-09-27T19:30:10.563Z",
+  "updatedAt": null,
+  "breaking": false,
+  "author": "US News Engine Weather Desk",
+  "sourceName": "National Weather Service",
+  "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fcd74ce29a63dcdce14e9c7a21f98f098224d2b6.001.1",
+  "sourceOffice": "NWS Honolulu HI",
+  "hasUpdates": false,
+  "originalInstruction": "Strong winds may lead to property damage. Hazardous driving\nconditions due to powerful cross winds will pose a serious risk for\ndrivers, especially for light weight and high profile vehicles. Loose\noutdoor items should be brought inside or secured properly.\n\nA High Wind Warning means that winds are expected to be at least 40\nmph, with gusts over 60 mph. Stay away from downed power lines.",
+  "seo": {
+    "title": "High Wind Warning: Lanai Mauka",
+    "description": "The National Weather Service has issued a High Wind Warning for Lanai Mauka. In effect until 6 PM HST this evening."
+  },
+  "image": {
+    "status": "pending",
+    "url": null,
+    "alt": null,
+    "source": null,
+    "license": null
+  },
+  "body": [
+    {
+      "heading": null,
+      "paragraphs": [
+        "The National Weather Service issued a High Wind Warning Sunday for Lanai Mauka, where east winds 30 to 45 mph with gusts up to 75 mph, according to the agency's alert."
+      ]
+    },
+    {
+      "heading": "What the warning says",
+      "paragraphs": [
+        "The NWS alert states that east winds 30 to 45 mph with gusts up to 75 mph.",
+        "The NWS notes potential impacts: damaging winds may blow down trees and power lines and damage roofs. Power outages are possible. Travel will be difficult, especially for high profile vehicles."
+      ]
+    },
+    {
+      "heading": "Areas affected",
+      "paragraphs": [
+        "The alert covers Lanai Mauka.",
+        "The NWS said the warning applies to Portions of Maui, Big Island, Molokai, and Lanai over and downwind of terrain, especially in west Maui and Kohala."
+      ]
+    },
+    {
+      "heading": "How long the warning is in effect",
+      "paragraphs": [
+        "The warning took effect Sunday, September 27 at 5:20 a.m. HST.",
+        "It remains in effect until Sunday, September 27 at 6:00 p.m. HST, the NWS said."
+      ]
+    },
+    {
+      "heading": "Safety information",
+      "paragraphs": [
+        "The National Weather Service advises that loose outdoor items should be brought inside or secured properly. The agency said a High Wind Warning means that winds are expected to be at least 40 mph, with gusts over 60 mph."
+      ]
+    },
+    {
+      "heading": "Source",
+      "paragraphs": [
+        "This article was produced from an official alert issued by NWS Honolulu HI. The original alert is published by the National Weather Service."
+      ]
+    }
+  ],
+  "weatherMetadata": {
+    "event": "High Wind Warning",
+    "severity": "Severe",
+    "certainty": "Likely",
+    "urgency": "Expected",
+    "effective": "2026-09-27T05:20:00-10:00",
+    "onset": "2026-09-27T05:20:00-10:00",
+    "expires": "2026-09-27T18:00:00-10:00",
+    "ends": "2026-09-27T18:00:00-10:00",
+    "affectedZones": [
+      "https://api.weather.gov/zones/forecast/HIZ015",
+      "https://api.weather.gov/zones/forecast/HIZ018",
+      "https://api.weather.gov/zones/forecast/HIZ026",
+      "https://api.weather.gov/zones/forecast/HIZ037",
+      "https://api.weather.gov/zones/forecast/HIZ038",
+      "https://api.weather.gov/zones/forecast/HIZ042",
+      "https://api.weather.gov/zones/forecast/HIZ043",
+      "https://api.weather.gov/zones/forecast/HIZ046",
+      "https://api.weather.gov/zones/forecast/HIZ047",
+      "https://api.weather.gov/zones/forecast/HIZ050",
+      "https://api.weather.gov/zones/forecast/HIZ051",
+      "https://api.weather.gov/zones/forecast/HIZ054"
+    ],
+    "priority": "high",
+    "storyScore": 115,
+    "updateCount": 1,
+    "firstEffectiveAt": "2026-09-27T15:20:00.000Z",
+    "latestEffectiveAt": "2026-09-27T15:20:00.000Z"
+  },
+  "heroImage": {
+    "mode": "map-data",
+    "relation": "current-alert-data",
+    "path": "/images/high-wind-warning-lanai-mauka-september-27-2026-map.png",
+    "alt": "High Wind Warning map for Lanai Mauka.",
+    "caption": "National Weather Service alert area for Lanai Mauka. Map: US News Engine using NWS geographic data.",
+    "creator": "US News Engine",
+    "license": "Original graphic generated by US News Engine from factual NWS data",
+    "licenseUrl": "",
+    "sourcePageUrl": "",
+    "originalDate": "",
+    "attributionRequired": false,
+    "attributionText": "Map: US News Engine / NWS data"
+  },
+  "secondaryImage": null
+}

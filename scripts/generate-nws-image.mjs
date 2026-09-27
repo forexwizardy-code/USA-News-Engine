@@ -444,7 +444,12 @@ function geometryBBox(geometry) {
       coords.forEach(walk);
     }
   };
-  walk(geometry.coordinates);
+  // Handle GeometryCollection by walking each sub-geometry's coordinates
+  if (geometry.type === 'GeometryCollection') {
+    geometry.geometries.forEach((g) => walk(g.coordinates));
+  } else {
+    walk(geometry.coordinates);
+  }
   return { minLon, minLat, maxLon, maxLat };
 }
 
@@ -490,6 +495,26 @@ function geometryToSvgPath(geometry, project) {
   if (geometry.type === 'MultiPolygon') {
     return geometry.coordinates
       .flatMap((poly) => poly.map(ringToPath))
+      .join(' ');
+  }
+  // GeometryCollection: recursively process each sub-geometry
+  if (geometry.type === 'GeometryCollection') {
+    return geometry.geometries
+      .map((g) => geometryToSvgPath(g, project))
+      .filter(Boolean)
+      .join(' ');
+  }
+  // Point / MultiPoint: render as small circles
+  if (geometry.type === 'Point') {
+    const { x, y } = project(geometry.coordinates[0], geometry.coordinates[1]);
+    return `M${x.toFixed(1)} ${y.toFixed(1)} m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0`;
+  }
+  if (geometry.type === 'MultiPoint') {
+    return geometry.coordinates
+      .map(([lon, lat]) => {
+        const { x, y } = project(lon, lat);
+        return `M${x.toFixed(1)} ${y.toFixed(1)} m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0`;
+      })
       .join(' ');
   }
   return '';

@@ -1,0 +1,47 @@
+---
+slug: "flood-warning-bristol-county-massachusetts-september-27-2026"
+title: "Flood Warning Issued for Bristol County, Massachusetts"
+description: "The NWS said minor flooding is forecast along Taunton River near Bridgewater. The alert remains in effect from this evening to Tuesday evening."
+category: weather
+author: "US News Engine Weather Desk"
+publishedAt: 2026-09-27T19:30:10.564Z
+updatedAt: 2026-09-27T19:30:10.564Z
+image: "/images/flood-warning-bristol-county-massachusetts-september-27-2026-map.png"
+imageAlt: "Flood Warning map for Bristol County, Massachusetts."
+sourceName: "National Weather Service"
+sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.110b2d77e32aa712dc5d42f2a9d99cdf21eeaa76.001.1"
+tags: ["Flood Warning", "Weather", "Severe"]
+breaking: false
+featured: false
+views: 3247
+---
+
+The National Weather Service issued a Flood Warning Sunday for Bristol County, Massachusetts, where minor flooding is forecast, according to the agency's alert.
+
+
+## What the warning says
+The NWS alert states that minor flooding is forecast.
+
+The NWS reported that at 10:45 a.m. EDT Sunday the stage was 5.6 feet. The river is expected to rise above flood stage late this evening to a crest of 9.4 feet early tomorrow afternoon. It will then fall below flood stage Tuesday afternoon. Flood stage is 8.0 feet. Flood History...This crest compares to a previous crest of 9.4 feet on 03/25/2024.
+
+The NWS says backwater flooding from the Taunton River will cause flooding of lower Purchade Brook in Middleboro. This will cause Woloski Park to become impassable by most vehicles for an extended period of time. Beware of the dangers of crossing flooded roadways. The water may be deeper than you think. Floodwaters have the ability to damage roadways. Heed the advice of local officials, and evacuate if asked to do so may occur when the river reaches 9.0 feet.
+
+
+## Areas affected
+The alert covers Bristol County, Massachusetts.
+
+The NWS said the warning applies to Taunton River near Bridgewater.
+
+
+## How long the warning is in effect
+The warning took effect Sunday, September 27 at 11:53 a.m. EDT.
+
+It remains in effect until Tuesday, September 29 at 11:00 p.m. EDT, the NWS said.
+
+
+## Safety information
+The National Weather Service advises that motorists should not attempt to drive around barricades or drive cars through flooded areas.
+
+
+## Source
+This article was produced from an official alert issued by NWS Boston/Norton MA. The original alert is published by the National Weather Service.

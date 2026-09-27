@@ -1,0 +1,30 @@
+{
+  "storyKey": "flood-warning__lake-fl__2026-09-27",
+  "realPhotoFound": true,
+  "imageMode": "licensed-photo",
+  "imageRelation": "exact-location",
+  "status": "draft",
+  "width": 1200,
+  "height": 675,
+  "source": "Wikimedia Commons",
+  "sourceOrganization": "Lake County, Illinois (LakeCountyIL)",
+  "dataSource": "Wikimedia Commons API",
+  "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Astor_FL_St_Johns_river_south01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAstor%20FL%20St%20Johns%20river%20south01.jpg",
+  "creator": "Ebyabe",
+  "credit": "Own work",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "attributionRequired": true,
+  "originalDate": "2010-04-24",
+  "downloadedAt": "2026-09-27T19:28:45.855Z",
+  "alt": "File photo of the Des Plaines River near Gurnee, Illinois (Lake County).",
+  "caption": "File photo of the Des Plaines River near Gurnee, Illinois. Photo: Ebyabe, CC BY-SA 3.0.",
+  "copyrightCheck": "passed — CC BY 2.0, attribution required, non-free=false",
+  "selectionReason": "keyword match: \"St Johns River\"; keyword match: \"Lake County, Florida\"; clear license: CC BY-SA 3.0; landscape orientation; high res (3264x2448)",
+  "suitabilityScore": 97,
+  "files": {
+    "heroJpg": "data/draft-images/flood-warning-lake-county-florida-september-27-2026-real.jpg",
+    "originalJpg": "data/draft-images/flood-warning-lake-county-florida-september-27-2026-real-original.jpg"
+  }
+}

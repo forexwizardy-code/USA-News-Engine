@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="High Wind Warning map for Lanai Mauka">
+  <defs>
+    <clipPath id="mapClip">
+      <rect x="0" y="120" width="1200" height="495"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#f4f5f3"/>
+
+  <!-- Top header bar -->
+  <rect x="0" y="0" width="1200" height="120" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#7a5a2f"/>
+
+  <!-- Headline + location -->
+  <g transform="translate(60, 0)">
+    <text x="0" y="55" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#14161a" letter-spacing="1">HIGH WIND WARNING</text>
+    <rect x="0" y="68" width="60" height="4" fill="#7a5a2f"/>
+    <text x="0" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#14161a">Lanai Mauka</text>
+    
+  </g>
+
+  <text x="1140" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#4e3a1c" text-anchor="end">In effect through Sunday evening</text>
+
+  <!-- Map area -->
+  <g clip-path="url(#mapClip)">
+    <rect x="0" y="120" width="1200" height="495" fill="#e8ebe6"/>
+
+    <!-- State outline (neutral, subtle) -->
+    
+
+    <!-- County boundary (highlighted) -->
+    <path d="M618.2 388.4 L610.4 390.3 L602.8 390.1 L598.4 389.3 L591.5 388.6 L587.1 386.8 L585.3 384.3 L586.3 378.9 L586.8 371.7 L585.5 366.1 L582.3 359.4 L578.3 355.0 L574.1 350.9 L571.2 347.6 L570.5 346.2 L570.8 344.7 L573.5 345.2 L577.6 345.3 L585.4 346.0 L593.0 347.1 L599.9 349.8 L606.3 352.7 L613.5 356.5 L619.6 360.5 L624.1 363.7 L628.1 367.9 L629.5 373.6 L628.6 379.9 L624.3 384.6 L618.2 388.4 Z" fill="#7a5a2f" fill-opacity="0.35" stroke="#7a5a2f" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- NWS alert polygon (strong outline) -->
+    
+
+    <!-- County marker (dot + leader line to label, avoids overlapping polygon) -->
+    
+    <!-- Small dot at county centroid -->
+    <circle cx="600" cy="367.5" r="5" fill="#4e3a1c" stroke="#ffffff" stroke-width="2"/>
+    <!-- Leader line to label -->
+    <line x1="600" y1="367.5" x2="640" y2="332.5" stroke="#4e3a1c" stroke-width="1.5"/>
+    <!-- Label text -->
+    <text x="644" y="335.5" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#4e3a1c">LAKE COUNTY</text>
+    <text x="644" y="349.5" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#4e3a1c" opacity="0.8">Warned area</text>
+    
+  </g>
+
+  <!-- U.S. context inset (top-right) -->
+  <g transform="translate(1040, 135)">
+    <rect x="0" y="0" width="130" height="90" rx="6" fill="rgba(255,255,255,0.92)" stroke="#d3d1ca" stroke-width="1"/>
+    <text x="65" y="16" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#5b6168" text-anchor="middle" letter-spacing="1">U.S. CONTEXT</text>
+    <g transform="translate(8, 22) scale(0.11)">
+      <path d="M0.0 11.6 L17.1 104.4 L17.1 220.4 L85.5 336.4 L136.8 406.0 L153.8 406.0 L239.3 429.2 L290.6 452.4 L376.1 475.6 L427.4 498.8 L461.5 545.2 L478.6 545.2 L529.9 522.0 L581.2 475.6 L615.4 452.4 L649.6 452.4 L683.8 475.6 L717.9 452.4 L735.0 498.8 L769.2 545.2 L786.3 568.4 L820.5 568.4 L854.7 522.0 L752.1 475.6 L786.3 382.8 L854.7 313.2 L854.7 266.8 L888.9 220.4 L940.2 174.0 L974.4 127.6 L974.4 58.0 L923.1 81.2 L854.7 104.4 L786.3 150.8 L717.9 174.0 L649.6 174.0 L683.8 104.4 L598.3 34.8 L512.8 11.6 L256.4 11.6 L85.5 11.6 L0.0 11.6 Z" fill="#d8dcd4" stroke="#b8beb0" stroke-width="8"/>
+      <circle cx="0" cy="580" r="30" fill="#7a5a2f" opacity="0.4"/>
+                <circle cx="0" cy="580" r="16" fill="#7a5a2f"/>
+    </g>
+  </g>
+
+  <!-- Bottom attribution bar -->
+  <rect x="0" y="615" width="1200" height="60" fill="#ffffff"/>
+  <rect x="0" y="614" width="1200" height="1" fill="#e6e4df"/>
+
+  <!-- NWS attribution -->
+  <g transform="translate(60, 653)">
+    <rect x="0" y="-16" width="4" height="20" fill="#7a5a2f"/>
+    <text x="14" y="-2" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#14161a" letter-spacing="0.5">NATIONAL WEATHER SERVICE</text>
+    <text x="14" y="14" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#6b7178">Source: NWS alert · Map data: NWS zones + public-domain coordinates</text>
+  </g>
+
+  <!-- US News Engine branding (subtle, right) -->
+  <g transform="translate(1140, 653)">
+    <text x="0" y="-2" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#14161a" text-anchor="end">US News Engine</text>
+    <text x="0" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8f96" text-anchor="end" letter-spacing="0.5">EDITORIAL MAP</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "storyKey": "high-wind-warning__lanai-mauka__2026-09-27",
+  "realPhotoFound": true,
+  "imageMode": "licensed-photo",
+  "imageRelation": "exact-location",
+  "status": "draft",
+  "width": 1200,
+  "height": 675,
+  "source": "Wikimedia Commons",
+  "sourceOrganization": "Lake County, Illinois (LakeCountyIL)",
+  "dataSource": "Wikimedia Commons API",
+  "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/High_tide%2C_high_wind%2C_high_noon_-_geograph.org.uk_-_3797576.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHigh%20tide%2C%20high%20wind%2C%20high%20noon%20-%20geograph.org.uk%20-%203797576.jpg",
+  "creator": "John Myers",
+  "credit": "Geograph Britain and Ireland",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "attributionRequired": true,
+  "originalDate": "2014-01-01",
+  "downloadedAt": "2026-09-27T19:28:48.901Z",
+  "alt": "File photo of the Des Plaines River near Gurnee, Illinois (Lake County).",
+  "caption": "File photo of the Des Plaines River near Gurnee, Illinois. Photo: John Myers, CC BY-SA 2.0.",
+  "copyrightCheck": "passed — CC BY 2.0, attribution required, non-free=false",
+  "selectionReason": "keyword match: \"high wind\"; clear license: CC BY-SA 2.0; landscape orientation; high res (3057x2292)",
+  "suitabilityScore": 89,
+  "files": {
+    "heroJpg": "data/draft-images/high-wind-warning-lanai-mauka-september-27-2026-real.jpg",
+    "originalJpg": "data/draft-images/high-wind-warning-lanai-mauka-september-27-2026-real-original.jpg"
+  }
+}

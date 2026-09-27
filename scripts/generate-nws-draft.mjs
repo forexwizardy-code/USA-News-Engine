@@ -266,7 +266,8 @@ function buildSlug(event, locationDisplay, effective) {
     .replace(/&/g, 'and')
     .replace(/[^a-z0-9-]+/g, '-')
     .replace(/-{2,}/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/^-|-$/g, '')
+    .slice(0, 80); // Limit slug length to prevent excessively long URLs
 }
 
 /**
@@ -444,7 +445,11 @@ function generateDraft(story, now) {
   const event = story.event || 'Weather Alert';
   const areaDesc = story.areaDesc || '';
   const areaInfo = normalizeArea(areaDesc);
-  const locationDisplay = areaInfo ? areaInfo.display : areaDesc || 'the affected area';
+  // For title/slug, always use only the FIRST area segment — multi-area
+  // alerts (e.g. "Surry; James City; Newport News...") would create
+  // absurdly long titles and URLs.
+  const firstArea = areaDesc.split(';')[0].trim();
+  const locationDisplay = areaInfo ? areaInfo.display : firstArea || 'the affected area';
 
   // --- Parse NWS description fields ----------------------------------------
   const whatFrag = extractLabeled(story.description, 'WHAT');
@@ -693,8 +698,17 @@ async function main() {
     return fail('No stories available. Nothing to draft.');
   }
 
-  // Select the single highest-ranked story.
-  const story = stories[0];
+  // Select the story — accept a storyKey as argv[2], otherwise use stories[0].
+  const targetStoryKey = process.argv[2];
+  const story = targetStoryKey
+    ? stories.find((s) => s.storyKey === targetStoryKey)
+    : stories[0];
+  if (!story) {
+    return fail(
+      `Story not found: ${targetStoryKey}`,
+      `Available stories: ${stories.map((s) => s.storyKey).slice(0, 5).join(', ')}...`,
+    );
+  }
   const now = new Date();
   console.log(`  Selected story: ${story.storyKey} (score=${story.storyScore})`);
   console.log(`  Event: ${story.event} | Severity: ${story.severity} | Urgency: ${story.urgency}`);
