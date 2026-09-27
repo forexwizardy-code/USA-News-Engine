@@ -1,0 +1,30 @@
+{
+  "storyKey": "flood-warning__lake-il__2026-09-27",
+  "realPhotoFound": true,
+  "imageMode": "licensed-photo",
+  "imageRelation": "exact-location",
+  "status": "draft",
+  "width": 1200,
+  "height": 675,
+  "source": "Wikimedia Commons",
+  "sourceOrganization": "Lake County, Illinois (LakeCountyIL)",
+  "dataSource": "Wikimedia Commons API",
+  "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/052_Des_Plaines_%288675577986%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A052%20Des%20Plaines%20(8675577986).jpg",
+  "creator": "LakeCountyIL",
+  "credit": "052_Des_Plaines",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "attributionRequired": true,
+  "originalDate": "2013-04-23 07:30",
+  "downloadedAt": "2026-09-27T19:02:49.609Z",
+  "alt": "File photo of the Des Plaines River near Gurnee, Illinois (Lake County).",
+  "caption": "File photo of the Des Plaines River near Gurnee, Illinois. Photo: LakeCountyIL, CC BY 2.0.",
+  "copyrightCheck": "passed — CC BY 2.0, attribution required, non-free=false",
+  "selectionReason": "keyword match: \"Des Plaines River\"; keyword match: \"Gurnee\"; keyword match: \"Lake County\"; keyword match: \"Illinois\"; keyword match: \"flood\"; keyword match: \"Des Plaines River\"; clear license: CC BY 2.0; landscape orientation; high res (4288x2848); official source: LakeCountyIL",
+  "suitabilityScore": 100,
+  "files": {
+    "heroJpg": "data/draft-images/flood-warning-lake-county-illinois-real.jpg",
+    "originalJpg": "data/draft-images/flood-warning-lake-county-illinois-real-original.jpg"
+  }
+}

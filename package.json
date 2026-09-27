@@ -15,6 +15,7 @@
     "stories:nws": "node scripts/build-nws-stories.mjs",
     "draft:nws": "node scripts/generate-nws-draft.mjs",
     "image:nws": "node scripts/generate-nws-image.mjs",
+    "resolve-image:nws": "node scripts/resolve-nws-real-image.mjs",
     "prepare:nws": "npm run fetch:nws && npm run filter:nws && npm run stories:nws"
   },
   "dependencies": {

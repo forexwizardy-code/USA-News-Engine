@@ -18,6 +18,16 @@ import { SITE_NAME } from '../../consts';
  *   - NOT linked from homepage, category pages, navigation, etc.
  */
 
+const imageR = {
+  label: 'VERSION R — REAL PHOTO',
+  src: '/preview-images/flood-warning-lake-county-illinois-real.jpg',
+  desc: 'Real aerial photograph of the Des Plaines River flooding in Gurnee, Lake County, Illinois. Source: LakeCountyIL, CC BY 2.0. File photo — exact location, not current event.',
+  source: 'Lake County, Illinois (LakeCountyIL)',
+  creator: 'LakeCountyIL',
+  license: 'CC BY 2.0',
+  relation: 'exact-location (file photo)',
+};
+
 const imageA = {
   label: 'VERSION A — MAP DATA',
   src: '/preview-images/flood-warning-lake-county-illinois-september-27-2026-map.png',
@@ -37,7 +47,7 @@ const imageB = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Image Comparison — Phase 4A | {SITE_NAME}</title>
+    <title>Image Comparison — Phase 4B | {SITE_NAME}</title>
     <meta name="robots" content="noindex,nofollow,noarchive" />
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -56,13 +66,36 @@ const imageB = {
     <main id="main" class="main">
       <div class="container comparison-page">
         <header class="comparison-head">
-          <p class="kicker">Phase 4A Review</p>
+          <p class="kicker">Phase 4B Review</p>
           <h1>Weather Image Comparison</h1>
           <p class="comparison-sub">
-            Two generated hero image versions for the Flood Warning — Lake County, Illinois story.
-            Both use real NWS alert geometry and zone data. Neither replaces the approved preview image.
+            Three hero image versions for the Flood Warning — Lake County, Illinois story.
+            Version R is a real photograph from Wikimedia Commons. Versions A and B use real NWS alert geometry and zone data.
+            None replaces the approved preview image.
           </p>
         </header>
+
+        <section class="image-block image-block--real" aria-labelledby="version-r-label">
+          <div class="image-header">
+            <h2 id="version-r-label" class="version-label version-label--real">VERSION R — REAL PHOTO</h2>
+            <p class="image-desc">{imageR.desc}</p>
+            <dl class="image-meta">
+              <div><dt>Source</dt><dd>{imageR.source}</dd></div>
+              <div><dt>Creator</dt><dd>{imageR.creator}</dd></div>
+              <div><dt>License</dt><dd>{imageR.license}</dd></div>
+              <div><dt>Relationship</dt><dd>{imageR.relation}</dd></div>
+            </dl>
+          </div>
+          <figure class="image-figure">
+            <img
+              src={imageR.src}
+              alt="Version R: File photo of Des Plaines River flooding near Gurnee, Illinois"
+              width="1200"
+              height="675"
+              loading="eager"
+            />
+          </figure>
+        </section>
 
         <section class="image-block" aria-labelledby="version-a-label">
           <div class="image-header">
@@ -208,6 +241,34 @@ const imageB = {
     background: var(--color-surface-alt);
     border-left: 4px solid var(--color-red);
     display: inline-block;
+  }
+  .version-label--real {
+    border-left-color: #2f7d46;
+    background: #e8f3ec;
+    color: #1a4a28;
+  }
+  .image-meta {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px 20px;
+    padding: 14px 16px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+  }
+  .image-meta dt {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .image-meta dd {
+    font-size: 0.9rem;
+    margin-top: 2px;
+    color: var(--color-text);
   }
   .image-desc {
     margin-top: 10px;
