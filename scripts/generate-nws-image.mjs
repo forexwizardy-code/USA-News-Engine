@@ -1,19 +1,13 @@
 /**
- * US News Engine — automated NWS editorial image generator (Phase 3F).
+ * US News Engine — automated NWS editorial image generator (Phase 3F + 3F-revised).
+ *
+ * PRIMARY: Real map-based weather graphics using NWS alert geometry and
+ *          official zone/county boundaries (public-domain U.S. government data).
+ * FALLBACK: Generic branded graphic with U.S. silhouette + state marker.
  *
  * Reads a private NWS article draft (data/drafts/<storyKey>.json) and
- * generates a professional, data-driven NEWS GRAPHIC (not a fake photograph)
- * as SVG + PNG, plus a JSON metadata sidecar.
- *
- * Design goals:
- *   - Original US News Engine visual identity (not copied from any publisher).
- *   - Communicates: event type, location, geographic context, NWS attribution.
- *   - Restrained, readable on mobile, 16:9 / 1200x675.
- *   - No fake disaster imagery. No copyrighted assets. No external image APIs.
- *
- * Reusable for any NWS weather event type (Flood Warning, Tornado Warning,
- * Hurricane Warning, Winter Storm Warning, Heat Advisory, etc.) via an
- * event-theme map.
+ * generates a professional, data-driven NEWS GRAPHIC as SVG + PNG, plus a
+ * JSON metadata sidecar documenting which visual source was used.
  *
  * Run manually:
  *   npm run image:nws
@@ -29,6 +23,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 const DRAFTS_DIR = join(PROJECT_DIR, 'data', 'drafts');
 const OUTPUT_DIR = join(PROJECT_DIR, 'data', 'draft-images');
+const GEO_CACHE_DIR = join(PROJECT_DIR, 'data', 'geo-cache');
 
 const W = 1200;
 const H = 675;
@@ -349,7 +344,299 @@ function extractWaterBodyName(draft) {
 }
 
 // ===========================================================================
-// SVG generation
+// Map-based image generation (PRIMARY path — real geography)
+// ===========================================================================
+
+/**
+ * Load a cached GeoJSON geometry file from data/geo-cache/.
+ * Returns the parsed GeoJSON geometry object, or null if not found.
+ */
+async function loadCachedGeometry(filename) {
+  try {
+    const raw = await readFile(join(GEO_CACHE_DIR, filename), 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Fetch and cache an NWS zone boundary from the public NWS API.
+ * Makes ONE request per zone, caches the result for reuse.
+ * Returns the GeoJSON geometry, or null if unavailable.
+ */
+async function fetchZoneGeometry(zoneUrl) {
+  if (!zoneUrl) return null;
+  // Derive cache filename from the zone URL.
+  // e.g. "https://api.weather.gov/zones/county/ILC097" -> "ILC097.json"
+  const zoneId = zoneUrl.split('/').pop();
+  if (!zoneId) return null;
+  const cacheFile = join(GEO_CACHE_DIR, `${zoneId}.json`);
+
+  // Try cache first.
+  const cached = await loadCachedGeometry(`${zoneId}.json`);
+  if (cached) return cached;
+
+  // Fetch from NWS (public-domain U.S. government data).
+  try {
+    const res = await fetch(zoneUrl, {
+      headers: { Accept: 'application/geo+json', 'User-Agent': 'USNewsEngine/1.0' },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const feature = data.features ? data.features[0] : data;
+    if (!feature?.geometry) return null;
+    await mkdir(GEO_CACHE_DIR, { recursive: true });
+    await writeFile(cacheFile, JSON.stringify(feature.geometry), 'utf8');
+    return feature.geometry;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Fetch and cache the NWS alert polygon from the public NWS API.
+ * Makes ONE request per alert, caches the result.
+ * Returns the GeoJSON geometry, or null if the alert has no geometry.
+ */
+async function fetchAlertGeometry(alertId, draft) {
+  if (!alertId) return null;
+  // Derive a cache filename from the alert ID hash.
+  const hashMatch = alertId.match(/([a-f0-9]{12,})/);
+  const hash = hashMatch ? hashMatch[1] : 'unknown';
+  const cacheFile = `alert-${hash}.json`;
+
+  const cached = await loadCachedGeometry(cacheFile);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(`https://api.weather.gov/alerts/${encodeURIComponent(alertId)}`, {
+      headers: { Accept: 'application/geo+json', 'User-Agent': 'USNewsEngine/1.0' },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const feature = data.features ? data.features[0] : data;
+    if (!feature?.geometry) return null;
+    await mkdir(GEO_CACHE_DIR, { recursive: true });
+    await writeFile(join(GEO_CACHE_DIR, cacheFile), JSON.stringify(feature.geometry), 'utf8');
+    return feature.geometry;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Calculate the bounding box of a GeoJSON geometry.
+ * Returns { minLon, minLat, maxLon, maxLat }.
+ */
+function geometryBBox(geometry) {
+  let minLon = Infinity, minLat = Infinity, maxLon = -Infinity, maxLat = -Infinity;
+  const walk = (coords) => {
+    if (typeof coords[0] === 'number') {
+      const [lon, lat] = coords;
+      if (lon < minLon) minLon = lon;
+      if (lat < minLat) minLat = lat;
+      if (lon > maxLon) maxLon = lon;
+      if (lat > maxLat) maxLat = lat;
+    } else {
+      coords.forEach(walk);
+    }
+  };
+  walk(geometry.coordinates);
+  return { minLon, minLat, maxLon, maxLat };
+}
+
+/**
+ * Create a projection function that maps [lon, lat] to [x, y] within a
+ * target rectangle on the canvas. Uses equirectangular projection (simple,
+ * sufficient for county/state scale). Adds padding and preserves aspect ratio.
+ */
+function createProjector(bbox, targetX, targetY, targetW, targetH, padding = 20) {
+  const lonRange = bbox.maxLon - bbox.minLon || 1;
+  const latRange = bbox.maxLat - bbox.minLat || 1;
+  const availW = targetW - padding * 2;
+  const availH = targetH - padding * 2;
+  // Scale to fit, preserving aspect ratio.
+  const scale = Math.min(availW / lonRange, availH / latRange);
+  const drawW = lonRange * scale;
+  const drawH = latRange * scale;
+  const offsetX = targetX + padding + (availW - drawW) / 2;
+  const offsetY = targetY + padding + (availH - drawH) / 2;
+  return (lon, lat) => ({
+    x: offsetX + (lon - bbox.minLon) * scale,
+    y: offsetY + (bbox.maxLat - lat) * scale, // flip Y (lat goes up, SVG Y goes down)
+  });
+}
+
+/**
+ * Convert a GeoJSON geometry to an SVG path string using a projector.
+ * Handles Polygon and MultiPolygon types.
+ */
+function geometryToSvgPath(geometry, project) {
+  if (!geometry) return '';
+  const ringToPath = (ring) => {
+    return ring
+      .map(([lon, lat], i) => {
+        const { x, y } = project(lon, lat);
+        return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)} ${y.toFixed(1)}`;
+      })
+      .join(' ') + ' Z';
+  };
+  if (geometry.type === 'Polygon') {
+    return geometry.coordinates.map(ringToPath).join(' ');
+  }
+  if (geometry.type === 'MultiPolygon') {
+    return geometry.coordinates
+      .flatMap((poly) => poly.map(ringToPath))
+      .join(' ');
+  }
+  return '';
+}
+
+/**
+ * Build a map-based SVG using real geographic data.
+ * This is the PRIMARY image path — it draws an actual map with:
+ *   - State outline (neutral fill)
+ *   - County/zone boundary highlighted (accent fill)
+ *   - NWS alert polygon (strong outline)
+ *   - Labels and attribution
+ */
+function buildMapSvg(draft, theme, geoData) {
+  const event = draft.weatherMetadata?.event || 'Weather Alert';
+  const location = draft.location || 'the affected area';
+  const waterBody = extractWaterBodyName(draft);
+  const accent = theme.accent;
+  const accentDark = theme.accentDark;
+  const inEffectLabel = deriveInEffectLabel(draft);
+
+  const { stateGeom, countyGeom, alertGeom } = geoData;
+
+  // Calculate bounding box. Use the STATE as the primary map view so readers
+  // can see where in the state the affected county is. If no state geometry,
+  // fall back to the county/alert bounding box.
+  let bbox;
+  if (stateGeom) {
+    bbox = geometryBBox(stateGeom);
+  } else {
+    const boxes = [countyGeom, alertGeom].filter(Boolean).map(geometryBBox);
+    bbox = {
+      minLon: Math.min(...boxes.map((b) => b.minLon)) - 0.5,
+      maxLon: Math.max(...boxes.map((b) => b.maxLon)) + 0.5,
+      minLat: Math.min(...boxes.map((b) => b.minLat)) - 0.5,
+      maxLat: Math.max(...boxes.map((b) => b.maxLat)) + 0.5,
+    };
+  }
+
+  // Map area: main canvas with space for header (top) and footer (bottom).
+  const mapX = 0, mapY = 120, mapW = W, mapH = H - 180;
+  const project = createProjector(bbox, mapX, mapY, mapW, mapH, 40);
+
+  // Build SVG paths for each geometry layer.
+  const statePath = stateGeom ? geometryToSvgPath(stateGeom, project) : '';
+  const countyPath = countyGeom ? geometryToSvgPath(countyGeom, project) : '';
+  const alertPath = alertGeom ? geometryToSvgPath(alertGeom, project) : '';
+
+  // Calculate the centroid of the county for label placement.
+  let countyCenter = null;
+  if (countyGeom) {
+    const cb = geometryBBox(countyGeom);
+    countyCenter = project((cb.minLon + cb.maxLon) / 2, (cb.minLat + cb.maxLat) / 2);
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${event} map for ${location}">
+  <defs>
+    <clipPath id="mapClip">
+      <rect x="0" y="120" width="${W}" height="${mapH}"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="${W}" height="${H}" fill="#f4f5f3"/>
+
+  <!-- Top header bar -->
+  <rect x="0" y="0" width="${W}" height="120" fill="#ffffff"/>
+  <rect x="0" y="0" width="${W}" height="6" fill="${accent}"/>
+
+  <!-- Headline + location -->
+  <g transform="translate(60, 0)">
+    <text x="0" y="55" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#14161a" letter-spacing="1">${escapeXml(event.toUpperCase())}</text>
+    <rect x="0" y="68" width="60" height="4" fill="${accent}"/>
+    <text x="0" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#14161a">${escapeXml(location)}</text>
+    ${waterBody ? `<text x="0" y="100" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#5b6168" dx="${getTextWidth(location, 26) + 20}">— ${escapeXml(waterBody)}</text>` : ''}
+  </g>
+
+  ${inEffectLabel ? `<text x="${W - 60}" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="${accentDark}" text-anchor="end">${escapeXml(inEffectLabel)}</text>` : ''}
+
+  <!-- Map area -->
+  <g clip-path="url(#mapClip)">
+    <rect x="0" y="120" width="${W}" height="${mapH}" fill="#e8ebe6"/>
+
+    <!-- State outline (neutral, subtle) -->
+    ${statePath ? `<path d="${statePath}" fill="#d8dcd4" stroke="#b8beb0" stroke-width="1.5" stroke-linejoin="round"/>` : ''}
+
+    <!-- County boundary (highlighted) -->
+    ${countyPath ? `<path d="${countyPath}" fill="${accent}" fill-opacity="0.35" stroke="${accent}" stroke-width="2" stroke-linejoin="round"/>` : ''}
+
+    <!-- NWS alert polygon (strong outline) -->
+    ${alertPath ? `<path d="${alertPath}" fill="${accent}" fill-opacity="0.5" stroke="${accentDark}" stroke-width="3" stroke-linejoin="round" stroke-dasharray="0"/>` : ''}
+
+    <!-- County marker (dot + leader line to label, avoids overlapping polygon) -->
+    ${countyCenter ? `
+    <!-- Small dot at county centroid -->
+    <circle cx="${countyCenter.x}" cy="${countyCenter.y}" r="5" fill="${accentDark}" stroke="#ffffff" stroke-width="2"/>
+    <!-- Leader line to label -->
+    <line x1="${countyCenter.x}" y1="${countyCenter.y}" x2="${countyCenter.x + 40}" y2="${countyCenter.y - 35}" stroke="${accentDark}" stroke-width="1.5"/>
+    <!-- Label text -->
+    <text x="${countyCenter.x + 44}" y="${countyCenter.y - 32}" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="${accentDark}">LAKE COUNTY</text>
+    <text x="${countyCenter.x + 44}" y="${countyCenter.y - 18}" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="${accentDark}" opacity="0.8">Warned area</text>
+    ` : ''}
+  </g>
+
+  <!-- U.S. context inset (top-right) -->
+  <g transform="translate(${W - 160}, 135)">
+    <rect x="0" y="0" width="130" height="90" rx="6" fill="rgba(255,255,255,0.92)" stroke="#d3d1ca" stroke-width="1"/>
+    <text x="65" y="16" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#5b6168" text-anchor="middle" letter-spacing="1">U.S. CONTEXT</text>
+    <g transform="translate(8, 22) scale(0.11)">
+      <path d="${US_SILHOUETTE}" fill="#d8dcd4" stroke="#b8beb0" stroke-width="8"/>
+      ${(() => {
+        const stateAbbr = draft.weatherMetadata?.affectedZones?.[0]?.match(/\/([A-Z]{2})[A-Z]/)?.[1];
+        const stateInfo = stateAbbr ? STATE_CENTROIDS[stateAbbr] : null;
+        if (!stateInfo) return '';
+        const p = projectLatLon(stateInfo.lat, stateInfo.lon);
+        return `<circle cx="${p.x}" cy="${p.y}" r="30" fill="${accent}" opacity="0.4"/>
+                <circle cx="${p.x}" cy="${p.y}" r="16" fill="${accent}"/>`;
+      })()}
+    </g>
+  </g>
+
+  <!-- Bottom attribution bar -->
+  <rect x="0" y="${H - 60}" width="${W}" height="60" fill="#ffffff"/>
+  <rect x="0" y="${H - 61}" width="${W}" height="1" fill="#e6e4df"/>
+
+  <!-- NWS attribution -->
+  <g transform="translate(60, ${H - 22})">
+    <rect x="0" y="-16" width="4" height="20" fill="${accent}"/>
+    <text x="14" y="-2" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#14161a" letter-spacing="0.5">NATIONAL WEATHER SERVICE</text>
+    <text x="14" y="14" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#6b7178">Source: NWS alert · Map data: NWS zones + public-domain coordinates</text>
+  </g>
+
+  <!-- US News Engine branding (subtle, right) -->
+  <g transform="translate(${W - 60}, ${H - 22})">
+    <text x="0" y="-2" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#14161a" text-anchor="end">US News Engine</text>
+    <text x="0" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8f96" text-anchor="end" letter-spacing="0.5">EDITORIAL MAP</text>
+  </g>
+</svg>`;
+}
+
+/** Approximate text width for label positioning (rough, font-size based). */
+function getTextWidth(text, fontSize) {
+  return (text || '').length * fontSize * 0.55;
+}
+
+// ===========================================================================
+// SVG generation — FALLBACK (generic branded graphic)
 // ===========================================================================
 
 function buildSvg(draft, theme, locationInfo) {
@@ -462,9 +749,6 @@ function escapeXml(s) {
 async function main() {
   console.log('[generate-nws-image] Starting editorial image generation.');
 
-  // --- Load the draft ------------------------------------------------------
-  // For Phase 3F, we process the single current draft. The script is reusable:
-  // pass a storyKey as argv[2] to target a different draft later.
   const targetStoryKey = process.argv[2] || 'flood-warning__lake-il__2026-09-27';
   const draftPath = join(DRAFTS_DIR, `${targetStoryKey}.json`);
   console.log(`  Draft: ${draftPath}`);
@@ -487,7 +771,6 @@ async function main() {
   const theme = themeFor(event);
   console.log(`  Event: ${event} | Theme accent: ${theme.accent} | Icon: ${theme.icon}`);
 
-  // Derive state from the first affected zone (if available).
   const zones = draft.weatherMetadata?.affectedZones || [];
   const firstZone = zones[0];
   const stateAbbr = stateFromZone(firstZone);
@@ -495,16 +778,58 @@ async function main() {
   const locationInfo = stateAbbr ? { stateAbbr, ...countyInfo } : null;
   console.log(`  State: ${stateAbbr || 'unknown'} | County FIPS: ${countyInfo?.fips || 'n/a'}`);
 
-  // --- Build the SVG -------------------------------------------------------
-  const svg = buildSvg(draft, theme, locationInfo);
   const baseName = draft.slug || targetStoryKey;
   await mkdir(OUTPUT_DIR, { recursive: true });
-  const svgPath = join(OUTPUT_DIR, `${baseName}.svg`);
+
+  // =========================================================================
+  // PRIMARY PATH: Map-based image using real NWS geometry + zone boundaries
+  // =========================================================================
+  console.log('\n  --- Attempting map-based image (primary path) ---');
+
+  // Load/fetch geographic data.
+  const alertId = draft.sourceAlertIds?.[0] || draft.weatherMetadata?.sourceUrl?.split('/').pop();
+  const alertGeom = alertId ? await fetchAlertGeometry(alertId, draft) : null;
+  const countyGeom = firstZone ? await fetchZoneGeometry(firstZone) : null;
+  const stateGeom = stateAbbr ? await loadCachedGeometry(`state-${stateAbbr}.json`) : null;
+
+  console.log(`  Alert polygon: ${alertGeom ? `YES (${alertGeom.type})` : 'no'}`);
+  console.log(`  County boundary: ${countyGeom ? `YES (${countyGeom.type})` : 'no'}`);
+  console.log(`  State outline: ${stateGeom ? `YES (${stateGeom.type})` : 'no'}`);
+
+  let visualType = 'fallback-graphic';
+  let geographicDataSource = null;
+  let alertGeometryUsed = false;
+  let zoneDataUsed = false;
+  let imageSource = 'US News Engine (generic branded graphic)';
+  let licenseNotes = 'Original graphic generated by US News Engine. No external geographic data used.';
+
+  let svg;
+  let outputSuffix = '';
+
+  if (countyGeom || alertGeom) {
+    // We have real geographic data — build a map-based image.
+    console.log('  Building map-based SVG...');
+    svg = buildMapSvg(draft, theme, { stateGeom, countyGeom, alertGeom });
+    visualType = 'alert-map';
+    geographicDataSource = 'NWS alert geometry + NWS zone boundaries' + (stateGeom ? ' + public-domain state outline' : '');
+    alertGeometryUsed = !!alertGeom;
+    zoneDataUsed = !!countyGeom;
+    imageSource = 'US News Engine (map generated from NWS + public-domain geographic data)';
+    licenseNotes = 'Map boundaries from NWS (public-domain U.S. government data). State outline from public-domain coordinates. Generated by US News Engine.';
+    outputSuffix = '-map';
+    console.log('  Map-based image will be generated.');
+  } else {
+    // FALLBACK: No geographic data available — use the generic branded graphic.
+    console.log('  No geographic data available. Falling back to generic branded graphic.');
+    svg = buildSvg(draft, theme, locationInfo);
+  }
+
+  // --- Write SVG + PNG (with -map suffix for comparison) -------------------
+  const svgPath = join(OUTPUT_DIR, `${baseName}${outputSuffix}.svg`);
+  const pngPath = join(OUTPUT_DIR, `${baseName}${outputSuffix}.png`);
   await writeFile(svgPath, svg, 'utf8');
   console.log(`  SVG written: ${svgPath}`);
 
-  // --- Render PNG with sharp ----------------------------------------------
-  const pngPath = join(OUTPUT_DIR, `${baseName}.png`);
   await sharp(Buffer.from(svg))
     .resize(W, H, { fit: 'fill' })
     .png({ quality: 90, compressionLevel: 9 })
@@ -512,53 +837,69 @@ async function main() {
   const pngStats = await stat(pngPath);
   console.log(`  PNG written: ${pngPath} (${pngStats.size.toLocaleString()} bytes)`);
 
-  // --- Verify PNG dimensions ----------------------------------------------
   const meta = await sharp(pngPath).metadata();
   console.log(`  PNG dimensions: ${meta.width}x${meta.height}`);
 
-  // --- Image metadata sidecar ---------------------------------------------
-  const alt = `${event} graphic for ${draft.location}${extractWaterBodyName(draft) ? `, covering the ${extractWaterBodyName(draft)}` : ''}.`;
-  const caption = `An editorial graphic showing a ${event} for ${draft.location}, with a U.S. locator map. Source: National Weather Service.`;
+  // --- Image metadata sidecar (with new fields) ----------------------------
+  const waterBody = extractWaterBodyName(draft);
+  const alt = `${event} map for ${draft.location}${waterBody ? `, covering the ${waterBody}` : ''}.`;
+  const caption = `${event} map for ${draft.location}${waterBody ? ` and the ${waterBody}` : ''}. Graphic: US News Engine / NWS data.`;
   const metadataDoc = {
     storyKey: draft.storyKey,
     status: 'draft',
     type: 'generated-editorial-graphic',
+    visualType,
     width: W,
     height: H,
     source: 'US News Engine',
     dataSource: 'National Weather Service',
+    geographicDataSource,
+    alertGeometryUsed,
+    zoneDataUsed,
+    imageSource,
+    licenseNotes,
     copyrightRisk: 'none-known',
     alt,
     caption,
     generatedAt: new Date().toISOString(),
     files: {
-      svg: `data/draft-images/${baseName}.svg`,
-      png: `data/draft-images/${baseName}.png`,
+      svg: `data/draft-images/${baseName}${outputSuffix}.svg`,
+      png: `data/draft-images/${baseName}${outputSuffix}.png`,
     },
   };
-  const metaPath = join(OUTPUT_DIR, `${baseName}.json`);
+  const metaPath = join(OUTPUT_DIR, `${baseName}${outputSuffix}.json`);
   await writeFile(metaPath, JSON.stringify(metadataDoc, null, 2) + '\n', 'utf8');
   console.log(`  Metadata written: ${metaPath}`);
 
-  // --- Update the draft's image object ------------------------------------
-  draft.image = {
-    status: 'ready',
-    url: null,
-    draftPath: `data/draft-images/${baseName}.png`,
-    alt,
-    source: 'US News Engine',
-    dataSource: 'National Weather Service',
-    license: 'Original graphic generated by US News Engine from factual NWS data',
-  };
-  draft.draftVersion = (draft.draftVersion || 1) + 1;
-  await writeFile(draftPath, JSON.stringify(draft, null, 2) + '\n', 'utf8');
-  console.log(`  Draft updated: ${draftPath} (image.status = ready)`);
+  // --- Do NOT overwrite the approved preview image -------------------------
+  // The map-based image is saved separately for comparison.
+  // The draft's image object is NOT updated in this run.
+  if (outputSuffix === '-map') {
+    console.log(`  [comparison mode] New map image saved as ${baseName}-map.png`);
+    console.log(`  [comparison mode] Approved preview image NOT overwritten.`);
+  } else {
+    // Only update the draft if we used the fallback (no map data).
+    draft.image = {
+      status: 'ready',
+      url: null,
+      draftPath: `data/draft-images/${baseName}.png`,
+      alt,
+      source: 'US News Engine',
+      dataSource: 'National Weather Service',
+      license: licenseNotes,
+    };
+    draft.draftVersion = (draft.draftVersion || 1) + 1;
+    await writeFile(draftPath, JSON.stringify(draft, null, 2) + '\n', 'utf8');
+    console.log(`  Draft updated: ${draftPath} (image.status = ready)`);
+  }
 
-  console.log('\n[generate-nws-image] SUCCESS — editorial graphic generated.');
-  console.log(`  SVG:        ${svgPath}`);
-  console.log(`  PNG:        ${pngPath} (${meta.width}x${meta.height}, ${pngStats.size.toLocaleString()} bytes)`);
-  console.log(`  Metadata:   ${metaPath}`);
-  console.log(`  Alt text:   ${alt}`);
+  console.log('\n[generate-nws-image] SUCCESS — editorial image generated.');
+  console.log(`  SVG:          ${svgPath}`);
+  console.log(`  PNG:          ${pngPath} (${meta.width}x${meta.height}, ${pngStats.size.toLocaleString()} bytes)`);
+  console.log(`  Metadata:     ${metaPath}`);
+  console.log(`  visualType:   ${visualType}`);
+  console.log(`  alertGeometryUsed: ${alertGeometryUsed}`);
+  console.log(`  zoneDataUsed: ${zoneDataUsed}`);
   console.log(`  No external image API used. No copyrighted assets used.`);
   console.log('');
 }
