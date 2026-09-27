@@ -5,6 +5,7 @@ description: "The NWS said minor flooding is occurring along Mississippi River a
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-27T20:09:21.409Z
+updatedAt: 2026-09-27T20:18:50.356Z
 image: "/images/flood-warning-calhoun-county-illinois-september-27-2026-map.png"
 imageAlt: "Flood Warning for Calhoun County, Illinois"
 imageMode: "map-data"
