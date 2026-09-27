@@ -1,18 +1,18 @@
 {
-  "draftVersion": 1,
-  "generatedAt": "2026-09-27T16:55:36.944Z",
+  "draftVersion": 2,
+  "generatedAt": "2026-09-27T17:03:56.456Z",
   "storyKey": "flood-warning__lake-il__2026-09-27",
   "sourceAlertIds": [
     "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
     "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
   ],
   "status": "draft",
-  "title": "National Weather Service Issues Flood Warning for Lake County, Illinois",
-  "description": "The National Weather Service has issued a Flood Warning for Lake County, Illinois. The alert remains in effect until September 28, 2026 at 9:30 AM (UTC-05:00), according to the latest NWS alert.",
+  "title": "Flood Warning Issued for Lake County, Illinois",
+  "description": "The NWS said minor flooding is occurring and minor flooding is forecast along Des Plaines River from US-41 in Gurnee downstream to Townline Road in Vernon Hills, including the Gurnee gauge. The alert remains in effect until Monday afternoon.",
   "slug": "flood-warning-lake-county-illinois-september-27-2026",
   "category": "weather",
   "location": "Lake County, Illinois",
-  "publishedAt": "2026-09-27T16:55:36.944Z",
+  "publishedAt": "2026-09-27T17:03:56.456Z",
   "updatedAt": "2026-09-27T15:28:00.000Z",
   "breaking": true,
   "author": "US News Engine Weather Desk",
@@ -20,9 +20,10 @@
   "sourceUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
   "sourceOffice": "NWS Chicago IL",
   "hasUpdates": true,
+  "originalInstruction": "A Flood Warning means water levels above flood stage are imminent or\nmay already be occurring. Persons along rivers and streams in the\nwarned area should take immediate precautions to protect life and\nproperty.\n\nThese forecasts are based almost entirely on observed precipitation\nas little to no additional precipitation is currently expected over\nthe next 24 to 48 hours.\n\nAdditional information is available at www.weather.gov.\n\nThe next statement will be issued by late tonight.",
   "seo": {
     "title": "Flood Warning: Lake County, Illinois",
-    "description": "The National Weather Service has issued a Flood Warning for Lake County, Illinois. In effect until September 28, 2026 at 9:30 AM (UTC-05:00)."
+    "description": "The National Weather Service has issued a Flood Warning for Lake County, Illinois. In effect until Monday afternoon."
   },
   "image": {
     "status": "pending",
@@ -35,48 +36,41 @@
     {
       "heading": null,
       "paragraphs": [
-        "The National Weather Service has issued a Flood Warning for Lake County, Illinois. The alert was issued at September 27, 2026 at 3:28 PM (UTC-05:00), according to the official NWS alert.",
-        "The NWS classifies the urgency of this alert as \"Immediate\"."
+        "The National Weather Service issued a Flood Warning Sunday for Lake County, Illinois, where minor flooding is occurring and minor flooding is forecast, according to the agency's alert."
       ]
     },
     {
-      "heading": "What the alert says",
+      "heading": "What the warning says",
       "paragraphs": [
-        "According to the NWS alert, minor flooding is occurring and minor flooding is forecast.",
-        "The affected area is described as des plaines river from us-41 in gurnee downstream to townline road in vernon hills, including the gurnee gauge.",
-        "The alert timing, as stated by the NWS: until monday afternoon.",
-        "The NWS notes the following potential impacts: at 7.0 feet, forest land inundated near the river in gurnee."
+        "The NWS alert states that minor flooding is occurring and minor flooding is forecast.",
+        "The NWS reported that at 9:30 a.m. CDT Sunday the stage was 7.6 feet. The river continues a gradual fall. The river is expected to fall below flood stage tomorrow. Flood stage is 7.0 feet.",
+        "Potential impacts, per the NWS: at 7.0 feet, Forest land inundated near the river in Gurnee."
       ]
     },
     {
       "heading": "Areas affected",
       "paragraphs": [
         "The alert covers Lake County, Illinois.",
-        "The NWS lists the area as \"Lake, IL\".",
-        "The alert references 1 NWS forecast zone."
+        "The NWS said the warning applies to Des Plaines River from US-41 in Gurnee downstream to Townline Road in Vernon Hills, including the Gurnee gauge."
       ]
     },
     {
-      "heading": "When the alert is in effect",
+      "heading": "How long the warning is in effect",
       "paragraphs": [
-        "Effective: September 27, 2026 at 3:28 PM (UTC-05:00).",
-        "Scheduled to expire: September 28, 2026 at 9:30 AM (UTC-05:00).",
-        "Ends: September 28, 2026 at 9:00 PM (UTC-05:00)."
+        "The warning took effect Sunday, September 27 at 10:28 a.m. CDT.",
+        "It remains in effect until Monday, September 28 at 4:00 p.m. CDT, the NWS said."
       ]
     },
     {
-      "heading": "What residents should know",
+      "heading": "Safety information",
       "paragraphs": [
-        "The National Weather Service provides the following safety guidance:",
-        "A Flood Warning means water levels above flood stage are imminent or\nmay already be occurring. Persons along rivers and streams in the\nwarned area should take immediate precautions to protect life and\nproperty.\n\nThese forecasts are based almost entirely on observed precipitation\nas little to no additional precipitation is currently expected over\nthe next 24 to 48 hours.\n\nAdditional information is available at www.weather.gov.\n\nThe next statement will be issued by late tonight."
+        "The National Weather Service advises that persons along rivers and streams in the warned area should take immediate precautions to protect life and property. The agency said a Flood Warning means water levels above flood stage are imminent or may already be occurring."
       ]
     },
     {
       "heading": "Source",
       "paragraphs": [
-        "This report is based on an official alert issued by the NWS Chicago IL. The original alert is published by the National Weather Service.",
-        "Source: https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
-        "Official NWS alert IDs: urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1, urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+        "This article was produced from an official alert issued by NWS Chicago IL. The original alert is published by the National Weather Service."
       ]
     }
   ],
@@ -94,6 +88,8 @@
     ],
     "priority": "high",
     "storyScore": 130,
-    "updateCount": 2
+    "updateCount": 2,
+    "firstEffectiveAt": "2026-09-27T15:28:00.000Z",
+    "latestEffectiveAt": "2026-09-27T15:28:00.000Z"
   }
 }
