@@ -432,9 +432,22 @@ function buildLeadParagraph(story, agencyFullName) {
   // For FDA, the short product name (from storyKey) reads much better than
   // the long primaryProductName (which can be a multi-SKU manifest). For
   // CPSC, the headlineSeed / primaryProductName is already short and clean.
-  const product = story.source === 'FDA'
+  let product = story.source === 'FDA'
     ? (shortProductName(story) || story.headlineSeed || story.primaryProductName || 'a product')
     : (story.headlineSeed || story.primaryProductName || 'a product');
+
+  // Strip the firm name from the beginning of the product to avoid duplication
+  // (e.g. "International Sprout Holdings, Inc Alfalfa" → "Alfalfa"
+  //       "Medline Industries, LP Medline breathing circuits" → "breathing circuits")
+  if (firm) {
+    const firmLower = firm.toLowerCase();
+    if (product.toLowerCase().startsWith(firmLower)) {
+      product = product.slice(firm.length).replace(/^[\s,-]+/, '').trim();
+    }
+    // Also strip common prefixes that repeat the firm
+    product = product.replace(/^(medline|hudson rci|international sprout holdings,?\s*inc)\s+/i, '').trim();
+  }
+
   const hazardLabel = story.hazardNormalized || deriveHazardLabel(story.hazard, story.reason);
 
   // Two natural variants depending on whether we have a firm name.
@@ -683,9 +696,19 @@ function generateDraft(story, now) {
   // Use the short product name for FDA (the long primaryProductName can be a
   // multi-SKU manifest that doesn't read well in a deck). For CPSC, the
   // headlineSeed is already clean.
-  const product = story.source === 'FDA'
+  let product = story.source === 'FDA'
     ? (shortProductName(story) || story.headlineSeed || story.primaryProductName || 'a product')
     : (story.headlineSeed || story.primaryProductName || 'a product');
+
+  // Strip firm name from product to avoid duplication
+  if (firm) {
+    const firmLower = firm.toLowerCase();
+    if (product.toLowerCase().startsWith(firmLower)) {
+      product = product.slice(firm.length).replace(/^[\s,-]+/, '').trim();
+    }
+    product = product.replace(/^(medline|hudson rci|international sprout holdings,?\s*inc)\s+/i, '').trim();
+  }
+
   let description = `${firm} is recalling ${product} over a ${hazardLabel.toLowerCase()}.`;
   if (location) {
     description += ` Distribution: ${location.toLowerCase()}.`;

@@ -23,7 +23,19 @@ const { article } = Astro.props;
 const a = article.data;
 const { Content } = await render(article);
 
-const related = await getRelated(article, 3);
+// --- Related stories: prefer same-category, then fallback ---
+// For recall articles, prefer other recall stories. For weather, prefer
+// weather stories. Only use cross-category stories if no same-category
+// stories are available.
+import { getByCategory, getAllArticles as _getAllArticles } from '../../lib/articles';
+const sameCategoryArticles = await getByCategory(a.category);
+const sameCategoryRelated = sameCategoryArticles
+  .filter((r) => r.data.slug !== a.slug)
+  .slice(0, 3);
+const related = sameCategoryRelated.length > 0
+  ? sameCategoryRelated
+  : await getRelated(article, 3);
+const relatedLabel = sameCategoryRelated.length > 0 ? 'Related Stories' : 'Latest Stories';
 
 // --- Lifecycle status from the published-stories registry ---
 const registry = await getPublishedRegistry();
@@ -45,15 +57,22 @@ const publishedAt = a.publishedAt;
 const updatedAt = a.updatedAt;
 const hasRealUpdate = updatedAt && updatedAt.getTime() > publishedAt.getTime();
 
-// --- Safe timezone derivation from source office ---
-// "NWS Chicago IL" → America/Chicago, "NWS Boston/Norton MA" → America/New_York, etc.
+// --- Safe timezone derivation ---
+// For Weather: derive from NWS source office location.
+// For Recalls and other categories: use America/New_York as the site-wide
+// editorial timezone (consistent U.S. East Coast publication time).
 const office = a.sourceOffice || '';
 let displayTimezone: string | null = null;
-if (/NWS Chicago/i.test(office)) displayTimezone = 'America/Chicago';
-else if (/NWS Boston|NWS Norton|NWS New York|NWS Philadelphia|NWS Washington/i.test(office)) displayTimezone = 'America/New_York';
-else if (/NWS Melbourne|NWS Miami|NWS Tampa|NWS Jacksonville|NWS Key West/i.test(office)) displayTimezone = 'America/New_York';
-else if (/NWS Honolulu/i.test(office)) displayTimezone = 'Pacific/Honolulu';
-else if (/NWS Wakefield|NWS Norfolk/i.test(office)) displayTimezone = 'America/New_York';
+if (a.category === 'weather') {
+  if (/NWS Chicago/i.test(office)) displayTimezone = 'America/Chicago';
+  else if (/NWS Boston|NWS Norton|NWS New York|NWS Philadelphia|NWS Washington/i.test(office)) displayTimezone = 'America/New_York';
+  else if (/NWS Melbourne|NWS Miami|NWS Tampa|NWS Jacksonville|NWS Key West/i.test(office)) displayTimezone = 'America/New_York';
+  else if (/NWS Honolulu/i.test(office)) displayTimezone = 'Pacific/Honolulu';
+  else if (/NWS Wakefield|NWS Norfolk/i.test(office)) displayTimezone = 'America/New_York';
+} else {
+  // For recalls and other categories, use America/New_York as editorial default
+  displayTimezone = 'America/New_York';
+}
 
 const publishedDisplay = displayTimezone
   ? formatDateTimeTZ(publishedAt, displayTimezone)
@@ -203,19 +222,21 @@ const attributionText = a.imageLicense
                 </div>
               )}
               <div class="source-row">
-                <span class="source-key">Original alert</span>
+                <span class="source-key">{a.category === 'recalls' ? 'Original recall' : 'Original alert'}</span>
                 <a
                   class="source-link"
                   href={a.sourceUrl}
                   rel="nofollow noopener"
                   target="_blank"
                 >
-                  View official NWS alert &rarr;
+                  {a.category === 'recalls' ? 'View official recall' : 'View official NWS alert'} &rarr;
                 </a>
               </div>
             </div>
             <p class="source-note">
-              This article was produced from official National Weather Service alert data. US News Engine is not the original source of this alert.
+              {a.category === 'recalls'
+                ? `This article was produced from ${a.sourceName === 'Consumer Product Safety Commission' ? 'an official recall notice from the U.S. Consumer Product Safety Commission' : 'official U.S. Food and Drug Administration recall data'}. US News Engine is not the original source of this recall.`
+                : 'This article was produced from official National Weather Service alert data. US News Engine is not the original source of this alert.'}
             </p>
           </div>
         </div>
@@ -259,7 +280,7 @@ const attributionText = a.imageLicense
       related.length > 0 && (
         <section class="related" aria-label="Related stories">
           <div class="container">
-            <SectionHeader title="Related Stories" />
+            <SectionHeader title={relatedLabel} />
             <div class="related-grid">
               {related.map((r) => (
                 <ArticleCard article={r} variant="default" />

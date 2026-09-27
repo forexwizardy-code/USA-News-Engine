@@ -72,7 +72,7 @@ export const CATEGORIES: CategoryDef[] = [
     label: 'Recalls',
     nav: true,
     description:
-      'Product, food, and vehicle recall notices plus safety guidance for consumers.',
+      'Product, food, and medical-device recall notices plus safety information for consumers.',
   },
   {
     slug: 'consumer',

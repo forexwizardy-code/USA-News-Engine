@@ -1,7 +1,7 @@
 ---
 slug: "international-sprout-holdings-inc-alfalfa-2026-08-23"
 title: "International Sprout Holdings, Inc Alfalfa Recalled Over Salmonella Risk"
-description: "International Sprout Holdings, Inc is recalling International Sprout Holdings, Inc Alfalfa over a salmonella risk. Distribution: 16 states."
+description: "International Sprout Holdings, Inc is recalling alfalfa over a salmonella risk. Distribution: 16 states."
 category: recalls
 author: "US News Engine Consumer Safety Desk"
 publishedAt: 2026-09-27T21:41:17.264Z
@@ -20,7 +20,7 @@ featured: false
 views: 0
 ---
 
-International Sprout Holdings, Inc is recalling International Sprout Holdings, Inc Alfalfa because of a salmonella risk, according to the U.S. Food and Drug Administration. The recall was initiated on August 23, 2026.
+International Sprout Holdings, Inc is recalling alfalfa because of a salmonella risk, according to the U.S. Food and Drug Administration. The recall was initiated on August 23, 2026.
 
 
 ## What is being recalled

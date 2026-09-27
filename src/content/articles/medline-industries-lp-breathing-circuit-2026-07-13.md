@@ -1,7 +1,7 @@
 ---
 slug: "medline-industries-lp-breathing-circuit-2026-07-13"
 title: "Medline Industries, LP breathing circuit… Recalled Over Potential Device Failure"
-description: "Medline Industries, LP is recalling Medline Industries, LP Medline breathing circuits labeled as:   1) HUDSON RCI over a potential device failure. Distribution: worldwide distribution."
+description: "Medline Industries, LP is recalling breathing circuits over a potential device failure. Distribution: worldwide distribution."
 category: recalls
 author: "US News Engine Consumer Safety Desk"
 publishedAt: 2026-09-27T21:41:17.264Z
@@ -20,7 +20,7 @@ featured: false
 views: 0
 ---
 
-Medline Industries, LP is recalling Medline Industries, LP Medline breathing circuits labeled as:   1) HUDSON RCI because of a potential device failure, according to the U.S. Food and Drug Administration. The recall was initiated on July 13, 2026.
+Medline Industries, LP is recalling breathing circuits because of a potential device failure, according to the U.S. Food and Drug Administration. The recall was initiated on July 13, 2026.
 
 
 ## What is being recalled
