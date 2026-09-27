@@ -1,5 +1,5 @@
 {
-  "nwsPublishingEnabled": false,
-  "maxNewPerRun": 3,
-  "maxNewPerDay": 12
+  "nwsPublishingEnabled": true,
+  "maxNewPerRun": 2,
+  "maxNewPerDay": 8
 }
