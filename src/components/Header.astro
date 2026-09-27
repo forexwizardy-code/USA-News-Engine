@@ -279,6 +279,21 @@ const isActive = (match: string) =>
       display: none;
     }
   }
+
+  /* Print: ensure the hamburger button never renders as a blank square.
+     Some browsers render elements with visible borders even when display:none
+     in screen mode if there's no explicit print rule. */
+  @media print {
+    .nav-toggle {
+      display: none !important;
+    }
+    .primary-nav {
+      position: static !important;
+    }
+    .utility-bar {
+      display: none;
+    }
+  }
 </style>
 
 <script>

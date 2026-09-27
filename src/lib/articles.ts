@@ -137,3 +137,58 @@ export function formatDateTime(date: Date): string {
 export function iso(date: Date): string {
   return date.toISOString();
 }
+
+/**
+ * Format a date for U.S. readers in a specific timezone.
+ * Produces: "September 27, 2026 at 12:03 p.m. CDT"
+ *
+ * Uses Intl.DateTimeFormat with the America/Chicago (or other) timezone
+ * to convert from the stored UTC timestamp. Falls back to UTC offset if the
+ * timezone cannot be determined.
+ *
+ * Only use a specific timezone when it can be safely derived from the story's
+ * source context (e.g. NWS office location). Otherwise, use formatDateTimeUTC.
+ */
+export function formatDateTimeTZ(date: Date, timezone: string = 'America/Chicago'): string {
+  try {
+    const dateFormatter = new Intl.DateTimeFormat('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: timezone,
+    });
+    const timeFormatter = new Intl.DateTimeFormat('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: timezone,
+      timeZoneName: 'short',
+    });
+    // Intl produces "12:03 PM CDT" — convert to "12:03 p.m. CDT"
+    const timeStr = timeFormatter
+      .format(date)
+      .replace(/\bAM\b/g, 'a.m.')
+      .replace(/\bPM\b/g, 'p.m.');
+    return `${dateFormatter.format(date)} at ${timeStr}`;
+  } catch {
+    // Invalid timezone — fall back to UTC display
+    return formatDateTime(date);
+  }
+}
+
+/**
+ * Format a date for U.S. readers in UTC (fallback when no safe timezone can
+ * be derived). Produces: "September 27, 2026 at 5:03 p.m. UTC"
+ */
+export function formatDateTimeUTC(date: Date): string {
+  return date.toLocaleString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'UTC',
+    timeZoneName: 'short',
+    hour12: true,
+  }).replace(/\bAM\b/g, 'a.m.').replace(/\bPM\b/g, 'p.m.');
+}

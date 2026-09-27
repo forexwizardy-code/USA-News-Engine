@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import PreviewLayout from '../../layouts/PreviewLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { formatDateTime, iso } from '../../lib/articles';
+import { formatDateTime, formatDateTimeTZ, iso } from '../../lib/articles';
 
 /**
  * Hidden preview route for NWS article drafts.
@@ -150,10 +150,26 @@ const secondaryImage = draft.secondaryImage || null;
 // Parse timestamps.
 // publishedAt = when this website first publishes (for previews, = generatedAt).
 // updatedAt = when this website last materially updated (null on first publish).
+// Never allow updatedAt < publishedAt — if updatedAt is null, hide it entirely.
 const publishedAt = new Date(draft.publishedAt);
 const updatedAt = draft.updatedAt ? new Date(draft.updatedAt) : null;
 const effectiveDate = new Date(draft.weatherMetadata.effective);
 const endsDate = new Date(draft.weatherMetadata.ends);
+
+// Derive a safe U.S. timezone from the NWS office context.
+// "NWS Chicago IL" → America/Chicago (Central). Only use when safely derivable.
+const nwsOffice = draft.sourceOffice || '';
+let displayTimezone: string | null = null;
+if (/NWS Chicago/i.test(nwsOffice)) displayTimezone = 'America/Chicago';
+// Add more office→timezone mappings as future stories require them.
+
+// Format publication time for readers using the safe timezone when available.
+const publishedDisplay = displayTimezone
+  ? formatDateTimeTZ(publishedAt, displayTimezone)
+  : formatDateTime(publishedAt);
+const updatedDisplay = updatedAt && displayTimezone
+  ? formatDateTimeTZ(updatedAt, displayTimezone)
+  : updatedAt ? formatDateTime(updatedAt) : null;
 
 // Build the preview path (self-referencing canonical).
 const previewPath = `/preview/${storyKey}/`;
@@ -193,15 +209,15 @@ const breadcrumbs = [
             <div class="meta-block">
               <span class="meta-label">Published</span>
               <time class="meta-value" datetime={iso(publishedAt)}>
-                {formatDateTime(publishedAt)}
+                {publishedDisplay}
               </time>
             </div>
             {
-              updatedAt && updatedAt.getTime() > publishedAt.getTime() && (
+              updatedDisplay && updatedAt && updatedAt.getTime() > publishedAt.getTime() && (
                 <div class="meta-block">
                   <span class="meta-label">Updated</span>
                   <time class="meta-value" datetime={iso(updatedAt)}>
-                    {formatDateTime(updatedAt)}
+                    {updatedDisplay}
                   </time>
                 </div>
               )
@@ -314,11 +330,11 @@ const breadcrumbs = [
               </div>
               <div>
                 <dt>Published</dt>
-                <dd>{formatDateTime(publishedAt)}</dd>
+                <dd>{publishedDisplay}</dd>
               </div>
               <div>
                 <dt>Updated</dt>
-                <dd>{formatDateTime(updatedAt)}</dd>
+                <dd>{updatedDisplay || 'Not yet updated'}</dd>
               </div>
             </dl>
           </div>
@@ -601,7 +617,29 @@ const breadcrumbs = [
   }
   @media (max-width: 620px) {
     .article-meta {
-      gap: 18px;
+      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .meta-byline {
+      width: 100%;
+    }
+    .meta-dates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      width: 100%;
+    }
+    .meta-dates .meta-block {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .meta-dates .meta-label {
+      font-size: 0.62rem;
+    }
+    .meta-dates .meta-value {
+      font-size: 0.85rem;
     }
     .source-row {
       flex-direction: column;

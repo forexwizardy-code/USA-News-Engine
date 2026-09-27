@@ -1,5 +1,5 @@
 {
-  "draftVersion": 8,
+  "draftVersion": 9,
   "generatedAt": "2026-09-27T17:03:56.456Z",
   "storyKey": "flood-warning__lake-il__2026-09-27",
   "sourceAlertIds": [
@@ -13,7 +13,7 @@
   "category": "weather",
   "location": "Lake County, Illinois",
   "publishedAt": "2026-09-27T17:03:56.456Z",
-  "updatedAt": "2026-09-27T15:28:00.000Z",
+  "updatedAt": null,
   "breaking": true,
   "author": "US News Engine Weather Desk",
   "sourceName": "National Weather Service",
@@ -46,7 +46,7 @@
       "paragraphs": [
         "The NWS alert states that minor flooding is occurring and minor flooding is forecast.",
         "The NWS reported that at 9:30 a.m. CDT Sunday the stage was 7.6 feet. The river continues a gradual fall. The river is expected to fall below flood stage tomorrow. Flood stage is 7.0 feet.",
-        "Potential impacts, per the NWS: at 7.0 feet, Forest land inundated near the river in Gurnee."
+        "The NWS says forest land near the river in Gurnee may be inundated when the river reaches 7.0 feet."
       ]
     },
     {

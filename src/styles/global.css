@@ -287,3 +287,56 @@ p {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------- Print / PDF */
+/* Hide interactive elements that have no meaning on paper. Prevents the
+   mobile hamburger button (which has a visible border even when display:none
+   in some browser print engines) from rendering as a blank square. */
+@media print {
+  .nav-toggle,
+  .preview-banner,
+  .skip-link,
+  .breaking-dot,
+  .promo-card,
+  .footer-form {
+    display: none !important;
+  }
+
+  /* Ensure the sticky nav doesn't repeat on every printed page */
+  .primary-nav {
+    position: static !important;
+  }
+
+  /* Remove shadows that don't render well in print */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Ensure text is pure black for print readability */
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  /* Expand article columns to full width for print */
+  .article-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aside-card {
+    position: static !important;
+  }
+
+  /* Show URLs after links for print reference */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  /* Don't show URL for internal anchor links */
+  a[href^="#"]::after,
+  a[href^="/"]::after {
+    content: "";
+  }
+}
