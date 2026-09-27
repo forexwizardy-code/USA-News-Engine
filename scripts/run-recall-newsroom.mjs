@@ -121,13 +121,24 @@ async function main() {
 
   // --- Test clock / cap override (for dry-run testing ONLY) ---
   // Supports: --test-date=YYYY-MM-DD and --ignore-daily-cap
-  // These NEVER modify stored publishedAt values.
+  // When ANY testing option is supplied, the script enters DRY RUN mode
+  // and will NOT create/modify any production files, registry, or articles.
+  // To override dry-run (for intentional test publishing), also pass
+  // --allow-test-publish. The scheduled GitHub workflow must NEVER use
+  // --allow-test-publish.
   const args = process.argv.slice(2);
   const testDateArg = args.find((a) => a.startsWith('--test-date='));
   const ignoreDailyCap = args.includes('--ignore-daily-cap');
+  const allowTestPublish = args.includes('--allow-test-publish');
   const testDate = testDateArg ? testDateArg.split('=')[1] : null;
+  const hasTestFlag = !!(testDate || ignoreDailyCap);
+  // Dry run is forced when ANY test flag is present, unless --allow-test-publish
+  // is also explicitly provided.
+  const dryRunMode = hasTestFlag && !allowTestPublish;
   if (testDate) console.log(`TEST MODE: using test date ${testDate} (does not modify stored timestamps)`);
   if (ignoreDailyCap) console.log('TEST MODE: ignoring daily cap (does not modify stored timestamps)');
+  if (dryRunMode) console.log('TEST MODE: DRY RUN — no production files will be modified');
+  if (allowTestPublish) console.log('TEST MODE: --allow-test-publish active (test publishing enabled)');
   console.log('');
 
   // --- Steps 1-4: Fetch → Filter → Cluster ---
@@ -236,6 +247,36 @@ async function main() {
     return;
   }
 
+  // --- Dry-run check (test mode without --allow-test-publish) ---
+  if (dryRunMode) {
+    console.log('\n============================================');
+    console.log('TEST MODE DRY RUN — no production files modified');
+    console.log('Candidate selection and reporting only.');
+    console.log('No article files created. No registry changes.');
+    console.log('No Git commit. No Cloudflare deploy.');
+    console.log('============================================');
+    // Report what WOULD be published
+    if (categories.UPDATED.length > 0) {
+      console.log(`\n  Would update ${categories.UPDATED.length} existing stories:`);
+      categories.UPDATED.forEach((u) => console.log(`    - ${u.clusterStory.recallStoryKey}`));
+    }
+    if (newAllowed > 0 && categories.NEW.length > 0) {
+      const selected = categories.NEW.slice(0, newAllowed);
+      console.log(`\n  Would publish ${selected.length} new stories:`);
+      for (const story of selected) {
+        console.log(`    - ${story.recallStoryKey}`);
+        console.log(`        firm: ${story.recallingFirm || 'n/a'}`);
+        console.log(`        product: ${(story.primaryProductName || '').slice(0, 60)}`);
+        console.log(`        hazard: ${story.hazardNormalized || 'n/a'}`);
+        console.log(`        score: ${story.storyScore}`);
+      }
+    } else {
+      console.log('\n  No new stories would be published (daily cap or no candidates).');
+    }
+    printSummary(categories, 0, 0, 0, startTime);
+    return;
+  }
+
   // --- Step 8: Process UPDATED stories first ---
   console.log('\n--- Step 8: Process UPDATED stories ---');
   let updatedCount = 0;
@@ -250,7 +291,9 @@ async function main() {
       );
     }
   }
-  await saveRegistry(registry);
+  if (updatedCount > 0) {
+    await saveRegistry(registry);
+  }
 
   // --- Step 9: Select NEW stories ---
   console.log('\n--- Step 9: Select NEW stories for publication ---');
@@ -282,7 +325,9 @@ async function main() {
       console.error(`    PUBLISH FAILED: ${story.recallStoryKey} — ${err.message}`);
     }
   }
-  await saveRegistry(registry);
+  if (newPublished > 0) {
+    await saveRegistry(registry);
+  }
 
   // --- No-change behavior: if nothing changed, exit before validation/build ---
   const totalChanges = newPublished + updatedCount;
