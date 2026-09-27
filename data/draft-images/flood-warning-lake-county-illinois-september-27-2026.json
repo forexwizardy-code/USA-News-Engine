@@ -1,0 +1,17 @@
+{
+  "storyKey": "flood-warning__lake-il__2026-09-27",
+  "status": "draft",
+  "type": "generated-editorial-graphic",
+  "width": 1200,
+  "height": 675,
+  "source": "US News Engine",
+  "dataSource": "National Weather Service",
+  "copyrightRisk": "none-known",
+  "alt": "Flood Warning graphic for Lake County, Illinois, covering the Des Plaines River.",
+  "caption": "An editorial graphic showing a Flood Warning for Lake County, Illinois, with a U.S. locator map. Source: National Weather Service.",
+  "generatedAt": "2026-09-27T17:24:07.104Z",
+  "files": {
+    "svg": "data/draft-images/flood-warning-lake-county-illinois-september-27-2026.svg",
+    "png": "data/draft-images/flood-warning-lake-county-illinois-september-27-2026.png"
+  }
+}
