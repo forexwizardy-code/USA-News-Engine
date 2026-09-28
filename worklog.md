@@ -3456,3 +3456,252 @@ geophysicist at Cornell University who analyzed the data: …").
    `.github/workflows/science-newsroom.yml` that runs
    `npm run prepare:science && npm run previews:science` on a
    schedule.
+
+---
+
+## Phase 9B.1 — Science preview publication cleanup (Task 9B.1-cleanup)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Final editorial cleanup of the three private Science preview
+drafts (NISAR, Perseverance, Hubble) so they can be promoted to public
+articles. The internal review UI (claim audit + science details panel)
+stays in the preview template; only the public-facing figure caption
+rendering and the per-story draft text / image metadata change.
+
+### Why this phase
+
+The Phase 9B previews rendered cleanly for editorial review but were not
+yet safe to publish verbatim:
+
+1. The `<figcaption>` rendered `meta.licenseNotes` as the attribution
+   line. That field carries internal rights-policy reminders such as
+   "partner-org contributions may carry additional terms — verify before
+   publishing" and "NASA/JPL imagery is generally a U.S. government work
+   or released under NASA's media-usage policy." Those notes are useful
+   for editors but must NEVER appear on a reader-facing article.
+2. The NISAR deck described the mission as "NASA-ISRO SAR mission NISAR"
+   — technically correct but reads as jargon. The natural form is
+   "NASA-ISRO Earth-observing satellite NISAR."
+3. The NISAR body quoted Matthew Pritchard verbatim ("The consistency is
+   crucial. Twice every 12 days, acquiring in this high-resolution mode
+   and in two observation directions, this shows the promise of NISAR to
+   closely monitor natural hazards.") — too long for a news brief.
+4. The Perseverance body quoted Candice Bedford verbatim ("But now we
+   know that this location became a sort of crossroads for aqueous
+   systems. The Margin Unit findings are important because Jezero Crater
+   sits inside one of the largest exposures of carbonate on Mars, so
+   what we learn here reaches well beyond this crater.") — also too long.
+5. The Hubble headline ("Hubble Telescope Images Spiral Galaxy NGC 4698")
+   was mechanical. The source explicitly emphasizes the unusual outer
+   spiral-arm structure, which the new headline surfaces.
+6. The Hubble fallback graphic's right light panel was visually empty —
+   it held only a decorative orbital-arc motif and a small "STORY TOPIC"
+   label. The right panel needed to carry real factual content.
+7. Public-article-template separation needed explicit verification: the
+   claim-audit + science-details panels must NEVER render on
+   `/news/<slug>/` pages.
+
+### Files modified
+
+- `src/pages/preview/science/[slug].astro`
+  - The figcaption now renders only `meta.caption` (factual text) and
+    `Credit: <meta.credit>` (exact source credit). Renamed the local
+    variable `imageAttribution` → `imageCredit` and switched its source
+    from `meta.licenseNotes` to `meta.credit`. `licenseNotes` is no
+    longer read by the template at all; the field stays in the JSON
+    sidecar for editorial use.
+  - Internal review panels (claim audit, science details with
+    storyType / storyScore / rightsStatus / creditVerification) are
+    intentionally left in place — they are behind the noindex preview
+    route and are never linked from the public site.
+
+- `scripts/generate-science-image.mjs`
+  - Redesigned `buildScienceGraphicSvg`. The left dark call-out panel
+    (540px) now carries: SCIENCE eyebrow, mission subtitle, big mission
+    name, red divider, TOPIC label + topic text, optional italic fact
+    callout, SOURCE + date block, US News Engine branding. The right
+    light fact-sheet panel (660px) now carries: DISCOVERY eyebrow, big
+    topic heading, optional italic fact line, subtitle context, a
+    horizontal divider, a KEY FACTS section with three label/value rows
+    (Source / Image type / Credit), and bottom-right branding. Both
+    panels now carry roughly equal visual weight.
+  - The decorative orbital-arc motif (dashed circles and ellipses with a
+    "NASA" disc) was removed. It was the main contributor to the right
+    panel feeling empty and read as fake space imagery.
+  - Added an optional `fact` parameter to `buildScienceGraphicSvg`.
+    Stories that don't define `fact` (NISAR, Perseverance) simply omit
+    the fact callout line — the layout adapts gracefully.
+  - `GRAPHIC_PARAMS['nasa__4c93b21d54ff615c']` (Hubble) now includes
+    `fact: 'Unusual outer spiral-arm structure'`.
+  - The factual-graphic path now writes a clean public-facing caption
+    (`Editorial data graphic for <mission> observation of <topic>.`) and
+    a real credit line (`US News Engine using <agency> source
+    information`) into the metadata sidecar, instead of the old
+    `Editorial data graphic. <agency> · <mission>. Graphic: US News
+    Engine.` caption and a `null` credit. Editors can still hand-tune
+    the caption per story in the JSON after generation (the Hubble
+    caption was hand-edited to lowercase "spiral galaxy" while preserving
+    "NGC 4698").
+
+- `data/science/drafts/nisar-volcanic-eruption-time-lapse-2026-09-24.json`
+  - Deck (`description`) and SEO description: "NASA-ISRO SAR mission
+    NISAR" → "NASA-ISRO Earth-observing satellite NISAR".
+  - The long verbatim Matthew Pritchard quote is replaced with a concise
+    paraphrase: "Matthew Pritchard, a geophysicist at Cornell University
+    and NISAR science team member who analyzed the data, said the
+    satellite's consistent high-resolution observations every 12 days,
+    captured in two observation directions, demonstrate its ability to
+    closely monitor changing natural hazards." The substantive facts
+    (12-day revisit, two observation directions, hazard monitoring) are
+    preserved. The claimAudit entries that referenced Pritchard's quote
+    still match the source text (the audit cites the source, not the
+    draft), so no audit updates were needed.
+
+- `data/science/drafts/perseverance-mars-water-systems-2026-09-21.json`
+  - The long verbatim Candice Bedford quote is replaced with a
+    paraphrase + a single short quotation: "Study lead author Candice
+    Bedford of Purdue University said the findings show the Margin Unit
+    became a 'crossroads for aqueous systems.' She noted that the
+    results are important because Jezero Crater sits within one of
+    Mars's largest carbonate exposures, so what scientists learn there
+    reaches well beyond the crater itself." Substantive facts (Margin
+    Unit, carbonate context, multi-stage water activity) are preserved.
+    The single retained short quote keeps the human voice without
+    dominating the paragraph.
+
+- `data/science/drafts/hubble-spiral-galaxy-ngc-4698-2026-09-25.json`
+  - `title` and `seo.title`: "Hubble Telescope Images Spiral Galaxy
+    NGC 4698" → "Hubble Image Shows Unusual Spiral Structure in Galaxy
+    NGC 4698". The new headline is fully supported by the source
+    (NASA's article describes how NGC 4698's spiral arms "appear to shy
+    away from its glowing center" and hover in a ring-like structure
+    around the perimeter). The existing claimAudit entries (which cite
+    the source text) still match.
+
+- `data/draft-images/nisar-volcanic-eruption-time-lapse-2026-09-24.json`
+  - `caption`: long descriptive caption → "NISAR satellite image
+    showing lava flow from Krasheninnikov volcano on Russia's Kamchatka
+    Peninsula." `credit` is unchanged ("NASA's Scientific Visualization
+    Studio"). `licenseNotes` is retained internally.
+
+- `data/draft-images/perseverance-mars-water-systems-2026-09-21.json`
+  - `caption`: long descriptive caption → "Panoramic view of the
+    Martian landscape from NASA's Perseverance rover." `credit` is
+    unchanged ("NASA/JPL-Caltech/MSSS"). `licenseNotes` is retained
+    internally.
+
+- `data/draft-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.json`
+  (regenerated by `node scripts/generate-science-image.mjs
+  nasa__4c93b21d54ff615c`, then hand-tuned)
+  - `caption`: "Editorial data graphic for Hubble Space Telescope
+    observation of spiral galaxy NGC 4698." (Hand-edited to lowercase
+    "spiral galaxy" while preserving "NGC 4698".)
+  - `credit`: `null` → "US News Engine using NASA source information".
+  - `licenseNotes`, `creditVerification`, and all other internal fields
+    are retained as before.
+
+- `data/draft-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png`
+  (regenerated)
+- `data/draft-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.svg`
+  (regenerated)
+- `public/preview-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png`
+  (copied from `data/draft-images/`)
+
+### Public article template verification (no changes needed)
+
+`src/pages/news/[slug].astro` was re-read end-to-end. It renders:
+
+- The article body (from MDX content collection).
+- The article figure with `imageCaption` + photo attribution (only when
+  `imageMode === 'licensed-photo'`).
+- A clean source box: Organization / Office / Original alert or recall
+  link.
+- A "Story details" sidebar with only reader-facing fields: Category,
+  Location, Author, Published, Updated.
+- Related stories.
+
+It does NOT render `claimAudit`, `scienceMetadata`, `storyType`,
+`storyScore`, `rightsStatus`, `creditVerification`, `licenseNotes`, or
+any other internal review field. The internal review UI lives ONLY in
+`src/pages/preview/science/[slug].astro` (which is noindex + not in the
+sitemap + not linked from any public page).
+
+### Verification
+
+- `npm run build` succeeds: 40 pages built in ~1.4s, including the
+  three Science preview routes.
+- `astro preview` + `curl` confirms all three routes return HTTP 200:
+  - `/preview/science/hubble-spiral-galaxy-ngc-4698-2026-09-25/` → 200
+  - `/preview/science/nisar-volcanic-eruption-time-lapse-2026-09-24/` → 200
+  - `/preview/science/perseverance-mars-water-systems-2026-09-21/` → 200
+- Rendered HTML spot-checks:
+  - `partner-org contributions may carry additional terms` / `NASA/JPL
+    imagery is generally a U.S. government work` / `verify before
+    publishing` → 0 matches in all three preview HTMLs (licenseNotes
+    no longer rendered).
+  - All three figcaptions render as `<span class="figcaption-text">
+    {caption}</span><span class="figcaption-attribution">Credit:
+    {credit}</span>` with the exact text specified above.
+  - NISAR: "NASA-ISRO SAR mission" → 0 matches; "NASA-ISRO
+    Earth-observing satellite" → 2 matches (description + SEO
+    description). The verbatim Pritchard quote "consistency is
+    crucial" → 0 matches; the paraphrase "consistent high-resolution
+    observations every 12 days" → 1 match.
+  - Perseverance: the long verbatim Bedford quote → 0 matches; the
+    short quotation "crossroads for aqueous systems" → 1 match; the
+    paraphrase "Bedford of Purdue University" → 1 match.
+  - Hubble: the old headline → 0 matches; the new headline → 2 matches
+    (title + SEO title).
+
+### Notes for future agents
+
+1. **`licenseNotes` is still in the JSON sidecars.** It is a useful
+   editorial reminder of which rights policy applies to each image.
+   Future agents MUST NOT render it on any reader-facing page. If a
+   future phase adds a public Science article template (probably
+   `src/pages/news/[slug].astro` driven by a Science content
+   collection, or a dedicated Science article route), that template
+   must read only `caption` and `credit` from the image metadata —
+   never `licenseNotes`.
+
+2. **The Hubble factual-graphic SVG is parameterized.** If you add a
+   new third-party Science story that needs the factual-graphic
+   fallback, add an entry to `GRAPHIC_PARAMS` in
+   `scripts/generate-science-image.mjs` with `missionName`,
+   `missionSubtitle`, `topic`, and (optionally) `fact`. The layout
+   adapts gracefully when `fact` is missing.
+
+3. **The Hubble caption was hand-tuned after regeneration.** The
+   script's default caption template is
+   `Editorial data graphic for <mission> observation of <topic>.` —
+   which preserves the topic's original capitalization. For Hubble,
+   the topic is "Spiral Galaxy NGC 4698", so the script-generated
+   caption was "Editorial data graphic for Hubble Space Telescope
+   observation of Spiral Galaxy NGC 4698." Editors chose to lowercase
+   "spiral galaxy" in the final caption while preserving "NGC 4698";
+   that hand-edit lives only in the JSON sidecar, not in the script.
+   If you regenerate the Hubble image, you'll need to re-apply the
+   hand-edit (or change the script template).
+
+4. **Paraphrased quotes are still attributable.** The NISAR Pritchard
+   paraphrase and the Perseverance Bedford paraphrase both retain the
+   scientist's name and institutional affiliation, and the Bedford
+   paraphrase retains a single short verbatim quotation. This keeps
+   the sourcing transparent without dumping a multi-sentence verbatim
+   quote into a news brief.
+
+5. **The Phase 9B.1 changes do not touch any weather / recall /
+   earthquake scripts, workflows, or config.** Only Science-preview
+   files were modified. `DEMO_NOINDEX` was not turned off. No public
+   article files were created in `src/content/articles/`. The new
+   commit (`2a6b5d4`) sits on top of the existing `eaee22e` (Cloudflare
+   deployment workflow) and `f16f77a` (Phase 9B previews) — neither
+   existing commit was modified.
+
+6. **The three Science previews are now ready to promote to public
+   articles.** A future phase can write the public Science article
+   route + content collection, then copy the cleaned draft text +
+   image metadata into the public-article pipeline. The public
+   template MUST NOT carry over the claim audit / science details
+   panels (see note 1).
