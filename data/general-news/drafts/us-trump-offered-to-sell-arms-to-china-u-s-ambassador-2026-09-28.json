@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-09-28T15:17:20.702Z",
+  "generalStoryKey": "gn__5be3276bdf9fe9b3",
+  "slug": "us-trump-offered-to-sell-arms-to-china-u-s-ambassador-2026-09-28",
+  "title": "Trump Offered to Sell Arms to China, U.S. Ambassador Says",
+  "description": "President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no plans for such a sale.",
+  "category": "us",
+  "author": "US News Engine General News Desk",
+  "body": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no plans for such a sale."
+      ]
+    },
+    {
+      "heading": "Who is involved",
+      "paragraphs": [
+        "Entities referenced in coverage include Trump Offered, Sell Arms, China, Ambassador Says Trump Offered."
+      ]
+    },
+    {
+      "heading": "Where",
+      "paragraphs": [
+        "Coverage references China and related locations."
+      ]
+    },
+    {
+      "heading": "When",
+      "paragraphs": [
+        "Source coverage began September 28, 2026 (ET). The story is approximately 1 hours old."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "This story has national significance. It is supported by 2 source(s)."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The following facts are drawn from the linked source coverage:",
+        "• New York Times — HomePage: \"Trump Offered to Sell Arms to China, U.S. Ambassador Says\" — President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no p",
+        "• New York Times — Politics: \"Trump Offered to Sell Arms to China, U.S. Ambassador Says\" — President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no p"
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Some details may still be developing. Refer to the linked primary and supporting sources for the most current information."
+      ]
+    }
+  ],
+  "primarySource": {
+    "name": "New York Times — HomePage",
+    "type": "publisher",
+    "url": "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html",
+    "publisherFamily": "NYT"
+  },
+  "supportingSources": [
+    {
+      "sourceName": "New York Times — Politics",
+      "sourceUrl": "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html",
+      "sourceType": "publisher",
+      "publisherFamily": "NYT"
+    }
+  ],
+  "allSourceUrls": [
+    "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html"
+  ],
+  "sourceCount": 2,
+  "independentSourceCount": 2,
+  "independentPublisherCount": 1,
+  "publisherFamilies": [
+    "NYT"
+  ],
+  "usRelevance": "high",
+  "usRelevanceReason": "direct U.S. subject/named entity",
+  "hasGovernmentSource": false,
+  "sourcePublishedAt": "2026-09-28T14:19:19.000Z",
+  "storyScore": 52,
+  "freshnessStatus": "very-high",
+  "freshnessLabel": "very high freshness",
+  "sourceAgeHours": 1,
+  "claimAudit": {
+    "auditType": "private-claim-traceability",
+    "note": "PRIVATE — never render on public articles. Maps each material claim to its source.",
+    "generalStoryKey": "gn__5be3276bdf9fe9b3",
+    "claimCount": 2,
+    "claims": [
+      {
+        "claim": "Trump Offered to Sell Arms to China, U.S. Ambassador Says",
+        "source": "New York Times — HomePage",
+        "sourceUrl": "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html",
+        "sourceType": "publisher",
+        "publishedAtSource": "2026-09-28T14:19:19.000Z",
+        "supportingExcerpt": "President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no plans for such a sale."
+      },
+      {
+        "claim": "Trump Offered to Sell Arms to China, U.S. Ambassador Says",
+        "source": "New York Times — Politics",
+        "sourceUrl": "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html",
+        "sourceType": "publisher",
+        "publishedAtSource": "2026-09-28T14:19:19.000Z",
+        "supportingExcerpt": "President Trump made the offer to Xi Jinping, China’s leader, said David Perdue, the ambassador to China. The White House later said the U.S. had no plans for such a sale."
+      }
+    ]
+  },
+  "image": {
+    "mode": "factual-graphic-fallback",
+    "alt": "Editorial graphic for: Trump Offered to Sell Arms to China, U.S. Ambassador Says",
+    "caption": "US News Engine editorial summary of 2 source(s) across 1 publisher(s).",
+    "credit": "US News Engine (editorial graphic)",
+    "sourcePageUrl": "https://www.nytimes.com/2026/09/27/us/politics/trump-weapons-sale-china.html"
+  }
+}

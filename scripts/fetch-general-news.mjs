@@ -55,62 +55,134 @@ const parser = new XMLParser({
 // the outlet clearly with a link to the source.
 const SOURCES = [
   // --- 1. Official U.S. government / agency newsrooms (preferred primary) ---
-  // Note: many .gov feed endpoints have been retired or now return HTML.
-  // We keep the ones that still serve valid RSS/XML.
+  // Note: many .gov feed endpoints have been retired or now return HTML/403.
+  // We keep the ones that still serve valid RSS/XML to automated access.
   {
     sourceName: 'Federal Trade Commission',
     sourceType: 'government',
+    publisherFamily: 'FTC',
     category: 'business',
     feedUrl: 'https://www.ftc.gov/feeds/press-release.xml',
   },
-  // SEC and DoD feeds now block/rate-limit automated access — removed.
 
-  // --- 2. Official company / organization newsrooms ---
-  // (omitted — none that are reliably accessible without auth)
-
-  // --- 3. Openly accessible publisher RSS feeds (discovery + attribution) ---
+  // --- 2. Openly accessible publisher RSS feeds (discovery + attribution) ---
   // These are used for DISCOVERY. We write original summaries and link back.
+  // Phase 10A.2.1: expanded for source diversity + sports coverage.
+
+  // NPR family (publisherFamily = NPR — multiple NPR feeds = 1 family)
   {
     sourceName: 'NPR News',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'us',
     feedUrl: 'https://feeds.npr.org/1001/rss.xml',
   },
   {
     sourceName: 'NPR Politics',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'politics',
     feedUrl: 'https://feeds.npr.org/1014/rss.xml',
   },
   {
     sourceName: 'NPR Business',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'business',
     feedUrl: 'https://feeds.npr.org/1006/rss.xml',
   },
   {
     sourceName: 'NPR Technology',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'technology',
     feedUrl: 'https://feeds.npr.org/1009/rss.xml',
   },
   {
     sourceName: 'NPR Entertainment',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'entertainment',
     feedUrl: 'https://feeds.npr.org/1004/rss.xml',
   },
   {
     sourceName: 'NPR Sports',
     sourceType: 'publisher',
+    publisherFamily: 'NPR',
     category: 'sports',
     feedUrl: 'https://feeds.npr.org/1005/rss.xml',
   },
+
+  // PBS family
   {
     sourceName: 'PBS NewsHour',
     sourceType: 'publisher',
+    publisherFamily: 'PBS',
     category: 'us',
     feedUrl: 'https://www.pbs.org/newshour/feeds/rss/headlines',
+  },
+
+  // NYT family (publisherFamily = NYT — multiple NYT feeds = 1 family)
+  // Phase 10A.2.1: added for source diversity + sports coverage.
+  {
+    sourceName: 'New York Times — HomePage',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'us',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+  },
+  {
+    sourceName: 'New York Times — Politics',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'politics',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml',
+  },
+  {
+    sourceName: 'New York Times — Business',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'business',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+  },
+  {
+    sourceName: 'New York Times — Technology',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'technology',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
+  },
+  {
+    sourceName: 'New York Times — Sports',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
+  },
+  {
+    sourceName: 'New York Times — Arts',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'entertainment',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
+  },
+
+  // The Hill (politics — independent family)
+  {
+    sourceName: 'The Hill',
+    sourceType: 'publisher',
+    publisherFamily: 'The Hill',
+    category: 'politics',
+    feedUrl: 'https://thehill.com/feed/',
+  },
+
+  // BBC US/Canada (international outlet with a U.S.-focused feed)
+  {
+    sourceName: 'BBC News — US & Canada',
+    sourceType: 'publisher',
+    publisherFamily: 'BBC',
+    category: 'us',
+    feedUrl: 'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml',
   },
 ];
 
@@ -289,6 +361,7 @@ async function fetchSource(source) {
     records.push({
       sourceName: source.sourceName,
       sourceType: source.sourceType,
+      publisherFamily: source.publisherFamily || null,
       sourceCategory: source.category,
       category,
       title: title || null,
@@ -320,6 +393,7 @@ async function fetchSource(source) {
     records.push({
       sourceName: source.sourceName,
       sourceType: source.sourceType,
+      publisherFamily: source.publisherFamily || null,
       sourceCategory: source.category,
       category,
       title: title || null,

@@ -109,6 +109,72 @@ function freshnessStatus(ageMs) {
 }
 
 // ===========================================================================
+// Phase 10A.2.1 — U.S. relevance scoring
+// ===========================================================================
+// US News Engine is primarily a UNITED STATES news website. Every candidate
+// receives a usRelevance score: high / medium / low / none.
+//
+// Automatic/public eligibility requires `high` OR `medium` with a clear
+// documented U.S. connection. Ordinary foreign stories with no meaningful
+// U.S. impact are rejected (usRelevance=none → publishEligible=false).
+
+// Strong U.S. signals — any match → usRelevance=high
+const US_HIGH_SIGNALS = [
+  /\bunited states\b/i, /\bu\.s\.\b/i, /\bamerican\b/i, /\bwashington\b/i,
+  /\bwhite house\b/i, /\bcongress\b/i, /\bsenate\b/i, /\bhouse of representatives\b/i,
+  /\bsupreme court\b/i, /\bdepartment of\b/i, /\bfederal\b/i, /\bpresident (?:trump|biden|harris)\b/i,
+  /\bU\.S\. (?:military|troops|forces|officials|government|embassy|citizens|personnel)\b/i,
+  /\bamerican (?:troops|soldiers|citizens|officials|companies|workers|consumers)\b/i,
+  /\b(?:new york|los angeles|chicago|houston|phoenix|philadelphia|san antonio|san diego|dallas|san jose|austin|jacksonville|fort worth|columbus|charlotte|san francisco|indianapolis|seattle|denver|washington dc|boston|el paso|nashville|detroit|oklahoma city|portland|las vegas|memphis|louisville|baltimore|milwaukee|albuquerque|tucson|fresno|sacramento|kansas city|mesa|atlanta|omaha|colorado springs|raleigh|miami|long beach|virginia beach|oakland|minneapolis|tulsa|arlington|tampa|new orleans)\b/i,
+];
+
+// Medium U.S. signals — match → usRelevance=medium (needs documented connection)
+const US_MEDIUM_SIGNALS = [
+  /\b(?:trump|biden|harris|congressional|senator|representative|governor|secretary of state|attorney general)\b/i,
+  /\b(?:wall street|new york stock exchange|nasdaq|dow jones|s&p|federal reserve|treasury|sec |ftc |fda )\b/i,
+  /\b(?:nfl|nba|mlb|nhl|super bowl|world series|nba finals|stanley cup)\b/i,
+  /\b(?:california|texas|florida|new york|illinois|pennsylvania|ohio|georgia|michigan|north carolina|virginia|washington|arizona|massachusetts|tennessee|indiana|missouri|maryland|wisconsin|minnesota|colorado|oregon|kentucky|oklahoma|connecticut|utah|iowa|nevada|arkansas|mississippi|kansas|new mexico|nebraska|idaho|hawaii|new hampshire|maine|montana|rhode island|delaware|south dakota|north dakota|alaska|vermont|wyoming|west virginia|alabama|louisiana|south carolina)\b/i,
+  /\b(?:usdm|usd|dollar|us economy|us markets|us jobs|us inflation|us trade|us tariff|us policy|us military|us nato|us allies)\b/i,
+];
+
+// Foreign-location signals — if present AND no U.S. signal → usRelevance=low/none
+const FOREIGN_SIGNALS = [
+  /\b(?:madrid|spain|spanish|paris|france|french|berlin|germany|german|london|britain|british|uk |u\.k\.|england|english|rome|italy|italian|moscow|russia|russian|beijing|china|chinese|tokyo|japan|japanese|seoul|south korea|korean|tehran|iran|iranian|kyiv|ukraine|ukrainian|tel aviv|israel|israeli|gaza|palestin|beirut|lebanon|lebanese|damascus|syria|syrian|kabul|afghanistan|afghan|baghdad|iraq|iraqi|riyadh|saudi arabia|saudi|dubai|uae |egypt|egyptian|nairobi|kenya|kenyan|lagos|nigeria|nigerian|mumbai|india|indian|jakarta|indonesia|indonesian|manila|philippines|filipino|bangkok|thailand|thai|vietnam|vietnamese|singapore|malaysia|malaysian|australia|australian|new zealand|canada|canadian|mexico|mexican|brazil|brazilian|argentina|argentine|chile|chilean|colombia|colombian|peru|peruvian|venezuela|venezuelan)\b/i,
+];
+
+function assessUsRelevance(cluster) {
+  const text = cluster.map((r) => `${r.title} ${r.description || ''}`).join(' ').toLowerCase();
+  const fullText = text;
+
+  // Check for U.S. HIGH signals
+  const hasHigh = US_HIGH_SIGNALS.some((re) => re.test(fullText));
+  if (hasHigh) {
+    // But if it's primarily a foreign story with only incidental U.S. mention,
+    // check the ratio. If foreign signals dominate, downgrade.
+    const foreignCount = FOREIGN_SIGNALS.filter((re) => re.test(fullText)).length;
+    if (foreignCount >= 3) {
+      return { usRelevance: 'medium', reason: 'U.S. signal present but foreign context dominates' };
+    }
+    return { usRelevance: 'high', reason: 'direct U.S. subject/named entity' };
+  }
+
+  // Check for U.S. MEDIUM signals
+  const hasMedium = US_MEDIUM_SIGNALS.some((re) => re.test(fullText));
+  if (hasMedium) {
+    return { usRelevance: 'medium', reason: 'U.S. connection via government/markets/geography' };
+  }
+
+  // No U.S. signals — check if it's a foreign story
+  const isForeign = FOREIGN_SIGNALS.some((re) => re.test(fullText));
+  if (isForeign) {
+    return { usRelevance: 'none', reason: 'foreign story with no meaningful U.S. impact' };
+  }
+
+  // No U.S. or foreign signal — low relevance by default
+  return { usRelevance: 'low', reason: 'no clear U.S. connection identified' };
+}
+
+// ===========================================================================
 // Clustering — union-find by token similarity + shared URLs + time proximity
 // ===========================================================================
 
@@ -237,32 +303,51 @@ async function main() {
 
   // Build story records
   const stories = [];
+  let foreignRejected = 0;
   for (const cluster of clusters) {
     const primary = pickPrimary(cluster);
     const category = classifyCategory(primary.title, primary.description, primary.category || primary.sourceCategory);
     const supportingSources = cluster
       .filter((r) => r !== primary)
-      .map((r) => ({ sourceName: r.sourceName, sourceUrl: r.sourceUrl, sourceType: r.sourceType }));
+      .map((r) => ({ sourceName: r.sourceName, sourceUrl: r.sourceUrl, sourceType: r.sourceType, publisherFamily: r.publisherFamily || null }));
     const allSourceUrls = [...new Set(cluster.map((r) => r.sourceUrl).filter(Boolean))];
     const ages = cluster.map((r) => now - new Date(r.publishedAtSource).getTime());
     const minAge = Math.min(...ages);
     const fresh = freshnessStatus(minAge);
     const score = scoreCluster(cluster, now);
-    const publishEligible = score >= 30 && fresh.status !== 'stale';
     const primaryPublishedAt = primary.publishedAtSource;
     const memberKeys = cluster.map((r) => `${r.sourceName}::${r.sourceUrl}::${r.title}`).sort();
     const storyKey = `gn__${createHash('sha256').update(memberKeys.join('|||'), 'utf8').digest('hex').slice(0, 16)}`;
+
+    // Phase 10A.2.1 — U.S. relevance assessment
+    const usRel = assessUsRelevance(cluster);
+
+    // Phase 10A.2.1 — publisher-family deduplication
+    // sourceCount = total records in cluster (may include multiple feeds from same publisher)
+    // independentPublisherCount = unique publisher families (NPR News + NPR Politics = 1 family)
+    const publisherFamilies = [...new Set(cluster.map((r) => r.publisherFamily || r.sourceName).filter(Boolean))];
+    const independentPublisherCount = publisherFamilies.length;
+
+    // publishEligible requires: score >= 30, fresh, AND usRelevance high/medium
+    const usEligible = usRel.usRelevance === 'high' || usRel.usRelevance === 'medium';
+    const publishEligible = score >= 30 && fresh.status !== 'stale' && usEligible;
+
+    if (usRel.usRelevance === 'none') foreignRejected++;
 
     stories.push({
       generalStoryKey: storyKey,
       primarySource: primary.sourceName,
       primarySourceType: primary.sourceType,
       primarySourceUrl: primary.sourceUrl,
+      primaryPublisherFamily: primary.publisherFamily || null,
       supportingSources,
       allSourceUrls,
+      publisherFamilies,
       title: primary.title,
       description: primary.description,
       category,
+      usRelevance: usRel.usRelevance,
+      usRelevanceReason: usRel.reason,
       publishedAtSource: primaryPublishedAt,
       earliestPublishedAtSource: cluster
         .map((r) => r.publishedAtSource)
@@ -270,15 +355,18 @@ async function main() {
         .sort()[0] || primaryPublishedAt,
       sourceCount: cluster.length,
       independentSourceCount: new Set(cluster.map((r) => r.sourceName)).size,
+      independentPublisherCount,
       hasGovernmentSource: cluster.some((r) => r.sourceType === 'government'),
       storyScore: score,
       publishEligible,
+      publishEligibleReason: !usEligible ? `usRelevance=${usRel.usRelevance} (${usRel.reason})` : (score < 30 ? `score ${score} below 30 threshold` : (fresh.status === 'stale' ? 'stale (>36h)' : 'eligible')),
       freshnessStatus: fresh.status,
       freshnessLabel: fresh.label,
       sourceAgeHours: Math.round(minAge / HOUR_MS),
       cluster: cluster.map((r) => ({
         sourceName: r.sourceName,
         sourceType: r.sourceType,
+        publisherFamily: r.publisherFamily || null,
         sourceUrl: r.sourceUrl,
         title: r.title,
         description: (r.description || '').slice(0, 200),
@@ -300,13 +388,17 @@ async function main() {
     return tb - ta;
   });
 
+  const usRelevantClusters = stories.filter((s) => s.usRelevance === 'high' || s.usRelevance === 'medium').length;
   const output = {
     generatedAt: now.toISOString(),
-    source: 'Phase 10A.2 General News story records',
+    source: 'Phase 10A.2.1 General News story records',
     inputRecordCount: allRecords.length,
     freshRecordCount: freshRecords.length,
     clusterCount: clusters.length,
+    usRelevantClusterCount: usRelevantClusters,
+    foreignRejectedCount: foreignRejected,
     publishEligibleCount: stories.filter((s) => s.publishEligible).length,
+    publisherFamiliesSeen: [...new Set(stories.flatMap((s) => s.publisherFamilies))].sort(),
     stories,
   };
 
@@ -315,15 +407,28 @@ async function main() {
   await writeFile(tmp, JSON.stringify(output, null, 2) + '\n', 'utf8');
   await rename(tmp, OUTPUT_FILE);
 
-  console.log(`\n  Total clusters:     ${clusters.length}`);
-  console.log(`  publishEligible:    ${output.publishEligibleCount}`);
+  console.log(`\n  Total clusters:           ${clusters.length}`);
+  console.log(`  U.S.-relevant clusters:   ${usRelevantClusters}`);
+  console.log(`  Foreign rejected (none):  ${foreignRejected}`);
+  console.log(`  publishEligible:          ${output.publishEligibleCount}`);
+  console.log(`  Publisher families seen:  ${output.publisherFamiliesSeen.join(', ')}`);
   console.log(`  Output: ${OUTPUT_FILE}`);
+
+  // Category distribution
+  const byCat = {};
+  for (const s of stories.filter((s) => s.publishEligible)) {
+    byCat[s.category] = (byCat[s.category] || 0) + 1;
+  }
+  console.log('\n  Eligible by category:');
+  for (const cat of ['us', 'politics', 'business', 'technology', 'entertainment', 'sports']) {
+    console.log(`    ${cat.padEnd(14)} ${byCat[cat] || 0}`);
+  }
 
   // Top 20 candidates summary
   console.log('\n  Top 20 candidates:');
   stories.slice(0, 20).forEach((s, i) => {
-    const title = (s.title || '(no title)').slice(0, 65);
-    console.log(`    ${String(i + 1).padStart(2)}. [${s.category}/${s.freshnessStatus}] score=${s.storyScore} srcs=${s.sourceCount} ${title}`);
+    const title = (s.title || '(no title)').slice(0, 60);
+    console.log(`    ${String(i + 1).padStart(2)}. [${s.category}/us=${s.usRelevance}/${s.freshnessStatus}] score=${s.storyScore} pub=${s.independentPublisherCount} ${title}`);
   });
 }
 

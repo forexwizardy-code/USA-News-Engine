@@ -126,6 +126,18 @@ const categoryLabel: Record<string, string> = {
   technology: 'Technology', entertainment: 'Entertainment', sports: 'Sports',
 };
 const catLabel = categoryLabel[d.category] || d.category;
+
+// Phase 10A.2.1 — image variety: category-specific gradient colors for
+// the factual-graphic-fallback hero. Avoids every preview looking identical.
+const categoryGradient: Record<string, string> = {
+  us: 'linear-gradient(135deg, #c8102e 0%, #7a0a1f 100%)',
+  politics: 'linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%)',
+  business: 'linear-gradient(135deg, #2d5a3d 0%, #163320 100%)',
+  technology: 'linear-gradient(135deg, #4a3a8c 0%, #2a1f50 100%)',
+  entertainment: 'linear-gradient(135deg, #8c3a6a 0%, #501f38 100%)',
+  sports: 'linear-gradient(135deg, #c8602e 0%, #7a3a18 100%)',
+};
+const heroGradient = categoryGradient[d.category] || categoryGradient.us;
 ---
 
 <PreviewLayout
@@ -168,13 +180,17 @@ const catLabel = categoryLabel[d.category] || d.category;
           </div>
           <div class="meta-block">
             <span class="meta-label">Sources</span>
-            <span class="meta-value">{d.sourceCount} ({d.independentSourceCount} independent){d.hasGovernmentSource ? ' · gov' : ''}</span>
+            <span class="meta-value">{d.sourceCount} records · {d.independentPublisherCount} independent publisher(s){d.hasGovernmentSource ? ' · gov' : ''}</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">U.S. relevance</span>
+            <span class="meta-value">{d.usRelevance || 'n/a'}</span>
           </div>
         </div>
       </header>
 
       <figure class="article-figure">
-        <div class="graphic-fallback" aria-hidden="true">
+        <div class="graphic-fallback" style={`background: ${heroGradient}`} aria-hidden="true">
           <span class="graphic-cat">{catLabel}</span>
           <span class="graphic-title">{d.title}</span>
           <span class="graphic-credit">{d.image.credit}</span>
@@ -228,8 +244,10 @@ const catLabel = categoryLabel[d.category] || d.category;
         <dl class="cluster-list">
           <div><dt>Story key</dt><dd><code>{d.generalStoryKey}</code></dd></div>
           <div><dt>Category</dt><dd>{catLabel}</dd></div>
-          <div><dt>Total sources</dt><dd>{d.sourceCount}</dd></div>
-          <div><dt>Independent sources</dt><dd>{d.independentSourceCount}</dd></div>
+          <div><dt>U.S. relevance</dt><dd>{d.usRelevance || 'n/a'} — {d.usRelevanceReason || ''}</dd></div>
+          <div><dt>Total source records</dt><dd>{d.sourceCount}</dd></div>
+          <div><dt>Independent source names</dt><dd>{d.independentSourceCount}</dd></div>
+          <div><dt>Independent publisher families</dt><dd>{d.independentPublisherCount} ({(d.publisherFamilies || []).join(', ')})</dd></div>
           <div><dt>Government source</dt><dd>{d.hasGovernmentSource ? 'Yes' : 'No'}</dd></div>
           <div><dt>Source age</dt><dd>{d.sourceAgeHours} hours</dd></div>
           <div><dt>Freshness</dt><dd>{d.freshnessLabel}</dd></div>

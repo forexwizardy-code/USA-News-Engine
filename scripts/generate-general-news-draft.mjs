@@ -30,13 +30,26 @@ const DRAFTS_DIR = join(PROJECT_DIR, 'data', 'general-news', 'drafts');
 const now = new Date();
 
 function slugify(text) {
-  return String(text || '')
+  // Phase 10A.2.1 — clean slug generation: word-boundary truncation,
+  // no dangling word fragments, readable, stable, lowercase, hyphenated.
+  const cleaned = String(text || '')
     .toLowerCase()
     .replace(/&/g, 'and')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/-{2,}/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60);
+    .replace(/[^a-z0-9\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!cleaned) return 'story';
+  // Split into words, take whole words until we hit the max length (50 chars).
+  // This ensures the slug never ends with a partial word.
+  const words = cleaned.split(/\s+/);
+  const result = [];
+  let total = 0;
+  for (const w of words) {
+    if (total + w.length + (result.length > 0 ? 1 : 0) > 50) break;
+    result.push(w);
+    total += w.length + (result.length > 1 ? 1 : 0);
+  }
+  return result.join('-').replace(/-{2,}/g, '-').replace(/^-|-$/g, '') || 'story';
 }
 
 function titleCase(s) {
@@ -192,9 +205,9 @@ async function main() {
   const body = buildBody(story);
   const claimAudit = buildClaimAudit(story);
 
-  // Slug: category + title-hash + date
+  // Slug: category + clean-title + date (Phase 10A.2.1: word-boundary truncation)
   const dateStr = new Date(story.earliestPublishedAtSource || now).toISOString().slice(0, 10);
-  const titleSlug = slugify(headline).slice(0, 40);
+  const titleSlug = slugify(headline);
   const slug = `${story.category}-${titleSlug}-${dateStr}`;
 
   const draft = {
@@ -210,11 +223,16 @@ async function main() {
       name: story.primarySource,
       type: story.primarySourceType,
       url: story.primarySourceUrl,
+      publisherFamily: story.primaryPublisherFamily || null,
     },
     supportingSources: story.supportingSources,
     allSourceUrls: story.allSourceUrls,
     sourceCount: story.sourceCount,
     independentSourceCount: story.independentSourceCount,
+    independentPublisherCount: story.independentPublisherCount,
+    publisherFamilies: story.publisherFamilies,
+    usRelevance: story.usRelevance,
+    usRelevanceReason: story.usRelevanceReason,
     hasGovernmentSource: story.hasGovernmentSource,
     sourcePublishedAt: story.earliestPublishedAtSource,
     storyScore: story.storyScore,
@@ -225,7 +243,7 @@ async function main() {
     image: {
       mode: 'factual-graphic-fallback',
       alt: `Editorial graphic for: ${headline}`,
-      caption: `US News Engine editorial summary of ${story.sourceCount} source(s).`,
+      caption: `US News Engine editorial summary of ${story.sourceCount} source(s) across ${story.independentPublisherCount} publisher(s).`,
       credit: 'US News Engine (editorial graphic)',
       sourcePageUrl: story.primarySourceUrl,
     },

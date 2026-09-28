@@ -78,6 +78,11 @@ async function main() {
     check('G9', 'Bootstrap safety', false, 'no registry');
   }
 
+  // --- 3.5 Pre-initialize draftFiles so the slug check (G23) can use it ---
+  const draftsDirEarly = join(PROJECT_DIR, 'data', 'general-news', 'drafts');
+  let draftFiles = [];
+  try { draftFiles = (await readdir(draftsDirEarly)).filter((f) => f.endsWith('.json')); } catch {}
+
   // --- 4. Story records: duplicate clusters produce one candidate ---
   const storiesRes = await loadJsonOptional(join(PROJECT_DIR, 'data', 'general-news', 'general-news-story-records.json'));
   if (storiesRes.ok) {
@@ -100,6 +105,51 @@ async function main() {
     );
     check('G13', 'Claims trace to source URL (every cluster member has sourceUrl)', noClaimSource.length === 0,
       noClaimSource.length ? `${noClaimSource.length} with untraceable claims` : '');
+
+    // Phase 10A.2.1 — U.S. relevance checks
+    const noneEligible = stories.filter((s) => s.publishEligible && s.usRelevance === 'none');
+    check('G20', 'No publishEligible story has usRelevance=none', noneEligible.length === 0,
+      noneEligible.length ? `${noneEligible.length} foreign story(ies) wrongly eligible` : '');
+
+    // Foreign story in U.S. category without documented U.S. relevance
+    const foreignInUs = stories.filter((s) => s.category === 'us' && s.usRelevance === 'none' && s.publishEligible);
+    check('G21', 'No foreign story in U.S. category without documented U.S. relevance', foreignInUs.length === 0,
+      foreignInUs.length ? `${foreignInUs.length} foreign story(ies) in U.S. category` : '');
+
+    // Publisher-family: multiple feeds from same publisher do NOT count as independent
+    const miscounted = stories.filter((s) => {
+      const fams = new Set((s.cluster || []).map((c) => c.publisherFamily || c.sourceName));
+      return s.independentPublisherCount !== fams.size;
+    });
+    check('G22', 'independentPublisherCount = unique publisher families (not feed count)', miscounted.length === 0,
+      miscounted.length ? `${miscounted.length} miscounted` : '');
+
+    // Slug check: no dangling word fragments (no segment that's a single
+    // truncated letter, e.g. "suspected-u-k-ter" would have "ter" as a fragment)
+    const badSlugs = [];
+    for (const f of draftFiles) {
+      try {
+        const d = JSON.parse(await readFile(join(draftsDir, f), 'utf8'));
+        if (!d.slug) continue;
+        // Split the slug into segments (excluding the date suffix).
+        // A dangling fragment is a 2-3 letter segment that's not a known
+        // abbreviation and appears truncated.
+        const parts = d.slug.split('-');
+        const dateIdx = parts.findIndex((p) => /^\d{4}$/.test(p));
+        const slugParts = dateIdx > 0 ? parts.slice(0, dateIdx) : parts;
+        const KNOWN_ABBR = new Set(['us', 'uk', 'dc', 'ai', 'ml', 'io', 'tv', 'pr', 'cp', 's', 't', 'p', 'co', 'inc', 'ltd', 'msg', 'ceo', 'cfo', 'coo', 'ipo', 'fed', 'sec', 'ftc', 'fda', 'doj', 'fbi', 'dod', 'nasa', 'noaa', 'usgs', 'cpsc']);
+        for (const p of slugParts) {
+          // Flag segments that are 1-3 letters and NOT a known abbreviation
+          // (these are likely truncated word fragments)
+          if (p.length <= 3 && !KNOWN_ABBR.has(p) && !/^\d+$/.test(p)) {
+            badSlugs.push(`${d.slug} (fragment: "${p}")`);
+            break;
+          }
+        }
+      } catch {}
+    }
+    check('G23', 'No truncated slug ends in a word fragment', badSlugs.length === 0,
+      badSlugs.length ? `bad slugs: ${badSlugs.slice(0, 3).join(', ')}` : '');
   } else {
     check('G10', 'Story records exist', false, 'missing');
     check('G11', 'No duplicate keys', false, 'no stories');
@@ -109,27 +159,33 @@ async function main() {
 
   // --- 5. Preview drafts: image mode is factual-graphic-fallback (no stolen images) ---
   const draftsDir = join(PROJECT_DIR, 'data', 'general-news', 'drafts');
-  let draftFiles = [];
-  try { draftFiles = (await readdir(draftsDir)).filter((f) => f.endsWith('.json')); } catch {}
+  // draftFiles already initialized above (section 3.5) so the slug check can use it
   let stolenImages = 0;
   let draftsOk = 0;
+  let sportsDrafts = 0;
   for (const f of draftFiles) {
     try {
       const d = JSON.parse(await readFile(join(draftsDir, f), 'utf8'));
       draftsOk++;
       if (d.image && d.image.mode !== 'factual-graphic-fallback') {
-        // For Phase 10A.2 previews, only factual-graphic-fallback is allowed
-        // (no stolen publisher photos, no fake event photography).
         stolenImages++;
       }
-      // Claim audit exists and is private
       if (!d.claimAudit || !d.claimAudit.note || !/PRIVATE/i.test(d.claimAudit.note)) {
-        stolenImages++; // repurpose counter for "draft missing private claim audit"
+        stolenImages++;
       }
+      if (d.category === 'sports') sportsDrafts++;
     } catch {}
   }
   check('G14', `Preview drafts use factual-graphic-fallback + private claim audit (${draftsOk} drafts)`, stolenImages === 0,
     stolenImages ? `${stolenImages} draft(s) with non-fallback image or missing private claim audit` : '');
+
+  // Phase 10A.2.1 — Sports preview must not exist without a real Sports candidate
+  let sportsEligibleCount = 0;
+  if (storiesRes.ok) {
+    sportsEligibleCount = (storiesRes.doc.stories || []).filter((s) => s.category === 'sports' && s.publishEligible).length;
+  }
+  check('G24', 'No Sports preview without a real Sports candidate', !(sportsDrafts > 0 && sportsEligibleCount === 0),
+    (sportsDrafts > 0 && sportsEligibleCount === 0) ? `${sportsDrafts} sports preview(s) but 0 eligible sports candidates` : (sportsDrafts === 0 ? 'no sports drafts (correct — no eligible sports candidates)' : `${sportsDrafts} sports draft(s) with ${sportsEligibleCount} eligible`));
 
   // --- 6. Preview page route exists ---
   const previewRouteExists = await fileExists(join(PROJECT_DIR, 'src', 'pages', 'preview', 'general', '[slug].astro'));
