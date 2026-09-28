@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-28T00:42:16.313Z",
+  "fetchedAt": "2026-09-28T01:06:34.093Z",
   "source": "NASA",
   "sourceUrl": "https://www.nasa.gov/news-release/feed/",
   "sourceAvailable": true,
@@ -35,7 +35,7 @@
       "imageCaption": "Before image of the Andromeda galaxy with streaks marring the field of view.",
       "imageSourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/",
       "rightsText": "Kees Scherer",
-      "rightsStatus": "verified-third-party",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "APOD: 2026 September 27 – Andromeda Before and After Photoshop",
         "link": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/",
@@ -69,7 +69,7 @@
       "imageCaption": "A large, segmented telescope mirror is seen against the night sky along with  the Milky Way and a bright meteor.",
       "imageSourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/",
       "rightsText": "Jeff Dai ( TWAN )",
-      "rightsStatus": "verified-third-party",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "APOD: 2026 September 26 – Mirrored Meteor and Milky Way",
         "link": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/",
@@ -142,7 +142,7 @@
       "imageCaption": "Minister of Industry and Technological Research Rossano Fabbri signed on behalf of San Marino. Gregory Mann, NASA Europe representative, and U.S. Consul General in Florence Joseph Tordella participated in the event on Friday, Sept. 25, 2026.",
       "imageSourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/",
       "rightsText": "U.S. Department of State",
-      "rightsStatus": "verified-third-party",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "NASA Welcomes San Marino Signing the Artemis Accords",
         "link": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/",
@@ -161,7 +161,7 @@
       "sourceType": "news-release",
       "sourceId": "https://www.nasa.gov/?p=1050570",
       "scienceKey": "nasa__f6e0c13aa126935f",
-      "storyType": "launch",
+      "storyType": "mission-preparation",
       "title": "NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch",
       "description": "Spacecraft propulsion traditionally relies on volatile fuels and separate, bulky systems for different types of maneuvering in space. NASA is working to change that paradigm. Engineers at NASA’s Marshall Space Flight Center in Huntsville, Alabama, recently completed a rigorous series of environmenta",
       "publishedAtSource": "2026-09-25T19:36:10.000Z",
@@ -179,7 +179,7 @@
       "imageCaption": "Dr. Nehemiah Williams, the demonstration’s project manager at NASA, prepares to start testing the mission’s flight hardware in a clean room at NASA’s Marshall Space Flight Center in Huntsville, Alabama. The mission will demonstrate a single, non-toxic propulsion system that combines both high-thrust and low-thrust capabilities into a common tank.",
       "imageSourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/",
       "rightsText": "NASA/Charles Beason",
-      "rightsStatus": "verified-agency",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch",
         "link": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/",
@@ -283,7 +283,7 @@
       "imageCaption": "A spiral galaxy viewed at an angle, with a bright central bulge and winding spiral arms. The arms form a ring around the galaxy, without appearing to reach its center. Prominent red-brown dust lanes weave through the arms, which are also dotted with bright blue and reddish regions of star formation. The galaxy is set against a dark background scattered with stars and faint distant galaxies.",
       "imageSourceUrl": "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/",
       "rightsText": "ESA/Hubble & NASA, D. Thilker, the MAUVE-HST Team",
-      "rightsStatus": "verified-agency",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "Hubble Spots Chaotic Secret in Galaxy",
         "link": "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/",
@@ -301,7 +301,7 @@
       "sourceType": "news-release",
       "sourceId": "https://www.nasa.gov/?p=1050431",
       "scienceKey": "nasa__4f99bb2c5f0bf822",
-      "storyType": "discovery",
+      "storyType": "technical-guidance",
       "title": "TB 26-07 Aluminum Alloy 2219 Material Guidance",
       "description": "For more information, contact Donald S. Parker, Kennedy Space Center, donald.s.parker@nasa.gov Download the PDF version Improper casting and forging processes in the manufacture of aluminum alloy 2219 can lead to microstructural defects that result in a sub-optimal response to anodic surface treatme",
       "publishedAtSource": "2026-09-25T14:45:51.000Z",
@@ -351,7 +351,7 @@
       "imageCaption": "A dense globular cluster of stars.",
       "imageSourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-25-globular-star-cluster-omega-centauri/",
       "rightsText": "Javier O. Cadenas Parra",
-      "rightsStatus": "verified-third-party",
+      "rightsStatus": "third-party",
       "rawSourceData": {
         "title": "APOD: 2026 September 25 – Globular Star Cluster Omega Centauri",
         "link": "https://science.nasa.gov/image-article/apod-2026-september-25-globular-star-cluster-omega-centauri/",

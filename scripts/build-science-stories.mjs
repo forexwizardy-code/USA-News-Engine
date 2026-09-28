@@ -1,37 +1,53 @@
 /**
- * US News Engine — Science story deduplication & scoring (Phase 9A.1 hardened).
+ * US News Engine — Science story deduplication & scoring (Phase 9A.2 hardened).
  *
  * Reads data/science/science-news-candidates.json (produced by the
- * Phase 9A.1 filter) and groups NASA + JPL candidates that describe
+ * Phase 9A.2 filter) and groups NASA + JPL candidates that describe
  * the SAME event (same mission AND overlapping date window ±2 days)
  * into a single story record. SWPC alerts are kept separate (each
  * alert is its own story).
  *
- * Phase 9A.1 changes from Phase 9A:
- *   - Story scoring now uses `storyType` as the primary signal. No
- *     points are awarded merely because "NASA" appears in the title
- *     (Phase 9A's mission-table bonus was over-broad). Major-mission
- *     bonus (+10) is gated on storyType ∈ {mission-milestone,
- *     discovery, launch, landing} AND a major mission name (Artemis,
- *     Webb, Perseverance, Starliner) appearing in the title.
- *   - Space-policy / administrative / education / media-advisory
- *     story types receive NO bonuses beyond the base 20. They are
- *     still tracked (so cross-snapshot change detection works) but
- *     will sort to the bottom of the ranking because their score is
- *     capped at the base.
+ * Phase 9A.2 changes from Phase 9A.1:
+ *   - Each story record now carries `freshnessStatus`,
+ *     `sourceAgeDays`, `storyType`, `bootstrapSeen`,
+ *     `eligibilityReasons` (array), and `exclusionReasons` (array)
+ *     denormalized from the primary candidate / source registry.
+ *   - Story re-ranking now considers freshness: sort by
+ *     publishEligible first, then freshnessStatus (current > recent >
+ *     archive > missing), then storyScore descending. Archive stories
+ *     no longer dominate the top of the list even when their
+ *     storyScore is high.
+ *   - `storyStatus` gains a new value `'bootstrap'` for stories
+ *     whose sources all appear in the science source registry with
+ *     `bootstrapSeen=true` AND that are not in the previous snapshot.
+ *     This is the bootstrap-safety mechanism: historical items are
+ *     tracked but never auto-published as new.
+ *   - Image auto-selection now uses the Phase 9A.2 rights vocabulary:
+ *     only `verified-agency` and `mixed-agency` images may be
+ *     auto-selected. `third-party`, `unclear`, and `unverified`
+ *     images are NOT auto-selected (the story is still tracked but
+ *     `imageUrl=null` so the future article-draft generator must
+ *     fall back to a factual graphic).
+ *
+ * Phase 9A.1 changes retained:
+ *   - Story scoring uses `storyType` as the primary signal. No
+ *     points are awarded merely because "NASA" appears in the title.
+ *     Major-mission bonus (+10) is gated on storyType ∈
+ *     {mission-milestone, discovery, launch, landing} AND a major
+ *     mission name (Artemis, Webb, Perseverance, Starliner) appearing
+ *     in the title.
+ *   - Space-policy / administrative / education / media-advisory /
+ *     evergreen / technical-guidance / mission-preparation story
+ *     types receive NO bonuses beyond the base 20. They are still
+ *     tracked (so cross-snapshot change detection works) but rank at
+ *     the bottom.
  *   - `storyType` is added to the story record (taken from the
  *     primary candidate's storyType, which was set by the filter).
  *   - `publishEligible` is taken from the filter (never recomputed
  *     here). When the primary candidate is publishEligible, the story
  *     is publishEligible.
- *   - Image auto-selection now respects rights status: a primary
- *     candidate whose image has rightsStatus "unclear" or "unverified"
- *     is replaced (where possible) by a cluster member whose image has
- *     "verified-agency" or "verified-third-party" rights. If no
- *     cluster member has a verified image, the story's imageUrl is set
- *     to null (the story is still tracked, but no image is auto-selected).
  *   - Cross-snapshot tracking is preserved (storyStatus new/updated/
- *     unchanged, firstSeenAt, latestSeenAt, updateCount).
+ *     unchanged/bootstrap, firstSeenAt, latestSeenAt, updateCount).
  *
  * Story score (0-100, internal ranking only — never public/SEO):
  *   Base: 20
@@ -59,6 +75,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 const INPUT_FILE = join(PROJECT_DIR, 'data', 'science', 'science-news-candidates.json');
+const REGISTRY_FILE = join(PROJECT_DIR, 'data', 'science', 'science-source-registry.json');
 const OUTPUT_FILE = join(PROJECT_DIR, 'data', 'science', 'science-story-records.json');
 
 // --- Scoring weights ------------------------------------------------------
@@ -95,6 +112,8 @@ const NO_BONUS_TYPES = new Set([
   'education',
   'media-advisory',
   'evergreen',
+  'technical-guidance',
+  'mission-preparation',
 ]);
 
 // Keywords for the launch/landing and discovery bonuses.
@@ -271,14 +290,21 @@ function pickPrimary(cluster) {
  * { imageUrl, imageAlt, imageCredit, imageCaption, imageSourceUrl,
  *   rightsText, rightsStatus }.
  *
- * Phase 9A.1: NEVER auto-select an image whose rightsStatus is
- * "unclear" or "unverified". When the primary candidate's image is
- * unclear/unverified, scan the cluster for a member with verified
- * rights. If none, return imageUrl=null (the story is still tracked
- * but no image is auto-selected).
+ * Phase 9A.2: NEVER auto-select an image whose rightsStatus is
+ * `third-party`, `unclear`, or `unverified`. Only `verified-agency`
+ * and `mixed-agency` images may be auto-selected for unattended
+ * publication. When the primary candidate's image is not auto-
+ * selectable, scan the cluster for a member with verified-agency or
+ * mixed-agency rights. If none, return imageUrl=null (the story is
+ * still tracked but no image is auto-selected — the future article-
+ * draft generator must fall back to a factual graphic).
  */
 function pickStoryImage(cluster, primaryRecord) {
-  const VERIFIED = new Set(['verified-agency', 'verified-third-party']);
+  // Phase 9A.2 vocabulary: only verified-agency and mixed-agency
+  // images are auto-selectable. (Phase 9A.1 used verified-third-party
+  // instead; that value is renamed to `third-party` and is no longer
+  // auto-selectable per the new editorial policy.)
+  const VERIFIED = new Set(['verified-agency', 'mixed-agency']);
 
   // 1. Try the primary record's image when it has verified rights.
   if (
@@ -456,9 +482,40 @@ async function main() {
     }
   } catch (err) {
     if (err && err.code === 'ENOENT') {
-      console.log('  No previous snapshot found — all stories will be "new".');
+      console.log('  No previous snapshot found — all stories will be "new" or "bootstrap".');
     } else {
       console.log(`  [warn] Could not parse previous snapshot: ${String(err)}`);
+    }
+  }
+
+  // --- Load the science source registry (Phase 9A.2) ---------------------
+  // The registry tells us which source keys are "bootstrap" (historical
+  // items the pipeline saw on its first run, NOT new items). A story
+  // whose source keys are all bootstrap is given storyStatus='bootstrap'
+  // instead of 'new' on first sight, so the validator's bootstrap-safety
+  // check passes (a bootstrapSeen=true source may not appear as a 'new'
+  // story).
+  const registryBootstrapKeys = new Set();
+  let registryLoaded = false;
+  try {
+    const regRaw = await readFile(REGISTRY_FILE, 'utf8');
+    const regDoc = JSON.parse(regRaw);
+    if (Array.isArray(regDoc.sources)) {
+      for (const s of regDoc.sources) {
+        if (s && s.bootstrapSeen === true && typeof s.scienceKey === 'string') {
+          registryBootstrapKeys.add(s.scienceKey);
+        }
+      }
+      registryLoaded = true;
+      console.log(`  Registry loaded: ${regDoc.sources.length} sources (${registryBootstrapKeys.size} bootstrap)`);
+    }
+  } catch (err) {
+    if (err && err.code === 'ENOENT') {
+      console.log('  [warn] No science-source-registry.json found. Run `npm run registry:science` first.');
+      console.log('         Without the registry, bootstrap safety cannot be enforced and all');
+      console.log('         new stories will be marked storyStatus="new".');
+    } else {
+      console.log(`  [warn] Could not parse registry: ${String(err)}`);
     }
   }
 
@@ -471,6 +528,7 @@ async function main() {
   let newCount = 0;
   let updatedCount = 0;
   let unchangedCount = 0;
+  let bootstrapCount = 0;
   const previousKeysStillSeen = new Set();
 
   for (const cluster of clusters) {
@@ -499,7 +557,22 @@ async function main() {
         updatedCount++;
       }
     } else {
-      newCount++;
+      // No previous snapshot entry — would normally be 'new'. But
+      // Phase 9A.2: if ALL source keys are bootstrapSeen=true in the
+      // registry, this is a historical item the pipeline is seeing
+      // for the first time (because the previous story snapshot didn't
+      // include it). Mark it as 'bootstrap' so the validator's
+      // bootstrap-safety check passes and the future article-draft
+      // generator knows NOT to auto-publish.
+      const allSourceKeysList = cluster.map((r) => r.scienceKey);
+      const anyNonBootstrap = allSourceKeysList.some((k) => !registryBootstrapKeys.has(k));
+      if (registryLoaded && !anyNonBootstrap && allSourceKeysList.length > 0) {
+        storyStatus = 'bootstrap';
+        bootstrapCount++;
+      } else {
+        storyStatus = 'new';
+        newCount++;
+      }
     }
 
     const allSourceKeys = cluster.map((r) => r.scienceKey);
@@ -509,6 +582,14 @@ async function main() {
       .filter(Boolean)
       .sort((a, b) => a.getTime() - b.getTime());
     const earliestPublishedAtSource = publishedDates.length ? publishedDates[0].toISOString() : primary.publishedAtSource || null;
+
+    // Phase 9A.2: bootstrapSeen flag (true when ALL source keys are
+    // bootstrap in the registry). Used by the validator to enforce
+    // the bootstrap-safety check.
+    const bootstrapSeen =
+      registryLoaded &&
+      allSourceKeys.length > 0 &&
+      allSourceKeys.every((k) => registryBootstrapKeys.has(k));
 
     stories.push({
       scienceStoryKey: storyKey,
@@ -521,6 +602,13 @@ async function main() {
       topic: primary.topic,
       mission: primary.mission,
       publishedAtSource: earliestPublishedAtSource,
+      // Phase 9A.2: freshness fields denormalized from the primary
+      // candidate. These come straight from the filter (which
+      // computed them from publishedAtSource).
+      freshnessStatus: primary.freshnessStatus || null,
+      sourceAgeDays: primary.sourceAgeDays != null ? primary.sourceAgeDays : null,
+      // Phase 9A.2: bootstrap flag from the registry.
+      bootstrapSeen,
       storyScore,
       publishEligible: primary.publishEligible === true,
       priority: primary.priority,
@@ -541,14 +629,38 @@ async function main() {
       rightsText: image.rightsText,
       rightsStatus: image.rightsStatus,
       description: primary.description || null,
+      // Phase 9A.2: plural eligibility/exclusion reason arrays (and
+      // the legacy singular fields for backward compatibility).
+      eligibilityReasons: Array.isArray(primary.eligibilityReasons)
+        ? primary.eligibilityReasons
+        : primary.eligibilityReason
+          ? [primary.eligibilityReason]
+          : [],
+      exclusionReasons: Array.isArray(primary.exclusionReasons)
+        ? primary.exclusionReasons
+        : primary.exclusionReason
+          ? [primary.exclusionReason]
+          : [],
       selectedReason: primary.selectedReason || null,
       eligibilityReason: primary.eligibilityReason || null,
       exclusionReason: primary.exclusionReason || null,
     });
   }
 
-  // --- Sort: storyScore desc, then latestSeenAt newest -------------------
+  // --- Sort: publishEligible first, then freshness (current > recent >
+  //    archive > missing), then storyScore desc, then latestSeenAt newest.
+  //    Phase 9A.2: archive stories no longer dominate the top of the
+  //    list even when their storyScore is high.
+  const FRESHNESS_RANK = { current: 0, recent: 1, archive: 2 };
+  function freshnessRank(s) {
+    if (s == null) return 3;
+    return FRESHNESS_RANK[s] ?? 3;
+  }
   stories.sort((a, b) => {
+    if (a.publishEligible !== b.publishEligible) return b.publishEligible ? 1 : -1;
+    const fa = freshnessRank(a.freshnessStatus);
+    const fb = freshnessRank(b.freshnessStatus);
+    if (fa !== fb) return fa - fb;
     if (b.storyScore !== a.storyScore) return b.storyScore - a.storyScore;
     const la = parseDate(a.latestSeenAt)?.getTime() ?? 0;
     const lb = parseDate(b.latestSeenAt)?.getTime() ?? 0;
@@ -569,19 +681,30 @@ async function main() {
 
   const output = {
     generatedAt: now.toISOString(),
-    source: 'Phase 9A.1 science stories',
+    source: 'Phase 9A.2 science stories',
     inputCandidateCount: candidates.length,
     uniqueStoryCount: stories.length,
     publishEligibleCount: stories.filter((s) => s.publishEligible).length,
     highPriorityCount: stories.filter((s) => s.priority === 'high').length,
+    freshnessBreakdown: stories.reduce((acc, s) => {
+      const k = s.freshnessStatus || 'missing';
+      acc[k] = (acc[k] || 0) + 1;
+      return acc;
+    }, {}),
     storyTypeBreakdown: stories.reduce((acc, s) => {
       const t = s.storyType || 'unknown';
       acc[t] = (acc[t] || 0) + 1;
       return acc;
     }, {}),
+    storyStatusBreakdown: stories.reduce((acc, s) => {
+      const k = s.storyStatus || 'unknown';
+      acc[k] = (acc[k] || 0) + 1;
+      return acc;
+    }, {}),
     newCount,
     updatedCount,
     unchangedCount,
+    bootstrapCount,
     previousSnapshotCount: previousStories.length,
     previousMissingCount,
     stories,
@@ -603,10 +726,17 @@ async function main() {
   console.log(`  New:                  ${newCount}`);
   console.log(`  Updated:              ${updatedCount}`);
   console.log(`  Unchanged:            ${unchangedCount}`);
+  console.log(`  Bootstrap:            ${bootstrapCount}`);
   console.log(`  publishEligible:      ${output.publishEligibleCount}`);
   console.log(`  high priority:        ${output.highPriorityCount}`);
   if (previousStories.length > 0) {
     console.log(`  Previously seen, missing this run: ${previousMissingCount}`);
+  }
+
+  // --- Freshness breakdown -----------------------------------------------
+  console.log('\n  Freshness breakdown:');
+  for (const [k, v] of Object.entries(output.freshnessBreakdown)) {
+    console.log(`    ${k.padEnd(8)}  ${v}`);
   }
 
   // --- Score distribution ------------------------------------------------
@@ -624,18 +754,19 @@ async function main() {
   }
 
   // --- Top 10 stories ----------------------------------------------------
-  console.log('\n  Top 10 stories (by score):');
+  console.log('\n  Top 10 stories (by publishEligible, freshness, score):');
   if (stories.length === 0) {
     console.log('    (no stories)');
   } else {
     stories.slice(0, 10).forEach((s, i) => {
       const titlePreview = (s.title || '(no title)').slice(0, 60);
       const eligible = s.publishEligible ? 'eligible' : 'not-eligible';
+      const ageStr = s.sourceAgeDays != null ? `${s.sourceAgeDays.toFixed(1)}d` : '?';
       console.log(
-        `    ${String(i + 1).padStart(2)}. [score=${s.storyScore}, ${s.storyType || '?'}, ${eligible}] ${s.primarySource} — ${titlePreview}`,
+        `    ${String(i + 1).padStart(2)}. [score=${s.storyScore}, ${s.storyType || '?'}, ${s.freshnessStatus || '-'} (${ageStr}), ${eligible}] ${s.primarySource} — ${titlePreview}`,
       );
       console.log(
-        `        key=${s.scienceStoryKey} mission=${s.mission || '-'} image=${s.imageUrl ? 'yes' : 'no'} rights=${s.rightsStatus || '-'} status=${s.storyStatus}`,
+        `        key=${s.scienceStoryKey} mission=${s.mission || '-'} image=${s.imageUrl ? 'yes' : 'no'} rights=${s.rightsStatus || '-'} status=${s.storyStatus}${s.bootstrapSeen ? ' [BOOTSTRAP]' : ''}`,
       );
     });
   }

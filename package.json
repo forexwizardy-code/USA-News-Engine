@@ -45,10 +45,11 @@
     "fetch:jpl": "node scripts/fetch-jpl-news.mjs",
     "fetch:swpc": "node scripts/fetch-swpc-science.mjs",
     "fetch:science": "npm run fetch:nasa && npm run fetch:jpl && npm run fetch:swpc",
+    "registry:science": "node scripts/build-science-registry.mjs",
     "filter:science": "node scripts/filter-science-news.mjs",
     "stories:science": "node scripts/build-science-stories.mjs",
     "validate:science": "node scripts/validate-science.mjs",
-    "prepare:science": "npm run fetch:science && npm run filter:science && npm run stories:science && npm run validate:science"
+    "prepare:science": "npm run fetch:science && npm run registry:science && npm run filter:science && npm run stories:science && npm run validate:science"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

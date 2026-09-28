@@ -2562,3 +2562,489 @@ across NASA/JPL/SWPC/candidates + 11 provenance-metadata checks +
    true`) is used by both the NASA and JPL fetchers. If you add a
    third RSS fetcher (e.g. ESA, JAXA), use the same config so the
    `textOf` / `arrayOf` helpers work consistently.
+
+---
+
+## Phase 9A.2 — Science freshness, classification & bootstrap safety (Task 9A.2-freshness)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Add freshness gating so the JPL historical archive (100
+items, most from 2024-2026) doesn't dominate publication; tighten the
+storyType classifier so technical bulletins, pre-launch
+announcements, and post-mission data aren't misclassified; refine
+the image rights vocabulary so named-individual / commercial credits
+are never auto-selected; add a source-registry bootstrap so the
+pipeline can never mass-backfill historical items as "new" stories.
+
+### Problem being solved
+
+Phase 9A.1 produced 107 stories with 81 publishEligible, but JPL
+returns 100 historical archive items (some dating back to 2024) that
+were all being marked publishEligible because the filter had no
+freshness gate. Top stories included a 382-day-old "NASA to Share
+Details of New Perseverance" media advisory (misclassified as
+`discovery`) and a "TB 26-07 Aluminum Alloy 2219 Material Guidance"
+technical bulletin (also misclassified as `discovery`). NISAR
+operational-imagery stories were misclassified as `launch` because
+the title contained the word "launch" in "satellite launched
+delivers data". Individual-photographer image credits (e.g.
+"NASA/John Kraus") were being auto-selected as `verified-agency`.
+
+### Files modified
+
+- `scripts/fetch-nasa-news.mjs`
+  - Adds three new storyTypes: `technical-guidance`,
+    `mission-preparation`, `mission-result`.
+  - `classifyStoryType`:
+    * Step 2 (new): `technical-guidance` for titles starting with
+      `TB <number>` or containing `technical bulletin`, `material
+      guidance`, `material specification`, `specification <number>`,
+      `standard <number>`, or `NASA standard`.
+    * Step 3 (expanded): media-advisory now also catches `to share`,
+      `will share`, `to announce`, `will announce`, `to reveal`,
+      `will reveal`, `to discuss`, `will discuss` in addition to the
+      Phase 9A.1 patterns.
+    * Step 6 (new): `mission-preparation` for `ahead of launch`,
+      `preparing for launch`, `ready for launch`, `preliminary
+      design review`, `critical design review`, `pre-launch test`.
+    * Step 7 (tightened): LAUNCH now only fires on actual launch-
+      event verbs — `launches`, `lift off`/`lift-off`/`lifted off`,
+      `departs from/the/ISS`, `launch successful`, `successful
+      launch`, `launch watch`. The generic word `launch` (noun) no
+      longer triggers LAUNCH.
+    * Step 8 (new): mission-result branch. When the title contains
+      a "result indicator" (`delivers data`, `captures`, `reveals`,
+      `first image`, `first radar`, `first light`, `first data`,
+      `first map`, `first measurement`, `new image`, `new data`)
+      AND the combined text mentions an Earth-observation mission
+      (NISAR, PACE, TEMPO, EMIT, Landsat, Sentinel, GOES, SMAP,
+      SWOT, GRACE/-FO, Suomi NPP, Aqua, Terra, Aura, CALIPSO,
+      CloudSat, GPM, OCO, Oceansat, RISAT, ICESat) → `earth-science`.
+      For non-Earth missions with the same indicators →
+      `mission-result`.
+  - `deriveRightsStatus` (Phase 9A.2 vocabulary):
+    * `verified-agency` — single approved agency (NASA, JPL,
+      Caltech, NASA/JPL-Caltech, ESA, NOAA, USGS, STScI, CSA, JAXA,
+      DLR, ASI, ISRO, CNSA, SwRI, MSSS, SSI, ASU, JHU, MIT, Hubble,
+      HST, MAUVE-HST) credited AND no individual or commercial
+      third-party notice.
+    * `mixed-agency` — 2+ distinct approved agencies credited.
+    * `third-party` — named individual (regex match for
+      two-capitalized-word names like "Kees Scherer" / "John Kraus"
+      / "Adam Ginsburg", or initial+lastname like "D. Thilker") OR
+      commercial entity (SpaceX, Blue Canyon Technologies, Lockheed
+      Martin, Boeing, Northrop Grumman, U.S. Department of State,
+      U.S. Space Force, Space Dynamics Laboratory, Maxar, Airbus,
+      Thales, Astrium) is credited. Named individuals are ALWAYS
+      `third-party`, even when an approved agency is also credited.
+    * `unclear` — credit text not extractable.
+    * `unverified` — image hosted on a non-agency domain AND no
+      credit text.
+    * Multi-word organization names ("Space Force", "Department of
+      State", "Scientific Visualization Studio", etc.) are masked
+      out of the credit string before the individual-name regex
+      runs so they don't false-positive as names.
+    * The composite `NASA/JPL-Caltech` is treated as a single
+      agency token (so "NASA/JPL-Caltech" alone → verified-agency,
+      not mixed-agency).
+
+- `scripts/fetch-jpl-news.mjs`
+  - Same updates as `fetch-nasa-news.mjs` (duplicated for
+    independence — Phase 9A.1 design choice).
+
+- `scripts/filter-science-news.mjs` (rewritten Phase 9A.2 logic)
+  - Adds the three new storyTypes to `STORY_TYPES` and
+    `PUBLISH_ELIGIBLE_TYPES` (`mission-result` is publish-eligible
+    subject to freshness; `technical-guidance` and
+    `mission-preparation` are in `NEVER_PUBLISH_TYPES`).
+  - Adds `RECENT_ELIGIBLE_TYPES` — the set of storyTypes that may
+    be publishEligible when freshnessStatus='recent' (14-30 days):
+    `discovery`, `launch`, `landing`, `mission-milestone`,
+    `earth-science`.
+  - `computeFreshness(publishedAtSource, now)` — returns
+    `{ sourceAgeDays, freshnessStatus }` where freshnessStatus is
+    `current` (<14d), `recent` (14-30d), `archive` (>30d), or null
+    (missing/future date). Uses the SOURCE publication date, NOT
+    ingestion time.
+  - Adds `TITLE_PATTERN_OVERRIDES` for `technical-guidance` (TB,
+    technical bulletin, material guidance, specification, standard)
+    and `mission-preparation` (ahead of launch, preparing for
+    launch, ready for launch, design review, pre-launch test).
+    Expands the `media-advisory` override to cover `to share` /
+    `will share` / `to announce` / `will announce` / `to reveal` /
+    `will reveal` / `to discuss` / `will discuss`.
+  - Adds a `mission-result` significance gate (must contain a
+    result/data indicator).
+  - `evaluateNasaJpl(record, now)`:
+    1. Compute freshness.
+    2. Apply title-pattern overrides.
+    3. NEVER_PUBLISH_TYPES → publishEligible=false.
+    4. Missing publishedAtSource → publishEligible=false.
+    5. archive (>30d) → publishEligible=false ("not eligible
+       during initial launch phase").
+    6. storyType not in PUBLISH_ELIGIBLE_TYPES → false.
+    7. Per-storyType significance gate (astronomy/technology/
+       crew-mission/mission-result).
+    8. recent (14-30d) → only RECENT_ELIGIBLE_TYPES AND
+       `isSubstantive` (title >=25 chars AND description >=50
+       chars) — the "genuinely significant" approximation.
+    9. current (<14d) + publishable type + significance → eligible.
+  - `evaluateSwpc(record, now)`:
+    * SWPC alerts are real-time. Only `current` (<14d) alerts with
+      meaningful severity (R3+/S2+/G3+) are eligible. `recent` and
+      `archive` alerts are excluded.
+  - Each candidate now carries `freshnessStatus`, `sourceAgeDays`,
+    `eligibilityReasons` (array), `exclusionReasons` (array). The
+    legacy singular `eligibilityReason` / `exclusionReason` /
+    `selectedReason` fields are retained for backward compat.
+  - Candidate sort: publishEligible first, then freshness
+    (current > recent > archive > missing), then priority, then
+    newest publishedAtSource.
+
+- `scripts/build-science-registry.mjs` (NEW)
+  - Reads all three fetcher outputs (NASA + JPL + SWPC).
+  - On FIRST run (when the registry file doesn't exist), every
+    item is added with `bootstrapSeen: true`. These are
+    "historical" items that must NOT be auto-published as new.
+  - On subsequent runs, items already in the registry have their
+    `lastSeenAt` updated; items NOT previously in the registry are
+    added with `bootstrapSeen: false` (genuinely new).
+  - Items not seen this run are retained in the registry (their
+    lastSeenAt is unchanged from the previous run).
+  - Output: `data/science/science-source-registry.json` with shape
+    `{ generatedAt, sourceCount, firstRun, bootstrapCount,
+    nonBootstrapCount, sourcesByFeed, sources: [{ scienceKey,
+    source, publishedAtSource, firstSeenAt, lastSeenAt,
+    bootstrapSeen, sourceUrl }] }`.
+
+- `scripts/build-science-stories.mjs` (Phase 9A.2 updates)
+  - Loads the source registry to determine each story's
+    `bootstrapSeen` flag (true when ALL source keys are
+    bootstrapSeen=true in the registry).
+  - `storyStatus` gains a new value `'bootstrap'` for stories
+    whose source keys are all bootstrap AND that are not in the
+    previous snapshot. This is the bootstrap-safety mechanism:
+    historical items are tracked but never auto-published as new.
+  - Each story record now carries `freshnessStatus`,
+    `sourceAgeDays`, `storyType`, `bootstrapSeen`,
+    `eligibilityReasons` (array), `exclusionReasons` (array),
+    in addition to the legacy singular fields.
+  - `NO_BONUS_TYPES` extended to include `technical-guidance` and
+    `mission-preparation` (they get the base 20 and nothing else).
+  - `pickStoryImage` updated: only `verified-agency` and
+    `mixed-agency` images may be auto-selected. `third-party`,
+    `unclear`, `unverified` fall back to `imageUrl=null`.
+  - Story sort: publishEligible first, then freshness (current >
+    recent > archive > missing), then storyScore desc, then
+    latestSeenAt newest. Archive stories no longer dominate the
+    top of the list.
+
+- `scripts/validate-science.mjs` (Phase 9A.2 checks)
+  - Updated `VALID_STORY_TYPES` (adds `technical-guidance`,
+    `mission-preparation`, `mission-result`).
+  - Updated `NEVER_PUBLISH_TYPES` (adds `technical-guidance`,
+    `mission-preparation`).
+  - Updated `VALID_RIGHTS_STATUSES` (renames `verified-third-party`
+    → `third-party`; adds `mixed-agency`).
+  - Check 22 (hero image): now requires `verified-agency` OR
+    `mixed-agency` (was `verified-agency` OR `verified-third-party`).
+  - Check 23: now applies to both `verified-agency` AND
+    `mixed-agency` (was `verified-agency` only).
+  - New check 24: archive story (>30 days) must NOT be
+    publishEligible. Runs against both candidates and stories.
+  - New check 25: `technical-guidance` must NOT be publishEligible.
+  - New check 26: `mission-preparation` must NOT be publishEligible.
+  - New check 27: publishEligible story must have non-null
+    `publishedAtSource` AND non-null `freshnessStatus`.
+  - New check 28: freshness well-formedness — `freshnessStatus`
+    must be null/'current'/'recent'/'archive'; `sourceAgeDays`
+    must be a non-negative finite number when status is non-null;
+    current <14, recent in [14,30], archive >30; missing
+    publishedAtSource must produce null freshness.
+  - New check 29: third-party image must NOT be marked
+    `verified-agency` or `mixed-agency`. The validator re-runs
+    the `hasThirdPartyIndicator` heuristic (named-individual regex
+    + commercial/non-approved org list) against each candidate's
+    `imageCredit` and flags contradictions.
+  - New check 30: bootstrap historical item must NOT be treated
+    as new. Loads the source registry and verifies that no story
+    with `storyStatus='new'` has all its source keys marked
+    `bootstrapSeen=true` in the registry. (Because
+    build-science-stories.mjs sets `storyStatus='bootstrap'` for
+    such stories on first sight, a story that is genuinely 'new'
+    must have at least one non-bootstrap source key.)
+  - Total checks: 65 (up from 53 in Phase 9A.1).
+
+- `package.json`
+  - Adds `"registry:science": "node scripts/build-science-registry.mjs"`.
+  - Updates `"prepare:science"` to run `fetch:science →
+    registry:science → filter:science → stories:science →
+    validate:science`.
+
+### Live run results (2026-09-28 ~01:02-01:04 UTC)
+
+**fetch:nasa** — 10 items (3 APOD, 7 news releases). Same as Phase
+9A.1; the fetcher changes only affect storyType classification and
+rights derivation.
+
+**fetch:jpl** — 100 items (HTTP 200, 717,991 bytes). Same as Phase
+9A.1.
+
+**fetch:swpc** — 0 records (66 alerts received, all routine; all
+dropped at fetch time).
+
+**registry:science** — 110 sources registered on first run, ALL
+marked `bootstrapSeen: true` (JPL:100, NASA:10). On the second run,
+all 110 sources were updated (lastSeenAt refreshed) with no new
+items added — confirming the registry correctly preserves existing
+items.
+
+**filter:science** — 110 candidates. Freshness breakdown:
+- current (<14 days): 14
+- recent (14-30 days): 2
+- archive (>30 days): 94
+- missing: 0
+
+publishEligible count: **6** (down from 84 in Phase 9A.1 — 92.9%
+reduction). The 6 publishEligible candidates:
+1. [high, discovery, current 2.4d] NASA — Hubble Spots Chaotic
+   Secret in Galaxy (rights=third-party, no auto-image — D. Thilker
+   is a named individual)
+2. [high, mission-milestone, current 11.4d] JPL — NASA Watches
+   Earth's Weight, Finds Center of Mass (verified-agency)
+3. [medium, earth-science, current 3.4d] JPL — US-India Satellite
+   Captures Time-lapse Video of Volcanic Eruption (NISAR —
+   correctly classified as earth-science, not launch;
+   verified-agency)
+4. [medium, mission-result, current 6.3d] JPL — NASA Discovery
+   Reveals Complex Water Systems on Early Mars (mixed-agency:
+   NASA/JPL-Caltech/MSSS)
+5. [high, mission-milestone, recent 18.4d] JPL — How 2 US, European
+   Satellites Are Studying Hurricanes During El Nino (Sentinel;
+   verified-agency; passes the recent+substantive gate)
+6. [high, launch, recent 28.5d] JPL — NASA's Dark Universe-Seeking
+   Nancy Grace Roman Space Telescope Launches (third-party:
+   NASA/John Kraus; no auto-image)
+
+Story-type breakdown:
+- 44 mission-milestone (eligible)
+- 12 astronomy (eligible, but most fail significance gate or are
+  archive)
+- 12 technology (eligible, but most fail significance gate or are
+  archive)
+- 11 earth-science (eligible — includes 4 NISAR imagery stories
+  that were `launch` in Phase 9A.1)
+- 9 discovery (eligible)
+- 8 mission-result (eligible — new type)
+- 3 evergreen (excluded — APOD)
+- 3 media-advisory (excluded — includes 2 "NASA to Share Details of
+  New Perseverance" items that were `discovery` in Phase 9A.1)
+- 3 education (excluded)
+- 1 space-policy (excluded — Artemis Accords)
+- 1 mission-preparation (excluded — "NASA Tests Dual Mode Propulsion
+  CubeSat Ahead of Launch" that was `launch` in Phase 9A.1)
+- 1 technical-guidance (excluded — "TB 26-07 Aluminum Alloy 2219
+  Material Guidance" that was `discovery` in Phase 9A.1)
+- 1 launch (eligible)
+- 1 landing (eligible)
+
+Top exclusion reasons:
+- 88 JPL archive stories (each >30 days old) — "not eligible during
+  initial launch phase"
+- 3 NASA APOD items (evergreen)
+- 3 NASA education items
+- 3 media-advisory items (1 NASA Starliner, 2 JPL Perseverance)
+- 1 NASA space-policy (Artemis Accords)
+- 1 NASA mission-preparation (CubeSat ahead of launch)
+- 1 NASA technical-guidance (TB 26-07 Aluminum Alloy)
+- 1 JPL astronomy (failed major-finding significance gate)
+- 9 JPL technology (failed significant-demo gate)
+
+**stories:science** — 107 unique stories (3 NASA+JPL clusters, 104
+singletons — same clustering as Phase 9A.1). 6 publishEligible.
+With the previous snapshot deleted for the test, all 107 stories
+were marked `storyStatus='bootstrap'` (sources all bootstrap AND
+not in previous snapshot). With the previous snapshot present
+(second run), all 107 were `storyStatus='unchanged'` (storyKey
+matched previous entry). `bootstrapSeen=true` for all 107 stories
+in both runs — confirming the bootstrap flag flows correctly from
+the registry through to each story.
+
+Top 10 stories (publishEligible first, then freshness, then score):
+1. Hubble Spots Chaotic Secret in Galaxy (NASA, discovery, current
+   2.4d, eligible, score=40, no image — third-party)
+2. US-India Satellite Captures Time-lapse Video of Volcanic
+   Eruption (JPL, earth-science, current 3.4d, eligible, score=35,
+   verified-agency)
+3. NASA Discovery Reveals Complex Water Systems on Early Mars (JPL,
+   mission-result, current 6.3d, eligible, score=35, mixed-agency)
+4. NASA Watches Earth's Weight, Finds Center of Mass (JPL,
+   mission-milestone, current 11.4d, eligible, score=20,
+   verified-agency)
+5. NASA's Dark Universe-Seeking Nancy Grace Roman Space Telescope
+   Launches (JPL, launch, recent 28.5d, eligible, score=40, no
+   image — third-party NASA/John Kraus)
+6. How 2 US, European Satellites Are Studying Hurricanes During El
+   Nino (JPL, mission-milestone, recent 18.4d, eligible, score=20,
+   verified-agency)
+7. APOD: 2026 September 27 – Andromeda Before and After Photoshop
+   (NASA, evergreen, current 0.9d, not-eligible)
+8. APOD: 2026 September 26 – Mirrored Meteor and Milky Way (NASA,
+   evergreen, current 1.9d, not-eligible)
+9. NASA, Boeing to Provide Update on Starliner Development (NASA,
+   media-advisory, current 2.1d, not-eligible)
+10. NASA Welcomes San Marino Signing the Artemis Accords (NASA,
+    space-policy, current 2.2d, not-eligible)
+
+**validate:science** — All 65 checks PASS (up from 53 in Phase
+9A.1). Exit code 0.
+
+### Test-case verification (all PASS)
+
+- **"TB 26-07 Aluminum Alloy 2219 Material Guidance"** (NASA):
+  `storyType='technical-guidance'`, `publishEligible=false`,
+  `exclusionReasons=['Excluded: technical guidance / bulletin /
+  specification (not news)']`. Was `discovery` + publishEligible=true
+  in Phase 9A.1.
+- **"NASA to Share Details of New Perseverance Mars Rover Finding"**
+  (JPL, 2 entries from 2025-09-08 and 2025-09-10):
+  `storyType='media-advisory'`, `publishEligible=false`,
+  `exclusionReasons=['Excluded: media advisory / press briefing /
+  future reveal announcement']`. Was `discovery` + publishEligible=true
+  in Phase 9A.1. Also `freshnessStatus='archive'` (382-384 days old),
+  so even without the media-advisory override it would be excluded
+  by the freshness gate.
+- **NISAR stories from March/July**:
+  * "US-India Satellite Delivers Data, Reveals 'Hummingbird' in
+    Antarctica" (2026-07-21): `storyType='earth-science'`,
+    `freshnessStatus='archive'` (68.3 days), `publishEligible=false`.
+    Was `launch` + publishEligible=true in Phase 9A.1.
+  * "NASA-ISRO Satellite Captures Pacific Northwest Through Clouds"
+    (2026-03-25): `storyType='earth-science'`,
+    `freshnessStatus='archive'` (186.4 days), `publishEligible=false`.
+    Was `launch` + publishEligible=true in Phase 9A.1.
+  * "US-India Satellite Captures Time-lapse Video of Volcanic
+    Eruption" (2026-09-24): `storyType='earth-science'`,
+    `freshnessStatus='current'` (3.4 days), `publishEligible=true`.
+    This is the only NISAR story that survives the freshness gate.
+- **"Hubble Spots Chaotic Secret in Galaxy"** (NASA, 2026-09-25):
+  `storyType='discovery'`, `freshnessStatus='current'` (2.4 days),
+  `publishEligible=true`, score=40. Image credit is
+  "ESA/Hubble & NASA, D. Thilker, the MAUVE-HST Team" →
+  `rightsStatus='third-party'` (D. Thilker is a named individual)
+  → story `imageUrl=null` (no auto-select; would fall back to a
+  factual graphic in the future article-draft generator).
+- **Image rights examples (Phase 9A.2 vocabulary in action)**:
+  * "NASA" → `verified-agency`
+  * "NASA/JPL-Caltech" → `verified-agency` (composite single agency)
+  * "NASA/JPL-Caltech/MSSS" → `mixed-agency` (NASA/JPL-Caltech
+    composite + MSSS)
+  * "NASA's Scientific Visualization Studio" → `verified-agency`
+    (single NASA-affiliated org)
+  * "NASA/John Kraus" → `third-party` (named individual)
+  * "NASA/Charles Beason" → `third-party`
+  * "NASA/Jolearra Tshiteya" → `third-party`
+  * "NASA/Sydney Rohde (Rocz)" → `third-party`
+  * "ESA/Hubble & NASA, D. Thilker, the MAUVE-HST Team" →
+    `third-party` (D. Thilker)
+  * "Image: NASA, ESA, CSA, STScI, Adam Ginsburg (University of
+    Florida)..." → `third-party` (Adam Ginsburg)
+  * "Image data: NASA/JPL-Caltech/SwRI/MSSS. Image processing by
+    Gerald Eichstädt" → `third-party` (Gerald Eichstädt)
+  * "Kees Scherer" → `third-party`
+  * "Jeff Dai ( TWAN )" → `third-party`
+  * "U.S. Department of State" → `third-party` (non-approved org)
+  * "SpaceX" → `third-party` (commercial)
+  * "Blue Canyon Technologies" → `third-party` (commercial)
+  * "U.S. Space Force Space/Chris Okula" → `third-party`
+    (Chris Okula + non-approved org)
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched.
+- ✅ Recall scripts untouched.
+- ✅ Earthquake scripts untouched.
+- ✅ No `.github/workflows/*` files modified.
+- ✅ `config/automation.json` NOT modified.
+- ✅ `data/published-stories.json` (NWS) NOT modified.
+- ✅ `data/published-recalls.json` NOT modified.
+- ✅ `data/published-earthquakes.json` NOT modified.
+- ✅ No public article files created in `src/content/articles/`.
+- ✅ `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- ✅ All modified/new scripts are `.mjs` ES modules using only
+  Node.js built-ins + `fast-xml-parser`. No new dependencies added.
+- ✅ `fetch-swpc-science.mjs` was NOT modified (SWPC has no images;
+  its hardcoded `rightsStatus='verified-agency'` for the
+  informational NOAA SWPC credit is still valid in the new
+  vocabulary, and `imageUrl=null` means the rights check doesn't
+  fire on SWPC records).
+
+### Notes for a future agent
+
+1. **Freshness gate is the dominant publication filter.** 94 of 110
+   candidates are archive (>30 days old) and excluded. The 6
+   publishEligible stories are all from the last 30 days. This is
+   by design during the initial launch phase — the editorial
+   intent is to NOT mass-backfill 100+ historical JPL stories. To
+   relax this in the future, change `FRESHNESS_RECENT_MAX_DAYS` in
+   `filter-science-news.mjs` or add an editorial-override flag.
+
+2. **Bootstrap registry persists across runs.** The first run of
+   `registry:science` marks all current items as `bootstrapSeen=true`.
+   Subsequent runs preserve that flag (it's never flipped back to
+   false). New items appearing in the feed get `bootstrapSeen=false`
+   and CAN be auto-published as `storyStatus='new'`. The
+   `bootstrapSeen` flag flows from the registry →
+   `build-science-stories.mjs` → each story record (true when ALL
+   source keys are bootstrap) → `validate-science.mjs` check 30.
+
+3. **`storyStatus='bootstrap'` is a new value.** When a story is
+   first-seen in `build-science-stories.mjs` AND all its source
+   keys are `bootstrapSeen=true` in the registry, the story gets
+   `storyStatus='bootstrap'` instead of `'new'`. This is what
+   makes check 30 pass on first run — without it, every story would
+   be 'new' with bootstrap sources, and check 30 would fail. On
+   subsequent runs (with the previous snapshot present), bootstrap
+   stories that match a previous-snapshot entry get
+   `storyStatus='unchanged'` or `'updated'` instead.
+
+4. **Third-party image rule has operational consequences.** Any
+   image whose credit mentions a named individual (regex match for
+   two-capitalized-word names like "John Kraus" or initial+lastname
+   like "D. Thilker") OR a commercial entity (SpaceX, Blue Canyon,
+   etc.) is `third-party` and is NOT auto-selected. The story is
+   still tracked but `imageUrl=null` — the future article-draft
+   generator (Phase 9B?) must fall back to a factual graphic. Of
+   the 6 publishEligible stories in this snapshot, 2 have
+   `imageUrl=null` because of this rule (Hubble + Nancy Grace Roman
+   launch).
+
+5. **NISAR is now correctly classified as `earth-science`** for
+   operational imagery stories. The previous misclassification as
+   `launch` (because the description mentioned "launched") is fixed
+   by the new step 8 in `classifyStoryType` — when the title
+   contains a result indicator (`captures`, `delivers data`,
+   `reveals`, `first image`, `first data`) AND the mission is an
+   Earth-obs satellite, the storyType is `earth-science`. For
+   non-Earth missions with the same indicators, the storyType is
+   `mission-result` (a new type added in Phase 9A.2).
+
+6. **`technical-guidance` and `mission-preparation` are never
+   publishEligible.** These join `space-policy`,
+   `administrative`, `education`, `media-advisory`, `evergreen`
+   in the `NEVER_PUBLISH_TYPES` set. The scorer still tracks them
+   (so cross-snapshot change detection works) but they sort to the
+   bottom and receive no bonus beyond the base 20.
+
+7. **No GitHub Actions workflow yet.** Phase 9A.2 still does not
+   add a science-newsroom workflow. The `prepare:science` script
+   is safe to run hourly; a future Phase 9B can add
+   `.github/workflows/science-newsroom.yml`.
+
+8. **Validator re-runs the third-party heuristic.** Check 29
+   duplicates the `hasThirdPartyIndicator` logic from the fetchers
+   (intentionally — the fetchers are standalone CLI scripts that
+   can't be imported). If the heuristic diverges, check 29 becomes
+   a no-op rather than a false positive. Keep the two copies in
+   sync when updating the heuristic.

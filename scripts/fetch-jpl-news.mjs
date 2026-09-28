@@ -22,9 +22,30 @@
  *     <media:credit>, <media:title>, and <media:text> child elements at
  *     the item level, so the credit/caption come straight from the
  *     MediaRSS extension (no HTML scraping required). The imageCredit
- *     is the EXACT extracted credit text. `rightsStatus` follows the
- *     same rules as NASA's fetcher.
- *   - Adds a `storyType` field (same classifier as NASA).
+ *     is the EXACT extracted credit text. See Phase 9A.2 below for the
+ *     current rightsStatus vocabulary.
+ *   - Adds a `storyType` field (same classifier as NASA, see Phase 9A.2
+ *     below for the full list).
+ *
+ * Phase 9A.2 changes from Phase 9A.1:
+ *   - Adds three new storyTypes: `technical-guidance`,
+ *     `mission-preparation`, `mission-result`. Tightens the LAUNCH
+ *     classifier so it only fires on actual launch-event verbs
+ *     ("launches", "lifts off", "departs", "launch successful").
+ *     Adds an Earth-observation mission-result branch so NISAR imagery
+ *     stories are classified as `earth-science` (not `launch`).
+ *     Expands the media-advisory classifier to cover "to share", "will
+ *     share", "to announce", "will announce", "to reveal", "will
+ *     reveal", "to discuss", "will discuss" patterns. See the
+ *     classifyStoryType comments below for the full ordered rule list.
+ *   - rightsStatus vocabulary updated to `verified-agency` /
+ *     `mixed-agency` / `third-party` / `unclear` / `unverified`.
+ *     Named individuals (e.g. "Kees Scherer", "Jeff Dai", "John Kraus")
+ *     and commercial entities (e.g. "SpaceX", "Blue Canyon Technologies",
+ *     "U.S. Department of State") are always `third-party`, even when
+ *     they appear alongside an approved agency. For unattended
+ *     publication, only `verified-agency` and `mixed-agency` images
+ *     may be auto-selected.
  *
  * Output schema is identical to fetch-nasa-news.mjs (shared science
  * schema) except `source` is "JPL" and `scienceKey` uses the `jpl__`
@@ -121,6 +142,10 @@ const MISSION_PATTERNS = [
 ];
 
 // --- Story-type classification (shared with NASA) -------------------------
+// Phase 9A.2 adds three new types: technical-guidance,
+// mission-preparation, mission-result. See fetch-nasa-news.mjs for the
+// full rule list and rationale (the classifier is duplicated here for
+// independence — Phase 9A.1 design choice).
 const STORY_TYPES = {
   MISSION_MILESTONE: 'mission-milestone',
   LAUNCH: 'launch',
@@ -136,7 +161,24 @@ const STORY_TYPES = {
   EDUCATION: 'education',
   MEDIA_ADVISORY: 'media-advisory',
   EVERGREEN: 'evergreen',
+  TECHNICAL_GUIDANCE: 'technical-guidance',
+  MISSION_PREPARATION: 'mission-preparation',
+  MISSION_RESULT: 'mission-result',
 };
+
+// Earth-observation missions whose operational imagery / data releases
+// should be classified as `earth-science` (not `launch`) when the title
+// contains a "result indicator" phrase like "captures", "delivers data",
+// "reveals", "first image", "first data".
+const EARTH_OBS_MISSION_RE =
+  /\b(?:NISAR|PACE|TEMPO|EMIT|Landsat|Sentinel|GOES|SMAP|SWOT|GRACE(?:-FO)?|Suomi\s+NPP|Aqua|Terra|Aura|CALIPSO|CloudSat|GPM|OCO|Oceansat|RISAT|ICESat)\b/i;
+
+// Title phrases that indicate a satellite is delivering operational
+// data / imagery (i.e., the launch already happened and this is a
+// mission result). When combined with an Earth-obs mission keyword,
+// the storyType is `earth-science`; otherwise it is `mission-result`.
+const RESULT_INDICATOR_RE =
+  /\b(?:delivers?\s+data|captures?|reveals?|first\s+(?:image|radar|light|data|map|measurement)s?|new\s+(?:image|data))\b/i;
 
 // --- Helpers ---------------------------------------------------------------
 
@@ -218,12 +260,29 @@ function classifyStoryType(title, description, sourceName) {
   if (/^apod[:\s]/i.test(titleStr) || /astronomy\s+picture\s+of\s+the\s+day/i.test(titleStr)) {
     return STORY_TYPES.EVERGREEN;
   }
+
+  // 2. Technical guidance / bulletin (Phase 9A.2 new).
+  if (
+    /^TB\s+\d+/i.test(titleStr) ||
+    /\btechnical\s+bulletin\b/i.test(titleStr) ||
+    /\bmaterial\s+guidance\b/i.test(titleStr) ||
+    /\bmaterial\s+specification\b/i.test(titleStr) ||
+    /\bspecification\s+\d+/i.test(titleStr) ||
+    /\bstandard\s+\d+/i.test(titleStr) ||
+    /\bNASA\s+standard\b/i.test(titleStr)
+  ) {
+    return STORY_TYPES.TECHNICAL_GUIDANCE;
+  }
+
+  // 3. Media advisory (Phase 9A.2: expanded to cover "to share", "will
+  //    share", "to announce", "will announce", "to reveal", "will
+  //    reveal", "to discuss", "will discuss").
   if (
     /\bmedia\s+advisory\b/i.test(titleStr) ||
     /\bmedia\s+teleconference\b/i.test(titleStr) ||
     /\bmedia\s+call\b/i.test(titleStr) ||
-    /\bto\s+provide\s+update\b/i.test(titleStr) ||
-    /\bwill\s+provide\s+update\b/i.test(titleStr) ||
+    /\bto\s+(?:provide\s+update|share|announce|reveal|discuss)\b/i.test(titleStr) ||
+    /\bwill\s+(?:provide\s+update|share|announce|reveal|discuss)\b/i.test(titleStr) ||
     /\bpress\s+brief(?:ing)?\b/i.test(titleStr) ||
     /\bpreviews?\b/i.test(titleStr) ||
     /\bbriefing\b/i.test(titleStr)
@@ -266,16 +325,45 @@ function classifyStoryType(title, description, sourceName) {
   ) {
     return STORY_TYPES.ADMINISTRATIVE;
   }
+
+  // 6. Mission preparation (Phase 9A.2 new). Must come BEFORE LAUNCH.
   if (
-    /\blaunch(?:ed|ing|es)?\b/i.test(combined) ||
-    /\blift[\s-]?off\b/i.test(combined) ||
-    /\bcountdown\b/i.test(combined) ||
-    /\brolled?\s+out\b/i.test(combined) ||
-    /\bprelaunch\b/i.test(combined) ||
-    /\bpre-launch\b/i.test(combined)
+    /\bahead\s+of\s+(?:launch|mission|its\s+launch|the\s+launch)/i.test(titleStr) ||
+    /\bpreparing\s+for\s+(?:launch|mission)/i.test(titleStr) ||
+    /\bready\s+for\s+(?:launch|mission)/i.test(titleStr) ||
+    /\bpreliminary\s+design\s+review/i.test(titleStr) ||
+    /\bcritical\s+design\s+review/i.test(titleStr) ||
+    /\bdesign\s+review/i.test(titleStr) ||
+    /\bpre-?launch\s+(?:test|checkout|processing|prep)/i.test(titleStr)
+  ) {
+    return STORY_TYPES.MISSION_PREPARATION;
+  }
+
+  // 7. Launch EVENTS only (Phase 9A.2: tightened — generic "launch"
+  //    noun no longer triggers LAUNCH).
+  if (
+    /\blaunches\b/i.test(titleStr) ||
+    /\blift[\s-]?off/i.test(titleStr) ||
+    /\blifted\s+off\b/i.test(titleStr) ||
+    /\bdepart(?:s|ed|ing)\s+(?:from|the|ISS|station|space\s+station)/i.test(titleStr) ||
+    /\blaunch\s+successful/i.test(titleStr) ||
+    /\bsuccessful\s+launch\b/i.test(titleStr) ||
+    /\blaunch\s+watch\b/i.test(titleStr)
   ) {
     return STORY_TYPES.LAUNCH;
   }
+
+  // 8. Mission result / Earth-obs operational data (Phase 9A.2 new).
+  //    Must come BEFORE the generic discovery check so NISAR imagery
+  //    is classified as `earth-science` rather than `discovery` or
+  //    `launch`.
+  if (RESULT_INDICATOR_RE.test(titleStr)) {
+    if (EARTH_OBS_MISSION_RE.test(combined)) {
+      return STORY_TYPES.EARTH_SCIENCE;
+    }
+    return STORY_TYPES.MISSION_RESULT;
+  }
+
   if (
     /\bsplash[\s-]?down\b/i.test(combined) ||
     /\btouchdown\b/i.test(combined) ||
@@ -462,18 +550,92 @@ function isExternalImageDomain(imageUrl, sourceName) {
   return false;
 }
 
+// --- Phase 9A.2 rightsStatus classification ------------------------------
+// Same vocabulary and logic as fetch-nasa-news.mjs (duplicated for
+// independence). See fetch-nasa-news.mjs for the full rationale:
+//   verified-agency  — single approved agency, no third-party notice
+//   mixed-agency     — 2+ approved agencies
+//   third-party      — named individual / commercial / non-approved
+//   unclear          — no credit text extractable
+//   unverified       — external-domain image, no credit text
+
+const APPROVED_AGENCY_TOKENS = [
+  'NASA/JPL-Caltech',
+  'NASA',
+  'JPL',
+  'Caltech',
+  'ESA',
+  'NOAA',
+  'USGS',
+  'STScI',
+  'CSA',
+  'JAXA',
+  'DLR',
+  'ASI',
+  'ISRO',
+  'CNSA',
+  'SwRI',
+  'MSSS',
+  'SSI',
+  'ASU',
+  'JHU',
+  'MIT',
+  'Hubble',
+  'HST',
+  'MAUVE-HST',
+];
+
+const NON_AGENCY_ENTITY_RE =
+  /\b(?:SpaceX|Blue\s+Canyon\s+Technologies|Blue\s+Canyon|Lockheed\s+Martin|Lockheed|Boeing|Northrop\s+Grumman|Northrop|U\.S\.\s+Department\s+of\s+State|U\.S\.\s+Space\s+Force|Space\s+Dynamics\s+Laboratory|Maxar|Airbus|Thales|Astrium)\b/i;
+
+const INDIVIDUAL_NAME_RE =
+  /\b[A-Z][\p{L}]+\s+[A-Z][\p{L}]+\b/u;
+
+const INITIAL_NAME_RE =
+  /\b[A-Z]\.\s*[A-Z][\p{L}]+\b/u;
+
+const ORG_NAME_MASK_RE =
+  /\b(?:Space\s+Force|Canyon\s+Technologies|Department\s+of\s+State|Dynamics\s+Laboratory|Scientific\s+Visualization\s+Studio|Space\s+Science\s+Institute|Southwest\s+Research\s+Institute|Malin\s+Space\s+Science\s+Systems|Jet\s+Propulsion\s+Laboratory|Space\s+Telescope\s+Science\s+Institute|California\s+Institute\s+of\s+Technology|Arizona\s+State\s+University|Johns\s+Hopkins\s+University|Massachusetts\s+Institute\s+of\s+Technology|United\s+States|U\.S\.\s+Government|Canadian\s+Space\s+Agency|European\s+Space\s+Agency)\b/gi;
+
+function hasThirdPartyIndicator(creditText) {
+  if (!creditText) return false;
+  if (NON_AGENCY_ENTITY_RE.test(creditText)) return true;
+  const masked = creditText.replace(ORG_NAME_MASK_RE, ' ');
+  if (INDIVIDUAL_NAME_RE.test(masked)) return true;
+  if (INITIAL_NAME_RE.test(masked)) return true;
+  return false;
+}
+
+function countDistinctAgencies(creditText) {
+  if (!creditText) return 0;
+  const found = new Set();
+  let masked = creditText;
+  if (/NASA\/JPL-Caltech/i.test(masked)) {
+    found.add('nasa/jpl-caltech');
+    masked = masked.replace(/NASA\/JPL-Caltech/gi, ' ');
+  }
+  for (const ag of APPROVED_AGENCY_TOKENS) {
+    if (ag === 'NASA/JPL-Caltech') continue;
+    const agEsc = ag.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const re = new RegExp(`\\b${agEsc}\\b`, 'i');
+    if (re.test(masked)) found.add(ag.toLowerCase());
+  }
+  return found.size;
+}
+
 function deriveRightsStatus(creditText, imageUrl, sourceName) {
   const hasCredit = typeof creditText === 'string' && creditText.trim().length > 0;
-  if (hasCredit && /\bNASA\b|\bNASA\/JPL\b|\bNOAA\b/i.test(creditText)) {
-    return 'verified-agency';
+  if (!hasCredit) {
+    if (isExternalImageDomain(imageUrl, sourceName)) return 'unverified';
+    return 'unclear';
   }
-  if (hasCredit) {
-    return 'verified-third-party';
+  if (hasThirdPartyIndicator(creditText)) {
+    return 'third-party';
   }
-  if (isExternalImageDomain(imageUrl, sourceName)) {
-    return 'unverified';
-  }
-  return 'unclear';
+  const distinctAgencies = countDistinctAgencies(creditText);
+  if (distinctAgencies >= 2) return 'mixed-agency';
+  if (distinctAgencies === 1) return 'verified-agency';
+  return 'third-party';
 }
 
 // --- XML pre-processing ---------------------------------------------------

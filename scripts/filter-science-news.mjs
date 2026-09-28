@@ -1,40 +1,67 @@
 /**
- * US News Engine — Science newsworthiness filter (Phase 9A.1 hardened).
+ * US News Engine — Science newsworthiness filter (Phase 9A.2 hardened).
  *
  * Reads the three Phase 9A fetcher outputs:
  *   - data/science/nasa-news.json
  *   - data/science/jpl-news.json
  *   - data/science/swpc-events.json
  *
- * Applies STRICT `publishEligible` gating based on `storyType` and
- * writes candidates to:
+ * Applies STRICT `publishEligible` gating based on `storyType` AND a
+ * new `freshnessStatus` gate, and writes candidates to:
  *   data/science/science-news-candidates.json
  *
- * Phase 9A.1 changes from Phase 9A:
- *   - publishEligible is now driven by `storyType` (set by the
- *     fetcher's classifier or re-derived here). The previous
- *     keyword-only HIGH-priority logic is gone — `storyType` is the
- *     canonical signal.
- *   - Hard exclusions based on title patterns (APOD:, media advisory,
- *     Artemis Accords/signing/agreement, education/challenge/contest)
- *     now OVERRIDE the fetcher's storyType so a misclassified item is
- *     still gated correctly.
- *   - astronomy / technology / crew-mission have additional
- *     "significance" gates so routine observations, minor tech demos,
- *     and crew announcements don't earn publication.
- *   - Each candidate carries `storyType`, `publishEligible`, and either
- *     `eligibilityReason` (when eligible) or `exclusionReason` (when
- *     not).
+ * Phase 9A.2 changes from Phase 9A.1:
+ *   - Adds `freshnessStatus` and `sourceAgeDays` to every candidate,
+ *     computed from `publishedAtSource` (the SOURCE publication date,
+ *     NOT ingestion time). `freshnessStatus` is one of:
+ *       * `current`  — <14 days old
+ *       * `recent`   — 14-30 days old
+ *       * `archive`  — >30 days old
+ *       * `null`     — `publishedAtSource` missing or unparsable
+ *   - Adds a freshness gate on `publishEligible`:
+ *       * `current`  — eligible when `storyType` is publishable AND
+ *                      the significance gate passes.
+ *       * `recent`   — eligible ONLY when `storyType` is in
+ *                      RECENT_ELIGIBLE_TYPES (discovery, launch,
+ *                      landing, mission-milestone, earth-science) AND
+ *                      the story is genuinely significant (substantive
+ *                      title + description).
+ *       * `archive`  — NEVER publishEligible during the initial launch
+ *                      phase. (Future editorial override possible.)
+ *       * missing date — NEVER publishEligible.
+ *   - Adds three new storyType overrides:
+ *       * `technical-guidance`   — TB / technical bulletin / material
+ *                                  guidance / specification / standard.
+ *       * `mission-preparation`  — "ahead of launch", "preparing for
+ *                                  launch", pre-mission prep.
+ *       * `mission-result`       — post-mission data / operational
+ *                                  imagery (Earth-obs satellites are
+ *                                  routed to `earth-science` by the
+ *                                  fetcher's classifier).
+ *   - Expands the media-advisory title-pattern override to cover
+ *     "to share", "will share", "to announce", "will announce",
+ *     "to reveal", "will reveal", "to discuss", "will discuss".
+ *   - Each candidate now carries `eligibilityReasons` /
+ *     `exclusionReasons` (plural arrays). The legacy `eligibilityReason`
+ *     / `exclusionReason` (singular) fields are retained for backward
+ *     compatibility with the existing validator/scorer; they're set
+ *     to the first element of the corresponding plural array.
  *
- * publishEligible = true ONLY when storyType is one of:
- *   mission-milestone, launch, landing, discovery, astronomy (major
- *   findings only), earth-science, technology (significant demos only),
- *   crew-mission (actual events, not announcements), space-weather
- *   (SWPC R3+/S2+/G3+ only).
+ * publishEligible = true ONLY when ALL of:
+ *   1. storyType is one of PUBLISH_ELIGIBLE_TYPES
+ *   2. The storyType's significance gate passes
+ *   3. freshnessStatus is `current` OR (`recent` AND storyType is in
+ *      RECENT_ELIGIBLE_TYPES AND the story is substantively significant)
+ *   4. publishedAtSource is present (no missing date)
  *
  * publishEligible = false for:
- *   space-policy, administrative, education, media-advisory, evergreen,
- *   and any record that fails the additional significance gates above.
+ *   - storyType ∈ {space-policy, administrative, education,
+ *     media-advisory, evergreen, technical-guidance,
+ *     mission-preparation}
+ *   - archive stories (>30 days old)
+ *   - missing publishedAtSource
+ *   - stories that fail the significance gate
+ *   - recent stories whose storyType isn't in RECENT_ELIGIBLE_TYPES
  *
  * Run:
  *   npm run filter:science
@@ -69,10 +96,13 @@ const STORY_TYPES = {
   EDUCATION: 'education',
   MEDIA_ADVISORY: 'media-advisory',
   EVERGREEN: 'evergreen',
+  TECHNICAL_GUIDANCE: 'technical-guidance',
+  MISSION_PREPARATION: 'mission-preparation',
+  MISSION_RESULT: 'mission-result',
 };
 
 // Story types whose members are eligible for publication (subject to
-// the additional significance gates below).
+// the freshness gate and additional significance gates below).
 const PUBLISH_ELIGIBLE_TYPES = new Set([
   STORY_TYPES.MISSION_MILESTONE,
   STORY_TYPES.LAUNCH,
@@ -83,6 +113,31 @@ const PUBLISH_ELIGIBLE_TYPES = new Set([
   STORY_TYPES.TECHNOLOGY,
   STORY_TYPES.CREW_MISSION,
   STORY_TYPES.SPACE_WEATHER,
+  STORY_TYPES.MISSION_RESULT,
+]);
+
+// Story types that are NEVER publishEligible (regardless of freshness).
+const NEVER_PUBLISH_TYPES = new Set([
+  STORY_TYPES.SPACE_POLICY,
+  STORY_TYPES.ADMINISTRATIVE,
+  STORY_TYPES.EDUCATION,
+  STORY_TYPES.MEDIA_ADVISORY,
+  STORY_TYPES.EVERGREEN,
+  STORY_TYPES.TECHNICAL_GUIDANCE,
+  STORY_TYPES.MISSION_PREPARATION,
+]);
+
+// Story types that may be publishEligible when freshnessStatus='recent'
+// (14-30 days old). All other publishable types are restricted to
+// `current` (<14 days). Per Phase 9A.2 spec: "eligible ONLY if
+// storyType is `discovery`, `launch`, `landing`, `mission-milestone`,
+// `earth-science` AND the story is genuinely significant."
+const RECENT_ELIGIBLE_TYPES = new Set([
+  STORY_TYPES.DISCOVERY,
+  STORY_TYPES.LAUNCH,
+  STORY_TYPES.LANDING,
+  STORY_TYPES.MISSION_MILESTONE,
+  STORY_TYPES.EARTH_SCIENCE,
 ]);
 
 // SWPC severity thresholds (mirror the fetcher's pre-filter).
@@ -97,9 +152,14 @@ const SWPC_HIGH_PRIORITY_SEVERITY = new Set([
   'G4', 'G5',
 ]);
 
+// --- Freshness thresholds -------------------------------------------------
+const FRESHNESS_CURRENT_MAX_DAYS = 14;   // < 14 days
+const FRESHNESS_RECENT_MAX_DAYS = 30;    // 14..30 days
+// > 30 days = archive
+
 // --- Title-pattern overrides ----------------------------------------------
 // These patterns OVERRIDE the fetcher's storyType classification when
-// they appear in the title. They implement the Phase 9A.1 hard
+// they appear in the title. They implement the Phase 9A.1 + 9A.2 hard
 // exclusions.
 
 const TITLE_PATTERN_OVERRIDES = [
@@ -111,7 +171,26 @@ const TITLE_PATTERN_OVERRIDES = [
     test: (t) => /^apod[:\s]/i.test(t) || /astronomy\s+picture\s+of\s+the\s+day/i.test(t),
     reason: 'Excluded: APOD (Astronomy Picture of the Day) is evergreen content',
   },
-  // Media advisory / press briefing — force storyType = media-advisory.
+  // Technical bulletin / material guidance / specification / standard.
+  // Phase 9A.2 new. Example: "TB 26-07 Aluminum Alloy 2219 Material
+  // Guidance". These are engineering reference documents, NOT news.
+  {
+    name: 'technical-guidance',
+    storyType: STORY_TYPES.TECHNICAL_GUIDANCE,
+    test: (t) =>
+      /^TB\s+\d+/i.test(t) ||
+      /\btechnical\s+bulletin\b/i.test(t) ||
+      /\bmaterial\s+guidance\b/i.test(t) ||
+      /\bmaterial\s+specification\b/i.test(t) ||
+      /\bspecification\s+\d+/i.test(t) ||
+      /\bstandard\s+\d+/i.test(t) ||
+      /\bNASA\s+standard\b/i.test(t),
+    reason: 'Excluded: technical guidance / bulletin / specification (not news)',
+  },
+  // Media advisory / press briefing / future reveal announcement.
+  // Phase 9A.2 expanded: now also catches "to share", "will share",
+  // "to announce", "will announce", "to reveal", "will reveal",
+  // "to discuss", "will discuss".
   {
     name: 'media-advisory',
     storyType: STORY_TYPES.MEDIA_ADVISORY,
@@ -119,12 +198,27 @@ const TITLE_PATTERN_OVERRIDES = [
       /\bmedia\s+advisory\b/i.test(t) ||
       /\bmedia\s+teleconference\b/i.test(t) ||
       /\bmedia\s+call\b/i.test(t) ||
-      /\bto\s+provide\s+update\b/i.test(t) ||
-      /\bwill\s+provide\s+update\b/i.test(t) ||
+      /\bto\s+(?:provide\s+update|share|announce|reveal|discuss)\b/i.test(t) ||
+      /\bwill\s+(?:provide\s+update|share|announce|reveal|discuss)\b/i.test(t) ||
       /\bpress\s+brief(?:ing)?\b/i.test(t) ||
       /\bpreviews?\b/i.test(t) ||
       /\bbriefing\b/i.test(t),
-    reason: 'Excluded: media advisory / press briefing announcement',
+    reason: 'Excluded: media advisory / press briefing / future reveal announcement',
+  },
+  // Mission preparation — "ahead of launch", "preparing for launch",
+  // pre-mission prep. Phase 9A.2 new. Pre-launch announcements are
+  // not publishable.
+  {
+    name: 'mission-preparation',
+    storyType: STORY_TYPES.MISSION_PREPARATION,
+    test: (t) =>
+      /\bahead\s+of\s+(?:launch|mission|its\s+launch|the\s+launch)/i.test(t) ||
+      /\bpreparing\s+for\s+(?:launch|mission)/i.test(t) ||
+      /\bready\s+for\s+(?:launch|mission)/i.test(t) ||
+      /\bpreliminary\s+design\s+review/i.test(t) ||
+      /\bcritical\s+design\s+review/i.test(t) ||
+      /\bpre-?launch\s+(?:test|checkout|processing|prep)/i.test(t),
+    reason: 'Excluded: mission-preparation (pre-launch announcement, not the launch event)',
   },
   // Space policy — force storyType = space-policy.
   {
@@ -154,11 +248,6 @@ const TITLE_PATTERN_OVERRIDES = [
 ];
 
 // --- Significance gates (per-storyType) ----------------------------------
-// Even when the storyType is in PUBLISH_ELIGIBLE_TYPES, an additional
-// significance check must pass for these types. The check looks for
-// indicators in the title + description that the item is a major
-// finding / significant demo / actual crew event (vs. a routine
-// observation / minor demo / crew announcement).
 
 const SIGNIFICANCE_GATES = [
   {
@@ -183,12 +272,52 @@ const SIGNIFICANCE_GATES = [
       /\bassign(?:s|ed|ing)?\b|\bnames?\s+crew\b|\bselects?\s+(?:crew|astronaut)|\bannounce(?:s|d|ment)?\b|\bnominat/i,
     failReason: 'Excluded: crew-mission story is an announcement (not an actual event)',
   },
+  {
+    storyType: STORY_TYPES.MISSION_RESULT,
+    // Mission-result stories must mention a result indicator or a
+    // science finding to be publishable. This is the same vocabulary
+    // the fetcher uses to detect "this is a result, not a launch".
+    indicatorRe:
+      /\b(?:delivers?\s+data|captures?|reveals?|first\s+(?:image|radar|light|data|map|measurement)s?|new\s+(?:image|data)|finding(?:s)?|result(?:s)?|discover)/i,
+    failReason: 'Excluded: mission-result story lacks a result/data indicator',
+  },
 ];
 
 // --- Helpers ---------------------------------------------------------------
 
 function lower(s) {
   return (s == null ? '' : String(s)).toLowerCase();
+}
+
+/**
+ * Compute the freshness of a record given its publishedAtSource
+ * timestamp and the current time. Returns
+ *   { sourceAgeDays: number|null, freshnessStatus: 'current'|'recent'|'archive'|null }
+ *
+ * `freshnessStatus` is null when publishedAtSource is missing or
+ * unparsable, or when the date is in the future (which would indicate
+ * a data-quality issue rather than a real freshness band).
+ */
+function computeFreshness(publishedAtSource, now) {
+  if (!publishedAtSource) {
+    return { sourceAgeDays: null, freshnessStatus: null };
+  }
+  const pubDate = new Date(publishedAtSource);
+  if (Number.isNaN(pubDate.getTime())) {
+    return { sourceAgeDays: null, freshnessStatus: null };
+  }
+  const ageMs = now.getTime() - pubDate.getTime();
+  if (ageMs < 0) {
+    // Future-dated item — treat as missing freshness (data quality
+    // issue, not a real band).
+    return { sourceAgeDays: null, freshnessStatus: null };
+  }
+  const days = ageMs / (24 * 60 * 60 * 1000);
+  let status;
+  if (days < FRESHNESS_CURRENT_MAX_DAYS) status = 'current';
+  else if (days <= FRESHNESS_RECENT_MAX_DAYS) status = 'recent';
+  else status = 'archive';
+  return { sourceAgeDays: days, freshnessStatus: status };
 }
 
 /**
@@ -232,49 +361,169 @@ function applySignificanceGate(storyType, title, description) {
 }
 
 /**
- * Evaluate a NASA/JPL record for publishEligibility. Always returns
- * a candidate object — the filter no longer drops records based on
- * storyType. Every record is included as a candidate, with
- * publishEligible true or false.
+ * "Genuinely significant" check for recent stories. Per Phase 9A.2
+ * spec, a recent (14-30 day old) story is publishEligible ONLY if it
+ * is "genuinely significant". We approximate that with a substantive-
+ * content heuristic: title length >= 25 chars AND description length
+ * >= 50 chars. (This catches bare "Launch successful!" headlines and
+ * empty-description placeholder items without needing an LLM.)
  */
-function evaluateNasaJpl(record) {
+function isSubstantive(record) {
+  const title = String(record.title || '');
+  const desc = String(record.description || '');
+  return title.length >= 25 && desc.length >= 50;
+}
+
+/**
+ * Evaluate a NASA/JPL record for publishEligibility. Always returns
+ * a candidate decision object — the filter no longer drops records
+ * based on storyType. Every record is included as a candidate, with
+ * publishEligible true or false.
+ *
+ * Returned object shape:
+ *   {
+ *     storyType, storyTypeSource,
+ *     publishEligible: boolean,
+ *     priority: 'high' | 'medium' | null,
+ *     freshnessStatus, sourceAgeDays,
+ *     eligibilityReasons: string[],   // non-empty when publishEligible
+ *     exclusionReasons: string[],     // non-empty when !publishEligible
+ *   }
+ */
+function evaluateNasaJpl(record, now) {
   const title = record.title || '';
   const description = record.description || '';
 
-  // 1. Title-pattern overrides take precedence over the fetcher's
+  // 1. Compute freshness from publishedAtSource (the SOURCE pub date,
+  //    NOT ingestion time).
+  const freshness = computeFreshness(record.publishedAtSource, now);
+
+  // 2. Title-pattern overrides take precedence over the fetcher's
   //    storyType classification.
   const override = applyTitleOverrides(title);
   let storyType = override.storyType || record.storyType || STORY_TYPES.MISSION_MILESTONE;
   let storyTypeSource = override.storyType ? 'title-override' : 'fetcher';
 
-  // 2. publishEligible based on storyType.
-  if (!PUBLISH_ELIGIBLE_TYPES.has(storyType)) {
-    return {
+  const exclusionReasons = [];
+  const eligibilityReasons = [];
+
+  if (override.overrideReason) {
+    exclusionReasons.push(override.overrideReason);
+  }
+
+  // 3. NEVER_PUBLISH_TYPES — exclude immediately.
+  if (NEVER_PUBLISH_TYPES.has(storyType)) {
+    if (exclusionReasons.length === 0) {
+      exclusionReasons.push(`storyType "${storyType}" is never publish-eligible`);
+    }
+    return finalizeDecision({
       storyType,
       storyTypeSource,
       publishEligible: false,
       priority: null,
-      eligibilityReason: null,
-      exclusionReason:
-        override.overrideReason ||
-        `Excluded: storyType "${storyType}" is not publish-eligible`,
-    };
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
   }
 
-  // 3. Significance gates for astronomy / technology / crew-mission.
+  // 4. Freshness gate: missing date is NEVER publishEligible.
+  if (!freshness.freshnessStatus) {
+    exclusionReasons.push('missing or unparsable publishedAtSource date (cannot compute freshness)');
+    return finalizeDecision({
+      storyType,
+      storyTypeSource,
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
+
+  // 5. Freshness gate: archive stories (>30 days) are NEVER
+  //    publishEligible during the initial launch phase.
+  if (freshness.freshnessStatus === 'archive') {
+    exclusionReasons.push(
+      `archive story (${freshness.sourceAgeDays.toFixed(1)} days old, >${FRESHNESS_RECENT_MAX_DAYS} days) — not eligible during initial launch phase`,
+    );
+    return finalizeDecision({
+      storyType,
+      storyTypeSource,
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
+
+  // 6. storyType not in PUBLISH_ELIGIBLE_TYPES (catch-all for any
+  //    other non-publishable type that survived the override check).
+  if (!PUBLISH_ELIGIBLE_TYPES.has(storyType)) {
+    exclusionReasons.push(`storyType "${storyType}" is not publish-eligible`);
+    return finalizeDecision({
+      storyType,
+      storyTypeSource,
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
+
+  // 7. Per-storyType significance gate (astronomy / technology /
+  //    crew-mission / mission-result).
   const gate = applySignificanceGate(storyType, title, description);
   if (!gate.passes) {
-    return {
+    exclusionReasons.push(gate.reason);
+    return finalizeDecision({
       storyType,
       storyTypeSource,
       publishEligible: false,
       priority: null,
-      eligibilityReason: null,
-      exclusionReason: gate.reason,
-    };
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
   }
 
-  // 4. Eligible — assign priority.
+  // 8. Freshness gate: recent stories (14-30 days) are eligible
+  //    ONLY for RECENT_ELIGIBLE_TYPES AND when substantively
+  //    significant.
+  if (freshness.freshnessStatus === 'recent') {
+    if (!RECENT_ELIGIBLE_TYPES.has(storyType)) {
+      exclusionReasons.push(
+        `recent story (${freshness.sourceAgeDays.toFixed(1)} days old) but storyType "${storyType}" is not in the recent-eligible set`,
+      );
+      return finalizeDecision({
+        storyType,
+        storyTypeSource,
+        publishEligible: false,
+        priority: null,
+        freshness,
+        eligibilityReasons,
+        exclusionReasons,
+      });
+    }
+    if (!isSubstantive(record)) {
+      exclusionReasons.push(
+        `recent story but not substantively significant (title or description too short)`,
+      );
+      return finalizeDecision({
+        storyType,
+        storyTypeSource,
+        publishEligible: false,
+        priority: null,
+        freshness,
+        eligibilityReasons,
+        exclusionReasons,
+      });
+    }
+  }
+
+  // 9. Eligible — assign priority and reasons.
   const highPriorityTypes = new Set([
     STORY_TYPES.LAUNCH,
     STORY_TYPES.LANDING,
@@ -284,56 +533,166 @@ function evaluateNasaJpl(record) {
   ]);
   const priority = highPriorityTypes.has(storyType) ? 'high' : 'medium';
 
-  return {
+  eligibilityReasons.push(`storyType "${storyType}" is publish-eligible (${storyTypeSource})`);
+  eligibilityReasons.push(
+    `freshness "${freshness.freshnessStatus}" (${freshness.sourceAgeDays.toFixed(1)} days old) passes the freshness gate`,
+  );
+  if (freshness.freshnessStatus === 'recent') {
+    eligibilityReasons.push('recent story is genuinely significant (substantive content)');
+  }
+
+  return finalizeDecision({
     storyType,
     storyTypeSource,
     publishEligible: true,
     priority,
-    eligibilityReason: `Eligible: storyType "${storyType}" is publish-eligible (${storyTypeSource})`,
-    exclusionReason: null,
-  };
+    freshness,
+    eligibilityReasons,
+    exclusionReasons,
+  });
 }
 
 /**
  * Evaluate an SWPC record. The fetcher already pre-filters to
  * meaningful severities (R3+, S2+, G3+); this is the safety net.
  * SWPC records are always storyType = 'space-weather'.
+ *
+ * SWPC records don't have a `publishedAtSource` from a feed pubDate
+ * in the same way NASA/JPL do — they use the alert's `issueTime`. The
+ * fetcher sets `publishedAtSource` to the issueTime, so the freshness
+ * gate works the same way. Space-weather alerts are real-time: any
+ * alert older than 14 days is `recent` and subject to the
+ * RECENT_ELIGIBLE_TYPES check (space-weather is NOT in that set, so
+ * such alerts are excluded). Older alerts are archive and excluded.
  */
-function evaluateSwpc(record) {
+function evaluateSwpc(record, now) {
   const storyType = STORY_TYPES.SPACE_WEATHER;
   const severity = record.severity || null;
+  const freshness = computeFreshness(record.publishedAtSource, now);
+
+  const exclusionReasons = [];
+  const eligibilityReasons = [];
 
   if (!severity) {
-    return {
+    exclusionReasons.push('SWPC alert has no severity code parsed');
+    return finalizeDecision({
       storyType,
       storyTypeSource: 'fetcher',
       publishEligible: false,
       priority: null,
-      eligibilityReason: null,
-      exclusionReason: 'Excluded: SWPC alert has no severity code parsed',
-    };
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
   }
 
   if (!SWPC_MEANINGFUL_SEVERITY.has(severity)) {
-    return {
+    exclusionReasons.push(
+      `SWPC severity ${severity} below publication threshold (R3+/S2+/G3+)`,
+    );
+    return finalizeDecision({
       storyType,
       storyTypeSource: 'fetcher',
       publishEligible: false,
       priority: null,
-      eligibilityReason: null,
-      exclusionReason: `Excluded: SWPC severity ${severity} below publication threshold (R3+/S2+/G3+)`,
-    };
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
   }
 
-  const priority = SWPC_HIGH_PRIORITY_SEVERITY.has(severity) ? 'high' : 'medium';
+  // Freshness gate: SWPC alerts must be `current` (space-weather is
+  // NOT in RECENT_ELIGIBLE_TYPES, so `recent` alerts are excluded;
+  // `archive` alerts are excluded by the general rule).
+  if (!freshness.freshnessStatus) {
+    exclusionReasons.push('SWPC alert has missing or unparsable publishedAtSource (issueTime)');
+    return finalizeDecision({
+      storyType,
+      storyTypeSource: 'fetcher',
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
+  if (freshness.freshnessStatus === 'archive') {
+    exclusionReasons.push(
+      `archive SWPC alert (${freshness.sourceAgeDays.toFixed(1)} days old) — not eligible`,
+    );
+    return finalizeDecision({
+      storyType,
+      storyTypeSource: 'fetcher',
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
+  if (freshness.freshnessStatus === 'recent') {
+    exclusionReasons.push(
+      `recent SWPC alert (${freshness.sourceAgeDays.toFixed(1)} days old) — space-weather is real-time, only current alerts are eligible`,
+    );
+    return finalizeDecision({
+      storyType,
+      storyTypeSource: 'fetcher',
+      publishEligible: false,
+      priority: null,
+      freshness,
+      eligibilityReasons,
+      exclusionReasons,
+    });
+  }
 
-  return {
+  // current + meaningful severity → eligible.
+  const priority = SWPC_HIGH_PRIORITY_SEVERITY.has(severity) ? 'high' : 'medium';
+  eligibilityReasons.push(`SWPC severity ${severity} ${record.watchWarningType || ''}`.trim());
+  eligibilityReasons.push(
+    `freshness "current" (${freshness.sourceAgeDays.toFixed(1)} days old) passes the freshness gate`,
+  );
+
+  return finalizeDecision({
     storyType,
     storyTypeSource: 'fetcher',
     publishEligible: true,
     priority,
-    eligibilityReason: `Eligible: SWPC severity ${severity} ${record.watchWarningType || ''}`.trim(),
-    exclusionReason: null,
+    freshness,
+    eligibilityReasons,
+    exclusionReasons,
+  });
+}
+
+/**
+ * Build the final decision object, including the legacy singular
+ * `eligibilityReason` / `exclusionReason` fields (set to the first
+ * element of the plural arrays) for backward compatibility with
+ * the existing validator/scorer.
+ */
+function finalizeDecision(d) {
+  return {
+    storyType: d.storyType,
+    storyTypeSource: d.storyTypeSource,
+    publishEligible: d.publishEligible,
+    priority: d.priority,
+    freshnessStatus: d.freshness.freshnessStatus,
+    sourceAgeDays: d.freshness.sourceAgeDays,
+    eligibilityReasons: d.eligibilityReasons,
+    exclusionReasons: d.exclusionReasons,
+    // Legacy singular fields (first element of the plural arrays,
+    // or null when empty) for backward compatibility.
+    eligibilityReason: d.eligibilityReasons.length > 0 ? d.eligibilityReasons[0] : null,
+    exclusionReason: d.exclusionReasons.length > 0 ? d.exclusionReasons[0] : null,
+    // `selectedReason` was the Phase 9A.1 single-string field; keep
+    // it populated for the validator's check 9 (publishEligible items
+    // must have a non-empty selectedReason).
+    selectedReason: d.publishEligible
+      ? d.eligibilityReasons.length > 0
+        ? d.eligibilityReasons[0]
+        : 'Eligible'
+      : d.exclusionReasons.length > 0
+        ? d.exclusionReasons[0]
+        : 'Excluded',
   };
 }
 
@@ -350,7 +709,7 @@ async function loadJsonOptional(path) {
 }
 
 async function main() {
-  console.log('[filter-science-news] Starting newsworthiness filter.');
+  console.log('[filter-science-news] Starting newsworthiness filter (Phase 9A.2).');
   console.log(`  Inputs:  ${Object.values(INPUT_FILES).join(', ')}`);
   console.log(`  Output:  ${OUTPUT_FILE}`);
 
@@ -376,9 +735,6 @@ async function main() {
   const jplRecords = Array.isArray(jplRes.doc.records) ? jplRes.doc.records : [];
   const swpcRecords = Array.isArray(swpcRes.doc.records) ? swpcRes.doc.records : [];
 
-  // Surface source-availability provenance in the filter log so a
-  // reviewer can tell whether an empty source file is "feed blocked"
-  // vs. "feed returned zero items".
   console.log(
     `  NASA: ${nasaRecords.length} records (sourceAvailable=${nasaRes.doc.sourceAvailable ?? 'n/a'}, httpStatus=${nasaRes.doc.httpStatus ?? 'n/a'})`,
   );
@@ -389,20 +745,30 @@ async function main() {
     `  SWPC: ${swpcRecords.length} records (sourceAvailable=${swpcRes.doc.sourceAvailable ?? 'n/a'}, httpStatus=${swpcRes.doc.httpStatus ?? 'n/a'})`,
   );
 
+  const now = new Date();
+  console.log(`  Filter time (UTC): ${now.toISOString()}`);
+
   const candidates = [];
   const exclusionBreakdown = {};
   const storyTypeBreakdown = {};
+  const freshnessBreakdown = { current: 0, recent: 0, archive: 0, missing: 0 };
   let publishEligibleCount = 0;
   let highPriorityCount = 0;
 
   function evaluateAndPush(record, evaluator, sourceLabel) {
-    const decision = evaluator(record);
+    const decision = evaluator(record, now);
     storyTypeBreakdown[decision.storyType] = (storyTypeBreakdown[decision.storyType] || 0) + 1;
+    if (decision.freshnessStatus) {
+      freshnessBreakdown[decision.freshnessStatus]++;
+    } else {
+      freshnessBreakdown.missing++;
+    }
     if (decision.publishEligible) {
       publishEligibleCount++;
       if (decision.priority === 'high') highPriorityCount++;
     } else {
-      const key = `${sourceLabel}: ${decision.exclusionReason || 'unknown'}`;
+      const primaryReason = decision.exclusionReasons[0] || 'unknown';
+      const key = `${sourceLabel}: ${primaryReason}`;
       exclusionBreakdown[key] = (exclusionBreakdown[key] || 0) + 1;
     }
     candidates.push({
@@ -411,13 +777,15 @@ async function main() {
       storyTypeSource: decision.storyTypeSource,
       publishEligible: decision.publishEligible,
       priority: decision.priority,
+      freshnessStatus: decision.freshnessStatus,
+      sourceAgeDays: decision.sourceAgeDays,
+      eligibilityReasons: decision.eligibilityReasons,
+      exclusionReasons: decision.exclusionReasons,
+      // Legacy singular fields (kept for backward compat with the
+      // existing validator/scorer).
       eligibilityReason: decision.eligibilityReason,
       exclusionReason: decision.exclusionReason,
-      // Retain the legacy `selectedReason` field for backwards
-      // compatibility with the existing validator/scorer.
-      selectedReason: decision.publishEligible
-        ? decision.eligibilityReason
-        : decision.exclusionReason,
+      selectedReason: decision.selectedReason,
     });
   }
 
@@ -425,9 +793,20 @@ async function main() {
   for (const r of jplRecords) evaluateAndPush(r, evaluateNasaJpl, 'JPL');
   for (const r of swpcRecords) evaluateAndPush(r, evaluateSwpc, 'SWPC');
 
-  // Sort: publishEligible first, then priority high, then by publishedAtSource newest.
+  // Sort: publishEligible first, then freshness (current > recent >
+  // archive > missing), then priority high, then by publishedAtSource
+  // newest. This ensures the candidate file's top entries are the
+  // publishEligible-and-current stories.
+  const FRESHNESS_RANK = { current: 0, recent: 1, archive: 2 };
+  function freshnessRank(s) {
+    if (s == null) return 3;
+    return FRESHNESS_RANK[s] ?? 3;
+  }
   candidates.sort((a, b) => {
     if (a.publishEligible !== b.publishEligible) return b.publishEligible ? 1 : -1;
+    const fa = freshnessRank(a.freshnessStatus);
+    const fb = freshnessRank(b.freshnessStatus);
+    if (fa !== fb) return fa - fb;
     if (a.priority !== b.priority) return a.priority === 'high' ? -1 : 1;
     const ta = a.publishedAtSource ? new Date(a.publishedAtSource).getTime() : 0;
     const tb = b.publishedAtSource ? new Date(b.publishedAtSource).getTime() : 0;
@@ -435,8 +814,8 @@ async function main() {
   });
 
   const output = {
-    generatedAt: new Date().toISOString(),
-    source: 'Phase 9A.1 science filter',
+    generatedAt: now.toISOString(),
+    source: 'Phase 9A.2 science filter',
     inputCounts: {
       nasa: nasaRecords.length,
       jpl: jplRecords.length,
@@ -447,9 +826,14 @@ async function main() {
       jpl: { sourceAvailable: jplRes.doc.sourceAvailable ?? null, httpStatus: jplRes.doc.httpStatus ?? null, fetchError: jplRes.doc.fetchError ?? null },
       swpc: { sourceAvailable: swpcRes.doc.sourceAvailable ?? null, httpStatus: swpcRes.doc.httpStatus ?? null, fetchError: swpcRes.doc.fetchError ?? null },
     },
+    freshnessThresholds: {
+      currentMaxDays: FRESHNESS_CURRENT_MAX_DAYS,
+      recentMaxDays: FRESHNESS_RECENT_MAX_DAYS,
+    },
     candidateCount: candidates.length,
     publishEligibleCount,
     highPriorityCount,
+    freshnessBreakdown,
     storyTypeBreakdown,
     exclusionBreakdown,
     candidates,
@@ -465,10 +849,15 @@ async function main() {
   console.log(`  high priority:      ${highPriorityCount}`);
   console.log(`  Output:             ${OUTPUT_FILE}`);
 
+  console.log('\n  Freshness breakdown:');
+  for (const [k, v] of Object.entries(freshnessBreakdown)) {
+    console.log(`    ${k.padEnd(8)}  ${v}`);
+  }
+
   console.log('\n  Story-type breakdown:');
   for (const [t, count] of Object.entries(storyTypeBreakdown).sort((a, b) => b[1] - a[1])) {
     const eligible = PUBLISH_ELIGIBLE_TYPES.has(t) ? 'eligible' : 'excluded';
-    console.log(`    ${String(count).padStart(4)}  ${t.padEnd(20)} (${eligible})`);
+    console.log(`    ${String(count).padStart(4)}  ${t.padEnd(22)} (${eligible})`);
   }
 
   if (Object.keys(exclusionBreakdown).length > 0) {
@@ -480,7 +869,7 @@ async function main() {
     }
   }
 
-  // Top 10 publishEligible candidates.
+  // Top 10 publishEligible candidates (current freshness first).
   const eligibleTop = candidates.filter((c) => c.publishEligible).slice(0, 10);
   console.log('\n  Top 10 publishEligible candidates:');
   if (eligibleTop.length === 0) {
@@ -488,7 +877,10 @@ async function main() {
   } else {
     eligibleTop.forEach((c, i) => {
       const titlePreview = (c.title || '(no title)').slice(0, 65);
-      console.log(`    ${String(i + 1).padStart(2)}. [${c.priority}, ${c.storyType}] ${c.source} — ${titlePreview}`);
+      const ageStr = c.sourceAgeDays != null ? `${c.sourceAgeDays.toFixed(1)}d` : '?';
+      console.log(
+        `    ${String(i + 1).padStart(2)}. [${c.priority || '-'}, ${c.storyType}, ${c.freshnessStatus || '-'} (${ageStr})] ${c.source} — ${titlePreview}`,
+      );
       console.log(
         `        key=${c.scienceKey} mission=${c.mission || '-'} rights=${c.rightsStatus || '-'} credit=${c.imageCredit || '-'}`,
       );
