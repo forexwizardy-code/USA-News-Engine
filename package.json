@@ -54,7 +54,12 @@
     "previews:science": "node scripts/generate-science-previews.mjs",
     "newsroom:science": "node scripts/run-science-newsroom.mjs",
     "prepare:science": "npm run fetch:science && npm run registry:science && npm run filter:science && npm run stories:science && npm run validate:science",
-    "validate:launch": "node scripts/validate-launch.mjs"
+    "validate:launch": "node scripts/validate-launch.mjs",
+    "fetch:general": "node scripts/fetch-general-news.mjs",
+    "registry:general": "node scripts/build-general-news-registry.mjs",
+    "stories:general": "node scripts/build-general-news-stories.mjs",
+    "draft:general": "node scripts/generate-general-news-draft.mjs",
+    "validate:general": "node scripts/validate-general-news.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

@@ -10,5 +10,8 @@
   "maxEarthquakeNewPerDay": 2,
   "sciencePublishingEnabled": true,
   "maxScienceNewPerRun": 1,
-  "maxScienceNewPerDay": 3
+  "maxScienceNewPerDay": 3,
+  "generalPublishingEnabled": false,
+  "maxGeneralNewPerRun": 2,
+  "maxGeneralNewPerDay": 24
 }

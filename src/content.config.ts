@@ -23,7 +23,7 @@ const articles = defineCollection({
     /** One-to-two sentence summary / dek used in cards and meta description. */
     description: z.string(),
     /** Category slug — must match one of the CATEGORIES in src/consts.ts. */
-    category: z.enum(['us', 'weather', 'recalls', 'consumer', 'science']),
+    category: z.enum(['us', 'weather', 'recalls', 'consumer', 'science', 'politics', 'business', 'technology', 'entertainment', 'sports']),
     /** Byline author name. */
     author: z.string(),
     /** ISO 8601 publish time. */

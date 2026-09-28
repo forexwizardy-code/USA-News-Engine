@@ -1,0 +1,1478 @@
+{
+  "generatedAt": "2026-09-28T15:02:46.214Z",
+  "source": "Phase 10A.2 General News story records",
+  "inputRecordCount": 80,
+  "freshRecordCount": 48,
+  "clusterCount": 42,
+  "publishEligibleCount": 21,
+  "stories": [
+    {
+      "generalStoryKey": "gn__14fd0cde6d540e56",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+      "supportingSources": [
+        {
+          "sourceName": "NPR Business",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+          "sourceType": "publisher"
+        },
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+          "sourceType": "publisher"
+        }
+      ],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump"
+      ],
+      "title": "What we know about the suspected U.K. terror plot. And, why the Gulf remains in limbo",
+      "description": "What we know — and still don't — about the suspected terror plot near a U.K. air base. Trump rejects Iran's offer to pause fighting. And CNN prepares for new owners with ties to Trump.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T12:15:05.000Z",
+      "earliestPublishedAtSource": "2026-09-28T12:15:05.000Z",
+      "sourceCount": 3,
+      "independentSourceCount": 3,
+      "hasGovernmentSource": false,
+      "storyScore": 59,
+      "publishEligible": true,
+      "freshnessStatus": "very-high",
+      "freshnessLabel": "very high freshness",
+      "sourceAgeHours": 3,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+          "title": "What we know about the suspected U.K. terror plot. And, why the Gulf remains in limbo",
+          "description": "What we know — and still don't — about the suspected terror plot near a U.K. air base. Trump rejects Iran's offer to pause fighting. And CNN prepares for new owners with ties to Trump.",
+          "publishedAtSource": "2026-09-28T12:15:05.000Z"
+        },
+        {
+          "sourceName": "NPR Business",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+          "title": "What we know about the suspected U.K. terror plot. And, why the Gulf remains in limbo",
+          "description": "What we know — and still don't — about the suspected terror plot near a U.K. air base. Trump rejects Iran's offer to pause fighting. And CNN prepares for new owners with ties to Trump.",
+          "publishedAtSource": "2026-09-28T12:15:05.000Z"
+        },
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145248/up-first-newsletter-uk-us-air-base-iran-strait-hormuz-media-outlets-cnn-trump",
+          "title": "What we know about the suspected U.K. terror plot. And, why the Gulf remains in limbo",
+          "description": "What we know — and still don't — about the suspected terror plot near a U.K. air base. Trump rejects Iran's offer to pause fighting. And CNN prepares for new owners with ties to Trump.",
+          "publishedAtSource": "2026-09-28T12:15:05.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__0dffc2eaeae76540",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+      "supportingSources": [
+        {
+          "sourceName": "NPR Technology",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+          "sourceType": "publisher"
+        },
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+          "sourceType": "publisher"
+        }
+      ],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack"
+      ],
+      "title": "5 British suspects arrested, explosives found near U.S.-run air base. Iran denies role",
+      "description": "Authorities have arrested five British nationals over a suspected attack at a U.S.-operated air force base in England. Iran denied involvement.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T10:51:25.000Z",
+      "earliestPublishedAtSource": "2026-09-28T10:51:25.000Z",
+      "sourceCount": 3,
+      "independentSourceCount": 3,
+      "hasGovernmentSource": false,
+      "storyScore": 53,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 4,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+          "title": "5 British suspects arrested, explosives found near U.S.-run air base. Iran denies role",
+          "description": "Authorities have arrested five British nationals over a suspected attack at a U.S.-operated air force base in England. Iran denied involvement.",
+          "publishedAtSource": "2026-09-28T10:51:25.000Z"
+        },
+        {
+          "sourceName": "NPR Technology",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+          "title": "5 British suspects arrested, explosives found near U.S.-run air base. Iran denies role",
+          "description": "Authorities have arrested five British nationals over a suspected attack at a U.S.-operated air force base in England. Iran denied involvement.",
+          "publishedAtSource": "2026-09-28T10:51:25.000Z"
+        },
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/g-s1-145245/britain-us-base-suspected-foiled-attack",
+          "title": "5 British suspects arrested, explosives found near U.S.-run air base. Iran denies role",
+          "description": "Authorities have arrested five British nationals over a suspected attack at a U.S.-operated air force base in England. Iran denied involvement.",
+          "publishedAtSource": "2026-09-28T10:51:25.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__4b5df0b29e64f7c9",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/politics/trump-administration-lowers-fuel-economy-standards-critics-say-at-a-significant-environmental-cost",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/politics/trump-administration-lowers-fuel-economy-standards-critics-say-at-a-significant-environmental-cost"
+      ],
+      "title": "Trump administration lowers fuel economy standards, critics say at a significant environmental cost",
+      "description": "The change furthers President Donald Trump's promise to revoke policies that encouraged or created incentives for the production of electric vehicles.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-28T14:53:26.000Z",
+      "earliestPublishedAtSource": "2026-09-28T14:53:26.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 47,
+      "publishEligible": true,
+      "freshnessStatus": "very-high",
+      "freshnessLabel": "very high freshness",
+      "sourceAgeHours": 0,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/politics/trump-administration-lowers-fuel-economy-standards-critics-say-at-a-significant-environmental-cost",
+          "title": "Trump administration lowers fuel economy standards, critics say at a significant environmental cost",
+          "description": "The change furthers President Donald Trump's promise to revoke policies that encouraged or created incentives for the production of electric vehicles.",
+          "publishedAtSource": "2026-09-28T14:53:26.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__e53a35b440983c2e",
+      "primarySource": "Federal Trade Commission",
+      "primarySourceType": "government",
+      "primarySourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/09/ftc-states-win-protections-lower-pesticide-prices-american-farmers-antitrust-case-against-corteva",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2026/09/ftc-states-win-protections-lower-pesticide-prices-american-farmers-antitrust-case-against-corteva"
+      ],
+      "title": "FTC, States Win Protections to Lower Pesticide Prices for American Farmers in Antitrust Case Against Corteva",
+      "description": "The Federal Trade Commission and a coalition of state attorneys general have secured a significant settlement agreement with pesticide manufacturing giant Corteva Inc. that will lead to lower pesticide prices for American farmers. View Press Release",
+      "category": "politics",
+      "publishedAtSource": "2026-09-28T12:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-28T12:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": true,
+      "storyScore": 47,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 3,
+      "cluster": [
+        {
+          "sourceName": "Federal Trade Commission",
+          "sourceType": "government",
+          "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/09/ftc-states-win-protections-lower-pesticide-prices-american-farmers-antitrust-case-against-corteva",
+          "title": "FTC, States Win Protections to Lower Pesticide Prices for American Farmers in Antitrust Case Against Corteva",
+          "description": "The Federal Trade Commission and a coalition of state attorneys general have secured a significant settlement agreement with pesticide manufacturing giant Corteva Inc. that will lead to lower pesticid",
+          "publishedAtSource": "2026-09-28T12:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__82c2f76581ead0c9",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy",
+      "supportingSources": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy",
+          "sourceType": "publisher"
+        }
+      ],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy"
+      ],
+      "title": "Trump aims to leave a physical legacy in D.C., bulldozing norms along the way",
+      "description": "President Trump has brought his New York real estate background to the White House. But experts say D.C. is a very different historic and legal landscape — and worry about the precedent he could set.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T11:41:48.000Z",
+      "earliestPublishedAtSource": "2026-09-28T11:41:48.000Z",
+      "sourceCount": 2,
+      "independentSourceCount": 2,
+      "hasGovernmentSource": false,
+      "storyScore": 46,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 3,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy",
+          "title": "Trump aims to leave a physical legacy in D.C., bulldozing norms along the way",
+          "description": "President Trump has brought his New York real estate background to the White House. But experts say D.C. is a very different historic and legal landscape — and worry about the precedent he could set.",
+          "publishedAtSource": "2026-09-28T11:41:48.000Z"
+        },
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy",
+          "title": "Trump aims to leave a physical legacy in D.C., bulldozing norms along the way",
+          "description": "President Trump has brought his New York real estate background to the White House. But experts say D.C. is a very different historic and legal landscape — and worry about the precedent he could set.",
+          "publishedAtSource": "2026-09-28T11:41:48.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__e6e14d183125dcdd",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982739/what-to-know-about-the-810-million-in-spending-canceled-by-president-trump",
+      "supportingSources": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982739/what-to-know-about-the-810-million-in-spending-canceled-by-president-trump",
+          "sourceType": "publisher"
+        }
+      ],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5982739/what-to-know-about-the-810-million-in-spending-canceled-by-president-trump"
+      ],
+      "title": "What to know about the $810 million in spending canceled by President Trump",
+      "description": "President Trump announced plans to cancel $810 million in Congressionally approved spending, a move that some in his own party are calling illegal.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T09:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-28T09:00:00.000Z",
+      "sourceCount": 2,
+      "independentSourceCount": 2,
+      "hasGovernmentSource": false,
+      "storyScore": 46,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982739/what-to-know-about-the-810-million-in-spending-canceled-by-president-trump",
+          "title": "What to know about the $810 million in spending canceled by President Trump",
+          "description": "President Trump announced plans to cancel $810 million in Congressionally approved spending, a move that some in his own party are calling illegal.",
+          "publishedAtSource": "2026-09-28T09:00:00.000Z"
+        },
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982739/what-to-know-about-the-810-million-in-spending-canceled-by-president-trump",
+          "title": "What to know about the $810 million in spending canceled by President Trump",
+          "description": "President Trump announced plans to cancel $810 million in Congressionally approved spending, a move that some in his own party are calling illegal.",
+          "publishedAtSource": "2026-09-28T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__1cefe86bfecb4082",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/science/spacexs-supersized-starship-launches-into-orbit-for-the-first-time",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/science/spacexs-supersized-starship-launches-into-orbit-for-the-first-time"
+      ],
+      "title": "SpaceX's supersized Starship launches into orbit for the first time",
+      "description": "The spacecraft almost didn't achieve the long-desired goal after one of its engines shut down too soon.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T13:51:05.000Z",
+      "earliestPublishedAtSource": "2026-09-28T13:51:05.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 45,
+      "publishEligible": true,
+      "freshnessStatus": "very-high",
+      "freshnessLabel": "very high freshness",
+      "sourceAgeHours": 1,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/science/spacexs-supersized-starship-launches-into-orbit-for-the-first-time",
+          "title": "SpaceX's supersized Starship launches into orbit for the first time",
+          "description": "The spacecraft almost didn't achieve the long-desired goal after one of its engines shut down too soon.",
+          "publishedAtSource": "2026-09-28T13:51:05.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__b5d9840aa9409287",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983418/spacex-starship-first-orbital-flight-14-nasa",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5983418/spacex-starship-first-orbital-flight-14-nasa"
+      ],
+      "title": "SpaceX's Starship launches on first orbital mission from Texas",
+      "description": "Starship is key to SpaceX's commercial success and NASA's plans to land humans on the moon. This is the 14th flight of the uncrewed Starship, but the first time it reached orbit.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T13:15:29.000Z",
+      "earliestPublishedAtSource": "2026-09-28T13:15:29.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 45,
+      "publishEligible": true,
+      "freshnessStatus": "very-high",
+      "freshnessLabel": "very high freshness",
+      "sourceAgeHours": 2,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983418/spacex-starship-first-orbital-flight-14-nasa",
+          "title": "SpaceX's Starship launches on first orbital mission from Texas",
+          "description": "Starship is key to SpaceX's commercial success and NASA's plans to land humans on the moon. This is the 14th flight of the uncrewed Starship, but the first time it reached orbit.",
+          "publishedAtSource": "2026-09-28T13:15:29.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__58128ee1e3f5fa86",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-again-causing-problems-from-new-jersey-to-new-england",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-again-causing-problems-from-new-jersey-to-new-england"
+      ],
+      "title": "Powerful nor'easter floods Northeast again, causing problems from New Jersey to New England",
+      "description": "Local officials in New Jersey and New York told residents that high tide late Monday could potentially bring more flooding.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T12:21:35.000Z",
+      "earliestPublishedAtSource": "2026-09-28T12:21:35.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 45,
+      "publishEligible": true,
+      "freshnessStatus": "very-high",
+      "freshnessLabel": "very high freshness",
+      "sourceAgeHours": 3,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-again-causing-problems-from-new-jersey-to-new-england",
+          "title": "Powerful nor'easter floods Northeast again, causing problems from New Jersey to New England",
+          "description": "Local officials in New Jersey and New York told residents that high tide late Monday could potentially bring more flooding.",
+          "publishedAtSource": "2026-09-28T12:21:35.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__0b50969d4306bb25",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5965849/screens-teens-parents-social-media-safety",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5965849/screens-teens-parents-social-media-safety"
+      ],
+      "title": "5 tips for parents worried about their kids' screen time and online safety",
+      "description": "Parental monitoring can help protect kids from the harms of social media and excess screen time. Screen time boundaries plus early and open conversations about online habits can make kids less vulnerable.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T09:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-28T09:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 44,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5965849/screens-teens-parents-social-media-safety",
+          "title": "5 tips for parents worried about their kids' screen time and online safety",
+          "description": "Parental monitoring can help protect kids from the harms of social media and excess screen time. Screen time boundaries plus early and open conversations about online habits can make kids less vulnera",
+          "publishedAtSource": "2026-09-28T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__a56a454622676b19",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5980436/rats-dc-new-york-rangers",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5980436/rats-dc-new-york-rangers"
+      ],
+      "title": "How to limit the rat numbers? Train the humans",
+      "description": "D.C.'s Rat Rangers take anyone who is interested on night time safaris through some of the Capitol's filthiest back alleys to learn the way of the rats, and to be better humans.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T09:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-28T09:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 39,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5980436/rats-dc-new-york-rangers",
+          "title": "How to limit the rat numbers? Train the humans",
+          "description": "D.C.'s Rat Rangers take anyone who is interested on night time safaris through some of the Capitol's filthiest back alleys to learn the way of the rats, and to be better humans.",
+          "publishedAtSource": "2026-09-28T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__1f0db372390fb1d7",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5979667/morning-news-brief",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5979667/morning-news-brief"
+      ],
+      "title": "Morning news brief",
+      "description": "President Trump has rejected Iran's latest proposal to end the war, five men were arrested near a U.K. air base for an alleged terror plot, Trump's fight with the press leaves his events uncovered.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T08:44:29.000Z",
+      "earliestPublishedAtSource": "2026-09-28T08:44:29.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 39,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5979667/morning-news-brief",
+          "title": "Morning news brief",
+          "description": "President Trump has rejected Iran's latest proposal to end the war, five men were arrested near a U.K. air base for an alleged terror plot, Trump's fight with the press leaves his events uncovered.",
+          "publishedAtSource": "2026-09-28T08:44:29.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__e02fda1563512b25",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983317/hurricane-polo-hurricane-nolo",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5983317/hurricane-polo-hurricane-nolo"
+      ],
+      "title": "Mexico's Baja California braces for Hurricane Polo as Hurricane Nolo threatens Hawaii",
+      "description": "Hurricane Nolo edged further away from the Hawaiian Islands on Sunday as major Hurricane Polo bore down on Mexico's Baja California peninsula with a threat of storm surge, high winds and heavy rains.",
+      "category": "us",
+      "publishedAtSource": "2026-09-28T07:54:01.000Z",
+      "earliestPublishedAtSource": "2026-09-28T07:54:01.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 39,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 7,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983317/hurricane-polo-hurricane-nolo",
+          "title": "Mexico's Baja California braces for Hurricane Polo as Hurricane Nolo threatens Hawaii",
+          "description": "Hurricane Nolo edged further away from the Hawaiian Islands on Sunday as major Hurricane Polo bore down on Mexico's Baja California peninsula with a threat of storm surge, high winds and heavy rains.",
+          "publishedAtSource": "2026-09-28T07:54:01.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__88ce5eb8bb05769f",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983303/encampment-protest-madrid-housing-crisis",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5983303/encampment-protest-madrid-housing-crisis"
+      ],
+      "title": "Eviction of 87-year-old sparks protests in Madrid over housing crisis",
+      "description": "Tens of thousands marched through Madrid on Saturday to protest Spain's housing crisis and the eviction of an 87-year-old woman, camping overnight in Madrid's historic Puerta del Sol plaza.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-28T07:20:18.000Z",
+      "earliestPublishedAtSource": "2026-09-28T07:20:18.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 38,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 8,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5983303/encampment-protest-madrid-housing-crisis",
+          "title": "Eviction of 87-year-old sparks protests in Madrid over housing crisis",
+          "description": "Tens of thousands marched through Madrid on Saturday to protest Spain's housing crisis and the eviction of an 87-year-old woman, camping overnight in Madrid's historic Puerta del Sol plaza.",
+          "publishedAtSource": "2026-09-28T07:20:18.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__b0e8eb1a3cbdfc00",
+      "primarySource": "NPR News",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5759718/ai-schools-experiment-research",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5759718/ai-schools-experiment-research"
+      ],
+      "title": "Schools are experimenting with AI with little evidence or policy to guide them",
+      "description": "Teachers are using AI to develop lesson plans, and in some districts, AI chatbots give students feedback on their work. Meanwhile, the research around how AI can help students is extremely limited.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-28T09:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-28T09:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 37,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR News",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5759718/ai-schools-experiment-research",
+          "title": "Schools are experimenting with AI with little evidence or policy to guide them",
+          "description": "Teachers are using AI to develop lesson plans, and in some districts, AI chatbots give students feedback on their work. Meanwhile, the research around how AI can help students is extremely limited.",
+          "publishedAtSource": "2026-09-28T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__5202e763f5e16f21",
+      "primarySource": "NPR Politics",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5981262/taxpayer-funded-trump-administration-ads-raise-questions-about-their-legality",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5981262/taxpayer-funded-trump-administration-ads-raise-questions-about-their-legality"
+      ],
+      "title": "Taxpayer-funded Trump administration ads raise questions about their legality",
+      "description": "NPR's Leila Fadel speaks with former White House ethics czar Norman Eisen about the ethical and legal questions raised by new Trump administration advertisements, which are funded by taxpayer money.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-28T08:42:32.000Z",
+      "earliestPublishedAtSource": "2026-09-28T08:42:32.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 37,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5981262/taxpayer-funded-trump-administration-ads-raise-questions-about-their-legality",
+          "title": "Taxpayer-funded Trump administration ads raise questions about their legality",
+          "description": "NPR's Leila Fadel speaks with former White House ethics czar Norman Eisen about the ethical and legal questions raised by new Trump administration advertisements, which are funded by taxpayer money.",
+          "publishedAtSource": "2026-09-28T08:42:32.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__ce6d9097b4079a5a",
+      "primarySource": "NPR Technology",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982720/trump-rejects-irans-latest-ceasefire-proposal",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5982720/trump-rejects-irans-latest-ceasefire-proposal"
+      ],
+      "title": "Trump rejects Iran's latest ceasefire proposal",
+      "description": "President Trump has rejected the latest Iranian proposal to end the conflict. Meanwhile, France is sending military support to Saudi Arabia in its war against Iranian-backed militants.",
+      "category": "technology",
+      "publishedAtSource": "2026-09-28T10:45:23.000Z",
+      "earliestPublishedAtSource": "2026-09-28T10:45:23.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 35,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 4,
+      "cluster": [
+        {
+          "sourceName": "NPR Technology",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5982720/trump-rejects-irans-latest-ceasefire-proposal",
+          "title": "Trump rejects Iran's latest ceasefire proposal",
+          "description": "President Trump has rejected the latest Iranian proposal to end the conflict. Meanwhile, France is sending military support to Saudi Arabia in its war against Iranian-backed militants.",
+          "publishedAtSource": "2026-09-28T10:45:23.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__e4b1a7fdc70ba393",
+      "primarySource": "NPR Technology",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5981212/trump-rejected-irans-ceasefire-proposal-what-it-means-for-u-s-allies-in-the-gulf",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5981212/trump-rejected-irans-ceasefire-proposal-what-it-means-for-u-s-allies-in-the-gulf"
+      ],
+      "title": "Trump rejected Iran's ceasefire proposal. What it means for U.S. allies in the Gulf",
+      "description": "NPR's Steve Inskeep speaks with former assistant secretary of defense for the Middle East Dana Stroul about the latest ceasefire proposal from Iran.",
+      "category": "technology",
+      "publishedAtSource": "2026-09-28T10:45:14.000Z",
+      "earliestPublishedAtSource": "2026-09-28T10:45:14.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 35,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 4,
+      "cluster": [
+        {
+          "sourceName": "NPR Technology",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5981212/trump-rejected-irans-ceasefire-proposal-what-it-means-for-u-s-allies-in-the-gulf",
+          "title": "Trump rejected Iran's ceasefire proposal. What it means for U.S. allies in the Gulf",
+          "description": "NPR's Steve Inskeep speaks with former assistant secretary of defense for the Middle East Dana Stroul about the latest ceasefire proposal from Iran.",
+          "publishedAtSource": "2026-09-28T10:45:14.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__2c82a92825aeeb36",
+      "primarySource": "NPR Business",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5968603/oura-puts-a-ring-on-wall-street-with-one-of-this-years-biggest-ipos",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5968603/oura-puts-a-ring-on-wall-street-with-one-of-this-years-biggest-ipos"
+      ],
+      "title": "Oura puts a ring on Wall Street with one of this year's biggest IPOs",
+      "description": "The leading smart ring manufacturer is betting its trove of health data will be a hit with Wall Street.",
+      "category": "business",
+      "publishedAtSource": "2026-09-28T08:42:38.000Z",
+      "earliestPublishedAtSource": "2026-09-28T08:42:38.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 35,
+      "publishEligible": true,
+      "freshnessStatus": "high",
+      "freshnessLabel": "high freshness",
+      "sourceAgeHours": 6,
+      "cluster": [
+        {
+          "sourceName": "NPR Business",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/28/nx-s1-5968603/oura-puts-a-ring-on-wall-street-with-one-of-this-years-biggest-ipos",
+          "title": "Oura puts a ring on Wall Street with one of this year's biggest IPOs",
+          "description": "The leading smart ring manufacturer is betting its trove of health data will be a hit with Wall Street.",
+          "publishedAtSource": "2026-09-28T08:42:38.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__0d565022ac587faa",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/education/civil-rights-enforcement-cuts-mean-fewer-staff-closed-offices-longer-waits-for-students-with-disabilities",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/education/civil-rights-enforcement-cuts-mean-fewer-staff-closed-offices-longer-waits-for-students-with-disabilities"
+      ],
+      "title": "Civil rights enforcement cuts mean fewer staff, closed offices, longer waits for students with disabilities",
+      "description": "Filing a civil rights complaint with the Office of Civil Rights can be parents' last stop. Following cuts and restructuring, this federal office is no longer serving that same resource.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T21:47:33.000Z",
+      "earliestPublishedAtSource": "2026-09-27T21:47:33.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 30,
+      "publishEligible": true,
+      "freshnessStatus": "normal",
+      "freshnessLabel": "normal freshness",
+      "sourceAgeHours": 17,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/education/civil-rights-enforcement-cuts-mean-fewer-staff-closed-offices-longer-waits-for-students-with-disabilities",
+          "title": "Civil rights enforcement cuts mean fewer staff, closed offices, longer waits for students with disabilities",
+          "description": "Filing a civil rights complaint with the Office of Civil Rights can be parents' last stop. Following cuts and restructuring, this federal office is no longer serving that same resource.",
+          "publishedAtSource": "2026-09-27T21:47:33.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__a8f84de5d8d4243b",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/eviction-of-87-year-old-sparks-encampment-protest-in-madrid-over-housing-crisis",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/eviction-of-87-year-old-sparks-encampment-protest-in-madrid-over-housing-crisis"
+      ],
+      "title": "Eviction of 87-year-old sparks encampment protest in Madrid over housing crisis",
+      "description": "Tens of thousands marched through Madrid on Saturday to protest the eviction of María del Carmen Abascal from the apartment in the upscale Retiro neighborhood where she had lived for more than seven decades.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T15:40:37.000Z",
+      "earliestPublishedAtSource": "2026-09-27T15:40:37.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 30,
+      "publishEligible": true,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 23,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/eviction-of-87-year-old-sparks-encampment-protest-in-madrid-over-housing-crisis",
+          "title": "Eviction of 87-year-old sparks encampment protest in Madrid over housing crisis",
+          "description": "Tens of thousands marched through Madrid on Saturday to protest the eviction of María del Carmen Abascal from the apartment in the upscale Retiro neighborhood where she had lived for more than seven d",
+          "publishedAtSource": "2026-09-27T15:40:37.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__f4083cdc148a5866",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982718/five-arrested-near-uk-air-base-used-by-u-s-bombers-in-iran-war",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5982718/five-arrested-near-uk-air-base-used-by-u-s-bombers-in-iran-war"
+      ],
+      "title": "Five arrested near UK air base used by U.S. bombers in Iran war",
+      "description": "U.K. police say five men were arrested on suspicion of preparation of a terrorist act after three vehicles were spotted near an air base the U.S. military has been using to launch attacks on Iran.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T21:14:44.000Z",
+      "earliestPublishedAtSource": "2026-09-27T21:14:44.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 26,
+      "publishEligible": false,
+      "freshnessStatus": "normal",
+      "freshnessLabel": "normal freshness",
+      "sourceAgeHours": 18,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982718/five-arrested-near-uk-air-base-used-by-u-s-bombers-in-iran-war",
+          "title": "Five arrested near UK air base used by U.S. bombers in Iran war",
+          "description": "U.K. police say five men were arrested on suspicion of preparation of a terrorist act after three vehicles were spotted near an air base the U.S. military has been using to launch attacks on Iran.",
+          "publishedAtSource": "2026-09-27T21:14:44.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__79c7f4c07acc2231",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5981123/after-more-than-two-decades-u-s-forces-prepare-to-leave-iraq",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5981123/after-more-than-two-decades-u-s-forces-prepare-to-leave-iraq"
+      ],
+      "title": "After more than two decades, U.S. forces prepare to leave Iraq",
+      "description": "The U.S. military formally ends a more than two-decade-long presence in Iraq this week.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T21:14:43.000Z",
+      "earliestPublishedAtSource": "2026-09-27T21:14:43.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 26,
+      "publishEligible": false,
+      "freshnessStatus": "normal",
+      "freshnessLabel": "normal freshness",
+      "sourceAgeHours": 18,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5981123/after-more-than-two-decades-u-s-forces-prepare-to-leave-iraq",
+          "title": "After more than two decades, U.S. forces prepare to leave Iraq",
+          "description": "The U.S. military formally ends a more than two-decade-long presence in Iraq this week.",
+          "publishedAtSource": "2026-09-27T21:14:43.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__d79523b2eefedbb5",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/nation/2-giant-pandas-arrive-in-atlanta-under-a-u-s-china-government-agreement",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/nation/2-giant-pandas-arrive-in-atlanta-under-a-u-s-china-government-agreement"
+      ],
+      "title": "2 giant pandas arrive in Atlanta under a U.S.-China government agreement",
+      "description": "A new agreement between Zoo Atlanta and the China Wildlife Conservation Association makes Atlanta one of three zoos in the U.S. to house giant pandas, along with the San Diego Zoo and the Smithsonian's National Zoo in Washington, D.C.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T20:52:51.000Z",
+      "earliestPublishedAtSource": "2026-09-27T20:52:51.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 18,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/nation/2-giant-pandas-arrive-in-atlanta-under-a-u-s-china-government-agreement",
+          "title": "2 giant pandas arrive in Atlanta under a U.S.-China government agreement",
+          "description": "A new agreement between Zoo Atlanta and the China Wildlife Conservation Association makes Atlanta one of three zoos in the U.S. to house giant pandas, along with the San Diego Zoo and the Smithsonian'",
+          "publishedAtSource": "2026-09-27T20:52:51.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__c1bccc831b9b7558",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/nation/hurricane-nolo-gains-speed-as-it-moves-away-from-hawaii-but-high-winds-flash-floods-are-still-risk",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/nation/hurricane-nolo-gains-speed-as-it-moves-away-from-hawaii-but-high-winds-flash-floods-are-still-risk"
+      ],
+      "title": "Hurricane Nolo still threatens Hawaii as Mexico's Baja braces for major Hurricane Polo",
+      "description": "Nolo was expected to continue strengthening and turn toward the northwest by Sunday night, though the National Hurricane Center said the center of the storm would remain well south and southwest of the Hawaiian Islands.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T18:07:43.000Z",
+      "earliestPublishedAtSource": "2026-09-27T18:07:43.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 21,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/nation/hurricane-nolo-gains-speed-as-it-moves-away-from-hawaii-but-high-winds-flash-floods-are-still-risk",
+          "title": "Hurricane Nolo still threatens Hawaii as Mexico's Baja braces for major Hurricane Polo",
+          "description": "Nolo was expected to continue strengthening and turn toward the northwest by Sunday night, though the National Hurricane Center said the center of the storm would remain well south and southwest of th",
+          "publishedAtSource": "2026-09-27T18:07:43.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__21e6109bed75d0c3",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/un-speakers-go-to-quotes-ancient-texts-modern-greats-and-a-little-talking-heads",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/un-speakers-go-to-quotes-ancient-texts-modern-greats-and-a-little-talking-heads"
+      ],
+      "title": "UN speakers' go-to quotes: Ancient texts, modern greats and a little Talking Heads",
+      "description": "Speakers this week touched on homeland sayings, ancient texts, figures of moral authority and more — even a bit of Talking Heads (not TV pundits — the 1980s new wave band).",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T17:19:56.000Z",
+      "earliestPublishedAtSource": "2026-09-27T17:19:56.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 22,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/un-speakers-go-to-quotes-ancient-texts-modern-greats-and-a-little-talking-heads",
+          "title": "UN speakers' go-to quotes: Ancient texts, modern greats and a little Talking Heads",
+          "description": "Speakers this week touched on homeland sayings, ancient texts, figures of moral authority and more — even a bit of Talking Heads (not TV pundits — the 1980s new wave band).",
+          "publishedAtSource": "2026-09-27T17:19:56.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__f6de85743325993b",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/swiss-reject-tighter-neutrality-rules-in-referendum-backed-by-right-wing-populist-party",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/swiss-reject-tighter-neutrality-rules-in-referendum-backed-by-right-wing-populist-party"
+      ],
+      "title": "Swiss reject tighter neutrality rules in referendum backed by right-wing populist party",
+      "description": "Final results from the Swiss government showed 70% of voters, and a majority in all 26 of the country's regions, rejected the plan.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T16:43:47.000Z",
+      "earliestPublishedAtSource": "2026-09-27T16:43:47.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 22,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/swiss-reject-tighter-neutrality-rules-in-referendum-backed-by-right-wing-populist-party",
+          "title": "Swiss reject tighter neutrality rules in referendum backed by right-wing populist party",
+          "description": "Final results from the Swiss government showed 70% of voters, and a majority in all 26 of the country's regions, rejected the plan.",
+          "publishedAtSource": "2026-09-27T16:43:47.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__744618b0aeedb548",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/pope-blasts-assisted-dying-as-false-compassion-at-french-shrine-known-for-miraculous-cures",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/pope-blasts-assisted-dying-as-false-compassion-at-french-shrine-known-for-miraculous-cures"
+      ],
+      "title": "Pope blasts assisted dying as 'false compassion' at French shrine known for miraculous cures",
+      "description": "On the third day of his visit to France, Leo again waded into the end-of-life debate unfolding in his native U.S. and countries around the world.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T16:31:16.000Z",
+      "earliestPublishedAtSource": "2026-09-27T16:31:16.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 23,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/pope-blasts-assisted-dying-as-false-compassion-at-french-shrine-known-for-miraculous-cures",
+          "title": "Pope blasts assisted dying as 'false compassion' at French shrine known for miraculous cures",
+          "description": "On the third day of his visit to France, Leo again waded into the end-of-life debate unfolding in his native U.S. and countries around the world.",
+          "publishedAtSource": "2026-09-27T16:31:16.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__47f2ec923501b884",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-leaves-over-130000-without-power-as-high-tides-threaten-coast",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-leaves-over-130000-without-power-as-high-tides-threaten-coast"
+      ],
+      "title": "Powerful nor'easter floods Northeast, leaves over 130,000 without power as high tides threaten coast",
+      "description": "The slow-moving storm, which killed a New York City housing authority worker when a tree fell Saturday, was expected to linger through Sunday with heavy rain, strong winds and dangerous surf from New Jersey to New England.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T15:15:14.000Z",
+      "earliestPublishedAtSource": "2026-09-27T15:15:14.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 24,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/nation/powerful-noreaster-floods-northeast-leaves-over-130000-without-power-as-high-tides-threaten-coast",
+          "title": "Powerful nor'easter floods Northeast, leaves over 130,000 without power as high tides threaten coast",
+          "description": "The slow-moving storm, which killed a New York City housing authority worker when a tree fell Saturday, was expected to linger through Sunday with heavy rain, strong winds and dangerous surf from New ",
+          "publishedAtSource": "2026-09-27T15:15:14.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__dad15760cd1c0e5a",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/uk-police-arrest-5-men-near-an-air-base-used-by-u-s-on-suspicion-of-preparing-a-terrorist-act",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/uk-police-arrest-5-men-near-an-air-base-used-by-u-s-on-suspicion-of-preparing-a-terrorist-act"
+      ],
+      "title": "5 men arrested near UK air base used by U.S. in Iran war on suspicion of preparing a terrorist act",
+      "description": "Fairford has been used by American bombers for strictly limited strikes against Iran under an agreement with former British Prime Minister Keir Starmer, who voiced opposition to the war after it was launched by the U.S. and Israel on Feb. 28.",
+      "category": "us",
+      "publishedAtSource": "2026-09-27T15:02:02.000Z",
+      "earliestPublishedAtSource": "2026-09-27T15:02:02.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 25,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 24,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/uk-police-arrest-5-men-near-an-air-base-used-by-u-s-on-suspicion-of-preparing-a-terrorist-act",
+          "title": "5 men arrested near UK air base used by U.S. in Iran war on suspicion of preparing a terrorist act",
+          "description": "Fairford has been used by American bombers for strictly limited strikes against Iran under an agreement with former British Prime Minister Keir Starmer, who voiced opposition to the war after it was l",
+          "publishedAtSource": "2026-09-27T15:02:02.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__fd19a2f68281401b",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/politics/supreme-court-vote-shadows-maine-sen-susan-collins-in-her-first-race-after-abortion-rights-decision",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/politics/supreme-court-vote-shadows-maine-sen-susan-collins-in-her-first-race-after-abortion-rights-decision"
+      ],
+      "title": "Supreme Court vote shadows Maine Sen. Susan Collins in her first race after abortion rights decision",
+      "description": "The Nov. 3 election will be the first time Collins is on the ballot since the Supreme Court's 2022 ruling that overturned Roe v. Wade, resulting in abortion being banned in much of the United States.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T17:38:17.000Z",
+      "earliestPublishedAtSource": "2026-09-27T17:38:17.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 23,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 21,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/politics/supreme-court-vote-shadows-maine-sen-susan-collins-in-her-first-race-after-abortion-rights-decision",
+          "title": "Supreme Court vote shadows Maine Sen. Susan Collins in her first race after abortion rights decision",
+          "description": "The Nov. 3 election will be the first time Collins is on the ballot since the Supreme Court's 2022 ruling that overturned Roe v. Wade, resulting in abortion being banned in much of the United States.",
+          "publishedAtSource": "2026-09-27T17:38:17.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__8ef0ba080d9c7978",
+      "primarySource": "NPR Politics",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5978973/protect-college-sports-act-senators-athletes",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5978973/protect-college-sports-act-senators-athletes"
+      ],
+      "title": "As Congress debates college sports, athletes-turned-senators have a seat at the table",
+      "description": "The Protect College Sports Act is on the brink of passing in the Senate, where a handful of former college athletes who are now senators on both sides of the aisle have an extra say in the debate.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T12:06:24.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:06:24.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 23,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5978973/protect-college-sports-act-senators-athletes",
+          "title": "As Congress debates college sports, athletes-turned-senators have a seat at the table",
+          "description": "The Protect College Sports Act is on the brink of passing in the Senate, where a handful of former college athletes who are now senators on both sides of the aisle have an extra say in the debate.",
+          "publishedAtSource": "2026-09-27T12:06:24.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__bc279ec19a4cd71d",
+      "primarySource": "NPR Politics",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5976743/ohio-governors-race-ramaswamy-and-acton-clash-in-rare-democratic-pickup-opportunity",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5976743/ohio-governors-race-ramaswamy-and-acton-clash-in-rare-democratic-pickup-opportunity"
+      ],
+      "title": "Ohio governor's race: Ramaswamy and Acton clash in rare Democratic pickup opportunity",
+      "description": "The Ohio governor's race pits former presidential candidate Vivek Ramaswamy against Democrat Amy Acton, a former state health advisor. Democrats see a chance to win a state that usually votes Republican.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T12:06:23.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:06:23.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 23,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5976743/ohio-governors-race-ramaswamy-and-acton-clash-in-rare-democratic-pickup-opportunity",
+          "title": "Ohio governor's race: Ramaswamy and Acton clash in rare Democratic pickup opportunity",
+          "description": "The Ohio governor's race pits former presidential candidate Vivek Ramaswamy against Democrat Amy Acton, a former state health advisor. Democrats see a chance to win a state that usually votes Republic",
+          "publishedAtSource": "2026-09-27T12:06:23.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__bdba86e3361df8e8",
+      "primarySource": "NPR Politics",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5978751/politics-chat-trump-vs-the-media-rolling-back-health-and-education-spending",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5978751/politics-chat-trump-vs-the-media-rolling-back-health-and-education-spending"
+      ],
+      "title": "Politics chat: Trump vs the media; rolling back health and education spending",
+      "description": "We look at President Trump's fight with some of the White House press corps, as well as his attempt to claw back $810 million in Congressionally-approved funds for health and education spending.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T12:06:20.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:06:20.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 23,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5978751/politics-chat-trump-vs-the-media-rolling-back-health-and-education-spending",
+          "title": "Politics chat: Trump vs the media; rolling back health and education spending",
+          "description": "We look at President Trump's fight with some of the White House press corps, as well as his attempt to claw back $810 million in Congressionally-approved funds for health and education spending.",
+          "publishedAtSource": "2026-09-27T12:06:20.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__fe5bf6e46c12dcdc",
+      "primarySource": "NPR Politics",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5979946/these-democrats-are-running-for-congress-on-christian-faith-will-it-pay-off",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5979946/these-democrats-are-running-for-congress-on-christian-faith-will-it-pay-off"
+      ],
+      "title": "These Democrats are making Christianity a centerpiece of their midterm campaigns",
+      "description": "It's rare for Democrats to make religion a centerpiece of their campaigns. But this midterm election cycle, a number of candidates for Congress are doing just that.",
+      "category": "politics",
+      "publishedAtSource": "2026-09-27T10:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-27T10:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 23,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 29,
+      "cluster": [
+        {
+          "sourceName": "NPR Politics",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5979946/these-democrats-are-running-for-congress-on-christian-faith-will-it-pay-off",
+          "title": "These Democrats are making Christianity a centerpiece of their midterm campaigns",
+          "description": "It's rare for Democrats to make religion a centerpiece of their campaigns. But this midterm election cycle, a number of candidates for Congress are doing just that.",
+          "publishedAtSource": "2026-09-27T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__cca7199129baf6ba",
+      "primarySource": "PBS NewsHour",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.pbs.org/newshour/world/british-pm-andy-burnham-brings-good-vibes-to-his-partys-annual-conference-but-tough-choices-are-coming",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.pbs.org/newshour/world/british-pm-andy-burnham-brings-good-vibes-to-his-partys-annual-conference-but-tough-choices-are-coming"
+      ],
+      "title": "British PM Andy Burnham brings good vibes to his party's annual conference, but tough choices are coming",
+      "description": "The governing Labour Party opened its annual conference beside the River Mersey in Liverpool on Sunday, with Burnham pledging to turn the page on a decade of economic and political turmoil.",
+      "category": "business",
+      "publishedAtSource": "2026-09-27T20:40:45.000Z",
+      "earliestPublishedAtSource": "2026-09-27T20:40:45.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 21,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 18,
+      "cluster": [
+        {
+          "sourceName": "PBS NewsHour",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.pbs.org/newshour/world/british-pm-andy-burnham-brings-good-vibes-to-his-partys-annual-conference-but-tough-choices-are-coming",
+          "title": "British PM Andy Burnham brings good vibes to his party's annual conference, but tough choices are coming",
+          "description": "The governing Labour Party opened its annual conference beside the River Mersey in Liverpool on Sunday, with Burnham pledging to turn the page on a decade of economic and political turmoil.",
+          "publishedAtSource": "2026-09-27T20:40:45.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__65d30b01a37118cb",
+      "primarySource": "NPR Business",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5980407/everyone-is-racing-to-create-an-ai-device-meta-thinks-it-has-one",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5980407/everyone-is-racing-to-create-an-ai-device-meta-thinks-it-has-one"
+      ],
+      "title": "Everyone is racing to create an AI device. Meta thinks it has one",
+      "description": "Tech companies are betting that people will connect with AI using something other than smartphones. Meta is going all-in on glasses, after launching its new AI agent Muse.",
+      "category": "technology",
+      "publishedAtSource": "2026-09-27T12:17:42.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:17:42.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 21,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Business",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5980407/everyone-is-racing-to-create-an-ai-device-meta-thinks-it-has-one",
+          "title": "Everyone is racing to create an AI device. Meta thinks it has one",
+          "description": "Tech companies are betting that people will connect with AI using something other than smartphones. Meta is going all-in on glasses, after launching its new AI agent Muse.",
+          "publishedAtSource": "2026-09-27T12:17:42.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__06e21a8ea9d86618",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982488/south-africa-mass-shootings-killed-38-week",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5982488/south-africa-mass-shootings-killed-38-week"
+      ],
+      "title": "South Africa reels from spate of mass shootings that killed 38 people in a week",
+      "description": "On Saturday night, there were separate mass shootings near South Africa's two largest cities.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T13:01:27.000Z",
+      "earliestPublishedAtSource": "2026-09-27T13:01:27.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 19,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 26,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982488/south-africa-mass-shootings-killed-38-week",
+          "title": "South Africa reels from spate of mass shootings that killed 38 people in a week",
+          "description": "On Saturday night, there were separate mass shootings near South Africa's two largest cities.",
+          "publishedAtSource": "2026-09-27T13:01:27.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__879de01b4cfdb0a0",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5949210/amid-changing-dynamics-in-the-middle-east-turkey-seeks-to-emerge-as-a-leader",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5949210/amid-changing-dynamics-in-the-middle-east-turkey-seeks-to-emerge-as-a-leader"
+      ],
+      "title": "Amid changing dynamics in the Middle East, Turkey seeks to emerge as a leader",
+      "description": "Turkey's attempts at expanding its Middle East footprint has put it in a position of power, coming head-to-head with Israel.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T12:06:19.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:06:19.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 19,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5949210/amid-changing-dynamics-in-the-middle-east-turkey-seeks-to-emerge-as-a-leader",
+          "title": "Amid changing dynamics in the Middle East, Turkey seeks to emerge as a leader",
+          "description": "Turkey's attempts at expanding its Middle East footprint has put it in a position of power, coming head-to-head with Israel.",
+          "publishedAtSource": "2026-09-27T12:06:19.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__ce40424f5879f474",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5973237/la-bamba-mexico-fandango",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5973237/la-bamba-mexico-fandango"
+      ],
+      "title": "Playing 'La Bamba' for an hour? Must be a Mexican fandango!",
+      "description": "A 300-year-old Mexican musical tradition is finding new life around the world — one sweaty, joyous, all-night fandango at a time.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T12:00:00.000Z",
+      "earliestPublishedAtSource": "2026-09-27T12:00:00.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 19,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5973237/la-bamba-mexico-fandango",
+          "title": "Playing 'La Bamba' for an hour? Must be a Mexican fandango!",
+          "description": "A 300-year-old Mexican musical tradition is finding new life around the world — one sweaty, joyous, all-night fandango at a time.",
+          "publishedAtSource": "2026-09-27T12:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__324cb68d3f8f8596",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/g-s1-143582/night-school-shepherds-lesotho",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/g-s1-143582/night-school-shepherds-lesotho"
+      ],
+      "title": "Photos: This may be the most inspirational night school on Earth",
+      "description": "Many thousands of boys and men in Lesotho take up the vital profession of herding but have to give up their education. A small network of schools on a shoestring budget is teaching them the ABCs.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T11:53:42.000Z",
+      "earliestPublishedAtSource": "2026-09-27T11:53:42.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 19,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 27,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/g-s1-143582/night-school-shepherds-lesotho",
+          "title": "Photos: This may be the most inspirational night school on Earth",
+          "description": "Many thousands of boys and men in Lesotho take up the vital profession of herding but have to give up their education. A small network of schools on a shoestring budget is teaching them the ABCs.",
+          "publishedAtSource": "2026-09-27T11:53:42.000Z"
+        }
+      ]
+    },
+    {
+      "generalStoryKey": "gn__a6c3a3bdeb6b8629",
+      "primarySource": "NPR Entertainment",
+      "primarySourceType": "publisher",
+      "primarySourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982480/multiple-arrests-suspicion-explosives-offenses-uk-base-us-forces",
+      "supportingSources": [],
+      "allSourceUrls": [
+        "https://www.npr.org/2026/09/27/nx-s1-5982480/multiple-arrests-suspicion-explosives-offenses-uk-base-us-forces"
+      ],
+      "title": "5 arrested near a U.K. air base used by U.S. on suspicion of preparing a terrorist act",
+      "description": "Police evacuated homes Sunday near an air base in England used by the U.S. and arrested several men over suspected explosives offenses.",
+      "category": "entertainment",
+      "publishedAtSource": "2026-09-27T10:49:36.000Z",
+      "earliestPublishedAtSource": "2026-09-27T10:49:36.000Z",
+      "sourceCount": 1,
+      "independentSourceCount": 1,
+      "hasGovernmentSource": false,
+      "storyScore": 19,
+      "publishEligible": false,
+      "freshnessStatus": "publish-if-important",
+      "freshnessLabel": "still important/developing",
+      "sourceAgeHours": 28,
+      "cluster": [
+        {
+          "sourceName": "NPR Entertainment",
+          "sourceType": "publisher",
+          "sourceUrl": "https://www.npr.org/2026/09/27/nx-s1-5982480/multiple-arrests-suspicion-explosives-offenses-uk-base-us-forces",
+          "title": "5 arrested near a U.K. air base used by U.S. on suspicion of preparing a terrorist act",
+          "description": "Police evacuated homes Sunday near an air base in England used by the U.S. and arrested several men over suspected explosives offenses.",
+          "publishedAtSource": "2026-09-27T10:49:36.000Z"
+        }
+      ]
+    }
+  ]
+}

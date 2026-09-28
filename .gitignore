@@ -45,3 +45,7 @@ data/science/last-known-good/
 data/automation-proof.json
 data/geo-cache/
 
+# ---- Phase 10A.2 General News: transient fetched feed (regenerated each run) ----
+# The source registry, story records, and drafts ARE tracked (durable state).
+data/general-news/general-news-feed.json
+

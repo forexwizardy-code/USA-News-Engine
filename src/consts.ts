@@ -88,6 +88,43 @@ export const CATEGORIES: CategoryDef[] = [
     description:
       'Discoveries, research, and breakthroughs from the worlds of space, health, and technology.',
   },
+  // Phase 10A.2 — General U.S. News categories. nav=false: not in top
+  // navigation yet (previews only; will surface after publishing enables).
+  {
+    slug: 'politics',
+    label: 'Politics',
+    nav: false,
+    description:
+      'Government actions, legislation, court decisions, and documented political developments.',
+  },
+  {
+    slug: 'business',
+    label: 'Business',
+    nav: false,
+    description:
+      'Markets, the economy, companies, and developments affecting American wallets and work.',
+  },
+  {
+    slug: 'technology',
+    label: 'Technology',
+    nav: false,
+    description:
+      'Artificial intelligence, cybersecurity, consumer tech, and the industry shaping America\u2019s future.',
+  },
+  {
+    slug: 'entertainment',
+    label: 'Entertainment',
+    nav: false,
+    description:
+      'Film, music, streaming, and cultural developments from across the entertainment industry.',
+  },
+  {
+    slug: 'sports',
+    label: 'Sports',
+    nav: false,
+    description:
+      'Major leagues, championships, and the stories shaping American professional and college sports.',
+  },
 ];
 
 /** "Latest" is a reverse-chronological feed of all articles, not a category. */
