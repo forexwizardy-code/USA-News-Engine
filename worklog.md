@@ -4270,3 +4270,25 @@ Stage Summary:
 - SPORTS COVERAGE NOT READY (0 eligible — reported per §14).
 - 4 hardened private previews live for editorial review.
 - DEMO_NOINDEX = true. No domain. No Google indexing.
+
+---
+Task ID: 10A.2.2
+Agent: Z.ai Code (main)
+Task: Phase 10A.2.2 — General News source balance, Sports coverage, category balance. Publisher concentration limits, single-source rule, usRelevanceScore, cross-publisher clustering, sports quality filter. Auto-publishing remains OFF. Existing 4 desks unchanged. DEMO_NOINDEX stays true.
+
+Work Log:
+- Expanded sources from 16 to 29 (added WaPo National/Entertainment/Sports, CNET, Ars Technica, The Verge, TechCrunch, Engadget, NYT sport-specific: ProFootball/ProBasketball/Baseball/CollegeFootball/CollegeBasketball). 29/29 HEALTHY, 599 raw items. 12 publisher families.
+- Added publisher concentration limits: maxGeneralPerPublisherPerRun=2, maxGeneralPerPublisherPerDay=6. Politics caps: maxPoliticsNewPerRun=1, maxPoliticsNewPerDay=6.
+- Added single-source rule: independentPublisherCount=1 needs government source OR low-dispute factual; politics contested needs 2 families or official+reporting, else needs-more-sourcing.
+- Added usRelevanceScore (HIGH=90, MEDIUM=50, LOW=20, NONE=0). Foreign context dominating downgrades. Top-story prefers HIGH.
+- Improved cross-publisher clustering: lowered Jaccard threshold (0.40 + shared named entity + 18h). Named-entity matching for person/org names across outlets.
+- Added sports quality filter: rejects routine box scores/recaps; accepts championships/injuries/trades/records/policy.
+- Generated 6 diverse previews (max 2 per family): U.S.(NYT), Politics(The Hill), Business(NYT), Technology(TechCrunch), Entertainment(The Hill), Sports(WaPo). Family distribution: NYT=2, The Hill=2, TechCrunch=1, WaPo=1.
+- Extended validate:general to 31 checks (G2b-e, G25, G26, G27). All 31 PASS.
+- All validation: general 31/31, launch 24/24, publishing 65/65, science 83/83. Build 56 pages.
+- Committed (2ab9f6e), pushed, deployed (Version ID: e25ff99a). All 6 previews verified HTTP 200 live.
+
+Stage Summary:
+- 29 sources, 12 publisher families, 599 raw items, 259 clusters, 127 U.S.-relevant, 61 publishEligible.
+- Sports: 1 eligible candidate (Commanders QB story) — SPORTS COVERAGE NOW READY.
+- GENERAL NEWS AUTO-PUBLISHING = OFF. Existing 4 desks ON. DEMO_NOINDEX = true.
