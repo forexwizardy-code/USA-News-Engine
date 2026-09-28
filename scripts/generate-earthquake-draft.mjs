@@ -530,7 +530,7 @@ function generateDraft(story, now) {
     title,
     description,
     slug,
-    category: 'weather',
+    category: 'us',
     location,
     publishedAt,
     updatedAt,

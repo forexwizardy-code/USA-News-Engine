@@ -598,7 +598,7 @@ async function publishNewArticle(story, registry) {
 slug: "${yamlEscape(slug)}"
 title: "${yamlEscape(draft.title)}"
 description: "${yamlEscape(draft.description)}"
-category: weather
+category: us
 author: "US News Engine Weather Desk"
 publishedAt: ${now}
 image: "${yamlEscape(heroImagePath)}"

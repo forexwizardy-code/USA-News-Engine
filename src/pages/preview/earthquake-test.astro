@@ -218,7 +218,7 @@ const description = draft?.description || 'Synthetic USGS earthquake test fixtur
   publishedTime={publishedAt}
   modifiedTime={updatedAt || undefined}
   author={draft?.author || 'US News Engine Weather Desk'}
-  section="Weather"
+  section="U.S."
 >
   {/* TEST FIXTURE banner — sits above the article */}
   <div class="fixture-banner" role="status" aria-live="polite">
@@ -262,7 +262,7 @@ const description = draft?.description || 'Synthetic USGS earthquake test fixtur
       {fixture && draft && (
         <>
           <header class="article-head">
-            <span class="cat-badge cat-badge--solid">Weather</span>
+            <span class="cat-badge cat-badge--solid">U.S.</span>
             {draft.breaking && (
               <span class="breaking-tag" aria-label="Breaking news">
                 <span class="breaking-dot" aria-hidden="true"></span>

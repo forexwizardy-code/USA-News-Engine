@@ -5,7 +5,7 @@
   "recallPublishingEnabled": true,
   "maxRecallNewPerRun": 1,
   "maxRecallNewPerDay": 3,
-  "earthquakePublishingEnabled": false,
+  "earthquakePublishingEnabled": true,
   "maxEarthquakeNewPerRun": 1,
-  "maxEarthquakeNewPerDay": 3
+  "maxEarthquakeNewPerDay": 2
 }

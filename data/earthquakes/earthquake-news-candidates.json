@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-27T23:34:54.827Z",
+  "generatedAt": "2026-09-28T00:03:19.959Z",
   "source": "U.S. Geological Survey",
-  "inputEarthquakeCount": 320,
+  "inputEarthquakeCount": 317,
   "candidateCount": 2,
   "usRelevantCount": 1,
   "publishEligibleCount": 0,
   "internationalNotableCount": 1,
   "exclusionBreakdown": {
-    "no newsworthiness trigger matched": 226,
-    "magnitude < 3": 92
+    "no newsworthiness trigger matched": 224,
+    "magnitude < 3": 91
   },
   "candidates": [
     {
