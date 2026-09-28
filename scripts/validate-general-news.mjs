@@ -299,6 +299,73 @@ async function main() {
     config.maxPoliticsNewPerRun !== undefined && config.maxPoliticsNewPerDay !== undefined,
     `run=${config.maxPoliticsNewPerRun}, day=${config.maxPoliticsNewPerDay}`);
 
+  // Phase 10A.2.4 — duplicate-protection checks
+  const publishedGnRes = await loadJsonOptional(join(PROJECT_DIR, 'data', 'published-general-news.json'));
+  if (publishedGnRes.ok && Array.isArray(publishedGnRes.doc.stories)) {
+    const pubStories = publishedGnRes.doc.stories;
+
+    // G33 — no duplicate generalStoryKey in the registry
+    const keyCounts = {};
+    for (const s of pubStories) {
+      const k = s.generalStoryKey;
+      if (k) keyCounts[k] = (keyCounts[k] || 0) + 1;
+    }
+    const dupKeys = Object.entries(keyCounts).filter(([_, n]) => n > 1);
+    check('G33', 'No duplicate generalStoryKey in published-general-news.json', dupKeys.length === 0,
+      dupKeys.length ? `dupes: ${dupKeys.map(([k, n]) => `${k}=${n}`).join(', ')}` : `${pubStories.length} unique entries`);
+
+    // G34 — no duplicate slug in the registry
+    const slugCounts = {};
+    for (const s of pubStories) {
+      if (s.slug) slugCounts[s.slug] = (slugCounts[s.slug] || 0) + 1;
+    }
+    const dupSlugs = Object.entries(slugCounts).filter(([_, n]) => n > 1);
+    check('G34', 'No duplicate slug in published-general-news.json', dupSlugs.length === 0,
+      dupSlugs.length ? `dupes: ${dupSlugs.map(([s, n]) => `${s}=${n}`).join(', ')}` : '');
+
+    // G35 — no duplicate canonical source URL in the registry
+    const urlCounts = {};
+    for (const s of pubStories) {
+      const urls = s.sourceUrls || (s.primarySourceUrl ? [s.primarySourceUrl] : []);
+      for (const u of urls) {
+        if (u) urlCounts[u] = (urlCounts[u] || 0) + 1;
+      }
+    }
+    const dupUrls = Object.entries(urlCounts).filter(([_, n]) => n > 1);
+    check('G35', 'No duplicate canonical source URL in published-general-news.json', dupUrls.length === 0,
+      dupUrls.length ? `dupes: ${dupUrls.slice(0, 3).map(([u, n]) => `${u.slice(0, 50)}=${n}`).join(', ')}` : '');
+
+    // G36 — publishedAt not overwritten (check git history for the article files)
+    // This is a structural check: each unique slug should have exactly one registry entry
+    // with one publishedAt. If the same slug appears with different publishedAt values,
+    // it means publishedAt was overwritten.
+    const slugToTimestamps = {};
+    for (const s of pubStories) {
+      if (s.slug && s.publishedAt) {
+        if (!slugToTimestamps[s.slug]) slugToTimestamps[s.slug] = new Set();
+        slugToTimestamps[s.slug].add(s.publishedAt);
+      }
+    }
+    const overwrittenTimestamps = Object.entries(slugToTimestamps).filter(([_, ts]) => ts.size > 1);
+    check('G36', 'publishedAt not overwritten for any slug', overwrittenTimestamps.length === 0,
+      overwrittenTimestamps.length ? `overwritten: ${overwrittenTimestamps.map(([s, ts]) => `${s} (${ts.size} timestamps)`).join(', ')}` : '');
+  } else {
+    check('G33', 'No duplicate generalStoryKey in published-general-news.json', true, 'no registry');
+    check('G34', 'No duplicate slug in published-general-news.json', true, 'no registry');
+    check('G35', 'No duplicate canonical source URL in published-general-news.json', true, 'no registry');
+    check('G36', 'publishedAt not overwritten for any slug', true, 'no registry');
+  }
+
+  // G37 — published-general-news.json is tracked in git (durable state)
+  const { execSync } = await import('node:child_process');
+  let registryTracked = false;
+  try {
+    execSync('git ls-files --error-unmatch data/published-general-news.json', { cwd: PROJECT_DIR, stdio: 'pipe' });
+    registryTracked = true;
+  } catch {}
+  check('G37', 'published-general-news.json is git-tracked (durable state)', registryTracked,
+    registryTracked ? '' : 'registry is NOT tracked — duplicate protection depends on transient data');
+
   // --- 6. Preview page route exists ---
   const previewRouteExists = await fileExists(join(PROJECT_DIR, 'src', 'pages', 'preview', 'general', '[slug].astro'));
   check('G15', 'Preview route /preview/general/[slug] exists', previewRouteExists);

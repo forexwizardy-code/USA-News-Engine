@@ -103,11 +103,101 @@ function slugify(text) {
 }
 
 // ===========================================================================
-// Selection logic — with all gates
+// Phase 10A.2.4 — Durable duplicate identity
+// ===========================================================================
+
+/**
+ * Build a set of all durable identity keys for already-published stories.
+ * A candidate is ALREADY PUBLISHED if ANY of these match:
+ *   - generalStoryKey (cluster key)
+ *   - slug
+ *   - primarySourceUrl (canonical source URL)
+ *   - normalized source URL
+ *
+ * This multi-key approach ensures duplicate protection survives even if
+ * one identity field changes (e.g. a new slug derivation).
+ */
+function buildPublishedIdentitySet(registry) {
+  const published = {
+    storyKeys: new Set(),
+    slugs: new Set(),
+    sourceUrls: new Set(),
+    normalizedUrls: new Set(),
+  };
+  if (!registry || !Array.isArray(registry.stories)) return published;
+  for (const s of registry.stories) {
+    if (s.generalStoryKey) published.storyKeys.add(s.generalStoryKey);
+    if (s.slug) published.slugs.add(s.slug);
+    if (s.sourceUrls && Array.isArray(s.sourceUrls)) {
+      for (const u of s.sourceUrls) {
+        if (u) {
+          published.sourceUrls.add(u);
+          // Also add normalized form
+          try {
+            const nu = new URL(u);
+            published.normalizedUrls.add(`${nu.hostname.replace(/^www\./, '')}${nu.pathname.replace(/\/+$/, '')}`.toLowerCase());
+          } catch {}
+        }
+      }
+    } else if (s.primarySourceUrl) {
+      published.sourceUrls.add(s.primarySourceUrl);
+    }
+  }
+  return published;
+}
+
+/**
+ * Check if a candidate story is already published by matching against
+ * the durable identity set. Returns true if ANY identity matches.
+ */
+function isAlreadyPublished(story, publishedSet) {
+  if (story.generalStoryKey && publishedSet.storyKeys.has(story.generalStoryKey)) return true;
+  // Check candidate's source URLs against published source URLs
+  const candidateUrls = story.allSourceUrls || [story.primarySourceUrl];
+  for (const u of candidateUrls) {
+    if (!u) continue;
+    if (publishedSet.sourceUrls.has(u)) return true;
+    try {
+      const nu = new URL(u);
+      if (publishedSet.normalizedUrls.has(`${nu.hostname.replace(/^www\./, '')}${nu.pathname.replace(/\/+$/, '')}`.toLowerCase())) return true;
+    } catch {}
+  }
+  return false;
+}
+
+/**
+ * Deduplicate the published-general-news.json registry. If the same
+ * generalStoryKey appears multiple times, keep only the FIRST entry
+ * (which has the original publishedAt).
+ */
+function deduplicateRegistry(registry) {
+  if (!registry || !Array.isArray(registry.stories)) return registry;
+  const seen = new Set();
+  const deduped = [];
+  for (const s of registry.stories) {
+    const key = s.generalStoryKey || s.slug;
+    if (key && seen.has(key)) {
+      // Duplicate — skip (keep the first/original entry)
+      continue;
+    }
+    if (key) seen.add(key);
+    deduped.push(s);
+  }
+  if (deduped.length !== registry.stories.length) {
+    console.log(`  [dedup] Registry deduplicated: ${registry.stories.length} → ${deduped.length} entries`);
+  }
+  registry.stories = deduped;
+  registry.storyCount = deduped.length;
+  return registry;
+}
+
+// ===========================================================================
+// Selection logic — with all gates + pre-selection duplicate filter
 // ===========================================================================
 
 /**
  * Select stories for publication respecting ALL gates:
+ *   - DUPLICATE FILTER: already-published stories are removed BEFORE selection
  *   - U.S. relevance: only HIGH or MEDIUM (not LOW/NONE)
  *   - Single-source rule: contested politics needs 2 families or gov source
  *   - Publisher concentration: max N per family per run
@@ -126,11 +216,27 @@ function selectStories(eligible, opts) {
     publishedTodayCount,
     politicsPublishedTodayCount,
     publisherPublishedToday, // {familyName: count}
-    existingSlugs, // Set of already-published slugs
+    publishedSet, // durable identity set from buildPublishedIdentitySet
   } = opts;
 
+  // Phase 10A.2.4 — PRE-SELECTION FILTER: remove already-published stories
+  // BEFORE ranking. This prevents an old top-ranked article from blocking
+  // genuinely new stories.
+  const newEligible = [];
+  let alreadyPublishedCount = 0;
+  for (const story of eligible) {
+    if (isAlreadyPublished(story, publishedSet)) {
+      alreadyPublishedCount++;
+      continue;
+    }
+    newEligible.push(story);
+  }
+  if (alreadyPublishedCount > 0) {
+    console.log(`  [duplicate-filter] ${alreadyPublishedCount} already-published story(ies) removed from selection pool`);
+  }
+
   // Sort: usRelevance HIGH first, then score desc, then freshness
-  const sorted = [...eligible].sort((a, b) => {
+  const sorted = [...newEligible].sort((a, b) => {
     const ua = a.usRelevance === 'high' ? 0 : 1;
     const ub = b.usRelevance === 'high' ? 0 : 1;
     if (ua !== ub) return ua - ub;
@@ -183,6 +289,15 @@ function selectStories(eligible, opts) {
 // ===========================================================================
 
 async function publishNewArticle(story, registry) {
+  // Phase 10A.2.4 — SAFETY NET: refuse to publish if the storyKey already
+  // exists in the registry. This is defense-in-depth; the pre-selection
+  // filter should have already removed it, but this prevents any edge case
+  // from creating a duplicate.
+  const existing = registry.stories.find((s) => s.generalStoryKey === story.generalStoryKey);
+  if (existing) {
+    console.log(`    [skip-duplicate] ${story.generalStoryKey} already published (slug=${existing.slug}, publishedAt=${existing.publishedAt}) — skipping`);
+    return null;
+  }
   // 1. Generate draft
   runNode(
     `scripts/generate-general-news-draft.mjs "${story.generalStoryKey}"`,
@@ -387,12 +502,23 @@ async function main() {
   if (regRes.ok && Array.isArray(regRes.doc.stories)) {
     registry = regRes.doc;
     console.log(`\n  Registry loaded: ${registry.stories.length} published General News stories.`);
+    // Phase 10A.2.4 — deduplicate the registry (remove duplicate entries
+    // from the republication bug; keep the FIRST entry with original publishedAt)
+    registry = deduplicateRegistry(registry);
   } else {
     registry = { generatedAt: new Date().toISOString(), storyCount: 0, stories: [] };
     console.log('\n  No registry found — treating all as new.');
   }
 
+  // Phase 10A.2.4 — build durable published identity set for duplicate filtering.
+  // This is the CANONICAL duplicate-protection mechanism. It uses multiple
+  // identity keys (storyKey, slug, sourceUrl, normalizedUrl) so that an
+  // already-published story cannot become NEW again on a later run.
+  const publishedSet = buildPublishedIdentitySet(registry);
+  console.log(`  Published identity set: ${publishedSet.storyKeys.size} storyKeys, ${publishedSet.sourceUrls.size} sourceUrls`);
+
   // --- Daily cap calculations ---
+  // Phase 10A.2.4 — count each article only once (use deduplicated registry)
   const today = new Date().toISOString().slice(0, 10);
   const publishedToday = registry.stories.filter((s) => s.publishedAt && s.publishedAt.startsWith(today));
   const publishedTodayCount = publishedToday.length;
@@ -403,13 +529,12 @@ async function main() {
     const f = s.primaryPublisherFamily || 'unknown';
     publisherPublishedToday[f] = (publisherPublishedToday[f] || 0) + 1;
   }
-  const existingSlugs = new Set(registry.stories.map((s) => s.slug));
 
   console.log(`\n  Daily cap: ${publishedTodayCount} published today, ${Math.max(0, maxPerDay - publishedTodayCount)} remaining`);
   console.log(`  Politics today: ${politicsPublishedTodayCount}/${maxPoliticsPerDay}`);
 
   // --- Select stories ---
-  console.log('\n--- Selection (with all gates) ---');
+  console.log('\n--- Selection (with all gates + duplicate filter) ---');
   const { selected, familyCountThisRun, politicsCountThisRun, categoryCountThisRun } = selectStories(eligible, {
     maxPerRun,
     maxPoliticsPerRun,
@@ -420,7 +545,7 @@ async function main() {
     publishedTodayCount,
     politicsPublishedTodayCount,
     publisherPublishedToday,
-    existingSlugs,
+    publishedSet,
   });
 
   console.log(`  Selected: ${selected.length}`);
@@ -454,6 +579,10 @@ async function main() {
     try {
       console.log(`\n  Processing: ${story.generalStoryKey}`);
       const result = await publishNewArticle(story, registry);
+      if (result === null) {
+        // Phase 10A.2.4 — already-published duplicate, skip
+        continue;
+      }
       newPublished++;
       console.log(`    Published: /news/${result.slug}/`);
     } catch (err) {
@@ -461,9 +590,9 @@ async function main() {
     }
   }
 
-  if (newPublished > 0) {
-    await saveRegistry(registry);
-  }
+  // Phase 10A.2.4 — always save the (deduplicated) registry even if 0 new
+  // stories were published, so the dedup fix is persisted to git.
+  await saveRegistry(registry);
 
   // --- No-change behavior ---
   if (newPublished === 0) {

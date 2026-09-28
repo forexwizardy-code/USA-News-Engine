@@ -4,7 +4,7 @@ title: "FTC, States Win Protections to Lower Pesticide Prices for American Farme
 description: "The Federal Trade Commission and a coalition of state attorneys general have secured a significant settlement agreement with pesticide manufacturing giant Corteva Inc. that will lead to lower pesticid"
 category: politics
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T16:21:44.536Z
+publishedAt: 2026-09-28T16:10:49.999Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: FTC, States Win Protections to Lower Pesticide Prices for American Farmers in Antitrust Case Against Corteva"
 imageMode: "factual-graphic-fallback"
