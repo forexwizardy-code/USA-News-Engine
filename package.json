@@ -40,7 +40,15 @@
     "draft:earthquake": "node scripts/generate-earthquake-draft.mjs",
     "image:earthquake": "node scripts/generate-earthquake-image.mjs",
     "newsroom:earthquakes": "node scripts/run-earthquake-newsroom.mjs",
-    "prepare:earthquakes": "npm run fetch:earthquakes && npm run filter:earthquakes && npm run stories:earthquakes && npm run validate:earthquakes"
+    "prepare:earthquakes": "npm run fetch:earthquakes && npm run filter:earthquakes && npm run stories:earthquakes && npm run validate:earthquakes",
+    "fetch:nasa": "node scripts/fetch-nasa-news.mjs",
+    "fetch:jpl": "node scripts/fetch-jpl-news.mjs",
+    "fetch:swpc": "node scripts/fetch-swpc-science.mjs",
+    "fetch:science": "npm run fetch:nasa && npm run fetch:jpl && npm run fetch:swpc",
+    "filter:science": "node scripts/filter-science-news.mjs",
+    "stories:science": "node scripts/build-science-stories.mjs",
+    "validate:science": "node scripts/validate-science.mjs",
+    "prepare:science": "npm run fetch:science && npm run filter:science && npm run stories:science && npm run validate:science"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

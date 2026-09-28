@@ -1,0 +1,31 @@
+{
+  "fetchedAt": "2026-09-28T00:21:15.462Z",
+  "source": "JPL",
+  "sourceUrls": [
+    "https://www.jpl.nasa.gov/news/feed/",
+    "https://www.jpl.nasa.gov/rss/news.php"
+  ],
+  "sourceUrlUsed": null,
+  "channelTitle": null,
+  "feedFormat": "RSS 2.0",
+  "totalItems": 0,
+  "apodCount": 0,
+  "withImageCount": 0,
+  "withMissionCount": 0,
+  "error": "All JPL feed URLs failed — see `attempts` for details.",
+  "attempts": [
+    {
+      "url": "https://www.jpl.nasa.gov/news/feed/",
+      "ok": false,
+      "status": 403,
+      "error": "HTTP 403 Forbidden"
+    },
+    {
+      "url": "https://www.jpl.nasa.gov/rss/news.php",
+      "ok": false,
+      "status": 403,
+      "error": "HTTP 403 Forbidden"
+    }
+  ],
+  "records": []
+}

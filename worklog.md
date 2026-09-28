@@ -1641,3 +1641,322 @@ passed in the live run.
    cartographic boundary data (similar to how the NWS image generator
    uses `data/geo-cache/state-*.json` for state shapes) to give the
    epicenter map more geographic context.
+
+---
+
+## Phase 9A — Science news ingestion foundation (Task 9A-pipeline)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Build the Phase 9A science news pipeline — fetchers for NASA
+news releases, JPL news releases (gracefully handling the current 403),
+and NOAA SWPC space-weather alerts/scales; a newsworthiness filter that
+gates publication; a story clustering & scoring step that merges
+NASA+JPL duplicates and ranks stories; and a validator that asserts
+data integrity. Wire all six scripts into the npm script registry.
+
+### Files created
+
+- `scripts/fetch-nasa-news.mjs`
+  Fetches the NASA news-release RSS feed
+  (`https://www.nasa.gov/news-release/feed/`) and parses it with regex
+  (no external XML parser dependency). Each `<item>` is normalized to
+  the shared science schema with `source: "NASA"` and a deterministic
+  `scienceKey: nasa__<sha256(guid)[0:16]>`. The normalizer also:
+    * Strips the APOD navigation boilerplate ("APOD Science APOD …
+      brief explanation written by a professional astronomer.") from
+      the description preview.
+    * Extracts a hero image URL by walking media:content →
+      media:thumbnail → enclosure → first `<img src="…">` in either
+      `<description>` or `<content:encoded>` (skipping data: URLs and
+      1×1 spacer GIFs).
+    * Tags APOD items with `sourceType: "apod"` so the filter can
+      down-rank them.
+    * Derives `mission` (Artemis, Starliner, James Webb, Hubble,
+      Perseverance, Curiosity, Psyche, Europa Clipper, VIPER, Dragonfly,
+      Parker Solar Probe, Juno, New Horizons, Voyager, Cassini, Lucy,
+      DART, InSight, Chandra, SLS, Orion, ISS, SpaceX, Falcon, Crew
+      Dragon, Dragon, Cygnus, Starlink, Landsat, GOES, Sentinel, Nancy
+      Grace Roman, …) and `topic` (mission-update, discovery, launch,
+      landing, crew, technology, earth-science, astronomy, education,
+      administrative) deterministically from title + description.
+  Output: `data/science/nasa-news.json` with metadata wrapper.
+
+- `scripts/fetch-jpl-news.mjs`
+  Same pattern as NASA but for JPL. Tries
+  `https://www.jpl.nasa.gov/news/feed/` first, then falls back to
+  `https://www.jpl.nasa.gov/rss/news.php`. As of 2026-09-28 both URLs
+  return HTTP 403 to our user-agent; the fetcher handles this
+  gracefully by writing an EMPTY result set with an `error` field and
+  an `attempts` array listing each URL's status. The fetcher will work
+  automatically when the feed becomes available. `scienceKey` uses
+  `jpl__<sha256(guid)[0:16]>` and `imageCredit` is `NASA/JPL-Caltech`.
+
+- `scripts/fetch-swpc-science.mjs`
+  Fetches two SWPC JSON endpoints:
+    * `https://services.swpc.noaa.gov/products/alerts.json` — array of
+      alert messages. Each message body is parsed (via regex) to
+      extract `messageCode` (from "Space Weather Message Code: XXXX"),
+      `serialNumber` (from "Serial Number: NNNN"), `beginTime`/
+      `endTime`, `watchWarningType`, and a 300-char summary with
+      header (`:` and `#`) lines stripped.
+    * `https://services.swpc.noaa.gov/products/noaa-scales.json` —
+      current R/S/G scale levels. The document is keyed by day-offset
+      ("-1" / "0" / "1" / "2" / "3"); we extract the "0" (today)
+      entry's R/S/G Scale values into `currentRScale`, `currentSScale`,
+      `currentGScale`. Falls back to legacy shapes (top-level
+      `currentRScale` or top-level `R`/`S`/`G` objects) for forward
+      compatibility.
+  `scienceKey` is `swpc__<product_id>_<serial>` (or a 12-char hash of
+  the message body when the serial number is missing). Only alerts with
+  meaningful severity are kept (R3+, S2+, G3+) — routine minor alerts
+  (R1/R2, S1, G1/G2, K-index alerts, electron-flux alerts) are dropped
+  at fetch time. The filter is a safety net on top of this. Output:
+  `data/science/swpc-events.json` with metadata wrapper.
+
+- `scripts/filter-science-news.mjs`
+  Reads all three fetcher outputs and applies the newsworthiness
+  filter:
+    * NASA/JPL HIGH priority: title or description contains launch,
+      landing, splashdown, crew, astronaut, discovery, milestone,
+      arrival, flyby, sample return, first image, results, findings,
+      docking, undocking, spacewalk, EVA, rollout, rendezvous; OR a
+      known major mission name in the title (Artemis, Webb, Hubble,
+      Perseverance, Starliner, Psyche, Europa Clipper, VIPER,
+      Dragonfly, Parker Solar Probe, Juno, New Horizons, Voyager,
+      Cassini, Lucy, DART, InSight, Chandra, SLS, Orion, ISS).
+    * NASA/JPL EXCLUDE: APOD items (title starts with "APOD:");
+      podcast/educational series without a major-event keyword;
+      "media advisory"/"media teleconference"/"press brief" without a
+      major-event keyword.
+    * NASA/JPL non-eligible (tracked internally, not publish-eligible):
+      releases without a high-priority keyword or major mission.
+    * SWPC: include only R3+ (radio blackout), S2+ (solar radiation),
+      G3+ (geomagnetic storm). G4+, S3+, R4+ are HIGH priority; G3,
+      S2, R3 are MEDIUM.
+  Each candidate gets `publishEligible`, `priority` (high/medium), and
+  `selectedReason`. Output: `data/science/science-news-candidates.json`.
+
+- `scripts/build-science-stories.mjs`
+  Reads the candidates file and clusters NASA+JPL candidates that
+  describe the SAME event (same mission AND overlapping date window
+  ±2 days). SWPC alerts are kept as single-record clusters. Each
+  cluster becomes one story with:
+    * `scienceStoryKey` (deterministic hash of the cluster's member
+      scienceKeys for multi-record clusters; the record's own
+      scienceKey for singletons).
+    * `primarySource`, `allSourceKeys`, `sourceUrls`, `titleSeed`,
+      `topic`, `mission`, `publishedAtSource` (earliest in cluster).
+    * `storyScore` (0-100): base 20 + launch/landing/splashdown (+20)
+      + major discovery/finding (+15) + crew/astronaut (+10) + known
+      major mission Artemis/Webb/Perseverance (+10) + multiple sources
+      NASA+JPL (+8) + recent within 3 days (+5) + SWPC G4+ (+20) /
+      G3 (+12) / S3+ (+12) / R3+ (+8). Capped at 100.
+    * `storyStatus` ('new'/'updated'/'unchanged') via cross-snapshot
+      content signature comparison against the previous
+      `science-story-records.json`.
+    * `updateCount`, `firstSeenAt`, `latestSeenAt` for cross-snapshot
+      tracking.
+  Output: `data/science/science-story-records.json`.
+
+- `scripts/validate-science.mjs`
+  Validates science data across all 5 Phase 9A JSON files. Exits 1 on
+  any failure. Checks:
+    1. Every record has a scienceKey
+    2. Every record has a sourceUrl (absolute http/https)
+    3. No duplicate scienceKeys (per source file)
+    4. No duplicate scienceStoryKeys (story records)
+    5. publishedAtSource / updatedAtSource are valid ISO-8601 or null
+    6. Source is one of NASA, JPL, NOAA-SWPC
+    7. SWPC severity is a recognized NOAA scale value (R1-5/S1-5/G1-5)
+       or null; non-SWPC records must not carry a severity
+    8. No external/unverified image credit (must be NASA,
+       NASA/JPL-Caltech, or NOAA SWPC)
+    9. publishEligible items have a non-empty selectedReason
+   11. storyScore is 0-100 (story records only)
+  Also re-runs the record-level checks against the candidates file and
+  the denormalized fields on story records. 32 checks total.
+
+### npm scripts added to package.json
+
+```json
+"fetch:nasa":       "node scripts/fetch-nasa-news.mjs"
+"fetch:jpl":        "node scripts/fetch-jpl-news.mjs"
+"fetch:swpc":       "node scripts/fetch-swpc-science.mjs"
+"fetch:science":    "npm run fetch:nasa && npm run fetch:jpl && npm run fetch:swpc"
+"filter:science":   "node scripts/filter-science-news.mjs"
+"stories:science":  "node scripts/build-science-stories.mjs"
+"validate:science": "node scripts/validate-science.mjs"
+"prepare:science":  "npm run fetch:science && npm run filter:science && npm run stories:science && npm run validate:science"
+```
+
+### Live run results (2026-09-28 ~00:18-00:20 UTC)
+
+**fetch:nasa** — 10 items fetched (3 APOD, 7 news releases). All 10 had
+images extracted from the article HTML (NASA's RSS does not use
+`<media:content>` at the item level; images live inside the
+`<content:encoded>` CDATA). 3 items matched known missions (Starliner,
+Artemis, Hubble).
+
+**fetch:jpl** — Both candidate URLs returned HTTP 403. Wrote empty
+result set with `error` and `attempts` fields. Pipeline continued.
+
+**fetch:swpc** — 66 alerts received. All 66 were routine (K-index
+alerts, electron-flux alerts, K04/K05 warnings with G1 mentions at
+most); all dropped at fetch time. Scales: R=-, S=-, G=- (no current
+space-weather event). Wrote empty records array with the scales summary.
+
+**filter:science** — 7 candidates:
+  - 4 publishEligible HIGH priority:
+    1. NASA, Boeing to Provide Update on Starliner Development
+       (mission=Starliner, topic=crew)
+    2. NASA Welcomes San Marino Signing the Artemis Accords
+       (mission=Artemis, topic=administrative)
+    3. NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch
+       (mission=null, topic=launch)
+    4. Hubble Spots Chaotic Secret in Galaxy
+       (mission=Hubble, topic=astronomy)
+  - 3 ineligible MEDIUM priority (tracked internally):
+    5. 2026-2027 DWU: Middle School Design Challenge (topic=education)
+    6. 2026-2027 DWU: High School Engineering Challenge (topic=technology)
+    7. TB 26-07 Aluminum Alloy 2219 Material Guidance (topic=discovery)
+  - 3 excluded: APOD items (title starts with "APOD:").
+
+**stories:science** — 7 unique stories (no NASA+JPL clusters since JPL
+was blocked). Story score distribution: 4 stories in 30-49, 3 in 0-29.
+Top 5:
+  1. [score=45] NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch
+     (launch keyword +20, recent +5; base 20 → 45)
+  2. [score=40] TB 26-07 Aluminum Alloy 2219 Material Guidance
+     (discovery keyword +15, recent +5; base 20 → 40)
+  3. [score=35] NASA, Boeing to Provide Update on Starliner Development
+     (crew keyword +10, Starliner mission +5 only if major; base 20 → 35)
+  4. [score=35] NASA Welcomes San Marino Signing the Artemis Accords
+     (Artemis major mission +10, recent +5; base 20 → 35)
+  5. [score=25] Hubble Spots Chaotic Secret in Galaxy
+     (Hubble not in MAJOR_MISSIONS set so no +10; base 20 + 5 recent → 25)
+
+Second `stories:science` run correctly marked all 7 stories as
+`status=unchanged` (content signature matched), confirming the
+cross-snapshot tracking works.
+
+**validate:science** — All 32 checks passed:
+  - 8 record-level checks × 4 source files (NASA, JPL, SWPC,
+    candidates) = 32
+  - Plus story-specific checks: scienceStoryKey uniqueness,
+    storyScore range, publishEligible reason.
+  Exit code 0.
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched (`fetch-nws-alerts.mjs`,
+  `filter-nws-news.mjs`, `build-nws-stories.mjs`,
+  `run-nws-newsroom.mjs`, `generate-nws-draft.mjs`, etc.).
+- ✅ Recall scripts untouched (`fetch-cpsc-recalls.mjs`,
+  `fetch-fda-food-recalls.mjs`, `fetch-fda-device-recalls.mjs`,
+  `filter-recall-news.mjs`, `build-recall-stories.mjs`,
+  `run-recall-newsroom.mjs`, etc.).
+- ✅ Earthquake scripts untouched (`fetch-usgs-earthquakes.mjs`,
+  `filter-earthquake-news.mjs`, `build-earthquake-stories.mjs`,
+  `validate-earthquakes.mjs`, `run-earthquake-newsroom.mjs`, etc.).
+- ✅ `.github/workflows/nws-newsroom.yml` NOT modified.
+- ✅ `.github/workflows/recall-newsroom.yml` NOT modified.
+- ✅ `.github/workflows/earthquake-newsroom.yml` NOT modified.
+- ✅ `config/automation.json` NOT modified — all existing settings
+  preserved. No new `sciencePublishingEnabled` flag was added (the
+  Phase 9A pipeline is fetch+filter+score only; publishing comes in a
+  later phase).
+- ✅ `data/published-stories.json` (NWS registry) NOT modified.
+- ✅ `data/published-recalls.json` (recall registry) NOT modified.
+- ✅ `data/published-earthquakes.json` (earthquake registry) NOT
+  modified.
+- ✅ No public article files created in `src/content/articles/`.
+- ✅ `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- ✅ All new scripts are `.mjs` ES modules using only Node.js built-ins
+  (`node:fs/promises`, `node:path`, `node:url`, `node:crypto`). No
+  new dependencies added. `sharp` was already installed but is not
+  used by Phase 9A (no image generation in this phase).
+- ✅ XML parsing uses regex only — no external XML parser dependency.
+- ✅ JPL 403 is handled gracefully — empty result set written with an
+  `error` field; pipeline continues.
+- ✅ SWPC alerts with no meaningful severity (R3+/S2+/G3+) are
+  dropped at fetch time and again at filter time (double-gate).
+- ✅ User-Agent for all three fetchers is
+  `USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)`.
+
+### Notes for a future agent
+
+1. **JPL feed is blocked.** As of 2026-09-28, `www.jpl.nasa.gov`
+   returns HTTP 403 to our user-agent on both
+   `/news/feed/` and `/rss/news.php`. The fetcher is in place and will
+   start producing records automatically when the feed becomes
+   available. No code change will be needed. If JPL unblocks, the
+   cluster step will start producing multi-source stories (NASA+JPL)
+   that earn the +8 multiple-sources bonus and the +5 recency bonus
+   more often.
+
+2. **SWPC scales may not always be empty.** The current run found R=-,
+   S=-, G=- (no space-weather event in progress). When a real G3+
+   geomagnetic storm or S2+ solar-radiation event occurs, the fetcher
+   will start producing records and the filter will pass them through.
+   Story scores for SWPC events: G4+/S3+/R4+ earn +20/+12/+8
+   respectively and start with a base of 20 — so a G4 alone would
+   score 40 (20 base + 20 G4+ bonus). Add the +5 recency bonus and a
+   SWPC G4 storm lands at score 45, well above most NASA news
+   releases.
+
+3. **Image extraction from NASA RSS is heuristic.** NASA's RSS does
+   not use `<media:content>` at the item level — images live inside
+   the `<content:encoded>` CDATA as `<img src="…">` tags. The fetcher
+   extracts the first usable image (skipping data: URLs and 1×1
+   spacers). This works for the 10 items in the live feed but may
+   need adjustment if NASA changes their RSS template. The
+   `imageCredit` is hardcoded to `NASA` (NASA) or `NASA/JPL-Caltech`
+   (JPL) and the validator enforces that no other imageCredit is
+   used.
+
+4. **Mission extraction is keyword-based.** The mission table is
+   intentionally liberal (matches like `/\bartemis\b/i` rather than
+   full mission-name parsing). Some items may match a mission that
+   isn't the actual focus of the release (e.g. an Artemis Accords
+   signing ceremony is tagged `mission=Artemis` even though the
+   release is really about diplomatic relations). This is acceptable
+   for the Phase 9A use case (clustering and scoring); the article
+   draft generator (a future phase) will need to look at the full
+   title + description to decide whether to lead with the mission
+   name.
+
+5. **The MAJOR_MISSIONS bonus is limited to Artemis, James Webb,
+   Perseverance.** Other missions (Hubble, Starliner, etc.) get the
+   keyword/topic bonuses but not the +10 major-mission bonus. This is
+   a deliberate editorial choice — these three missions are the
+   highest-profile NASA programs right now. A future agent can expand
+   this set in `scripts/build-science-stories.mjs` if editorial
+   priorities change.
+
+6. **No article draft generator yet.** Phase 9A is fetch+filter+score
+   only. The next phase (9B?) will need to build
+   `generate-science-draft.mjs` (analogous to
+   `generate-nws-draft.mjs` / `generate-recall-draft.mjs` /
+   `generate-earthquake-draft.mjs`) and a `run-science-newsroom.mjs`
+   that picks the highest-scoring publishEligible story and writes a
+   markdown article. The science-story-records.json file produced by
+   this phase is the input for that future newsroom.
+
+7. **No GitHub Actions workflow yet.** The NWS/recall/earthquake
+   pipelines each have a `.github/workflows/*-newsroom.yml` that runs
+   hourly / twice-daily. Phase 9A does not add a science-newsroom
+   workflow. The fetch step is designed to be safe to run as
+   frequently as hourly (each fetcher makes at most 2 HTTP requests
+   and writes atomically), so a future workflow can be added without
+   changes to the fetchers.
+
+8. **SWPC message parsing is regex-based.** The SWPC alert message
+   body uses a line-oriented header convention (`:`-prefixed headers,
+   `#`-prefixed comments). The parser uses regex against the full
+   message body to extract `messageCode`, `serialNumber`,
+   `beginTime`, `endTime`, `watchWarningType`, and a 300-char
+   summary. This works for the current SWPC format but may need
+   adjustment if SWPC changes their message template. The
+   `rawSourceData.message` field is preserved verbatim so future
+   re-parsing is possible without re-fetching.

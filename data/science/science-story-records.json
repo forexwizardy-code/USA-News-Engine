@@ -1,0 +1,225 @@
+{
+  "generatedAt": "2026-09-28T00:21:17.985Z",
+  "source": "Phase 9A science stories",
+  "inputCandidateCount": 7,
+  "uniqueStoryCount": 7,
+  "publishEligibleCount": 4,
+  "highPriorityCount": 4,
+  "newCount": 0,
+  "updatedCount": 0,
+  "unchangedCount": 7,
+  "previousSnapshotCount": 7,
+  "previousMissingCount": 0,
+  "stories": [
+    {
+      "scienceStoryKey": "nasa__f6e0c13aa126935f",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__f6e0c13aa126935f"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/"
+      ],
+      "titleSeed": "nasa tests dual mode propulsion cubesat ahead of launch",
+      "title": "NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch",
+      "topic": "launch",
+      "mission": null,
+      "publishedAtSource": "2026-09-25T19:36:10.000Z",
+      "storyScore": 45,
+      "publishEligible": true,
+      "priority": "high",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "97ca9276753584601d8b05640a7c2759ee0e5ebaabddc7f27621c1bcbd44a369",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/",
+      "imageUrl": "https://images-assets.nasa.gov/image/933/933~large.jpg?w=1920&amp;h=1440&amp;fit=clip&amp;crop=faces%2Cfocalpoint",
+      "imageCredit": "NASA",
+      "description": "Spacecraft propulsion traditionally relies on volatile fuels and separate, bulky systems for different types of maneuvering in space. NASA is working to change that paradigm. Engineers at NASA’s Marshall Space Flight Center in Huntsville, Alabama, recently completed a rigorous series of environmenta",
+      "selectedReason": "Selected: keyword \"launch\""
+    },
+    {
+      "scienceStoryKey": "nasa__4f99bb2c5f0bf822",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__4f99bb2c5f0bf822"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/centers-and-facilities/nesc/tb-26-07-aluminum-alloy-2219-material-guidance/"
+      ],
+      "titleSeed": "tb 26-07 aluminum alloy 2219 material guidance",
+      "title": "TB 26-07 Aluminum Alloy 2219 Material Guidance",
+      "topic": "discovery",
+      "mission": null,
+      "publishedAtSource": "2026-09-25T14:45:51.000Z",
+      "storyScore": 40,
+      "publishEligible": false,
+      "priority": "medium",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "ab4fb6a34f9f0cbfc71350b44aa013501db0be444c15bec083cfe6d3ff5902e3",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/nesc/tb-26-07-aluminum-alloy-2219-material-guidance/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/tb-26-07-figure-12.png?w=674",
+      "imageCredit": "NASA",
+      "description": "For more information, contact Donald S. Parker, Kennedy Space Center, donald.s.parker@nasa.gov Download the PDF version Improper casting and forging processes in the manufacture of aluminum alloy 2219 can lead to microstructural defects that result in a sub-optimal response to anodic surface treatme",
+      "selectedReason": "Tracked internally: NASA/JPL release without high-priority keyword or major mission name"
+    },
+    {
+      "scienceStoryKey": "nasa__f632acf986decadb",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__f632acf986decadb"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/"
+      ],
+      "titleSeed": "nasa, boeing to provide update on starliner development",
+      "title": "NASA, Boeing to Provide Update on Starliner Development",
+      "topic": "crew",
+      "mission": "Starliner",
+      "publishedAtSource": "2026-09-25T22:06:50.000Z",
+      "storyScore": 35,
+      "publishEligible": true,
+      "priority": "high",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "d94c3dc20e6d876b1ee1d35ccbd2571accdc214e09b25b08d9581afcef8e61af",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/starliner.jpg?w=2048",
+      "imageCredit": "NASA",
+      "description": "During a news conference at 3 p.m. EDT on Monday, Sept. 28, NASA and Boeing leadership will discuss Starliner’s development and plans for regular crew flights to and from the International Space Station. Learn where to watch online: https://www.nasa.gov/live The briefing participants include: Media ",
+      "selectedReason": "Selected: keyword \"crew\" + mission \"starliner\""
+    },
+    {
+      "scienceStoryKey": "nasa__f10b79f171c79762",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__f10b79f171c79762"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/"
+      ],
+      "titleSeed": "nasa welcomes san marino signing the artemis accords",
+      "title": "NASA Welcomes San Marino Signing the Artemis Accords",
+      "topic": "administrative",
+      "mission": "Artemis",
+      "publishedAtSource": "2026-09-25T19:53:03.000Z",
+      "storyScore": 35,
+      "publishEligible": true,
+      "priority": "high",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "d38aebd9fd5a3222cdc6fdc1c40956296610aeb7d7bf0ac0c453a14d7f99417f",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/san-marino.jpeg?w=1600",
+      "imageCredit": "NASA",
+      "description": "The Republic of San Marino became the 76th signatory to the Artemis Accords during a ceremony in the city of Rimini on Friday with NASA and U.S. Department of State officials present. “San Marino joins a growing coalition of like-minded nations committed to the peaceful, transparent, and responsible",
+      "selectedReason": "Selected: mission \"artemis\""
+    },
+    {
+      "scienceStoryKey": "nasa__4c93b21d54ff615c",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__4c93b21d54ff615c"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/"
+      ],
+      "titleSeed": "hubble spots chaotic secret in galaxy",
+      "title": "Hubble Spots Chaotic Secret in Galaxy",
+      "topic": "astronomy",
+      "mission": "Hubble",
+      "publishedAtSource": "2026-09-25T15:54:10.000Z",
+      "storyScore": 25,
+      "publishEligible": true,
+      "priority": "high",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "77f014308f3715cb99ac67202e06868e62187b2c69b8b439e01962a212fdbfd1",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/55534741297-34e5a9d414-o.jpg?w=2018",
+      "imageCredit": "NASA",
+      "description": "A chaotic secret hides within this seemingly serene image of spiral galaxy NGC 4698 taken by NASA’s Hubble Space Telescope and released on Sept. 18, 2026. As a spiral galaxy like our own Milky Way galaxy, NGC 4698 has spiral arms that curl around within a thin disk of stars, gas, and dust. These arm",
+      "selectedReason": "Selected: mission \"hubble\""
+    },
+    {
+      "scienceStoryKey": "nasa__7ac074e8246266a7",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__7ac074e8246266a7"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/"
+      ],
+      "titleSeed": "2026-2027 dwu: middle school design challenge",
+      "title": "2026-2027 DWU: Middle School Design Challenge",
+      "topic": "education",
+      "mission": null,
+      "publishedAtSource": "2026-09-25T17:20:51.000Z",
+      "storyScore": 25,
+      "publishEligible": false,
+      "priority": "medium",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "11bb1b5cbf9dea4fe4f59f72ea58cc9178f72dd1555561a0b285061709410722",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/dwu-x-plane-design2-16x9-ms-web.jpg?w=2048",
+      "imageCredit": "NASA",
+      "description": "2026-2027 DWU: Middle School Design Challenge Overview The 2026-2027 challenge theme is, “Fueling Flight Design Challenge: New Energy Systems.” As more and more aircraft are a part of the US’ National Airspace System (NAS), NASA and partners at the FAA, at universities, and in the aviation industry ",
+      "selectedReason": "Tracked internally: NASA/JPL release without high-priority keyword or major mission name"
+    },
+    {
+      "scienceStoryKey": "nasa__8e8ed589196e1fa7",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__8e8ed589196e1fa7"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/"
+      ],
+      "titleSeed": "2026-2027 dwu: high school engineering challenge",
+      "title": "2026-2027 DWU: High School Engineering Challenge",
+      "topic": "technology",
+      "mission": null,
+      "publishedAtSource": "2026-09-25T17:19:42.000Z",
+      "storyScore": 25,
+      "publishEligible": false,
+      "priority": "medium",
+      "recordCount": 1,
+      "storyStatus": "unchanged",
+      "updateCount": 3,
+      "firstSeenAt": "2026-09-28T00:19:48.959Z",
+      "latestSeenAt": "2026-09-28T00:21:17.985Z",
+      "contentSignature": "4dc3f15941fa2f7c88aed63662152454ac01caff42bd3e781fb03a9678d9a84d",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/dwu-x-plane-design2-16x9-hs-web.jpg?w=2048",
+      "imageCredit": "NASA",
+      "description": "2026-2027 DWU: High School Engineering Challenge Challenge Materials Overview The 2026-2027 challenge theme is, “Fueling Flight Design Challenge: New Energy Systems.” As more and more aircraft are a part of the US’ National Airspace System (NAS), NASA and partners at the FAA, at universities, and in",
+      "selectedReason": "Tracked internally: NASA/JPL release without high-priority keyword or major mission name"
+    }
+  ]
+}
