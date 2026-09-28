@@ -1,11 +1,11 @@
-/**
- * US News Engine — master recall newsroom automation script (Phase 7D).
+﻿/**
+ * US News Engine â€” master recall newsroom automation script (Phase 7D).
  *
  * Orchestrates the full recall pipeline:
- *   fetch (CPSC + FDA food + FDA device) → filter → cluster →
- *   reconcile against published-recalls.json → update existing articles →
- *   publish new articles (draft + image + article file) → update registry →
- *   validate (recalls + publishing) → build.
+ *   fetch (CPSC + FDA food + FDA device) â†’ filter â†’ cluster â†’
+ *   reconcile against published-recalls.json â†’ update existing articles â†’
+ *   publish new articles (draft + image + article file) â†’ update registry â†’
+ *   validate (recalls + publishing) â†’ build.
  *
  * Reads config/automation.json for the kill switch and publishing caps:
  *   - recallPublishingEnabled (master kill switch)
@@ -28,6 +28,7 @@ import { readFile, writeFile, mkdir, copyFile, access } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -93,7 +94,7 @@ function yamlEscape(s) {
 async function main() {
   const startTime = Date.now();
   console.log('============================================');
-  console.log('US News Engine — Recall Newsroom Automation');
+  console.log('US News Engine â€” Recall Newsroom Automation');
   console.log('============================================');
   console.log(`Started: ${new Date().toISOString()}`);
   console.log('');
@@ -137,12 +138,12 @@ async function main() {
   const dryRunMode = hasTestFlag && !allowTestPublish;
   if (testDate) console.log(`TEST MODE: using test date ${testDate} (does not modify stored timestamps)`);
   if (ignoreDailyCap) console.log('TEST MODE: ignoring daily cap (does not modify stored timestamps)');
-  if (dryRunMode) console.log('TEST MODE: DRY RUN — no production files will be modified');
+  if (dryRunMode) console.log('TEST MODE: DRY RUN â€” no production files will be modified');
   if (allowTestPublish) console.log('TEST MODE: --allow-test-publish active (test publishing enabled)');
   console.log('');
 
-  // --- Steps 1-4: Fetch → Filter → Cluster ---
-  console.log('--- Steps 1-4: Fetch recalls → Filter → Cluster ---');
+  // --- Steps 1-4: Fetch â†’ Filter â†’ Cluster ---
+  console.log('--- Steps 1-4: Fetch recalls â†’ Filter â†’ Cluster ---');
   try {
     runNpm('fetch:cpsc', 'Fetch CPSC recalls');
     console.log('  CPSC fetch complete.');
@@ -187,7 +188,7 @@ async function main() {
       storyCount: 0,
       stories: [],
     };
-    console.log('  No registry found — treating all cluster stories as new.');
+    console.log('  No registry found â€” treating all cluster stories as new.');
   }
   if (!Array.isArray(registry.stories)) registry.stories = [];
 
@@ -225,7 +226,7 @@ async function main() {
   console.log(`  MISSING (registry entries not in feed): ${categories.MISSING.length}`);
 
   // --- Step 7: Check daily cap ---
-  // Use test date if provided (for dry-run testing only — never modifies stored timestamps)
+  // Use test date if provided (for dry-run testing only â€” never modifies stored timestamps)
   const today = (testDate || new Date().toISOString()).slice(0, 10);
   const publishedToday = registry.stories.filter(
     (s) => s.publishedAt && s.publishedAt.startsWith(today),
@@ -250,7 +251,7 @@ async function main() {
   // --- Dry-run check (test mode without --allow-test-publish) ---
   if (dryRunMode) {
     console.log('\n============================================');
-    console.log('TEST MODE DRY RUN — no production files modified');
+    console.log('TEST MODE DRY RUN â€” no production files modified');
     console.log('Candidate selection and reporting only.');
     console.log('No article files created. No registry changes.');
     console.log('No Git commit. No Cloudflare deploy.');
@@ -287,7 +288,7 @@ async function main() {
       console.log(`  UPDATED: ${upd.clusterStory.recallStoryKey}`);
     } catch (err) {
       console.error(
-        `  UPDATE FAILED: ${upd.clusterStory.recallStoryKey} — ${err.message}`,
+        `  UPDATE FAILED: ${upd.clusterStory.recallStoryKey} â€” ${err.message}`,
       );
     }
   }
@@ -309,7 +310,7 @@ async function main() {
   }
 
   // --- Steps 10-12: Generate drafts, images, publish articles ---
-  console.log('\n--- Steps 10-12: Generate drafts → images → publish ---');
+  console.log('\n--- Steps 10-12: Generate drafts â†’ images â†’ publish ---');
   let photoHeroes = 0;
   let graphicHeroes = 0;
   let newPublished = 0;
@@ -322,7 +323,7 @@ async function main() {
       else graphicHeroes++;
       console.log(`    Published: /news/${result.slug}/`);
     } catch (err) {
-      console.error(`    PUBLISH FAILED: ${story.recallStoryKey} — ${err.message}`);
+      console.error(`    PUBLISH FAILED: ${story.recallStoryKey} â€” ${err.message}`);
     }
   }
   if (newPublished > 0) {
@@ -333,7 +334,7 @@ async function main() {
   const totalChanges = newPublished + updatedCount;
   if (totalChanges === 0) {
     console.log('\n============================================');
-    console.log('NO CONTENT CHANGES — skipping validation and build.');
+    console.log('NO CONTENT CHANGES â€” skipping validation and build.');
     console.log('============================================');
     printSummary(categories, 0, updatedCount, 0, startTime, photoHeroes, graphicHeroes);
     return;
@@ -345,7 +346,7 @@ async function main() {
     runNpm('validate:recalls', 'Recall validation');
     console.log('  validate:recalls: PASS');
   } catch (err) {
-    console.error('  validate:recalls: FAIL — aborting before publishing validation.');
+    console.error('  validate:recalls: FAIL â€” aborting before publishing validation.');
     console.error(err.message);
     process.exit(1);
   }
@@ -356,7 +357,7 @@ async function main() {
     runNpm('validate:publishing', 'Publishing validation');
     console.log('  validate:publishing: PASS');
   } catch (err) {
-    console.error('  validate:publishing: FAIL — aborting before build.');
+    console.error('  validate:publishing: FAIL â€” aborting before build.');
     console.error(err.message);
     process.exit(1);
   }
@@ -367,7 +368,7 @@ async function main() {
     runNpm('build', 'Astro build');
     console.log('  build: PASS');
   } catch (err) {
-    console.error('  build: FAIL — aborting.');
+    console.error('  build: FAIL â€” aborting.');
     console.error(err.message);
     process.exit(1);
   }
@@ -432,7 +433,7 @@ async function processUpdate(clusterStory, published, newIds, registry) {
     }
     await writeFile(articlePath, content, 'utf8');
   } catch {
-    // Article file may have been moved — skip
+    // Article file may have been moved â€” skip
   }
 }
 
@@ -459,7 +460,7 @@ async function publishNewArticle(story, registry) {
       `generate-recall-image for ${story.recallStoryKey}`,
     );
   } catch (err) {
-    console.warn(`    Image generation failed — will use fallback graphic. (${err.message.split('\n')[0]})`);
+    console.warn(`    Image generation failed â€” will use fallback graphic. (${err.message.split('\n')[0]})`);
     imageGenFailed = true;
   }
 
@@ -487,7 +488,7 @@ async function publishNewArticle(story, registry) {
   try {
     sidecar = JSON.parse(await readFile(sidecarPath, 'utf8'));
   } catch {
-    // No sidecar — best effort
+    // No sidecar â€” best effort
   }
 
   // Determine which image file exists (.jpg for CPSC photo, .png for graphic)
@@ -495,6 +496,52 @@ async function publishNewArticle(story, registry) {
   const jpgPath = join(draftImagesDir, `${slug}.jpg`);
   const pngPath = join(draftImagesDir, `${slug}.png`);
   const publicImagesDir = join(PROJECT_DIR, 'public', 'images');
+
+  // Keep official recall JPG first; otherwise try a verified reusable photo before the graphic fallback.
+  if (!(await fileExists(jpgPath))) {
+    const recallKeywords = [...new Set(
+      [draft.title, story.recallingFirm, story.headlineSeed, ...(Array.isArray(story.brands) ? story.brands : [])]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]+/g, ' ')
+        .split(/\s+/)
+        .filter((word) => word.length >= 4 && !['recalled', 'recall', 'hazard', 'risk', 'product', 'products', 'brand'].includes(word)),
+    )].slice(0, 8);
+
+    const imageSearch = await findBestCommonsImage({
+      queries: [draft.title, `${story.recallingFirm || ''} ${story.headlineSeed || ''}`.trim()].filter(Boolean),
+      keywords: recallKeywords,
+      minScore: 72,
+      minKeywordMatches: 2,
+      requirePhoto: true,
+      perQuery: 10,
+    });
+
+    if (imageSearch.found && imageSearch.best?.image) {
+      const selected = imageSearch.best.image;
+      const processed = await downloadAndProcessHero({ candidate: selected, outputDir: draftImagesDir, slug, suffix: '', keepOriginal: true });
+      if (processed.ok) {
+        const creator = selected.artist || selected.credit || selected.user || 'Wikimedia Commons contributor';
+        sidecar = {
+          alt: selected.description || selected.title || draft.title,
+          caption: `Illustrative file photo for ${draft.title}. Photo: ${creator}${selected.license ? `, ${selected.license}` : ''}.`,
+          source: creator,
+          licenseNotes: selected.license || selected.usageTerms || 'Reusable Wikimedia Commons license',
+          licenseUrl: selected.licenseUrl || '',
+          sourceUrl: selected.sourcePageUrl || '',
+          imageMode: 'licensed-photo',
+          imageRelation: 'illustrative-file-photo',
+          originalImageUrl: selected.originalUrl || '',
+          downloadedSourceUrl: processed.sourceUrl || '',
+          keywordMatches: imageSearch.best.keywordMatches,
+          suitabilityScore: imageSearch.best.score,
+          generatedAt: new Date().toISOString(),
+        };
+        await writeFile(sidecarPath, JSON.stringify(sidecar, null, 2) + '\n', 'utf8');
+      }
+    }
+  }
   await mkdir(publicImagesDir, { recursive: true });
 
   let imageKind = 'graphic';
@@ -511,7 +558,7 @@ async function publishNewArticle(story, registry) {
     publicImagePath = join(publicImagesDir, imageFilename);
     await copyFile(pngPath, publicImagePath);
   } else {
-    // Fallback: nothing to copy — the article will reference an image that
+    // Fallback: nothing to copy â€” the article will reference an image that
     // may not exist. Use the og-default as a last resort.
     imageKind = 'graphic';
     imageFilename = 'og-default.svg';
@@ -526,10 +573,9 @@ async function publishNewArticle(story, registry) {
   const heroImageLicense =
     sidecar?.licenseNotes ||
     (imageKind === 'photo'
-      ? 'Official CPSC recall photo — public domain U.S. government work'
+      ? 'Official CPSC recall photo â€” public domain U.S. government work'
       : 'Original editorial graphic generated by US News Engine from FDA data');
-  // No external license URL for either path.
-  const heroImageLicenseUrl = '';
+  const heroImageLicenseUrl = sidecar?.licenseUrl || '';
   const heroImageSourceUrl = sidecar?.sourceUrl || draft.sourceUrl || '';
 
   // 5. Build article markdown file
@@ -562,6 +608,8 @@ imageMode: "${imageKind === 'photo' ? 'licensed-photo' : 'agency-graphic'}"
 imageCaption: "${yamlEscape(heroImageCaption)}"
 imageCreator: "${yamlEscape(heroImageCreator)}"
 imageLicense: "${yamlEscape(heroImageLicense)}"
+imageLicenseUrl: "${yamlEscape(heroImageLicenseUrl)}"
+imageSourcePageUrl: "${yamlEscape(heroImageSourceUrl)}"
 sourceName: "${yamlEscape(sourceName)}"
 sourceUrl: "${yamlEscape(draft.sourceUrl || story.sourceUrls?.[0] || '')}"
 sourceOffice: "${yamlEscape(sourceName)}"
@@ -607,7 +655,7 @@ ${bodyMarkdown}
 
 /**
  * Best-effort slug guess by mirroring the draft generator's slug formula.
- * Used only to find the draft JSON file location — the canonical slug comes
+ * Used only to find the draft JSON file location â€” the canonical slug comes
  * from the draft itself once loaded.
  */
 function deriveSlug(story) {
