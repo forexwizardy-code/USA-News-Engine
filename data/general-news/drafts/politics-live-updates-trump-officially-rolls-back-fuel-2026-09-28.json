@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T15:17:20.757Z",
+  "generatedAt": "2026-09-28T15:45:11.318Z",
   "generalStoryKey": "gn__7d394661b27e6010",
   "slug": "politics-live-updates-trump-officially-rolls-back-fuel-2026-09-28",
   "title": "Live updates: Trump officially rolls back fuel economy standards; Senate sets up college sports bill vote",
@@ -28,7 +28,7 @@
     {
       "heading": "When",
       "paragraphs": [
-        "Source coverage began September 28, 2026 (ET). The story is approximately 2 hours old."
+        "Source coverage began September 28, 2026 (ET). The story is approximately 3 hours old."
       ]
     },
     {
@@ -68,13 +68,13 @@
     "The Hill"
   ],
   "usRelevance": "high",
-  "usRelevanceReason": "direct U.S. subject/named entity",
+  "usRelevanceReason": "event directly involves U.S. government/population/economy/institution",
   "hasGovernmentSource": false,
   "sourcePublishedAt": "2026-09-28T13:09:01.000Z",
   "storyScore": 47,
   "freshnessStatus": "very-high",
   "freshnessLabel": "very high freshness",
-  "sourceAgeHours": 2,
+  "sourceAgeHours": 3,
   "claimAudit": {
     "auditType": "private-claim-traceability",
     "note": "PRIVATE — never render on public articles. Maps each material claim to its source.",

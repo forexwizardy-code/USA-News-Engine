@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-09-28T15:45:11.428Z",
+  "generalStoryKey": "gn__fabb2bf888739e13",
+  "slug": "technology-after-a-deepfake-voice-fooled-her-grandfather-this-2026-09-28",
+  "title": "After a deepfake voice fooled her grandfather, this founder sprang into action",
+  "description": "After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI models small enough to run directly on smartphones a",
+  "category": "technology",
+  "author": "US News Engine General News Desk",
+  "body": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI models small enough to run directly on smartphones and flag fake voices in real time, and it's now one of the companies competing in Startup Battlefield at TechCrunch Disrupt."
+      ]
+    },
+    {
+      "heading": "Who is involved",
+      "paragraphs": [
+        "Entities referenced in coverage include After."
+      ]
+    },
+    {
+      "heading": "Where",
+      "paragraphs": [
+        "Location details are available in the linked source coverage."
+      ]
+    },
+    {
+      "heading": "When",
+      "paragraphs": [
+        "Source coverage began September 28, 2026 (ET). The story is approximately 1 hours old."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "This story has technology significance. It is supported by 1 source(s)."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The following facts are drawn from the linked source coverage:",
+        "• TechCrunch: \"After a deepfake voice fooled her grandfather, this founder sprang into action\" — After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI mo"
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Some details may still be developing. Refer to the linked primary and supporting sources for the most current information."
+      ]
+    }
+  ],
+  "primarySource": {
+    "name": "TechCrunch",
+    "type": "publisher",
+    "url": "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/",
+    "publisherFamily": "TechCrunch"
+  },
+  "supportingSources": [],
+  "allSourceUrls": [
+    "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/"
+  ],
+  "sourceCount": 1,
+  "independentSourceCount": 1,
+  "independentPublisherCount": 1,
+  "publisherFamilies": [
+    "TechCrunch"
+  ],
+  "usRelevance": "high",
+  "usRelevanceReason": "event directly involves U.S. government/population/economy/institution",
+  "hasGovernmentSource": false,
+  "sourcePublishedAt": "2026-09-28T15:00:00.000Z",
+  "storyScore": 41,
+  "freshnessStatus": "very-high",
+  "freshnessLabel": "very high freshness",
+  "sourceAgeHours": 1,
+  "claimAudit": {
+    "auditType": "private-claim-traceability",
+    "note": "PRIVATE — never render on public articles. Maps each material claim to its source.",
+    "generalStoryKey": "gn__fabb2bf888739e13",
+    "claimCount": 1,
+    "claims": [
+      {
+        "claim": "After a deepfake voice fooled her grandfather, this founder sprang into action",
+        "source": "TechCrunch",
+        "sourceUrl": "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/",
+        "sourceType": "publisher",
+        "publishedAtSource": "2026-09-28T15:00:00.000Z",
+        "supportingExcerpt": "After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI models small enough to run directly on smartphones a"
+      }
+    ]
+  },
+  "image": {
+    "mode": "factual-graphic-fallback",
+    "alt": "Editorial graphic for: After a deepfake voice fooled her grandfather, this founder sprang into action",
+    "caption": "US News Engine editorial summary of 1 source(s) across 1 publisher(s).",
+    "credit": "US News Engine (editorial graphic)",
+    "sourcePageUrl": "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/"
+  }
+}

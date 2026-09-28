@@ -13,5 +13,9 @@
   "maxScienceNewPerDay": 3,
   "generalPublishingEnabled": false,
   "maxGeneralNewPerRun": 2,
-  "maxGeneralNewPerDay": 24
+  "maxGeneralNewPerDay": 24,
+  "maxGeneralPerPublisherPerRun": 2,
+  "maxGeneralPerPublisherPerDay": 6,
+  "maxPoliticsNewPerRun": 1,
+  "maxPoliticsNewPerDay": 6
 }

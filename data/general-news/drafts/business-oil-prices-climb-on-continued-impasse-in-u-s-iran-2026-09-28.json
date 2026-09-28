@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-09-28T15:45:11.372Z",
+  "generalStoryKey": "gn__ef77016b184def5b",
+  "slug": "business-oil-prices-climb-on-continued-impasse-in-u-s-iran-2026-09-28",
+  "title": "Oil Prices Climb on Continued Impasse in U.S.-Iran Talks",
+  "description": "President Trump rejected Iran’s proposal over the weekend, calling it “unacceptable,” but Iran said it was still waiting for “definitive news” from Washington.",
+  "category": "business",
+  "author": "US News Engine General News Desk",
+  "body": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "President Trump rejected Iran’s proposal over the weekend, calling it “unacceptable,” but Iran said it was still waiting for “definitive news” from Washington."
+      ]
+    },
+    {
+      "heading": "Who is involved",
+      "paragraphs": [
+        "Entities referenced in coverage include Oil Prices Climb, Continued Impasse, Iran Talks."
+      ]
+    },
+    {
+      "heading": "Where",
+      "paragraphs": [
+        "Coverage references Iran and related locations."
+      ]
+    },
+    {
+      "heading": "When",
+      "paragraphs": [
+        "Source coverage began September 28, 2026 (ET). The story is approximately 0 hours old."
+      ]
+    },
+    {
+      "heading": "Why it matters",
+      "paragraphs": [
+        "This story has economic and market significance. It is supported by 1 source(s)."
+      ]
+    },
+    {
+      "heading": "What is confirmed",
+      "paragraphs": [
+        "The following facts are drawn from the linked source coverage:",
+        "• New York Times — Business: \"Oil Prices Climb on Continued Impasse in U.S.-Iran Talks\" — President Trump rejected Iran’s proposal over the weekend, calling it “unacceptable,” but Iran said it was still waiting for “definitive news” from Wa"
+      ]
+    },
+    {
+      "heading": "What remains unclear",
+      "paragraphs": [
+        "Some details may still be developing. Refer to the linked primary and supporting sources for the most current information."
+      ]
+    }
+  ],
+  "primarySource": {
+    "name": "New York Times — Business",
+    "type": "publisher",
+    "url": "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html",
+    "publisherFamily": "NYT"
+  },
+  "supportingSources": [],
+  "allSourceUrls": [
+    "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html"
+  ],
+  "sourceCount": 1,
+  "independentSourceCount": 1,
+  "independentPublisherCount": 1,
+  "publisherFamilies": [
+    "NYT"
+  ],
+  "usRelevance": "high",
+  "usRelevanceReason": "event directly involves U.S. government/population/economy/institution",
+  "hasGovernmentSource": false,
+  "sourcePublishedAt": "2026-09-28T15:26:02.000Z",
+  "storyScore": 41,
+  "freshnessStatus": "very-high",
+  "freshnessLabel": "very high freshness",
+  "sourceAgeHours": 0,
+  "claimAudit": {
+    "auditType": "private-claim-traceability",
+    "note": "PRIVATE — never render on public articles. Maps each material claim to its source.",
+    "generalStoryKey": "gn__ef77016b184def5b",
+    "claimCount": 1,
+    "claims": [
+      {
+        "claim": "Oil Prices Climb on Continued Impasse in U.S.-Iran Talks",
+        "source": "New York Times — Business",
+        "sourceUrl": "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html",
+        "sourceType": "publisher",
+        "publishedAtSource": "2026-09-28T15:26:02.000Z",
+        "supportingExcerpt": "President Trump rejected Iran’s proposal over the weekend, calling it “unacceptable,” but Iran said it was still waiting for “definitive news” from Washington."
+      }
+    ]
+  },
+  "image": {
+    "mode": "factual-graphic-fallback",
+    "alt": "Editorial graphic for: Oil Prices Climb on Continued Impasse in U.S.-Iran Talks",
+    "caption": "US News Engine editorial summary of 1 source(s) across 1 publisher(s).",
+    "credit": "US News Engine (editorial graphic)",
+    "sourcePageUrl": "https://www.nytimes.com/2026/09/28/business/oil-stocks-gas-prices.html"
+  }
+}

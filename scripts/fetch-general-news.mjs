@@ -184,6 +184,115 @@ const SOURCES = [
     category: 'us',
     feedUrl: 'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml',
   },
+
+  // Phase 10A.2.2 — additional publisher families for source diversity
+
+  // Washington Post family (publisherFamily = WaPo)
+  {
+    sourceName: 'Washington Post — National',
+    sourceType: 'publisher',
+    publisherFamily: 'WaPo',
+    category: 'us',
+    feedUrl: 'https://feeds.washingtonpost.com/rss/national',
+  },
+  {
+    sourceName: 'Washington Post — Entertainment',
+    sourceType: 'publisher',
+    publisherFamily: 'WaPo',
+    category: 'entertainment',
+    feedUrl: 'https://feeds.washingtonpost.com/rss/entertainment',
+  },
+  {
+    sourceName: 'Washington Post — Sports',
+    sourceType: 'publisher',
+    publisherFamily: 'WaPo',
+    category: 'sports',
+    feedUrl: 'https://feeds.washingtonpost.com/rss/sports',
+  },
+
+  // CNET (technology — independent family)
+  {
+    sourceName: 'CNET News',
+    sourceType: 'publisher',
+    publisherFamily: 'CNET',
+    category: 'technology',
+    feedUrl: 'https://www.cnet.com/rss/news/',
+  },
+
+  // Ars Technica (technology — independent family)
+  {
+    sourceName: 'Ars Technica',
+    sourceType: 'publisher',
+    publisherFamily: 'Ars Technica',
+    category: 'technology',
+    feedUrl: 'https://feeds.arstechnica.com/arstechnica/index',
+  },
+
+  // The Verge (technology — independent family)
+  {
+    sourceName: 'The Verge',
+    sourceType: 'publisher',
+    publisherFamily: 'The Verge',
+    category: 'technology',
+    feedUrl: 'https://www.theverge.com/rss/index.xml',
+  },
+
+  // TechCrunch (technology — independent family)
+  {
+    sourceName: 'TechCrunch',
+    sourceType: 'publisher',
+    publisherFamily: 'TechCrunch',
+    category: 'technology',
+    feedUrl: 'https://techcrunch.com/feed/',
+  },
+
+  // Engadget (technology — independent family)
+  {
+    sourceName: 'Engadget',
+    sourceType: 'publisher',
+    publisherFamily: 'Engadget',
+    category: 'technology',
+    feedUrl: 'https://www.engadget.com/rss.xml',
+  },
+
+  // NYT sport-specific feeds (publisherFamily = NYT — same family as NYT
+  // categories above, but these provide actual sports items unlike the
+  // empty NYT Sports aggregate feed).
+  {
+    sourceName: 'New York Times — Pro Football',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/ProFootball.xml',
+  },
+  {
+    sourceName: 'New York Times — Pro Basketball',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/ProBasketball.xml',
+  },
+  {
+    sourceName: 'New York Times — Baseball',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/Baseball.xml',
+  },
+  {
+    sourceName: 'New York Times — College Football',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/CollegeFootball.xml',
+  },
+  {
+    sourceName: 'New York Times — College Basketball',
+    sourceType: 'publisher',
+    publisherFamily: 'NYT',
+    category: 'sports',
+    feedUrl: 'https://rss.nytimes.com/services/xml/rss/nyt/CollegeBasketball.xml',
+  },
 ];
 
 // ===========================================================================

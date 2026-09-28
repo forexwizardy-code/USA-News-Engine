@@ -146,32 +146,84 @@ function assessUsRelevance(cluster) {
   const text = cluster.map((r) => `${r.title} ${r.description || ''}`).join(' ').toLowerCase();
   const fullText = text;
 
+  // Count foreign signals
+  const foreignCount = FOREIGN_SIGNALS.filter((re) => re.test(fullText)).length;
+
   // Check for U.S. HIGH signals
   const hasHigh = US_HIGH_SIGNALS.some((re) => re.test(fullText));
   if (hasHigh) {
-    // But if it's primarily a foreign story with only incidental U.S. mention,
-    // check the ratio. If foreign signals dominate, downgrade.
-    const foreignCount = FOREIGN_SIGNALS.filter((re) => re.test(fullText)).length;
+    // Phase 10A.2.2: if it's primarily a foreign story with only incidental
+    // U.S. mention, downgrade. Foreign context dominating → MEDIUM not HIGH.
     if (foreignCount >= 3) {
-      return { usRelevance: 'medium', reason: 'U.S. signal present but foreign context dominates' };
+      return { usRelevance: 'medium', usRelevanceScore: 40, reason: 'U.S. signal present but foreign context dominates' };
     }
-    return { usRelevance: 'high', reason: 'direct U.S. subject/named entity' };
+    return { usRelevance: 'high', usRelevanceScore: 90, reason: 'event directly involves U.S. government/population/economy/institution' };
   }
 
   // Check for U.S. MEDIUM signals
   const hasMedium = US_MEDIUM_SIGNALS.some((re) => re.test(fullText));
   if (hasMedium) {
-    return { usRelevance: 'medium', reason: 'U.S. connection via government/markets/geography' };
+    // Phase 10A.2.2: foreign event with meaningful U.S. consequences = MEDIUM
+    // but only if the U.S. connection is substantive, not incidental.
+    if (foreignCount >= 2) {
+      return { usRelevance: 'low', usRelevanceScore: 20, reason: 'weak/incidental U.S. connection in foreign context' };
+    }
+    return { usRelevance: 'medium', usRelevanceScore: 50, reason: 'foreign event with meaningful documented U.S. consequences' };
   }
 
   // No U.S. signals — check if it's a foreign story
   const isForeign = FOREIGN_SIGNALS.some((re) => re.test(fullText));
   if (isForeign) {
-    return { usRelevance: 'none', reason: 'foreign story with no meaningful U.S. impact' };
+    return { usRelevance: 'none', usRelevanceScore: 0, reason: 'no meaningful U.S. connection' };
   }
 
   // No U.S. or foreign signal — low relevance by default
-  return { usRelevance: 'low', reason: 'no clear U.S. connection identified' };
+  return { usRelevance: 'low', usRelevanceScore: 10, reason: 'no clear U.S. connection identified' };
+}
+
+/**
+ * Phase 10A.2.2 — Sports quality filter.
+ * Reject routine box scores / game results; accept major sports NEWS.
+ */
+function isRoutineSportsScore(story) {
+  if (story.category !== 'sports') return false;
+  const text = `${story.title} ${story.description || ''}`.toLowerCase();
+  // Routine game-result patterns (box scores, recaps, final scores)
+  if (/\b(beat|beats|defeats|defeated|tops|edges|routs|blanks|shutout|win over|loss to)\b.*\b\d+-\d+/.test(text)) return true;
+  if (/\b(final|recap|box score|game report|game recap|live updates)\b/.test(text) && !/\b(championship|playoff|record|trade|signing|injury|fired|hired|suspended|investigation|contract)\b/.test(text)) return true;
+  return false;
+}
+
+/**
+ * Phase 10A.2.2 — Single-source rule.
+ * A story with independentPublisherCount=1 may only auto-publish when:
+ *   A. the primary source is an authoritative official source (government)
+ *   OR
+ *   B. the story is low-dispute factual news (not politics/controversy)
+ *
+ * For politics/government controversy/major legal disputes/national-security
+ * claims: require official source + independent reporting, OR 2 independent
+ * publisher families. Otherwise: status = needs-more-sourcing.
+ */
+function assessSingleSourceRule(story) {
+  if (story.independentPublisherCount >= 2) {
+    return { ok: true, reason: 'multiple independent publishers' };
+  }
+  // independentPublisherCount === 1
+  if (story.hasGovernmentSource) {
+    return { ok: true, reason: 'authoritative official government source' };
+  }
+  // Single non-government source — check if it's low-dispute factual news
+  const text = `${story.title} ${story.description || ''}`.toLowerCase();
+  const isContested = /\b(controvers|dispute|alleg|accus|attack|scandal|impeach|investigat|lawsuit|indict|charg|guilty|convict|settle|sanction|reject|deni|deny|claim|disput|fight|battle|war|crisis|threat|warn)\b/.test(text);
+  if (story.category === 'politics' && isContested) {
+    return { ok: false, reason: 'politics contested story needs official source OR 2 independent publisher families', status: 'needs-more-sourcing' };
+  }
+  if (isContested && /\b(national security|military|intelligence|classified|espionage|treason)\b/.test(text)) {
+    return { ok: false, reason: 'national-security claim needs official source OR 2 independent publisher families', status: 'needs-more-sourcing' };
+  }
+  // Low-dispute factual news from a single reputable publisher — OK
+  return { ok: true, reason: 'low-dispute factual news, single reputable source' };
 }
 
 // ===========================================================================
@@ -192,22 +244,33 @@ function clusterCandidates(records, now) {
     url: normalizeUrl(it.sourceUrl),
     time: new Date(it.publishedAtSource).getTime(),
     source: it.sourceName,
+    publisherFamily: it.publisherFamily || it.sourceName,
+    // Named entities (capitalized phrases) for cross-publisher matching
+    entities: new Set((it.title.match(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}\b/g) || []).filter((e) => e.length > 3)),
   }));
 
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {
       const a = sigs[i];
       const b = sigs[j];
-      // Same outlet — don't cluster (an outlet shouldn't cluster with itself)
-      // unless it's clearly a re-issue (same URL).
       let sameEvent = false;
       // 1. Shared normalized URL
       if (a.url && b.url && a.url === b.url) sameEvent = true;
-      // 2. High token similarity (Jaccard >= 0.55) + within 18h
       const sim = tokenJaccard(a.tokens, b.tokens);
       const timeDiff = Math.abs(a.time - b.time);
-      if (sim >= 0.55 && timeDiff <= 18 * HOUR_MS) sameEvent = true;
-      // 3. Very high similarity (>= 0.75) + within 36h
+      // 2. Phase 10A.2.2: lowered threshold for cross-publisher clustering
+      //    (Jaccard >= 0.40 + within 18h + shared named entity)
+      if (sim >= 0.40 && timeDiff <= 18 * HOUR_MS) {
+        // Check for shared named entity (improves cross-publisher same-event detection)
+        let sharedEntity = false;
+        for (const e of a.entities) {
+          if (b.entities.has(e)) { sharedEntity = true; break; }
+        }
+        if (sharedEntity || sim >= 0.55) sameEvent = true;
+      }
+      // 3. High similarity (>= 0.60) + within 24h
+      if (sim >= 0.60 && timeDiff <= 24 * HOUR_MS) sameEvent = true;
+      // 4. Very high similarity (>= 0.75) + within 36h
       if (sim >= 0.75 && timeDiff <= 36 * HOUR_MS) sameEvent = true;
       if (sameEvent) union(i, j);
     }
@@ -319,18 +382,37 @@ async function main() {
     const memberKeys = cluster.map((r) => `${r.sourceName}::${r.sourceUrl}::${r.title}`).sort();
     const storyKey = `gn__${createHash('sha256').update(memberKeys.join('|||'), 'utf8').digest('hex').slice(0, 16)}`;
 
-    // Phase 10A.2.1 — U.S. relevance assessment
+    // Phase 10A.2.1/10A.2.2 — U.S. relevance assessment with score
     const usRel = assessUsRelevance(cluster);
 
     // Phase 10A.2.1 — publisher-family deduplication
-    // sourceCount = total records in cluster (may include multiple feeds from same publisher)
-    // independentPublisherCount = unique publisher families (NPR News + NPR Politics = 1 family)
     const publisherFamilies = [...new Set(cluster.map((r) => r.publisherFamily || r.sourceName).filter(Boolean))];
     const independentPublisherCount = publisherFamilies.length;
 
-    // publishEligible requires: score >= 30, fresh, AND usRelevance high/medium
+    // Phase 10A.2.2 — single-source rule
+    const singleSource = assessSingleSourceRule({
+      independentPublisherCount,
+      hasGovernmentSource: cluster.some((r) => r.sourceType === 'government'),
+      category,
+      title: primary.title,
+      description: primary.description,
+    });
+
+    // Phase 10A.2.2 — sports quality filter (reject routine box scores)
+    const routineSports = isRoutineSportsScore({ category, title: primary.title, description: primary.description });
+
+    // publishEligible requires: score >= 30, fresh, usRelevance high/medium,
+    // single-source rule passes, NOT routine sports score
     const usEligible = usRel.usRelevance === 'high' || usRel.usRelevance === 'medium';
-    const publishEligible = score >= 30 && fresh.status !== 'stale' && usEligible;
+    let publishEligible = score >= 30 && fresh.status !== 'stale' && usEligible && singleSource.ok && !routineSports;
+
+    let publishEligibleReason;
+    if (!usEligible) publishEligibleReason = `usRelevance=${usRel.usRelevance} (${usRel.reason})`;
+    else if (routineSports) publishEligibleReason = 'routine sports score/recap rejected';
+    else if (!singleSource.ok) publishEligibleReason = singleSource.reason;
+    else if (score < 30) publishEligibleReason = `score ${score} below 30 threshold`;
+    else if (fresh.status === 'stale') publishEligibleReason = 'stale (>36h)';
+    else publishEligibleReason = 'eligible';
 
     if (usRel.usRelevance === 'none') foreignRejected++;
 
@@ -347,6 +429,7 @@ async function main() {
       description: primary.description,
       category,
       usRelevance: usRel.usRelevance,
+      usRelevanceScore: usRel.usRelevanceScore,
       usRelevanceReason: usRel.reason,
       publishedAtSource: primaryPublishedAt,
       earliestPublishedAtSource: cluster
@@ -357,9 +440,11 @@ async function main() {
       independentSourceCount: new Set(cluster.map((r) => r.sourceName)).size,
       independentPublisherCount,
       hasGovernmentSource: cluster.some((r) => r.sourceType === 'government'),
+      singleSourceRule: singleSource,
+      routineSportsRejected: routineSports,
       storyScore: score,
       publishEligible,
-      publishEligibleReason: !usEligible ? `usRelevance=${usRel.usRelevance} (${usRel.reason})` : (score < 30 ? `score ${score} below 30 threshold` : (fresh.status === 'stale' ? 'stale (>36h)' : 'eligible')),
+      publishEligibleReason,
       freshnessStatus: fresh.status,
       freshnessLabel: fresh.label,
       sourceAgeHours: Math.round(minAge / HOUR_MS),

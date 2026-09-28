@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T15:17:20.702Z",
+  "generatedAt": "2026-09-28T15:45:11.262Z",
   "generalStoryKey": "gn__5be3276bdf9fe9b3",
   "slug": "us-trump-offered-to-sell-arms-to-china-u-s-ambassador-2026-09-28",
   "title": "Trump Offered to Sell Arms to China, U.S. Ambassador Says",
@@ -76,7 +76,7 @@
     "NYT"
   ],
   "usRelevance": "high",
-  "usRelevanceReason": "direct U.S. subject/named entity",
+  "usRelevanceReason": "event directly involves U.S. government/population/economy/institution",
   "hasGovernmentSource": false,
   "sourcePublishedAt": "2026-09-28T14:19:19.000Z",
   "storyScore": 52,

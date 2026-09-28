@@ -52,6 +52,11 @@ async function main() {
     `got ${config.generalPublishingEnabled}`);
   check('G2', 'maxGeneralNewPerRun = 2', config.maxGeneralNewPerRun === 2, `got ${config.maxGeneralNewPerRun}`);
   check('G3', 'maxGeneralNewPerDay = 24', config.maxGeneralNewPerDay === 24, `got ${config.maxGeneralNewPerDay}`);
+  // Phase 10A.2.2 — publisher concentration + politics caps
+  check('G2b', 'maxGeneralPerPublisherPerRun = 2', config.maxGeneralPerPublisherPerRun === 2, `got ${config.maxGeneralPerPublisherPerRun}`);
+  check('G2c', 'maxGeneralPerPublisherPerDay = 6', config.maxGeneralPerPublisherPerDay === 6, `got ${config.maxGeneralPerPublisherPerDay}`);
+  check('G2d', 'maxPoliticsNewPerRun = 1', config.maxPoliticsNewPerRun === 1, `got ${config.maxPoliticsNewPerRun}`);
+  check('G2e', 'maxPoliticsNewPerDay = 6', config.maxPoliticsNewPerDay === 6, `got ${config.maxPoliticsNewPerDay}`);
 
   // --- 2. Other desks remain ON ---
   check('G4', 'nwsPublishingEnabled = true (Weather ON)', config.nwsPublishingEnabled === true);
@@ -163,6 +168,7 @@ async function main() {
   let stolenImages = 0;
   let draftsOk = 0;
   let sportsDrafts = 0;
+  const draftFamilyCount = {};
   for (const f of draftFiles) {
     try {
       const d = JSON.parse(await readFile(join(draftsDir, f), 'utf8'));
@@ -174,10 +180,18 @@ async function main() {
         stolenImages++;
       }
       if (d.category === 'sports') sportsDrafts++;
+      // Track publisher family for concentration check
+      const fam = d.primarySource?.publisherFamily || d.primarySource?.name || 'unknown';
+      draftFamilyCount[fam] = (draftFamilyCount[fam] || 0) + 1;
     } catch {}
   }
   check('G14', `Preview drafts use factual-graphic-fallback + private claim audit (${draftsOk} drafts)`, stolenImages === 0,
     stolenImages ? `${stolenImages} draft(s) with non-fallback image or missing private claim audit` : '');
+
+  // Phase 10A.2.2 — no more than 2 review previews from same publisher family
+  const overConcentrated = Object.entries(draftFamilyCount).filter(([_, n]) => n > 2);
+  check('G25', 'No more than 2 review previews from same publisher family', overConcentrated.length === 0,
+    overConcentrated.length ? `over-concentrated: ${overConcentrated.map(([f, n]) => `${f}=${n}`).join(', ')}` : `families: ${Object.entries(draftFamilyCount).map(([f,n])=>`${f}=${n}`).join(', ')}`);
 
   // Phase 10A.2.1 — Sports preview must not exist without a real Sports candidate
   let sportsEligibleCount = 0;
@@ -186,6 +200,30 @@ async function main() {
   }
   check('G24', 'No Sports preview without a real Sports candidate', !(sportsDrafts > 0 && sportsEligibleCount === 0),
     (sportsDrafts > 0 && sportsEligibleCount === 0) ? `${sportsDrafts} sports preview(s) but 0 eligible sports candidates` : (sportsDrafts === 0 ? 'no sports drafts (correct — no eligible sports candidates)' : `${sportsDrafts} sports draft(s) with ${sportsEligibleCount} eligible`));
+
+  // Phase 10A.2.2 — single-source contested politics not auto-publish ready
+  if (storiesRes.ok) {
+    const contestedPolitics = (storiesRes.doc.stories || []).filter((s) =>
+      s.category === 'politics' &&
+      s.independentPublisherCount === 1 &&
+      !s.hasGovernmentSource &&
+      s.singleSourceRule && !s.singleSourceRule.ok &&
+      s.publishEligible
+    );
+    check('G26', 'No single-source contested politics story marked auto-publish ready', contestedPolitics.length === 0,
+      contestedPolitics.length ? `${contestedPolitics.length} wrongly eligible` : '');
+  } else {
+    check('G26', 'No single-source contested politics story marked auto-publish ready', false, 'no stories');
+  }
+
+  // Phase 10A.2.2 — usRelevanceScore present on all stories
+  if (storiesRes.ok) {
+    const noScore = (storiesRes.doc.stories || []).filter((s) => s.usRelevanceScore === undefined);
+    check('G27', 'All stories have usRelevanceScore', noScore.length === 0,
+      noScore.length ? `${noScore.length} missing score` : '');
+  } else {
+    check('G27', 'All stories have usRelevanceScore', false, 'no stories');
+  }
 
   // --- 6. Preview page route exists ---
   const previewRouteExists = await fileExists(join(PROJECT_DIR, 'src', 'pages', 'preview', 'general', '[slug].astro'));
