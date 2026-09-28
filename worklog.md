@@ -4219,3 +4219,26 @@ Stage Summary:
 - SCHEDULED WORKFLOWS WERE RUNNING since yesterday — the NWS cron fired 16 times but all 16 failed at validate:publishing. The site appeared unchanged because no commit/push/deploy ever occurred.
 - All 3 root causes fixed. workflow_dispatch run #24 proved the full chain works end-to-end (fetch → lifecycle → publish → validate → build → commit → push → deploy → live verify).
 - AUTOMATION FIXED — WAITING FOR NEXT REAL SCHEDULED RUN. The next NWS cron is at 14:17 UTC (17 */2 * * *). Per spec §25, cannot claim "fully proven automatic" until a real schedule event succeeds.
+
+---
+Task ID: 10A.1-TZ
+Agent: Z.ai Code (main)
+Task: Timezone correction — US News Engine must use America/New_York (ET) as canonical newsroom timezone, NOT visitor's device timezone. Header date, publication times, and automation reports all use ET. Weather event times use local U.S. timezone. Stored timestamps remain UTC. No Pakistan timezone in public UI.
+
+Work Log:
+- Fixed src/components/Header.astro: SSR date now uses timeZone: 'America/New_York' (was using build server's default timezone).
+- Fixed src/layouts/BaseLayout.astro: JS header date now uses timeZone: 'America/New_York' (was using visitor's device timezone — WRONG for a U.S. news website). Relative timestamps ("3 hr ago") are timezone-independent. Comments updated to document the ET policy. For >5-week-old timestamps, the JS fallback date now uses ET instead of visitor timezone.
+- Fixed src/lib/articles.ts: formatDateTime() now defaults to timeZone: 'America/New_York' as the site-wide editorial timezone (was using runtime default). Weather event times still use local NWS office timezone via formatDateTimeTZ() (America/Chicago, Pacific/Honolulu, etc.). Stored ISO timestamps remain UTC.
+- Updated scripts/validate-launch.mjs: added L21 (header SSR ET), L22 (header JS ET), L23 (no non-U.S. timezone usage), L24 (stored timestamps ISO UTC). Fixed L16 regex to match --autostash. All 24 checks pass.
+- GHA scheduled-run verification (per §6, NOT triggered manually):
+  - NWS run #25: event=schedule, 14:35:22 UTC (10:35 AM EDT), conclusion=SUCCESS. Full chain: fetch 30 stories → publish 2 new → commit (f5cff91) → push → Cloudflare deploy (Version ID 9953f316) → live verify PASS. This is the FIRST real scheduled run on the new every-2-hours cron (17 */2 * * *) and it SUCCEEDED.
+  - Science: no scheduled run observed yet (schedule 32 2,8,14,20 * * * — next at 14:32 UTC / 10:32 AM EDT, may still be pending GHA queue delay).
+- DEMO_NOINDEX = true (indexing OFF). No domain purchased. No Google indexing enabled.
+
+Stage Summary:
+- AUTOMATION PROVEN — RUNNING UNATTENDED. The NWS scheduled run #25 (event=schedule, NOT manual) succeeded end-to-end: fetch → lifecycle → publish 2 new articles → validate → build → commit → push → Cloudflare deploy → live verify. The full unattended production chain works.
+- Header date now uses America/New_York (ET) on both SSR and JS. A reader in any non-U.S. timezone sees the U.S. Eastern newsroom date.
+- Weather event times use the local U.S. timezone of the affected area (CDT/CST for Illinois, HST for Hawaii, EDT/EST for New York, etc.).
+- Recall/Science/Earthquake publication times use ET.
+- Stored publishedAt timestamps remain ISO UTC (L24 verifies).
+- No non-U.S. timezone usage in public UI source (L23 verifies).
