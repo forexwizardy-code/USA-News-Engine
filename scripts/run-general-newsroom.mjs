@@ -1,15 +1,15 @@
-/**
- * US News Engine — master General News newsroom automation script (Phase 10A.2.3).
+﻿/**
+ * US News Engine â€” master General News newsroom automation script (Phase 10A.2.3).
  *
- * Orchestrates: fetch → registry → stories → selection (with all gates) →
- * draft → publish → validate → build.
+ * Orchestrates: fetch â†’ registry â†’ stories â†’ selection (with all gates) â†’
+ * draft â†’ publish â†’ validate â†’ build.
  *
- * Gates (spec §1-8):
+ * Gates (spec Â§1-8):
  *   - U.S. relevance: HIGH gets +15 score bonus; MEDIUM +5; LOW/NONE not eligible.
  *   - Single-source rule: independentPublisherCount=1 needs gov source OR
  *     low-dispute factual; politics contested needs 2 families or official+reporting.
  *   - Publisher concentration: max 2 per family per run, 6 per day.
- *   - Politics cap: max 1 per run, 6 per day; ≤30% of homepage Top Stories.
+ *   - Politics cap: max 1 per run, 6 per day; â‰¤30% of homepage Top Stories.
  *   - Category diversity: prefer diversity; don't publish 2 same-category
  *     when other categories have strong eligible.
  *   - Article evidence: no article from headline-only; skip if insufficient.
@@ -29,6 +29,7 @@ import { readFile, writeFile, mkdir, access, readdir, copyFile } from 'node:fs/p
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -36,6 +37,8 @@ const CONFIG_FILE = join(PROJECT_DIR, 'config', 'automation.json');
 const STORIES_FILE = join(PROJECT_DIR, 'data', 'general-news', 'general-news-story-records.json');
 const REGISTRY_FILE = join(PROJECT_DIR, 'data', 'published-general-news.json');
 const ARTICLES_DIR = join(PROJECT_DIR, 'src', 'content', 'articles');
+const DRAFT_IMAGES_DIR = join(PROJECT_DIR, 'data', 'draft-images');
+const PUBLIC_IMAGES_DIR = join(PROJECT_DIR, 'public', 'images');
 
 // ===========================================================================
 // Helpers
@@ -103,7 +106,7 @@ function slugify(text) {
 }
 
 // ===========================================================================
-// Phase 10A.2.4 — Durable duplicate identity
+// Phase 10A.2.4 â€” Durable duplicate identity
 // ===========================================================================
 
 /**
@@ -177,14 +180,14 @@ function deduplicateRegistry(registry) {
   for (const s of registry.stories) {
     const key = s.generalStoryKey || s.slug;
     if (key && seen.has(key)) {
-      // Duplicate — skip (keep the first/original entry)
+      // Duplicate â€” skip (keep the first/original entry)
       continue;
     }
     if (key) seen.add(key);
     deduped.push(s);
   }
   if (deduped.length !== registry.stories.length) {
-    console.log(`  [dedup] Registry deduplicated: ${registry.stories.length} → ${deduped.length} entries`);
+    console.log(`  [dedup] Registry deduplicated: ${registry.stories.length} â†’ ${deduped.length} entries`);
   }
   registry.stories = deduped;
   registry.storyCount = deduped.length;
@@ -192,7 +195,7 @@ function deduplicateRegistry(registry) {
 }
 
 // ===========================================================================
-// Selection logic — with all gates + pre-selection duplicate filter
+// Selection logic â€” with all gates + pre-selection duplicate filter
 // ===========================================================================
 
 /**
@@ -219,7 +222,7 @@ function selectStories(eligible, opts) {
     publishedSet, // durable identity set from buildPublishedIdentitySet
   } = opts;
 
-  // Phase 10A.2.4 — PRE-SELECTION FILTER: remove already-published stories
+  // Phase 10A.2.4 â€” PRE-SELECTION FILTER: remove already-published stories
   // BEFORE ranking. This prevents an old top-ranked article from blocking
   // genuinely new stories.
   const newEligible = [];
@@ -289,13 +292,13 @@ function selectStories(eligible, opts) {
 // ===========================================================================
 
 async function publishNewArticle(story, registry) {
-  // Phase 10A.2.4 — SAFETY NET: refuse to publish if the storyKey already
+  // Phase 10A.2.4 â€” SAFETY NET: refuse to publish if the storyKey already
   // exists in the registry. This is defense-in-depth; the pre-selection
   // filter should have already removed it, but this prevents any edge case
   // from creating a duplicate.
   const existing = registry.stories.find((s) => s.generalStoryKey === story.generalStoryKey);
   if (existing) {
-    console.log(`    [skip-duplicate] ${story.generalStoryKey} already published (slug=${existing.slug}, publishedAt=${existing.publishedAt}) — skipping`);
+    console.log(`    [skip-duplicate] ${story.generalStoryKey} already published (slug=${existing.slug}, publishedAt=${existing.publishedAt}) â€” skipping`);
     return null;
   }
   // 1. Generate draft
@@ -327,6 +330,91 @@ async function publishNewArticle(story, registry) {
   if (!draft) throw new Error(`Could not find draft for ${story.generalStoryKey}`);
 
   const finalSlug = draft.slug || slug;
+  // Resolve a reusable real image first. If no safe/relevant image is available,
+  // keep the existing editorial graphic fallback.
+  let heroImagePath = '/images/og-default.svg';
+  let heroImageAlt = draft.image?.alt || draft.title;
+  let heroImageMode = draft.image?.mode || 'factual-graphic-fallback';
+  let heroImageCaption = draft.image?.caption || `Editorial graphic for ${draft.title}.`;
+  let heroImageCreator = draft.image?.credit || 'US News Engine (editorial graphic)';
+  let heroImageLicense = 'Original editorial graphic generated by US News Engine';
+  let heroImageLicenseUrl = '';
+  let heroImageSourcePageUrl = draft.image?.sourcePageUrl || draft.primarySource?.url || '';
+  let heroImageRelation = 'fallback-graphic';
+
+  const imageStopWords = new Set([
+    'the', 'and', 'for', 'with', 'from', 'into', 'over', 'after', 'before',
+    'amid', 'about', 'that', 'this', 'these', 'those', 'will', 'would', 'could',
+    'should', 'have', 'has', 'had', 'are', 'was', 'were', 'its', 'their', 'says',
+  ]);
+
+  const titleKeywords = String(draft.title || '')
+    .replace(/[^A-Za-z0-9\\s-]/g, ' ')
+    .split(/\\s+/)
+    .map((word) => word.trim())
+    .filter((word) => word.length >= 4 && !imageStopWords.has(word.toLowerCase()))
+    .slice(0, 8);
+
+  const imageQueries = [
+    draft.title,
+    titleKeywords.slice(0, 6).join(' '),
+    `${titleKeywords.slice(0, 4).join(' ')} ${draft.category || ''}`.trim(),
+  ].filter(Boolean);
+
+  const imageSearch = await findBestCommonsImage({
+    queries: imageQueries,
+    keywords: [...titleKeywords, draft.category].filter(Boolean),
+    minScore: 60,
+    minKeywordMatches: 2,
+    requirePhoto: true,
+    perQuery: 12,
+  });
+
+  if (imageSearch.found && imageSearch.best?.image) {
+    const selected = imageSearch.best.image;
+    const processed = await downloadAndProcessHero({
+      candidate: selected,
+      outputDir: DRAFT_IMAGES_DIR,
+      slug: finalSlug,
+      suffix: 'real',
+      keepOriginal: true,
+    });
+
+    if (processed.ok) {
+      await mkdir(PUBLIC_IMAGES_DIR, { recursive: true });
+      const publicFilename = `${finalSlug}-real.jpg`;
+      await copyFile(processed.heroPath, join(PUBLIC_IMAGES_DIR, publicFilename));
+
+      const creator = selected.artist || selected.credit || selected.user || 'Wikimedia Commons contributor';
+      heroImagePath = `/images/${publicFilename}`;
+      heroImageAlt = selected.description || selected.title || draft.title;
+      heroImageMode = 'licensed-photo';
+      heroImageCaption = `File photo selected from Wikimedia Commons based on the story subject. Photo: ${creator}${selected.license ? `, ${selected.license}` : ''}.`;
+      heroImageCreator = creator;
+      heroImageLicense = selected.license || selected.usageTerms || 'Reusable Wikimedia Commons license';
+      heroImageLicenseUrl = selected.licenseUrl || '';
+      heroImageSourcePageUrl = selected.sourcePageUrl || '';
+      heroImageRelation = 'illustrative-file-photo';
+
+      const provenance = {
+        provider: 'Wikimedia Commons',
+        title: selected.title || null,
+        creator,
+        license: heroImageLicense,
+        licenseUrl: heroImageLicenseUrl,
+        sourcePageUrl: heroImageSourcePageUrl,
+        downloadedSourceUrl: processed.sourceUrl || '',
+        originalImageUrl: selected.originalUrl || '',
+        relation: heroImageRelation,
+        score: imageSearch.best.score,
+        keywordMatches: imageSearch.best.keywordMatches,
+        width: processed.width,
+        height: processed.height,
+        generatedAt: new Date().toISOString(),
+      };
+      await writeFile(join(DRAFT_IMAGES_DIR, `-real.json`), JSON.stringify(provenance, null, 2) + '\n', 'utf8');
+    }
+  }
 
   // 3. Build article markdown
   const now = new Date().toISOString();
@@ -351,12 +439,14 @@ description: "${yamlEscape(draft.description)}"
 category: ${draft.category}
 author: "${yamlEscape(draft.author)}"
 publishedAt: ${now}
-image: "/images/og-default.svg"
-imageAlt: "${yamlEscape(draft.image.alt)}"
-imageMode: "${yamlEscape(draft.image.mode)}"
-imageCaption: "${yamlEscape(draft.image.caption)}"
-imageCreator: "${yamlEscape(draft.image.credit)}"
-imageLicense: "Original editorial graphic generated by US News Engine"
+image: "${yamlEscape(heroImagePath)}"
+imageAlt: "${yamlEscape(heroImageAlt)}"
+imageMode: "${yamlEscape(heroImageMode)}"
+imageCaption: "${yamlEscape(heroImageCaption)}"
+imageCreator: "${yamlEscape(heroImageCreator)}"
+imageLicense: "${yamlEscape(heroImageLicense)}"
+imageLicenseUrl: "${yamlEscape(heroImageLicenseUrl)}"
+imageSourcePageUrl: "${yamlEscape(heroImageSourcePageUrl)}"
 sourceName: "${yamlEscape(draft.primarySource.name)}"
 sourceUrl: "${yamlEscape(draft.primarySource.url)}"
 sourceOffice: "${yamlEscape(draft.primarySource.type === 'government' ? 'U.S. Government' : draft.primarySource.publisherFamily || 'News Publisher')}"
@@ -371,9 +461,9 @@ ${bodyMarkdown}
 ## Source
 
 **Primary source:** ${draft.primarySource.name}
-[View original ${draft.primarySource.type === 'government' ? 'release' : 'report'} →](${draft.primarySource.url})
+[View original ${draft.primarySource.type === 'government' ? 'release' : 'report'} â†’](${draft.primarySource.url})
 
-${draft.supportingSources && draft.supportingSources.length > 0 ? `**Additional reporting:**\n${draft.supportingSources.map((s) => `- ${s.sourceName} — [View original report →](${s.sourceUrl})`).join('\n')}\n` : ''}
+${draft.supportingSources && draft.supportingSources.length > 0 ? `**Additional reporting:**\n${draft.supportingSources.map((s) => `- ${s.sourceName} â€” [View original report â†’](${s.sourceUrl})`).join('\n')}\n` : ''}
 ${sourceNote}
 `;
 
@@ -397,6 +487,13 @@ ${sourceNote}
     usRelevance: draft.usRelevance,
     storyScore: draft.storyScore,
     sourceUrls: draft.allSourceUrls,
+    imagePath: heroImagePath,
+    imageMode: heroImageMode,
+    imageCreator: heroImageCreator,
+    imageLicense: heroImageLicense,
+    imageLicenseUrl: heroImageLicenseUrl,
+    imageSourcePageUrl: heroImageSourcePageUrl,
+    imageRelation: heroImageRelation,
   });
   registry.storyCount = registry.stories.length;
   registry.generatedAt = now;
@@ -420,7 +517,7 @@ async function main() {
   const dryRun = args.includes('--dry-run') || args.includes('--ignore-daily-cap');
 
   console.log('============================================');
-  console.log('US News Engine — General News Newsroom Automation');
+  console.log('US News Engine â€” General News Newsroom Automation');
   console.log('============================================');
   console.log(`Started: ${new Date().toISOString()}`);
   console.log('');
@@ -443,11 +540,11 @@ async function main() {
   console.log(`Kill switch: generalPublishingEnabled = ${publishingEnabled}`);
   console.log(`Caps: maxPerRun=${maxPerRun}, maxPerDay=${maxPerDay}, maxPoliticsPerRun=${maxPoliticsPerRun}, maxPoliticsPerDay=${maxPoliticsPerDay}`);
   console.log(`Publisher caps: maxPerPublisherPerRun=${maxPerPublisherPerRun}, maxPerPublisherPerDay=${maxPerPublisherPerDay}`);
-  if (dryRun) console.log('DRY RUN MODE — no production files will be modified');
+  if (dryRun) console.log('DRY RUN MODE â€” no production files will be modified');
   console.log('');
 
-  // --- Step 1-3: Fetch → Registry → Stories ---
-  console.log('--- Steps 1-3: Fetch → Registry → Stories ---');
+  // --- Step 1-3: Fetch â†’ Registry â†’ Stories ---
+  console.log('--- Steps 1-3: Fetch â†’ Registry â†’ Stories ---');
   try {
     runNpm('fetch:general', 'Fetch General News');
     console.log('  Fetch complete.');
@@ -502,15 +599,15 @@ async function main() {
   if (regRes.ok && Array.isArray(regRes.doc.stories)) {
     registry = regRes.doc;
     console.log(`\n  Registry loaded: ${registry.stories.length} published General News stories.`);
-    // Phase 10A.2.4 — deduplicate the registry (remove duplicate entries
+    // Phase 10A.2.4 â€” deduplicate the registry (remove duplicate entries
     // from the republication bug; keep the FIRST entry with original publishedAt)
     registry = deduplicateRegistry(registry);
   } else {
     registry = { generatedAt: new Date().toISOString(), storyCount: 0, stories: [] };
-    console.log('\n  No registry found — treating all as new.');
+    console.log('\n  No registry found â€” treating all as new.');
   }
 
-  // Phase 10A.2.4 — build durable published identity set for duplicate filtering.
+  // Phase 10A.2.4 â€” build durable published identity set for duplicate filtering.
   // This is the CANONICAL duplicate-protection mechanism. It uses multiple
   // identity keys (storyKey, slug, sourceUrl, normalizedUrl) so that an
   // already-published story cannot become NEW again on a later run.
@@ -518,7 +615,7 @@ async function main() {
   console.log(`  Published identity set: ${publishedSet.storyKeys.size} storyKeys, ${publishedSet.sourceUrls.size} sourceUrls`);
 
   // --- Daily cap calculations ---
-  // Phase 10A.2.4 — count each article only once (use deduplicated registry)
+  // Phase 10A.2.4 â€” count each article only once (use deduplicated registry)
   const today = new Date().toISOString().slice(0, 10);
   const publishedToday = registry.stories.filter((s) => s.publishedAt && s.publishedAt.startsWith(today));
   const publishedTodayCount = publishedToday.length;
@@ -562,7 +659,7 @@ async function main() {
     if (!publishingEnabled) {
       console.log('PUBLISHING DISABLED (kill switch active)');
     } else {
-      console.log('DRY RUN — no production files modified');
+      console.log('DRY RUN â€” no production files modified');
     }
     console.log('No public content changes will be made.');
     console.log('============================================');
@@ -580,24 +677,24 @@ async function main() {
       console.log(`\n  Processing: ${story.generalStoryKey}`);
       const result = await publishNewArticle(story, registry);
       if (result === null) {
-        // Phase 10A.2.4 — already-published duplicate, skip
+        // Phase 10A.2.4 â€” already-published duplicate, skip
         continue;
       }
       newPublished++;
       console.log(`    Published: /news/${result.slug}/`);
     } catch (err) {
-      console.error(`    PUBLISH FAILED: ${story.generalStoryKey} — ${err.message}`);
+      console.error(`    PUBLISH FAILED: ${story.generalStoryKey} â€” ${err.message}`);
     }
   }
 
-  // Phase 10A.2.4 — always save the (deduplicated) registry even if 0 new
+  // Phase 10A.2.4 â€” always save the (deduplicated) registry even if 0 new
   // stories were published, so the dedup fix is persisted to git.
   await saveRegistry(registry);
 
   // --- No-change behavior ---
   if (newPublished === 0) {
     console.log('\n============================================');
-    console.log('NO CONTENT CHANGES — skipping validation and build.');
+    console.log('NO CONTENT CHANGES â€” skipping validation and build.');
     console.log('============================================');
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`Duration: ${duration}s`);
@@ -610,7 +707,7 @@ async function main() {
     runNpm('validate:general', 'General News validation');
     console.log('  validate:general: PASS');
   } catch (err) {
-    console.error('  validate:general: FAIL — aborting before build.');
+    console.error('  validate:general: FAIL â€” aborting before build.');
     console.error(err.message);
     process.exit(1);
   }
@@ -618,7 +715,7 @@ async function main() {
     runNpm('validate:publishing', 'Publishing validation');
     console.log('  validate:publishing: PASS');
   } catch (err) {
-    console.error('  validate:publishing: FAIL — aborting before build.');
+    console.error('  validate:publishing: FAIL â€” aborting before build.');
     console.error(err.message);
     process.exit(1);
   }
@@ -629,7 +726,7 @@ async function main() {
     runNpm('build', 'Astro build');
     console.log('  build: PASS');
   } catch (err) {
-    console.error('  build: FAIL — aborting.');
+    console.error('  build: FAIL â€” aborting.');
     console.error(err.message);
     process.exit(1);
   }

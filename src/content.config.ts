@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+﻿import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 /**
@@ -10,7 +10,7 @@ import { glob } from 'astro/loaders';
  * This schema is the contract for future automated article generation:
  * a generator script only needs to emit a .md file whose frontmatter
  * validates against this Zod schema, and the site will publish it on the
- * next build — homepage sections, category pages, related stories, SEO,
+ * next build â€” homepage sections, category pages, related stories, SEO,
  * and structured data are all derived automatically.
  */
 const articles = defineCollection({
@@ -22,7 +22,7 @@ const articles = defineCollection({
     title: z.string(),
     /** One-to-two sentence summary / dek used in cards and meta description. */
     description: z.string(),
-    /** Category slug — must match one of the CATEGORIES in src/consts.ts. */
+    /** Category slug â€” must match one of the CATEGORIES in src/consts.ts. */
     category: z.enum(['us', 'weather', 'recalls', 'consumer', 'science', 'politics', 'business', 'technology', 'entertainment', 'sports']),
     /** Byline author name. */
     author: z.string(),
@@ -44,6 +44,8 @@ const articles = defineCollection({
     imageLicense: z.string().optional(),
     /** Image license URL. */
     imageLicenseUrl: z.string().optional(),
+    /** Original image source/file page for provenance. */
+    imageSourcePageUrl: z.string().optional(),
     /** Originating source attribution name. */
     sourceName: z.string(),
     /** Originating source URL. */
