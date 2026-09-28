@@ -4,7 +4,7 @@ title: "Live updates: Trump set to reveal Iowa steel mill plans; Senate tees up 
 description: "President Trump is expected to announce a $15 billion steel mill plan for eastern Iowa in the Oval Office on Monday afternoon. Earlier in the day, the Trump administration released a rollback of fuel "
 category: politics
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T17:18:01.200Z
+publishedAt: 2026-09-28T17:46:01.384Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: Live updates: Trump set to reveal Iowa steel mill plans; Senate tees up college sports bill vote"
 imageMode: "factual-graphic-fallback"
