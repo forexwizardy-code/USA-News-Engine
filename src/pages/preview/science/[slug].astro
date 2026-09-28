@@ -145,9 +145,16 @@ try {
   // No preview-images directory — fall through to no image.
 }
 
-// Load image metadata sidecar (if it exists) to get caption + attribution.
+// Load image metadata sidecar (if it exists) to get caption + credit.
+//
+// IMPORTANT: Public-facing figure rendering shows ONLY:
+//   - the factual `caption` text
+//   - the exact source `credit` line
+// The `licenseNotes` field (which carries internal rights-policy reminders) is
+// kept in the JSON for editorial use but is NEVER rendered on the page — not
+// in previews, and definitely not on public articles.
 let imageCaption = '';
-let imageAttribution = '';
+let imageCredit = '';
 let imageAlt = draft.image?.alt || draft.title;
 let imageMode: string | null = null;
 let imageRightsStatus: string | null = null;
@@ -159,7 +166,7 @@ if (heroImageExt) {
     const metaRaw = await readFile(metaPath, 'utf8');
     const meta = JSON.parse(metaRaw);
     imageCaption = meta.caption || '';
-    imageAttribution = meta.licenseNotes || '';
+    imageCredit = meta.credit || '';
     imageAlt = meta.alt || imageAlt;
     imageMode = meta.imageMode || null;
     imageRightsStatus = meta.rightsStatus || null;
@@ -272,8 +279,8 @@ const bodyClaims = draft.claimAudit?.filter((c) => c.inBody).length || 0;
           />
           <figcaption>
             <span class="figcaption-text">{imageCaption}</span>
-            {imageAttribution && (
-              <span class="figcaption-attribution">{imageAttribution}</span>
+            {imageCredit && (
+              <span class="figcaption-attribution">Credit: {imageCredit}</span>
             )}
           </figcaption>
         </figure>

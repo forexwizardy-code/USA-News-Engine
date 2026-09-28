@@ -184,11 +184,16 @@ async function downloadAndCropImage(imageUrl, slug, sourceUrl) {
  * Build the factual Science graphic SVG. Carries:
  *   - "SCIENCE" eyebrow + headline
  *   - Mission / telescope name (e.g. "Hubble Space Telescope")
- *   - Story topic (e.g. "Spiral Galaxy Discovery")
+ *   - Story topic (e.g. "Spiral Galaxy NGC 4698")
+ *   - Optional one-line "fact" callout (e.g. "Unusual outer spiral-arm structure")
  *   - NASA attribution
+ *   - Right-side "DISCOVERY" fact sheet (source, image type, credit)
  *   - Subtle US News Engine branding
  *
- * No fake galaxy imagery, no AI space art, no simulated Hubble photos.
+ * Layout: left dark call-out panel (540px) + right light fact-sheet panel
+ * (660px). Both panels carry roughly equal visual weight — clean typography,
+ * no fake galaxy imagery, no AI space art, no simulated photos. Professional
+ * newsroom graphic style.
  */
 function buildScienceGraphicSvg({
   missionName,
@@ -196,12 +201,13 @@ function buildScienceGraphicSvg({
   topic,
   sourceName,
   dateStr,
+  fact,
 }) {
   const headlineStr = (missionName || 'Science').toUpperCase();
-  const topicStr = (topic || 'Discovery').toUpperCase();
   const sourceStr = (sourceName || 'NASA').toUpperCase();
   const subtitleStr = missionSubtitle || '';
   const dateUpper = (dateStr || '').toUpperCase();
+  const factStr = fact || '';
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Science graphic: ${escapeXml(missionName || 'Science')} — ${escapeXml(topic || 'discovery')}">
   <defs>
@@ -218,59 +224,85 @@ function buildScienceGraphicSvg({
   <!-- Background -->
   <rect width="${W}" height="${H}" fill="url(#rightGrad)"/>
 
-  <!-- Left dark panel -->
-  <rect x="0" y="0" width="520" height="${H}" fill="url(#panelGrad)"/>
+  <!-- Left dark call-out panel -->
+  <rect x="0" y="0" width="540" height="${H}" fill="url(#panelGrad)"/>
 
-  <!-- Top accent strip -->
+  <!-- Top accent strip (spans both panels) -->
   <rect x="0" y="0" width="${W}" height="8" fill="#c8102e"/>
 
-  <!-- Eyebrow + headline (left panel) -->
-  <g transform="translate(50, 70)">
+  <!-- ================== LEFT PANEL (dark call-out) ================== -->
+
+  <!-- SCIENCE eyebrow + red underline -->
+  <g transform="translate(50, 80)">
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#ff6b7a" letter-spacing="4">SCIENCE</text>
     <rect x="0" y="14" width="60" height="3" fill="#c8102e"/>
   </g>
 
-  <!-- Big mission/telescope name (left panel) -->
-  <text x="50" y="190" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" fill="#ffffff" letter-spacing="2">${escapeXml(headlineStr)}</text>
-  ${subtitleStr ? `<text x="50" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#9aa6b2" letter-spacing="2">${escapeXml(subtitleStr)}</text>` : ''}
+  <!-- Mission subtitle (small caps, muted) -->
+  ${subtitleStr ? `<text x="50" y="138" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#9aa6b2" letter-spacing="3">${escapeXml(subtitleStr.toUpperCase())}</text>` : ''}
 
-  <!-- Topic block (left panel, lower) -->
-  <g transform="translate(50, 290)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ff6b7a" letter-spacing="2">DISCOVERY</text>
-    <text x="0" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#ffffff">${escapeXml(topicStr)}</text>
-  </g>
+  <!-- Big mission/telescope name -->
+  <text x="50" y="185" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" fill="#ffffff" letter-spacing="1">${escapeXml(headlineStr)}</text>
 
-  <!-- Source + date (left panel, bottom) -->
-  <g transform="translate(50, ${H - 130})">
+  <!-- Red divider under mission name -->
+  <rect x="50" y="215" width="80" height="2" fill="#c8102e"/>
+
+  <!-- TOPIC label + topic text -->
+  <text x="50" y="260" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ff6b7a" letter-spacing="2">TOPIC</text>
+  <text x="50" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#ffffff">${escapeXml(topic || 'Science discovery')}</text>
+
+  <!-- Optional fact callout (italic, lighter) -->
+  ${factStr ? `<text x="50" y="335" font-family="Georgia, serif" font-size="17" font-weight="400" font-style="italic" fill="#cdd5dd">${escapeXml(factStr)}</text>` : ''}
+
+  <!-- Source + date block (bottom of left panel) -->
+  <g transform="translate(50, ${H - 150})">
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ff6b7a" letter-spacing="2">SOURCE</text>
-    <text x="0" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">${escapeXml(sourceStr)}</text>
+    <text x="0" y="24" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">${escapeXml(sourceStr)}</text>
     ${dateUpper ? `<text x="0" y="48" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#b8c0c8">${escapeXml(dateUpper)}</text>` : ''}
   </g>
 
-  <!-- US News Engine branding (left panel, bottom) -->
+  <!-- US News Engine branding (bottom of left panel) -->
   <text x="50" y="${H - 22}" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#ffffff">US News Engine</text>
-  <text x="180" y="${H - 22}" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#8a94a0" letter-spacing="0.5">EDITORIAL DATA GRAPHIC</text>
 
-  <!-- Right light panel content -->
-  <!-- Stylized orbital arc motif (NOT a simulated photo) -->
-  <g transform="translate(${W - 280}, ${H / 2})">
-    <circle r="160" fill="none" stroke="#cfd6dd" stroke-width="1" stroke-dasharray="3 6"/>
-    <ellipse rx="200" ry="80" fill="none" stroke="#d8dde2" stroke-width="1" stroke-dasharray="2 5" transform="rotate(-15)"/>
-    <ellipse rx="120" ry="60" fill="none" stroke="#d8dde2" stroke-width="1" stroke-dasharray="2 5" transform="rotate(25)"/>
-    <circle r="40" fill="#0a1320" stroke="#c8102e" stroke-width="3"/>
-    <circle r="40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.4"/>
-    <text x="0" y="6" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ff6b7a" text-anchor="middle" letter-spacing="1">NASA</text>
+  <!-- ================== RIGHT PANEL (light fact sheet) ================== -->
+
+  <!-- DISCOVERY eyebrow + red underline -->
+  <g transform="translate(600, 80)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#c8102e" letter-spacing="4">DISCOVERY</text>
+    <rect x="0" y="14" width="60" height="3" fill="#c8102e"/>
   </g>
 
-  <!-- Right-panel topic label (top) -->
-  <g transform="translate(560, 70)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#6b7178" letter-spacing="2">STORY TOPIC</text>
-    <text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#14161a">${escapeXml(topic || 'Science discovery')}</text>
-  </g>
+  <!-- Big topic heading (right panel, for emphasis) -->
+  <text x="600" y="160" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#14161a">${escapeXml(topic || 'Science discovery')}</text>
 
-  <!-- Right-panel US News Engine branding (bottom right) -->
-  <text x="${W - 50}" y="${H - 24}" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#14161a" text-anchor="end">US News Engine</text>
-  <text x="${W - 50}" y="${H - 10}" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8f96" text-anchor="end" letter-spacing="0.5">EDITORIAL DATA GRAPHIC · NOT A PHOTOGRAPH</text>
+  <!-- Optional fact line (italic, muted) -->
+  ${factStr ? `<text x="600" y="195" font-family="Georgia, serif" font-size="18" font-weight="400" font-style="italic" fill="#3a4148">${escapeXml(factStr)}</text>` : ''}
+
+  <!-- Subtitle context (small caps, muted) -->
+  ${subtitleStr ? `<text x="600" y="230" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#6b7178" letter-spacing="2">${escapeXml(subtitleStr.toUpperCase())}</text>` : ''}
+
+  <!-- Divider line across right panel -->
+  <line x1="600" y1="265" x2="${W - 50}" y2="265" stroke="#cfd6dd" stroke-width="1"/>
+
+  <!-- KEY FACTS section label -->
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#6b7178" letter-spacing="2">KEY FACTS</text>
+
+  <!-- Source row -->
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#8a8f96" letter-spacing="1.5">SOURCE</text>
+  <text x="600" y="365" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#14161a">${escapeXml(sourceName || 'NASA')}</text>
+
+  <!-- Image type row -->
+  <text x="600" y="405" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#8a8f96" letter-spacing="1.5">IMAGE TYPE</text>
+  <text x="600" y="430" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#14161a">Editorial Data Graphic</text>
+
+  <!-- Credit row -->
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#8a8f96" letter-spacing="1.5">CREDIT</text>
+  <text x="600" y="495" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="500" fill="#14161a">US News Engine using NASA source information</text>
+
+  <!-- Bottom-right branding -->
+  <text x="${W - 50}" y="${H - 40}" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#14161a" text-anchor="end">US News Engine</text>
+  <text x="${W - 50}" y="${H - 22}" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#8a8f96" text-anchor="end" letter-spacing="0.5">EDITORIAL DATA GRAPHIC · NOT A PHOTOGRAPH</text>
+
 </svg>`;
 }
 
@@ -368,6 +400,7 @@ const GRAPHIC_PARAMS = {
     missionName: 'Hubble Space Telescope',
     missionSubtitle: 'NASA · ESA',
     topic: 'Spiral Galaxy NGC 4698',
+    fact: 'Unusual outer spiral-arm structure',
   },
 };
 
@@ -610,8 +643,15 @@ async function main() {
   const meta = await sharp(imagePath).metadata();
   console.log(`  PNG: ${imagePath} (${stats.size.toLocaleString()} bytes, ${meta.width}x${meta.height})`);
 
-  const caption = `Editorial data graphic. ${draft.sourceName} · ${params.missionName}. Graphic: US News Engine.`;
+  // Factual-graphic caption + credit. Both render on the public-facing
+  // figure caption (the preview template reads `caption` and `credit` from
+  // this metadata sidecar). Keep them clean and factual — no rights-policy
+  // reminders go in here (those live in `licenseNotes` for internal use only).
+  // The caption is a reasonable default that editors can hand-tune per story
+  // in the JSON sidecar after generation.
+  const caption = `Editorial data graphic for ${params.missionName} observation of ${params.topic || 'science discovery'}.`;
   const alt = `Science graphic for ${params.missionName} — ${params.topic}.`;
+  const credit = `US News Engine using ${draft.sourceName || 'NASA'} source information`;
   const metadata = buildMetadata({
     draft,
     mode: 'factual-graphic-fallback',
@@ -620,7 +660,7 @@ async function main() {
     originalImageUrl: null,
     caption,
     alt,
-    credit: null,
+    credit,
     generatedAt,
     creditVerification: rightsStatus === 'third-party'
       ? { verified: false, reason: `third-party credit ("${extractedCredit || ''}") — source image not used` }

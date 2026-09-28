@@ -4,7 +4,7 @@
   "scienceStoryKey": "jpl__a0b05eee4e3af8ae",
   "status": "draft",
   "title": "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula",
-  "description": "NASA-ISRO SAR mission NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between December 2025 and August 2026.",
+  "description": "NASA-ISRO Earth-observing satellite NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between December 2025 and August 2026.",
   "slug": "nisar-volcanic-eruption-time-lapse-2026-09-24",
   "category": "science",
   "author": "US News Engine Science Desk",
@@ -17,7 +17,7 @@
   "sourceOffice": "Jet Propulsion Laboratory, Pasadena, Calif.",
   "seo": {
     "title": "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula",
-    "description": "NASA-ISRO SAR mission NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between Decemb"
+    "description": "NASA-ISRO Earth-observing satellite NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between Decemb"
   },
   "image": {
     "status": "ready-for-image-generator",
@@ -49,7 +49,7 @@
       "heading": "What scientists observed",
       "paragraphs": [
         "The time-lapse shows lava filling a smaller, inner caldera, then overflowing into a wider crater before widening into a fan. Lava appears lighter in the radar images because microwaves reflect more brightly from the new flow than from the surrounding snow or bare ground.",
-        "JPL quotes NISAR science team member Matthew Pritchard, a geophysicist at Cornell University who analyzed the data: “The consistency is crucial. Twice every 12 days, acquiring in this high-resolution mode and in two observation directions, this shows the promise of NISAR to closely monitor natural hazards.”"
+        "Matthew Pritchard, a geophysicist at Cornell University and NISAR science team member who analyzed the data, said the satellite’s consistent high-resolution observations every 12 days, captured in two observation directions, demonstrate its ability to closely monitor changing natural hazards."
       ]
     },
     {
