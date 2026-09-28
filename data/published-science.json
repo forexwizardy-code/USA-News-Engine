@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-09-28T11:25:41.000Z",
+  "storyCount": 3,
+  "stories": [
+    {
+      "scienceStoryKey": "jpl__a0b05eee4e3af8ae",
+      "primarySource": "NASA",
+      "sourceKeys": [
+        "jpl__a0b05eee4e3af8ae"
+      ],
+      "slug": "nisar-volcanic-eruption-time-lapse-2026-09-24",
+      "articlePath": "src/content/articles/nisar-volcanic-eruption-time-lapse-2026-09-24.md",
+      "title": "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "sourcePublishedAt": "2026-09-24T16:00:00.000Z",
+      "sourceUrls": [
+        "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption"
+      ],
+      "storyType": "earth-science",
+      "mission": "NISAR",
+      "topic": "Earth Science",
+      "imageMode": "official-source-image",
+      "imageSourceUrl": "/images/nisar-volcanic-eruption-time-lapse-2026-09-24.jpg",
+      "imageCredit": "NASA’s Scientific Visualization Studio",
+      "status": "active",
+      "firstSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastCheckedAt": "2026-09-28T11:25:41.000Z"
+    },
+    {
+      "scienceStoryKey": "jpl__7cdc58bb88b1db7c",
+      "primarySource": "NASA",
+      "sourceKeys": [
+        "jpl__7cdc58bb88b1db7c"
+      ],
+      "slug": "perseverance-mars-water-systems-2026-09-21",
+      "articlePath": "src/content/articles/perseverance-mars-water-systems-2026-09-21.md",
+      "title": "Perseverance Rover Finds Multi-Stage Water Activity in Mars Rocks",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "sourcePublishedAt": "2026-09-21T17:00:00.000Z",
+      "sourceUrls": [
+        "https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars"
+      ],
+      "storyType": "mission-result",
+      "mission": "Perseverance",
+      "topic": "Planetary Science",
+      "imageMode": "official-source-image",
+      "imageSourceUrl": "/images/perseverance-mars-water-systems-2026-09-21.jpg",
+      "imageCredit": "NASA/JPL-Caltech/MSSS",
+      "status": "active",
+      "firstSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastCheckedAt": "2026-09-28T11:25:41.000Z"
+    },
+    {
+      "scienceStoryKey": "nasa__4c93b21d54ff615c",
+      "primarySource": "NASA",
+      "sourceKeys": [
+        "nasa__4c93b21d54ff615c"
+      ],
+      "slug": "hubble-spiral-galaxy-ngc-4698-2026-09-25",
+      "articlePath": "src/content/articles/hubble-spiral-galaxy-ngc-4698-2026-09-25.md",
+      "title": "Hubble Image Shows Unusual Spiral Structure in Galaxy NGC 4698",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "sourcePublishedAt": "2026-09-25T15:54:10.000Z",
+      "sourceUrls": [
+        "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/"
+      ],
+      "storyType": "discovery",
+      "mission": "Hubble",
+      "topic": "Astronomy",
+      "imageMode": "factual-graphic-fallback",
+      "imageSourceUrl": "/images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png",
+      "imageCredit": "US News Engine using NASA source information",
+      "status": "active",
+      "firstSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastSeenAt": "2026-09-28T11:25:41.000Z",
+      "lastCheckedAt": "2026-09-28T11:25:41.000Z"
+    }
+  ]
+}
