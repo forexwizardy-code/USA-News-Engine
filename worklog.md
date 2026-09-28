@@ -4149,3 +4149,42 @@ Stage Summary:
 - Science status: ON (sciencePublishingEnabled=true, schedule 32 2,8,14,20 * * *, caps 1/run · 3/day unchanged; workflow now commits registry changes for CI persistence).
 - DEMO_NOINDEX status: true (src/consts.ts:30); meta noindex,nofollow on every page (agent-browser confirmed).
 - The workflow now depends ONLY on: repository-tracked state (src/, public/, data/published-science.json, data/science/science-source-registry.json), official fresh source fetches, and GitHub-provided secrets. No dependency on /tmp, /home/z, untracked files, gitignored state, or previous runner filesystem.
+
+---
+Task ID: 10A
+Agent: Z.ai Code (main)
+Task: Phase 10A — full pre-index production launch audit. Audit the entire US News Engine BEFORE allowing Google indexing. DEMO_NOINDEX must remain true. No new sources/desks. No automation disabled. Audit + safe fixes only. All four desks (Weather/Recalls/Earthquakes/Science) remain ON.
+
+Work Log:
+- Audited the codebase via a thorough Explore agent (all page templates, layouts, components, lib, consts) + direct reads of SEO.astro, BaseLayout, PreviewLayout, StaticPage, robots.txt.ts, astro.config.mjs, wrangler.jsonc, content.config.ts, all 6 static pages, the article template, and the homepage.
+- Audited all 4 GitHub Actions workflows for concurrency safety, schedules, secrets usage, commit/push behavior, and deploy conditions.
+- Ran a secret scan across all git-tracked files (ghp_, github_pat_, AIza, sk-, BEGIN PRIVATE KEY patterns) — CLEAN. .env is gitignored and NOT tracked. Workflows use ${{ secrets.* }} context. wrangler.jsonc has no embedded secrets.
+- Built the site (43 pages) and inspected robots.txt + sitemap (29 URLs: homepage + 6 static + 6 categories + 15 articles; no preview URLs).
+- Found and fixed 3 BLOCKER issues:
+  1. Workflow concurrency race condition: all 4 newsroom workflows did `git push` without `git pull --rebase` first. NWS (hourly :17) and Recall (08:17/20:17) fire the SAME minute — guaranteed concurrent push conflict twice daily. Fixed: added `concurrency: group: newsroom-{desk}-${{ github.ref }}` + `git pull --rebase origin main` before push to all 4 workflows. Never force-push.
+  2. BreadcrumbList schema /undefined URLs: SEO.astro emitted `"item": "https://…/undefined"` for category/latest/all 6 static pages because their breadcrumbs had no `path`. Fixed: guard `c.path` — omit `item` when path is missing (Google's BreadcrumbList spec allows the last/current item to omit `item`).
+  3. Publisher logo 404: `ORG.logo = ${SITE_URL}/logo.svg` but `public/logo.svg` did not exist. Fixed: created `public/logo.svg` (240x60 horizontal wordmark). Verified HTTP 200 on live.
+- Found and fixed IMPORTANT issues:
+  - robots.txt: added `Disallow: /preview/` (preview pages are noindex anyway, but keeps them out of crawl logs; public paths remain Allow: /).
+  - About page: removed false "Phase 1 fictional sample content" claim; replaced with accurate "How our articles are produced" section describing the automated official-source pipeline (NWS/CPSC/FDA/USGS/NASA/JPL/NOAA).
+  - Terms page: removed false "Phase 1 fictional sample content" disclaimer.
+  - Editorial Policy: replaced false "subject to human editorial review before publication" with accurate automated-publishing transparency (standards enforced through source-selection/filtering/validation, not manual review of each article).
+  - Privacy Policy: removed false claims about analytics, cookies, and newsletter (site is static with none); rewrote to match actual behavior (Cloudflare hosting logs only, no analytics, no cookies set by the site, no newsletter).
+  - Contact page: removed @example.com placeholder emails + false "Phase 1 demonstration" disclaimer; points to corrections workflow; real contact email flagged as business decision.
+  - Corrections Policy: removed @example.com, points to Contact page.
+- Found and fixed MINOR issues:
+  - WebSite schema: removed false SearchAction (no search page exists at /?s=).
+  - preview/image-comparison: added self-referencing canonical + meta description (noindex, low-impact, but consistent with other preview pages).
+- Created scripts/validate-launch.mjs: 20 launch-readiness invariants (DEMO_NOINDEX true, noindex on all public pages, noarchive on previews, robots.txt blocks /preview/, sitemap excludes previews, no /undefined breadcrumb URLs, publisher logo resolves, no NewsArticle on previews, no debug text on public pages, no @example.com, no Phase-1 disclaimers, 404 page exists, all workflows have concurrency+rebase, .env gitignored, wrangler.jsonc clean, no broken images, article inventory). Added `validate:launch` to package.json.
+- Ran all validation suites: validate:publishing 41/41, validate:recalls 24/24, validate:earthquakes 39/39, validate:science 83/83, validate:launch 20/20. Build: 43 pages PASS.
+- Agent-browser self-verification at 390px (mobile), 768px (tablet), 1280px (desktop): homepage, science article, contact page, weather category. All render correctly, noindex meta present, self-referencing canonicals, no console errors, no @example.com leaks, no debug text leaks. Breadcrumb schema: 0 /undefined URLs across all built pages.
+- Committed (b426c57), pushed to main (94aa04a..b426c57), deployed to Cloudflare (Version ID: b485b951-b877-4b03-b06b-02cc7d03bc33). Live verification: /, /science/, /about/, /contact/, /robots.txt, /logo.svg all HTTP 200; noindex meta + canonical correct on live homepage; robots.txt blocks /preview/.
+
+Stage Summary:
+- BLOCKERS FIXED: workflow concurrency race, breadcrumb schema /undefined, publisher logo 404.
+- IMPORTANT FIXED: robots.txt /preview/ block, About/Terms/Editorial/Privacy/Contact/Corrections false claims + placeholders removed.
+- MINOR FIXED: WebSite SearchAction removed, preview/image-comparison canonical+description added.
+- BLOCKER REMAINING (business decision, reported not fixed): permanent domain decision — current hostname is usa-news-engine.forexwizardy.workers.dev (Cloudflare Workers default). No custom domain configured. Canonical URLs would need to migrate if the domain changes later. Flagged as LAUNCH BLOCKER — PERMANENT DOMAIN DECISION REQUIRED.
+- IMPORTANT REMAINING (business decision): real public contact email address — not invented in this phase; static pages now point to the corrections workflow and note a direct email will be published before launch.
+- DEMO_NOINDEX = true (indexing OFF). All four desks ON. No sources/desks added. No automation disabled.
+- Validation totals: publishing 41/41, recalls 24/24, earthquakes 39/39, science 83/83, launch 20/20. Build 43 pages.
