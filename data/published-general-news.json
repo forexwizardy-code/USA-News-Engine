@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T17:46:01.384Z",
-  "storyCount": 10,
+  "generatedAt": "2026-09-28T18:21:19.346Z",
+  "storyCount": 12,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -190,6 +190,44 @@
       "storyScore": 62,
       "sourceUrls": [
         "https://thehill.com/homenews/administration/6114586-live-updates-trump-iran-midterms-college-sports-act-supreme-court/"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__6fb3ed4ad799d67e",
+      "slug": "politics-who-s-winning-the-race-for-congress-2026-midterm-2026-09-28",
+      "articlePath": "src/content/articles/politics-who-s-winning-the-race-for-congress-2026-midterm-2026-09-28.md",
+      "title": "Who’s Winning the Race for Congress? 2026 Midterm Elections",
+      "publishedAt": "2026-09-28T18:21:19.306Z",
+      "category": "politics",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/28/us/whos-winning-the-race-for-congress.html"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__82c2f76581ead0c9",
+      "slug": "us-trump-aims-to-leave-a-physical-legacy-in-d-c-2026-09-28",
+      "articlePath": "src/content/articles/us-trump-aims-to-leave-a-physical-legacy-in-d-c-2026-09-28.md",
+      "title": "Trump aims to leave a physical legacy in D.C., bulldozing norms along the way",
+      "publishedAt": "2026-09-28T18:21:19.346Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy"
       ]
     }
   ]
