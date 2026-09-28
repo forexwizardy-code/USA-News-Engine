@@ -22,7 +22,7 @@ const items = articles.slice(0, 4);
             <li class="breaking-item">
               <a href={`/news/${a.data.slug}/`}>
                 <span class="breaking-text">{a.data.title}</span>
-                <time class="breaking-time" datetime={a.data.publishedAt.toISOString()}>
+                <time class="breaking-time" datetime={a.data.publishedAt.toISOString()} data-relative>
                   {relativeTime(a.data.publishedAt)}
                 </time>
               </a>

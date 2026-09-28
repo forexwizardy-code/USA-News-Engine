@@ -41,3 +41,7 @@ data/science/source-health.json
 data/science/deferred-candidates.json
 data/science/last-known-good/
 
+# ---- Phase 10A.1 automation proof + geo cache (internal QA only) ----
+data/automation-proof.json
+data/geo-cache/
+

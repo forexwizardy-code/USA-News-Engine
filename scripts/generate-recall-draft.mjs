@@ -267,6 +267,13 @@ function shortProductName(story) {
   // Take the first meaningful part (before comma/semicolon)
   product = product.split(',')[0].split(';')[0].trim();
 
+  // Phase 10A.1: strip trailing generic terms that create orphaned wording
+  // in headlines (e.g. "THE HAMPTON GROCER brand Recalled Over..." → use the
+  // firm name directly). This is a deterministic normalization rule — it
+  // preserves the official identity (firm name) while removing broken generic
+  // trailing terms that read unnaturally in a headline.
+  product = product.replace(/\s+(brand|product|products|item|items|line|lines)\s*$/i, '').trim();
+
   return product || '';
 }
 

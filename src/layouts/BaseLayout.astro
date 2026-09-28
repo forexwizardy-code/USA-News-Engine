@@ -71,5 +71,47 @@ const currentPath = Astro.url.pathname;
       <slot />
     </main>
     <Footer />
+    <script>
+      // Phase 10A.1 — reader-facing freshness layer (vanilla JS, no library).
+      // Updates <time data-relative> elements with live relative timestamps
+      // ("3 hr ago", "2 days ago") from the server-rendered datetime attribute.
+      // Also updates the header date to the visitor's current date.
+      // The server-rendered fallback (build-time relative time) remains for
+      // no-JS users; this script progressively enhances it.
+      (function () {
+        function relativeTime(date) {
+          var now = Date.now();
+          var diff = now - date.getTime();
+          var sec = Math.floor(diff / 1000);
+          if (sec < 60) return 'just now';
+          var min = Math.floor(sec / 60);
+          if (min < 60) return min + ' min ago';
+          var hr = Math.floor(min / 60);
+          if (hr < 24) return hr + ' hr ago';
+          var day = Math.floor(hr / 24);
+          if (day === 1) return 'yesterday';
+          if (day < 7) return day + ' days ago';
+          var wk = Math.floor(day / 7);
+          if (wk === 1) return '1 week ago';
+          if (wk < 5) return wk + ' weeks ago';
+          return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+        // Update all relative timestamps.
+        document.querySelectorAll('time[data-relative]').forEach(function (el) {
+          var dt = el.getAttribute('datetime');
+          if (!dt) return;
+          var d = new Date(dt);
+          if (isNaN(d.getTime())) return;
+          el.textContent = relativeTime(d);
+        });
+        // Update header date to visitor's current date.
+        var hd = document.querySelector('[data-header-date]');
+        if (hd) {
+          hd.textContent = new Date().toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

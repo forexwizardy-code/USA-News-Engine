@@ -24,7 +24,7 @@ const hasImage = showImage && !!a.image;
 // Map/graphics need object-fit: contain so labels aren't cropped.
 // Photos use object-fit: cover for a visually filled card.
 const imageMode = (a as any).imageMode || 'fallback-graphic';
-const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(imageMode);
+const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic', 'factual-graphic-fallback'].includes(imageMode);
 ---
 
 {
@@ -46,7 +46,7 @@ const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(i
         {showDescription && <p class="card-dek">{a.description}</p>}
         <p class="byline">
           By <strong>{a.author}</strong> &middot;{' '}
-          <time datetime={a.publishedAt.toISOString()}>{relativeTime(a.publishedAt)}</time>
+          <time datetime={a.publishedAt.toISOString()} data-relative>{relativeTime(a.publishedAt)}</time>
         </p>
       </div>
     </article>
@@ -71,7 +71,7 @@ const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(i
         {showDescription && <p class="card-dek">{a.description}</p>}
         <p class="byline">
           By <strong>{a.author}</strong> &middot;{' '}
-          <time datetime={a.publishedAt.toISOString()}>{relativeTime(a.publishedAt)}</time>
+          <time datetime={a.publishedAt.toISOString()} data-relative>{relativeTime(a.publishedAt)}</time>
         </p>
       </div>
     </article>
@@ -94,7 +94,7 @@ const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(i
           <a href={href}>{a.title}</a>
         </h4>
         <p class="byline">
-          <time datetime={a.publishedAt.toISOString()}>{relativeTime(a.publishedAt)}</time>
+          <time datetime={a.publishedAt.toISOString()} data-relative>{relativeTime(a.publishedAt)}</time>
         </p>
       </div>
     </article>
@@ -111,7 +111,7 @@ const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(i
           <a href={href}>{a.title}</a>
         </h4>
         <p class="byline">
-          <time datetime={a.publishedAt.toISOString()}>{relativeTime(a.publishedAt)}</time>
+          <time datetime={a.publishedAt.toISOString()} data-relative>{relativeTime(a.publishedAt)}</time>
         </p>
       </div>
     </article>
@@ -239,7 +239,7 @@ const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(i
     line-height: 1.28;
   }
 
-  /* ---- List (Most Read) ---- */
+  /* ---- List (Top Stories) ---- */
   .card--list {
     display: grid;
     grid-template-columns: 1fr;

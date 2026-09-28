@@ -99,6 +99,27 @@ async function main() {
     const expires = weatherMeta.expires || weatherMeta.ends;
     const isExpired = expires ? new Date(expires).getTime() < Date.now() : false;
 
+    // Phase 10A.1: when a story is expired, force breaking=false regardless
+    // of the article frontmatter. The article frontmatter may still have
+    // breaking=true from when the alert was active — the newsroom's
+    // processExpiration step updates it, but build-published-registry.mjs
+    // runs BEFORE processExpiration in some flows and must be self-consistent.
+    // This prevents the validate:publishing failure:
+    // "lifecycleStatus=expired but breaking=true".
+    const breaking = isExpired ? false : (fm.breaking || false);
+
+    // Phase 10A.1: fallback for heroImageSourcePageUrl. The draft's
+    // heroImage.sourcePageUrl is preferred, but some pipelines (recall,
+    // science) don't store it in the draft. For licensed-photo articles,
+    // fall back to the article's sourceUrl (the official source page where
+    // the image originated). This prevents the validate:publishing failure:
+    // "licensed photo missing source page URL".
+    const heroImageMode = fm.imageMode || heroImage.mode || 'fallback-graphic';
+    let heroImageSourcePageUrl = heroImage.sourcePageUrl || '';
+    if (!heroImageSourcePageUrl && heroImageMode === 'licensed-photo') {
+      heroImageSourcePageUrl = fm.sourceUrl || '';
+    }
+
     stories.push({
       storyKey: draft?.storyKey || slug,
       slug,
@@ -115,14 +136,14 @@ async function main() {
       lastNwsExpiresAt: weatherMeta.expires || null,
       lastNwsEndsAt: weatherMeta.ends || null,
       lastCheckedAt: now,
-      heroImageMode: fm.imageMode || heroImage.mode || 'fallback-graphic',
+      heroImageMode,
       heroImageSource: fm.image || heroImage.path || '',
-      heroImageRelation: heroImage.relation || (fm.imageMode === 'licensed-photo' ? 'exact-location' : 'current-alert-data'),
+      heroImageRelation: heroImage.relation || (heroImageMode === 'licensed-photo' ? 'exact-location' : 'current-alert-data'),
       heroImageCreator: fm.imageCreator || heroImage.creator || '',
       heroImageLicense: fm.imageLicense || heroImage.license || '',
       heroImageLicenseUrl: fm.imageLicenseUrl || heroImage.licenseUrl || '',
-      heroImageSourcePageUrl: heroImage.sourcePageUrl || '',
-      breaking: fm.breaking || false,
+      heroImageSourcePageUrl,
+      breaking,
     });
   }
 

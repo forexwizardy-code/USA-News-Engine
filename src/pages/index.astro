@@ -161,7 +161,7 @@ const mostRead = await getMostRead(5);
                   <a href={`/news/${a.data.slug}/`}>{a.data.title}</a>
                 </h3>
                 <p class="byline">
-                  <time datetime={a.data.publishedAt.toISOString()}>
+                  <time datetime={a.data.publishedAt.toISOString()} data-relative>
                     {relativeTime(a.data.publishedAt)}
                   </time>
                 </p>
@@ -174,10 +174,10 @@ const mostRead = await getMostRead(5);
   </section>
   )}
 
-  <!-- =================== MOST READ =================== -->
-  <section class="section" aria-label="Most read">
+  <!-- =================== TOP STORIES =================== -->
+  <section class="section" aria-label="Top stories">
     <div class="container">
-      <SectionHeader title="Most Read" />
+      <SectionHeader title="Top Stories" />
       <ol class="mostread-list">
         {
           mostRead.map((a, i) => (

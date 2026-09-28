@@ -3,8 +3,9 @@ name: NWS Newsroom Automation
 on:
   workflow_dispatch:
   schedule:
-    # Run at minute 17 of every hour (offset to avoid top-of-hour load)
-    - cron: '17 * * * *'
+    # Phase 10A.1: run every 2 hours at minute 17 (00:17, 02:17, 04:17, ...)
+    # Offset to avoid top-of-hour load on GitHub Actions runners.
+    - cron: '17 */2 * * *'
 
 permissions:
   contents: write
