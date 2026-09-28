@@ -90,7 +90,7 @@ async function main() {
 
   // --- 3. Every public HTML page carries noindex,nofollow (while DEMO_NOINDEX=true) ---
   const htmlFiles = (await collectFiles(DIST_DIR, (n) => n.endsWith('.html')))
-    .filter((p) => !p.includes('/preview/'));
+    .filter((p) => !p.replaceAll('\\', '/').includes('/preview/'));
   let noindexMissing = 0;
   for (const f of htmlFiles) {
     const html = await readText(f);
@@ -105,7 +105,7 @@ async function main() {
 
   // --- 4. Preview pages carry noindex,nofollow,noarchive ---
   const previewHtml = (await collectFiles(DIST_DIR, (n) => n.endsWith('.html')))
-    .filter((p) => p.includes('/preview/'));
+    .filter((p) => p.replaceAll('\\', '/').includes('/preview/'));
   let previewNoindexMissing = 0;
   for (const f of previewHtml) {
     const html = await readText(f);
