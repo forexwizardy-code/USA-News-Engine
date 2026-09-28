@@ -59,6 +59,13 @@ import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+/**
+ * Phase 9A.1: SWPC records always carry storyType='space-weather'. The
+ * Phase 9A.1 filter uses storyType (not the old `topic` field) as the
+ * canonical publishEligibility signal.
+ */
+const SWPC_STORY_TYPE = 'space-weather';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 
@@ -231,6 +238,7 @@ function normalizeAlert(item) {
     sourceType: SOURCE_TYPE,
     sourceId: productId,
     scienceKey,
+    storyType: SWPC_STORY_TYPE,
     title,
     description,
     publishedAtSource,
@@ -242,7 +250,10 @@ function normalizeAlert(item) {
     imageUrl: null,
     imageAlt: null,
     imageCredit: 'NOAA SWPC',
+    imageCaption: null,
     imageSourceUrl: 'https://www.swpc.noaa.gov/',
+    rightsText: 'NOAA SWPC',
+    rightsStatus: 'verified-agency',
     // SWPC-specific fields.
     severity: parsed.severityCode,
     messageCode: parsed.messageCode,
@@ -337,6 +348,13 @@ function parseScales(doc) {
 
 // --- Fetch -----------------------------------------------------------------
 
+/**
+ * Fetch a SWPC JSON endpoint. Returns the parsed JSON body on success.
+ * Throws an Error with a descriptive message on HTTP failure, network
+ * failure, or malformed JSON. The HTTP status code (when available) is
+ * embedded in the error message so the caller can surface it in the
+ * output document's `httpStatus` field.
+ */
 async function fetchJson(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
@@ -380,6 +398,17 @@ async function fetchJson(url) {
   }
 }
 
+/**
+ * Extract the HTTP status code embedded in an error message produced by
+ * `fetchJson`. Returns 0 when no status code is found (e.g. network
+ * failure or timeout — those errors don't carry an HTTP status).
+ */
+function statusFromError(errMsg) {
+  if (typeof errMsg !== 'string') return 0;
+  const m = errMsg.match(/HTTP\s+(\d{3})\b/);
+  return m ? Number(m[1]) : 0;
+}
+
 // --- Main ------------------------------------------------------------------
 
 async function main() {
@@ -393,15 +422,18 @@ async function main() {
   // Step 1 — fetch alerts.json.
   let alertsRaw = [];
   let alertsError = null;
+  let alertsHttpStatus = 0;
   try {
     const data = await fetchJson(ALERTS_URL);
     if (Array.isArray(data)) {
       alertsRaw = data;
+      alertsHttpStatus = 200;
     } else {
       alertsError = 'alerts.json payload is not a JSON array';
     }
   } catch (err) {
     alertsError = String(err);
+    alertsHttpStatus = statusFromError(alertsError);
     console.warn(`  [warn] alerts.json fetch failed: ${alertsError}`);
   }
   console.log(`  Alerts received: ${alertsRaw.length}`);
@@ -409,10 +441,13 @@ async function main() {
   // Step 2 — fetch noaa-scales.json.
   let scalesDoc = null;
   let scalesError = null;
+  let scalesHttpStatus = 0;
   try {
     scalesDoc = await fetchJson(SCALES_URL);
+    scalesHttpStatus = 200;
   } catch (err) {
     scalesError = String(err);
+    scalesHttpStatus = statusFromError(scalesError);
     console.warn(`  [warn] noaa-scales.json fetch failed: ${scalesError}`);
   }
 
@@ -444,6 +479,17 @@ async function main() {
   const scalesSummary = scalesDoc ? parseScales(scalesDoc) : null;
 
   // Step 5 — assemble output document.
+  // Phase 9A.1: provenance metadata fields. `sourceAvailable` is true
+  // when the primary alerts endpoint returned HTTP 200; `httpStatus` is
+  // the alerts endpoint's status; `fetchError` is null on success and a
+  // descriptive string on failure. The scales endpoint failure (if any)
+  // is reported separately in `scalesError` and does NOT flip
+  // sourceAvailable, because the alerts endpoint is the canonical
+  // source for recordCount.
+  const sourceAvailable = alertsHttpStatus === 200;
+  const fetchError = alertsError;
+  const httpStatus = alertsHttpStatus;
+
   const severityBreakdown = {};
   for (const r of records) {
     const sev = r.severity || 'none';
@@ -454,9 +500,15 @@ async function main() {
     fetchedAt: now.toISOString(),
     source: SOURCE_NAME,
     sourceUrls: { alerts: ALERTS_URL, scales: SCALES_URL },
+    sourceAvailable,
+    httpStatus,
+    fetchError,
+    recordCount: records.length,
     alertsReceived: alertsRaw.length,
     alertsError,
+    alertsHttpStatus,
     scalesError,
+    scalesHttpStatus,
     totalRecords: records.length,
     droppedRoutine,
     droppedUnparseable,
@@ -474,6 +526,9 @@ async function main() {
   // Step 7 — report.
   const stats = await stat(OUTPUT_FILE);
   console.log('\n[fetch-swpc-science] SUCCESS');
+  console.log(`  sourceAvailable:     ${sourceAvailable}`);
+  console.log(`  httpStatus:          ${httpStatus}`);
+  if (fetchError) console.log(`  fetchError:          ${fetchError}`);
   console.log(`  Alerts received:     ${alertsRaw.length}`);
   if (alertsError) console.log(`  Alerts error:        ${alertsError}`);
   if (scalesError) console.log(`  Scales error:        ${scalesError}`);

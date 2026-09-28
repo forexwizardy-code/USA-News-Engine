@@ -1,38 +1,49 @@
 /**
- * US News Engine — Science story deduplication & scoring (Phase 9A).
+ * US News Engine — Science story deduplication & scoring (Phase 9A.1 hardened).
  *
- * Reads data/science/science-news-candidates.json (produced by the filter)
- * and groups NASA + JPL candidates that describe the SAME event (same
- * mission AND overlapping date window ±2 days) into a single story record.
- * SWPC alerts are kept separate (each alert is its own story).
+ * Reads data/science/science-news-candidates.json (produced by the
+ * Phase 9A.1 filter) and groups NASA + JPL candidates that describe
+ * the SAME event (same mission AND overlapping date window ±2 days)
+ * into a single story record. SWPC alerts are kept separate (each
+ * alert is its own story).
  *
- * Each story gets:
- *   - scienceStoryKey (deterministic hash of the cluster members)
- *   - primarySource (the highest-priority record in the cluster)
- *   - allSourceKeys (every scienceKey in the cluster)
- *   - sourceUrls (every sourceUrl in the cluster, de-duplicated)
- *   - titleSeed (the primary record's title, lightly normalized)
- *   - topic, mission
- *   - publishedAtSource (earliest publication date in the cluster)
- *   - storyScore (0-100, see below)
- *   - publishEligible, priority
- *   - recordCount
- *   - storyStatus ('new' | 'updated' | 'unchanged')
+ * Phase 9A.1 changes from Phase 9A:
+ *   - Story scoring now uses `storyType` as the primary signal. No
+ *     points are awarded merely because "NASA" appears in the title
+ *     (Phase 9A's mission-table bonus was over-broad). Major-mission
+ *     bonus (+10) is gated on storyType ∈ {mission-milestone,
+ *     discovery, launch, landing} AND a major mission name (Artemis,
+ *     Webb, Perseverance, Starliner) appearing in the title.
+ *   - Space-policy / administrative / education / media-advisory
+ *     story types receive NO bonuses beyond the base 20. They are
+ *     still tracked (so cross-snapshot change detection works) but
+ *     will sort to the bottom of the ranking because their score is
+ *     capped at the base.
+ *   - `storyType` is added to the story record (taken from the
+ *     primary candidate's storyType, which was set by the filter).
+ *   - `publishEligible` is taken from the filter (never recomputed
+ *     here). When the primary candidate is publishEligible, the story
+ *     is publishEligible.
+ *   - Image auto-selection now respects rights status: a primary
+ *     candidate whose image has rightsStatus "unclear" or "unverified"
+ *     is replaced (where possible) by a cluster member whose image has
+ *     "verified-agency" or "verified-third-party" rights. If no
+ *     cluster member has a verified image, the story's imageUrl is set
+ *     to null (the story is still tracked, but no image is auto-selected).
+ *   - Cross-snapshot tracking is preserved (storyStatus new/updated/
+ *     unchanged, firstSeenAt, latestSeenAt, updateCount).
  *
  * Story score (0-100, internal ranking only — never public/SEO):
  *   Base: 20
- *   Launch/landing/splashdown: +20
+ *   Launch/landing: +20
  *   Major discovery/finding: +15
- *   Crew/astronaut: +10
- *   Known major mission (Artemis, Webb, Perseverance): +10
- *   Multiple sources (NASA+JPL): +8
+ *   Crew mission event (actual, not announcement): +10
+ *   Major mission name in title (Artemis, Webb, Perseverance, Starliner)
+ *     — ONLY when storyType is mission-milestone/discovery/launch/landing: +10
+ *   Multiple official sources (NASA+JPL): +8
  *   Recent (within 3 days): +5
  *   SWPC G4+: +20, G3: +12, S3+: +12, R3+: +8
  *   Cap at 100
- *
- * Cross-snapshot tracking: previous snapshot at OUTPUT_FILE is loaded; if a
- * story with the same scienceStoryKey exists, we carry forward firstSeenAt,
- * bump updateCount, and set storyStatus based on a content signature.
  *
  * Output: data/science/science-story-records.json
  *
@@ -64,8 +75,27 @@ const BONUS_SWPC_S3_PLUS = 12;
 const BONUS_SWPC_R3_PLUS = 8;
 const SCORE_CAP = 100;
 
-// Major missions that earn the +10 bonus.
-const MAJOR_MISSIONS = new Set(['Artemis', 'James Webb', 'Perseverance']);
+// Major missions that earn the +10 bonus — but ONLY when the story's
+// storyType is one of MAJOR_MISSION_ELIGIBLE_TYPES.
+const MAJOR_MISSIONS = new Set(['Artemis', 'James Webb', 'Perseverance', 'Starliner']);
+const MAJOR_MISSION_ELIGIBLE_TYPES = new Set([
+  'mission-milestone',
+  'discovery',
+  'launch',
+  'landing',
+]);
+
+// Story types that should NOT receive any bonus beyond the base 20.
+// These are the types the filter marks as publishEligible=false for
+// policy/administrative reasons; the scorer still tracks them (so
+// cross-snapshot change detection works) but ranks them at the bottom.
+const NO_BONUS_TYPES = new Set([
+  'space-policy',
+  'administrative',
+  'education',
+  'media-advisory',
+  'evergreen',
+]);
 
 // Keywords for the launch/landing and discovery bonuses.
 const LAUNCH_LANDING_KEYWORDS = [
@@ -77,10 +107,11 @@ const DISCOVERY_KEYWORDS = [
   'discover', 'discovery', 'discovered',
   'first image', 'first light', 'first observation', 'first measurement',
   'finding', 'findings', 'result', 'results', 'milestone',
-  'detected', 'new image', 'captures', 'captured',
+  'detected', 'new image', 'captures', 'captured', 'reveals', 'spots',
 ];
 const CREW_KEYWORDS = [
-  'astronaut', 'cosmonaut', 'crew', 'spacewalk', 'eva',
+  'astronaut', 'cosmonaut', 'spacewalk', 'eva',
+  'docking', 'undocking', 'splashdown',
 ];
 
 // Cluster date window: ±2 days for matching NASA+JPL events.
@@ -116,9 +147,21 @@ function containsKeyword(haystack, keywords) {
  * Compute the deterministic internal story score (0-100) for a cluster
  * of records. The score reflects the "weight" of the story for internal
  * ranking only — it is never used for SEO or public display.
+ *
+ * Phase 9A.1: scoring is gated on `storyType`. The NO_BONUS_TYPES
+ * (space-policy, administrative, education, media-advisory, evergreen)
+ * get the base 20 and nothing else.
  */
 function computeStoryScore(records, primaryRecord, now) {
   let score = BASE_SCORE;
+
+  const storyType = primaryRecord.storyType;
+
+  // No-bonus types: cap at base. (We still track them so cross-snapshot
+  // change detection works, but they rank at the bottom.)
+  if (storyType && NO_BONUS_TYPES.has(storyType)) {
+    return Math.min(SCORE_CAP, score);
+  }
 
   const combined = records
     .map((r) => `${r.title || ''}\n${r.description || ''}`)
@@ -134,18 +177,25 @@ function computeStoryScore(records, primaryRecord, now) {
     score += BONUS_DISCOVERY;
   }
 
-  // Crew/astronaut
-  if (containsKeyword(combined, CREW_KEYWORDS)) {
+  // Crew mission EVENT (not announcement). The filter already gated
+  // crew-mission storyType on non-announcement items, so any
+  // crew-mission record here is an actual event.
+  if (storyType === 'crew-mission' || containsKeyword(combined, CREW_KEYWORDS)) {
     score += BONUS_CREW;
   }
 
-  // Known major mission
-  const hasMajorMission = records.some((r) => MAJOR_MISSIONS.has(r.mission));
-  if (hasMajorMission) {
-    score += BONUS_MAJOR_MISSION;
+  // Major mission name in title — gated on storyType.
+  if (storyType && MAJOR_MISSION_ELIGIBLE_TYPES.has(storyType)) {
+    const titleHasMajorMission = records.some((r) => {
+      const t = lower(r.title || '');
+      return Array.from(MAJOR_MISSIONS).some((m) => t.includes(lower(m)));
+    });
+    if (titleHasMajorMission) {
+      score += BONUS_MAJOR_MISSION;
+    }
   }
 
-  // Multiple sources (NASA + JPL)
+  // Multiple official sources (NASA + JPL)
   const sourceSet = new Set(records.map((r) => r.source));
   if (sourceSet.has('NASA') && sourceSet.has('JPL')) {
     score += BONUS_MULTI_SOURCE;
@@ -217,6 +267,64 @@ function pickPrimary(cluster) {
 }
 
 /**
+ * Pick the canonical image for the story. Returns
+ * { imageUrl, imageAlt, imageCredit, imageCaption, imageSourceUrl,
+ *   rightsText, rightsStatus }.
+ *
+ * Phase 9A.1: NEVER auto-select an image whose rightsStatus is
+ * "unclear" or "unverified". When the primary candidate's image is
+ * unclear/unverified, scan the cluster for a member with verified
+ * rights. If none, return imageUrl=null (the story is still tracked
+ * but no image is auto-selected).
+ */
+function pickStoryImage(cluster, primaryRecord) {
+  const VERIFIED = new Set(['verified-agency', 'verified-third-party']);
+
+  // 1. Try the primary record's image when it has verified rights.
+  if (
+    primaryRecord.imageUrl &&
+    VERIFIED.has(primaryRecord.rightsStatus)
+  ) {
+    return {
+      imageUrl: primaryRecord.imageUrl,
+      imageAlt: primaryRecord.imageAlt || null,
+      imageCredit: primaryRecord.imageCredit || null,
+      imageCaption: primaryRecord.imageCaption || null,
+      imageSourceUrl: primaryRecord.imageSourceUrl || primaryRecord.sourceUrl || null,
+      rightsText: primaryRecord.rightsText || null,
+      rightsStatus: primaryRecord.rightsStatus,
+    };
+  }
+
+  // 2. Scan the rest of the cluster for a verified image.
+  for (const r of cluster) {
+    if (r === primaryRecord) continue;
+    if (r.imageUrl && VERIFIED.has(r.rightsStatus)) {
+      return {
+        imageUrl: r.imageUrl,
+        imageAlt: r.imageAlt || null,
+        imageCredit: r.imageCredit || null,
+        imageCaption: r.imageCaption || null,
+        imageSourceUrl: r.imageSourceUrl || r.sourceUrl || null,
+        rightsText: r.rightsText || null,
+        rightsStatus: r.rightsStatus,
+      };
+    }
+  }
+
+  // 3. No verified image available — do not auto-select.
+  return {
+    imageUrl: null,
+    imageAlt: null,
+    imageCredit: null,
+    imageCaption: null,
+    imageSourceUrl: null,
+    rightsText: null,
+    rightsStatus: null,
+  };
+}
+
+/**
  * Normalize a title into a "title seed" by collapsing whitespace and
  * lowercasing. This is used for change detection / deduplication, not
  * for display.
@@ -238,6 +346,7 @@ function computeSignature(cluster, primary) {
     primarySource: primary.source,
     severity: primary.severity || null,
     mission: primary.mission,
+    storyType: primary.storyType,
     topic: primary.topic,
     priority: primary.priority,
     publishEligible: primary.publishEligible,
@@ -370,6 +479,7 @@ async function main() {
     const storyKey = buildStoryKey(cluster);
     const sig = computeSignature(cluster, primary);
     const storyScore = computeStoryScore(cluster, primary, now);
+    const image = pickStoryImage(cluster, primary);
 
     // Cross-snapshot tracking.
     let firstSeenAt = now.toISOString();
@@ -407,6 +517,7 @@ async function main() {
       sourceUrls,
       titleSeed: titleSeed(primary.title),
       title: primary.title,
+      storyType: primary.storyType || null,
       topic: primary.topic,
       mission: primary.mission,
       publishedAtSource: earliestPublishedAtSource,
@@ -422,10 +533,17 @@ async function main() {
       // Denormalized primary-record fields for downstream consumption.
       severity: primary.severity || null,
       sourceUrl: primary.sourceUrl,
-      imageUrl: primary.imageUrl || null,
-      imageCredit: primary.imageCredit || null,
+      imageUrl: image.imageUrl,
+      imageAlt: image.imageAlt,
+      imageCredit: image.imageCredit,
+      imageCaption: image.imageCaption,
+      imageSourceUrl: image.imageSourceUrl,
+      rightsText: image.rightsText,
+      rightsStatus: image.rightsStatus,
       description: primary.description || null,
       selectedReason: primary.selectedReason || null,
+      eligibilityReason: primary.eligibilityReason || null,
+      exclusionReason: primary.exclusionReason || null,
     });
   }
 
@@ -451,11 +569,16 @@ async function main() {
 
   const output = {
     generatedAt: now.toISOString(),
-    source: 'Phase 9A science stories',
+    source: 'Phase 9A.1 science stories',
     inputCandidateCount: candidates.length,
     uniqueStoryCount: stories.length,
     publishEligibleCount: stories.filter((s) => s.publishEligible).length,
     highPriorityCount: stories.filter((s) => s.priority === 'high').length,
+    storyTypeBreakdown: stories.reduce((acc, s) => {
+      const t = s.storyType || 'unknown';
+      acc[t] = (acc[t] || 0) + 1;
+      return acc;
+    }, {}),
     newCount,
     updatedCount,
     unchangedCount,
@@ -507,11 +630,12 @@ async function main() {
   } else {
     stories.slice(0, 10).forEach((s, i) => {
       const titlePreview = (s.title || '(no title)').slice(0, 60);
+      const eligible = s.publishEligible ? 'eligible' : 'not-eligible';
       console.log(
-        `    ${String(i + 1).padStart(2)}. [score=${s.storyScore}] ${s.primarySource} — ${titlePreview}`,
+        `    ${String(i + 1).padStart(2)}. [score=${s.storyScore}, ${s.storyType || '?'}, ${eligible}] ${s.primarySource} — ${titlePreview}`,
       );
       console.log(
-        `        key=${s.scienceStoryKey} mission=${s.mission || '-'} topic=${s.topic} status=${s.storyStatus} priority=${s.priority}`,
+        `        key=${s.scienceStoryKey} mission=${s.mission || '-'} image=${s.imageUrl ? 'yes' : 'no'} rights=${s.rightsStatus || '-'} status=${s.storyStatus}`,
       );
     });
   }

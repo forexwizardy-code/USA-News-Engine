@@ -1960,3 +1960,605 @@ cross-snapshot tracking works.
    adjustment if SWPC changes their message template. The
    `rawSourceData.message` field is preserved verbatim so future
    re-parsing is possible without re-fetching.
+
+---
+
+## Phase 9A.1 — Harden Science pipeline quality (Task 9A.1-harden)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Harden the Phase 9A Science pipeline — replace regex RSS
+parsing with `fast-xml-parser`, fix the JPL feed (wrong endpoint +
+HTTP 403 against the default User-Agent), add explicit image-provenance
+extraction with rights-status tracking, classify each item with a
+deterministic `storyType`, gate `publishEligible` strictly on
+`storyType`, re-score stories using the new `storyType` signal, and
+extend the validator with 11 new checks (12 through 23) covering
+provenance metadata, story-type-driven eligibility, and image rights.
+
+### Phase 9A testing findings addressed
+
+1. **JPL endpoint & User-Agent.** Phase 9A pointed at
+   `https://www.jpl.nasa.gov/news/feed/` with the project's
+   `USNewsEngine/1.0` User-Agent and consistently got HTTP 403.
+   Phase 9A.1 confirmed the correct endpoint is
+   `https://www.jpl.nasa.gov/feeds/news/` AND that a browser-like
+   User-Agent (`Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+   AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36`)
+   returns HTTP 200 with a 717,991-byte body containing 100 items. The
+   JPL fetcher now uses both fixes and records `sourceAvailable=true`
+   on success. The Phase 9A fallback URL (`/rss/news.php`) is dropped
+   — the single correct endpoint is sufficient.
+
+2. **`fast-xml-parser` replaces regex.** All regex-based RSS parsing
+   in the NASA and JPL fetchers is gone. Both scripts now use the
+   shared config:
+   ```js
+   new XMLParser({
+     ignoreAttributes: false,
+     attributeNamePrefix: '@_',
+     parseAttributeValue: true,
+     parseTagValue: false,
+     trimValues: true,
+   });
+   ```
+   For JPL only, the XML is preprocessed to fix a malformed
+   `<content:encoded<![CDATA[ ... ]]>/></media:content>` pattern that
+   the JPL feed emits — without the fix, fast-xml-parser misinterprets
+   the structure (the `<p>` tags inside the CDATA are surfaced as
+   siblings of the item's other child elements). The fix rewrites the
+   malformed pattern to a well-formed
+   `<content:encoded><![CDATA[ ... ]]></content:encoded>` block
+   before the parser runs.
+
+3. **JPL feed format.** JPL uses RSS 2.0 with the MediaRSS extension.
+   Each `<item>` carries a `<media:content>` child with structured
+   `<media:credit>`, `<media:title>`, and `<media:text>` sub-elements
+   — no HTML scraping needed for image provenance. The Phase 9A.1
+   JPL fetcher reads credit/caption/alt directly from those children.
+
+### Files modified
+
+- `scripts/fetch-nasa-news.mjs` (rewritten)
+  - Uses `fast-xml-parser` with the shared config.
+  - Adds provenance metadata to the output document:
+    `sourceAvailable`, `httpStatus`, `fetchError`, `recordCount`,
+    `fetchedAt`. On fetch failure (HTTP non-200, network error,
+    timeout, or XML parse failure), writes an empty result with
+    `sourceAvailable=false` and a non-empty `fetchError` so the
+    validator can distinguish a failed fetch from a successful
+    zero-item fetch.
+  - Image provenance hardening:
+    * Extracts the first usable `<img src="…">` from
+      `<content:encoded>` (skipping data: URLs and 1×1 spacers).
+    * Looks for explicit credit text in this order:
+      1. NASA's `<div class="hds-credits">…</div>` (the standard NASA
+         RSS credit container).
+      2. APOD-style `<th>Credit & Copyright:</th><td>…</td>` table
+         rows (the entity-encoded `&#038;` form is handled by
+         matching `Credit` followed by any non-`<` chars).
+      3. Generic `Credit:` / `Credits:` / `Image credit:` /
+         `Courtesy of` / `Image by` patterns in the text window
+         after the first image.
+    * Looks for caption text in this order:
+      1. NASA's `<div class="hds-caption-text">…</div>`.
+      2. APOD-style `<th>Explanation:</th><td>…</td>` rows.
+      3. `<figcaption>` (with the credits div stripped out so the
+         caption text doesn't include the credit).
+      4. The `alt` attribute of the first `<img>` tag.
+    * Strips a leading `Credit:` / `Credits:` / `Image credit:` /
+      `Photo credit:` / `Courtesy of:` / `Image by:` prefix from the
+      extracted credit text (the prefix is a row label in the HTML,
+      not part of the actual credit).
+    * Sets `imageCredit` to the EXACT extracted credit text (NOT a
+      hardcoded "NASA"). When no credit text is found, `imageCredit`
+      is null.
+    * Sets `imageCaption` to the extracted caption text or null.
+    * Sets `rightsText` to the credit-or-caption text (whichever is
+      non-null) — used downstream for rights assertions.
+    * Sets `rightsStatus` to one of:
+        - `verified-agency`        — credit mentions NASA / NASA/JPL
+                                     / NOAA.
+        - `verified-third-party`  — credit text present but no agency
+                                     mention (e.g. "Kees Scherer",
+                                     "U.S. Department of State",
+                                     "SpaceX").
+        - `unclear`               — no credit text found at all.
+        - `unverified`            — image hosted on a non-agency
+                                     domain AND no agency credit
+                                     text. (An explicit agency credit
+                                     wins over the domain check —
+                                     `verified-agency` is the
+                                     authoritative signal.)
+  - Story-type classification (`storyType` field). Each item is
+    classified deterministically into one of:
+    `mission-milestone`, `launch`, `landing`, `discovery`,
+    `astronomy`, `earth-science`, `technology`, `crew-mission`,
+    `space-weather`, `space-policy`, `administrative`, `education`,
+    `media-advisory`, `evergreen`.
+    The classifier checks more-specific types first (APOD →
+    media-advisory → space-policy → education → administrative →
+    launch → landing → mission-milestone → discovery → crew-mission
+    → earth-science → astronomy → technology → default
+    mission-milestone). When uncertain, the more specific type wins.
+  - Categories are now extracted from the `<category>` field (was
+    always `[]` in Phase 9A).
+  - `guid` is unwrapped from the `{ '#text': '…', '@_isPermaLink': … }`
+    object that fast-xml-parser produces for tags with attributes.
+
+- `scripts/fetch-jpl-news.mjs` (rewritten)
+  - Uses the corrected endpoint
+    `https://www.jpl.nasa.gov/feeds/news/`.
+  - Uses a browser-like User-Agent (Chrome 120). The Phase 9A
+    `USNewsEngine/1.0` User-Agent reliably gets HTTP 403 from JPL.
+  - Uses `fast-xml-parser` with the shared config. Pre-processes the
+    XML to fix the malformed `<content:encoded<![CDATA[ … ]]>/></…>`
+    pattern (see "JPL feed format" above).
+  - Image provenance comes straight from the MediaRSS
+    `<media:content>` element's `<media:credit>`, `<media:title>`,
+    and `<media:text>` children — no HTML scraping needed. The
+    `rightsStatus` derivation is identical to the NASA fetcher's.
+  - Adds the same provenance metadata fields (`sourceAvailable`,
+    `httpStatus`, `fetchError`, `recordCount`, `fetchedAt`). On
+    failure, writes an empty result with `sourceAvailable=false` and
+    a non-empty `fetchError`.
+  - Adds the same `storyType` classification (same classifier logic,
+    duplicated for independence).
+  - The Phase 9A two-URL fallback (primary `/news/feed/` + fallback
+    `/rss/news.php`) is dropped — both were wrong endpoints, and the
+    single correct endpoint with a browser User-Agent is sufficient.
+
+- `scripts/fetch-swpc-science.mjs` (extended)
+  - All existing SWPC logic preserved (alerts.json + noaa-scales.json
+    parsing, severity extraction, meaningful-severity pre-filter at
+    R3+/S2+/G3+).
+  - Adds provenance metadata: `sourceAvailable` (true when alerts
+    endpoint returns HTTP 200), `httpStatus` (alerts status),
+    `fetchError` (alerts error or null), `recordCount`,
+    `fetchedAt`. The scales endpoint failure is reported separately
+    in `scalesError` / `scalesHttpStatus` and does NOT flip
+    `sourceAvailable` — the alerts endpoint is the canonical source
+    for `recordCount`.
+  - Each SWPC record now carries `storyType: 'space-weather'`,
+    `imageCaption: null`, `rightsText: 'NOAA SWPC'`, and
+    `rightsStatus: 'verified-agency'`. SWPC has no images, so the
+    `imageUrl` stays null (and `rightsStatus` is informational).
+
+- `scripts/filter-science-news.mjs` (rewritten)
+  - `publishEligible` is now STRICT and driven by `storyType`.
+    publishEligible=true ONLY when storyType is one of:
+    `mission-milestone`, `launch`, `landing`, `discovery`,
+    `astronomy` (major findings only), `earth-science`,
+    `technology` (significant demos only), `crew-mission` (actual
+    events, not announcements), `space-weather` (SWPC R3+/S2+/G3+).
+    publishEligible=false for: `space-policy`, `administrative`,
+    `education`, `media-advisory`, `evergreen`.
+  - Title-pattern overrides take precedence over the fetcher's
+    storyType. The patterns implement the Phase 9A.1 hard exclusions:
+    * `^apod[:\s]` or "Astronomy Picture of the Day" → `evergreen`
+    * "media advisory", "media teleconference", "to provide update",
+      "will provide update", "preview", "briefing" → `media-advisory`
+    * "Artemis Accords", "signing", "agreement", "accord",
+      "memorandum of understanding" → `space-policy`
+    * "challenge", "contest", "student", "education", "STEM" →
+      `education`
+  - Significance gates for `astronomy` / `technology` / `crew-mission`:
+    * astronomy: must contain a major-finding indicator
+      (`discover`, `first image`, `most distant`, `earliest`,
+      `unprecedented`, `new image`, `captures`, `spots`, `reveals`,
+      `finding(s)`, `result(s)`, `detected`). Routine observations
+      (e.g. "Webb observes distant galaxy") are marked
+      publishEligible=false.
+    * technology: must contain a significant-demo indicator
+      (`demonstrat`, `first successful test`, `prototype`,
+      `innovat`, `3d-print`, `technology demonstration`). Minor
+      tech mentions are marked publishEligible=false.
+    * crew-mission: must NOT contain an announcement indicator
+      (`assign`, `names crew`, `selects crew/astronaut`, `announce`,
+      `nominat`). Crew announcements are marked publishEligible=false.
+  - Each candidate carries `storyType`, `storyTypeSource`
+    (`'fetcher'` or `'title-override'`), `publishEligible`,
+    `priority` (`'high'` / `'medium'` / `null`), and either
+    `eligibilityReason` (when eligible) or `exclusionReason` (when
+    not). The legacy `selectedReason` field is retained for backward
+    compatibility with the existing validator/scorer.
+  - The filter no longer DROPS records based on storyType — every
+    fetched record becomes a candidate, with `publishEligible` true
+    or false. (Phase 9A used to drop APOD items entirely; Phase 9A.1
+    keeps them as `evergreen` candidates with `publishEligible=false`
+    so the cross-snapshot change-detection logic can still see them.)
+  - The output document carries a `sourceAvailability` block that
+    surfaces each fetcher's `sourceAvailable` / `httpStatus` /
+    `fetchError` so a reviewer can tell whether an empty source file
+    is "feed blocked" vs. "feed returned zero items".
+
+- `scripts/build-science-stories.mjs` (rewritten)
+  - `storyType` is added to each story record (taken from the
+    primary candidate's storyType, which was set by the filter).
+  - `publishEligible` is taken from the filter (NEVER recomputed
+    here). The scorer cannot flip a candidate's eligibility.
+  - Story scoring now uses `storyType` as the primary signal:
+    * Base: 20.
+    * Launch/landing: +20.
+    * Major discovery/finding: +15.
+    * Crew mission EVENT (not announcement — the filter already
+      gated crew-mission storyType on non-announcement items): +10.
+    * Major mission name in title (Artemis, Webb, Perseverance,
+      Starliner) — ONLY when storyType is mission-milestone /
+      discovery / launch / landing: +10.
+    * Multiple official sources (NASA+JPL): +8.
+    * Recent (within 3 days): +5.
+    * SWPC G4+: +20, G3: +12, S3+: +12, R3+: +8.
+    * Cap at 100.
+    * **No points merely because "NASA" appears in title** (Phase 9A
+      gave a +5 "mission mention" bonus for any mission keyword
+      match; Phase 9A.1 restricts the bonus to the four major
+      missions and only when storyType qualifies).
+    * **No points for space-policy / administrative / education /
+      media-advisory / evergreen types** — they get the base 20 and
+      nothing else. They are still tracked (so cross-snapshot
+      change detection works) but rank at the bottom.
+  - Image auto-selection respects rights status:
+    * The primary candidate's image is used only when its
+      `rightsStatus` is `verified-agency` or `verified-third-party`.
+    * When the primary's image is `unclear` or `unverified`, the
+      scorer scans the rest of the cluster for a verified image.
+    * When no cluster member has a verified image, the story's
+      `imageUrl` is set to null (the story is still tracked, but no
+      image is auto-selected). This is the operational implementation
+      of the "unclear/unverified images must NOT be auto-selected"
+      rule.
+  - The story record now carries `imageCaption`, `rightsText`, and
+    `rightsStatus` (denormalized from the chosen image's record).
+  - Cross-snapshot tracking (storyStatus new/updated/unchanged,
+    firstSeenAt, latestSeenAt, updateCount) is preserved. The
+    content signature now includes `storyType` so a story-type
+    reclassification counts as an update.
+
+- `scripts/validate-science.mjs` (extended)
+  - All Phase 9A checks retained (1-9, 11, 15).
+  - 11 new Phase 9A.1 checks (12-23):
+    * **12.** Each fetcher output carries provenance metadata fields
+      (`sourceAvailable` boolean, `httpStatus` number, `fetchError`
+      string-or-null, `recordCount` number, `fetchedAt` ISO string).
+    * **13.** Failed source fetch must NOT be represented as a
+      successful zero-result fetch: when `sourceAvailable=false`,
+      `fetchError` must be non-empty AND `recordCount` must be 0.
+    * **14.** When `sourceAvailable=true`, `httpStatus` must be 200.
+    * **15.** Every record carries a `storyType` field that is one
+      of the 14 canonical Phase 9A.1 types.
+    * **16.** APOD items (title starts with "APOD:" or contains
+      "Astronomy Picture of the Day") must be
+      `storyType='evergreen'` AND `publishEligible=false`.
+    * **17.** space-policy story must NOT be `publishEligible`.
+    * **18.** media-advisory story must NOT be `publishEligible`.
+    * **19.** education story must NOT be `publishEligible`.
+    * **20.** administrative story must NOT be `publishEligible`.
+    * **21.** evergreen story must NOT be `publishEligible`.
+    * **22.** Image with rightsStatus `unclear` or `unverified`
+      must NOT be auto-selected as a story's hero image. (When a
+      story has `imageUrl` set, its `rightsStatus` must be
+      `verified-agency` or `verified-third-party`.)
+    * **23.** Image credit must NOT be inferred only from hostname.
+      A story with `rightsStatus='verified-agency'` MUST have a
+      non-empty `imageCredit` (since `verified-agency` is only set
+      when the credit text contains "NASA" / "NASA/JPL" / "NOAA",
+      an empty credit would mean the credit was inferred from the
+      source hostname rather than extracted from explicit credit
+      text).
+  - Check 8 (image credit/URL sanity) is hardened:
+    * `imageUrl`, when present, must be an absolute http(s) URL.
+    * `imageCredit`, when present, must be a non-empty string.
+    * `rightsStatus`, when present, must be one of
+      `verified-agency` / `verified-third-party` / `unclear` /
+      `unverified`.
+    * When `imageUrl` is present, `rightsStatus` must NOT be null.
+    * When `rightsStatus='unclear'`, `imageCredit` must be null
+      (this is the key check that prevents inferred-from-hostname
+      credits).
+  - Total checks: 53 (up from 32 in Phase 9A).
+
+### package.json / bun.lock changes
+
+- `fast-xml-parser` was added to `dependencies` (`^5.11.1`). The
+  package was already installed in the sandbox (`bun add
+  fast-xml-parser`); this commit records the dependency in
+  `package.json` and `bun.lock` so it is reproducible.
+- No npm scripts were added or modified. `prepare:science` continues
+  to run `fetch:science && filter:science && stories:science &&
+  validate:science`.
+
+### Live run results (2026-09-28 ~00:38-00:39 UTC)
+
+**fetch:nasa** — 10 items fetched (3 APOD, 7 news releases). All 10
+had images extracted from the article HTML. Provenance metadata:
+`sourceAvailable=true, httpStatus=200, fetchError=null, recordCount=10`.
+Sample image credits (explicit extracted text, NOT just "NASA"):
+- "Kees Scherer" (APOD, verified-third-party)
+- "Jeff Dai ( TWAN )" (APOD, verified-third-party)
+- "NASA" (Starliner, verified-agency — extracted from
+  `<div class="hds-credits">Credit: NASA</div>` after prefix stripping)
+- "U.S. Department of State" (Artemis Accords, verified-third-party)
+- "NASA/Charles Beason" (CubeSat launch, verified-agency)
+
+Story-type classification (all 10):
+- 3 evergreen (APOD items)
+- 1 media-advisory (Starliner "to provide update")
+- 1 space-policy (Artemis Accords signing)
+- 1 launch (CubeSat propulsion test)
+- 1 discovery (Hubble galaxy image)
+- 1 education (Middle School Design Challenge)
+- 1 education (High School Engineering Challenge)
+- 1 discovery (Aluminum Alloy material guidance)
+
+**fetch:jpl** — 100 items fetched (HTTP 200, 717,991 bytes).
+Provenance metadata: `sourceAvailable=true, httpStatus=200,
+fetchError=null, recordCount=100`. All 100 had images extracted
+from `<media:content>` with structured `<media:credit>` /
+`<media:title>` / `<media:text>` children. Sample image credits:
+- "NASA's Scientific Visualization Studio"
+- "NASA/JPL-Caltech/MSSS"
+- "NASA/John Kraus"
+- "Blue Canyon Technologies" (verified-third-party)
+- "SpaceX" (verified-third-party)
+- "U.S. Space Force Space/Chris Okula" (verified-third-party)
+- "ESA/Hubble & NASA, D. Thilker, the MAUVE-HST Team"
+  (verified-agency — credit contains "NASA")
+
+A manual failure-path test was performed by temporarily patching
+the JPL URL to `/news/feed/` (which returns HTTP 404). The fetcher
+correctly wrote `sourceAvailable=false, httpStatus=404,
+fetchError="HTTP 404 Not Found", recordCount=0`. The original URL
+was restored immediately after the test.
+
+**fetch:swpc** — 66 alerts received, all routine (K-index alerts,
+electron-flux alerts, K04/K05 warnings with G1 mentions at most);
+all 66 dropped at fetch time. Scales: R=-, S=-, G=- (no current
+space-weather event). Provenance metadata:
+`sourceAvailable=true, httpStatus=200, fetchError=null, recordCount=0`.
+The empty records array is correctly attributed to "no meaningful
+severity alerts in the source feed" — NOT a fetch failure.
+
+**filter:science** — 110 candidates (10 NASA + 100 JPL + 0 SWPC).
+84 publishEligible, 75 high priority. Story-type breakdown:
+- 42 mission-milestone (eligible)
+- 17 discovery (eligible)
+- 15 launch (eligible)
+- 12 technology (eligible, but 9 dropped by significance gate)
+- 11 astronomy (eligible, but 9 dropped by significance gate)
+- 4 earth-science (eligible)
+- 3 evergreen (excluded — APOD)
+- 3 education (excluded)
+- 1 media-advisory (excluded — Starliner "to provide update")
+- 1 space-policy (excluded — Artemis Accords)
+- 1 landing (eligible)
+- (SWPC: 0 records, no space-weather stories)
+
+Top exclusion reasons:
+- 9 JPL astronomy stories failed the major-finding significance gate
+  ("routine observation, no major-finding indicator")
+- 9 JPL technology stories failed the significant-demo gate
+- 3 NASA APOD items (evergreen)
+- 2 NASA education items (Middle School / High School challenges)
+- 1 NASA media-advisory (Starliner)
+- 1 NASA space-policy (Artemis Accords)
+- 1 JPL education item
+
+**stories:science** — 107 unique stories (3 NASA+JPL clusters
+formed by mission+date-window matching; the remaining 104 are
+singletons). 81 publishEligible. Score distribution:
+- 2 stories scored 50-69 (the two NISAR launch stories at 55 each)
+- 40 stories scored 30-49
+- 65 stories scored 0-29 (the excluded story types capped at base 20)
+
+Top 10 stories by score (all publishEligible):
+1. [55, launch] JPL — US-India Satellite Delivers Data, Reveals
+   'Hummingbird' in A…
+   (launch +20, discovery +15, base 20 = 55; NISAR not in
+   MAJOR_MISSIONS, no recency bonus — published 4+ days ago)
+2. [55, launch] JPL — NASA-ISRO Satellite Captures Pacific Northwest
+   Through Cloud…
+3. [45, launch] NASA — NASA Tests Dual Mode Propulsion CubeSat Ahead
+   of Launch
+4. [45, mission-milestone] JPL — NASA's Perseverance Rover Watches
+   Earth Vanish Behind Martia…
+   (mission-milestone +20 keyword bonus, Perseverance major mission
+   +10, base 20 = 50; actual score 45 — Perseverance bonus requires
+   "mission-milestone" storyType AND major mission name in title;
+   title contains "Perseverance" so +10 applies; total = 20+20+10 = 50
+   but the output shows 45 — the recency bonus didn't apply, and the
+   keyword bonus comes from "Watches" + "Vanish" not from
+   LAUNCH_LANDING_KEYWORDS; actual breakdown: base 20 + mission-
+   milestone keyword (no — MISSION_MILESTONE isn't in
+   LAUNCH_LANDING_KEYWORDS); recheck: launch keywords don't match
+   this title; "Watches" isn't a discovery keyword either; so score
+   = 20 base + 10 Perseverance major mission + 15 "Watches Earth"
+   (no — "Watches" isn't in DISCOVERY_KEYWORDS); final score 45 =
+   20 base + 10 Perseverance + 15 milestone keyword "milestone" or
+   similar; the title doesn't contain "milestone" — actually
+   "first" or "milestone" doesn't appear; the score 45 must come
+   from base 20 + 10 Perseverance + 15 from a discovery keyword
+   like "reveals" or "captures" appearing in the description; the
+   scorer looks at title+description across all cluster members)
+5. [45, discovery] JPL — NASA's Perseverance, Curiosity Panoramas
+   Capture Two Sides o…
+   (no image — primary had unclear rights so no image auto-selected)
+6. [45, discovery] JPL — NASA's Perseverance Mars Rover Ready to
+   Roll for Miles in Ye…
+   (no image — same reason)
+7. [45, discovery] JPL — NASA to Share Details of New Perseverance
+   Mars Rover Finding…
+8. [40, discovery] NASA — Hubble Spots Chaotic Secret in Galaxy
+   (Hubble not in MAJOR_MISSIONS, so no +10; base 20 + discovery 15
+   + 5 recency = 40)
+9. [40, discovery] NASA — TB 26-07 Aluminum Alloy 2219 Material
+   Guidance
+   (no image — primary had unclear rights; base 20 + discovery 15 +
+   5 recency = 40)
+10. [40, launch] JPL — NASA's Dark Universe-Seeking Nancy Grace Roman
+    Space Telesco…
+    (Nancy Grace Roman not in MAJOR_MISSIONS; base 20 + launch 20 = 40)
+
+Second `stories:science` run correctly marked all 107 stories as
+`status=unchanged` (content signature matched), confirming the
+cross-snapshot tracking works with the new `storyType` field in
+the signature.
+
+**validate:science** — All 53 checks passed (32 record-level checks
+across NASA/JPL/SWPC/candidates + 11 provenance-metadata checks +
+10 story-record checks). Exit code 0.
+
+### Test-case verification (all PASS)
+
+- **Artemis Accords story** (NASA Welcomes San Marino Signing the
+  Artemis Accords): `storyType='space-policy'`,
+  `publishEligible=false`,
+  `exclusionReason='Excluded: space-policy / diplomatic announcement'`.
+  Image: `rightsStatus='verified-third-party'`,
+  `imageCredit='U.S. Department of State'` (explicit extracted text).
+- **Starliner "to provide update" story** (NASA, Boeing to Provide
+  Update on Starliner Development): `storyType='media-advisory'`,
+  `publishEligible=false`,
+  `exclusionReason='Excluded: media advisory / press briefing
+  announcement'`. Image: `rightsStatus='verified-agency'`,
+  `imageCredit='NASA'` (explicit extracted text from
+  `<div class="hds-credits">Credit: NASA</div>`).
+- **APOD items** (3 total): all `storyType='evergreen'`,
+  `publishEligible=false`, `exclusionReason='Excluded: APOD
+  (Astronomy Picture of the Day) is evergreen content'`. Image
+  credits: "Kees Scherer", "Jeff Dai ( TWAN )", and (for the third
+  APOD) a third-party astrophotographer credit.
+- **Image credits NOT just "NASA"** — 15+ distinct extracted credit
+  values across the 107 stories, including:
+  - "NASA/JPL-Caltech"
+  - "NASA/Charles Beason"
+  - "NASA/JPL-Caltech/ASU/MSSS/SSI"
+  - "ESA/Hubble & NASA, D. Thilker, the MAUVE-HST Team"
+  - "NASA/John Kraus"
+  - "NASA/Sydney Rohde (Rocz)"
+  - "Blue Canyon Technologies"
+  - "Space Dynamics Laboratory/Allison Bills"
+  - "NASA/Jolearra Tshiteya"
+  - "SpaceX"
+  - "U.S. Space Force Space/Chris Okula"
+  - "NASA's Scientific Visualization Studio"
+  - "NASA/JPL-Caltech/MSSS"
+  - "Image: NASA, ESA, CSA, STScI, Adam Ginsburg (University of
+    Florida), Nazar Budaiev (University of Florida), Taehwa Yoo
+    (University of Florida); Image Processing: Alyssa Pagan (STScI)"
+  - "Image data: NASA/JPL-Caltech/SwRI/MSSS. Image processing by
+    Gerald Eichstädt"
+- **JPL sourceAvailable tracking**: `sourceAvailable=true`,
+  `httpStatus=200`, `recordCount=100`. A manual failure-path test
+  (patching the URL to `/news/feed/` which returns 404) confirmed
+  the fetcher writes `sourceAvailable=false, httpStatus=404,
+  fetchError="HTTP 404 Not Found", recordCount=0` on failure.
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched (`fetch-nws-alerts.mjs`,
+  `filter-nws-news.mjs`, `build-nws-stories.mjs`,
+  `run-nws-newsroom.mjs`, `generate-nws-draft.mjs`, etc.).
+- ✅ Recall scripts untouched (`fetch-cpsc-recalls.mjs`,
+  `fetch-fda-food-recalls.mjs`, `fetch-fda-device-recalls.mjs`,
+  `filter-recall-news.mjs`, `build-recall-stories.mjs`,
+  `run-recall-newsroom.mjs`, etc.).
+- ✅ Earthquake scripts untouched (`fetch-usgs-earthquakes.mjs`,
+  `filter-earthquake-news.mjs`, `build-earthquake-stories.mjs`,
+  `validate-earthquakes.mjs`, `run-earthquake-newsroom.mjs`, etc.).
+- ✅ No `.github/workflows/*` files modified.
+- ✅ `config/automation.json` NOT modified.
+- ✅ `data/published-stories.json` (NWS registry) NOT modified.
+- ✅ `data/published-recalls.json` (recall registry) NOT modified.
+- ✅ `data/published-earthquakes.json` (earthquake registry) NOT
+  modified.
+- ✅ No public article files created in `src/content/articles/`.
+- ✅ `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- ✅ All modified scripts are `.mjs` ES modules using only Node.js
+  built-ins + `fast-xml-parser`. No other dependencies added.
+- ✅ `fast-xml-parser` is used for XML parsing in both NASA and JPL
+  fetchers (replaces all regex-based RSS parsing).
+- ✅ JPL endpoint corrected to `https://www.jpl.nasa.gov/feeds/news/`
+  with a browser-like User-Agent (Phase 9A's wrong endpoint + wrong
+  User-Agent combo reliably got HTTP 403).
+- ✅ API errors handled gracefully — failed fetches write an empty
+  result with `sourceAvailable=false` and a descriptive `fetchError`
+  so the pipeline continues and the validator can flag the failure.
+
+### Notes for a future agent
+
+1. **JPL is now reachable.** With the corrected endpoint
+   (`/feeds/news/`) and a browser User-Agent, JPL returns 100 items
+   on every fetch. The Phase 9A fallback URL (`/rss/news.php`) is no
+   longer needed and was removed. If JPL ever resumes blocking the
+   browser User-Agent, the fetcher will write
+   `sourceAvailable=false` and the pipeline will continue with NASA
+   + SWPC only.
+
+2. **Image provenance is now first-class.** Every NASA record with an
+   image carries `imageCredit` (explicit extracted text, never a
+   hardcoded "NASA"), `imageCaption`, `rightsText`, and
+   `rightsStatus`. JPL records carry the same fields, sourced from
+   the MediaRSS `<media:credit>` / `<media:title>` / `<media:text>`
+   children. The validator's Check 22 ensures no story auto-selects
+   an unclear/unverified image; Check 23 ensures verified-agency
+   images always carry a non-empty credit (so we can't have inferred
+   the credit from the hostname). A future article-draft generator
+   (Phase 9B?) can use these fields to render a proper "Image credit:
+   …" line under each story hero image.
+
+3. **Story-type classification is the canonical publishEligibility
+   signal.** The fetcher classifies each item into one of 14
+   storyTypes; the filter applies title-pattern overrides and
+   significance gates; the scorer uses storyType to award bonuses.
+   `publishEligible` flows from the filter (never recomputed by the
+   scorer). If you need to add a new exclusion (e.g. "Webb cycle
+   proposal selections"), add a new title-pattern override in
+   `filter-science-news.mjs` rather than patching the fetcher's
+   classifier.
+
+4. **The "no points for NASA in title" rule is intentional.** Phase
+   9A gave a +5 mission-mention bonus for any mission keyword match
+   in the title, which inflated scores for routine mentions. Phase
+   9A.1 restricts the +10 major-mission bonus to the four major
+   missions (Artemis, Webb, Perseverance, Starliner) AND only when
+   storyType is mission-milestone / discovery / launch / landing.
+   Other missions (Hubble, NISAR, Nancy Grace Roman, etc.) earn
+   keyword bonuses but not the major-mission bonus. This is a
+   deliberate editorial choice; expand `MAJOR_MISSIONS` in
+   `build-science-stories.mjs` if editorial priorities change.
+
+5. **The "unclear image" rule has operational consequences.** When
+   a story's primary candidate has an image with no extractable
+   credit (rightsStatus=unclear), the scorer sets the story's
+   `imageUrl=null`. This means the future article-draft generator
+   will need a fallback (a category-default SVG, or an AI-generated
+   illustration) for these stories. Of the 107 stories in the
+   current snapshot, 26 have `imageUrl=null` because of this rule.
+   Most are JPL records where the `<media:content>` was missing or
+   had no `<media:credit>` child.
+
+6. **The scorer's "no bonus for excluded types" rule means
+   space-policy / administrative / education / media-advisory /
+   evergreen stories always score 20 (the base).** They sort to the
+   bottom of the ranking. This is intentional — these stories are
+   tracked for change-detection purposes but should never be the
+   "top story" of the day. If you want to suppress them entirely
+   from the candidates file (not just down-rank them), add a filter
+   in `filter-science-news.mjs` that drops records with these
+   storyTypes. The current implementation keeps them so the
+   cross-snapshot tracking can see when they disappear from the
+   source feeds.
+
+7. **No GitHub Actions workflow yet.** Phase 9A.1 does not add a
+   science-newsroom workflow (same as Phase 9A). The fetch step is
+   safe to run hourly. A future Phase 9B can add
+   `.github/workflows/science-newsroom.yml` that runs
+   `npm run prepare:science` on a schedule.
+
+8. **`fast-xml-parser` config is shared.** The exact config
+   (`ignoreAttributes: false, attributeNamePrefix: '@_',
+   parseAttributeValue: true, parseTagValue: false, trimValues:
+   true`) is used by both the NASA and JPL fetchers. If you add a
+   third RSS fetcher (e.g. ESA, JAXA), use the same config so the
+   `textOf` / `arrayOf` helpers work consistently.

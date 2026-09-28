@@ -1,13 +1,19 @@
 {
-  "fetchedAt": "2026-09-28T00:21:16.954Z",
+  "fetchedAt": "2026-09-28T00:42:19.120Z",
   "source": "NOAA-SWPC",
   "sourceUrls": {
     "alerts": "https://services.swpc.noaa.gov/products/alerts.json",
     "scales": "https://services.swpc.noaa.gov/products/noaa-scales.json"
   },
+  "sourceAvailable": true,
+  "httpStatus": 200,
+  "fetchError": null,
+  "recordCount": 0,
   "alertsReceived": 66,
   "alertsError": null,
+  "alertsHttpStatus": 200,
   "scalesError": null,
+  "scalesHttpStatus": 200,
   "totalRecords": 0,
   "droppedRoutine": 66,
   "droppedUnparseable": 0,
@@ -20,7 +26,7 @@
     "raw": {
       "0": {
         "DateStamp": "2026-09-28",
-        "TimeStamp": "00:18:00",
+        "TimeStamp": "00:39:00",
         "R": {
           "Scale": "0",
           "Text": "none",
@@ -39,7 +45,7 @@
       },
       "1": {
         "DateStamp": "2026-09-28",
-        "TimeStamp": "00:18:00",
+        "TimeStamp": "00:39:00",
         "R": {
           "Scale": null,
           "Text": null,
@@ -96,7 +102,7 @@
       },
       "-1": {
         "DateStamp": "2026-09-27",
-        "TimeStamp": "00:18:00",
+        "TimeStamp": "00:39:00",
         "R": {
           "Scale": "0",
           "Text": "none",
