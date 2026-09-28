@@ -85,11 +85,13 @@ const updatedDisplay = hasRealUpdate && displayTimezone
 const imageMode = a.imageMode || 'fallback-graphic';
 const isMapImage = ['map-data', 'agency-graphic', 'fallback-graphic'].includes(imageMode);
 
-// --- Photo attribution ---
-const hasPhotoAttribution = a.imageMode === 'licensed-photo' && a.imageCreator;
-const attributionText = a.imageLicense
-  ? `Photo: ${a.imageCreator} / ${a.imageLicense}`
-  : `Photo: ${a.imageCreator}`;
+// --- Photo/image attribution ---
+const hasPhotoAttribution = !!a.imageCreator;
+const attributionText = a.imageMode === 'licensed-photo'
+  ? (a.imageLicense ? `Photo: ${a.imageCreator} / ${a.imageLicense}` : `Photo: ${a.imageCreator}`)
+  : a.imageMode === 'factual-graphic-fallback'
+  ? `Graphic: ${a.imageCreator}`
+  : `Credit: ${a.imageCreator}`;
 ---
 
 <BaseLayout
