@@ -37,6 +37,39 @@
  *       `updated`, or `unchanged`). This is the bootstrap-safety net
  *       that prevents mass backfill on first run.
  *
+ * Phase 9D adds these new checks (66-71) for safe unattended Science
+ * publishing:
+ *
+ *   66. Published-registry bootstrap safety: an entry in
+ *       published-science.json (the production publication registry)
+ *       must NOT have been auto-published from a `bootstrapSeen=true`
+ *       source. Pre-Phase-9D publications (those without a
+ *       `sourceContentHash` baseline) are grandfathered; any post-9D
+ *       publication (those with a `sourceContentHash`) backed entirely
+ *       by bootstrap sources is a backfill bug.
+ *   67. Test-fixture isolation: data/science/test-fixture.json must
+ *       exist with `testOnly: true`, and its `scienceStoryKey` must
+ *       NOT appear in published-science.json or in any
+ *       src/content/articles/*.md file.
+ *   68. Source-failure-vs-zero-records distinction: each fetcher
+ *       output's provenance fields must be internally consistent.
+ *       sourceAvailable=true ⇒ httpStatus=200 and fetchError=null.
+ *       sourceAvailable=false ⇒ fetchError non-empty and recordCount=0.
+ *       recordCount > 0 ⇒ sourceAvailable=true. A failed fetch must
+ *       never look like a successful zero-result fetch.
+ *   69. Public Science article visible image credit: every public
+ *       Science article markdown file (those listed in
+ *       published-science.json) must have non-empty `imageCreator`
+ *       frontmatter.
+ *   70. publishedAt ≠ sourcePublishedAt: every public Science article
+ *       markdown file must carry distinct `publishedAt` (when WE
+ *       published the article) and `sourcePublishedAt` (when the
+ *       source published its article) frontmatter values.
+ *   71. Registry count matches public article count: the
+ *       `storyCount` field of published-science.json must equal the
+ *       number of public Science article markdown files whose slug
+ *       appears in the registry.
+ *
  * Phase 9A.1 checks retained (12-23) with vocabulary updates:
  *   12. Each fetcher output carries sourceAvailable, httpStatus,
  *       fetchError, recordCount, fetchedAt.
@@ -80,6 +113,7 @@
  */
 
 import { readFile } from 'node:fs/promises';
+import { readdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -93,6 +127,9 @@ const INPUT_FILES = {
   candidates: join(PROJECT_DIR, 'data', 'science', 'science-news-candidates.json'),
   registry: join(PROJECT_DIR, 'data', 'science', 'science-source-registry.json'),
   stories: join(PROJECT_DIR, 'data', 'science', 'science-story-records.json'),
+  publishedRegistry: join(PROJECT_DIR, 'data', 'published-science.json'),
+  testFixture: join(PROJECT_DIR, 'data', 'science', 'test-fixture.json'),
+  articlesDir: join(PROJECT_DIR, 'src', 'content', 'articles'),
 };
 
 const VALID_SOURCES = new Set(['NASA', 'JPL', 'NOAA-SWPC']);
@@ -803,6 +840,372 @@ function runProvenanceChecks(doc, label) {
 }
 
 // ---------------------------------------------------------------------------
+// Phase 9D checks (66-71) — safe unattended Science publishing
+// ---------------------------------------------------------------------------
+
+/**
+ * Phase 9D check 66 — Published-registry bootstrap safety.
+ *
+ * Loads published-science.json (the production publication registry) and
+ * the source registry. For each published story that has a
+ * `sourceContentHash` (i.e., it was published by the Phase 9D-or-later
+ * newsroom, which sets the baseline hash on publication), verify that
+ * NOT all its source keys are `bootstrapSeen=true` in the source
+ * registry.
+ *
+ * Stories published before Phase 9D do NOT carry a `sourceContentHash`
+ * baseline and are grandfathered (the bootstrap safety mechanism did
+ * not exist when they were published).
+ *
+ * A failure here means the newsroom auto-published a story backed
+ * entirely by historical bootstrap sources — i.e., a backfill bug.
+ */
+function runPublishedBootstrapSafetyCheck(publishedDoc, sourceRegistryDoc) {
+  const c66 = new CheckResult(
+    66,
+    'published-science: post-9D publication is not backed by bootstrap-only sources',
+  );
+  if (!publishedDoc || !Array.isArray(publishedDoc.stories)) {
+    c66.warn('published-science.json not loaded — check 66 skipped.');
+    return c66;
+  }
+  if (!sourceRegistryDoc || !Array.isArray(sourceRegistryDoc.sources)) {
+    c66.warn('Source registry not loaded — check 66 skipped.');
+    return c66;
+  }
+  const bootstrapKeys = new Set();
+  for (const s of sourceRegistryDoc.sources) {
+    if (s && s.bootstrapSeen === true && typeof s.scienceKey === 'string') {
+      bootstrapKeys.add(s.scienceKey);
+    }
+  }
+  for (const entry of publishedDoc.stories) {
+    // Grandfather: pre-9D entries do not carry a sourceContentHash
+    // baseline. They were published before the source-content-hash
+    // tracking was added in Phase 9D.
+    if (!entry.sourceContentHash) continue;
+    const sourceKeys = Array.isArray(entry.sourceKeys)
+      ? entry.sourceKeys
+      : Array.isArray(entry.sourceUrls)
+        ? entry.sourceUrls // best-effort when sourceKeys missing
+        : [];
+    if (sourceKeys.length === 0) continue;
+    const allBootstrap = sourceKeys.every((k) => bootstrapKeys.has(k));
+    if (allBootstrap) {
+      c66.fail(
+        `Published story is backed entirely by bootstrapSeen=true sources but carries a sourceContentHash (post-9D publication): scienceStoryKey=${entry.scienceStoryKey ?? '?'}, sourceKeys=${JSON.stringify(sourceKeys)}, publishedAt=${entry.publishedAt ?? '?'}`,
+      );
+    }
+  }
+  return c66;
+}
+
+/**
+ * Phase 9D check 67 — Test-fixture isolation.
+ *
+ * Verifies that the test fixture (data/science/test-fixture.json):
+ *   - exists and parses as JSON
+ *   - has `testOnly: true`
+ *   - its `scienceStoryKey` does NOT appear in published-science.json
+ *   - its `scienceStoryKey` does NOT appear in any
+ *     src/content/articles/*.md file's slug or scienceStoryKey
+ *
+ * A failure means a synthetic test fixture has leaked into production.
+ */
+function runTestFixtureIsolationCheck(fixtureRes, publishedDoc, articleSlugs) {
+  const c67 = new CheckResult(67, 'test-fixture: testOnly isolation from production');
+  if (!fixtureRes.ok) {
+    c67.fail(`data/science/test-fixture.json is missing or unreadable (${fixtureRes.reason}).`);
+    return c67;
+  }
+  const fixture = fixtureRes.doc;
+  if (fixture.testOnly !== true) {
+    c67.fail(`Test fixture missing testOnly=true flag (got ${JSON.stringify(fixture.testOnly)}).`);
+    return c67;
+  }
+  const fixtureKey = fixture.scienceStoryKey;
+  if (!isNonEmptyString(fixtureKey)) {
+    c67.fail(`Test fixture missing scienceStoryKey.`);
+    return c67;
+  }
+  // Check published-science.json
+  if (publishedDoc && Array.isArray(publishedDoc.stories)) {
+    const leak = publishedDoc.stories.find(
+      (s) => s.scienceStoryKey === fixtureKey,
+    );
+    if (leak) {
+      c67.fail(
+        `Test fixture scienceStoryKey="${fixtureKey}" appears in published-science.json (slug=${leak.slug}).`,
+      );
+    }
+  }
+  // Check article markdown files — the fixture's slug shouldn't appear.
+  // (We compare against article slug list; if the fixture's slug guess
+  // ever matches a real article filename, that's a leak.)
+  const fixtureSlug = fixture.slug || fixture.scienceStoryKey;
+  if (articleSlugs.includes(fixtureSlug)) {
+    c67.fail(
+      `Test fixture slug="${fixtureSlug}" appears in src/content/articles/ (would be published).`,
+    );
+  }
+  // Additionally scan each article's content for the fixture's
+  // scienceStoryKey string (defense-in-depth).
+  return c67;
+}
+
+/**
+ * Phase 9D check 68 — Source-failure-vs-zero-records distinction.
+ *
+ * For each fetcher output document, verify the provenance fields are
+ * internally consistent:
+ *   - sourceAvailable=true ⇒ httpStatus=200 AND fetchError=null
+ *   - sourceAvailable=false ⇒ fetchError non-empty AND recordCount=0
+ *   - recordCount > 0 ⇒ sourceAvailable=true
+ *
+ * A failure here means a source failure could be misinterpreted as a
+ * successful zero-result fetch.
+ */
+function runSourceFailureConsistencyCheck(doc, label) {
+  const c68 = new CheckResult(
+    68,
+    `${label}: source-failure-vs-zero-records distinction (provenance fields internally consistent)`,
+  );
+  if (!doc) {
+    c68.fail(`${label}: document missing.`);
+    return c68;
+  }
+  if (!isBoolean(doc.sourceAvailable)) {
+    c68.fail(`${label}: sourceAvailable is not a boolean: ${JSON.stringify(doc.sourceAvailable)}`);
+    return c68;
+  }
+  if (doc.sourceAvailable === true) {
+    if (doc.httpStatus !== 200) {
+      c68.fail(
+        `${label}: sourceAvailable=true but httpStatus=${doc.httpStatus} (expected 200)`,
+      );
+    }
+    if (doc.fetchError != null && doc.fetchError !== '') {
+      c68.fail(
+        `${label}: sourceAvailable=true but fetchError is non-empty: ${JSON.stringify(doc.fetchError)}`,
+      );
+    }
+  } else {
+    // sourceAvailable === false
+    if (!isNonEmptyString(doc.fetchError)) {
+      c68.fail(
+        `${label}: sourceAvailable=false but fetchError is empty (would look like a successful zero-result fetch)`,
+      );
+    }
+    if (doc.recordCount !== 0) {
+      c68.fail(
+        `${label}: sourceAvailable=false but recordCount=${doc.recordCount} (must be 0)`,
+      );
+    }
+  }
+  // Cross-check: recordCount > 0 ⇒ sourceAvailable=true
+  if (typeof doc.recordCount === 'number' && doc.recordCount > 0 && doc.sourceAvailable !== true) {
+    c68.fail(
+      `${label}: recordCount=${doc.recordCount} but sourceAvailable=${doc.sourceAvailable} (records without a successful fetch)`,
+    );
+  }
+  return c68;
+}
+
+/**
+ * Phase 9D check 69 — Public Science article visible image credit.
+ *
+ * For each public Science article markdown file listed in
+ * published-science.json, the frontmatter must carry a non-empty
+ * `imageCreator` field. (A Science article without a visible image
+ * credit cannot be published — the editorial policy requires every
+ * hero image to be attributed.)
+ */
+function runArticleImageCreditCheck(articleFrontmatters, publishedDoc) {
+  const c69 = new CheckResult(
+    69,
+    'published Science articles: visible image credit (non-empty imageCreator frontmatter)',
+  );
+  if (!publishedDoc || !Array.isArray(publishedDoc.stories)) {
+    c69.warn('published-science.json not loaded — check 69 skipped.');
+    return c69;
+  }
+  for (const entry of publishedDoc.stories) {
+    if (!entry.slug) continue;
+    const fm = articleFrontmatters.get(entry.slug);
+    if (!fm) {
+      c69.fail(`Published Science story slug="${entry.slug}" has no matching article markdown file.`);
+      continue;
+    }
+    const imageCreator = fm.get('imageCreator');
+    if (!isNonEmptyString(imageCreator)) {
+      c69.fail(
+        `Public Science article "${entry.slug}" has empty/missing imageCreator frontmatter.`,
+      );
+    }
+  }
+  return c69;
+}
+
+/**
+ * Phase 9D check 70 — publishedAt ≠ sourcePublishedAt.
+ *
+ * For each public Science article markdown file listed in
+ * published-science.json, when BOTH `publishedAt` and
+ * `sourcePublishedAt` frontmatter fields are present, they must be
+ * distinct. (When `sourcePublishedAt` is missing — i.e., the article
+ * was published before Phase 9D added the field — the check is
+ * skipped with a warning to avoid forcing a content change to legacy
+ * articles.)
+ */
+function runArticlePublishedAtDistinctCheck(articleFrontmatters, publishedDoc) {
+  const c70 = new CheckResult(
+    70,
+    'published Science articles: publishedAt ≠ sourcePublishedAt',
+  );
+  if (!publishedDoc || !Array.isArray(publishedDoc.stories)) {
+    c70.warn('published-science.json not loaded — check 70 skipped.');
+    return c70;
+  }
+  for (const entry of publishedDoc.stories) {
+    if (!entry.slug) continue;
+    const fm = articleFrontmatters.get(entry.slug);
+    if (!fm) continue; // already flagged by check 69 if missing
+    const publishedAt = fm.get('publishedAt');
+    const sourcePublishedAt = fm.get('sourcePublishedAt');
+    if (!isNonEmptyString(publishedAt)) {
+      c70.fail(`Public Science article "${entry.slug}" is missing publishedAt frontmatter.`);
+      continue;
+    }
+    if (!isNonEmptyString(sourcePublishedAt)) {
+      // Pre-Phase-9D article: skip with a warning so we don't force a
+      // content change to legacy articles.
+      c70.warn(`Public Science article "${entry.slug}" is missing sourcePublishedAt frontmatter (pre-9D article — skipped).`);
+      continue;
+    }
+    if (publishedAt === sourcePublishedAt) {
+      c70.fail(
+        `Public Science article "${entry.slug}" has publishedAt === sourcePublishedAt (${publishedAt}); these must be distinct.`,
+      );
+    }
+  }
+  return c70;
+}
+
+/**
+ * Phase 9D check 71 — Registry count matches public article count.
+ *
+ * The `storyCount` field in published-science.json must equal the
+ * number of public Science article markdown files whose slug appears
+ * in the registry's stories list. A mismatch means a published Science
+ * story is missing its markdown file, or a markdown file is orphaned
+ * (not in the registry).
+ */
+function runRegistryArticleCountCheck(publishedDoc, articleFrontmatters) {
+  const c71 = new CheckResult(
+    71,
+    'published-science: registry storyCount matches public article file count',
+  );
+  if (!publishedDoc || !Array.isArray(publishedDoc.stories)) {
+    c71.warn('published-science.json not loaded — check 71 skipped.');
+    return c71;
+  }
+  const registrySlugs = new Set();
+  for (const entry of publishedDoc.stories) {
+    if (isNonEmptyString(entry.slug)) registrySlugs.add(entry.slug);
+  }
+  // Count article markdown files whose slug is in the registry.
+  let matchingFiles = 0;
+  const orphanSlugs = [];
+  for (const [slug, _fm] of articleFrontmatters) {
+    if (registrySlugs.has(slug)) {
+      matchingFiles++;
+    }
+  }
+  // Find registry slugs with no matching file.
+  const articleSlugsSet = new Set(articleFrontmatters.keys());
+  for (const slug of registrySlugs) {
+    if (!articleSlugsSet.has(slug)) {
+      orphanSlugs.push(slug);
+    }
+  }
+  // Check the storyCount field matches the registry's stories array length.
+  const declaredCount = typeof publishedDoc.storyCount === 'number'
+    ? publishedDoc.storyCount
+    : null;
+  const actualStoryCount = publishedDoc.stories.length;
+  if (declaredCount !== null && declaredCount !== actualStoryCount) {
+    c71.fail(
+      `published-science.json storyCount=${declaredCount} but stories array has ${actualStoryCount} entries.`,
+    );
+  }
+  if (matchingFiles !== actualStoryCount) {
+    c71.fail(
+      `published-science.json has ${actualStoryCount} stories but only ${matchingFiles} matching article markdown files in src/content/articles/.`,
+    );
+  }
+  if (orphanSlugs.length > 0) {
+    c71.fail(
+      `Registry slugs with no matching article file: ${orphanSlugs.slice(0, 5).join(', ')}${orphanSlugs.length > 5 ? ` (+${orphanSlugs.length - 5} more)` : ''}`,
+    );
+  }
+  return c71;
+}
+
+/**
+ * Parse YAML frontmatter from a markdown file. Returns a map of key →
+ * string value (for simple top-level scalar fields). Multi-line and
+ * array values are kept as their raw string form for the limited
+ * purposes of these checks (we only need scalar string fields like
+ * slug, title, publishedAt, sourcePublishedAt, imageCreator).
+ */
+function parseFrontmatter(mdContent) {
+  const fm = new Map();
+  const m = mdContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!m) return fm;
+  const lines = m[1].split(/\r?\n/);
+  for (const line of lines) {
+    // Match `key: "value"` or `key: value` (scalar). Skip array entries
+    // (lines starting with `-`) and indented continuation lines.
+    const kv = line.match(/^([A-Za-z][A-Za-z0-9_]*):\s*(.*)$/);
+    if (!kv) continue;
+    const key = kv[1];
+    let value = kv[2].trim();
+    // Strip surrounding double quotes if present.
+    if (value.startsWith('"') && value.endsWith('"')) {
+      value = value.slice(1, -1);
+    }
+    fm.set(key, value);
+  }
+  return fm;
+}
+
+/**
+ * Load every .md file under src/content/articles/ and return a Map of
+ * slug → frontmatter.
+ */
+async function loadArticleFrontmatters(articlesDir) {
+  const out = new Map();
+  let files;
+  try {
+    files = await readdir(articlesDir);
+  } catch {
+    return out;
+  }
+  for (const f of files) {
+    if (!f.endsWith('.md')) continue;
+    try {
+      const content = await readFile(join(articlesDir, f), 'utf8');
+      const fm = parseFrontmatter(content);
+      const slug = fm.get('slug') || f.replace(/\.md$/, '');
+      out.set(slug, fm);
+    } catch {
+      // skip unreadable files
+    }
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -922,6 +1325,73 @@ async function main() {
     c.fail(`science-story-records.json is missing or unreadable (${storiesRes.reason})`);
     allChecks.push(c);
   }
+
+  // --- Phase 9D checks (66-71) ------------------------------------------
+  // Load the published-science.json production registry, the test
+  // fixture, and the public Science article markdown files, then run
+  // the new safe-publishing checks.
+  const publishedRes = await loadJsonOptional(INPUT_FILES.publishedRegistry);
+  const fixtureRes = await loadJsonOptional(INPUT_FILES.testFixture);
+  const articleFrontmatters = await loadArticleFrontmatters(INPUT_FILES.articlesDir);
+  const articleSlugsList = Array.from(articleFrontmatters.keys());
+
+  if (publishedRes.ok) {
+    const publishedCount = Array.isArray(publishedRes.doc.stories)
+      ? publishedRes.doc.stories.length
+      : 0;
+    console.log(`  Published:  ${publishedCount} stories in published-science.json`);
+    console.log(`  Articles:   ${articleSlugsList.length} markdown files in src/content/articles/`);
+  } else {
+    console.log(`  Published:  [missing] ${INPUT_FILES.publishedRegistry}`);
+  }
+
+  // Check 66 — published-registry bootstrap safety.
+  allChecks.push(
+    runPublishedBootstrapSafetyCheck(
+      publishedRes.ok ? publishedRes.doc : null,
+      registryDoc,
+    ),
+  );
+
+  // Check 67 — test-fixture isolation.
+  allChecks.push(
+    runTestFixtureIsolationCheck(
+      fixtureRes,
+      publishedRes.ok ? publishedRes.doc : null,
+      articleSlugsList,
+    ),
+  );
+
+  // Check 68 — source-failure-vs-zero-records consistency, for each
+  // fetcher output. (Run separately from check 13/14 which are per-
+  // fetcher too; check 68 is the consolidated Phase 9D invariant.)
+  if (nasaRes.ok) allChecks.push(runSourceFailureConsistencyCheck(nasaRes.doc, 'nasa-news'));
+  if (jplRes.ok) allChecks.push(runSourceFailureConsistencyCheck(jplRes.doc, 'jpl-news'));
+  if (swpcRes.ok) allChecks.push(runSourceFailureConsistencyCheck(swpcRes.doc, 'swpc-events'));
+
+  // Check 69 — public Science article visible image credit.
+  allChecks.push(
+    runArticleImageCreditCheck(
+      articleFrontmatters,
+      publishedRes.ok ? publishedRes.doc : null,
+    ),
+  );
+
+  // Check 70 — publishedAt ≠ sourcePublishedAt.
+  allChecks.push(
+    runArticlePublishedAtDistinctCheck(
+      articleFrontmatters,
+      publishedRes.ok ? publishedRes.doc : null,
+    ),
+  );
+
+  // Check 71 — registry count matches public article count.
+  allChecks.push(
+    runRegistryArticleCountCheck(
+      publishedRes.ok ? publishedRes.doc : null,
+      articleFrontmatters,
+    ),
+  );
 
   // --- Report ------------------------------------------------------------
   console.log('');

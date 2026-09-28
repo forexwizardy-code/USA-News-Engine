@@ -1,0 +1,53 @@
+{
+  "testOnly": true,
+  "scienceStoryKey": "nasa__TEST_SCIENCE_FIXTURE_001",
+  "primarySource": "NASA",
+  "allSourceKeys": [
+    "nasa__TEST_SCIENCE_FIXTURE_001"
+  ],
+  "sourceKeys": [
+    "nasa__TEST_SCIENCE_FIXTURE_001"
+  ],
+  "sourceUrls": [
+    "https://www.nasa.gov/missions/webb/test-fixture-not-real/"
+  ],
+  "titleSeed": "webb telescope detects organic molecules in distant galaxy",
+  "title": "Webb Telescope Detects Organic Molecules in Distant Galaxy",
+  "description": "NASA's James Webb Space Telescope identified complex organic molecules in a galaxy 12 billion light-years away.",
+  "sourceUrl": "https://www.nasa.gov/missions/webb/test-fixture-not-real/",
+  "publishedAtSource": "2026-09-28T10:00:00.000Z",
+  "storyType": "discovery",
+  "mission": "James Webb",
+  "topic": "Astronomy",
+  "storyScore": 55,
+  "publishEligible": true,
+  "priority": "high",
+  "freshnessStatus": "current",
+  "sourceAgeDays": 0,
+  "bootstrapSeen": false,
+  "recordCount": 1,
+  "storyStatus": "new",
+  "updateCount": 1,
+  "firstSeenAt": "2026-09-28T10:00:00.000Z",
+  "latestSeenAt": "2026-09-28T10:00:00.000Z",
+  "imageUrl": null,
+  "imageAlt": null,
+  "imageCredit": null,
+  "imageCaption": null,
+  "imageSourceUrl": null,
+  "rightsText": null,
+  "rightsStatus": null,
+  "severity": null,
+  "imageMode": "factual-graphic-fallback",
+  "imageCredit": "US News Engine using NASA source information",
+  "eligibilityReasons": [
+    "Major discovery",
+    "Current freshness"
+  ],
+  "exclusionReasons": [],
+  "selectedReason": "Synthetic test fixture: Webb Telescope discovery (testOnly)",
+  "eligibilityReason": "Synthetic test fixture: Webb Telescope discovery (testOnly)",
+  "exclusionReason": null,
+  "contentSignature": "test-fixture-not-real-content-signature-0000000000000000000000000000000000000000000000000000000000000000",
+  "_fixtureNote": "Synthetic James Webb Space Telescope discovery story used ONLY for preview / dry-run testing of the Science newsroom automation. Not a real NASA article. Must NEVER appear in the production published-science.json registry, in any src/content/articles/ markdown file, or on the live site. The bootstrapSeen=false flag simulates a genuinely new post-bootstrap story so the newsroom's NEW-candidate selection logic can be exercised in dry-run mode."
+}

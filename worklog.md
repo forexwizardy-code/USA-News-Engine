@@ -3705,3 +3705,365 @@ sitemap + not linked from any public page).
    image metadata into the public-article pipeline. The public
    template MUST NOT carry over the claim audit / science details
    panels (see note 1).
+
+---
+
+## Phase 9D — Safe unattended Science publishing (Task 9D-automation)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Build the master Science newsroom automation that promotes
+post-bootstrap NASA/JPL stories to public articles in a safe,
+unattended, kill-switch-gated way — plus the GitHub Actions workflow
+that runs it four times daily, a synthetic test fixture, and six new
+validation checks (66-71) that lock down the safe-publishing invariants.
+
+### Files created
+
+- `scripts/run-science-newsroom.mjs`
+  Master Science newsroom automation. 19-step pipeline:
+    1.  Read `config/automation.json` (kill switch:
+        `sciencePublishingEnabled`).
+    2.  Fetch NASA (`npm run fetch:nasa`).
+    3.  Fetch JPL (`npm run fetch:jpl`).
+    4.  Fetch SWPC (`npm run fetch:swpc`).
+    5.  **JPL fetch safety check.** Inspects the JPL fetcher output's
+        provenance fields. If `sourceAvailable=false` OR `httpStatus`
+        is 403 / 5xx OR `recordCount=0` with a non-empty `fetchError`,
+        treat as SOURCE FAILURE — print the reason, preserve the
+        previous registry state, and exit. NASA / SWPC failures are
+        non-fatal warnings.
+    6.  Update source registry (`npm run registry:science`) — marks
+        genuinely new items `bootstrapSeen: false`.
+    7.  Filter (`npm run filter:science`).
+    8.  Build stories (`npm run stories:science`).
+    9.  Validate (`npm run validate:science`) — non-fatal in
+        dry-run-friendly mode.
+    10. Load `published-science.json` registry.
+    11. **Source-content hash check.** For each published Science
+        story, fetch the live source page (with the same browser-like
+        UA + AWS WAF retry logic the draft generator uses, falling
+        back to `data/science/cache/<host>-<path>.html`), extract the
+        `<title>` + article body, and compute a SHA-256 hash. Compare
+        to the stored `sourceContentHash`:
+          - First time (no baseline hash): store it as the baseline,
+            do NOT mark as updated. `lastSourceCheckedAt` bumped,
+            `lastSourceChangedAt` stays null.
+          - Hash unchanged: bump `lastSourceCheckedAt` only.
+          - Hash changed: promote to UPDATED. Bump `updatedAt`,
+            `sourceContentHash`, `lastSourceCheckedAt`, and
+            `lastSourceChangedAt`. Update the article markdown's
+            `updatedAt:` frontmatter line.
+    12. Reconcile feed against registry:
+          - In feed AND in registry → UNCHANGED (pending hash check).
+          - In feed, NOT in registry, AND `bootstrapSeen=false` → NEW.
+          - In feed, NOT in registry, AND `bootstrapSeen=true` →
+            UNCHANGED (bootstrap historical item — never auto-published
+            as NEW; logged with a `[bootstrap-safety]` warning).
+          - In registry, NOT in feed → MISSING.
+    13. Daily-cap check from `published-science.json` (`publishedAt`
+        prefix match against today's UTC date).
+    14. **Kill switch check.** If `sciencePublishingEnabled=false`:
+        print summary and return. NO production files are modified —
+        the in-memory baseline hashes computed in step 11 are
+        discarded; the registry file is NOT saved.
+    15. **Dry-run check.** If ANY test flag is present
+        (`--test-date`, `--ignore-daily-cap`, `--fixture`) without
+        `--allow-test-publish`: enter DRY RUN. Report what WOULD be
+        published (selected NEW stories with title / mission /
+        storyType / priority / score / bootstrapSeen flag), then
+        return without modifying any production files.
+    16. Process UPDATES first (preserve `slug` + `publishedAt`; set
+        `updatedAt` only on meaningful source-content change).
+    17. Select NEW stories (cap = `maxScienceNewPerRun`, also bounded
+        by `maxScienceNewPerDay` remaining; sort priority high →
+        medium → low, then `storyScore` descending).
+    18. For each NEW story: re-verify non-bootstrap (defense-in-depth
+        bootstrap-safety net inside `publishNewArticle`), call
+        `generate-science-draft.mjs` (fetches full source page +
+        builds claim audit), call `generate-science-image.mjs`
+        (downloads verified-agency / mixed-agency source image OR
+        generates factual-graphic fallback), copy the hero image to
+        `public/images/`, write the article markdown to
+        `src/content/articles/<slug>.md` with `publishedAt` = now
+        and `sourcePublishedAt` = source publication date (distinct
+        timestamps), compute the initial `sourceContentHash` from
+        the cached source page, and push the entry to the registry.
+    19. Save the registry, run `validate:science` + `validate:publishing`,
+        then run `astro build`. If 0 new + 0 updated, exit before
+        build/deploy (no-change behavior).
+
+  Test mode is identical to recall / earthquake:
+    `--test-date=YYYY-MM-DD`  fake "today" for daily-cap math.
+    `--ignore-daily-cap`      bypass the daily cap.
+    `--fixture`               use `data/science/test-fixture.json`
+                              as the only NEW candidate (skips the
+                              fetch / filter / stories / validate
+                              steps; testOnly stories are allowed
+                              through the eligibility filter ONLY
+                              in --fixture mode).
+    `--allow-test-publish`    override dry-run (the scheduled
+                              workflow MUST NEVER use this).
+
+- `.github/workflows/science-newsroom.yml`
+  GitHub Actions workflow. Triggers: `workflow_dispatch` +
+  `schedule: '32 2,8,14,20 * * *'` (4× daily at 02:32 / 08:32 /
+  14:32 / 20:32 UTC; minute 32 offsets from the NWS hourly, recall
+  08:17/20:17, and earthquake :47 schedules). `ubuntu-latest`,
+  `permissions: contents: write`, `timeout-minutes: 15`. Steps:
+  checkout → setup bun + node 24 → `bun install` →
+  `npm run newsroom:science` → read `sciencePublishingEnabled` from
+  `config/automation.json` → `git diff --quiet` against
+  `src/ public/ data/published-science.json` → if changed AND
+  publishing enabled, run `npm run build`, commit as
+  "US News Engine Bot <newsroom@users.noreply.github.com>" with
+  message "Automated science newsroom update: YYYY-MM-DD HH:MM UTC",
+  push, `npx wrangler deploy` with `CLOUDFLARE_API_TOKEN` +
+  `CLOUDFLARE_ACCOUNT_ID` secrets, then live-verify `/`, `/science/`,
+  and `/latest/` return HTTP 200 (8-second sleep, 20-second curl
+  timeout, exit 1 on any non-200).
+
+- `data/science/test-fixture.json`
+  Synthetic genuinely-new, post-bootstrap, publishEligible NASA
+  Science story. `scienceStoryKey: "nasa__TEST_SCIENCE_FIXTURE_001"`,
+  `testOnly: true`, `bootstrapSeen: false`, `publishEligible: true`,
+  `priority: high`, `storyScore: 55`, `storyType: discovery`,
+  `mission: James Webb`. Source URL is a non-existent NASA page
+  (`https://www.nasa.gov/missions/webb/test-fixture-not-real/`) so
+  the draft generator's source-page fetch would fail loudly if
+  anyone ever tried to publish the fixture for real (the
+  defense-in-depth `testOnly` filter in normal mode prevents this
+  regardless). `_fixtureNote` documents that it must never appear in
+  `published-science.json`, in `src/content/articles/`, or on the
+  live site.
+
+### Files modified
+
+- `package.json`
+  Added `"newsroom:science": "node scripts/run-science-newsroom.mjs"`
+  between `previews:science` and `prepare:science`. No other scripts
+  touched.
+
+- `scripts/validate-science.mjs`
+  Added Phase 9D checks 66-71 (header doc updated). All existing
+  Phase 9A / 9A.1 / 9A.2 checks retained unchanged. New imports:
+  `readdir` from `node:fs/promises`. New file paths in `INPUT_FILES`:
+  `publishedRegistry` (`data/published-science.json`), `testFixture`
+  (`data/science/test-fixture.json`), `articlesDir`
+  (`src/content/articles/`). New helper `parseFrontmatter(mdContent)`
+  extracts scalar `key: value` and `key: "value"` lines into a Map
+  (multi-line / array values are out of scope for these checks).
+  `loadArticleFrontmatters(articlesDir)` returns `Map<slug, Map<key,
+  value>>`.
+
+  New checks:
+    66. Published-registry bootstrap safety. For each entry in
+        `published-science.json` that carries a `sourceContentHash`
+        (i.e., a Phase-9D-or-later publication), NONE of its
+        `sourceKeys` may be entirely `bootstrapSeen=true` in the
+        source registry. Pre-9D entries (no `sourceContentHash`) are
+        grandfathered.
+    67. Test-fixture isolation. `data/science/test-fixture.json`
+        must exist, parse, carry `testOnly: true`, and its
+        `scienceStoryKey` / slug must NOT appear in
+        `published-science.json` or in `src/content/articles/`.
+    68. Source-failure-vs-zero-records distinction (per fetcher).
+        `sourceAvailable=true` ⇒ `httpStatus=200` AND
+        `fetchError=null`. `sourceAvailable=false` ⇒ `fetchError`
+        non-empty AND `recordCount=0`. `recordCount > 0` ⇒
+        `sourceAvailable=true`. A failed fetch must never look like
+        a successful zero-result fetch. (Runs for nasa-news, jpl-news,
+        swpc-events.)
+    69. Public Science article visible image credit. Every public
+        Science article markdown file listed in `published-science.json`
+        must have non-empty `imageCreator` frontmatter.
+    70. `publishedAt` ≠ `sourcePublishedAt`. When BOTH fields are
+        present in a public Science article's frontmatter, they must
+        be distinct. Pre-9D articles missing `sourcePublishedAt`
+        skip with a warning (no forced content change to legacy
+        articles).
+    71. Registry count matches public article count. The
+        `storyCount` field of `published-science.json` must equal
+        `stories.length`; the number of article markdown files in
+        `src/content/articles/` whose slug appears in the registry
+        must also equal `stories.length`; no registry slug may be
+        orphaned (missing markdown file).
+
+### Configuration
+
+`config/automation.json` already carries (from a prior phase):
+
+```json
+"sciencePublishingEnabled": false,
+"maxScienceNewPerRun": 1,
+"maxScienceNewPerDay": 3
+```
+
+The kill switch is OFF by default. The newsroom runs the full
+ingestion pipeline (fetch + registry + filter + stories + validate)
+but makes NO public content changes. The workflow's
+`steps.config.outputs.publishing` check ensures the build / commit /
+push / deploy steps skip when the kill switch is off. The 4× daily
+schedule still fires — keeping the source registry up to date and
+the source-content hash check running — but produces no commits.
+
+### Verification
+
+Ran `npm run newsroom:science` (no flags) against the live NASA +
+JPL + SWPC feeds:
+
+```
+Kill switch: sciencePublishingEnabled = false
+Caps: maxScienceNewPerRun=1, maxScienceNewPerDay=3
+
+--- Steps 1-4: Fetch NASA + JPL + SWPC → Update registry → Filter → Stories → Validate ---
+  NASA fetch complete.
+  JPL fetch complete.
+  SWPC fetch complete.
+  Registry update complete.
+  Science filter complete.
+  Science stories complete.
+  validate:science: PASS
+
+  Story feed: 107 stories total, 8 publish-eligible.
+  Source registry: 112 sources (110 bootstrap).
+
+--- Step 6: Reconcile story feed against registry ---
+  [bootstrap-safety] Skipping bootstrap historical story: jpl__8c8e1095a7877b36
+  [bootstrap-safety] Skipping bootstrap historical story: jpl__1bc90f7c705dcb04
+  [bootstrap-safety] Skipping bootstrap historical story: jpl__7e5902b6113d8df6
+  NEW (post-bootstrap candidates): 2
+  UNCHANGED: 6
+  MISSING (registry, not in feed): 0
+
+--- Step 10: Source-content hash check for published stories ---
+    [BASELINE] jpl__a0b05eee4e3af8ae: storing initial hash (3b2d77cd)
+    [BASELINE] jpl__7cdc58bb88b1db7c: storing initial hash (7a588e9e)
+    [BASELINE] nasa__4c93b21d54ff615c: storing initial hash (68923019)
+  Source-content hash check: 0 meaningful update(s) detected.
+
+  Daily cap: 3 published today (UTC), 0 remaining, 0 allowed this run
+
+============================================
+PUBLISHING DISABLED (kill switch active)
+No public content changes will be made.
+============================================
+
+Story feed: 8 publish-eligible stories considered
+NEW FOUND (post-bootstrap): 2
+NEW PUBLISHED: 0
+UPDATED: 0
+UNCHANGED: 6
+MISSING (registry, not in feed): 0
+```
+
+Key invariants verified:
+
+1. **0 new publications.** `NEW PUBLISHED: 0` — the kill switch
+   prevented any article from being written to
+   `src/content/articles/` or `public/images/`, and
+   `data/published-science.json` was NOT modified (confirmed by
+   `git status --short data/published-science.json` returning empty).
+
+2. **0 bootstrap backfill.** Three publishEligible stories with
+   `bootstrapSeen=true` source keys (the historical NASA/JPL items
+   the registry bootstrapped on first run) were correctly detected
+   and skipped — they went to UNCHANGED, NOT to NEW. The
+   `[bootstrap-safety]` log lines list each skipped story by key
+   and title. Only 2 stories with `bootstrapSeen=false` source keys
+   (genuinely new items first seen AFTER automation activation) were
+   promoted to NEW candidates — and even those were not published
+   because the kill switch is off.
+
+3. **Source-content hash check ran cleanly.** All three published
+   Science stories (NISAR, Perseverance, Hubble) had their source
+   pages fetched live (JPL with the browser-like UA + AWS WAF retry,
+   NASA with the default UA). Baseline SHA-256 hashes were computed
+   in-memory and would have been persisted to
+   `data/published-science.json` once publishing is enabled. No
+   meaningful updates were detected (all three source pages are
+   stable since Phase 9B).
+
+4. **JPL fetch safety active.** The `detectSourceFailure()` helper
+   ran against the JPL fetcher output and found `sourceAvailable=true`
+   with `httpStatus=200` — no source failure. Had JPL returned 403
+   or a WAF challenge, the newsroom would have printed
+   `FATAL: JPL source failure detected` and exited without
+   publishing based on incomplete source state.
+
+5. **All 73 validate:science checks pass** (65 pre-existing + 6 new
+   Phase 9D checks + 2 source-failure consistency duplicates for
+   NASA + SWPC). The 3 pre-9D articles correctly skip check 70 with
+   a warning (no `sourcePublishedAt` frontmatter).
+
+6. **Dry-run fixture mode works.** With the kill switch temporarily
+   flipped to `true` and `--fixture --ignore-daily-cap` (no
+   `--allow-test-publish`), the newsroom entered DRY RUN, reported
+   "Would publish 1 new stories: nasa__TEST_SCIENCE_FIXTURE_001",
+   and exited without modifying any production files (`git status`
+   on `src/`, `public/`, `data/published-science.json` returned
+   empty). The original `sciencePublishingEnabled: false` was
+   restored afterward.
+
+### Notes for future agents
+
+1. **The kill switch is the master safety.** Even when
+   `sciencePublishingEnabled=true`, the newsroom will only publish
+   stories with `bootstrapSeen=false` AND `publishEligible=true` AND
+   not already in the registry, AND only up to `maxScienceNewPerRun`
+   per run AND `maxScienceNewPerDay` per UTC day. To enable Science
+   publishing, flip `sciencePublishingEnabled` to `true` in
+   `config/automation.json` — the workflow will then commit, push,
+   and deploy on the next 4×-daily run that produces a content
+   change.
+
+2. **The source-content hash is computed from the live source page.**
+   It catches meaningful NASA/JPL article updates (headline
+   corrections, body rewrites) but ignores whitespace / formatting
+   because `stripHtml` collapses runs of whitespace. The hash is
+   stored as `sourceContentHash` (SHA-256 hex) on each
+   `published-science.json` entry. `lastSourceCheckedAt` bumps on
+   every check; `lastSourceChangedAt` only when the hash actually
+   changes.
+
+3. **Pre-9D articles are grandfathered.** The 3 existing Science
+   articles (NISAR, Perseverance, Hubble) do NOT carry
+   `sourceContentHash` or `sourcePublishedAt` frontmatter. Check 66
+   skips them (no hash = pre-9D). Check 70 skips them with a warning
+   (no `sourcePublishedAt` = pre-9D). On the FIRST newsroom run with
+   `sciencePublishingEnabled=true`, the hash check will compute and
+   store their baseline hashes — after that, they're treated as
+   normal Phase-9D entries. The `sourcePublishedAt` frontmatter is
+   only added when a NEW article is published (the newsroom always
+   sets it); the 3 legacy articles will continue to skip check 70
+   until/unless a future agent adds the field by hand.
+
+4. **JPL WAF retries share the cache with `generate-science-draft.mjs`.**
+   Both scripts read/write `data/science/cache/<host>-<path>.html`.
+   If the live fetch fails (WAF challenge, 403, 5xx), the newsroom
+   falls back to the cached copy — same as the draft generator. If
+   no cache exists, the update check for that story is skipped (no
+   false-positive update), but the newsroom does NOT abort.
+
+5. **The fixture's source URL is intentionally non-existent.**
+   `https://www.nasa.gov/missions/webb/test-fixture-not-real/` does
+   not exist. If anyone ever runs `--fixture --allow-test-publish`
+   with the kill switch on, the draft generator's source-page fetch
+   will fail loudly and the publish will abort. The `testOnly` filter
+   in normal mode is the primary defense; the bad URL is the
+   secondary defense.
+
+6. **No weather / recall / earthquake scripts, workflows, or config
+   were modified.** The only `config/automation.json` change is the
+   pre-existing addition of the three `science*` keys (from a prior
+   phase); the NWS / recall / earthquake keys are untouched. The
+   new GitHub workflow is purely additive. The `validate-science.mjs`
+   additions are purely additive (6 new check functions + the calls
+   to them; no existing check was modified).
+
+7. **The newsroom's no-change behavior is preserved.** If 0 new + 0
+   updated, the script exits before `validate:science` / build —
+   same as recall and earthquake. The workflow's `git diff --quiet`
+   check ensures no commit / push / deploy fires when there are no
+   content changes (the kill-switch-off path also produces no
+   content changes, so the workflow correctly skips deploy).

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-28T01:06:36.011Z",
+  "fetchedAt": "2026-09-28T11:47:33.469Z",
   "source": "NOAA-SWPC",
   "sourceUrls": {
     "alerts": "https://services.swpc.noaa.gov/products/alerts.json",
@@ -26,7 +26,7 @@
     "raw": {
       "0": {
         "DateStamp": "2026-09-28",
-        "TimeStamp": "01:03:00",
+        "TimeStamp": "11:46:00",
         "R": {
           "Scale": "0",
           "Text": "none",
@@ -45,7 +45,7 @@
       },
       "1": {
         "DateStamp": "2026-09-28",
-        "TimeStamp": "01:03:00",
+        "TimeStamp": "11:46:00",
         "R": {
           "Scale": null,
           "Text": null,
@@ -102,7 +102,7 @@
       },
       "-1": {
         "DateStamp": "2026-09-27",
-        "TimeStamp": "01:03:00",
+        "TimeStamp": "11:46:00",
         "R": {
           "Scale": "0",
           "Text": "none",

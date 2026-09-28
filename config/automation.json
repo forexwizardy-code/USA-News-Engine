@@ -7,5 +7,8 @@
   "maxRecallNewPerDay": 3,
   "earthquakePublishingEnabled": true,
   "maxEarthquakeNewPerRun": 1,
-  "maxEarthquakeNewPerDay": 2
+  "maxEarthquakeNewPerDay": 2,
+  "sciencePublishingEnabled": false,
+  "maxScienceNewPerRun": 1,
+  "maxScienceNewPerDay": 3
 }

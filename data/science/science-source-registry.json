@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-28T01:06:37.197Z",
+  "generatedAt": "2026-09-28T11:43:31.447Z",
   "source": "Phase 9A.2 science source registry",
-  "sourceCount": 110,
+  "sourceCount": 112,
   "firstRun": false,
   "bootstrapCount": 110,
-  "nonBootstrapCount": 0,
+  "nonBootstrapCount": 2,
   "sourcesByFeed": {
     "JPL": 100,
-    "NASA": 10
+    "NASA": 12
   },
   "sources": [
     {
@@ -15,7 +15,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-06T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun"
     },
@@ -24,7 +24,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-05T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-watches-earth-vanish-behind-martian-moon"
     },
@@ -33,7 +33,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-16T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-partners-set-to-launch-sentinel-6b-earth-satellite"
     },
@@ -42,7 +42,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-04T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-engineers-help-prolong-voyager-2s-science-mission"
     },
@@ -51,7 +51,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-29T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-awards-2026-innovative-technology-concepts"
     },
@@ -60,7 +60,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-26T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-unveils-initiatives-to-achieve-americas-national-space-policy"
     },
@@ -69,7 +69,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-10T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover--finding"
     },
@@ -78,7 +78,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-09T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-sensor-goes-hunting-for-critical-minerals"
     },
@@ -87,7 +87,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-15T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-curiosity-named-in-times-best-inventions-hall-of-fame"
     },
@@ -96,7 +96,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dark-universe-seeking-nancy-grace-roman-space-telescope-launches"
     },
@@ -105,7 +105,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-15T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-suns-activity-ramping-up"
     },
@@ -114,7 +114,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-11T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-unveils-rover-operations-center-for-moon-mars-missions"
     },
@@ -123,7 +123,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-06-16T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-quantum-lab-aboard-space-station-gets-chilly-upgrade"
     },
@@ -132,7 +132,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-08T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover-finding"
     },
@@ -141,7 +141,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-26T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-research-proposes-technology-to-seek-earth-like-exoplanets"
     },
@@ -150,7 +150,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-09-23T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-far-infrared-telescope-as-first-in-new-mission-class"
     },
@@ -159,7 +159,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-04T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-2-instruments-for-artemis-iv-lunar-surface-science"
     },
@@ -168,7 +168,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-27T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-sea-level-mission-homes-in-on-el-nino"
     },
@@ -177,7 +177,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-06T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-featherweight-radar-antenna-for-skyfall-mars-helicopters"
     },
@@ -186,7 +186,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-17T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-tally-of-planets-outside-our-solar-system-reaches-6000"
     },
@@ -195,7 +195,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-06-05T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-incus-mission-on-road-to-launch-study-storms-from-space"
     },
@@ -204,7 +204,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-04T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-completes-nancy-grace-roman-space-telescope-construction"
     },
@@ -213,7 +213,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-17T07:50:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-spacex-launch-us-european-satellite-to-monitor-earths-oceans"
     },
@@ -222,7 +222,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-24T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-explores-largest-star-forming-cloud-in-milky-way"
     },
@@ -231,7 +231,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-17T02:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-partners-share-first-data-from-new-us-european-sea-satellite"
     },
@@ -240,7 +240,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-08T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-to-fly-by-mars-for-gravity-assist"
     },
@@ -249,7 +249,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-22T14:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-prime-contract-update"
     },
@@ -258,7 +258,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-04T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-french-satellite-takes-stock-of-worlds-river-water"
     },
@@ -267,7 +267,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-28T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-fires-up-powerful-lithium-fed-thruster-for-trips-to-mars"
     },
@@ -276,7 +276,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-19T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid"
     },
@@ -285,7 +285,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-17T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-suggests-saturns-moon-titan-may-not-have-global-ocean"
     },
@@ -294,7 +294,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/hello-universe-nasas-next-gen-space-processor-undergoes-testing"
     },
@@ -303,7 +303,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-19T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-mars-spacecraft-capture-images-of-comet-3iatlas"
     },
@@ -312,7 +312,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-05T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-next-gen-near-earth-asteroid-space-telescope-takes-shape"
     },
@@ -321,7 +321,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-15T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/interstellar-glaciers-nasas-spherex-maps-vast-galactic-ice-regions"
     },
@@ -330,7 +330,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-03T16:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-rover-detects-electric-sparks-in-mars-dust-devils-storms"
     },
@@ -339,7 +339,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-09T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-scientists-take-to-air-and-space-to-study-arctic-sea-ice"
     },
@@ -348,7 +348,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-developed-ai-could-help-track-harmful-algae"
     },
@@ -357,7 +357,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-01T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/caltech-welcomes-astrophysicist-ray-jayawardhana-as-new-president"
     },
@@ -366,7 +366,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-18T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-deep-space-communications-demo-exceeds-project-expectations"
     },
@@ -375,7 +375,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-26T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-reveals-new-details-about-dark-matters-influence-on-universe"
     },
@@ -384,7 +384,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-06-11T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-usgs-scientists-go-rock-hounding-in-californias-high-desert"
     },
@@ -393,7 +393,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-23T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/see-nasas-guardian-catch-a-tsunami"
     },
@@ -402,7 +402,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-21T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-delivers-data-reveals-hummingbird-in-antarctica"
     },
@@ -411,7 +411,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-28T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-coverage-for-roman-space-telescope-launch-from-florida"
     },
@@ -420,7 +420,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-18T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-cassini-study-finds-organics-fresh-from-ocean-of-enceladus"
     },
@@ -429,7 +429,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-07T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-pushes-next-gen-mars-helicopter-rotor-blades-past-mach-1"
     },
@@ -438,7 +438,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-16T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-finds-near-earth-asteroid-is-actually-comet"
     },
@@ -447,7 +447,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-09-21T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars"
     },
@@ -456,7 +456,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-09-09T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/how-2-us-european-satellites-are-studying-hurricanes-during-el-nino"
     },
@@ -465,7 +465,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-14T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-launch-coverage-for-international-ocean-tracking-mission"
     },
@@ -474,7 +474,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-06-18T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers"
     },
@@ -483,7 +483,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-25T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-sends-first-radar-images-of-earths-surface"
     },
@@ -492,7 +492,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-25T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-captures-pacific-northwest-through-clouds"
     },
@@ -501,7 +501,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-02-23T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-rover-sees-martian-spiderwebs-up-close"
     },
@@ -510,7 +510,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-esa-sea-level-satellite-arrives-at-california-launch-site"
     },
@@ -519,7 +519,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-21T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-finds-organic-molecules-never-seen-before-on-mars"
     },
@@ -528,7 +528,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-27T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-curiosity-panoramas-capture-two-sides-of-mars"
     },
@@ -537,7 +537,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-09-16T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-watches-earths-weight-finds-center-of-mass"
     },
@@ -546,7 +546,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-ceres-may-have-had-long-standing-energy-to-fuel-habitability"
     },
@@ -555,7 +555,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-29T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-indian-space-mission-maps-extreme-subsidence-in-mexico-city"
     },
@@ -564,7 +564,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-22T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-takes-temperature-of-jupiters-fiery-moon-io"
     },
@@ -573,7 +573,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-17T18:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-mission-studies-air-pollution-over-ethiopia"
     },
@@ -582,7 +582,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-08-19T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/joint-caltech-jpl-earth-lunar-science-astrophysics-projects-funded"
     },
@@ -591,7 +591,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-09-24T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption"
     },
@@ -600,7 +600,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-snaps-selfie-in-mars-western-frontier"
     },
@@ -609,7 +609,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-17T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-ready-to-roll-for-miles-in-years-ahead"
     },
@@ -618,7 +618,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-09T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-celestial-accident-sheds-light-on-jupiter-saturn-riddle"
     },
@@ -627,7 +627,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-29T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-mars-rover-discovers-field-of-honeycomb-textures"
     },
@@ -636,7 +636,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-29T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-la-nina-limited-sea-level-rise-in-2025"
     },
@@ -645,7 +645,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-08-25T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-next-gen-dish-adds-muscle-to-nasas-deep-space-network"
     },
@@ -654,7 +654,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-17T17:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-delivers-mars-flyby-data-time-lapse-video"
     },
@@ -663,7 +663,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-12T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-guardian-tsunami-detection-tech-catches-wave-in-real-time"
     },
@@ -672,7 +672,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-16T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-shakes-things-up-testing-future-commercial-lunar-spacecraft"
     },
@@ -681,7 +681,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-14T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/6-things-to-know-from-nasa-about-new-us-european-sea-satellite"
     },
@@ -690,7 +690,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-28T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/networks-keeping-nasas-artemis-ii-mission-connected"
     },
@@ -699,7 +699,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-17T04:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/one-of-nasas-key-cameras-orbiting-mars-takes-100000th-image"
     },
@@ -708,7 +708,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-08-28T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-marsquake-data-reveals-lumpy-nature-of-red-planets-interior"
     },
@@ -717,7 +717,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-10T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-says-mars-rover-discovered-potential-biosignature-last-year"
     },
@@ -726,7 +726,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-26T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/how-nasa-is-homing-in-from-space-on-ocean-debris"
     },
@@ -735,7 +735,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-02-12T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/archival-data-from-nasas-neowise-tracks-star-turning-into-black-hole"
     },
@@ -744,7 +744,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-06T02:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/invention-challenge-brings-student-engineers-to-nasa-jpl"
     },
@@ -753,7 +753,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-08-19T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-captures-images-of-earth-moon"
     },
@@ -762,7 +762,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-20T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-aerospace-corporation-study-sharpens-focus-on-ammonia-emissions"
     },
@@ -771,7 +771,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-04-17T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating"
     },
@@ -780,7 +780,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-02-18T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-now-autonomously-pinpoints-its-location-on-mars"
     },
@@ -789,7 +789,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-02T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-drones-in-death-valley-preps-for-martian-sands-and-skies"
     },
@@ -798,7 +798,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-04T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/vintage-nasa-see-voyagers-1990-solar-system-family-portrait-debut"
     },
@@ -807,7 +807,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-15T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-reads-record-of-ancient-mars-impacts"
     },
@@ -816,7 +816,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-12-18T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-spherex-observatory-completes-first-cosmic-map-like-no-other"
     },
@@ -825,7 +825,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-11-25T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-orbiter-shines-new-light-on-long-running-martian-mystery"
     },
@@ -834,7 +834,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-30T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars"
     },
@@ -843,7 +843,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-09-11T17:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-us-european-sea-level-satellite-will-help-safeguard-ships-at-sea"
     },
@@ -852,7 +852,7 @@
       "source": "JPL",
       "publishedAtSource": "2025-10-13T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-workforce--update"
     },
@@ -861,7 +861,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-27T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-measures-thickness-of-europas-ice-shell"
     },
@@ -870,7 +870,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-12T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/tiny-nasa-spacecraft-delivers-exoplanet-missions-first-images"
     },
@@ -879,7 +879,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-07-20T22:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-earth-missions-gear-up-to-start-science-flights"
     },
@@ -888,7 +888,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-29T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-radar-mission-peers-through-clouds-to-see-mississippi-river-delta"
     },
@@ -897,7 +897,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-06-16T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/explore-jpl-to-take-place-oct-10-11"
     },
@@ -906,7 +906,7 @@
       "source": "JPL",
       "publishedAtSource": "2026-01-20T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-sunrise-smallsats-ace-tests-moving-closer-to-launch"
     },
@@ -915,7 +915,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T15:54:10.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/"
     },
@@ -933,7 +933,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-26T04:05:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/"
     },
@@ -942,7 +942,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T17:20:51.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/"
     },
@@ -960,7 +960,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T17:19:42.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/"
     },
@@ -969,7 +969,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-27T04:05:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/"
     },
@@ -978,7 +978,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T19:53:03.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/"
     },
@@ -987,7 +987,7 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T22:06:50.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/"
     },
@@ -996,9 +996,27 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T19:36:10.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T01:06:37.197Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
       "bootstrapSeen": true,
       "sourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/"
+    },
+    {
+      "scienceKey": "nasa__644089ae2efe6056",
+      "source": "NASA",
+      "publishedAtSource": "2026-09-28T10:00:00.000Z",
+      "firstSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "bootstrapSeen": false,
+      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/"
+    },
+    {
+      "scienceKey": "nasa__c88ef522a895f600",
+      "source": "NASA",
+      "publishedAtSource": "2026-09-28T04:00:00.000Z",
+      "firstSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "bootstrapSeen": false,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/"
     }
   ]
 }

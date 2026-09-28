@@ -1,41 +1,87 @@
 {
-  "generatedAt": "2026-09-28T01:06:37.560Z",
+  "generatedAt": "2026-09-28T11:43:31.794Z",
   "source": "Phase 9A.2 science stories",
   "inputCandidateCount": 110,
   "uniqueStoryCount": 107,
-  "publishEligibleCount": 6,
-  "highPriorityCount": 4,
+  "publishEligibleCount": 8,
+  "highPriorityCount": 5,
   "freshnessBreakdown": {
     "current": 14,
     "recent": 2,
     "archive": 91
   },
   "storyTypeBreakdown": {
+    "crew-mission": 1,
     "discovery": 9,
-    "earth-science": 11,
+    "earth-science": 12,
     "mission-result": 8,
     "mission-milestone": 42,
     "launch": 1,
-    "evergreen": 3,
+    "evergreen": 2,
     "media-advisory": 2,
     "space-policy": 1,
     "mission-preparation": 1,
     "education": 3,
-    "technical-guidance": 1,
     "astronomy": 12,
     "landing": 1,
     "technology": 12
   },
   "storyStatusBreakdown": {
-    "unchanged": 107
+    "new": 2,
+    "unchanged": 105
   },
-  "newCount": 0,
+  "newCount": 2,
   "updatedCount": 0,
-  "unchangedCount": 107,
+  "unchangedCount": 105,
   "bootstrapCount": 0,
   "previousSnapshotCount": 107,
-  "previousMissingCount": 0,
+  "previousMissingCount": 2,
   "stories": [
+    {
+      "scienceStoryKey": "nasa__644089ae2efe6056",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__644089ae2efe6056"
+      ],
+      "sourceUrls": [
+        "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/"
+      ],
+      "titleSeed": "reliable robots: meet johnson’s dexterous robotics team",
+      "title": "Reliable Robots: Meet Johnson’s Dexterous Robotics Team",
+      "storyType": "crew-mission",
+      "mission": null,
+      "publishedAtSource": "2026-09-28T10:00:00.000Z",
+      "freshnessStatus": "current",
+      "sourceAgeDays": 0.07189369212962964,
+      "bootstrapSeen": false,
+      "storyScore": 55,
+      "publishEligible": true,
+      "priority": "high",
+      "recordCount": 1,
+      "storyStatus": "new",
+      "updateCount": 1,
+      "firstSeenAt": "2026-09-28T11:43:31.794Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
+      "contentSignature": "8d58a06d7c886a55ccba514e0d13c0fdcb10614a0fff5733b0e96051f6685c22",
+      "severity": null,
+      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/",
+      "imageUrl": "https://www.nasa.gov/wp-content/uploads/2026/09/sa-and-valkyrie.png?w=981",
+      "imageAlt": "Reliable Robots: Meet Johnson’s Dexterous Robotics Team",
+      "imageCredit": "NASA",
+      "imageCaption": "Dexterous Robotics Team lead Shaun Azimi conducts a demonstration with NASA’s Valkyrie humanoid robot.",
+      "imageSourceUrl": "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/",
+      "rightsText": "NASA",
+      "rightsStatus": "verified-agency",
+      "description": "The idea of humans and robots working side-by-side in space was once the stuff of science fiction, but with NASA launching increasingly complex missions deeper into space, human-robot collaboration could become reality. Advanced robotic systems are critical for human spaceflight because they can enh",
+      "eligibilityReasons": [
+        "storyType \"crew-mission\" is publish-eligible (fetcher)",
+        "freshness \"current\" (0.1 days old) passes the freshness gate"
+      ],
+      "exclusionReasons": [],
+      "selectedReason": "storyType \"crew-mission\" is publish-eligible (fetcher)",
+      "eligibilityReason": "storyType \"crew-mission\" is publish-eligible (fetcher)",
+      "exclusionReason": null
+    },
     {
       "scienceStoryKey": "nasa__4c93b21d54ff615c",
       "primarySource": "NASA",
@@ -51,16 +97,16 @@
       "mission": "Hubble",
       "publishedAtSource": "2026-09-25T15:54:10.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.3836504398148146,
+      "sourceAgeDays": 2.8259446180555554,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": true,
       "priority": "high",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "ee0f2890eefe48cb1c2cbd0ed749d2e6771e203b24a8e0707d1ad9ec34ca644c",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/",
@@ -74,7 +120,7 @@
       "description": "A chaotic secret hides within this seemingly serene image of spiral galaxy NGC 4698 taken by NASA’s Hubble Space Telescope and released on Sept. 18, 2026. As a spiral galaxy like our own Milky Way galaxy, NGC 4698 has spiral arms that curl around within a thin disk of stars, gas, and dust. These arm",
       "eligibilityReasons": [
         "storyType \"discovery\" is publish-eligible (fetcher)",
-        "freshness \"current\" (2.4 days old) passes the freshness gate"
+        "freshness \"current\" (2.8 days old) passes the freshness gate"
       ],
       "exclusionReasons": [],
       "selectedReason": "storyType \"discovery\" is publish-eligible (fetcher)",
@@ -96,16 +142,16 @@
       "mission": "NISAR",
       "publishedAtSource": "2026-09-24T16:00:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 3.379599513888889,
+      "sourceAgeDays": 3.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": true,
       "priority": "medium",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "6311b15cf9a1a5d3fc686375761ef51cb741bc6668de932c42eb7703fc106333",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
@@ -119,7 +165,7 @@
       "description": "Returning to the same spot in orbit numerous times over several months, NISAR documented the ongoing lava flow from a volcano on the Kamchatka Peninsula.",
       "eligibilityReasons": [
         "storyType \"earth-science\" is publish-eligible (fetcher)",
-        "freshness \"current\" (3.4 days old) passes the freshness gate"
+        "freshness \"current\" (3.8 days old) passes the freshness gate"
       ],
       "exclusionReasons": [],
       "selectedReason": "storyType \"earth-science\" is publish-eligible (fetcher)",
@@ -141,16 +187,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-21T17:00:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 6.3379328472222225,
+      "sourceAgeDays": 6.780227025462963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": true,
       "priority": "medium",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c3f30fd0ab9f0ff891d1d1edbc7664e4c3d8e6c1fe8d54a0ddecff88e501f973",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars",
@@ -164,11 +210,56 @@
       "description": "A new study reveals that Jezero Crater’s enigmatic ‘Margin Unit’ was shaped by a complex sequence of ancient lakes, groundwater systems, and hydrothermal fluids.",
       "eligibilityReasons": [
         "storyType \"mission-result\" is publish-eligible (fetcher)",
-        "freshness \"current\" (6.3 days old) passes the freshness gate"
+        "freshness \"current\" (6.8 days old) passes the freshness gate"
       ],
       "exclusionReasons": [],
       "selectedReason": "storyType \"mission-result\" is publish-eligible (fetcher)",
       "eligibilityReason": "storyType \"mission-result\" is publish-eligible (fetcher)",
+      "exclusionReason": null
+    },
+    {
+      "scienceStoryKey": "nasa__c88ef522a895f600",
+      "primarySource": "NASA",
+      "allSourceKeys": [
+        "nasa__c88ef522a895f600"
+      ],
+      "sourceUrls": [
+        "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/"
+      ],
+      "titleSeed": "uncovering the valleys hidden below greenland’s ice",
+      "title": "Uncovering the Valleys Hidden Below Greenland’s Ice",
+      "storyType": "earth-science",
+      "mission": null,
+      "publishedAtSource": "2026-09-28T04:00:00.000Z",
+      "freshnessStatus": "current",
+      "sourceAgeDays": 0.32189369212962965,
+      "bootstrapSeen": false,
+      "storyScore": 25,
+      "publishEligible": true,
+      "priority": "medium",
+      "recordCount": 1,
+      "storyStatus": "new",
+      "updateCount": 1,
+      "firstSeenAt": "2026-09-28T11:43:31.794Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
+      "contentSignature": "0dff23a526409650fd67849ca5a630d229e6feab48e98d8757a9556e2027d073",
+      "severity": null,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/",
+      "imageUrl": null,
+      "imageAlt": null,
+      "imageCredit": null,
+      "imageCaption": null,
+      "imageSourceUrl": null,
+      "rightsText": null,
+      "rightsStatus": null,
+      "description": "A new map of the terrain beneath the Greenland Ice Sheet links hundreds of valleys that previous maps missed or left fragmented.",
+      "eligibilityReasons": [
+        "storyType \"earth-science\" is publish-eligible (fetcher)",
+        "freshness \"current\" (0.3 days old) passes the freshness gate"
+      ],
+      "exclusionReasons": [],
+      "selectedReason": "storyType \"earth-science\" is publish-eligible (fetcher)",
+      "eligibilityReason": "storyType \"earth-science\" is publish-eligible (fetcher)",
       "exclusionReason": null
     },
     {
@@ -186,16 +277,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-16T16:00:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 11.37959951388889,
+      "sourceAgeDays": 11.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": true,
       "priority": "high",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "29a2e0d27efade291e09287d04dfd788e8f85b8f060ee3c83bdc30e6d325db78",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-watches-earths-weight-finds-center-of-mass",
@@ -209,7 +300,7 @@
       "description": "As the seasons change, Earth transfers mass from some locations to pack on the gigatons in others.",
       "eligibilityReasons": [
         "storyType \"mission-milestone\" is publish-eligible (fetcher)",
-        "freshness \"current\" (11.4 days old) passes the freshness gate"
+        "freshness \"current\" (11.8 days old) passes the freshness gate"
       ],
       "exclusionReasons": [],
       "selectedReason": "storyType \"mission-milestone\" is publish-eligible (fetcher)",
@@ -231,16 +322,16 @@
       "mission": "Nancy Grace Roman",
       "publishedAtSource": "2026-08-30T14:00:00.000Z",
       "freshnessStatus": "recent",
-      "sourceAgeDays": 28.462932847222223,
+      "sourceAgeDays": 28.905227025462963,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": true,
       "priority": "high",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "714405cb84a84f4387a77a7aad15521161b79286e7b6e5cabcfc3d8fd2e52e9b",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dark-universe-seeking-nancy-grace-roman-space-telescope-launches",
@@ -254,7 +345,7 @@
       "description": "The spacecraft will study the mysteries of the cosmos while also testing the Coronagraph Instrument, designed and built by JPL to demonstrate advanced hardware for studying planets around other stars.",
       "eligibilityReasons": [
         "storyType \"launch\" is publish-eligible (fetcher)",
-        "freshness \"recent\" (28.5 days old) passes the freshness gate",
+        "freshness \"recent\" (28.9 days old) passes the freshness gate",
         "recent story is genuinely significant (substantive content)"
       ],
       "exclusionReasons": [],
@@ -277,16 +368,16 @@
       "mission": "Sentinel",
       "publishedAtSource": "2026-09-09T16:00:00.000Z",
       "freshnessStatus": "recent",
-      "sourceAgeDays": 18.379599513888888,
+      "sourceAgeDays": 18.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": true,
       "priority": "high",
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "bcfc0136348e8fe7ef568fdffa258b272d4d07b39170f1a6090f3115e5077c14",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/how-2-us-european-satellites-are-studying-hurricanes-during-el-nino",
@@ -300,7 +391,7 @@
       "description": "The spacecraft, Sentinel-6 Michael Freilich and Sentinel-6B, are collecting data that will help scientists forecast these storms.",
       "eligibilityReasons": [
         "storyType \"mission-milestone\" is publish-eligible (fetcher)",
-        "freshness \"recent\" (18.4 days old) passes the freshness gate",
+        "freshness \"recent\" (18.8 days old) passes the freshness gate",
         "recent story is genuinely significant (substantive content)"
       ],
       "exclusionReasons": [],
@@ -323,16 +414,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-27T04:05:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 0.8761272916666667,
+      "sourceAgeDays": 1.3184214699074075,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "da92ba085a07b9cd82707436d307273104b46009baf7204586e6bcb2d1574bd9",
       "severity": null,
       "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/",
@@ -367,16 +458,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-26T04:05:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 1.8761272916666667,
+      "sourceAgeDays": 2.3184214699074075,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "0553f28f8c2dd561dc7b6a7305238dd71bb53a539c1e1cde5298288bb1f474e4",
       "severity": null,
       "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/",
@@ -411,16 +502,16 @@
       "mission": "Starliner",
       "publishedAtSource": "2026-09-25T22:06:50.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.1248541435185184,
+      "sourceAgeDays": 2.567148321759259,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "998123acc1fd3adcdea0fe3c9dbfc48b8a5d4f2f99f9a0e6a32af5a026bbad5c",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/",
@@ -455,16 +546,16 @@
       "mission": "Artemis",
       "publishedAtSource": "2026-09-25T19:53:03.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.217759236111111,
+      "sourceAgeDays": 2.660053414351852,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c0e421df6e97685a5f2efecbf77b0fb47338285926acc22c546a6b7fc6ac2bc0",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/",
@@ -499,16 +590,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-25T19:36:10.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.2294837731481483,
+      "sourceAgeDays": 2.671777951388889,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "2db3a4b694e561079b9a046264f180c29eb0c6342a50516265046c88adecfb18",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/",
@@ -543,16 +634,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-25T17:20:51.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.3234536805555557,
+      "sourceAgeDays": 2.7657478587962965,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "5399cac71d09fef30c43550d59bded4909f32a7800bf63c9d2992e0725bba55b",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/",
@@ -587,16 +678,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-25T17:19:42.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 2.324252291666667,
+      "sourceAgeDays": 2.7665464699074076,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "a3075cb516c1be42f01fa5985226b38119605429e3147ddd4bd84be575135b6b",
       "severity": null,
       "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/",
@@ -617,94 +708,6 @@
       "exclusionReason": "Excluded: education / outreach program"
     },
     {
-      "scienceStoryKey": "nasa__4f99bb2c5f0bf822",
-      "primarySource": "NASA",
-      "allSourceKeys": [
-        "nasa__4f99bb2c5f0bf822"
-      ],
-      "sourceUrls": [
-        "https://www.nasa.gov/centers-and-facilities/nesc/tb-26-07-aluminum-alloy-2219-material-guidance/"
-      ],
-      "titleSeed": "tb 26-07 aluminum alloy 2219 material guidance",
-      "title": "TB 26-07 Aluminum Alloy 2219 Material Guidance",
-      "storyType": "technical-guidance",
-      "mission": null,
-      "publishedAtSource": "2026-09-25T14:45:51.000Z",
-      "freshnessStatus": "current",
-      "sourceAgeDays": 2.4310925694444445,
-      "bootstrapSeen": true,
-      "storyScore": 20,
-      "publishEligible": false,
-      "priority": null,
-      "recordCount": 1,
-      "storyStatus": "unchanged",
-      "updateCount": 3,
-      "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
-      "contentSignature": "df119e8bf2dbe868015ced628512ccde9cab7813b140a57e3baded4c094cee08",
-      "severity": null,
-      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/nesc/tb-26-07-aluminum-alloy-2219-material-guidance/",
-      "imageUrl": null,
-      "imageAlt": null,
-      "imageCredit": null,
-      "imageCaption": null,
-      "imageSourceUrl": null,
-      "rightsText": null,
-      "rightsStatus": null,
-      "description": "For more information, contact Donald S. Parker, Kennedy Space Center, donald.s.parker@nasa.gov Download the PDF version Improper casting and forging processes in the manufacture of aluminum alloy 2219 can lead to microstructural defects that result in a sub-optimal response to anodic surface treatme",
-      "eligibilityReasons": [],
-      "exclusionReasons": [
-        "Excluded: technical guidance / bulletin / specification (not news)"
-      ],
-      "selectedReason": "Excluded: technical guidance / bulletin / specification (not news)",
-      "eligibilityReason": null,
-      "exclusionReason": "Excluded: technical guidance / bulletin / specification (not news)"
-    },
-    {
-      "scienceStoryKey": "nasa__89137d4be7927727",
-      "primarySource": "NASA",
-      "allSourceKeys": [
-        "nasa__89137d4be7927727"
-      ],
-      "sourceUrls": [
-        "https://science.nasa.gov/image-article/apod-2026-september-25-globular-star-cluster-omega-centauri/"
-      ],
-      "titleSeed": "apod: 2026 september 25 – globular star cluster omega centauri",
-      "title": "APOD: 2026 September 25 – Globular Star Cluster Omega Centauri",
-      "storyType": "evergreen",
-      "mission": null,
-      "publishedAtSource": "2026-09-25T04:05:00.000Z",
-      "freshnessStatus": "current",
-      "sourceAgeDays": 2.8761272916666667,
-      "bootstrapSeen": true,
-      "storyScore": 20,
-      "publishEligible": false,
-      "priority": null,
-      "recordCount": 1,
-      "storyStatus": "unchanged",
-      "updateCount": 3,
-      "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
-      "contentSignature": "9cf3e331d8a0e38b394ea41f35a3888cf63d27eca98a4b5a1c24b6c7dcd4a916",
-      "severity": null,
-      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-25-globular-star-cluster-omega-centauri/",
-      "imageUrl": null,
-      "imageAlt": null,
-      "imageCredit": null,
-      "imageCaption": null,
-      "imageSourceUrl": null,
-      "rightsText": null,
-      "rightsStatus": null,
-      "description": "Globular Cluster Omega […]",
-      "eligibilityReasons": [],
-      "exclusionReasons": [
-        "Excluded: APOD (Astronomy Picture of the Day) is evergreen content"
-      ],
-      "selectedReason": "Excluded: APOD (Astronomy Picture of the Day) is evergreen content",
-      "eligibilityReason": null,
-      "exclusionReason": "Excluded: APOD (Astronomy Picture of the Day) is evergreen content"
-    },
-    {
       "scienceStoryKey": "jpl__3774c54e9e811a3a",
       "primarySource": "JPL",
       "allSourceKeys": [
@@ -719,16 +722,16 @@
       "mission": null,
       "publishedAtSource": "2026-09-23T21:00:00.000Z",
       "freshnessStatus": "current",
-      "sourceAgeDays": 4.1712661805555555,
+      "sourceAgeDays": 4.613560358796296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "3cb00cfb5f74f8be7d234b0e18d2b7bcec44561e53f0dd73851af859237ae47b",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-far-infrared-telescope-as-first-in-new-mission-class",
@@ -763,16 +766,16 @@
       "mission": "NISAR",
       "publishedAtSource": "2026-07-21T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 68.29626618055556,
+      "sourceAgeDays": 68.73856035879629,
       "bootstrapSeen": true,
       "storyScore": 55,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "0098775b5557272e06701222e02038344b2bfa07e9cd444ee95f7d7e99a2ba92",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-delivers-data-reveals-hummingbird-in-antarctica",
@@ -786,11 +789,11 @@
       "description": "Data from NISAR, one of the most powerful radar systems ever launched, is now available to the world. A vivid image of Antarctic ice showcases what the satellite can do.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (68.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (68.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (68.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (68.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (68.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (68.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__82e2b74e0a733e2c",
@@ -807,16 +810,16 @@
       "mission": "NISAR",
       "publishedAtSource": "2026-03-25T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 186.37959951388888,
+      "sourceAgeDays": 186.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 55,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f704d65900d48b0ab7315249d6f427ec6bea709b8a6c33698dbce4e5d207887f",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-captures-pacific-northwest-through-clouds",
@@ -830,11 +833,11 @@
       "description": "Seattle, Portland, Mount Ranier, and Mount Saint Helens are captured in new imagery from NISAR, the most powerful radar system ever launched by NASA or ISRO.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (186.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (186.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (186.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (186.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (186.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (186.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__07e63575d01f8ea3",
@@ -851,16 +854,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-08-05T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 53.421266180555556,
+      "sourceAgeDays": 53.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 45,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "dd91a670ebb17010b3b9587447b67032080d867ffd1ad3ef8c8969ae4c7f8e95",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-watches-earth-vanish-behind-martian-moon",
@@ -874,11 +877,11 @@
       "description": "The first observation of its kind captures our home planet slipping behind Phobos in the Martian evening sky.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (53.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (53.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (53.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (53.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (53.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (53.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__a24d128879c1436c",
@@ -895,16 +898,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2025-12-17T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 284.33793284722225,
+      "sourceAgeDays": 284.780227025463,
       "bootstrapSeen": true,
       "storyScore": 45,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "9c59c97b574d5a8811f9cdeecc96b9b74ea310d44f49c1fa7046f4f4b8ed667a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-ready-to-roll-for-miles-in-years-ahead",
@@ -918,11 +921,11 @@
       "description": "The rover has been acing a long-term series of durability tests, making the most of its enhanced navigation capabilities, and ferreting out new findings about Mars’ geologic past.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (284.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (284.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (284.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (284.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (284.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (284.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__7967f5004b8409a4",
@@ -939,16 +942,16 @@
       "mission": null,
       "publishedAtSource": "2026-08-28T23:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 30.087932847222223,
+      "sourceAgeDays": 30.530227025462963,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "ff0051eee576dc827998a4d6ea80949ee03d8eecc56799c01f3457876ecd23cc",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-coverage-for-roman-space-telescope-launch-from-florida",
@@ -962,11 +965,11 @@
       "description": "The flagship telescope includes the Roman Coronagraph Instrument, a technology demonstration designed by NASA’s Jet Propulsion Laboratory.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (30.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (30.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (30.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (30.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (30.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (30.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__3b3972033fd96264",
@@ -983,16 +986,16 @@
       "mission": null,
       "publishedAtSource": "2026-06-05T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 114.21293284722222,
+      "sourceAgeDays": 114.65522702546296,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "a6559aa089d2d849ade0b462f11be19b081edf4fc4f7fa626d3fae9e1d53d055",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-incus-mission-on-road-to-launch-study-storms-from-space",
@@ -1006,11 +1009,11 @@
       "description": "The mission’s three SmallSats will provide insights to improve storm forecasting, potentially mitigating loss of life and property damage in affected communities.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (114.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (114.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (114.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (114.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (114.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (114.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__fe5d47972b5a5a32",
@@ -1027,16 +1030,16 @@
       "mission": null,
       "publishedAtSource": "2026-01-20T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 250.25459951388888,
+      "sourceAgeDays": 250.69689369212963,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "44acf23e7f54f2ba92dfdc350887a855023fb447c0d4df237371cce4b1ad8466",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-sunrise-smallsats-ace-tests-moving-closer-to-launch",
@@ -1050,11 +1053,11 @@
       "description": "The small satellites passed a crucible of tests, ending with a simulation of the intense vibrations of launch.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (250.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (250.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (250.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (250.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (250.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (250.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__484b2d31ae681d00",
@@ -1071,16 +1074,16 @@
       "mission": "Sentinel",
       "publishedAtSource": "2025-12-17T02:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 284.96293284722225,
+      "sourceAgeDays": 285.405227025463,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "08e4dac45d1b6e7648b6159bf535f13c69ab7067cb5478afabb739476713a9c7",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-partners-share-first-data-from-new-us-european-sea-satellite",
@@ -1094,11 +1097,11 @@
       "description": "Launched in November, Sentinel-6B will track ocean height with ultraprecision to advance marine forecasting, national security, and more.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (285.0 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (285.4 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (285.0 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (285.4 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (285.0 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (285.4 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__c556b8a1ba0fbf7e",
@@ -1115,16 +1118,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-16T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 285.2545995138889,
+      "sourceAgeDays": 285.6968936921296,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f4930f499c9cc876104bb4b65e9795fd2fee9dbecee0f112e54a91d2b8648455",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-shakes-things-up-testing-future-commercial-lunar-spacecraft",
@@ -1138,11 +1141,11 @@
       "description": "As Firefly Aerospace prepares to follow its successful soft landing on the Moon, an engineering model for its next lander is being put through its paces.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (285.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (285.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (285.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (285.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (285.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (285.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__3d39ceb44b2416e5",
@@ -1159,16 +1162,16 @@
       "mission": "Nancy Grace Roman",
       "publishedAtSource": "2025-12-04T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 297.3795995138889,
+      "sourceAgeDays": 297.8218936921296,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "d6b0fc14b56b097159450d857abcdeb7986118ab1efe744f0f314f6cce6ff6d8",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-completes-nancy-grace-roman-space-telescope-construction",
@@ -1182,11 +1185,11 @@
       "description": "Set to launch by May 2027, the spacecraft will study mysteries of the cosmos while also testing the Coronagraph Instrument, a new technology designed and built by JPL.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (297.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (297.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (297.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (297.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (297.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (297.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__40186b37a4c78377",
@@ -1203,16 +1206,16 @@
       "mission": "SpaceX",
       "publishedAtSource": "2025-11-17T07:50:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 314.71987729166665,
+      "sourceAgeDays": 315.16217146990743,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "6e844a913f7fb1b46d250f7fbed35a40fdb0d8ab3d054b92a1a7ff05ed81a1a0",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-spacex-launch-us-european-satellite-to-monitor-earths-oceans",
@@ -1226,11 +1229,11 @@
       "description": "Sentinel-6B will extend a decades-long legacy of global sea level measurements that help forecast weather, protect coastal communities, and more.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (314.7 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (315.2 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (314.7 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (315.2 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (314.7 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (315.2 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "science__215a7183f033f7cb",
@@ -1251,16 +1254,16 @@
       "mission": "Sentinel",
       "publishedAtSource": "2025-11-14T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 316.04626618055556,
+      "sourceAgeDays": 316.4885603587963,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 3,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "3d3b15050607aa71d7378a2b9bc6429b21eebd699d4dc87a7fc4828fafb476fa",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-partners-set-to-launch-sentinel-6b-earth-satellite",
@@ -1274,11 +1277,11 @@
       "description": "Set to track sea levels across more than 90% of Earth’s ocean, the mission must first get into orbit. Here’s what to expect.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (316.0 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (316.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (316.0 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (316.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (316.0 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (316.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__820865cae6962c19",
@@ -1295,16 +1298,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-25T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 367.33793284722225,
+      "sourceAgeDays": 367.780227025463,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "e58d21b4de37b3875f6b93fbf6815e9ab1df8fc65ea2e5944444e34aa352c702",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-sends-first-radar-images-of-earths-surface",
@@ -1318,11 +1321,11 @@
       "description": "Preliminary images from the most powerful Earth radar satellite ever launched offer a tantalizing glimpse of the science the mission will be able to deliver.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (367.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (367.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (367.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (367.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (367.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (367.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__4844a21ef193ebda",
@@ -1339,16 +1342,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-24T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 368.33793284722225,
+      "sourceAgeDays": 368.780227025463,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "631ec476ce2a6310a75200df19c3be2e1b138ba14307382752fc578f42ecad95",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-explores-largest-star-forming-cloud-in-milky-way",
@@ -1362,11 +1365,11 @@
       "description": "Webb’s MIRI, managed by NASA’s Jet Propulsion Laboratory through launch, helped reveal the star-studded Sagittarius B2 molecular cloud in unprecedented detail.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (368.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (368.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (368.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (368.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (368.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (368.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__896726328d036bf3",
@@ -1383,16 +1386,16 @@
       "mission": "Sentinel",
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 403.29626618055556,
+      "sourceAgeDays": 403.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 40,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "6bf110fb1217b7e0f059612fdf068bf63c2894a6eda072a878638f6e16d7f3bc",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-esa-sea-level-satellite-arrives-at-california-launch-site",
@@ -1406,11 +1409,11 @@
       "description": "The Sentinel-6B satellite will soon start final preparation to ready it for launch later this year.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (403.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (403.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (403.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (403.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (403.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (403.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__a45df072455c6238",
@@ -1427,16 +1430,16 @@
       "mission": "Curiosity",
       "publishedAtSource": "2026-07-29T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 60.37959951388889,
+      "sourceAgeDays": 60.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "96e548256eac84cf5353d1ec4e9c21969e03dd02b8eaecc35ab60617561cd00e",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-mars-rover-discovers-field-of-honeycomb-textures",
@@ -1450,11 +1453,11 @@
       "description": "Mission scientists have never seen so many of the many-sided geologic features in one place on the Red Planet.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (60.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (60.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (60.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (60.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (60.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (60.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__9a3606fe9edee9f7",
@@ -1471,16 +1474,16 @@
       "mission": "Juno",
       "publishedAtSource": "2026-07-22T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 67.42126618055556,
+      "sourceAgeDays": 67.86356035879629,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "859c3284a14d780d152c7c94b08aea7f7460dc4d606825fdbf4a7a3e568ee0ae",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-takes-temperature-of-jupiters-fiery-moon-io",
@@ -1494,11 +1497,11 @@
       "description": "The first measurements of the subsurface of the most volcanic world in the solar system reveal heat rising from below.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (67.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (67.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (67.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (67.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (67.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (67.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__6bf864a73b5f0bc0",
@@ -1515,16 +1518,16 @@
       "mission": null,
       "publishedAtSource": "2026-07-01T14:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 88.46293284722222,
+      "sourceAgeDays": 88.90522702546296,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "2d0177a7c91119fe53be2409078c5f08e27555485f8afcfa0b00a3a9a2813190",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/caltech-welcomes-astrophysicist-ray-jayawardhana-as-new-president",
@@ -1538,11 +1541,11 @@
       "description": "Taking the helm of the institute that manages JPL for NASA, the distinguished astrophysicist brings a lifelong interest in space exploration and a track record of scientific discovery.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (88.5 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (88.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (88.5 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (88.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (88.5 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (88.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__73e70fc987b3bdfa",
@@ -1559,16 +1562,16 @@
       "mission": null,
       "publishedAtSource": "2026-06-11T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 108.37959951388889,
+      "sourceAgeDays": 108.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "05890c0d397b2ba2d8d853e0a77774eebeabef63ca12c7fd0a089efd334b59b2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-usgs-scientists-go-rock-hounding-in-californias-high-desert",
@@ -1582,11 +1585,11 @@
       "description": "The discovery of topaz on a volcanic outcrop in the Mojave Desert may hint at a porphyry copper deposit below.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (108.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (108.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (108.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (108.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (108.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (108.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__8c0a1f9827e2ad63",
@@ -1603,16 +1606,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-04-27T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 153.33793284722222,
+      "sourceAgeDays": 153.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "4d73ca5dadca1ce1a926e73d906e12ef33a294b945717976b97915c9b523180c",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-curiosity-panoramas-capture-two-sides-of-mars",
@@ -1626,11 +1629,11 @@
       "description": "The two rovers captured scenes that highlight the different journeys they’re taking, helping to piece together the puzzle of the Red Planet’s past.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (153.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (153.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (153.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (153.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (153.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (153.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f8a64021f61aa7f0",
@@ -1647,16 +1650,16 @@
       "mission": null,
       "publishedAtSource": "2026-03-12T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 199.37959951388888,
+      "sourceAgeDays": 199.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "9a04e445e634213c259bf5fc9bbac6a82542d3bad242981cd3c88935d6bb0e5d",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/tiny-nasa-spacecraft-delivers-exoplanet-missions-first-images",
@@ -1670,11 +1673,11 @@
       "description": "The SPARCS cube satellite is ready to begin studying low-mass stars and to reveal details about the habitability of the planets they host.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (199.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (199.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (199.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (199.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (199.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (199.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__fa9eb49dfdf7737c",
@@ -1691,16 +1694,16 @@
       "mission": "NISAR",
       "publishedAtSource": "2026-01-29T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 241.21293284722222,
+      "sourceAgeDays": 241.65522702546295,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "8054e308a7e58d02ee2364ad42ca195e252cf99480830ca4249714ea262992f8",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-radar-mission-peers-through-clouds-to-see-mississippi-river-delta",
@@ -1714,11 +1717,11 @@
       "description": "A new image from the NISAR mission shows off the satellite’s ability to reveal details of Earth’s surfaces. The science team also released new sample data.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (241.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (241.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (241.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (241.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (241.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (241.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f5e739c06213e45f",
@@ -1735,16 +1738,16 @@
       "mission": "Juno",
       "publishedAtSource": "2026-01-27T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 243.25459951388888,
+      "sourceAgeDays": 243.69689369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "aec10e1ee0d840a5332a835f4d4ebea957fe7013df04b4c49117d0245af2a592",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-measures-thickness-of-europas-ice-shell",
@@ -1758,11 +1761,11 @@
       "description": "Results from the solar-powered spacecraft provide a new measurement of the thickness of the ice shell encasing the Jovian moon’s ocean.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (243.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (243.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (243.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (243.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (243.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (243.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__6e092fdcd221dcd7",
@@ -1779,16 +1782,16 @@
       "mission": "James Webb",
       "publishedAtSource": "2026-01-26T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 244.37959951388888,
+      "sourceAgeDays": 244.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "8976efe9c2057b5566316a2f2f51fab43fb160a8942b59bf187d02d512c1610a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-reveals-new-details-about-dark-matters-influence-on-universe",
@@ -1802,11 +1805,11 @@
       "description": "With the Webb telescope’s unprecedented sensitivity, scientists are learning more about dark matter’s influence on stars, galaxies, and even planets like Earth.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (244.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (244.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (244.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (244.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (244.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (244.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__ecede50b9596de34",
@@ -1823,16 +1826,16 @@
       "mission": null,
       "publishedAtSource": "2025-11-25T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 306.33793284722225,
+      "sourceAgeDays": 306.780227025463,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f9fc825e250da092728b2d16ef7ead001c7f745617942fdf4df4f9582ff122f4",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-orbiter-shines-new-light-on-long-running-martian-mystery",
@@ -1846,11 +1849,11 @@
       "description": "Results from an enhanced radar technique have demonstrated improvement to subsurface observations of Mars.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (306.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (306.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (306.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (306.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (306.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (306.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__5fcbfc4d561bdf47",
@@ -1867,16 +1870,16 @@
       "mission": null,
       "publishedAtSource": "2025-11-19T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 312.21293284722225,
+      "sourceAgeDays": 312.655227025463,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "fdd1c04601d21edbdb561b22b3c6276512586a2c8adc6398a03635563d053a5a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-mars-spacecraft-capture-images-of-comet-3iatlas",
@@ -1890,11 +1893,11 @@
       "description": "Two orbiters and a rover captured images of the interstellar object — from the closest location any of the agency’s spacecraft may get — that could reveal new details.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (312.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (312.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (312.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (312.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (312.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (312.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__3b2db7429285b85a",
@@ -1911,16 +1914,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-17T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 375.33793284722225,
+      "sourceAgeDays": 375.780227025463,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f7cedb871067b25936ba25fcc8a026eebea4a204703fe6f33bc2d50f291f82e7",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-tally-of-planets-outside-our-solar-system-reaches-6000",
@@ -1934,11 +1937,11 @@
       "description": "The milestone highlights the accelerating rate of discoveries, just over three decades since the first exoplanets were found.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (375.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (375.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (375.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (375.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (375.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (375.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__d06861779c5de7b7",
@@ -1955,16 +1958,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-10T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 382.42126618055556,
+      "sourceAgeDays": 382.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "7e2d0a5082e9e89d7fe7a749ef1827cf97f10574fa1df93516df949c629017d2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-says-mars-rover-discovered-potential-biosignature-last-year",
@@ -1978,11 +1981,11 @@
       "description": "After a year’s worth of scientific scrutiny, the ‘Sapphire Canyon’ rock sample remains the mission’s best candidate for containing signs of ancient microbial life processes.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (382.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (382.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (382.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (382.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (382.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (382.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__ea761e5737eec32d",
@@ -1999,16 +2002,16 @@
       "mission": "Voyager",
       "publishedAtSource": "2025-09-04T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 388.29626618055556,
+      "sourceAgeDays": 388.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "a57c103285cb0e5c21330abb269d4573237ed9ad04addf422aedc2f4f706b050",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/vintage-nasa-see-voyagers-1990-solar-system-family-portrait-debut",
@@ -2022,11 +2025,11 @@
       "description": "In archival footage of a historic NASA news conference, the mission reveals history-making images of six planets in our solar system, including a tiny speck called Earth.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (388.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (388.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (388.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (388.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (388.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (388.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__cd5331a5144ade67",
@@ -2043,16 +2046,16 @@
       "mission": null,
       "publishedAtSource": "2025-08-28T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 395.29626618055556,
+      "sourceAgeDays": 395.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f11c4fc979bd62817e8ad580b2fb12346b19fd6aead35b31ee012a864aaea89d",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-marsquake-data-reveals-lumpy-nature-of-red-planets-interior",
@@ -2066,11 +2069,11 @@
       "description": "Rocky material that impacted Mars lies scattered in giant lumps throughout the planet’s mantle, offering clues about Mars’ interior and its ancient past.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (395.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (395.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (395.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (395.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (395.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (395.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__e480d0dbdeee161a",
@@ -2087,16 +2090,16 @@
       "mission": "Psyche",
       "publishedAtSource": "2025-08-19T15:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 404.40043284722225,
+      "sourceAgeDays": 404.842727025463,
       "bootstrapSeen": true,
       "storyScore": 35,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "874d247d896f283e1de2845f507f0ca1b27dec69c30e08992e917a4051c3e1b8",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-captures-images-of-earth-moon",
@@ -2110,11 +2113,11 @@
       "description": "Headed for a metal-rich asteroid of the same name, the Psyche spacecraft successfully calibrated its cameras by looking homeward.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (404.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (404.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (404.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (404.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (404.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (404.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__eaa8784ecb10e274",
@@ -2131,16 +2134,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-07-15T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 74.37959951388889,
+      "sourceAgeDays": 74.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 30,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "528a87cf9d4c5cccb0070e59885a84e3610e691fce1d3786b4b90a780afeba29",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-reads-record-of-ancient-mars-impacts",
@@ -2154,11 +2157,11 @@
       "description": "Old rocks exposed on the rim of Jezero Crater preserve a roughly 4-billion-year-old cosmic “weather report” from the solar system’s most dynamic era.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (74.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (74.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (74.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (74.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (74.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (74.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__a1d809eeab9724f5",
@@ -2175,16 +2178,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 138.42126618055556,
+      "sourceAgeDays": 138.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 30,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "53ca615d15c6ce092a9a67abad2f47a0cd651ed2f8acea0a055594399d90b1c4",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-snaps-selfie-in-mars-western-frontier",
@@ -2198,11 +2201,11 @@
       "description": "The agency’s six-wheeled geologist took a self-portrait during its survey of an ancient landscape that may predate the formation of Jezero Crater itself.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (138.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (138.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (138.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (138.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (138.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (138.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f0a506fff851bbda",
@@ -2219,16 +2222,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-01-30T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 240.29626618055556,
+      "sourceAgeDays": 240.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 30,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "3b661fb807a6918e216c65637f4b16dcbe89a40c4724e959e7f20cf1f2e3d75e",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars",
@@ -2242,11 +2245,11 @@
       "description": "The team for the six-wheeled scientist used a vision-capable AI to create a safe route over the Red Planet’s surface without the input of human route planners.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (240.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (240.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (240.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (240.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (240.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (240.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__39327b1b3294ce2e",
@@ -2263,16 +2266,16 @@
       "mission": "Artemis",
       "publishedAtSource": "2025-12-04T22:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 297.1295995138889,
+      "sourceAgeDays": 297.5718936921296,
       "bootstrapSeen": true,
       "storyScore": 30,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "bd56248ccb0c30e76c7f048a95926b4a3d08e61d7c90380c20bbd2b71b058409",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-2-instruments-for-artemis-iv-lunar-surface-science",
@@ -2286,11 +2289,11 @@
       "description": "The JPL-led South Pole Seismic Station will enable scientists to characterize the lunar interior structure to better understand geologic processes that affect planetary bodies.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (297.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (297.6 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (297.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (297.6 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (297.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (297.6 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__af3042c355996c4a",
@@ -2307,16 +2310,16 @@
       "mission": null,
       "publishedAtSource": "2026-08-25T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 33.21293284722222,
+      "sourceAgeDays": 33.65522702546296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "861e29394fefc6d97ef1e3024e53ed8cb38d559a407428f1a9b2787733c564e2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-next-gen-dish-adds-muscle-to-nasas-deep-space-network",
@@ -2330,11 +2333,11 @@
       "description": "Deep Space Station 23 at NASA’s Goldstone facility in the California desert is the latest next-generation antenna to be added by the network’s enhancement project.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (33.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (33.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (33.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (33.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (33.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (33.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__9c4e575a62a7c325",
@@ -2351,16 +2354,16 @@
       "mission": null,
       "publishedAtSource": "2026-08-17T18:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 41.27543284722222,
+      "sourceAgeDays": 41.71772702546296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "0a24fe60a2ba33e06cdd1b5dd46a0df6fab7bbad94d88dcbc9804c07539a893d",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-mission-studies-air-pollution-over-ethiopia",
@@ -2374,11 +2377,11 @@
       "description": "What scientists are learning about tiny PM2.5 aerosols in the country’s capital also could benefit U.S. cities.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (41.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (41.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (41.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (41.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (41.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (41.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__3ae02962c3d6ea9c",
@@ -2395,16 +2398,16 @@
       "mission": null,
       "publishedAtSource": "2026-08-06T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 52.296266180555556,
+      "sourceAgeDays": 52.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "b61a24e50a4464f888fbfa27c66d1399bd13221a44e997dc90d78439abb03ea2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-featherweight-radar-antenna-for-skyfall-mars-helicopters",
@@ -2418,11 +2421,11 @@
       "description": "The hardware will enable the SkyFall mission’s trio of planetary rotorcraft to use ground-penetrating radar to study the Martian subsurface.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (52.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (52.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (52.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (52.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (52.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (52.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__0d7b15ca87d10001",
@@ -2439,16 +2442,16 @@
       "mission": "Voyager",
       "publishedAtSource": "2026-08-04T23:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 54.08793284722222,
+      "sourceAgeDays": 54.53022702546296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "0ca26abb1645cd9c11481cdc5db15e614e40c946d87a6a32f96d6e2dd312481f",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-engineers-help-prolong-voyager-2s-science-mission",
@@ -2462,11 +2465,11 @@
       "description": "By switching off certain powered devices and substituting them with lower-powered alternatives, the team has been able to avoid turning off more science instruments.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (54.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (54.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (54.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (54.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (54.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (54.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__1259072cce3989e7",
@@ -2483,16 +2486,16 @@
       "mission": null,
       "publishedAtSource": "2026-07-29T22:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 60.12959951388889,
+      "sourceAgeDays": 60.57189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "fd5daa193a2702336bbecf3698e3299115b337a9fa348a6448430536aeb0f7f9",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-awards-2026-innovative-technology-concepts",
@@ -2506,11 +2509,11 @@
       "description": "JPL is leading three of the 18 visionary concepts awarded funding by an innovation incubator program at NASA.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (60.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (60.6 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (60.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (60.6 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (60.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (60.6 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f9584b45eed431a3",
@@ -2527,16 +2530,16 @@
       "mission": null,
       "publishedAtSource": "2026-07-20T22:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 69.10876618055556,
+      "sourceAgeDays": 69.55106035879629,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f88dcb8158048d8369b9d3f5be703c0d352f0c1e93fae5e9494577862e41d266",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-earth-missions-gear-up-to-start-science-flights",
@@ -2550,11 +2553,11 @@
       "description": "The first of six new venture-class missions will hit the skies this summer to chase dangerous and little understood pyrocumulonimbus storms out West.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (69.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (69.6 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (69.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (69.6 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (69.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (69.6 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__b7d22065e2d8131e",
@@ -2571,16 +2574,16 @@
       "mission": "Psyche",
       "publishedAtSource": "2026-07-17T17:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 72.31709951388889,
+      "sourceAgeDays": 72.75939369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "ad94cb3ad7cbe3d5722f20af46d9cac80593a4add4e5face9b75caee953580c7",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-delivers-mars-flyby-data-time-lapse-video",
@@ -2594,11 +2597,11 @@
       "description": "The spacecraft aced its encounter with Mars. Now mission scientists are studying a trove of data from the flyby in preparation for its arrival at asteroid Psyche in 2029.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (72.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (72.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (72.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (72.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (72.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (72.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__7c674ee3644e0871",
@@ -2615,16 +2618,16 @@
       "mission": null,
       "publishedAtSource": "2026-07-16T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 73.25459951388889,
+      "sourceAgeDays": 73.69689369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "56a3687b78dc2a502cdb9e69c87f85790a2ee5010ad0bb551574c40c04f0505a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-finds-near-earth-asteroid-is-actually-comet",
@@ -2638,11 +2641,11 @@
       "description": "The object looks like an asteroid but moves like a comet, so astronomers used some of the most powerful observatories on the planet to confirm its identity.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (73.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (73.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (73.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (73.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (73.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (73.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__674af8bfcd30b4a8",
@@ -2659,16 +2662,16 @@
       "mission": null,
       "publishedAtSource": "2026-07-09T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 80.37959951388889,
+      "sourceAgeDays": 80.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "a0aabb6de77e1b0e94f6b260cc1896593b4d6338b0b588328f92fd79b26cbde2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-scientists-take-to-air-and-space-to-study-arctic-sea-ice",
@@ -2682,11 +2685,11 @@
       "description": "Collecting data by plane, satellite, and on the ground, researchers are improving measurements of Arctic sea ice to better understand how the system is evolving over time.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (80.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (80.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (80.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (80.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (80.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (80.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__816e99b2c0ee1d69",
@@ -2703,16 +2706,16 @@
       "mission": null,
       "publishedAtSource": "2026-06-18T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 101.29626618055556,
+      "sourceAgeDays": 101.73856035879629,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f33bfb8ef692d40c163546851338e29ef9489d35fcdd577b418cf4a344d24240",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers",
@@ -2726,11 +2729,11 @@
       "description": "A prototype rover built with a new design for tackling rugged terrain is helping teams refine capabilities that could one day be used on future lunar and Red Planet missions.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (101.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (101.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (101.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (101.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (101.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (101.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__22f7ca62623b6514",
@@ -2747,16 +2750,16 @@
       "mission": null,
       "publishedAtSource": "2026-06-16T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 103.33793284722222,
+      "sourceAgeDays": 103.78022702546296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "990bbec9792e0578ca5acc5044d478004912c8368e58c6a39abaa56c86314582",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-quantum-lab-aboard-space-station-gets-chilly-upgrade",
@@ -2770,11 +2773,11 @@
       "description": "Upgraded hardware will allow the Cold Atom Lab to set new records in quantum physics and help develop new technologies.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (103.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (103.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (103.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (103.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (103.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (103.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__fdf87d21e58703cf",
@@ -2791,16 +2794,16 @@
       "mission": null,
       "publishedAtSource": "2026-06-16T00:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 104.04626618055556,
+      "sourceAgeDays": 104.48856035879629,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "254447cfbf56205dbe6b9fe00081e75346a180aac2ec35818abc071982a07afe",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/explore-jpl-to-take-place-oct-10-11",
@@ -2814,11 +2817,11 @@
       "description": "NASA’s leading center for the robotic exploration of the universe is opening its doors for a two-day event. Tickets, available in late August, will go fast.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (104.0 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (104.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (104.0 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (104.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (104.0 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (104.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__3a7545db98c19409",
@@ -2835,16 +2838,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-27T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 123.42126618055556,
+      "sourceAgeDays": 123.86356035879629,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "46fcb9aa0511f568c8b2a1fa647a2448319c25f38834df1c645de727af4c1355",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-sea-level-mission-homes-in-on-el-nino",
@@ -2858,11 +2861,11 @@
       "description": "Waves of higher, warmer water move eastward across the Pacific Ocean a few months before an El Niño emerges. Several have shown up in 2026 satellite data.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (123.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (123.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (123.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (123.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (123.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (123.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__4e79442eeba3d40c",
@@ -2879,16 +2882,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-22T14:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 128.44209951388888,
+      "sourceAgeDays": 128.88439369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "5afe3dc8a8c3ec3bf036b7974edb252b5b861959e0816717d5667259009d39d7",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-prime-contract-update",
@@ -2902,11 +2905,11 @@
       "description": "Caltech President Thomas F. Rosenbaum along with Caltech Vice President and JPL Director Dave Gallagher issued the following memo to the Caltech and Jet Propulsion Laboratory community.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (128.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (128.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (128.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (128.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (128.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (128.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__69ffdbd62b482caa",
@@ -2923,16 +2926,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-20T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 130.29626618055556,
+      "sourceAgeDays": 130.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "735e877f9620e23ae3a8fdcf0bedb4686fd4490ec8af726c2a34b51cec0162df",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-developed-ai-could-help-track-harmful-algae",
@@ -2946,11 +2949,11 @@
       "description": "By fusing data from different space missions, AI could someday support ‘maps without gaps’ when it comes to noxious blooms.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (130.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (130.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (130.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (130.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (130.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (130.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__54c974018947fae0",
@@ -2967,16 +2970,16 @@
       "mission": "Psyche",
       "publishedAtSource": "2026-05-19T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 131.25459951388888,
+      "sourceAgeDays": 131.69689369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c4747c9098d52575354dfa1ae1d965b3eeab02bd811c5dd9e916f62c21e75efc",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid",
@@ -2990,11 +2993,11 @@
       "description": "The successful flyby of Mars on May 15 provided the mission team with a valuable practice run ahead of the spacecraft’s arrival at the mysterious asteroid Psyche in 2029.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (131.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (131.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (131.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (131.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (131.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (131.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__5dee954bd86db9fc",
@@ -3011,16 +3014,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 138.42126618055556,
+      "sourceAgeDays": 138.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "130d1fe8cd0fbe934ba059036838573789bdb09f535fee655c4f7354e234a24f",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/hello-universe-nasas-next-gen-space-processor-undergoes-testing",
@@ -3034,11 +3037,11 @@
       "description": "As part of a commercial partnership, the project is developing a sophisticated chip that will give spacecraft the processing capabilities to think for themselves.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (138.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (138.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (138.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (138.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (138.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (138.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__4b83c05151c1d5b9",
@@ -3055,16 +3058,16 @@
       "mission": "Psyche",
       "publishedAtSource": "2026-05-08T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 142.29626618055556,
+      "sourceAgeDays": 142.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "ae9c0c75969e8ed32b2111fdba3d6b3153b30ab2bf87eb34a760eb5ad2ab29ec",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-to-fly-by-mars-for-gravity-assist",
@@ -3078,11 +3081,11 @@
       "description": "The spacecraft is using the Red Planet’s gravity to increase speed and tilt its trajectory on the journey to the metal-rich asteroid Psyche.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (142.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (142.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (142.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (142.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (142.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (142.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__7b1a04d4c5b5b8ef",
@@ -3099,16 +3102,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-07T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 143.33793284722222,
+      "sourceAgeDays": 143.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "894afe6a30c735a76e3b808073d6a21942d3e563df5719208166fff5556b7733",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-pushes-next-gen-mars-helicopter-rotor-blades-past-mach-1",
@@ -3122,11 +3125,11 @@
       "description": "The faster a Mars helicopter’s rotors spin, the heavier the payloads it can transport and the farther it can fly.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (143.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (143.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (143.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (143.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (143.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (143.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__6247624c61a09523",
@@ -3143,16 +3146,16 @@
       "mission": null,
       "publishedAtSource": "2026-05-05T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 145.37959951388888,
+      "sourceAgeDays": 145.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "91527ca338eaebb55b6c74b96072c772e3411713558391ad5cd45945b7d49b2d",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-next-gen-near-earth-asteroid-space-telescope-takes-shape",
@@ -3166,11 +3169,11 @@
       "description": "A team of engineers and scientists are building NEO Surveyor to seek out the hardest-to-find asteroids and comets that could impact Earth.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (145.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (145.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (145.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (145.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (145.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (145.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__97652491fa9af0fa",
@@ -3187,16 +3190,16 @@
       "mission": "NISAR",
       "publishedAtSource": "2026-04-29T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 151.21293284722222,
+      "sourceAgeDays": 151.65522702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c1f6f3c9ef2a92e3e43c102d3e915fc130bea4e2103e7e2f349004c61c33c735",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-indian-space-mission-maps-extreme-subsidence-in-mexico-city",
@@ -3210,11 +3213,11 @@
       "description": "The NISAR satellite pinpointed areas of the city that are sinking by more than half an inch per month due in large part to groundwater pumping.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (151.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (151.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (151.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (151.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (151.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (151.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__51a93a1058f3340b",
@@ -3231,16 +3234,16 @@
       "mission": null,
       "publishedAtSource": "2026-04-28T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 152.37959951388888,
+      "sourceAgeDays": 152.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "09a5b41229b4c90959de24f8296b0a982c345349a3141ece9391651426a2091e",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-fires-up-powerful-lithium-fed-thruster-for-trips-to-mars",
@@ -3254,11 +3257,11 @@
       "description": "A novel electromagnetic thruster passed an initial test in a specialized chamber at JPL. With further development, these thrusters could support human missions to the Red Planet.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (152.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (152.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (152.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (152.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (152.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (152.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__8a122ef5d54384ea",
@@ -3275,16 +3278,16 @@
       "mission": "Curiosity",
       "publishedAtSource": "2026-04-21T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 159.42126618055556,
+      "sourceAgeDays": 159.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "de9856c48349daefc378689b1580e5db3643c28722c6c9c68961e7d6435700a5",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-finds-organic-molecules-never-seen-before-on-mars",
@@ -3298,11 +3301,11 @@
       "description": "Seven organic molecules were identified for the first time on Mars, increasing our understanding of the kinds of molecular preservation possible on the Martian surface.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (159.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (159.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (159.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (159.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (159.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (159.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__e64d4b3f6cc5ba93",
@@ -3319,16 +3322,16 @@
       "mission": "Voyager",
       "publishedAtSource": "2026-04-17T21:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 163.17126618055556,
+      "sourceAgeDays": 163.6135603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "adcd56f27dc0ad455314a26825c8d82da56886a2c2d10a12365e903a7abf4fca",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating",
@@ -3342,11 +3345,11 @@
       "description": "To conserve power, engineers at NASA’s Jet Propulsion Laboratory needed to turn off one of the science instruments on the most distant spacecraft ever built.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (163.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (163.6 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (163.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (163.6 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (163.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (163.6 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__65c4364f3953654f",
@@ -3363,16 +3366,16 @@
       "mission": null,
       "publishedAtSource": "2026-04-15T15:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 165.42126618055556,
+      "sourceAgeDays": 165.8635603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "ee03a0beeb812ccf7c86cc082a71d725cc9adcd748786bd59665ee36de54adde",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/interstellar-glaciers-nasas-spherex-maps-vast-galactic-ice-regions",
@@ -3386,11 +3389,11 @@
       "description": "The water, carbon dioxide, and carbon monoxide ices are attached to the surface of tiny dust particles in clouds spanning hundreds of light-years across.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (165.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (165.9 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (165.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (165.9 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (165.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (165.9 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__17e8c8754ba6eb9a",
@@ -3407,16 +3410,16 @@
       "mission": null,
       "publishedAtSource": "2026-03-26T23:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 185.08793284722222,
+      "sourceAgeDays": 185.53022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "e8f54df8b363da0ba4b5ca78383417784a038bf77e7755c0fc9720fd27d23c3d",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-unveils-initiatives-to-achieve-americas-national-space-policy",
@@ -3430,11 +3433,11 @@
       "description": "JPL will help support several of the agency’s initiatives to advance the nation’s leadership in space.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (185.1 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (185.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (185.1 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (185.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (185.1 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (185.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__36d35abf8885f9a7",
@@ -3451,16 +3454,16 @@
       "mission": null,
       "publishedAtSource": "2026-03-26T00:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 186.04626618055556,
+      "sourceAgeDays": 186.4885603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "9b233737822cb618db5d31b176176e2919cc3b1474b444bb8069e8783615f397",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-research-proposes-technology-to-seek-earth-like-exoplanets",
@@ -3474,11 +3477,11 @@
       "description": "The Hybrid Observatory for Earth-like Exoplanets concept combines an orbiting starshade with a large ground-based telescope to image planets outside our solar system.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (186.0 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (186.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (186.0 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (186.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (186.0 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (186.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__7455a7cdd3e04dd8",
@@ -3495,16 +3498,16 @@
       "mission": null,
       "publishedAtSource": "2026-03-23T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 188.29626618055556,
+      "sourceAgeDays": 188.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "e4c0c249fbf7b49a975ec49062f78ca43fe169da8a45b8af116facf9bb238005",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/see-nasas-guardian-catch-a-tsunami",
@@ -3518,11 +3521,11 @@
       "description": "A new animation breaks down how JPL’s AI-supported hazard scout gets the drop on the ocean’s biggest waves.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (188.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (188.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (188.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (188.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (188.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (188.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__070835b854343be2",
@@ -3539,16 +3542,16 @@
       "mission": "DART",
       "publishedAtSource": "2026-03-06T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 205.25459951388888,
+      "sourceAgeDays": 205.69689369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "d701c97c0142ac9bc0e89e9f5f83e04a9cbd8e42ad8fd1d4bd5991e6f6790ff1",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun",
@@ -3562,11 +3565,11 @@
       "description": "The spacecraft changed the binary system’s orbit, confirming that a kinetic impactor can be an effective planetary defense technique for deflecting a near-Earth object.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (205.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (205.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (205.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (205.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (205.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (205.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__4f582653e655da30",
@@ -3583,16 +3586,16 @@
       "mission": "SWOT",
       "publishedAtSource": "2026-03-04T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 207.37959951388888,
+      "sourceAgeDays": 207.82189369212963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "244b04e115b10643a1a1fd3a52fb44727d150c7f09c8005bac6f9e92c863ad32",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/us-french-satellite-takes-stock-of-worlds-river-water",
@@ -3606,11 +3609,11 @@
       "description": "Rivers rise and fall throughout the year, but by how much? Perhaps less than previously thought, according to new data from the SWOT mission. Hidden riverbed contours are also emerging.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (207.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (207.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (207.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (207.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (207.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (207.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__83eec270270fb984",
@@ -3627,16 +3630,16 @@
       "mission": "Curiosity",
       "publishedAtSource": "2026-02-23T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 216.33793284722222,
+      "sourceAgeDays": 216.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "395d6b86c1781c90236cfc7cf66d7bcd51441eb8f226bd7f39875a3ac197cbc3",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-rover-sees-martian-spiderwebs-up-close",
@@ -3650,11 +3653,11 @@
       "description": "A hilly landscape that looks like spiderwebs when viewed from orbit holds clues to the history of water on ancient Mars.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (216.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (216.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (216.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (216.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (216.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (216.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__e660086226b3e79b",
@@ -3671,16 +3674,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2026-02-18T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 221.33793284722222,
+      "sourceAgeDays": 221.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "b7402c1d2ef8e2b94ac49be6fa8abb4e5b012c8d0a2a0cba4b0f3e37a7a15b50",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-now-autonomously-pinpoints-its-location-on-mars",
@@ -3694,11 +3697,11 @@
       "description": "There is no GPS at the Red Planet, but a new technology called Mars Global Localization lets Perseverance determine precisely where it is — without human help.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (221.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (221.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (221.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (221.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (221.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (221.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__d4a1667d6860260f",
@@ -3715,16 +3718,16 @@
       "mission": null,
       "publishedAtSource": "2026-02-12T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 227.29626618055556,
+      "sourceAgeDays": 227.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "44f24fc80d679abd18430fb44b81fb1be72d751c442c2a3ded3a1b4a16dfd411",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/archival-data-from-nasas-neowise-tracks-star-turning-into-black-hole",
@@ -3738,11 +3741,11 @@
       "description": "Researchers used data from the now-retired spacecraft and other space and ground-based observatories helped to piece together the mystery of a ‘failed’ supernova.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (227.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (227.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (227.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (227.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (227.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (227.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__aaf2aeeb8bb93dd6",
@@ -3759,16 +3762,16 @@
       "mission": null,
       "publishedAtSource": "2026-01-29T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 241.33793284722222,
+      "sourceAgeDays": 241.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "e4c0c496b2bf6c0039179b951d21bbc75b65166d88b6aded526f7ddc4447cd85",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-la-nina-limited-sea-level-rise-in-2025",
@@ -3782,11 +3785,11 @@
       "description": "A mild La Niña caused greater rainfall over the Amazon basin, which offset rising sea levels due to record warming of Earth’s oceans.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (241.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (241.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (241.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (241.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (241.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (241.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__c7a94f63ab7d2215",
@@ -3803,16 +3806,16 @@
       "mission": "Artemis",
       "publishedAtSource": "2026-01-28T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 242.21293284722222,
+      "sourceAgeDays": 242.65522702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "7a80035e14cb0b79ffe538a3449c4764e30a3af8643adb0827cef71f729f3986",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/networks-keeping-nasas-artemis-ii-mission-connected",
@@ -3826,11 +3829,11 @@
       "description": "Artemis missions rely on both the Near Space Network, managed by NASA Goddard, and the Deep Space Network, managed by the Jet Propulsion Laboratory.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (242.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (242.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (242.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (242.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (242.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (242.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__d0ec9663bfacd902",
@@ -3847,16 +3850,16 @@
       "mission": null,
       "publishedAtSource": "2026-01-26T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 244.33793284722222,
+      "sourceAgeDays": 244.78022702546295,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "22e77a6876a07f581af205bacd4ab59d6bd70cfee58ad986d194e294825d1d39",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/how-nasa-is-homing-in-from-space-on-ocean-debris",
@@ -3870,11 +3873,11 @@
       "description": "Space-based technology could help track plastic and other flotsam by its ‘fingerprints.’",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (244.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (244.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (244.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (244.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (244.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (244.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__eaf96b1f3a004357",
@@ -3891,16 +3894,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-18T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 283.33793284722225,
+      "sourceAgeDays": 283.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "567092e51405704b682afa6b6c2a12749fd6c03af4207274b1136546cf81091c",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-spherex-observatory-completes-first-cosmic-map-like-no-other",
@@ -3914,11 +3917,11 @@
       "description": "The telescope will help scientists answer big-picture questions about everything from water deposits in the Milky Way to what happened in the first second after the big bang.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (283.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (283.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (283.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (283.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (283.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (283.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__55407f2ab9b44dd2",
@@ -3935,16 +3938,16 @@
       "mission": "Cassini",
       "publishedAtSource": "2025-12-17T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 284.3795995138889,
+      "sourceAgeDays": 284.8218936921296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "767c76605dc0a49019b324b3dd4b433da9275a9ff262c4113853dd06ee8aac2e",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-suggests-saturns-moon-titan-may-not-have-global-ocean",
@@ -3958,11 +3961,11 @@
       "description": "Reanalysis of data from NASA’s Cassini mission has revealed Saturn’s moon may instead have layers of slush with isolated pockets of liquid water.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (284.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (284.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (284.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (284.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (284.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (284.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__c7fbd38439d28180",
@@ -3979,16 +3982,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-17T04:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 284.8795995138889,
+      "sourceAgeDays": 285.3218936921296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "f23488da3833d49d87c247abae02bed894eaac6fe229869a45fc413153f3ccb1",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/one-of-nasas-key-cameras-orbiting-mars-takes-100000th-image",
@@ -4002,11 +4005,11 @@
       "description": "Mesas and dunes stand out in the view snapped by HiRISE, one of the imagers aboard the agency’s Mars Reconnaissance Orbiter.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (284.9 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (285.3 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (284.9 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (285.3 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (284.9 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (285.3 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__1b88f83794205750",
@@ -4023,16 +4026,16 @@
       "mission": "Curiosity",
       "publishedAtSource": "2025-12-15T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 286.33793284722225,
+      "sourceAgeDays": 286.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "4fd3cc803203a66c927b3dcebd12156627fc80c32b81339238ff732e660cfa60",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-curiosity-named-in-times-best-inventions-hall-of-fame",
@@ -4046,11 +4049,11 @@
       "description": "The most powerful space telescope ever built and the car-size roving science lab on Mars are among 25 of the most iconic inventions the magazine has covered in the past quarter century.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (286.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (286.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (286.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (286.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (286.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (286.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__224456b0ab8f7be7",
@@ -4067,16 +4070,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-11T00:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 291.04626618055556,
+      "sourceAgeDays": 291.4885603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c08f9b49e1cd88719e51f858d0373a220c43a6c4f531ef70b2a3d7a79b2aaf5a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-unveils-rover-operations-center-for-moon-mars-missions",
@@ -4090,11 +4093,11 @@
       "description": "The center leverages AI along with JPL’s unique infrastructure, unrivaled tools, and years of operations expertise to support industry partners developing future planetary surface missions.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (291.0 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (291.5 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (291.0 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (291.5 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (291.0 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (291.5 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__1a86089f41691c5b",
@@ -4111,16 +4114,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-09T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 292.33793284722225,
+      "sourceAgeDays": 292.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "0cb0342b0401754da4253b6f1d38ba177d22feabf304a12a5070f986c553c0ce",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-sensor-goes-hunting-for-critical-minerals",
@@ -4134,11 +4137,11 @@
       "description": "Called AVIRIS-5, it’s the latest in a long line of sensors pioneered by NASA JPL to survey Earth, the Moon, and other worlds.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (292.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (292.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (292.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (292.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (292.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (292.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__d53276fa7c15a6c7",
@@ -4155,16 +4158,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-06T02:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 295.96293284722225,
+      "sourceAgeDays": 296.405227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "b2478fd52024c434b280a2f2ae7145efa7eff4ef5d8f5a91eb7d2fa27b5bef2a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/invention-challenge-brings-student-engineers-to-nasa-jpl",
@@ -4199,16 +4202,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2025-12-03T16:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 298.35876618055556,
+      "sourceAgeDays": 298.8010603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "955d3a4a3bff9b9f503fea19367299c8088318a61c59631a93b57d2a06ea60e5",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-rover-detects-electric-sparks-in-mars-dust-devils-storms",
@@ -4222,11 +4225,11 @@
       "description": "Perseverance confirmed a long-suspected phenomenon in which electrical discharges and their associated shock waves can be born within Red Planet mini-twisters.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (298.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (298.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (298.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (298.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (298.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (298.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__e67f42e08340377c",
@@ -4243,16 +4246,16 @@
       "mission": null,
       "publishedAtSource": "2025-12-02T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 299.33793284722225,
+      "sourceAgeDays": 299.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "2019bd64f44ab04a8a70b0764bc4104d54927253f5d14acee652ba3d9cb368d4",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-drones-in-death-valley-preps-for-martian-sands-and-skies",
@@ -4266,11 +4269,11 @@
       "description": "Next-generation drone flight software is just one of 25 technologies for the Red Planet that the space agency funded for development this year.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (299.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (299.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (299.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (299.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (299.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (299.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__e57e35f20053e251",
@@ -4287,16 +4290,16 @@
       "mission": null,
       "publishedAtSource": "2025-11-20T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 311.33793284722225,
+      "sourceAgeDays": 311.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "8c675b22434f947a91e1000aaba5499111a5d15c251ed588ff3ff41bf6dcbf7f",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-aerospace-corporation-study-sharpens-focus-on-ammonia-emissions",
@@ -4310,11 +4313,11 @@
       "description": "The pungent gas contributes to fine airborne particulate pollution, which endangers human health when inhaled and absorbed in the bloodstream.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (311.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (311.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (311.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (311.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (311.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (311.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__7ac1028edb5c57db",
@@ -4331,16 +4334,16 @@
       "mission": "Cassini",
       "publishedAtSource": "2025-11-18T16:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 313.3795995138889,
+      "sourceAgeDays": 313.8218936921296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "9ece3e3fd3334e0c25975bb627cd989d6e00421705de53dfad1ebb83149832d4",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-cassini-study-finds-organics-fresh-from-ocean-of-enceladus",
@@ -4354,11 +4357,11 @@
       "description": "Researchers dove deep into information gathered from the ice grains that were collected during a close and super-fast flyby through a plume of Saturn’s icy moon.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (313.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (313.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (313.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (313.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (313.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (313.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f291fc726e7856da",
@@ -4375,16 +4378,16 @@
       "mission": null,
       "publishedAtSource": "2025-10-13T17:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 349.33793284722225,
+      "sourceAgeDays": 349.780227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c4e84577998693bdec7f8ec01dbd750155140c6e4d64d1e82a3367b115da9783",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-workforce--update",
@@ -4398,11 +4401,11 @@
       "description": "A message from JPL Director Dave Gallagher",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (349.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (349.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (349.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (349.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (349.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (349.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__6ddfbbac779779d4",
@@ -4419,16 +4422,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-18T20:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 374.21293284722225,
+      "sourceAgeDays": 374.655227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "9f9360313172e89a59649ef655ece678d05974465dc1d0e5be53147933f49df2",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-deep-space-communications-demo-exceeds-project-expectations",
@@ -4442,11 +4445,11 @@
       "description": "The project has exceeded all of its technical goals after two years, setting up the foundations of high-speed communications for NASA’s future human missions to Mars.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (374.2 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (374.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (374.2 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (374.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (374.2 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (374.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__1e1e520f2007d7cf",
@@ -4463,16 +4466,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-15T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 377.29626618055556,
+      "sourceAgeDays": 377.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "10653061c6b94d53fb6c5f3f333afef48e84d75645789a02b2a7238e2da3a6b3",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-suns-activity-ramping-up",
@@ -4486,11 +4489,11 @@
       "description": "It looked like the Sun was heading toward a historic lull in activity. That trend flipped in 2008, according to new research.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (377.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (377.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (377.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (377.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (377.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (377.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__bf54383ddbcf76fb",
@@ -4507,16 +4510,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-12T15:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 380.40043284722225,
+      "sourceAgeDays": 380.842727025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "128757b127064463427a5ec4e7a364aca7554c52b75f29fd3d6ba7b249fa6e0c",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-guardian-tsunami-detection-tech-catches-wave-in-real-time",
@@ -4530,11 +4533,11 @@
       "description": "A massive earthquake and subsequent tsunami off Russia in late July tested an experimental detection system that had deployed a critical component just the day before.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (380.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (380.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (380.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (380.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (380.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (380.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__f23172dc5ca2c28c",
@@ -4551,16 +4554,16 @@
       "mission": "Sentinel",
       "publishedAtSource": "2025-09-11T17:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 381.3170995138889,
+      "sourceAgeDays": 381.7593936921296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "3d993d946421ef15544721937231bd077e2937cc8af816715360bb02b643109a",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/new-us-european-sea-level-satellite-will-help-safeguard-ships-at-sea",
@@ -4574,11 +4577,11 @@
       "description": "Sea surface height data from the Sentinel-6B satellite, led by NASA and ESA, will help with the development of marine weather forecasts, alerting ships to possible dangers.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (381.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (381.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (381.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (381.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (381.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (381.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "science__4852beda429e55c2",
@@ -4597,16 +4600,16 @@
       "mission": "Perseverance",
       "publishedAtSource": "2025-09-08T21:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 382.46293284722225,
+      "sourceAgeDays": 382.905227025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 2,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "918974952b8c01eeea949699a79470cd945c43205621aad98969672f5377d6b4",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover--finding",
@@ -4641,16 +4644,16 @@
       "mission": null,
       "publishedAtSource": "2025-09-09T15:30:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 383.40043284722225,
+      "sourceAgeDays": 383.842727025463,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "4d2ae96167fdc70bd0b6e7999a784c2c1b4c11f2ba04361b51f13eefeeacc564",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-celestial-accident-sheds-light-on-jupiter-saturn-riddle",
@@ -4664,11 +4667,11 @@
       "description": "An unusual cosmic object is helping scientists better understand the chemistry hidden deep in Jupiter and Saturn’s atmospheres — and potentially those of exoplanets.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (383.4 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (383.8 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (383.4 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (383.8 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (383.4 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (383.8 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__95dac49d9489942c",
@@ -4685,16 +4688,16 @@
       "mission": null,
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 403.29626618055556,
+      "sourceAgeDays": 403.7385603587963,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "c7b77fc2f3f29452585bf52821f2b88716bceaa69bbd2587a660ba266ef77771",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-ceres-may-have-had-long-standing-energy-to-fuel-habitability",
@@ -4708,11 +4711,11 @@
       "description": "The dwarf planet is cold now, but new research paints a picture of Ceres hosting a deep, long-lived energy source that may have maintained habitable conditions in the past.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (403.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (403.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (403.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (403.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (403.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (403.7 days old, >30 days) — not eligible during initial launch phase"
     },
     {
       "scienceStoryKey": "jpl__9fcd1f9e921189f9",
@@ -4729,16 +4732,16 @@
       "mission": null,
       "publishedAtSource": "2025-08-19T19:00:00.000Z",
       "freshnessStatus": "archive",
-      "sourceAgeDays": 404.2545995138889,
+      "sourceAgeDays": 404.6968936921296,
       "bootstrapSeen": true,
       "storyScore": 20,
       "publishEligible": false,
       "priority": null,
       "recordCount": 1,
       "storyStatus": "unchanged",
-      "updateCount": 3,
+      "updateCount": 4,
       "firstSeenAt": "2026-09-28T01:04:07.858Z",
-      "latestSeenAt": "2026-09-28T01:06:37.560Z",
+      "latestSeenAt": "2026-09-28T11:43:31.794Z",
       "contentSignature": "3c98d77866739f0e8a8962272414b8c829a1932724cd97651911008b95e52da5",
       "severity": null,
       "sourceUrl": "https://www.jpl.nasa.gov/news/joint-caltech-jpl-earth-lunar-science-astrophysics-projects-funded",
@@ -4752,11 +4755,11 @@
       "description": "Co-led by Caltech and JPL, these projects are the first to be selected through the Brinson Exploration Hub, which was established at Caltech in 2024.",
       "eligibilityReasons": [],
       "exclusionReasons": [
-        "archive story (404.3 days old, >30 days) — not eligible during initial launch phase"
+        "archive story (404.7 days old, >30 days) — not eligible during initial launch phase"
       ],
-      "selectedReason": "archive story (404.3 days old, >30 days) — not eligible during initial launch phase",
+      "selectedReason": "archive story (404.7 days old, >30 days) — not eligible during initial launch phase",
       "eligibilityReason": null,
-      "exclusionReason": "archive story (404.3 days old, >30 days) — not eligible during initial launch phase"
+      "exclusionReason": "archive story (404.7 days old, >30 days) — not eligible during initial launch phase"
     }
   ]
 }
