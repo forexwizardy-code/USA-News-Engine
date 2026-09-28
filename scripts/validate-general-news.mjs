@@ -190,10 +190,29 @@ async function main() {
   check('G14', `Preview drafts use factual-graphic-fallback + private claim audit (${draftsOk} drafts)`, stolenImages === 0,
     stolenImages ? `${stolenImages} draft(s) with non-fallback image or missing private claim audit` : '');
 
-  // Phase 10A.2.2 — no more than 2 review previews from same publisher family
-  const overConcentrated = Object.entries(draftFamilyCount).filter(([_, n]) => n > 2);
+  // Phase 10A.2.2 — no more than 2 review previews from same publisher family.
+  // Phase 10A.2.3: exclude drafts that correspond to published articles (those
+  // are production drafts, not review previews).
+  const publishedRegRes = await loadJsonOptional(join(PROJECT_DIR, 'data', 'published-general-news.json'));
+  const publishedSlugs = new Set();
+  if (publishedRegRes.ok && Array.isArray(publishedRegRes.doc.stories)) {
+    for (const s of publishedRegRes.doc.stories) {
+      if (s.slug) publishedSlugs.add(s.slug);
+    }
+  }
+  const previewDraftFamilyCount = {};
+  for (const f of draftFiles) {
+    try {
+      const d = JSON.parse(await readFile(join(draftsDir, f), 'utf8'));
+      // Skip drafts that correspond to published articles
+      if (publishedSlugs.has(d.slug)) continue;
+      const fam = d.primarySource?.publisherFamily || d.primarySource?.name || 'unknown';
+      previewDraftFamilyCount[fam] = (previewDraftFamilyCount[fam] || 0) + 1;
+    } catch {}
+  }
+  const overConcentrated = Object.entries(previewDraftFamilyCount).filter(([_, n]) => n > 2);
   check('G25', 'No more than 2 review previews from same publisher family', overConcentrated.length === 0,
-    overConcentrated.length ? `over-concentrated: ${overConcentrated.map(([f, n]) => `${f}=${n}`).join(', ')}` : `families: ${Object.entries(draftFamilyCount).map(([f,n])=>`${f}=${n}`).join(', ')}`);
+    overConcentrated.length ? `over-concentrated: ${overConcentrated.map(([f, n]) => `${f}=${n}`).join(', ')}` : `families: ${Object.entries(previewDraftFamilyCount).map(([f,n])=>`${f}=${n}`).join(', ')}`);
 
   // Phase 10A.2.1 — Sports preview must not exist without a real Sports candidate
   let sportsEligibleCount = 0;

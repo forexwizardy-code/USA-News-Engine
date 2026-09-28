@@ -47,7 +47,10 @@ function runNpm(script, label) {
     execSync(`npm run ${script}`, { cwd: PROJECT_DIR, stdio: 'pipe' });
   } catch (err) {
     const stderr = err.stderr?.toString?.() || '';
-    throw new Error(`${label} failed.\n-- stderr --\n${stderr.slice(0, 800)}`);
+    const stdout = err.stdout?.toString?.() || '';
+    // Print the validation output so we can see which check failed
+    const failLines = stdout.split('\n').filter((l) => /FAIL/i.test(l)).join('\n');
+    throw new Error(`${label} failed.\n-- FAIL lines --\n${failLines.slice(0, 800)}\n-- stderr --\n${stderr.slice(0, 400)}`);
   }
 }
 
