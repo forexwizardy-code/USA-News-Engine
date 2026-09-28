@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T21:28:07.879Z",
-  "imageCount": 5,
+  "generatedAt": "2026-09-28T13:49:22.940Z",
+  "imageCount": 6,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -34,7 +34,8 @@
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:29:26.533Z",
       "storiesUsingImage": [
-        "flood-warning__lake-fl__2026-09-27"
+        "flood-warning__lake-fl__2026-09-27",
+        "flood-warning__lake-fl__2026-09-28"
       ]
     },
     "https://upload.wikimedia.org/wikipedia/commons/4/44/076_Des_Plaines_%288674463155%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
@@ -48,6 +49,19 @@
       "firstUsedAt": "2026-09-27T19:29:26.531Z",
       "storiesUsingImage": [
         "flood-warning__lake-il__2026-09-27"
+      ]
+    },
+    "https://upload.wikimedia.org/wikipedia/commons/f/f7/075_Des_Plaines_%288675568972%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A075%20Des%20Plaines%20(8675568972).jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/075_Des_Plaines_%288675568972%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "creator": "LakeCountyIL",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceOrganization": "Lake County, Illinois (LakeCountyIL)",
+      "imageRelation": "exact-location",
+      "firstUsedAt": "2026-09-28T13:49:20.385Z",
+      "storiesUsingImage": [
+        "flood-warning__lake-il__2026-09-28"
       ]
     },
     "https://upload.wikimedia.org/wikipedia/commons/2/2c/High_tide%2C_high_wind%2C_high_noon_-_geograph.org.uk_-_3797576.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {

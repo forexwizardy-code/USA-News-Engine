@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T21:28:07.832Z",
-  "storyCount": 8,
+  "generatedAt": "2026-09-28T13:49:22.892Z",
+  "storyCount": 18,
   "stories": [
     {
       "storyKey": "coastal-flood-warning__surry__2026-09-27",
@@ -21,7 +21,7 @@
       "lastNwsEffectiveAt": "2026-09-27T14:51:00-04:00",
       "lastNwsExpiresAt": "2026-09-27T17:00:00-04:00",
       "lastNwsEndsAt": "2026-09-27T17:00:00-04:00",
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/coastal-flood-warning-surry-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -38,21 +38,21 @@
       "publishedAt": "2026-09-27T19:30:10.564Z",
       "updatedAt": "2026-09-27T21:28:07.797Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.20b84f47df663e5a0012ffbf1cb49b64404c1d67.001.1",
-        "urn:oid:2.49.0.1.840.0.110b2d77e32aa712dc5d42f2a9d99cdf21eeaa76.001.1"
+        "urn:oid:2.49.0.1.840.0.9aff2bb2567508cec2ae041aedd0c9c5315639ad.001.1",
+        "urn:oid:2.49.0.1.840.0.cd86db9efdea5c7fc1556bc997149d091185bb51.001.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.20b84f47df663e5a0012ffbf1cb49b64404c1d67.001.1",
-        "urn:oid:2.49.0.1.840.0.110b2d77e32aa712dc5d42f2a9d99cdf21eeaa76.001.1"
+        "urn:oid:2.49.0.1.840.0.9aff2bb2567508cec2ae041aedd0c9c5315639ad.001.1",
+        "urn:oid:2.49.0.1.840.0.cd86db9efdea5c7fc1556bc997149d091185bb51.001.1"
       ],
       "event": "Flood Warning",
       "location": "Bristol County, Massachusetts",
       "sourceOffice": "NWS Boston/Norton MA",
-      "lifecycleStatus": "active",
+      "lifecycleStatus": "expired",
       "lastNwsEffectiveAt": "2026-09-27T11:53:00-04:00",
       "lastNwsExpiresAt": "2026-09-28T00:00:00-04:00",
       "lastNwsEndsAt": "2026-09-29T23:00:00-04:00",
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flood-warning-bristol-county-massachusetts-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -69,12 +69,12 @@
       "publishedAt": "2026-09-27T20:09:21.409Z",
       "updatedAt": "2026-09-27T20:18:50.356Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
       ],
       "event": "Flood Warning",
       "location": "IL",
@@ -83,7 +83,7 @@
       "lastNwsEffectiveAt": null,
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flood-warning-calhoun-county-illinois-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -100,10 +100,10 @@
       "publishedAt": "2026-09-27T20:09:25.257Z",
       "updatedAt": null,
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.db60aabc5e5fc05a360ce2fd38e8089e65219f4b.001.1"
+        "urn:oid:2.49.0.1.840.0.79aad7b0b8cf5f5cff8d248b6a17f1ddbe70d5f8.001.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.db60aabc5e5fc05a360ce2fd38e8089e65219f4b.001.1"
+        "urn:oid:2.49.0.1.840.0.79aad7b0b8cf5f5cff8d248b6a17f1ddbe70d5f8.001.1"
       ],
       "event": "Flood Warning",
       "location": "IA",
@@ -112,7 +112,7 @@
       "lastNwsEffectiveAt": null,
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flood-warning-clinton-county-iowa-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -129,19 +129,19 @@
       "publishedAt": "2026-09-27T19:29:26.533Z",
       "updatedAt": null,
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.d8bb493a8c1a50dd9be8df1abf45e5a21a72e262.001.1"
+        "urn:oid:2.49.0.1.840.0.5162f7516e072fa25d70b45089596b8a21b1dd81.001.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.d8bb493a8c1a50dd9be8df1abf45e5a21a72e262.001.1"
+        "urn:oid:2.49.0.1.840.0.5162f7516e072fa25d70b45089596b8a21b1dd81.001.1"
       ],
       "event": "Flood Warning",
       "location": "Lake County, Florida",
       "sourceOffice": "NWS Melbourne FL",
-      "lifecycleStatus": "active",
+      "lifecycleStatus": "expired",
       "lastNwsEffectiveAt": "2026-09-27T09:17:00-04:00",
       "lastNwsExpiresAt": "2026-09-27T23:15:00-04:00",
       "lastNwsEndsAt": null,
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "licensed-photo",
       "heroImageSource": "/images/flood-warning-lake-county-florida-september-27-2026-real.jpg",
       "heroImageRelation": "exact-location",
@@ -149,6 +149,35 @@
       "heroImageLicense": "CC BY-SA 3.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAstor%20FL%20St%20Johns%20river%20south01.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "flood-warning__lake-fl__2026-09-28",
+      "slug": "flood-warning-lake-county-florida-september-28-2026",
+      "articlePath": "src/content/articles/flood-warning-lake-county-florida-september-28-2026.md",
+      "publishedAt": "2026-09-28T13:49:22.860Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.5162f7516e072fa25d70b45089596b8a21b1dd81.001.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.5162f7516e072fa25d70b45089596b8a21b1dd81.001.1"
+      ],
+      "event": "Flood Warning",
+      "location": "Lake County, Florida",
+      "sourceOffice": "NWS Melbourne FL",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": "2026-09-28T09:13:00-04:00",
+      "lastNwsExpiresAt": "2026-09-28T23:00:00-04:00",
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/flood-warning-lake-county-florida-september-28-2026-real.jpg",
+      "heroImageRelation": "exact-location",
+      "heroImageCreator": "Ebyabe",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5162f7516e072fa25d70b45089596b8a21b1dd81.001.1",
       "breaking": true
     },
     {
@@ -158,21 +187,21 @@
       "publishedAt": "2026-09-27T19:29:26.531Z",
       "updatedAt": null,
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.001.1",
-        "urn:oid:2.49.0.1.840.0.6efc3f4a6f6c9132e07e564bedb6f2c0ab4e8141.002.1"
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
       ],
       "event": "Flood Warning",
       "location": "Lake County, Illinois",
       "sourceOffice": "NWS Chicago IL",
-      "lifecycleStatus": "active",
+      "lifecycleStatus": "expired",
       "lastNwsEffectiveAt": "2026-09-27T10:28:00-05:00",
       "lastNwsExpiresAt": "2026-09-28T04:30:00-05:00",
       "lastNwsEndsAt": "2026-09-28T16:00:00-05:00",
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "licensed-photo",
       "heroImageSource": "/images/flood-warning-lake-county-illinois-september-27-2026-real.jpg",
       "heroImageRelation": "exact-location",
@@ -180,6 +209,37 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A076%20Des%20Plaines%20(8674463155).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "flood-warning__lake-il__2026-09-28",
+      "slug": "flood-warning-lake-county-illinois-september-28-2026",
+      "articlePath": "src/content/articles/flood-warning-lake-county-illinois-september-28-2026.md",
+      "publishedAt": "2026-09-28T13:49:20.385Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Flood Warning",
+      "location": "Lake County, Illinois",
+      "sourceOffice": "NWS Chicago IL",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": "2026-09-28T08:37:00-05:00",
+      "lastNwsExpiresAt": "2026-09-28T19:00:00-05:00",
+      "lastNwsEndsAt": "2026-09-28T19:00:00-05:00",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/flood-warning-lake-county-illinois-september-28-2026-real.jpg",
+      "heroImageRelation": "exact-location",
+      "heroImageCreator": "LakeCountyIL",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
       "breaking": true
     },
     {
@@ -189,10 +249,10 @@
       "publishedAt": "2026-09-27T20:09:29.109Z",
       "updatedAt": null,
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1"
+        "urn:oid:2.49.0.1.840.0.b37733bd199f02d49bee7d1be2580e8e71d4e589.001.1"
       ],
       "allAlertIds": [
-        "urn:oid:2.49.0.1.840.0.edf89c307fee1bd1af22d5429fcbc4e8354e344e.001.1"
+        "urn:oid:2.49.0.1.840.0.b37733bd199f02d49bee7d1be2580e8e71d4e589.001.1"
       ],
       "event": "Flood Warning",
       "location": "KS",
@@ -201,7 +261,7 @@
       "lastNwsEffectiveAt": null,
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flood-warning-marshall-county-kansas-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -226,16 +286,264 @@
       "event": "High Wind Warning",
       "location": "Lanai Mauka",
       "sourceOffice": "NWS Honolulu HI",
-      "lifecycleStatus": "active",
+      "lifecycleStatus": "expired",
       "lastNwsEffectiveAt": "2026-09-27T05:20:00-10:00",
       "lastNwsExpiresAt": "2026-09-27T18:00:00-10:00",
       "lastNwsEndsAt": "2026-09-27T18:00:00-10:00",
-      "lastCheckedAt": "2026-09-27T21:28:07.832Z",
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/high-wind-warning-lanai-mauka-september-27-2026-map.png",
       "heroImageRelation": "current-alert-data",
       "heroImageCreator": "US News Engine",
       "heroImageLicense": "Original graphic generated by US News Engine from factual NWS data",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "hubble-spiral-galaxy-ngc-4698-2026-09-25",
+      "slug": "hubble-spiral-galaxy-ngc-4698-2026-09-25",
+      "articlePath": "src/content/articles/hubble-spiral-galaxy-ngc-4698-2026-09-25.md",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "NASA",
+      "location": "Unknown",
+      "sourceOffice": "NASA",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine using NASA source information",
+      "heroImageLicense": "Original editorial graphic generated by US News Engine from NASA source information",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "international-sprout-holdings-inc-alfalfa-2026-08-23",
+      "slug": "international-sprout-holdings-inc-alfalfa-2026-08-23",
+      "articlePath": "src/content/articles/international-sprout-holdings-inc-alfalfa-2026-08-23.md",
+      "publishedAt": "2026-09-27T21:41:17.264Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "agency-graphic",
+      "heroImageSource": "/images/international-sprout-holdings-inc-alfalfa-2026-08-23.png",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine (editorial graphic)",
+      "heroImageLicense": "Original editorial graphic generated by US News Engine from FDA data",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "medline-industries-lp-breathing-circuit-2026-07-13",
+      "slug": "medline-industries-lp-breathing-circuit-2026-07-13",
+      "articlePath": "src/content/articles/medline-industries-lp-breathing-circuit-2026-07-13.md",
+      "publishedAt": "2026-09-27T21:41:17.264Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "agency-graphic",
+      "heroImageSource": "/images/medline-industries-lp-breathing-circuit-2026-07-13.png",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine (editorial graphic)",
+      "heroImageLicense": "Original editorial graphic generated by US News Engine from FDA data",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "newdery-power-banks-2026-09-24",
+      "slug": "newdery-power-banks-2026-09-24",
+      "articlePath": "src/content/articles/newdery-power-banks-2026-09-24.md",
+      "publishedAt": "2026-09-27T21:41:17.264Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "Consumer Product Safety Commission",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/newdery-power-banks-2026-09-24.jpg",
+      "heroImageRelation": "exact-location",
+      "heroImageCreator": "Consumer Product Safety Commission (official recall photo)",
+      "heroImageLicense": "Official CPSC recall photo — public domain U.S. government work",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon",
+      "breaking": false
+    },
+    {
+      "storyKey": "nisar-volcanic-eruption-time-lapse-2026-09-24",
+      "slug": "nisar-volcanic-eruption-time-lapse-2026-09-24",
+      "articlePath": "src/content/articles/nisar-volcanic-eruption-time-lapse-2026-09-24.md",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "NASA",
+      "location": "Unknown",
+      "sourceOffice": "NASA",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "official-source-image",
+      "heroImageSource": "/images/nisar-volcanic-eruption-time-lapse-2026-09-24.jpg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "NASA’s Scientific Visualization Studio",
+      "heroImageLicense": "Official NASA/JPL source image — U.S. government work",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "perseverance-mars-water-systems-2026-09-21",
+      "slug": "perseverance-mars-water-systems-2026-09-21",
+      "articlePath": "src/content/articles/perseverance-mars-water-systems-2026-09-21.md",
+      "publishedAt": "2026-09-28T11:25:41.000Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "NASA",
+      "location": "Unknown",
+      "sourceOffice": "NASA",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "official-source-image",
+      "heroImageSource": "/images/perseverance-mars-water-systems-2026-09-21.jpg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "NASA/JPL-Caltech/MSSS",
+      "heroImageLicense": "Official NASA/JPL source image — U.S. government work",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "sirna-and-sons-produce-jalapeno-peppers-recall-2026-09-02",
+      "slug": "sirna-and-sons-produce-jalapeno-peppers-recall-2026-09-02",
+      "articlePath": "src/content/articles/sirna-and-sons-produce-jalapeno-peppers-recall-2026-09-02.md",
+      "publishedAt": "2026-09-27T22:14:27.664Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "agency-graphic",
+      "heroImageSource": "/images/sirna-and-sons-produce-jalapeno-peppers-recall-2026-09-02.png",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine (editorial graphic)",
+      "heroImageLicense": "Original editorial graphic generated by US News Engine from FDA data",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "the-hampton-grocer-brand-2026-09-09",
+      "slug": "the-hampton-grocer-brand-2026-09-09",
+      "articlePath": "src/content/articles/the-hampton-grocer-brand-2026-09-09.md",
+      "publishedAt": "2026-09-28T08:30:57.897Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.001.1",
+        "urn:oid:2.49.0.1.840.0.b8ad1939b714543f020f6037cf2cfd7a8705ba90.002.1"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-28T13:49:22.892Z",
+      "heroImageMode": "agency-graphic",
+      "heroImageSource": "/images/og-default.svg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine (editorial graphic)",
+      "heroImageLicense": "Original editorial graphic generated by US News Engine from FDA data",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": false
