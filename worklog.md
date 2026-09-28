@@ -4102,3 +4102,50 @@ Stage Summary:
 - GOOGLE INDEXING = OFF (DEMO_NOINDEX=true in src/consts.ts; meta robots noindex,nofollow on every page; agent-browser confirmed).
 - validate:science 78/78; validate:publishing 41/41; build 43 pages PASS.
 - GitHub: 33401e0 pushed to main. No Cloudflare deploy (backend-only change).
+
+---
+Task ID: 9D.2
+Agent: Z.ai Code (main)
+Task: Phase 9D.2 — Make Science source resilience persistent across fresh GitHub Actions runners. The Phase 9D.1 last-known-good cache was gitignored/local-only, so it does NOT survive fresh GHA checkouts. The canonical fallback must come from tracked persistent data (science-source-registry.json). The local cache may remain as an optimization but correctness must not depend on it. No editorial threshold changes; no new sources; no test publications; Weather/Recall/Earthquake untouched; DEMO_NOINDEX stays true.
+
+Work Log:
+- Read the Phase 9D.1 state: buildPreservedJplSources treated last-known-good as primary and registry as fallback; build-science-registry stored only 7 fields (scienceKey, source, publishedAtSource, firstSeenAt, lastSeenAt, bootstrapSeen, sourceUrl) — no title/mission/topic/storyType; the workflow committed only src/public/published-science.json (NOT the registry), so new sources seen during a run were lost on the next fresh checkout.
+- Extended scripts/build-science-registry.mjs: the newSources push and updatedSources merge now persist durable identity fields (title, mission, topic, storyType) from each fetcher record. These are IDENTITY fields only (the full article body is never stored — the live source page is still fetched for publication). The registry is now a self-contained canonical fallback for cross-source duplicate protection and source-dependency decisions.
+- Updated scripts/science-source-resilience-rules.mjs: buildPreservedJplSources now treats the tracked registry as CANONICAL (processed first) and the last-known-good cache as a NON-CANONICAL optional supplement (only adds scienceKeys the registry does not already know). Returns richer identity objects: {scienceKey, source, sourceUrl, title, mission, topic, publishedAtSource, storyType, bootstrapSeen, firstSeenAt, lastSeenAt}. The merge is key-stable: a scienceKey from the registry is never replaced by a cache entry. Deleting the cache must not change the outcome.
+- Updated scripts/run-science-newsroom.mjs: documented the LKG directory as NON-CANONICAL CACHE (clear comment block explaining registry = canonical, LKG = optional supplement, diagnostics = internal-only). The preservedJplSources builder now takes registry first, LKG second. Logs whether the cache is "present (non-canonical cache)" or "absent (canonical registry only)". Correctness is independent of the cache.
+- Updated .github/workflows/science-newsroom.yml: separated content-change detection (src/public/published-science.json → triggers build+deploy) from registry-change detection (data/science/science-source-registry.json → commits durable identity, no build/deploy). The workflow now commits the registry when it changes so the next fresh checkout has updated source identities. Added a Phase 9D.2 comment block explaining: every scheduled run starts from a FRESH runner; only committed state survives; untracked/gitignored files (LKG cache, source-health, deferred-candidates) are NOT relied on for correctness. Added a "Registry-only notification" step for runs that update the registry without public content changes. No dependency on /tmp, /home/z, untracked files, or previous runner filesystem.
+- Extended scripts/test-science-source-resilience.mjs with 4 new Phase 9D.2 scenarios (39 new assertions, 91 total):
+  * FR (Fresh Runner): fresh GHA checkout, NO LKG cache, JPL degraded, tracked registry exists → JPL DEGRADED, NASA/SWPC HEALTHY, preserved JPL sources from registry-only = 2, duplicate NASA/NISAR candidate DEFERRED, JPL-managed Perseverance candidate DEFERRED, independent Hubble candidate PROCEEDS, SWPC event PROCEEDS, bootstrap JPL identity preserved. No crash, no accidental NEW, no publication from missing cache.
+  * CE (Cache Equivalence): cache-present vs cache-absent → identical preserved count, registry title is authoritative (not cache title), ALL 4 candidate decisions identical with/without cache.
+  * RC (Recovery on fresh runner): Run 1 JPL degraded (no cache) → Perseverance DEFERRED; Run 2 JPL healthy → Perseverance PROCEEDS; scienceStoryKey stable; bootstrap JPL sources preserved (bootstrapSeen=true, jpl__ keys); matching-URL candidate PROCEEDS when JPL healthy (clustering handles duplicate) but DEFERRED when JPL degraded (defer rule catches it) — proving the two layers are complementary.
+  * NE (No-cache Equivalence): registry-only produces same count as registry+cache; every preserved entry carries full identity (scienceKey, sourceUrl, title, mission, bootstrapSeen).
+- Extended scripts/validate-science.mjs with checks 79-83:
+  * 79 = resilience correctness works without untracked cache (registry is canonical; JPL sources present with identity fields).
+  * 80 = missing LKG cache does not cause bootstrap sources to become NEW (bootstrapSeen flag persisted in tracked registry).
+  * 81 = JPL fetch failure does not erase persistent source identities (registry retains JPL sources with sourceUrl even when current fetch is degraded).
+  * 82 = healthy JPL recovery preserves stable scienceKeys (all jpl__ prefix, no duplicates).
+  * 83 = fresh-runner (no cache) produces same resilience outcome as persistent-runner (registry vs cache sourceUrl consistency for shared keys).
+- Ran the live dry-run newsroom (--ignore-daily-cap): JPL HEALTHY (100 records), NASA HEALTHY (10), SWPC HEALTHY (0). 2 NEW post-bootstrap candidates, 0 DEFERRED (JPL healthy), 0 published (dry run), NO-CHANGE STATUS. The registry rebuilt with Phase 9D.2 identity fields: all 100 JPL sources now carry title, 45 carry mission, all carry storyType.
+- Fresh-runner simulation: deleted data/science/last-known-good/ entirely, re-ran validate:science → all 83 checks PASS (74, 79-83 all PASS without the cache). Confirmed the registry is sufficient for correctness; the cache is not needed.
+- Restored transient fetched data files (nasa/jpl/swpc-news.json, stories, candidates, cache) to HEAD; kept the upgraded science-source-registry.json (with new identity fields) as a legitimate Phase 9D.2 durable-state change.
+- Ran npm run validate:science → 83/83 PASS. Ran npm run validate:publishing → 41/41 PASS. Ran npm run build → 43 pages, PASS.
+- Agent-browser self-verification: / renders (full nav, breaking news, top stories); /science/ renders with all 3 articles; no console errors; meta robots = noindex,nofollow; no internal source-health diagnostics leaked (NONE-LEAKED).
+- Committed (0deb8df) and pushed to main (281e8e9..0deb8df). No deploy (backend + durable-registry change; no public content change — per spec §14).
+
+Stage Summary:
+- Canonical persistent fallback source: data/science/science-source-registry.json (git-tracked, committed by the workflow). Carries scienceKey, sourceUrl, title, mission, topic, publishedAtSource, storyType, bootstrapSeen, firstSeenAt, lastSeenAt for all 113 sources (100 JPL + 13 NASA).
+- Local LKG file still used: YES, as a NON-CANONICAL local runtime cache (gitignored). It supplements the registry with the most recent full fetcher output but is NEVER required for correctness. Deleting it does not change the editorial/dependency outcome (verified by fresh-runner simulation).
+- Fresh-runner degraded-JPL test (Scenario FR): PASS — JPL DEGRADED, NASA/SWPC HEALTHY, preserved JPL sources from registry-only, duplicate/dependency/bootstrap all work, no crash, no accidental NEW, no publication from missing cache.
+- Cache-present vs cache-absent equivalence (Scenario CE): PASS — identical preserved count, registry title authoritative, all 4 candidate decisions identical.
+- Recovery test (Scenario RC): PASS — Perseverance DEFERRED while degraded, PROCEEDS after recovery, stable scienceKeys, bootstrap preserved, complementary duplicate protection (clustering when healthy, defer rule when degraded).
+- Bootstrap safety result: BLOCKED — 110 bootstrap sources retain bootstrapSeen=true in the tracked registry; missing cache does not cause bootstrap sources to become NEW (check 80 PASS).
+- Duplicate protection result: ON — cross-source duplicate check works from registry-only (check 79 PASS); matching-URL candidate DEFERRED when JPL degraded, caught by clustering when JPL healthy.
+- Validation totals: validate:science 83/83 PASS (checks 1-71 pre-9D.2 + 72-78 Phase 9D.1 + 79-83 Phase 9D.2); validate:publishing 41/41 PASS.
+- Build result: 43 pages built, PASS (1.30s).
+- GitHub commit: 0deb8df pushed to main (281e8e9..0deb8df). No Cloudflare deploy (no public content changed).
+- Weather status: ON (nwsPublishingEnabled=true, workflow unchanged).
+- Recall status: ON (recallPublishingEnabled=true, workflow unchanged).
+- Earthquake status: ON (earthquakePublishingEnabled=true, workflow unchanged).
+- Science status: ON (sciencePublishingEnabled=true, schedule 32 2,8,14,20 * * *, caps 1/run · 3/day unchanged; workflow now commits registry changes for CI persistence).
+- DEMO_NOINDEX status: true (src/consts.ts:30); meta noindex,nofollow on every page (agent-browser confirmed).
+- The workflow now depends ONLY on: repository-tracked state (src/, public/, data/published-science.json, data/science/science-source-registry.json), official fresh source fetches, and GitHub-provided secrets. No dependency on /tmp, /home/z, untracked files, gitignored state, or previous runner filesystem.
