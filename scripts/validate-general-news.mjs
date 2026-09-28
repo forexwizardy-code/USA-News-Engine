@@ -48,7 +48,9 @@ async function main() {
   // --- 1. Config: generalPublishingEnabled=false + caps ---
   const configRes = await loadJsonOptional(join(PROJECT_DIR, 'config', 'automation.json'));
   const config = configRes.ok ? configRes.doc : {};
-  check('G1', 'generalPublishingEnabled = false (auto-publishing OFF)', config.generalPublishingEnabled === false,
+  // Phase 10A.2.3: publishing is now ON. G1 verifies the setting (true or false).
+  // The workflow's own config-read step gates deploy on this flag.
+  check('G1', 'generalPublishingEnabled configured', config.generalPublishingEnabled !== undefined,
     `got ${config.generalPublishingEnabled}`);
   check('G2', 'maxGeneralNewPerRun = 2', config.maxGeneralNewPerRun === 2, `got ${config.maxGeneralNewPerRun}`);
   check('G3', 'maxGeneralNewPerDay = 24', config.maxGeneralNewPerDay === 24, `got ${config.maxGeneralNewPerDay}`);
