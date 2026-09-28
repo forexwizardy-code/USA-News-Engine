@@ -97,14 +97,28 @@ const NASA_FILE = join(PROJECT_DIR, 'data', 'science', 'nasa-news.json');
 const SWPC_FILE = join(PROJECT_DIR, 'data', 'science', 'swpc-events.json');
 const CACHE_DIR = join(PROJECT_DIR, 'data', 'science', 'cache');
 
-// Phase 9D.1 — source-resilience internal-only files.
-// last-known-good: a copy of each fetcher output saved ONLY on a
-//   successful fetch. Preserved across a degraded run so the newsroom
-//   can compare NASA candidates against the last-known-good JPL
-//   records for cross-source duplicate safety. Never overwritten by a
-//   failed fetch.
-// source-health: the per-source health model (NASA/JPL/SWPC).
-// deferred-candidates: NEW candidates deferred this run because of a
+// Phase 9D.1/9D.2 — source-resilience files.
+//
+// CANONICAL persistent fallback (tracked, committed by the workflow):
+//   data/science/science-source-registry.json
+//     The source registry carries every source identity ever seen
+//     (scienceKey, sourceUrl, title, mission, topic, storyType,
+//     bootstrapSeen, firstSeenAt, lastSeenAt). It survives fresh
+//     GitHub Actions checkouts and is the CANONICAL source of truth
+//     for cross-source duplicate protection and source-dependency
+//     decisions. Correctness MUST NOT depend on any untracked file.
+//
+// NON-CANONICAL CACHE (gitignored, local runtime optimization ONLY):
+//   data/science/last-known-good/{nasa,jpl,swpc}-news.json
+//     A copy of each fetcher output saved ONLY on a successful fetch.
+//     Never overwritten by a failed fetch. Deleting these files MUST
+//     NOT change the editorial / dependency outcome — the registry is
+//     sufficient. Kept as a local optimization to avoid re-parsing the
+//     registry for the full fetcher output; never required for correctness.
+//
+// Internal diagnostics (gitignored, never committed):
+//   source-health: the per-source health model (NASA/JPL/SWPC).
+//   deferred-candidates: NEW candidates deferred this run because of a
 //   degraded source dependency. Internal diagnostic only.
 const LAST_KNOWN_GOOD_DIR = join(PROJECT_DIR, 'data', 'science', 'last-known-good');
 const LAST_KNOWN_GOOD = {
@@ -610,19 +624,21 @@ async function main() {
       }
 
       // --- Build preserved JPL sources for cross-source duplicate safety --
+      // Phase 9D.2: the CANONICAL fallback is the tracked science-source-
+      // registry.json (committed, survives fresh GHA checkouts). The
+      // local last-known-good cache is a NON-CANONICAL optional supplement
+      // — deleting it must not change the editorial / dependency outcome.
       // Used by the reconcile step's defer rule when JPL is degraded.
+      const regResForJpl = await loadJsonOptional(SOURCE_REGISTRY_FILE);
       const lkgJplRes = await loadJsonOptional(LAST_KNOWN_GOOD.JPL);
       const lkgJpl = lkgJplRes.ok ? lkgJplRes.doc : null;
-      // The source registry is loaded fully later (step 6); we load it
-      // here too to build preserved JPL sources. The later load is
-      // cheap (already cached by the OS).
-      const regResForJpl = await loadJsonOptional(SOURCE_REGISTRY_FILE);
       preservedJplSources = buildPreservedJplSources({
-        lastKnownGoodJpl: lkgJpl,
         registry: regResForJpl.ok ? regResForJpl.doc : null,
+        lastKnownGoodJpl: lkgJpl,
       });
+      const lkgTag = lkgJplRes.ok ? 'present (non-canonical cache)' : 'absent (canonical registry only)';
       console.log(
-        `  Preserved JPL sources for cross-source duplicate check: ${preservedJplSources.length}`,
+        `  Preserved JPL sources for cross-source duplicate check: ${preservedJplSources.length} (last-known-good cache ${lkgTag})`,
       );
 
       // --- Update source registry (Phase 9A.2 bootstrap safety) ---

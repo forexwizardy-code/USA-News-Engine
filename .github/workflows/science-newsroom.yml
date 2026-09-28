@@ -34,6 +34,26 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      # -----------------------------------------------------------------
+      # Phase 9D.2 — CI persistence.
+      #
+      # Every scheduled run starts from a FRESH runner. The only state
+      # that survives between runs is what is COMMITTED to the repo:
+      #   - src/content/articles/*.md           (published articles)
+      #   - public/images/*                      (published images)
+      #   - data/published-science.json          (published-story registry)
+      #   - data/science/science-source-registry.json  (source identity/history)
+      #
+      # The science-source-registry.json is the CANONICAL fallback for
+      # cross-source duplicate protection and source-dependency decisions
+      # when JPL (or NASA/SWPC) is degraded. It MUST be committed when it
+      # changes so the next fresh checkout has the updated source identities.
+      #
+      # Untracked / gitignored files (last-known-good cache, source-health
+      # diagnostics, deferred-candidates diagnostics) are NOT relied on for
+      # correctness — they are per-runner runtime optimizations only.
+      # -----------------------------------------------------------------
+
       - name: Run Science Newsroom Automation
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -47,41 +67,63 @@ jobs:
           echo "publishing=$PUBLISHING" >> $GITHUB_OUTPUT
 
       - name: Check for content changes
-        id: changes
+        id: content
         run: |
-          # Only consider content changes (science articles, public images,
-          # and the published-science registry). Transient fetched science
-          # data files under data/science/ are NOT considered content
-          # changes.
+          # Content changes = published articles, public images, or the
+          # published-science registry. These trigger build + deploy.
           if git diff --quiet -- src/ public/ data/published-science.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "NO CONTENT CHANGES — skipping commit and deploy"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for registry changes
+        id: registry
+        run: |
+          # The science-source-registry is durable state (source identity /
+          # history). It is committed when it changes so the next fresh
+          # checkout has updated source identities for cross-source
+          # duplicate protection. Registry-only changes do NOT trigger a
+          # build or deploy (no public content changed).
+          if git diff --quiet -- data/science/science-source-registry.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Build for deployment
-        if: steps.changes.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
         run: npm run build
 
       - name: Commit and push changes
-        if: steps.changes.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        if: |
+          (steps.content.outputs.changed == 'true' || steps.registry.outputs.changed == 'true') &&
+          steps.config.outputs.publishing == 'true'
         run: |
           git config user.name "US News Engine Bot"
           git config user.email "newsroom@users.noreply.github.com"
-          git add src/ public/ data/published-science.json
-          git commit -m "Automated science newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          # Content changes (articles, images, published-science registry).
+          git add src/ public/ data/published-science.json 2>/dev/null || true
+          # Durable source identity/history (canonical resilience fallback).
+          git add data/science/science-source-registry.json 2>/dev/null || true
+          # Only commit if there is something staged.
+          if git diff --cached --quiet; then
+            echo "Nothing staged — skipping commit."
+          else
+            git commit -m "Automated science newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
 
       - name: Deploy to Cloudflare Workers
-        if: steps.changes.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        # Deploy ONLY when public content changed (not for registry-only changes).
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx wrangler deploy
 
       - name: Verify live site
-        if: steps.changes.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
         run: |
           sleep 8
           BASE="https://usa-news-engine.forexwizardy.workers.dev"
@@ -100,5 +142,9 @@ jobs:
           echo "LIVE CHECK: PASS (all 3 pages returned HTTP 200)"
 
       - name: No-change notification
-        if: steps.changes.outputs.changed == 'false' || steps.config.outputs.publishing != 'true'
-        run: echo "✓ Run completed — no content changes to publish or deploy (publishing=$(steps.config.outputs.publishing))."
+        if: steps.content.outputs.changed == 'false' && steps.registry.outputs.changed == 'false'
+        run: echo "✓ Run completed — no content or registry changes (publishing=$(steps.config.outputs.publishing))."
+
+      - name: Registry-only notification
+        if: steps.content.outputs.changed == 'false' && steps.registry.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        run: echo "✓ Run completed — source registry updated (durable identity persisted); no public content change, no deploy."

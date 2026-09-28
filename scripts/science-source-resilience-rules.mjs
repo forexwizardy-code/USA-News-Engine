@@ -220,44 +220,90 @@ export function normalizeUrl(url) {
 }
 
 /**
- * Build the set of preserved JPL source URLs + keys used for
- * cross-source duplicate matching when JPL is degraded.
+ * Build the set of preserved JPL source identities used for cross-source
+ * duplicate matching and source-dependency decisions when JPL is degraded.
  *
- * Sources of preserved JPL data (in priority order):
- *   1. last-known-good JPL fetcher output (data/science/last-known-good/jpl-news.json)
- *      — full records with scienceKey + sourceUrl + title.
- *   2. the Science source registry's JPL sources (science-source-registry.json)
- *      — scienceKey + sourceUrl + publishedAtSource (no title).
+ * Phase 9D.2 — CANONICAL FALLBACK IS THE TRACKED REGISTRY.
  *
- * Both are merged; the registry is the persistent fallback (it is
- * committed to the repo, so it survives GitHub Actions fresh checkouts
- * even when the last-known-good file has not yet been written).
+ *   CANONICAL (required for correctness):
+ *     data/science/science-source-registry.json  — git-tracked, committed
+ *     by the workflow. Survives fresh GitHub Actions checkouts. Carries
+ *     scienceKey, sourceUrl, title, mission, topic, publishedAtSource,
+ *     storyType, bootstrapSeen, firstSeenAt, lastSeenAt.
+ *
+ *   NON-CANONICAL CACHE (optional, never required for correctness):
+ *     data/science/last-known-good/jpl-news.json — gitignored, local
+ *     runtime optimization only. May supplement the registry with the
+ *     most recent full fetcher output, but deleting it MUST NOT change
+ *     the editorial / dependency outcome.
+ *
+ * The registry is processed FIRST so its identity is authoritative.
+ * The LKG cache (when present) only fills in fields the registry might
+ * not yet carry (e.g. on the very first run before the registry builder
+ * has persisted the new fields). The merge is key-stable: a scienceKey
+ * already seen from the registry is never replaced by the LKG entry.
  *
  * @param {object} opts
- * @param {object|null} opts.lastKnownGoodJpl - parsed last-known-good jpl-news.json doc
- * @param {object|null} opts.registry         - parsed science-source-registry.json doc
- * @returns {Array<{scienceKey:string, sourceUrl:string, title:string|null, publishedAtSource:string|null}>}
+ * @param {object|null} opts.lastKnownGoodJpl - parsed last-known-good jpl-news.json doc (NON-CANONICAL cache)
+ * @param {object|null} opts.registry         - parsed science-source-registry.json doc (CANONICAL)
+ * @returns {Array<{scienceKey:string, source:string|null, sourceUrl:string|null, title:string|null, mission:string|null, topic:string|null, publishedAtSource:string|null, storyType:string|null, bootstrapSeen:boolean|null, firstSeenAt:string|null, lastSeenAt:string|null}>}
  */
 export function buildPreservedJplSources({ lastKnownGoodJpl, registry } = {}) {
   const out = [];
   const seenKeys = new Set();
-  const push = (key, url, title, date) => {
-    if (!key || seenKeys.has(key)) return;
-    seenKeys.add(key);
-    out.push({ scienceKey: key, sourceUrl: url || null, title: title || null, publishedAtSource: date || null });
+  const push = (entry) => {
+    if (!entry || !entry.scienceKey || seenKeys.has(entry.scienceKey)) return;
+    seenKeys.add(entry.scienceKey);
+    out.push({
+      scienceKey: entry.scienceKey,
+      source: entry.source || null,
+      sourceUrl: entry.sourceUrl || null,
+      title: entry.title || null,
+      mission: entry.mission || null,
+      topic: entry.topic || null,
+      publishedAtSource: entry.publishedAtSource || null,
+      storyType: entry.storyType || null,
+      bootstrapSeen: entry.bootstrapSeen ?? null,
+      firstSeenAt: entry.firstSeenAt || null,
+      lastSeenAt: entry.lastSeenAt || null,
+    });
   };
-  if (lastKnownGoodJpl && Array.isArray(lastKnownGoodJpl.records)) {
-    for (const r of lastKnownGoodJpl.records) {
-      if (r && r.scienceKey) push(r.scienceKey, r.sourceUrl, r.title, r.publishedAtSource);
-    }
-  }
+
+  // 1. CANONICAL — tracked registry. This is the source of truth that
+  //    survives fresh GitHub Actions checkouts.
   if (registry && Array.isArray(registry.sources)) {
     for (const s of registry.sources) {
       if (s && s.scienceKey && (s.source === 'JPL' || /^jpl__/.test(s.scienceKey))) {
-        push(s.scienceKey, s.sourceUrl, null, s.publishedAtSource);
+        push(s);
       }
     }
   }
+
+  // 2. NON-CANONICAL CACHE — local last-known-good. Optional supplement;
+  //    only adds scienceKeys the registry does not already know. Deleting
+  //    this file must not change the outcome because the registry already
+  //    carries every identity field needed for duplicate / dependency
+  //    decisions.
+  if (lastKnownGoodJpl && Array.isArray(lastKnownGoodJpl.records)) {
+    for (const r of lastKnownGoodJpl.records) {
+      if (r && r.scienceKey) {
+        push({
+          scienceKey: r.scienceKey,
+          source: r.source || 'JPL',
+          sourceUrl: r.sourceUrl || null,
+          title: r.title || null,
+          mission: r.mission || null,
+          topic: r.topic || null,
+          publishedAtSource: r.publishedAtSource || null,
+          storyType: r.storyType || null,
+          bootstrapSeen: null,
+          firstSeenAt: null,
+          lastSeenAt: null,
+        });
+      }
+    }
+  }
+
   return out;
 }
 

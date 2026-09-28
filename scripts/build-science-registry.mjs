@@ -136,6 +136,17 @@ async function main() {
       if (r.sourceUrl && r.sourceUrl !== existing.sourceUrl) {
         existing.sourceUrl = r.sourceUrl;
       }
+      // Phase 9D.2 — persist durable identity fields (title, mission,
+      // topic, storyType) from the fetcher record. These are needed
+      // for cross-source duplicate protection and source-dependency
+      // decisions on fresh GitHub Actions runners where the
+      // gitignored last-known-good cache does not exist. The registry
+      // is the CANONICAL persistent fallback. Update when the source
+      // corrects/extends the metadata; otherwise keep the stored value.
+      if (r.title && r.title !== existing.title) existing.title = r.title;
+      if (r.mission && r.mission !== existing.mission) existing.mission = r.mission;
+      if (r.topic && r.topic !== existing.topic) existing.topic = r.topic;
+      if (r.storyType && r.storyType !== existing.storyType) existing.storyType = r.storyType;
       existingBy.delete(r.scienceKey);
       updatedSources.push(existing);
       updatedCount++;
@@ -150,6 +161,16 @@ async function main() {
         // items are NOT bootstrap (they're genuinely new).
         bootstrapSeen: isFirstRun ? true : false,
         sourceUrl: r.sourceUrl || null,
+        // Phase 9D.2 — durable identity fields persisted to the
+        // tracked registry so cross-source duplicate / dependency
+        // decisions work on fresh GHA runners without the local
+        // last-known-good cache. These are IDENTITY fields only;
+        // the full article body is never stored here (the full
+        // official source page is still fetched live for publication).
+        title: r.title || null,
+        mission: r.mission || null,
+        topic: r.topic || null,
+        storyType: r.storyType || null,
       });
       newCount++;
     }

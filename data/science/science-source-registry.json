@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-28T11:43:31.447Z",
+  "generatedAt": "2026-09-28T12:17:26.447Z",
   "source": "Phase 9A.2 science source registry",
-  "sourceCount": 112,
+  "sourceCount": 113,
   "firstRun": false,
   "bootstrapCount": 110,
-  "nonBootstrapCount": 2,
+  "nonBootstrapCount": 3,
   "sourcesByFeed": {
     "JPL": 100,
-    "NASA": 12
+    "NASA": 13
   },
   "sources": [
     {
@@ -15,900 +15,1145 @@
       "source": "JPL",
       "publishedAtSource": "2026-03-06T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun",
+      "title": "NASA’s DART Mission Changed Orbit of Asteroid Didymos Around Sun",
+      "mission": "DART",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__07e63575d01f8ea3",
       "source": "JPL",
       "publishedAtSource": "2026-08-05T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-watches-earth-vanish-behind-martian-moon"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-watches-earth-vanish-behind-martian-moon",
+      "title": "NASA’s Perseverance Rover Watches Earth Vanish Behind Martian Moon",
+      "mission": "Perseverance",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__09495a4dff5cad88",
       "source": "JPL",
       "publishedAtSource": "2025-11-16T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-partners-set-to-launch-sentinel-6b-earth-satellite"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-partners-set-to-launch-sentinel-6b-earth-satellite",
+      "title": "NASA, European Partners Set to Launch Sentinel-6B Earth Satellite",
+      "mission": "Sentinel",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__0d7b15ca87d10001",
       "source": "JPL",
       "publishedAtSource": "2026-08-04T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-engineers-help-prolong-voyager-2s-science-mission"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-engineers-help-prolong-voyager-2s-science-mission",
+      "title": "NASA Engineers Help Prolong Voyager 2’s Science Mission",
+      "mission": "Voyager",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__1259072cce3989e7",
       "source": "JPL",
       "publishedAtSource": "2026-07-29T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-awards-2026-innovative-technology-concepts"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-awards-2026-innovative-technology-concepts",
+      "title": "NASA Awards 2026 Innovative Technology Concepts",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__17e8c8754ba6eb9a",
       "source": "JPL",
       "publishedAtSource": "2026-03-26T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-unveils-initiatives-to-achieve-americas-national-space-policy"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-unveils-initiatives-to-achieve-americas-national-space-policy",
+      "title": "NASA Unveils Initiatives to Achieve America’s National Space Policy",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__19150654856c48a9",
       "source": "JPL",
       "publishedAtSource": "2025-09-10T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover--finding"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover--finding",
+      "title": "NASA to Share Details of New Perseverance Mars Rover Finding",
+      "mission": "Perseverance",
+      "storyType": "media-advisory"
     },
     {
       "scienceKey": "jpl__1a86089f41691c5b",
       "source": "JPL",
       "publishedAtSource": "2025-12-09T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-sensor-goes-hunting-for-critical-minerals"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-sensor-goes-hunting-for-critical-minerals",
+      "title": "New NASA Sensor Goes Hunting for Critical Minerals",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__1b88f83794205750",
       "source": "JPL",
       "publishedAtSource": "2025-12-15T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-curiosity-named-in-times-best-inventions-hall-of-fame"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-curiosity-named-in-times-best-inventions-hall-of-fame",
+      "title": "NASA’s Webb, Curiosity Named in TIME’s Best Inventions Hall of Fame",
+      "mission": "Curiosity",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__1bc90f7c705dcb04",
       "source": "JPL",
       "publishedAtSource": "2026-08-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dark-universe-seeking-nancy-grace-roman-space-telescope-launches"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-dark-universe-seeking-nancy-grace-roman-space-telescope-launches",
+      "title": "NASA’s Dark Universe-Seeking Nancy Grace Roman Space Telescope Launches",
+      "mission": "Nancy Grace Roman",
+      "storyType": "launch"
     },
     {
       "scienceKey": "jpl__1e1e520f2007d7cf",
       "source": "JPL",
       "publishedAtSource": "2025-09-15T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-suns-activity-ramping-up"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-suns-activity-ramping-up",
+      "title": "NASA Analysis Shows Sun’s Activity Ramping Up",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__224456b0ab8f7be7",
       "source": "JPL",
       "publishedAtSource": "2025-12-11T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-unveils-rover-operations-center-for-moon-mars-missions"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-unveils-rover-operations-center-for-moon-mars-missions",
+      "title": "NASA JPL Unveils Rover Operations Center for Moon, Mars Missions",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__22f7ca62623b6514",
       "source": "JPL",
       "publishedAtSource": "2026-06-16T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-quantum-lab-aboard-space-station-gets-chilly-upgrade"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-quantum-lab-aboard-space-station-gets-chilly-upgrade",
+      "title": "NASA’s Quantum Lab Aboard Space Station Gets Chilly Upgrade",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__2ade37cd0327ae19",
       "source": "JPL",
       "publishedAtSource": "2025-09-08T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover-finding"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-to-share-details-of-new-perseverance-mars-rover-finding",
+      "title": "NASA to Share Details of New Perseverance Mars Rover Finding",
+      "mission": "Perseverance",
+      "storyType": "media-advisory"
     },
     {
       "scienceKey": "jpl__36d35abf8885f9a7",
       "source": "JPL",
       "publishedAtSource": "2026-03-26T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-research-proposes-technology-to-seek-earth-like-exoplanets"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-research-proposes-technology-to-seek-earth-like-exoplanets",
+      "title": "NASA Research Proposes Technology to Seek Earth-Like Exoplanets",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__3774c54e9e811a3a",
       "source": "JPL",
       "publishedAtSource": "2026-09-23T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-far-infrared-telescope-as-first-in-new-mission-class"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-far-infrared-telescope-as-first-in-new-mission-class",
+      "title": "NASA Selects Far-Infrared Telescope as First in New Mission Class",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__39327b1b3294ce2e",
       "source": "JPL",
       "publishedAtSource": "2025-12-04T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-2-instruments-for-artemis-iv-lunar-surface-science"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-selects-2-instruments-for-artemis-iv-lunar-surface-science",
+      "title": "NASA Selects 2 Instruments for Artemis IV Lunar Surface Science",
+      "mission": "Artemis",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__3a7545db98c19409",
       "source": "JPL",
       "publishedAtSource": "2026-05-27T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-sea-level-mission-homes-in-on-el-nino"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-european-sea-level-mission-homes-in-on-el-nino",
+      "title": "NASA-European Sea Level Mission Homes in on El Niño",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__3ae02962c3d6ea9c",
       "source": "JPL",
       "publishedAtSource": "2026-08-06T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-featherweight-radar-antenna-for-skyfall-mars-helicopters"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-featherweight-radar-antenna-for-skyfall-mars-helicopters",
+      "title": "NASA Tests Featherweight Radar Antenna for SkyFall Mars Helicopters",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__3b2db7429285b85a",
       "source": "JPL",
       "publishedAtSource": "2025-09-17T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-tally-of-planets-outside-our-solar-system-reaches-6000"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-tally-of-planets-outside-our-solar-system-reaches-6000",
+      "title": "NASA’s Tally of Planets Outside Our Solar System Reaches 6,000",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__3b3972033fd96264",
       "source": "JPL",
       "publishedAtSource": "2026-06-05T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-incus-mission-on-road-to-launch-study-storms-from-space"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-incus-mission-on-road-to-launch-study-storms-from-space",
+      "title": "NASA’s INCUS Mission on Road to Launch, Study Storms From Space",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__3d39ceb44b2416e5",
       "source": "JPL",
       "publishedAtSource": "2025-12-04T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-completes-nancy-grace-roman-space-telescope-construction"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-completes-nancy-grace-roman-space-telescope-construction",
+      "title": "NASA Completes Nancy Grace Roman Space Telescope Construction",
+      "mission": "Nancy Grace Roman",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__40186b37a4c78377",
       "source": "JPL",
       "publishedAtSource": "2025-11-17T07:50:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-spacex-launch-us-european-satellite-to-monitor-earths-oceans"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-spacex-launch-us-european-satellite-to-monitor-earths-oceans",
+      "title": "NASA, SpaceX Launch US-European Satellite to Monitor Earth’s Oceans",
+      "mission": "SpaceX",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__4844a21ef193ebda",
       "source": "JPL",
       "publishedAtSource": "2025-09-24T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-explores-largest-star-forming-cloud-in-milky-way"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-webb-explores-largest-star-forming-cloud-in-milky-way",
+      "title": "NASA’s Webb Explores Largest Star-Forming Cloud in Milky Way",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__484b2d31ae681d00",
       "source": "JPL",
       "publishedAtSource": "2025-12-17T02:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-partners-share-first-data-from-new-us-european-sea-satellite"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-partners-share-first-data-from-new-us-european-sea-satellite",
+      "title": "NASA, Partners Share First Data From New US-European Sea Satellite",
+      "mission": "Sentinel",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__4b83c05151c1d5b9",
       "source": "JPL",
       "publishedAtSource": "2026-05-08T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-to-fly-by-mars-for-gravity-assist"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-to-fly-by-mars-for-gravity-assist",
+      "title": "NASA’s Psyche Mission to Fly by Mars for Gravity Assist",
+      "mission": "Psyche",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__4e79442eeba3d40c",
       "source": "JPL",
       "publishedAtSource": "2026-05-22T14:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-prime-contract-update"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-prime-contract-update",
+      "title": "JPL Prime Contract Update",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__4f582653e655da30",
       "source": "JPL",
       "publishedAtSource": "2026-03-04T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/us-french-satellite-takes-stock-of-worlds-river-water"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/us-french-satellite-takes-stock-of-worlds-river-water",
+      "title": "US-French Satellite Takes Stock of World’s River Water",
+      "mission": "SWOT",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__51a93a1058f3340b",
       "source": "JPL",
       "publishedAtSource": "2026-04-28T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-fires-up-powerful-lithium-fed-thruster-for-trips-to-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-fires-up-powerful-lithium-fed-thruster-for-trips-to-mars",
+      "title": "NASA Fires Up Powerful Lithium-Fed Thruster for Trips to Mars",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__54c974018947fae0",
       "source": "JPL",
       "publishedAtSource": "2026-05-19T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid",
+      "title": "NASA’s Psyche Mission Aces Mars Flyby, Targets Metal-Rich Asteroid",
+      "mission": "Psyche",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__55407f2ab9b44dd2",
       "source": "JPL",
       "publishedAtSource": "2025-12-17T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-suggests-saturns-moon-titan-may-not-have-global-ocean"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-suggests-saturns-moon-titan-may-not-have-global-ocean",
+      "title": "NASA Study Suggests Saturn’s Moon Titan May Not Have Global Ocean",
+      "mission": "Cassini",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__5dee954bd86db9fc",
       "source": "JPL",
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/hello-universe-nasas-next-gen-space-processor-undergoes-testing"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/hello-universe-nasas-next-gen-space-processor-undergoes-testing",
+      "title": "Hello Universe: NASA’s Next-Gen Space Processor Undergoes Testing",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__5fcbfc4d561bdf47",
       "source": "JPL",
       "publishedAtSource": "2025-11-19T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-mars-spacecraft-capture-images-of-comet-3iatlas"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-mars-spacecraft-capture-images-of-comet-3iatlas",
+      "title": "NASA’s Mars Spacecraft Capture Images of Comet 3I/ATLAS",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__6247624c61a09523",
       "source": "JPL",
       "publishedAtSource": "2026-05-05T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-next-gen-near-earth-asteroid-space-telescope-takes-shape"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-next-gen-near-earth-asteroid-space-telescope-takes-shape",
+      "title": "NASA’s Next-Gen Near-Earth Asteroid Space Telescope Takes Shape",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__65c4364f3953654f",
       "source": "JPL",
       "publishedAtSource": "2026-04-15T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/interstellar-glaciers-nasas-spherex-maps-vast-galactic-ice-regions"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/interstellar-glaciers-nasas-spherex-maps-vast-galactic-ice-regions",
+      "title": "‘Interstellar Glaciers’: NASA’s SPHEREx Maps Vast Galactic Ice Regions",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__666e00d9e17ac030",
       "source": "JPL",
       "publishedAtSource": "2025-12-03T16:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-rover-detects-electric-sparks-in-mars-dust-devils-storms"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-rover-detects-electric-sparks-in-mars-dust-devils-storms",
+      "title": "NASA Rover Detects Electric Sparks in Mars Dust Devils, Storms",
+      "mission": "Perseverance",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__674af8bfcd30b4a8",
       "source": "JPL",
       "publishedAtSource": "2026-07-09T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-scientists-take-to-air-and-space-to-study-arctic-sea-ice"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-scientists-take-to-air-and-space-to-study-arctic-sea-ice",
+      "title": "NASA Scientists Take to Air and Space to Study Arctic Sea Ice",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__69ffdbd62b482caa",
       "source": "JPL",
       "publishedAtSource": "2026-05-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-developed-ai-could-help-track-harmful-algae"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-developed-ai-could-help-track-harmful-algae",
+      "title": "NASA-developed AI Could Help Track Harmful Algae",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__6bf864a73b5f0bc0",
       "source": "JPL",
       "publishedAtSource": "2026-07-01T14:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/caltech-welcomes-astrophysicist-ray-jayawardhana-as-new-president"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/caltech-welcomes-astrophysicist-ray-jayawardhana-as-new-president",
+      "title": "Caltech Welcomes Astrophysicist Ray Jayawardhana as New President",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__6ddfbbac779779d4",
       "source": "JPL",
       "publishedAtSource": "2025-09-18T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-deep-space-communications-demo-exceeds-project-expectations"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-deep-space-communications-demo-exceeds-project-expectations",
+      "title": "NASA’s Deep Space Communications Demo Exceeds Project Expectations",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__6e092fdcd221dcd7",
       "source": "JPL",
       "publishedAtSource": "2026-01-26T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-reveals-new-details-about-dark-matters-influence-on-universe"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-reveals-new-details-about-dark-matters-influence-on-universe",
+      "title": "NASA Reveals New Details About Dark Matter’s Influence on Universe",
+      "mission": "James Webb",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__73e70fc987b3bdfa",
       "source": "JPL",
       "publishedAtSource": "2026-06-11T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-usgs-scientists-go-rock-hounding-in-californias-high-desert"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-usgs-scientists-go-rock-hounding-in-californias-high-desert",
+      "title": "NASA, USGS Scientists Go Rock Hounding in California’s High Desert",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__7455a7cdd3e04dd8",
       "source": "JPL",
       "publishedAtSource": "2026-03-23T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/see-nasas-guardian-catch-a-tsunami"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/see-nasas-guardian-catch-a-tsunami",
+      "title": "See NASA’s GUARDIAN Catch a Tsunami",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__757d4e6cd1f815d4",
       "source": "JPL",
       "publishedAtSource": "2026-07-21T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-delivers-data-reveals-hummingbird-in-antarctica"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-delivers-data-reveals-hummingbird-in-antarctica",
+      "title": "US-India Satellite Delivers Data, Reveals ‘Hummingbird’ in Antarctica",
+      "mission": "NISAR",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__7967f5004b8409a4",
       "source": "JPL",
       "publishedAtSource": "2026-08-28T23:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-coverage-for-roman-space-telescope-launch-from-florida"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-coverage-for-roman-space-telescope-launch-from-florida",
+      "title": "NASA Sets Coverage for Roman Space Telescope Launch from Florida",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__7ac1028edb5c57db",
       "source": "JPL",
       "publishedAtSource": "2025-11-18T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-cassini-study-finds-organics-fresh-from-ocean-of-enceladus"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-cassini-study-finds-organics-fresh-from-ocean-of-enceladus",
+      "title": "NASA Cassini Study Finds Organics ‘Fresh’ From Ocean of Enceladus",
+      "mission": "Cassini",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__7b1a04d4c5b5b8ef",
       "source": "JPL",
       "publishedAtSource": "2026-05-07T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-pushes-next-gen-mars-helicopter-rotor-blades-past-mach-1"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-pushes-next-gen-mars-helicopter-rotor-blades-past-mach-1",
+      "title": "NASA Pushes Next-Gen Mars Helicopter Rotor Blades Past Mach 1",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__7c674ee3644e0871",
       "source": "JPL",
       "publishedAtSource": "2026-07-16T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-finds-near-earth-asteroid-is-actually-comet"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-finds-near-earth-asteroid-is-actually-comet",
+      "title": "NASA Study Finds Near-Earth Asteroid Is Actually Comet",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__7cdc58bb88b1db7c",
       "source": "JPL",
       "publishedAtSource": "2026-09-21T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars",
+      "title": "NASA Discovery Reveals Complex Water Systems on Early Mars",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__7e5902b6113d8df6",
       "source": "JPL",
       "publishedAtSource": "2026-09-09T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/how-2-us-european-satellites-are-studying-hurricanes-during-el-nino"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/how-2-us-european-satellites-are-studying-hurricanes-during-el-nino",
+      "title": "How 2 US, European Satellites Are Studying Hurricanes During El Niño",
+      "mission": "Sentinel",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__7ed1c50ee3d59316",
       "source": "JPL",
       "publishedAtSource": "2025-11-14T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-launch-coverage-for-international-ocean-tracking-mission"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-launch-coverage-for-international-ocean-tracking-mission",
+      "title": "NASA Sets Launch Coverage for International Ocean Tracking Mission",
+      "mission": "Sentinel",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__816e99b2c0ee1d69",
       "source": "JPL",
       "publishedAtSource": "2026-06-18T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-testing-advanced-capabilities-for-moon-mars-rovers",
+      "title": "NASA Testing Advanced Capabilities for Moon, Mars Rovers",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__820865cae6962c19",
       "source": "JPL",
       "publishedAtSource": "2025-09-25T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-sends-first-radar-images-of-earths-surface"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-sends-first-radar-images-of-earths-surface",
+      "title": "NASA-ISRO Satellite Sends First Radar Images of Earth’s Surface",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__82e2b74e0a733e2c",
       "source": "JPL",
       "publishedAtSource": "2026-03-25T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-captures-pacific-northwest-through-clouds"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-satellite-captures-pacific-northwest-through-clouds",
+      "title": "NASA-ISRO Satellite Captures Pacific Northwest Through Clouds",
+      "mission": "NISAR",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__83eec270270fb984",
       "source": "JPL",
       "publishedAtSource": "2026-02-23T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-rover-sees-martian-spiderwebs-up-close"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-rover-sees-martian-spiderwebs-up-close",
+      "title": "NASA’s Curiosity Rover Sees Martian ‘Spiderwebs’ Up Close",
+      "mission": "Curiosity",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__896726328d036bf3",
       "source": "JPL",
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-esa-sea-level-satellite-arrives-at-california-launch-site"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-esa-sea-level-satellite-arrives-at-california-launch-site",
+      "title": "New NASA-ESA Sea Level Satellite Arrives at California Launch Site",
+      "mission": "Sentinel",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__8a122ef5d54384ea",
       "source": "JPL",
       "publishedAtSource": "2026-04-21T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-finds-organic-molecules-never-seen-before-on-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-finds-organic-molecules-never-seen-before-on-mars",
+      "title": "NASA’s Curiosity Finds Organic Molecules Never Seen Before on Mars",
+      "mission": "Curiosity",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__8c0a1f9827e2ad63",
       "source": "JPL",
       "publishedAtSource": "2026-04-27T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-curiosity-panoramas-capture-two-sides-of-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-curiosity-panoramas-capture-two-sides-of-mars",
+      "title": "NASA’s Perseverance, Curiosity Panoramas Capture Two Sides of Mars",
+      "mission": "Perseverance",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__8c8e1095a7877b36",
       "source": "JPL",
       "publishedAtSource": "2026-09-16T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-watches-earths-weight-finds-center-of-mass"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-watches-earths-weight-finds-center-of-mass",
+      "title": "NASA Watches Earth’s Weight, Finds Center of Mass",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__95dac49d9489942c",
       "source": "JPL",
       "publishedAtSource": "2025-08-20T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-ceres-may-have-had-long-standing-energy-to-fuel-habitability"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-ceres-may-have-had-long-standing-energy-to-fuel-habitability",
+      "title": "NASA: Ceres May Have Had Long-Standing Energy to Fuel Habitability",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__97652491fa9af0fa",
       "source": "JPL",
       "publishedAtSource": "2026-04-29T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/us-indian-space-mission-maps-extreme-subsidence-in-mexico-city"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/us-indian-space-mission-maps-extreme-subsidence-in-mexico-city",
+      "title": "US-Indian Space Mission Maps Extreme Subsidence in Mexico City",
+      "mission": "NISAR",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__9a3606fe9edee9f7",
       "source": "JPL",
       "publishedAtSource": "2026-07-22T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-takes-temperature-of-jupiters-fiery-moon-io"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-takes-temperature-of-jupiters-fiery-moon-io",
+      "title": "NASA’s Juno Takes Temperature of Jupiter’s Fiery Moon Io",
+      "mission": "Juno",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__9c4e575a62a7c325",
       "source": "JPL",
       "publishedAtSource": "2026-08-17T18:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-mission-studies-air-pollution-over-ethiopia"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-mission-studies-air-pollution-over-ethiopia",
+      "title": "NASA Mission Studies Air Pollution Over Ethiopia",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__9fcd1f9e921189f9",
       "source": "JPL",
       "publishedAtSource": "2025-08-19T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/joint-caltech-jpl-earth-lunar-science-astrophysics-projects-funded"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/joint-caltech-jpl-earth-lunar-science-astrophysics-projects-funded",
+      "title": "Joint Caltech-JPL Earth, Lunar Science, Astrophysics Projects Funded",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__a0b05eee4e3af8ae",
       "source": "JPL",
       "publishedAtSource": "2026-09-24T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
+      "title": "US-India Satellite Captures Time-lapse Video of Volcanic Eruption",
+      "mission": "NISAR",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__a1d809eeab9724f5",
       "source": "JPL",
       "publishedAtSource": "2026-05-12T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-snaps-selfie-in-mars-western-frontier"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-snaps-selfie-in-mars-western-frontier",
+      "title": "NASA’s Perseverance Rover Snaps Selfie in Mars’ Western Frontier",
+      "mission": "Perseverance",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__a24d128879c1436c",
       "source": "JPL",
       "publishedAtSource": "2025-12-17T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-ready-to-roll-for-miles-in-years-ahead"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-mars-rover-ready-to-roll-for-miles-in-years-ahead",
+      "title": "NASA’s Perseverance Mars Rover Ready to Roll for Miles in Years Ahead",
+      "mission": "Perseverance",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__a334594108009c10",
       "source": "JPL",
       "publishedAtSource": "2025-09-09T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-celestial-accident-sheds-light-on-jupiter-saturn-riddle"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-study-celestial-accident-sheds-light-on-jupiter-saturn-riddle",
+      "title": "NASA Study: Celestial ‘Accident’ Sheds Light on Jupiter, Saturn Riddle",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__a45df072455c6238",
       "source": "JPL",
       "publishedAtSource": "2026-07-29T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-mars-rover-discovers-field-of-honeycomb-textures"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-curiosity-mars-rover-discovers-field-of-honeycomb-textures",
+      "title": "NASA’s Curiosity Mars Rover Discovers Field of Honeycomb Textures",
+      "mission": "Curiosity",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__aaf2aeeb8bb93dd6",
       "source": "JPL",
       "publishedAtSource": "2026-01-29T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-la-nina-limited-sea-level-rise-in-2025"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-analysis-shows-la-nina-limited-sea-level-rise-in-2025",
+      "title": "NASA Analysis Shows La Niña Limited Sea Level Rise in 2025",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__af3042c355996c4a",
       "source": "JPL",
       "publishedAtSource": "2026-08-25T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/new-next-gen-dish-adds-muscle-to-nasas-deep-space-network"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/new-next-gen-dish-adds-muscle-to-nasas-deep-space-network",
+      "title": "New Next-Gen Dish Adds Muscle to NASA’s Deep Space Network",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__b7d22065e2d8131e",
       "source": "JPL",
       "publishedAtSource": "2026-07-17T17:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-delivers-mars-flyby-data-time-lapse-video"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-mission-delivers-mars-flyby-data-time-lapse-video",
+      "title": "NASA’s Psyche Mission Delivers Mars Flyby Data, Time-lapse Video",
+      "mission": "Psyche",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__bf54383ddbcf76fb",
       "source": "JPL",
       "publishedAtSource": "2025-09-12T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-guardian-tsunami-detection-tech-catches-wave-in-real-time"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-guardian-tsunami-detection-tech-catches-wave-in-real-time",
+      "title": "NASA’s GUARDIAN Tsunami Detection Tech Catches Wave in Real Time",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__c556b8a1ba0fbf7e",
       "source": "JPL",
       "publishedAtSource": "2025-12-16T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-shakes-things-up-testing-future-commercial-lunar-spacecraft"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-jpl-shakes-things-up-testing-future-commercial-lunar-spacecraft",
+      "title": "NASA JPL Shakes Things Up Testing Future Commercial Lunar Spacecraft",
+      "storyType": "landing"
     },
     {
       "scienceKey": "jpl__c5a73af338ace3c1",
       "source": "JPL",
       "publishedAtSource": "2025-11-14T22:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/6-things-to-know-from-nasa-about-new-us-european-sea-satellite"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/6-things-to-know-from-nasa-about-new-us-european-sea-satellite",
+      "title": "6 Things to Know From NASA About New US, European Sea Satellite",
+      "mission": "Sentinel",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__c7a94f63ab7d2215",
       "source": "JPL",
       "publishedAtSource": "2026-01-28T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/networks-keeping-nasas-artemis-ii-mission-connected"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/networks-keeping-nasas-artemis-ii-mission-connected",
+      "title": "Networks Keeping NASA’s Artemis II Mission Connected",
+      "mission": "Artemis",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__c7fbd38439d28180",
       "source": "JPL",
       "publishedAtSource": "2025-12-17T04:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/one-of-nasas-key-cameras-orbiting-mars-takes-100000th-image"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/one-of-nasas-key-cameras-orbiting-mars-takes-100000th-image",
+      "title": "One of NASA’s Key Cameras Orbiting Mars Takes 100,000th Image",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__cd5331a5144ade67",
       "source": "JPL",
       "publishedAtSource": "2025-08-28T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-marsquake-data-reveals-lumpy-nature-of-red-planets-interior"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-marsquake-data-reveals-lumpy-nature-of-red-planets-interior",
+      "title": "NASA Marsquake Data Reveals Lumpy Nature of Red Planet’s Interior",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__d06861779c5de7b7",
       "source": "JPL",
       "publishedAtSource": "2025-09-10T15:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-says-mars-rover-discovered-potential-biosignature-last-year"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-says-mars-rover-discovered-potential-biosignature-last-year",
+      "title": "NASA Says Mars Rover Discovered Potential Biosignature Last Year",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__d0ec9663bfacd902",
       "source": "JPL",
       "publishedAtSource": "2026-01-26T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/how-nasa-is-homing-in-from-space-on-ocean-debris"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/how-nasa-is-homing-in-from-space-on-ocean-debris",
+      "title": "How NASA Is Homing in From Space on Ocean Debris",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__d4a1667d6860260f",
       "source": "JPL",
       "publishedAtSource": "2026-02-12T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/archival-data-from-nasas-neowise-tracks-star-turning-into-black-hole"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/archival-data-from-nasas-neowise-tracks-star-turning-into-black-hole",
+      "title": "Archival Data From NASA’s NEOWISE Tracks Star Turning Into Black Hole",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__d53276fa7c15a6c7",
       "source": "JPL",
       "publishedAtSource": "2025-12-06T02:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/invention-challenge-brings-student-engineers-to-nasa-jpl"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/invention-challenge-brings-student-engineers-to-nasa-jpl",
+      "title": "Invention Challenge Brings Student Engineers to NASA JPL",
+      "storyType": "education"
     },
     {
       "scienceKey": "jpl__e480d0dbdeee161a",
       "source": "JPL",
       "publishedAtSource": "2025-08-19T15:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-captures-images-of-earth-moon"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-psyche-captures-images-of-earth-moon",
+      "title": "NASA’s Psyche Captures Images of Earth, Moon",
+      "mission": "Psyche",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__e57e35f20053e251",
       "source": "JPL",
       "publishedAtSource": "2025-11-20T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-aerospace-corporation-study-sharpens-focus-on-ammonia-emissions"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-aerospace-corporation-study-sharpens-focus-on-ammonia-emissions",
+      "title": "NASA, Aerospace Corporation Study Sharpens Focus on Ammonia Emissions",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__e64d4b3f6cc5ba93",
       "source": "JPL",
       "publishedAtSource": "2026-04-17T21:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating",
+      "title": "NASA Shuts Off Instrument on Voyager 1 to Keep Spacecraft Operating",
+      "mission": "Voyager",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__e660086226b3e79b",
       "source": "JPL",
       "publishedAtSource": "2026-02-18T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-now-autonomously-pinpoints-its-location-on-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-now-autonomously-pinpoints-its-location-on-mars",
+      "title": "NASA’s Perseverance Now Autonomously Pinpoints Its Location on Mars",
+      "mission": "Perseverance",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__e67f42e08340377c",
       "source": "JPL",
       "publishedAtSource": "2025-12-02T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-drones-in-death-valley-preps-for-martian-sands-and-skies"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-tests-drones-in-death-valley-preps-for-martian-sands-and-skies",
+      "title": "NASA Tests Drones in Death Valley, Preps for Martian Sands and Skies",
+      "storyType": "technology"
     },
     {
       "scienceKey": "jpl__ea761e5737eec32d",
       "source": "JPL",
       "publishedAtSource": "2025-09-04T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/vintage-nasa-see-voyagers-1990-solar-system-family-portrait-debut"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/vintage-nasa-see-voyagers-1990-solar-system-family-portrait-debut",
+      "title": "Vintage NASA: See Voyager’s 1990 ‘Solar System Family Portrait’ Debut",
+      "mission": "Voyager",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__eaa8784ecb10e274",
       "source": "JPL",
       "publishedAtSource": "2026-07-15T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-reads-record-of-ancient-mars-impacts"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-reads-record-of-ancient-mars-impacts",
+      "title": "NASA’s Perseverance Rover Reads Record of Ancient Mars Impacts",
+      "mission": "Perseverance",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__eaf96b1f3a004357",
       "source": "JPL",
       "publishedAtSource": "2025-12-18T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-spherex-observatory-completes-first-cosmic-map-like-no-other"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-spherex-observatory-completes-first-cosmic-map-like-no-other",
+      "title": "NASA’s SPHEREx Observatory Completes First Cosmic Map Like No Other",
+      "storyType": "astronomy"
     },
     {
       "scienceKey": "jpl__ecede50b9596de34",
       "source": "JPL",
       "publishedAtSource": "2025-11-25T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-orbiter-shines-new-light-on-long-running-martian-mystery"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-orbiter-shines-new-light-on-long-running-martian-mystery",
+      "title": "NASA Orbiter Shines New Light on Long-Running Martian Mystery",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__f0a506fff851bbda",
       "source": "JPL",
       "publishedAtSource": "2026-01-30T18:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars",
+      "title": "NASA’s Perseverance Rover Completes First AI-Planned Drive on Mars",
+      "mission": "Perseverance",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__f23172dc5ca2c28c",
       "source": "JPL",
       "publishedAtSource": "2025-09-11T17:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/new-us-european-sea-level-satellite-will-help-safeguard-ships-at-sea"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/new-us-european-sea-level-satellite-will-help-safeguard-ships-at-sea",
+      "title": "New US-European Sea Level Satellite Will Help Safeguard Ships at Sea",
+      "mission": "Sentinel",
+      "storyType": "earth-science"
     },
     {
       "scienceKey": "jpl__f291fc726e7856da",
       "source": "JPL",
       "publishedAtSource": "2025-10-13T17:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-workforce--update"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/jpl-workforce--update",
+      "title": "JPL Workforce Update",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__f5e739c06213e45f",
       "source": "JPL",
       "publishedAtSource": "2026-01-27T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-measures-thickness-of-europas-ice-shell"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-juno-measures-thickness-of-europas-ice-shell",
+      "title": "NASA’s Juno Measures Thickness of Europa’s Ice Shell",
+      "mission": "Juno",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__f8a64021f61aa7f0",
       "source": "JPL",
       "publishedAtSource": "2026-03-12T16:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/tiny-nasa-spacecraft-delivers-exoplanet-missions-first-images"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/tiny-nasa-spacecraft-delivers-exoplanet-missions-first-images",
+      "title": "Tiny NASA Spacecraft Delivers Exoplanet Mission’s First Images",
+      "storyType": "mission-result"
     },
     {
       "scienceKey": "jpl__f9584b45eed431a3",
       "source": "JPL",
       "publishedAtSource": "2026-07-20T22:30:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-earth-missions-gear-up-to-start-science-flights"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/new-nasa-earth-missions-gear-up-to-start-science-flights",
+      "title": "New NASA Earth Missions Gear Up to Start Science Flights",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__fa9eb49dfdf7737c",
       "source": "JPL",
       "publishedAtSource": "2026-01-29T20:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-radar-mission-peers-through-clouds-to-see-mississippi-river-delta"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-isro-radar-mission-peers-through-clouds-to-see-mississippi-river-delta",
+      "title": "NASA-ISRO Radar Mission Peers Through Clouds to See Mississippi River Delta",
+      "mission": "NISAR",
+      "storyType": "discovery"
     },
     {
       "scienceKey": "jpl__fdf87d21e58703cf",
       "source": "JPL",
       "publishedAtSource": "2026-06-16T00:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/explore-jpl-to-take-place-oct-10-11"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/explore-jpl-to-take-place-oct-10-11",
+      "title": "Explore JPL to Take Place Oct. 10, 11",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "jpl__fe5d47972b5a5a32",
       "source": "JPL",
       "publishedAtSource": "2026-01-20T19:00:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-sunrise-smallsats-ace-tests-moving-closer-to-launch"
+      "sourceUrl": "https://www.jpl.nasa.gov/news/nasas-sunrise-smallsats-ace-tests-moving-closer-to-launch",
+      "title": "NASA’s SunRISE SmallSats Ace Tests, Moving Closer to Launch",
+      "storyType": "mission-milestone"
     },
     {
       "scienceKey": "nasa__4c93b21d54ff615c",
@@ -933,18 +1178,22 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-26T04:05:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/"
+      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-26-mirrored-meteor-and-milky-way/",
+      "title": "APOD: 2026 September 26 – Mirrored Meteor and Milky Way",
+      "storyType": "evergreen"
     },
     {
       "scienceKey": "nasa__7ac074e8246266a7",
       "source": "NASA",
       "publishedAtSource": "2026-09-25T17:20:51.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/"
+      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-middle-school-design-challenge/",
+      "title": "2026-2027 DWU: Middle School Design Challenge",
+      "storyType": "education"
     },
     {
       "scienceKey": "nasa__89137d4be7927727",
@@ -960,63 +1209,92 @@
       "source": "NASA",
       "publishedAtSource": "2026-09-25T17:19:42.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/"
+      "sourceUrl": "https://www.nasa.gov/aeronautics/aeronautics-stem/2026-2027-dwu-high-school-engineering-challenge/",
+      "title": "2026-2027 DWU: High School Engineering Challenge",
+      "storyType": "education"
     },
     {
       "scienceKey": "nasa__95e766db855ece97",
       "source": "NASA",
       "publishedAtSource": "2026-09-27T04:05:00.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/"
+      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-27-andromeda-before-photoshop/",
+      "title": "APOD: 2026 September 27 – Andromeda Before and After Photoshop",
+      "storyType": "evergreen"
     },
     {
       "scienceKey": "nasa__f10b79f171c79762",
       "source": "NASA",
       "publishedAtSource": "2026-09-25T19:53:03.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/"
+      "sourceUrl": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-san-marino-signing-the-artemis-accords/",
+      "title": "NASA Welcomes San Marino Signing the Artemis Accords",
+      "mission": "Artemis",
+      "storyType": "space-policy"
     },
     {
       "scienceKey": "nasa__f632acf986decadb",
       "source": "NASA",
       "publishedAtSource": "2026-09-25T22:06:50.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/"
+      "sourceUrl": "https://www.nasa.gov/news-release/nasa-boeing-to-provide-update-on-starliner-development/",
+      "title": "NASA, Boeing to Provide Update on Starliner Development",
+      "mission": "Starliner",
+      "storyType": "media-advisory"
     },
     {
       "scienceKey": "nasa__f6e0c13aa126935f",
       "source": "NASA",
       "publishedAtSource": "2026-09-25T19:36:10.000Z",
       "firstSeenAt": "2026-09-28T01:04:07.512Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": true,
-      "sourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/"
+      "sourceUrl": "https://www.nasa.gov/directorates/rtmd/nasa-tests-dual-mode-propulsion-cubesat-ahead-of-launch/",
+      "title": "NASA Tests Dual Mode Propulsion CubeSat Ahead of Launch",
+      "storyType": "mission-preparation"
     },
     {
       "scienceKey": "nasa__644089ae2efe6056",
       "source": "NASA",
       "publishedAtSource": "2026-09-28T10:00:00.000Z",
       "firstSeenAt": "2026-09-28T11:43:31.447Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": false,
-      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/"
+      "sourceUrl": "https://www.nasa.gov/centers-and-facilities/johnson/reliable-robots-meet-johnsons-dexterous-robotics-team/",
+      "title": "Reliable Robots: Meet Johnson’s Dexterous Robotics Team",
+      "storyType": "crew-mission"
     },
     {
       "scienceKey": "nasa__c88ef522a895f600",
       "source": "NASA",
       "publishedAtSource": "2026-09-28T04:00:00.000Z",
       "firstSeenAt": "2026-09-28T11:43:31.447Z",
-      "lastSeenAt": "2026-09-28T11:43:31.447Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
       "bootstrapSeen": false,
-      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/"
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/",
+      "title": "Uncovering the Valleys Hidden Below Greenland’s Ice",
+      "storyType": "earth-science"
+    },
+    {
+      "scienceKey": "nasa__8f15ff8ee2c66c7f",
+      "source": "NASA",
+      "publishedAtSource": "2026-09-28T11:14:27.000Z",
+      "firstSeenAt": "2026-09-28T12:16:43.232Z",
+      "lastSeenAt": "2026-09-28T12:17:26.447Z",
+      "bootstrapSeen": false,
+      "sourceUrl": "https://science.nasa.gov/image-article/apod-2026-september-28-cosmic-latte-the-average-color-of-the-universe/",
+      "title": "APOD: 2026 September 28 – Cosmic Latte: The Average Color of the Universe",
+      "mission": null,
+      "topic": null,
+      "storyType": "evergreen"
     }
   ]
 }

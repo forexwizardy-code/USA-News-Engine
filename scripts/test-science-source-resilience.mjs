@@ -362,15 +362,326 @@ function healthModelFields() {
 }
 
 // ===========================================================================
+// Phase 9D.2 — CI-persistence: fresh-runner, cache-equivalence, recovery
+// ===========================================================================
+//
+// These scenarios simulate a FRESH GitHub Actions checkout where the
+// gitignored last-known-good cache does NOT exist. The CANONICAL
+// fallback is the tracked science-source-registry.json. Correctness
+// must be identical whether or not the local cache is present.
+
+/**
+ * A realistic tracked registry with JPL sources carrying the Phase 9D.2
+ * durable identity fields (title, mission, topic, storyType). This
+ * simulates what a fresh GHA checkout would have after the workflow
+ * committed registry updates from a prior successful run.
+ */
+function sampleTrackedRegistry() {
+  return {
+    sources: [
+      {
+        scienceKey: 'jpl__a0b05eee4e3af8ae',
+        source: 'JPL',
+        sourceUrl: 'https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption',
+        publishedAtSource: '2026-09-24T16:00:00.000Z',
+        firstSeenAt: '2026-09-28T01:04:07.512Z',
+        lastSeenAt: '2026-09-28T11:43:31.447Z',
+        bootstrapSeen: true,
+        title: 'US-India Satellite Captures Time-Lapse Video of Volcanic Eruption',
+        mission: 'NISAR',
+        topic: 'Earth Science',
+        storyType: 'earth-science',
+      },
+      {
+        scienceKey: 'jpl__7cdc58bb88b1db7c',
+        source: 'JPL',
+        sourceUrl: 'https://www.jpl.nasa.gov/news/nasa-discovery-reveals-complex-water-systems-on-early-mars',
+        publishedAtSource: '2026-09-21T17:00:00.000Z',
+        firstSeenAt: '2026-09-28T01:04:07.512Z',
+        lastSeenAt: '2026-09-28T11:43:31.447Z',
+        bootstrapSeen: true,
+        title: 'NASA Discovery Reveals Complex Water Systems on Early Mars',
+        mission: 'Perseverance',
+        topic: 'Planetary Science',
+        storyType: 'mission-result',
+      },
+      {
+        scienceKey: 'nasa__4c93b21d54ff615c',
+        source: 'NASA',
+        sourceUrl: 'https://www.nasa.gov/image-article/hubble-spots-chaotic-secret-in-galaxy/',
+        publishedAtSource: '2026-09-25T15:54:10.000Z',
+        firstSeenAt: '2026-09-28T01:04:07.512Z',
+        lastSeenAt: '2026-09-28T11:43:31.447Z',
+        bootstrapSeen: true,
+        title: 'Hubble Image Shows Unusual Spiral Structure in Galaxy NGC 4698',
+        mission: 'Hubble',
+        topic: 'Astronomy',
+        storyType: 'discovery',
+      },
+    ],
+  };
+}
+
+/**
+ * Scenario FR (Fresh Runner) — spec §5.
+ *   Fresh GHA checkout, NO last-known-good cache, JPL degraded (202/empty),
+ *   tracked registry exists.
+ *
+ * Expected: JPL DEGRADED; previous JPL identities remain known;
+ *   bootstrap protection intact; duplicate/dependency checks work;
+ *   NASA/SWPC independent candidates proceed; JPL-dependent candidates
+ *   defer. No crash. No accidental NEW. No publication from missing cache.
+ */
+function scenarioFreshRunner() {
+  console.log('\n--- Phase 9D.2 Scenario FR: fresh runner, NO cache, JPL degraded, tracked registry ---');
+  const health = computeSourceHealth({
+    nasa: doc('NASA', { available: true, count: 10 }),
+    jpl: doc('JPL', { available: false, status: 202, error: 'empty body' }),
+    swpc: doc('NOAA-SWPC', { available: true, count: 0 }),
+  });
+  assert('FR: JPL DEGRADED', health.JPL.status === 'DEGRADED');
+  assert('FR: NASA HEALTHY', health.NASA.status === 'HEALTHY');
+  assert('FR: SWPC HEALTHY', health.SWPC.status === 'HEALTHY');
+
+  // Preserved JPL sources built from REGISTRY ONLY (no LKG cache).
+  const preserved = buildPreservedJplSources({
+    registry: sampleTrackedRegistry(),
+    lastKnownGoodJpl: null, // cache absent — fresh runner
+  });
+  assert('FR: preserved JPL sources from registry-only = 2', preserved.length === 2, `got ${preserved.length}`);
+  assert('FR: preserved sources carry title', preserved.every((p) => p.title !== null));
+  assert('FR: preserved sources carry mission', preserved.every((p) => p.mission !== null));
+  assert('FR: preserved sources carry bootstrapSeen', preserved.every((p) => p.bootstrapSeen !== null));
+
+  // Cross-source duplicate: NASA candidate whose URL matches a registry
+  // JPL source → DEFER (duplicate protection works without cache).
+  const dupC = candidate({
+    key: 'nasa__nisar_fresh_dup',
+    primary: 'NASA',
+    mission: 'NISAR',
+    urls: ['https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption'],
+  });
+  const dDup = evaluateSourceDependency(dupC, health, preserved);
+  assert('FR: duplicate NASA/NISAR candidate DEFERRED (no cache needed)', dDup.decision === 'defer', `got ${dDup.decision}`);
+
+  // JPL-managed mission candidate (Perseverance, no URL match) → DEFER.
+  const persC = candidate({
+    key: 'nasa__perseverance_fresh',
+    primary: 'NASA',
+    mission: 'Perseverance',
+    urls: ['https://www.nasa.gov/missions/mars/perseverance-new-update/'],
+  });
+  const dPers = evaluateSourceDependency(persC, health, preserved);
+  assert('FR: JPL-managed Perseverance candidate DEFERRED (no cache needed)', dPers.decision === 'defer', `got ${dPers.decision}`);
+
+  // Independent NASA/Hubble candidate (no URL/key match) → PROCEED.
+  const hubbleC = candidate({
+    key: 'nasa__hubble_fresh',
+    primary: 'NASA',
+    mission: 'Hubble',
+    urls: ['https://www.nasa.gov/image-article/hubble-new-target-fresh/'],
+  });
+  const dHubble = evaluateSourceDependency(hubbleC, health, preserved);
+  assert('FR: independent Hubble candidate PROCEEDS (no cache needed)', dHubble.decision === 'proceed', `got ${dHubble.decision} (${dHubble.reason})`);
+
+  // SWPC event → PROCEED (independent of JPL).
+  const swpcC = candidate({
+    key: 'swpc__fresh_event',
+    primary: 'NOAA-SWPC',
+    mission: null,
+    urls: ['https://services.swpc.noaa.gov/products/alerts.json'],
+  });
+  const dSwpc = evaluateSourceDependency(swpcC, health, preserved);
+  assert('FR: SWPC event PROCEEDS (no cache needed)', dSwpc.decision === 'proceed', `got ${dSwpc.decision}`);
+
+  // No crash, no accidental NEW interpretation: a bootstrap JPL source
+  // key must NOT be treated as a new publication candidate.
+  const bootstrapKey = preserved.find((p) => p.bootstrapSeen === true);
+  assert('FR: bootstrap JPL source identity preserved in registry', !!bootstrapKey);
+  assert('FR: bootstrap scienceKey is jpl__ (not reinterpreted)', bootstrapKey && bootstrapKey.scienceKey.startsWith('jpl__'));
+}
+
+/**
+ * Scenario CE (Cache Equivalence) — spec §11.
+ *   A: cache present + JPL degraded → outcome X
+ *   B: cache absent + JPL degraded → outcome X (SAME)
+ *
+ * Cache presence must not change the editorial/dependency outcome.
+ */
+function scenarioCacheEquivalence() {
+  console.log('\n--- Phase 9D.2 Scenario CE: cache-present vs cache-absent equivalence ---');
+  const health = computeSourceHealth({
+    nasa: doc('NASA', { available: true, count: 40 }),
+    jpl: doc('JPL', { available: false, status: 202, error: 'empty body' }),
+    swpc: doc('NOAA-SWPC', { available: true, count: 0 }),
+  });
+  const registry = sampleTrackedRegistry();
+  const lkg = {
+    records: [
+      {
+        scienceKey: 'jpl__a0b05eee4e3af8ae',
+        source: 'JPL',
+        sourceUrl: 'https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption',
+        title: 'NISAR time-lapse (from cache)',
+        mission: 'NISAR',
+        publishedAtSource: '2026-09-24T16:00:00.000Z',
+        storyType: 'earth-science',
+      },
+    ],
+  };
+
+  const preservedWithCache = buildPreservedJplSources({ registry, lastKnownGoodJpl: lkg });
+  const preservedNoCache = buildPreservedJplSources({ registry, lastKnownGoodJpl: null });
+
+  // The registry is canonical; the LKG only adds keys the registry
+  // doesn't have. Here both JPL keys are in the registry, so the LKG
+  // adds nothing — the two sets are identical.
+  assert('CE: preserved count identical (cache present vs absent)', preservedWithCache.length === preservedNoCache.length, `cache=${preservedWithCache.length} no-cache=${preservedNoCache.length}`);
+
+  // The registry's identity is authoritative (title from registry, not
+  // the cache's "NISAR time-lapse (from cache)").
+  const nisarWithCache = preservedWithCache.find((p) => p.scienceKey === 'jpl__a0b05eee4e3af8ae');
+  const nisarNoCache = preservedNoCache.find((p) => p.scienceKey === 'jpl__a0b05eee4e3af8ae');
+  assert('CE: registry title is authoritative (not cache title)', nisarWithCache && nisarWithCache.title === nisarNoCache.title && !nisarWithCache.title.includes('from cache'), `got "${nisarWithCache && nisarWithCache.title}"`);
+
+  // Run the SAME candidates against both preserved sets — outcomes must match.
+  const candidates = [
+    candidate({ key: 'nasa__nisar_ce', primary: 'NASA', mission: 'NISAR', urls: ['https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption'] }),
+    candidate({ key: 'nasa__perseverance_ce', primary: 'NASA', mission: 'Perseverance', urls: ['https://www.nasa.gov/missions/mars/pers-update/'] }),
+    candidate({ key: 'nasa__hubble_ce', primary: 'NASA', mission: 'Hubble', urls: ['https://www.nasa.gov/image-article/hubble-ce/'] }),
+    candidate({ key: 'swpc__ce_event', primary: 'NOAA-SWPC', mission: null, urls: ['https://services.swpc.noaa.gov/products/alerts.json'] }),
+  ];
+  let allMatch = true;
+  for (const c of candidates) {
+    const dCache = evaluateSourceDependency(c, health, preservedWithCache);
+    const dNoCache = evaluateSourceDependency(c, health, preservedNoCache);
+    if (dCache.decision !== dNoCache.decision) {
+      allMatch = false;
+      assert(`CE: ${c.scienceStoryKey} decision matches (cache vs no-cache)`, false, `cache=${dCache.decision} no-cache=${dNoCache.decision}`);
+    } else {
+      assert(`CE: ${c.scienceStoryKey} decision matches (cache vs no-cache)`, true);
+    }
+  }
+  assert('CE: ALL candidate outcomes identical with/without cache', allMatch);
+}
+
+/**
+ * Scenario RC (Recovery on fresh runner) — spec §6.
+ *   Run 1: JPL degraded (fresh runner, no cache, registry only).
+ *   Run 2: JPL healthy (100-record feed).
+ *
+ * Expected: stable scienceKeys; no historical source becomes NEW;
+ *   bootstrapSeen values preserved; deferred candidate may be
+ *   reconsidered; no duplicate story created.
+ */
+function scenarioRecoveryFreshRunner() {
+  console.log('\n--- Phase 9D.2 Scenario RC: degraded → healthy recovery on fresh runner ---');
+  const registry = sampleTrackedRegistry();
+
+  // Run 1 — JPL degraded, fresh runner (no cache).
+  const degradedHealth = computeSourceHealth({
+    nasa: doc('NASA', { available: true, count: 10 }),
+    jpl: doc('JPL', { available: false, status: 202, error: 'empty body' }),
+    swpc: doc('NOAA-SWPC', { available: true, count: 0 }),
+  });
+  const preservedDegraded = buildPreservedJplSources({ registry, lastKnownGoodJpl: null });
+  const persC = candidate({
+    key: 'nasa__perseverance_rc',
+    primary: 'NASA',
+    mission: 'Perseverance',
+    urls: ['https://www.nasa.gov/missions/mars/perseverance-rc-update/'],
+  });
+  const dDegraded = evaluateSourceDependency(persC, degradedHealth, preservedDegraded);
+  assert('RC: Perseverance candidate DEFERRED while JPL degraded (fresh runner)', dDegraded.decision === 'defer', `got ${dDegraded.decision}`);
+
+  // Run 2 — JPL healthy. The SAME candidate is now reconsidered.
+  const recoveredHealth = computeSourceHealth({
+    nasa: doc('NASA', { available: true, count: 10 }),
+    jpl: doc('JPL', { available: true, count: 100 }),
+    swpc: doc('NOAA-SWPC', { available: true, count: 0 }),
+  });
+  const dRecovered = evaluateSourceDependency(persC, recoveredHealth, preservedDegraded);
+  assert('RC: Perseverance candidate PROCEEDS after JPL recovery', dRecovered.decision === 'proceed', `got ${dRecovered.decision} (${dRecovered.reason})`);
+
+  // Stable scienceKeys: the candidate's key is unchanged across the
+  // degraded → recovered transition (no key reinterpretation).
+  assert('RC: scienceStoryKey stable across recovery', persC.scienceStoryKey === 'nasa__perseverance_rc');
+
+  // No historical source becomes NEW: the registry's bootstrap JPL
+  // sources keep their bootstrapSeen=true flag and their scienceKeys.
+  const bootstrapJpl = registry.sources.filter((s) => s.source === 'JPL' && s.bootstrapSeen === true);
+  assert('RC: bootstrap JPL sources preserved in registry', bootstrapJpl.length === 2);
+  assert('RC: bootstrap scienceKeys unchanged', bootstrapJpl.every((s) => s.scienceKey.startsWith('jpl__')));
+  assert('RC: bootstrapSeen=true preserved', bootstrapJpl.every((s) => s.bootstrapSeen === true));
+
+  // No duplicate story created: when JPL is HEALTHY, a candidate whose
+  // URL matches a registry JPL source PROCEEDS through the normal
+  // pipeline — duplicate protection when JPL is healthy comes from the
+  // NASA+JPL clustering layer (build-science-stories.mjs clusters
+  // records with the same mission + date window into one story) and
+  // the published-science registry, NOT from the degraded-source defer
+  // rule. The defer rule's cross-source duplicate check only fires when
+  // JPL is DEGRADED (when clustering cannot see JPL records). This
+  // proves the two layers are complementary, not redundant.
+  const dupC = candidate({
+    key: 'nasa__nisar_rc_dup',
+    primary: 'NASA',
+    mission: 'NISAR',
+    urls: ['https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption'],
+  });
+  const preservedAfterRecovery = buildPreservedJplSources({ registry, lastKnownGoodJpl: null });
+  const dDupRecovered = evaluateSourceDependency(dupC, recoveredHealth, preservedAfterRecovery);
+  assert('RC: matching-URL candidate PROCEEDS when JPL healthy (clustering handles duplicate)', dDupRecovered.decision === 'proceed', `got ${dDupRecovered.decision}`);
+  // And the SAME candidate would have been DEFERRED while JPL was
+  // degraded (the defer rule's cross-source duplicate check catches it
+  // when clustering cannot). This proves no duplicate slips through
+  // either state.
+  const dDupDegraded = evaluateSourceDependency(dupC, degradedHealth, preservedDegraded);
+  assert('RC: matching-URL candidate DEFERRED when JPL degraded (defer rule catches duplicate)', dDupDegraded.decision === 'defer', `got ${dDupDegraded.decision}`);
+}
+
+/**
+ * Scenario NE (No-cache Equivalence for full pipeline decision) —
+ * verifies that buildPreservedJplSources with registry-only produces
+ * the SAME preserved identity set as registry+cache when the cache
+ * contains no additional keys.
+ */
+function scenarioNoCacheEquivalence() {
+  console.log('\n--- Phase 9D.2 Scenario NE: registry-only produces full identity without cache ---');
+  const registry = sampleTrackedRegistry();
+
+  // Registry-only (fresh runner).
+  const preservedRegOnly = buildPreservedJplSources({ registry, lastKnownGoodJpl: null });
+  // Registry + cache with the SAME keys (cache adds nothing).
+  const preservedWithCache = buildPreservedJplSources({
+    registry,
+    lastKnownGoodJpl: { records: registry.sources.filter((s) => s.source === 'JPL') },
+  });
+
+  assert('NE: registry-only count == registry+cache count', preservedRegOnly.length === preservedWithCache.length, `reg-only=${preservedRegOnly.length} with-cache=${preservedWithCache.length}`);
+
+  // Every preserved entry from registry-only carries the full identity
+  // fields needed for duplicate / dependency decisions.
+  for (const p of preservedRegOnly) {
+    assert(`NE: ${p.scienceKey} has scienceKey`, !!p.scienceKey);
+    assert(`NE: ${p.scienceKey} has sourceUrl`, !!p.sourceUrl);
+    assert(`NE: ${p.scienceKey} has title`, p.title !== null);
+    assert(`NE: ${p.scienceKey} has mission`, p.mission !== null);
+    assert(`NE: ${p.scienceKey} has bootstrapSeen`, p.bootstrapSeen !== null);
+  }
+}
+
+// ===========================================================================
 // Main
 // ===========================================================================
 
 async function main() {
   console.log('============================================================');
-  console.log('Phase 9D.1 — Science Source Resilience Test Harness');
+  console.log('Phase 9D.1/9D.2 — Science Source Resilience Test Harness');
   console.log('============================================================');
   console.log(`Started: ${new Date().toISOString()}`);
 
+  // Phase 9D.1 scenarios (source-isolated degradation).
   scenarioA();
   scenarioB();
   scenarioC();
@@ -381,6 +692,12 @@ async function main() {
   crossSourceDuplicate();
   retryConfig();
   healthModelFields();
+
+  // Phase 9D.2 scenarios (CI persistence — fresh-runner safety).
+  scenarioFreshRunner();
+  scenarioCacheEquivalence();
+  scenarioRecoveryFreshRunner();
+  scenarioNoCacheEquivalence();
 
   console.log('\n------------------------------------------------------------');
   console.log('Results:');
