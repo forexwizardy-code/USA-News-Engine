@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T18:50:04.409Z",
-  "storyCount": 14,
+  "generatedAt": "2026-09-28T19:17:17.820Z",
+  "storyCount": 16,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -255,6 +255,44 @@
       "articlePath": "src/content/articles/business-u-s-and-china-release-product-lists-for-tariff-2026-09-28.md",
       "title": "U.S. and China release product lists for tariff cuts after Trump-Xi meeting",
       "publishedAt": "2026-09-28T18:50:04.409Z",
+      "category": "business",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/world/u-s-and-china-release-product-lists-for-tariff-cuts-after-trump-xi-meeting"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__82c2f76581ead0c9",
+      "slug": "us-trump-aims-to-leave-a-physical-legacy-in-d-c-2026-09-28",
+      "articlePath": "src/content/articles/us-trump-aims-to-leave-a-physical-legacy-in-d-c-2026-09-28.md",
+      "title": "Trump aims to leave a physical legacy in D.C., bulldozing norms along the way",
+      "publishedAt": "2026-09-28T19:17:17.774Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/28/nx-s1-5930441/trump-construction-projects-legacy"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__cbeae066a367d585",
+      "slug": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
+      "articlePath": "src/content/articles/business-u-s-and-china-release-product-lists-for-tariff-2026-09-28.md",
+      "title": "U.S. and China release product lists for tariff cuts after Trump-Xi meeting",
+      "publishedAt": "2026-09-28T19:17:17.820Z",
       "category": "business",
       "primarySource": "PBS NewsHour",
       "primaryPublisherFamily": "PBS",

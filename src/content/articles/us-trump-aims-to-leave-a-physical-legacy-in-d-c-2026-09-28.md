@@ -4,7 +4,7 @@ title: "Trump aims to leave a physical legacy in D.C., bulldozing norms along th
 description: "President Trump has brought his New York real estate background to the White House. But experts say D.C. is a very different historic and legal landscape — and worry about the precedent he could set."
 category: us
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T18:50:04.350Z
+publishedAt: 2026-09-28T19:17:17.774Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: Trump aims to leave a physical legacy in D.C., bulldozing norms along the way"
 imageMode: "factual-graphic-fallback"
@@ -34,7 +34,7 @@ Location details are available in the linked source coverage.
 
 
 ## When
-Source coverage began September 28, 2026 (ET). The story is approximately 7 hours old.
+Source coverage began September 28, 2026 (ET). The story is approximately 8 hours old.
 
 
 ## Why it matters
