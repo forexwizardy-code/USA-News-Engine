@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T16:10:50.043Z",
-  "storyCount": 2,
+  "generatedAt": "2026-09-28T16:21:44.589Z",
+  "storyCount": 4,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -27,6 +27,44 @@
       "articlePath": "src/content/articles/entertainment-here-s-what-fans-paid-for-harry-styles-tickets-at-2026-09-28.md",
       "title": "Here’s What Fans Paid for Harry Styles Tickets at M.S.G.",
       "publishedAt": "2026-09-28T16:10:50.043Z",
+      "category": "entertainment",
+      "primarySource": "New York Times — Business",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/28/arts/music/harry-styles-msg-ticket-prices-affordability.html"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__e53a35b440983c2e",
+      "slug": "politics-ftc-states-win-protections-to-lower-pesticide-2026-09-28",
+      "articlePath": "src/content/articles/politics-ftc-states-win-protections-to-lower-pesticide-2026-09-28.md",
+      "title": "FTC, States Win Protections to Lower Pesticide Prices for American Farmers in Antitrust Case Against Corteva",
+      "publishedAt": "2026-09-28T16:21:44.536Z",
+      "category": "politics",
+      "primarySource": "Federal Trade Commission",
+      "primaryPublisherFamily": "FTC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "FTC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2026/09/ftc-states-win-protections-lower-pesticide-prices-american-farmers-antitrust-case-against-corteva"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__8105aecf19833d2a",
+      "slug": "entertainment-here-s-what-fans-paid-for-harry-styles-tickets-at-2026-09-28",
+      "articlePath": "src/content/articles/entertainment-here-s-what-fans-paid-for-harry-styles-tickets-at-2026-09-28.md",
+      "title": "Here’s What Fans Paid for Harry Styles Tickets at M.S.G.",
+      "publishedAt": "2026-09-28T16:21:44.589Z",
       "category": "entertainment",
       "primarySource": "New York Times — Business",
       "primaryPublisherFamily": "NYT",

@@ -4,7 +4,7 @@ title: "Here’s What Fans Paid for Harry Styles Tickets at M.S.G."
 description: "What is a concert really worth? We asked 34 fans about the time, money and effort they spent getting tickets for the star’s New York City residency."
 category: entertainment
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T16:10:50.043Z
+publishedAt: 2026-09-28T16:21:44.589Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: Here’s What Fans Paid for Harry Styles Tickets at M.S.G."
 imageMode: "factual-graphic-fallback"
