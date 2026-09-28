@@ -4242,3 +4242,31 @@ Stage Summary:
 - Recall/Science/Earthquake publication times use ET.
 - Stored publishedAt timestamps remain ISO UTC (L24 verifies).
 - No non-U.S. timezone usage in public UI source (L23 verifies).
+
+---
+Task ID: 10A.2.1
+Agent: Z.ai Code (main)
+Task: Phase 10A.2.1 — General News quality hardening. U.S. relevance gating, publisher-family dedup, source diversity, clean slugs, image variety. Auto-publishing remains OFF. Existing 4 desks unchanged. DEMO_NOINDEX stays true.
+
+Work Log:
+- Added U.S. relevance scoring (high/medium/low/none) to build-general-news-stories.mjs. publishEligible requires high OR medium. 19 foreign stories rejected (usRelevance=none).
+- Added publisherFamily field to fetcher + story builder. independentPublisherCount = unique publisher families (NPR News + NPR Politics = 1 family). 6 families: BBC, FTC, NPR, NYT, PBS, The Hill.
+- Expanded sources from 8 to 16: added NYT (6 category feeds), The Hill, BBC US/Canada. 16/16 HEALTHY, 384 raw items. Many .gov feeds block automated access (White House/DOJ/FEMA/Labor/Commerce/Fed/FBI/USDA/Transportation all 403/HTML). FTC is the only working gov feed.
+- Fixed slug generation: word-boundary truncation, no dangling fragments. Old 'suspected-u-k-ter' → clean full-word slugs.
+- Added image variety: category-specific gradient colors for factual-graphic-fallback hero.
+- Generated 4 hardened previews (Sports NOT READY — 0 eligible sports candidates; NPR Sports + NYT Sports feeds empty, ESPN/Yahoo/Sporting News block):
+  1. U.S.: 'Trump Offered to Sell Arms to China' (NYT, us=high)
+  2. Politics: 'Trump rolls back fuel economy standards' (NYT, us=high)
+  3. Business: 'CFTC Scales Back Enforcement' (NYT, us=medium)
+  4. Entertainment: 'Harry Styles Tickets at MSG' (NYT, us=high)
+- Removed old bad previews (Madrid eviction usRelevance=none, old U.K. terror with dangling slug fragment).
+- Extended validate-general-news.mjs: 24 checks (G20-G24: usRelevance, publisher-family, slug fragments, sports). All 24 PASS.
+- All validation: general 24/24, launch 24/24, publishing 65/65, science 83/83. Build 54 pages.
+- Committed (b0a57c3), pushed, deployed (Version ID: e5c5f252). Live previews verified HTTP 200; old bad previews return 404.
+
+Stage Summary:
+- GENERAL NEWS AUTO-PUBLISHING = OFF (generalPublishingEnabled=false).
+- Existing 4 desks ON (Weather/Recall/Earthquake/Science unchanged).
+- SPORTS COVERAGE NOT READY (0 eligible — reported per §14).
+- 4 hardened private previews live for editorial review.
+- DEMO_NOINDEX = true. No domain. No Google indexing.
