@@ -31,3 +31,13 @@ mini-services/
 upload/
 Caddyfile
 tool-results/
+
+# ---- Phase 9D.1 Science source-resilience internal diagnostics ----
+# These files are regenerated on every Science newsroom run. They are
+# internal-only (never exposed on public pages) and are NOT committed by
+# the GitHub Actions workflow. The persistent fallback for cross-source
+# duplicate checking is the committed science-source-registry.json.
+data/science/source-health.json
+data/science/deferred-candidates.json
+data/science/last-known-good/
+

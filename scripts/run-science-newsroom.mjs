@@ -61,6 +61,14 @@ import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import {
+  computeSourceHealth,
+  evaluateSourceDependency,
+  buildPreservedJplSources,
+  allSourcesDegraded,
+  canonicalSourceLabel,
+  SOURCE_KEYS,
+} from './science-source-resilience-rules.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -88,6 +96,29 @@ const JPL_FILE = join(PROJECT_DIR, 'data', 'science', 'jpl-news.json');
 const NASA_FILE = join(PROJECT_DIR, 'data', 'science', 'nasa-news.json');
 const SWPC_FILE = join(PROJECT_DIR, 'data', 'science', 'swpc-events.json');
 const CACHE_DIR = join(PROJECT_DIR, 'data', 'science', 'cache');
+
+// Phase 9D.1 — source-resilience internal-only files.
+// last-known-good: a copy of each fetcher output saved ONLY on a
+//   successful fetch. Preserved across a degraded run so the newsroom
+//   can compare NASA candidates against the last-known-good JPL
+//   records for cross-source duplicate safety. Never overwritten by a
+//   failed fetch.
+// source-health: the per-source health model (NASA/JPL/SWPC).
+// deferred-candidates: NEW candidates deferred this run because of a
+//   degraded source dependency. Internal diagnostic only.
+const LAST_KNOWN_GOOD_DIR = join(PROJECT_DIR, 'data', 'science', 'last-known-good');
+const LAST_KNOWN_GOOD = {
+  NASA: join(LAST_KNOWN_GOOD_DIR, 'nasa-news.json'),
+  JPL: join(LAST_KNOWN_GOOD_DIR, 'jpl-news.json'),
+  SWPC: join(LAST_KNOWN_GOOD_DIR, 'swpc-events.json'),
+};
+const SOURCE_HEALTH_FILE = join(PROJECT_DIR, 'data', 'science', 'source-health.json');
+const DEFERRED_CANDIDATES_FILE = join(
+  PROJECT_DIR,
+  'data',
+  'science',
+  'deferred-candidates.json',
+);
 
 const BROWSER_UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
@@ -403,6 +434,32 @@ function detectSourceFailure(doc, label) {
   return { failed: false, reason: null };
 }
 
+/**
+ * Phase 9D.1 — map a published story's source URL (and registry entry)
+ * to a canonical source label (NASA / JPL / SWPC) so the step-10 hash
+ * check can decide whether the story's source is currently degraded.
+ *
+ * URL host takes precedence over registry.primarySource (the NISAR and
+ * Perseverance stories carry primarySource="NASA" but their sourceUrls
+ * point at jpl.nasa.gov, so they are JPL-sourced for resilience
+ * purposes).
+ */
+function labelForSourceUrl(url, published) {
+  const u = String(url || '').toLowerCase();
+  if (/jpl\.nasa\.gov/.test(u)) return 'JPL';
+  if (/swpc\.noaa\.gov|noaa\.gov/.test(u)) return 'SWPC';
+  if (/nasa\.gov/.test(u)) return 'NASA';
+  // Fallback to the registry's primarySource / scienceStoryKey prefix.
+  const key = published && published.scienceStoryKey ? published.scienceStoryKey : '';
+  if (published && published.primarySource === 'NASA') return 'NASA';
+  if (published && published.primarySource === 'JPL') return 'JPL';
+  if (published && published.primarySource === 'NOAA-SWPC') return 'SWPC';
+  if (key.startsWith('jpl__')) return 'JPL';
+  if (key.startsWith('nasa__')) return 'NASA';
+  if (key.startsWith('swpc__')) return 'SWPC';
+  return null;
+}
+
 // ===========================================================================
 // Main
 // ===========================================================================
@@ -454,6 +511,13 @@ async function main() {
   if (allowTestPublish) console.log('TEST MODE: --allow-test-publish active (test publishing enabled)');
   console.log('');
 
+  // Phase 9D.1 — source-health state (populated by the real fetch path
+  // below; stays null in --fixture mode). Used by the reconcile step
+  // (defer rule), the source-content hash check (skip degraded-source
+  // stories), and the run summary.
+  let sourceHealth = null;
+  let preservedJplSources = [];
+
   // =========================================================================
   // Steps 1-5: Fetch NASA → JPL → SWPC → Update registry → Filter → Stories → Validate
   // =========================================================================
@@ -467,46 +531,99 @@ async function main() {
       runNpm('fetch:swpc', 'Fetch SWPC science events');
       console.log('  SWPC fetch complete.');
 
-      // --- JPL fetch safety check ---
-      // JPL is the largest source (100+ items in the bootstrap registry).
-      // If JPL returns 403 / 5xx / empty body (sourceAvailable=false),
-      // we treat it as a SOURCE FAILURE. We do NOT proceed with the
-      // pipeline based on incomplete source state — we preserve the
-      // previous registry state and exit.
+      // ====================================================================
+      // Phase 9D.1 — SOURCE-ISOLATED DEGRADATION
+      // ====================================================================
+      // Track health independently for NASA, JPL, SWPC. A degraded source
+      // (e.g. JPL returning HTTP 202 with an empty body) is marked
+      // DEGRADED. The pipeline CONTINUES with the healthy sources; it no
+      // longer aborts the whole Science newsroom when one source fails.
+      //
+      // We also preserve the last-known-good fetcher output for each
+      // source (written ONLY on a successful fetch) so cross-source
+      // duplicate checking can use preserved JPL records while JPL is
+      // degraded. A failed fetch NEVER overwrites the last-known-good
+      // copy.
+      const nasaRes = await loadJsonOptional(NASA_FILE);
       const jplRes = await loadJsonOptional(JPL_FILE);
-      if (jplRes.ok) {
-        const jplFail = detectSourceFailure(jplRes.doc, 'JPL');
-        if (jplFail.failed) {
-          console.error('\nFATAL: JPL source failure detected.');
-          console.error(`  ${jplFail.reason}`);
-          console.error('  Treating as SOURCE FAILURE — not 0 stories.');
-          console.error('  Preserving previous registry state. No publications.');
-          printSummary(
-            { NEW: [], UPDATED: [], UNCHANGED: [], MISSING: [] },
-            0, 0, startTime, 0, 0,
-            { sourceFailure: true, sourceFailureReason: jplFail.reason },
-          );
-          return;
+      const swpcRes = await loadJsonOptional(SWPC_FILE);
+
+      const fetchDocs = {
+        nasa: nasaRes.ok ? nasaRes.doc : null,
+        jpl: jplRes.ok ? jplRes.doc : null,
+        swpc: swpcRes.ok ? swpcRes.doc : null,
+      };
+
+      // Load previous source-health (for consecutiveFailures /
+      // lastSuccessfulFetchAt continuity across local runs).
+      const prevHealthRes = await loadJsonOptional(SOURCE_HEALTH_FILE);
+      const prevHealth =
+        prevHealthRes.ok && prevHealthRes.doc && prevHealthRes.doc.sources
+          ? prevHealthRes.doc.sources
+          : {};
+
+      sourceHealth = computeSourceHealth(fetchDocs, prevHealth);
+
+      // --- Last-known-good preservation ---------------------------------
+      // Save a copy of each fetcher output ONLY when the fetch succeeded.
+      // A failed fetch never overwrites the preserved good copy. The
+      // registry's retained JPL sources are the persistent fallback
+      // (committed to the repo) when no last-known-good exists yet.
+      await mkdir(LAST_KNOWN_GOOD_DIR, { recursive: true });
+      for (const key of SOURCE_KEYS) {
+        const docKey = key === 'NASA' ? 'nasa' : key === 'JPL' ? 'jpl' : 'swpc';
+        const doc = fetchDocs[docKey];
+        if (doc && doc.sourceAvailable === true) {
+          try {
+            await writeFile(
+              LAST_KNOWN_GOOD[key],
+              JSON.stringify(doc, null, 2) + '\n',
+              'utf8',
+            );
+          } catch {
+            // Non-fatal — last-known-good is best-effort.
+          }
         }
       }
 
-      // Also surface NASA / SWPC failures as warnings (non-fatal —
-      // NASA and SWPC are smaller sources and we can still proceed
-      // when one of them is unavailable).
-      const nasaRes = await loadJsonOptional(NASA_FILE);
-      if (nasaRes.ok) {
-        const nasaFail = detectSourceFailure(nasaRes.doc, 'NASA');
-        if (nasaFail.failed) {
-          console.warn(`\n  WARN: NASA source failure (non-fatal): ${nasaFail.reason}`);
-        }
+      // --- Log source-health status -------------------------------------
+      console.log('\n  Source health (Phase 9D.1):');
+      for (const key of SOURCE_KEYS) {
+        const h = sourceHealth[key];
+        const tag = h.status === 'HEALTHY' ? 'HEALTHY' : 'DEGRADED';
+        const extra =
+          h.status === 'HEALTHY'
+            ? `${h.recordCount} records`
+            : `httpStatus=${h.httpStatus ?? '?'}, fetchError="${h.fetchError || '?'}", consecutiveFailures=${h.consecutiveFailures}`;
+        console.log(`    ${key.padEnd(5)} ${tag}  (${extra})`);
       }
-      const swpcRes = await loadJsonOptional(SWPC_FILE);
-      if (swpcRes.ok) {
-        const swpcFail = detectSourceFailure(swpcRes.doc, 'SWPC');
-        if (swpcFail.failed) {
-          console.warn(`\n  WARN: SWPC source failure (non-fatal): ${swpcFail.reason}`);
-        }
+
+      // --- All-sources-degraded (Scenario F) ----------------------------
+      // If ALL THREE sources are degraded, the pipeline still runs (it
+      // will produce 0 candidates → clean no-change exit) but we log it
+      // explicitly so the run is unambiguous.
+      if (allSourcesDegraded(sourceHealth)) {
+        console.warn(
+          '\n  WARN: ALL Science sources degraded (NASA + JPL + SWPC).',
+        );
+        console.warn('  Pipeline will continue; expected 0 publications and no production mutation.');
       }
+
+      // --- Build preserved JPL sources for cross-source duplicate safety --
+      // Used by the reconcile step's defer rule when JPL is degraded.
+      const lkgJplRes = await loadJsonOptional(LAST_KNOWN_GOOD.JPL);
+      const lkgJpl = lkgJplRes.ok ? lkgJplRes.doc : null;
+      // The source registry is loaded fully later (step 6); we load it
+      // here too to build preserved JPL sources. The later load is
+      // cheap (already cached by the OS).
+      const regResForJpl = await loadJsonOptional(SOURCE_REGISTRY_FILE);
+      preservedJplSources = buildPreservedJplSources({
+        lastKnownGoodJpl: lkgJpl,
+        registry: regResForJpl.ok ? regResForJpl.doc : null,
+      });
+      console.log(
+        `  Preserved JPL sources for cross-source duplicate check: ${preservedJplSources.length}`,
+      );
 
       // --- Update source registry (Phase 9A.2 bootstrap safety) ---
       runNpm('registry:science', 'Update science source registry');
@@ -610,7 +727,7 @@ async function main() {
 
   // --- Step 6: Reconcile feed against registry ---
   console.log('\n--- Step 6: Reconcile story feed against registry ---');
-  const categories = { NEW: [], UPDATED: [], UNCHANGED: [], MISSING: [] };
+  const categories = { NEW: [], UPDATED: [], UNCHANGED: [], MISSING: [], DEFERRED: [] };
   for (const story of eligibleStories) {
     const published = registry.stories.find(
       (s) => s.scienceStoryKey === story.scienceStoryKey,
@@ -632,9 +749,31 @@ async function main() {
           `  [bootstrap-safety] Skipping bootstrap historical story: ${story.scienceStoryKey} ("${story.title}")`,
         );
         categories.UNCHANGED.push(story);
-      } else {
-        categories.NEW.push(story);
+        continue;
       }
+
+      // Phase 9D.1 — source-dependency defer rule. When a source is
+      // degraded, a NEW candidate that plausibly duplicates an unseen
+      // release from the degraded source is DEFERRED (not published)
+      // and reconsidered on the next scheduled run after recovery.
+      // SWPC events are independent of JPL and always proceed (subject
+      // to SWPC's own health). See science-source-resilience-rules.mjs.
+      if (sourceHealth) {
+        const dep = evaluateSourceDependency(story, sourceHealth, preservedJplSources);
+        if (dep.decision === 'defer') {
+          console.log(
+            `  [defer] ${story.scienceStoryKey} ("${story.title}") — ${dep.reason}`,
+          );
+          categories.DEFERRED.push({
+            story,
+            reason: dep.reason,
+            deferStatus: dep.deferStatus || 'deferred-source-dependency',
+          });
+          continue;
+        }
+      }
+
+      categories.NEW.push(story);
       continue;
     }
     // We've seen this story before — its update detection happens in
@@ -651,6 +790,7 @@ async function main() {
   }
 
   console.log(`  NEW (post-bootstrap candidates): ${categories.NEW.length}`);
+  console.log(`  DEFERRED (source-dependency): ${categories.DEFERRED.length}`);
   console.log(`  UPDATED: pending source-content hash check`);
   console.log(`  UNCHANGED: ${categories.UNCHANGED.length}`);
   console.log(`  MISSING (registry, not in feed): ${categories.MISSING.length}`);
@@ -670,6 +810,20 @@ async function main() {
     if (sourceUrls.length === 0) {
       console.warn(`    [skip] ${published.scienceStoryKey}: no source URLs in registry`);
       continue;
+    }
+    // Phase 9D.1 — if the source for this published story is currently
+    // DEGRADED, skip the update check entirely. We do NOT fetch the
+    // source page (it would likely fail), we do NOT bump
+    // lastSourceCheckedAt, and we do NOT mark the story updated. The
+    // article is left untouched until the source recovers. (spec §11)
+    if (sourceHealth) {
+      const storyLabel = labelForSourceUrl(sourceUrls[0], published);
+      if (storyLabel && sourceHealth[storyLabel]?.status === 'DEGRADED') {
+        console.log(
+          `    [skip-degraded] ${published.scienceStoryKey}: source ${storyLabel} degraded — article left untouched`,
+        );
+        continue;
+      }
     }
     const url = sourceUrls[0];
     const fetched = await fetchSourcePageSafe(url, { forUpdateCheck: true });
@@ -730,9 +884,19 @@ async function main() {
   // --- Step 11: Re-report reconciliation ---
   console.log('\n--- Reconciliation summary ---');
   console.log(`  NEW (post-bootstrap candidates): ${categories.NEW.length}`);
+  console.log(`  DEFERRED (source-dependency): ${categories.DEFERRED.length}`);
   console.log(`  UPDATED: ${categories.UPDATED.length}`);
   console.log(`  UNCHANGED: ${categories.UNCHANGED.length}`);
   console.log(`  MISSING (registry, not in feed): ${categories.MISSING.length}`);
+
+  // --- Phase 9D.1: persist internal resilience diagnostics ---
+  // These files live under data/science/ (NOT committed by the GitHub
+  // Actions workflow — only src/ public/ data/published-science.json
+  // are committed). They are internal-only and never appear on public
+  // pages. Writing them does NOT constitute a content change and does
+  // NOT trigger a commit or deploy.
+  await saveSourceHealth(sourceHealth);
+  await saveDeferredCandidates(categories.DEFERRED, sourceHealth);
 
   // --- Step 12: Check daily cap ---
   const today = (testDate || new Date().toISOString()).slice(0, 10);
@@ -752,7 +916,7 @@ async function main() {
     console.log('No public content changes will be made.');
     console.log('No Git commit. No Cloudflare deploy.');
     console.log('============================================');
-    printSummary(categories, 0, 0, startTime, 0, 0);
+    printSummary(categories, 0, 0, startTime, 0, 0, { sourceHealth });
     return;
   }
 
@@ -772,6 +936,14 @@ async function main() {
         );
       }
     }
+    if (categories.DEFERRED.length > 0) {
+      console.log(`\n  Deferred (${categories.DEFERRED.length}) — source-dependency:`);
+      for (const d of categories.DEFERRED) {
+        console.log(
+          `    - ${d.story.scienceStoryKey} [${d.deferStatus}] ${d.reason}`,
+        );
+      }
+    }
     if (newAllowed > 0 && categories.NEW.length > 0) {
       const selected = selectNewStories(categories.NEW, newAllowed);
       console.log(`\n  Would publish ${selected.length} new stories:`);
@@ -787,7 +959,7 @@ async function main() {
     } else {
       console.log('\n  No new stories would be published (daily cap or no candidates).');
     }
-    printSummary(categories, 0, 0, startTime, 0, 0);
+    printSummary(categories, 0, 0, startTime, 0, 0, { sourceHealth });
     return;
   }
 
@@ -853,7 +1025,7 @@ async function main() {
     console.log('\n============================================');
     console.log('NO CONTENT CHANGES — skipping validation and build.');
     console.log('============================================');
-    printSummary(categories, 0, updatedCount, startTime, sourceImageHeroes, graphicHeroes);
+    printSummary(categories, 0, updatedCount, startTime, sourceImageHeroes, graphicHeroes, { sourceHealth });
     return;
   }
 
@@ -890,7 +1062,7 @@ async function main() {
     process.exit(1);
   }
 
-  printSummary(categories, newPublished, updatedCount, startTime, sourceImageHeroes, graphicHeroes);
+  printSummary(categories, newPublished, updatedCount, startTime, sourceImageHeroes, graphicHeroes, { sourceHealth });
 }
 
 // ===========================================================================
@@ -1251,6 +1423,57 @@ async function saveRegistry(registry) {
   console.log(`  Registry saved: ${REGISTRY_FILE} (${registry.storyCount} stories).`);
 }
 
+/**
+ * Phase 9D.1 — persist the per-source health model. INTERNAL ONLY:
+ * lives under data/science/ (not committed by the workflow). Used for
+ * consecutiveFailures / lastSuccessfulFetchAt continuity across local
+ * runs and for post-run diagnostics.
+ */
+async function saveSourceHealth(health) {
+  if (!health) return;
+  try {
+    const doc = {
+      generatedAt: new Date().toISOString(),
+      source: 'Phase 9D.1 Science source health',
+      sources: health,
+    };
+    await mkdir(dirname(SOURCE_HEALTH_FILE), { recursive: true });
+    await writeFile(SOURCE_HEALTH_FILE, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  } catch {
+    // Non-fatal — diagnostics only.
+  }
+}
+
+/**
+ * Phase 9D.1 — persist the list of NEW candidates deferred this run
+ * because of a degraded-source dependency. INTERNAL ONLY: lives under
+ * data/science/ (not committed by the workflow). Used by
+ * validate-science to confirm deferred candidates never reach
+ * published-science.json.
+ */
+async function saveDeferredCandidates(deferred, health) {
+  try {
+    const doc = {
+      generatedAt: new Date().toISOString(),
+      source: 'Phase 9D.1 deferred Science candidates',
+      sourceHealth: health || null,
+      deferredCount: deferred.length,
+      deferred: deferred.map((d) => ({
+        scienceStoryKey: d.story?.scienceStoryKey || null,
+        title: d.story?.title || null,
+        mission: d.story?.mission || null,
+        primarySource: d.story?.primarySource || null,
+        reason: d.reason || null,
+        deferStatus: d.deferStatus || null,
+      })),
+    };
+    await mkdir(dirname(DEFERRED_CANDIDATES_FILE), { recursive: true });
+    await writeFile(DEFERRED_CANDIDATES_FILE, JSON.stringify(doc, null, 2) + '\n', 'utf8');
+  } catch {
+    // Non-fatal — diagnostics only.
+  }
+}
+
 // ===========================================================================
 // Summary
 // ===========================================================================
@@ -1271,18 +1494,33 @@ function printSummary(
   const eligibleCount =
     (categories.NEW?.length || 0) +
     (categories.UPDATED?.length || 0) +
-    (categories.UNCHANGED?.length || 0);
-  console.log(`Story feed: ${eligibleCount} publish-eligible stories considered`);
+    (categories.UNCHANGED?.length || 0) +
+    (categories.DEFERRED?.length || 0);
+  console.log(`Candidates evaluated: ${eligibleCount} publish-eligible stories considered`);
   console.log('');
+  // --- Source health status (Phase 9D.1) ---
+  if (extra.sourceHealth) {
+    console.log('Source health:');
+    for (const key of SOURCE_KEYS) {
+      const h = extra.sourceHealth[key];
+      if (!h) continue;
+      console.log(`  ${key.padEnd(5)} ${h.status}`);
+    }
+    console.log('');
+  }
   console.log(`NEW FOUND (post-bootstrap): ${categories.NEW?.length || 0}`);
   console.log(`NEW PUBLISHED: ${newPublished}`);
   console.log(`UPDATED: ${updatedCount}`);
   console.log(`UNCHANGED: ${categories.UNCHANGED?.length || 0}`);
+  console.log(`DEFERRED (source-dependency): ${categories.DEFERRED?.length || 0}`);
   console.log(`MISSING (registry, not in feed): ${categories.MISSING?.length || 0}`);
   if (extra.sourceFailure) {
     console.log('');
     console.log('SOURCE FAILURE: pipeline did not proceed');
     console.log(`  reason: ${extra.sourceFailureReason}`);
+  }
+  if ((newPublished === 0) && (updatedCount === 0) && (categories.DEFERRED?.length || 0) === 0) {
+    console.log('NO-CHANGE STATUS: no content changes this run');
   }
   console.log('');
   console.log(`SOURCE-IMAGE HEROES (NASA/JPL photo): ${sourceImageHeroes}`);

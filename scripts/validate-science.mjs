@@ -130,6 +130,11 @@ const INPUT_FILES = {
   publishedRegistry: join(PROJECT_DIR, 'data', 'published-science.json'),
   testFixture: join(PROJECT_DIR, 'data', 'science', 'test-fixture.json'),
   articlesDir: join(PROJECT_DIR, 'src', 'content', 'articles'),
+  // Phase 9D.1 — source-resilience internal diagnostic files.
+  sourceHealth: join(PROJECT_DIR, 'data', 'science', 'source-health.json'),
+  deferredCandidates: join(PROJECT_DIR, 'data', 'science', 'deferred-candidates.json'),
+  lastKnownGoodJpl: join(PROJECT_DIR, 'data', 'science', 'last-known-good', 'jpl-news.json'),
+  pagesDir: join(PROJECT_DIR, 'src', 'pages'),
 };
 
 const VALID_SOURCES = new Set(['NASA', 'JPL', 'NOAA-SWPC']);
@@ -1151,6 +1156,308 @@ function runRegistryArticleCountCheck(publishedDoc, articleFrontmatters) {
   return c71;
 }
 
+// ===========================================================================
+// Phase 9D.1 — source-resilience checks (74-78)
+// ===========================================================================
+
+/**
+ * Recursively collect file paths under `dir` whose name matches `test`.
+ * Returns [] if the directory cannot be read.
+ */
+async function collectFiles(dir, test) {
+  const out = [];
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch {
+    return out;
+  }
+  for (const e of entries) {
+    const full = join(dir, e.name);
+    if (e.isDirectory()) {
+      out.push(...(await collectFiles(full, test)));
+    } else if (e.isFile() && test(e.name)) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+/**
+ * Check 74 — last-known-good preservation.
+ *
+ * The last-known-good JPL file (data/science/last-known-good/jpl-news.json),
+ * when present, must be a HEALTHY snapshot: sourceAvailable=true with
+ * httpStatus=200. A failed fetch must NEVER overwrite it. If the current
+ * jpl-news.json is degraded (sourceAvailable=false), the last-known-good
+ * (if it exists) must still be healthy — proving the degraded fetch did
+ * not wipe the previously successful source data.
+ */
+function runLastKnownGoodHealthCheck(lkgJplRes, jplRes) {
+  const c74 = new CheckResult(
+    74,
+    'science: last-known-good JPL snapshot is healthy and never overwritten by a failed fetch',
+  );
+  if (!lkgJplRes.ok) {
+    c74.warn('No last-known-good JPL file yet — check 74 skipped (will run once JPL succeeds once).');
+    return c74;
+  }
+  const lkg = lkgJplRes.doc;
+  if (lkg.sourceAvailable !== true) {
+    c74.fail(
+      `last-known-good/jpl-news.json has sourceAvailable=${lkg.sourceAvailable} (must be true — a failed fetch must never overwrite the preserved good snapshot).`,
+    );
+  }
+  if (lkg.httpStatus !== 200) {
+    c74.fail(
+      `last-known-good/jpl-news.json has httpStatus=${lkg.httpStatus} (must be 200).`,
+    );
+  }
+  // If the current jpl-news.json is degraded, the last-known-good must
+  // NOT also be degraded (i.e. the failed fetch did not corrupt it).
+  if (jplRes.ok && jplRes.doc.sourceAvailable === false) {
+    if (lkg.sourceAvailable !== true) {
+      c74.fail(
+        'Current JPL fetch is degraded AND last-known-good is also degraded — the failed fetch overwrote the preserved good data.',
+      );
+    } else {
+      // Good — the degraded fetch left the last-known-good intact.
+    }
+  }
+  return c74;
+}
+
+/**
+ * Check 75 — deferred candidates never reach production.
+ *
+ * No scienceStoryKey in data/science/deferred-candidates.json may appear
+ * in published-science.json. A deferred candidate (uncertain cross-source
+ * duplicate / degraded source dependency) must NEVER be published.
+ */
+function runDeferredNotPublishedCheck(deferredRes, publishedDoc) {
+  const c75 = new CheckResult(
+    75,
+    'science: deferred (source-dependency) candidates never appear in published-science.json',
+  );
+  if (!deferredRes.ok) {
+    c75.warn('No deferred-candidates.json — check 75 skipped.');
+    return c75;
+  }
+  const deferred = Array.isArray(deferredRes.doc.deferred) ? deferredRes.doc.deferred : [];
+  if (deferred.length === 0) {
+    return c75; // nothing deferred — trivially passes
+  }
+  const publishedKeys = new Set();
+  if (publishedDoc && Array.isArray(publishedDoc.stories)) {
+    for (const s of publishedDoc.stories) {
+      if (s && isNonEmptyString(s.scienceStoryKey)) publishedKeys.add(s.scienceStoryKey);
+    }
+  }
+  const leaked = [];
+  for (const d of deferred) {
+    if (d && isNonEmptyString(d.scienceStoryKey) && publishedKeys.has(d.scienceStoryKey)) {
+      leaked.push(d.scienceStoryKey);
+    }
+  }
+  if (leaked.length > 0) {
+    c75.fail(
+      `Deferred candidates found in published-science.json: ${leaked.slice(0, 5).join(', ')}${leaked.length > 5 ? ` (+${leaked.length - 5} more)` : ''}`,
+    );
+  }
+  return c75;
+}
+
+/**
+ * Check 76 — SWPC independence.
+ *
+ * A significant SWPC event must never be blocked by a JPL outage. If
+ * SWPC is currently HEALTHY, no SWPC candidate (scienceStoryKey starting
+ * with swpc__) in deferred-candidates.json may carry a JPL-related defer
+ * reason. SWPC may only be deferred for SWPC's own degradation.
+ */
+function runSwpcIndependenceCheck(deferredRes, sourceHealthRes, swpcRes) {
+  const c76 = new CheckResult(
+    76,
+    'science: SWPC events not blocked by JPL outage (SWPC independence)',
+  );
+  // Determine SWPC health.
+  let swpcHealthy = false;
+  if (sourceHealthRes.ok && sourceHealthRes.doc?.sources?.SWPC) {
+    swpcHealthy = sourceHealthRes.doc.sources.SWPC.status === 'HEALTHY';
+  } else if (swpcRes.ok) {
+    swpcHealthy = swpcRes.doc.sourceAvailable === true;
+  }
+  if (!swpcHealthy) {
+    c76.warn('SWPC not currently healthy — check 76 skipped (SWPC may legitimately defer its own candidates).');
+    return c76;
+  }
+  if (!deferredRes.ok) {
+    c76.warn('No deferred-candidates.json — check 76 skipped.');
+    return c76;
+  }
+  const deferred = Array.isArray(deferredRes.doc.deferred) ? deferredRes.doc.deferred : [];
+  const blocked = [];
+  for (const d of deferred) {
+    const key = d && d.scienceStoryKey ? d.scienceStoryKey : '';
+    if (!key.startsWith('swpc__')) continue;
+    const reason = String(d && (d.reason || d.deferStatus) || '').toLowerCase();
+    // A SWPC candidate deferred with a JPL-related reason while SWPC is
+    // healthy is a violation of SWPC independence.
+    if (reason.includes('jpl')) {
+      blocked.push(`${key} (${d.reason || d.deferStatus})`);
+    }
+  }
+  if (blocked.length > 0) {
+    c76.fail(
+      `SWPC candidates blocked by JPL while SWPC is healthy: ${blocked.slice(0, 5).join('; ')}${blocked.length > 5 ? ` (+${blocked.length - 5} more)` : ''}`,
+    );
+  }
+  return c76;
+}
+
+/**
+ * Check 77 — no public exposure of internal source-health diagnostics.
+ *
+ * Internal source-health tokens (sourceAvailable, fetchError, httpStatus,
+ * DEGRADED, deferred-source-dependency, etc.) must NEVER appear in any
+ * public article markdown (src/content/articles/*.md) or any page
+ * template (src/pages/**). Source-health diagnostics are internal only.
+ */
+async function runNoPublicSourceHealthExposureCheck(articlesDir, pagesDir) {
+  const c77 = new CheckResult(
+    77,
+    'science: internal source-health diagnostics never exposed on public pages/articles',
+  );
+  const TOKENS = [
+    'sourceAvailable',
+    'fetchError',
+    'consecutiveFailures',
+    'lastSuccessfulFetchAt',
+    'deferred-source-dependency',
+    'deferred-source-degraded',
+    'source-health',
+    'last-known-good',
+  ];
+  // The uppercase token DEGRADED is matched case-sensitively (the
+  // internal status label). The lowercase word "degraded" may appear
+  // in normal prose, so we only flag the uppercase internal label.
+  const UPPERCASE_TOKENS = ['DEGRADED'];
+
+  const targets = [];
+  // Article markdown files.
+  try {
+    const arts = await readdir(articlesDir);
+    for (const f of arts) {
+      if (f.endsWith('.md')) targets.push(join(articlesDir, f));
+    }
+  } catch {
+    // no articles dir — skip
+  }
+  // Page templates (recursively).
+  const pages = await collectFiles(pagesDir, (name) =>
+    /\.(astro|md|ts|tsx|js|jsx|mjs)$/i.test(name),
+  );
+  targets.push(...pages);
+
+  const leaks = [];
+  for (const path of targets) {
+    let content;
+    try {
+      content = await readFile(path, 'utf8');
+    } catch {
+      continue;
+    }
+    for (const tok of TOKENS) {
+      if (content.includes(tok)) {
+        leaks.push(`${path}: contains "${tok}"`);
+      }
+    }
+    for (const tok of UPPERCASE_TOKENS) {
+      if (content.includes(tok)) {
+        leaks.push(`${path}: contains "${tok}"`);
+      }
+    }
+  }
+  if (leaks.length > 0) {
+    c77.fail(
+      `Internal source-health diagnostics exposed on public pages/articles: ${leaks.slice(0, 5).join('; ')}${leaks.length > 5 ? ` (+${leaks.length - 5} more)` : ''}`,
+    );
+  }
+  return c77;
+}
+
+/**
+ * Check 78 — source-health + deferred-candidates file well-formedness.
+ *
+ * If the internal diagnostic files exist, they must be well-formed:
+ *   - source-health.json: has `sources` map with NASA/JPL/SWPC, each
+ *     carrying the 8 health fields and a status ∈ {HEALTHY, DEGRADED}.
+ *   - deferred-candidates.json: has `deferredCount` (number) and a
+ *     `deferred` array whose entries carry scienceStoryKey + deferStatus.
+ *
+ * These files are internal-only (under data/science/, not committed by
+ * the workflow); this check guards against structural corruption.
+ */
+function runSourceHealthFileWellFormedCheck(sourceHealthRes, deferredRes) {
+  const c78 = new CheckResult(
+    78,
+    'science: source-health and deferred-candidates diagnostic files are well-formed',
+  );
+  if (sourceHealthRes.ok) {
+    const sources = sourceHealthRes.doc && sourceHealthRes.doc.sources;
+    if (!sources || typeof sources !== 'object') {
+      c78.fail('source-health.json missing `sources` object.');
+    } else {
+      for (const key of ['NASA', 'JPL', 'SWPC']) {
+        const h = sources[key];
+        if (!h) {
+          c78.fail(`source-health.json missing ${key} entry.`);
+          continue;
+        }
+        const requiredFields = [
+          'sourceAvailable', 'httpStatus', 'fetchedAt',
+          'lastSuccessfulFetchAt', 'consecutiveFailures',
+          'fetchError', 'recordCount', 'status',
+        ];
+        for (const f of requiredFields) {
+          if (!(f in h)) {
+            c78.fail(`source-health.json ${key} missing field "${f}".`);
+          }
+        }
+        if (h.status && h.status !== 'HEALTHY' && h.status !== 'DEGRADED') {
+          c78.fail(`source-health.json ${key} has invalid status="${h.status}".`);
+        }
+      }
+    }
+  } else {
+    c78.warn('No source-health.json — check 78 (source-health part) skipped.');
+  }
+
+  if (deferredRes.ok) {
+    const d = deferredRes.doc;
+    if (typeof d.deferredCount !== 'number') {
+      c78.fail('deferred-candidates.json missing numeric `deferredCount`.');
+    }
+    if (!Array.isArray(d.deferred)) {
+      c78.fail('deferred-candidates.json missing `deferred` array.');
+    } else {
+      for (const entry of d.deferred) {
+        if (!entry || !isNonEmptyString(entry.scienceStoryKey)) {
+          c78.fail('deferred-candidates.json entry missing scienceStoryKey.');
+          break;
+        }
+        if (!isNonEmptyString(entry.deferStatus)) {
+          c78.fail(`deferred-candidates.json entry ${entry.scienceStoryKey} missing deferStatus.`);
+          break;
+        }
+      }
+    }
+  } else {
+    c78.warn('No deferred-candidates.json — check 78 (deferred part) skipped.');
+  }
+  return c78;
+}
+
 /**
  * Parse YAML frontmatter from a markdown file. Returns a map of key →
  * string value (for simple top-level scalar fields). Multi-line and
@@ -1392,6 +1699,38 @@ async function main() {
       articleFrontmatters,
     ),
   );
+
+  // --- Phase 9D.1 — source-resilience checks (74-78) -------------------
+  const sourceHealthRes = await loadJsonOptional(INPUT_FILES.sourceHealth);
+  const deferredRes = await loadJsonOptional(INPUT_FILES.deferredCandidates);
+  const lkgJplRes = await loadJsonOptional(INPUT_FILES.lastKnownGoodJpl);
+
+  // Check 74 — last-known-good preservation.
+  allChecks.push(runLastKnownGoodHealthCheck(lkgJplRes, jplRes));
+
+  // Check 75 — deferred candidates never reach production.
+  allChecks.push(
+    runDeferredNotPublishedCheck(
+      deferredRes,
+      publishedRes.ok ? publishedRes.doc : null,
+    ),
+  );
+
+  // Check 76 — SWPC independence.
+  allChecks.push(
+    runSwpcIndependenceCheck(deferredRes, sourceHealthRes, swpcRes),
+  );
+
+  // Check 77 — no public source-health exposure.
+  allChecks.push(
+    await runNoPublicSourceHealthExposureCheck(
+      INPUT_FILES.articlesDir,
+      INPUT_FILES.pagesDir,
+    ),
+  );
+
+  // Check 78 — source-health + deferred-candidates file well-formedness.
+  allChecks.push(runSourceHealthFileWellFormedCheck(sourceHealthRes, deferredRes));
 
   // --- Report ------------------------------------------------------------
   console.log('');

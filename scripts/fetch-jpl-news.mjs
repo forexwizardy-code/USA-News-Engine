@@ -67,6 +67,11 @@ import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { XMLParser } from 'fast-xml-parser';
+import {
+  isTransientStatus,
+  JPL_RETRY_BACKOFF_MS,
+  JPL_MAX_ATTEMPTS,
+} from './science-source-resilience-rules.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -785,6 +790,58 @@ async function tryFetch(url) {
   return { ok: true, status: response.status, body: text, error: null };
 }
 
+/**
+ * Phase 9D.1 — fetch the JPL feed with modest exponential backoff
+ * retries for TRANSIENT failures.
+ *
+ * Transient (retryable) responses:
+ *   - HTTP 202 with an empty body (the live JPL WAF issue)
+ *   - HTTP 408 / 425 / 429
+ *   - HTTP 5xx (500 / 502 / 503 / 504)
+ *   - network failure / timeout (status 0)
+ *
+ * Hard (non-retryable) responses — return immediately so we do not
+ * hammer JPL:
+ *   - HTTP 403 (bot-mitigation block)
+ *   - HTTP 404 / 410
+ *   - other 4xx
+ *
+ * Up to JPL_MAX_ATTEMPTS (3) attempts total. Backoff schedule
+ * (JPL_RETRY_BACKOFF_MS): wait ~2s before attempt 2, ~5s before
+ * attempt 3. Per the Phase 9D.1 spec: "Do not hammer JPL."
+ *
+ * Returns the LAST tryFetch result (success or the final failure).
+ */
+async function fetchWithRetries(url) {
+  let lastResult = null;
+  for (let attempt = 1; attempt <= JPL_MAX_ATTEMPTS; attempt++) {
+    lastResult = await tryFetch(url);
+    if (lastResult.ok) {
+      if (attempt > 1) {
+        console.log(`  [retry] JPL fetch succeeded on attempt ${attempt}/${JPL_MAX_ATTEMPTS}.`);
+      }
+      return lastResult;
+    }
+    // Decide whether the failure is transient (worth retrying).
+    const transient = isTransientStatus(lastResult.status);
+    const remaining = JPL_MAX_ATTEMPTS - attempt;
+    if (!transient || remaining <= 0) {
+      if (attempt > 1) {
+        console.log(
+          `  [retry] JPL fetch failed on attempt ${attempt}/${JPL_MAX_ATTEMPTS} (status=${lastResult.status}, transient=${transient}); giving up.`,
+        );
+      }
+      return lastResult;
+    }
+    const waitMs = JPL_RETRY_BACKOFF_MS[attempt - 1] || 5000;
+    console.warn(
+      `  [retry] JPL fetch attempt ${attempt}/${JPL_MAX_ATTEMPTS} failed (status=${lastResult.status}, error="${lastResult.error}"). Retrying in ${waitMs}ms...`,
+    );
+    await new Promise((r) => setTimeout(r, waitMs));
+  }
+  return lastResult;
+}
+
 // --- Main ------------------------------------------------------------------
 
 async function main() {
@@ -794,8 +851,8 @@ async function main() {
 
   const now = new Date();
 
-  // Step 1 — fetch the feed.
-  const fetchResult = await tryFetch(FEED_URL);
+  // Step 1 — fetch the feed (Phase 9D.1: with transient-failure retries).
+  const fetchResult = await fetchWithRetries(FEED_URL);
 
   // If the fetch failed, write an empty result with sourceAvailable=false
   // so downstream pipelines know the fetch failed (vs. a successful
