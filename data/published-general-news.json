@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T16:21:44.589Z",
-  "storyCount": 4,
+  "generatedAt": "2026-09-28T16:47:52.006Z",
+  "storyCount": 6,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -76,6 +76,44 @@
       "storyScore": 61,
       "sourceUrls": [
         "https://www.nytimes.com/2026/09/28/arts/music/harry-styles-msg-ticket-prices-affordability.html"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__8105aecf19833d2a",
+      "slug": "business-here-s-what-fans-paid-for-harry-styles-tickets-at-2026-09-28",
+      "articlePath": "src/content/articles/business-here-s-what-fans-paid-for-harry-styles-tickets-at-2026-09-28.md",
+      "title": "Here’s What Fans Paid for Harry Styles Tickets at M.S.G.",
+      "publishedAt": "2026-09-28T16:47:51.946Z",
+      "category": "business",
+      "primarySource": "New York Times — Business",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 63,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/28/arts/music/harry-styles-msg-ticket-prices-affordability.html"
+      ]
+    },
+    {
+      "generalStoryKey": "gn__60b985e5fc008726",
+      "slug": "politics-live-updates-trump-set-to-reveal-iowa-steel-mill-2026-09-28",
+      "articlePath": "src/content/articles/politics-live-updates-trump-set-to-reveal-iowa-steel-mill-2026-09-28.md",
+      "title": "Live updates: Trump set to reveal Iowa steel mill plans; Senate tees up college sports bill vote",
+      "publishedAt": "2026-09-28T16:47:52.006Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6114586-live-updates-trump-iran-midterms-college-sports-act-supreme-court/"
       ]
     }
   ]
