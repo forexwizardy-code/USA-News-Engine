@@ -8,7 +8,7 @@
   "earthquakePublishingEnabled": true,
   "maxEarthquakeNewPerRun": 1,
   "maxEarthquakeNewPerDay": 2,
-  "sciencePublishingEnabled": false,
+  "sciencePublishingEnabled": true,
   "maxScienceNewPerRun": 1,
   "maxScienceNewPerDay": 3
 }
