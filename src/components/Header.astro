@@ -15,6 +15,10 @@ const today = new Date().toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  // Phase 10A.1 TZ fix: the newsroom date is ALWAYS U.S. Eastern Time
+  // (America/New_York), regardless of the build server's timezone.
+  // EST/EDT is applied automatically by Intl.
+  timeZone: 'America/New_York',
 });
 
 const navItems = [

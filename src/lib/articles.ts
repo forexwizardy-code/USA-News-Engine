@@ -200,7 +200,14 @@ export function relativeTime(date: Date, now: Date = new Date()): string {
   });
 }
 
-/** Long, human-readable timestamp, e.g. "March 14, 2025 at 9:42 PM EDT". */
+/**
+ * Long, human-readable timestamp, e.g. "March 14, 2025 at 9:42 PM EDT".
+ *
+ * Phase 10A.1 TZ fix: the site-wide editorial timezone is America/New_York
+ * (U.S. Eastern Time). EST/EDT is applied automatically by Intl. This is
+ * the fallback when a more specific timezone (e.g. Weather local event
+ * timezone) cannot be derived. Stored ISO timestamps remain UTC.
+ */
 export function formatDateTime(date: Date): string {
   return date.toLocaleString('en-US', {
     month: 'long',
@@ -209,6 +216,7 @@ export function formatDateTime(date: Date): string {
     hour: 'numeric',
     minute: '2-digit',
     timeZoneName: 'short',
+    timeZone: 'America/New_York',
   });
 }
 

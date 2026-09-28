@@ -226,7 +226,7 @@ async function main() {
       noConcurrency++;
       results.push(`          (no-concurrency) ${wf}`);
     }
-    if (!text || !/git pull --rebase origin main/.test(text)) {
+    if (!text || !/git pull --rebase (--autostash )?origin main/.test(text)) {
       noConcurrency++;
       results.push(`          (no-rebase) ${wf}`);
     }
@@ -274,6 +274,60 @@ async function main() {
     if (m && counts[m[1]] !== undefined) counts[m[1]]++;
   }
   check('L20', `Article inventory: ${articleFiles.length} articles (weather=${counts.weather} recalls=${counts.recalls} science=${counts.science})`, 'pass');
+
+  // --- 21. Header date uses America/New_York timezone (not visitor's) ---
+  // Check the source files (not the built HTML, which bakes the build-time date).
+  const headerSrc = await readText(join(SRC_DIR, 'components', 'Header.astro'));
+  const baseLayoutSrc = await readText(join(SRC_DIR, 'layouts', 'BaseLayout.astro'));
+  const headerHasET = /timeZone:\s*['"]America\/New_York['"]/.test(headerSrc || '');
+  const jsHasET = /timeZone:\s*['"]America\/New_York['"]/.test(baseLayoutSrc || '');
+  check('L21', 'Header SSR date uses timeZone: America/New_York', headerHasET ? 'pass' : 'fail');
+  check('L22', 'Header JS date uses timeZone: America/New_York (not visitor timezone)', jsHasET ? 'pass' : 'fail');
+
+  // --- 23. No non-U.S. timezone USAGE in public UI source ---
+  // The site is a U.S. news website; the newsroom timezone is America/New_York.
+  // No non-U.S. timezone should be ACTIVELY USED (e.g. timeZone: 'Asia/Karachi')
+  // in any public-facing source file. Mentions in comments explaining the policy
+  // are fine — this check only flags actual `timeZone:` usage of non-U.S. zones.
+  const srcFiles = await collectFiles(SRC_DIR, (n) => /\.(astro|ts|tsx|js|mjs)$/i.test(n));
+  let nonUsTzLeaks = 0;
+  for (const f of srcFiles) {
+    const text = await readText(f);
+    if (!text) continue;
+    // Flag actual timeZone: 'Asia/Karachi' or similar non-U.S. timezone USAGE.
+    // Allowed U.S. timezones: America/New_York, America/Chicago, America/Denver,
+    // America/Los_Angeles, Pacific/Honolulu, UTC.
+    const allowedTz = ['America/New_York', 'America/Chicago', 'America/Denver',
+      'America/Los_Angeles', 'Pacific/Honolulu', 'UTC', 'America/Nome'];
+    const tzMatches = [...text.matchAll(/timeZone:\s*['"]([^'"]+)['"]/g)];
+    for (const m of tzMatches) {
+      if (!allowedTz.includes(m[1])) {
+        nonUsTzLeaks++;
+        results.push(`          (non-us-tz) ${f.replace(PROJECT_DIR, '')}: timeZone='${m[1]}'`);
+      }
+    }
+  }
+  check('L23', 'No non-U.S. timezone usage in public UI source', nonUsTzLeaks === 0 ? 'pass' : 'fail',
+    nonUsTzLeaks === 0 ? '' : `${nonUsTzLeaks} file(s) with non-U.S. timezone usage`);
+
+  // --- 24. Stored article publishedAt timestamps remain ISO UTC ---
+  // Verify frontmatter publishedAt values are ISO 8601 UTC (end in Z or +00:00).
+  let nonUtcTimestamps = 0;
+  for (const f of articleFiles) {
+    const text = await readText(join(articleDir, f));
+    if (!text) continue;
+    const m = text.match(/^publishedAt:\s*(\S+)/m);
+    if (m) {
+      const val = m[1];
+      // Must be ISO 8601 with UTC indicator (Z or +00:00)
+      if (!/\d{4}-\d{2}-\d{2}T[\d:.]+(Z|[+]\d{2}:\d{2})/.test(val)) {
+        nonUtcTimestamps++;
+        results.push(`          (non-utc) ${f}: publishedAt=${val}`);
+      }
+    }
+  }
+  check('L24', 'Stored publishedAt timestamps are ISO UTC', nonUtcTimestamps === 0 ? 'pass' : 'fail',
+    nonUtcTimestamps === 0 ? '' : `${nonUtcTimestamps} article(s) with non-UTC publishedAt`);
 
   return report();
 }

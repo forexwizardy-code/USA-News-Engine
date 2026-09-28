@@ -75,9 +75,16 @@ const currentPath = Astro.url.pathname;
       // Phase 10A.1 — reader-facing freshness layer (vanilla JS, no library).
       // Updates <time data-relative> elements with live relative timestamps
       // ("3 hr ago", "2 days ago") from the server-rendered datetime attribute.
-      // Also updates the header date to the visitor's current date.
-      // The server-rendered fallback (build-time relative time) remains for
-      // no-JS users; this script progressively enhances it.
+      //
+      // TIMEZONE POLICY: the header date is ALWAYS U.S. Eastern Time
+      // (America/New_York), NOT the visitor's device timezone. A reader in
+      // any non-U.S. timezone sees the same U.S. Eastern newsroom date.
+      // Relative timestamps ("3 hr ago") are timezone-independent (they
+      // compute the diff between now and the stored UTC timestamp) so no
+      // timezone is needed for them.
+      //
+      // The server-rendered fallback (build-time ET date) remains for no-JS
+      // users; this script progressively enhances it.
       (function () {
         function relativeTime(date) {
           var now = Date.now();
@@ -94,9 +101,13 @@ const currentPath = Astro.url.pathname;
           var wk = Math.floor(day / 7);
           if (wk === 1) return '1 week ago';
           if (wk < 5) return wk + ' weeks ago';
-          return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          // For >5 weeks, show the ET date (not visitor's timezone).
+          return date.toLocaleDateString('en-US', {
+            month: 'short', day: 'numeric', year: 'numeric',
+            timeZone: 'America/New_York'
+          });
         }
-        // Update all relative timestamps.
+        // Update all relative timestamps (timezone-independent).
         document.querySelectorAll('time[data-relative]').forEach(function (el) {
           var dt = el.getAttribute('datetime');
           if (!dt) return;
@@ -104,11 +115,13 @@ const currentPath = Astro.url.pathname;
           if (isNaN(d.getTime())) return;
           el.textContent = relativeTime(d);
         });
-        // Update header date to visitor's current date.
+        // Update header date to U.S. Eastern Time (NOT visitor's timezone).
+        // A reader in any non-U.S. timezone sees the U.S. Eastern newsroom date.
         var hd = document.querySelector('[data-header-date]');
         if (hd) {
           hd.textContent = new Date().toLocaleDateString('en-US', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+            timeZone: 'America/New_York'
           });
         }
       })();
