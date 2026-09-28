@@ -1,0 +1,137 @@
+{
+  "draftVersion": 1,
+  "generatedAt": "2026-09-28T09:53:16.473Z",
+  "scienceStoryKey": "jpl__a0b05eee4e3af8ae",
+  "status": "draft",
+  "title": "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula",
+  "description": "NASA-ISRO SAR mission NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between December 2025 and August 2026.",
+  "slug": "nisar-volcanic-eruption-time-lapse-2026-09-24",
+  "category": "science",
+  "author": "US News Engine Science Desk",
+  "publishedAt": "2026-09-28T09:53:16.473Z",
+  "updatedAt": null,
+  "sourcePublishedAt": "2026-09-24T16:00:00.000Z",
+  "breaking": false,
+  "sourceName": "NASA Jet Propulsion Laboratory",
+  "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
+  "sourceOffice": "Jet Propulsion Laboratory, Pasadena, Calif.",
+  "seo": {
+    "title": "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula",
+    "description": "NASA-ISRO SAR mission NISAR captured a time-lapse of lava spreading from the northern crater of Krasheninnikov volcano on Russia’s Kamchatka Peninsula between Decemb"
+  },
+  "image": {
+    "status": "ready-for-image-generator",
+    "rightsStatus": "verified-agency",
+    "mode": "official-source-image",
+    "url": null,
+    "alt": "NISAR-Kamchatka-still-volcano",
+    "credit": "NASA’s Scientific Visualization Studio",
+    "caption": "A still image from an animated view swoops down on a three-dimensional map of the region of Russia’s Kamchatka Peninsula. It settles on a view of a two volcanoes arranged left and right, shown in shades of dark and light orange.",
+    "sourcePageUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
+    "originalImageUrl": "https://d2pn8kiwq2w21t.cloudfront.net/original_images/NISAR-Kamchatka-still-volcano.jpg",
+    "sourceConfirmed": true
+  },
+  "body": [
+    {
+      "heading": null,
+      "paragraphs": [
+        "NASA’s NISAR Earth-observing satellite tracked the spread of lava from the northern crater of Krasheninnikov, a volcano pair on Russia’s Kamchatka Peninsula, between December 2025 and August 2026. Researchers sequenced 17 radar frames captured through mid-August into a time-lapse video showing lava filling an inner caldera, overflowing into a wider crater, and widening into a fan."
+      ]
+    },
+    {
+      "heading": "What JPL reported",
+      "paragraphs": [
+        "According to NASA’s Jet Propulsion Laboratory, the northern volcano began erupting a few days after an 8.8-magnitude earthquake struck the nearby ocean on July 30, 2025. The eruption was the first at Krasheninnikov in nearly five centuries.",
+        "JPL reports that NISAR captured its first image of Krasheninnikov on Dec. 25, 2025, just as the satellite was finishing post-launch checks and becoming operational. Since then, twice every 12 days, NISAR has returned to the same spot in orbit and taken detailed radar snapshots."
+      ]
+    },
+    {
+      "heading": "What scientists observed",
+      "paragraphs": [
+        "The time-lapse shows lava filling a smaller, inner caldera, then overflowing into a wider crater before widening into a fan. Lava appears lighter in the radar images because microwaves reflect more brightly from the new flow than from the surrounding snow or bare ground.",
+        "JPL quotes NISAR science team member Matthew Pritchard, a geophysicist at Cornell University who analyzed the data: “The consistency is crucial. Twice every 12 days, acquiring in this high-resolution mode and in two observation directions, this shows the promise of NISAR to closely monitor natural hazards.”"
+      ]
+    },
+    {
+      "heading": "Mission or instrument context",
+      "paragraphs": [
+        "NISAR is the first free-flying space mission to feature two radar instruments: an L-band system provided by NASA and an S-band system provided by ISRO, the Indian Space Research Organisation. The spacecraft’s drum-shaped reflector, 39 feet (12 meters) wide, is the largest radar antenna reflector NASA has launched into space, JPL says.",
+        "The mission is managed by Caltech for NASA; JPL leads the U.S. component and supplied the L-band SAR and antenna reflector. ISRO provided the spacecraft bus and its S-band SAR."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "JPL says the data products from NISAR’s L-band radar are available at the Alaska Satellite Facility Distributed Active Archive Center in Fairbanks, which hosts and distributes all NASA synthetic aperture radar data."
+      ]
+    }
+  ],
+  "scienceMetadata": {
+    "storyType": "earth-science",
+    "mission": "NISAR",
+    "topic": "volcanic-eruption-time-lapse",
+    "primarySource": "JPL",
+    "allSourceKeys": [
+      "jpl__a0b05eee4e3af8ae"
+    ],
+    "sourceUrls": [
+      "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption"
+    ],
+    "storyScore": 35,
+    "priority": "medium",
+    "publishEligible": true,
+    "freshnessStatus": "current",
+    "bootstrapSeen": true
+  },
+  "claimAudit": [
+    {
+      "claim": "NISAR tracked lava from Krasheninnikov volcano on Kamchatka between Dec 2025 and Aug 2026.",
+      "sourceField": "article body",
+      "sourceEvidence": "NISAR captured an image of Krasheninnikov on Dec. 25, 2025 ... Researchers put 17 of the frames captured through mid-August into sequence",
+      "inHeadline": true,
+      "inBody": true
+    },
+    {
+      "claim": "Researchers sequenced 17 radar frames into a time-lapse video.",
+      "sourceField": "article body",
+      "sourceEvidence": "Researchers put 17 of the frames captured through mid-August into sequence, forming a time-lapse video",
+      "inHeadline": false,
+      "inBody": true
+    },
+    {
+      "claim": "The eruption began a few days after an 8.8-magnitude earthquake on July 30, 2025.",
+      "sourceField": "article body",
+      "sourceEvidence": "On July 30, 2025, an 8.8-magnitude earthquake had struck in the nearby ocean ... A few days later, for the first time in nearly five centuries, Krasheninnikov started erupting.",
+      "inHeadline": false,
+      "inBody": true
+    },
+    {
+      "claim": "NISAR revisits the same spot twice every 12 days.",
+      "sourceField": "article body",
+      "sourceEvidence": "Twice every 12 days since ... NISAR has returned to the same spot in orbit",
+      "inHeadline": false,
+      "inBody": true
+    },
+    {
+      "claim": "NISAR is the first free-flying mission with two radar instruments (L-band + S-band).",
+      "sourceField": "article body",
+      "sourceEvidence": "The NISAR satellite is the first free-flying space mission to feature two radar instruments: an L-band system and an S-band system.",
+      "inHeadline": false,
+      "inBody": true
+    },
+    {
+      "claim": "L-band data products are available at the Alaska Satellite Facility DAAC.",
+      "sourceField": "article body",
+      "sourceEvidence": "The data products from the NISAR mission’s L-band radar are available at the Alaska Satellite Facility Distributed Active Archive Center in Fairbanks",
+      "inHeadline": false,
+      "inBody": true
+    },
+    {
+      "claim": "The image credit is NASA’s Scientific Visualization Studio.",
+      "sourceField": "image credit",
+      "sourceEvidence": "Credit: NASA’s Scientific Visualization Studio",
+      "inHeadline": false,
+      "inBody": false
+    }
+  ]
+}

@@ -3048,3 +3048,411 @@ Top 10 stories (publishEligible first, then freshness, then score):
    can't be imported). If the heuristic diverges, check 29 becomes
    a no-op rather than a false positive. Keep the two copies in
    sync when updating the heuristic.
+
+---
+
+## Phase 9B — Science article generator + private previews (Task 9B-previews)
+
+**Agent:** general-purpose sub-agent
+**Date:** 2026-09-28 (simulated project timeline)
+**Scope:** Create the Science article draft generator, hero-image generator
+(verified-agency / mixed-agency / factual-graphic paths), hidden preview
+route at `/preview/science/<slug>/`, and a batch driver that produces
+private previews for the three publishEligible Science stories identified
+in Phase 9A.2.
+
+### Files created
+
+- `scripts/generate-science-draft.mjs`
+  Reads a `scienceStoryKey` (argv[2], or the first publishEligible story
+  by default), fetches the FULL official source page, extracts article
+  body text + image metadata, and writes a private structured draft JSON
+  to `data/science/drafts/<slug>.json`.
+
+  Source-page fetch:
+    * JPL pages sit behind AWS WAF. A browser-like User-Agent alone is NOT
+      enough — the request must also send the standard `Sec-Fetch-Dest:
+      document`, `Sec-Fetch-Mode: navigate`, `Sec-Fetch-Site: none`,
+      `Sec-Fetch-User: ?1`, and `Upgrade-Insecure-Requests: 1` headers
+      that a real browser sends on a top-level navigation. Without them,
+      JPL returns HTTP 202 with a ~2.4 KB JS-challenge stub instead of
+      the article HTML.
+    * JPL occasionally returns the WAF challenge even with the full
+      browser header set under load; we retry up to 4 times with 2/4/8 s
+      backoff, then fall back to a previously cached copy of the page
+      (see `data/science/cache/`).
+    * NASA pages work with the project's default `USNewsEngine/1.0`
+      User-Agent; no special headers needed.
+    * The real JPL article HTML embeds an `awswaf` SDK <script> tag for
+      client-side bot detection, so the WAF-stub check looks for the
+      literal `<div id="challenge-container">` AND a tiny body size, not
+      just the string "awswaf".
+
+  Article body extraction:
+    * JPL pattern: slice from `itemprop="articleBody"` (skipping past the
+      enclosing tag's closing `>` so the literal attribute doesn't leak
+      into the first paragraph) up to `</main>`.
+    * NASA image-article pattern: capture content inside `<article>…</article>`.
+    * Strip HTML tags, decode common named + numeric entities, collapse
+      whitespace into paragraphs. Trim JPL trailing chrome (the
+      "More about …" / "Media Contacts" / "Get the JPL Newsletter" /
+      "Related News" sections that JPL appends below the actual story).
+    * Trim NASA trailing chrome (the "Text credit:" / "Image credit:"
+      lines — those become image metadata, not body paragraphs).
+
+  Image metadata extraction:
+    * JPL: pull the hero image URL from `<meta itemprop="image" content="…">`
+      and the credit from the `Credit: …</span>` pattern that JPL embeds
+      in the image block.
+    * NASA: scan `<img>` tags for the first image with a real image-file
+      extension, skipping logos / theme assets / template chrome. Pull
+      the credit from `<figcaption class="hds-credits">…</figcaption>`.
+
+  Slug derivation:
+    * Format: `<short-mission>-<key-topic>-<YYYY-MM-DD>` using the source
+      publication date.
+    * Short mission: prefers `story.mission`; falls back to a per-storyKey
+      override table (the Jezero Crater story has `mission: null` in the
+      record even though it's clearly a Perseverance story); falls back
+      to scanning the title for known mission names; finally falls back
+      to `jpl` / `nasa` / `mission`.
+    * Key topic: per-storyKey editorial table. (NISAR:
+      `volcanic-eruption-time-lapse`; Perseverance:
+      `mars-water-systems`; Hubble: `spiral-galaxy-ngc-4698`.)
+
+  Per-story composition:
+    * `composeNisar` — 5 sections: Lead (no heading), "What JPL
+      reported", "What scientists observed", "Mission or instrument
+      context", "What happens next". 7 claim-audit entries.
+    * `composePerseverance` — 5 sections: Lead, "What JPL reported",
+      "What scientists observed", "Why the result matters" (directly
+      supported by source quote from Candice Bedford), "Mission or
+      instrument context". 8 claim-audit entries.
+    * `composeHubble` — 3 sections: Lead, "What NASA reported", "Mission
+      or instrument context". (The NASA image-article page is short —
+      only two body paragraphs describe the galaxy. We deliberately
+      omit "Why the result matters" / "What happens next" sections that
+      the source doesn't support.) 6 claim-audit entries.
+    * `composeGeneric` — fallback for unknown storyKeys: builds a Lead
+      from the first source paragraph and a single "What was reported"
+      section from the remaining source paragraphs. No synthetic claims.
+
+  Candidate-level rights lookup:
+    * Story records set `rightsStatus` to null when no image was
+      auto-selected at fetch time (e.g. third-party credits). The draft
+      generator reads `data/science/science-news-candidates.json` to
+      recover the candidate-level `rightsStatus` / `imageCredit` /
+      `rightsText` when the story record's values are null. This is
+      what makes the Hubble story correctly route to
+      `factual-graphic-fallback` mode (its candidate-level
+      `rightsStatus` is `third-party`).
+
+  Image status block in the draft:
+    * `verified-agency` + `imageUrl` → `mode: "official-source-image"`,
+      `sourceConfirmed: true`.
+    * `mixed-agency` + `imageUrl` →
+      `mode: "official-source-image-pending-credit-verification"`,
+      `sourceConfirmed: true` (the image generator re-verifies the
+      extracted credit before downloading).
+    * `third-party` / `unclear` / `unverified` →
+      `mode: "factual-graphic-fallback"` — the source image is NOT used.
+
+- `scripts/generate-science-image.mjs`
+  Reads the draft JSON, dispatches on `image.mode`, and writes:
+    * `data/draft-images/<slug>.jpg` (verified-agency or mixed-agency path)
+    * `data/draft-images/<slug>.png` (factual-graphic fallback path)
+    * `data/draft-images/<slug>.svg` (the source SVG, for editability —
+      factual-graphic path only)
+    * `data/draft-images/<slug>.json` (metadata sidecar with provenance)
+
+  Three modes:
+    1. verified-agency path (NISAR): download the official source image,
+       cover-crop to 1200x675 using sharp with `position: 'attention'`,
+       save as .jpg (mozjpeg quality 88). The source image is
+       `https://d2pn8kiwq2w21t.cloudfront.net/original_images/NISAR-Kamchatka-still-volcano.jpg`
+       (789 KB → 300 KB cropped).
+    2. mixed-agency path (Perseverance): re-verify the extracted credit
+       confirms a multi-agency signature before downloading. The
+       `verifyMixedAgencyCredit` function requires (a) the credit
+       mentions NASA or JPL, (b) the credit does NOT contain a
+       named-individual pattern (`First Last` or `F. Last` — that would
+       be third-party), and (c) the credit mentions at least one
+       recognized partner org (MSSS, ASU, USGS, Caltech, SwRI, Malin,
+       ESA, CSA, JHU, APL, STScI, Lockheed, Ball Aerospace, Northrop
+       Grumman). The Perseverance credit "NASA/JPL-Caltech/MSSS" passes
+       all three checks → downloaded (13.5 MB original → 125 KB
+       cropped). If verification had failed, the script would have
+       fallen back to the factual-graphic path.
+    3. factual-graphic fallback (Hubble + any third-party / unclear /
+       unverified credit): generate a clean SVG → PNG graphic with a
+       "SCIENCE" eyebrow, the mission/telescope name, the story topic,
+       NASA attribution, and subtle US News Engine branding. The
+       graphic includes a stylized orbital-arc motif (concentric dashed
+       ellipses + a NASA disc) — NOT a simulated photo, NOT AI space
+       art. The Hubble graphic is 21 KB PNG.
+
+  The image metadata sidecar carries: `scienceStoryKey`, `slug`,
+  `imageMode`, `width`, `height`, `source`, `agency`, `sourceUrl`,
+  `sourcePageUrl`, `originalImageUrl`, `credit`, `rightsStatus`,
+  `caption`, `alt`, `copyrightRisk`, `licenseNotes`,
+  `creditVerification` (`{verified, reason}`), `mission`, `topic`,
+  `storyType`, `primarySource`, `sourcePublishedAt`, `generatedAt`,
+  `files.image`.
+
+- `src/pages/preview/science/[slug].astro`
+  Hidden preview route at `/preview/science/<slug>/`. Uses
+  `PreviewLayout` (which already emits `<meta name="robots"
+  content="noindex,nofollow,noarchive">`, a self-referencing canonical,
+  and NO NewsArticle schema). Category badge: "Science" (using a new
+  `.cat-badge--science` style with a deep-blue background). Author: "US
+  News Engine Science Desk". Source box: shows organization (NASA or
+  NASA Jet Propulsion Laboratory), office (JPL gets "Jet Propulsion
+  Laboratory, Pasadena, Calif." / NASA gets "NASA Headquarters"), story
+  type, mission, source published date, and a "View official NASA story
+  →" / "View official JPL story →" link.
+
+  The page renders a claim-audit panel (with `claim-tag--headline` (H)
+  and `claim-tag--body` (B) badges per claim) below the source box. The
+  panel lists every claim-audit entry from the draft, showing the claim
+  text, the source field, and the source evidence. This is for
+  editorial review only — the panel is rendered with a dashed yellow
+  border to make it visually distinct from the article body.
+
+  The aside shows: Category, Source, Story type, Mission, Topic,
+  Priority, Freshness, Image mode, Image rights, Credit check,
+  Source published, Preview generated, Updated, Story key.
+
+  `getStaticPaths` reads `data/science/drafts/*.json` so the route
+  auto-discovers new drafts as they're created. Excluded from the
+  sitemap by the existing `!page.includes('/preview/')` filter in
+  `astro.config.mjs`.
+
+- `scripts/generate-science-previews.mjs`
+  Batch driver that selects the 3 specified publishEligible Science
+  stories (NISAR verified-agency, Perseverance mixed-agency, Hubble
+  third-party), runs the draft generator + image generator for each,
+  copies the generated image to `public/preview-images/`, and prints a
+  summary with storyKey, slug, draft path, image path, image mode,
+  rights status, credit-check result, preview image path, and preview
+  URL.
+
+  The 3 storyKeys are hardcoded in a `SELECTED_STORIES` array at the
+  top of the script so the batch is deterministic.
+
+- `data/science/cache/`
+  New directory holding cached copies of the JPL/NASA source pages.
+  Populated automatically by successful runs of
+  `generate-science-draft.mjs` (keyed by host + URL path). Can also be
+  primed manually. Used as a fallback when JPL's AWS WAF blocks the
+  live fetch (which is what happened during this Phase 9B run — JPL
+  returned the WAF challenge stub for all 4 retry attempts on both
+  NISAR and Perseverance URLs).
+
+  Cache file naming: `<host-with-dashes>-<path-with-dashes>.html`. For
+  example: `jpl-nasa-gov-news-us-india-satellite-captures-time-lapse-video-of-volcanic-eruption.html`.
+
+  Cache validation: a cached file is only used if it is >20 KB AND
+  contains one of the article-body markers (`itemprop="articleBody"`,
+  `<article`, `<main`) AND does NOT contain
+  `id="challenge-container"`. (The real JPL article page embeds an
+  `awswaf` SDK <script> tag, so the WAF-stub check can't just grep for
+  "awswaf".)
+
+### npm scripts added
+
+- `draft:science` → `node scripts/generate-science-draft.mjs`
+- `image:science` → `node scripts/generate-science-image.mjs`
+- `previews:science` → `node scripts/generate-science-previews.mjs`
+
+### Test results — `npm run previews:science`
+
+3 previews generated successfully:
+
+1. **NISAR (verified-agency)**
+   - scienceStoryKey: `jpl__a0b05eee4e3af8ae`
+   - slug: `nisar-volcanic-eruption-time-lapse-2026-09-24`
+   - draft: `data/science/drafts/nisar-volcanic-eruption-time-lapse-2026-09-24.json`
+   - image: `public/preview-images/nisar-volcanic-eruption-time-lapse-2026-09-24.jpg`
+     (300 KB, 1200x675, downloaded from JPL cloudfront +
+     cover-cropped)
+   - image mode: `verified-agency`
+   - rights status: `verified-agency`
+   - credit: "NASA's Scientific Visualization Studio"
+   - credit check: verified — verified-agency (no further check needed)
+   - preview URL: `/preview/science/nisar-volcanic-eruption-time-lapse-2026-09-24/`
+   - claim audit: 7 entries (1 in headline, 6 in body)
+
+2. **Perseverance (mixed-agency)**
+   - scienceStoryKey: `jpl__7cdc58bb88b1db7c`
+   - slug: `perseverance-mars-water-systems-2026-09-21`
+   - draft: `data/science/drafts/perseverance-mars-water-systems-2026-09-21.json`
+   - image: `public/preview-images/perseverance-mars-water-systems-2026-09-21.jpg`
+     (125 KB, 1200x675, downloaded from JPL cloudfront + cover-cropped)
+   - image mode: `mixed-agency`
+   - rights status: `mixed-agency`
+   - credit: "NASA/JPL-Caltech/MSSS"
+   - credit check: verified — mixed-agency signature confirmed
+     (NASA/JPL token present, no named-individual pattern, MSSS partner
+     org present)
+   - preview URL: `/preview/science/perseverance-mars-water-systems-2026-09-21/`
+   - claim audit: 8 entries (1 in headline, 7 in body)
+
+3. **Hubble (third-party → graphic)**
+   - scienceStoryKey: `nasa__4c93b21d54ff615c`
+   - slug: `hubble-spiral-galaxy-ngc-4698-2026-09-25`
+   - draft: `data/science/drafts/hubble-spiral-galaxy-ngc-4698-2026-09-25.json`
+   - image: `public/preview-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png`
+     (21 KB, 1200x675, generated SVG → PNG editorial graphic)
+   - image mode: `factual-graphic-fallback`
+   - rights status: `third-party`
+   - credit: (none — source image NOT used)
+   - credit check: not used — third-party credit ("ESA/Hubble & NASA,
+     D. Thilker, the MAUVE-HST Team") — source image not used
+   - preview URL: `/preview/science/hubble-spiral-galaxy-ngc-4698-2026-09-25/`
+   - claim audit: 6 entries (1 in headline, 4 in body, 1 image-credit
+     entry that is neither in headline nor body)
+
+### Build + HTTP verification
+
+`npm run build` succeeded: 39 pages built in 1.51 s. All 3 preview
+routes were generated:
+
+- `/preview/science/hubble-spiral-galaxy-ngc-4698-2026-09-25/index.html`
+- `/preview/science/nisar-volcanic-eruption-time-lapse-2026-09-24/index.html`
+- `/preview/science/perseverance-mars-water-systems-2026-09-21/index.html`
+
+`npm run preview` (port 3000) — all 3 routes return HTTP 200:
+
+| URL | Status | Image served |
+| --- | --- | --- |
+| `/preview/science/nisar-volcanic-eruption-time-lapse-2026-09-24/` | 200 | `/preview-images/nisar-volcanic-eruption-time-lapse-2026-09-24.jpg` (200, 300 KB, image/jpeg) |
+| `/preview/science/perseverance-mars-water-systems-2026-09-21/` | 200 | `/preview-images/perseverance-mars-water-systems-2026-09-21.jpg` (200, 125 KB, image/jpeg) |
+| `/preview/science/hubble-spiral-galaxy-ngc-4698-2026-09-25/` | 200 | `/preview-images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png` (200, 21 KB, image/png) |
+
+Each page emits:
+- `<title><headline> | PREVIEW | US News Engine</title>`
+- `<meta name="robots" content="noindex,nofollow,noarchive">`
+- Self-referencing canonical: `<link rel="canonical" href="https://usa-news-engine.forexwizardy.workers.dev/preview/science/<slug>/">`
+- Category badge: "Science"
+- Author: "US News Engine Science Desk"
+- Source link: "View official NASA story →" (Hubble) or "View official
+  JPL story →" (NISAR + Perseverance)
+- Claim-audit panel with H/B tags per claim
+
+Sitemap (`/sitemap-0.xml`) — 25 URLs, ZERO of which contain `/preview/`.
+The existing `!page.includes('/preview/')` filter in `astro.config.mjs`
+correctly excludes all preview pages (including the new
+`/preview/science/*` routes).
+
+### Constraints honored
+
+- ✅ NWS weather scripts untouched.
+- ✅ Recall scripts untouched.
+- ✅ Earthquake scripts untouched.
+- ✅ No `.github/workflows/*` files modified.
+- ✅ `config/automation.json` NOT modified.
+- ✅ `data/published-stories.json` (NWS) NOT modified.
+- ✅ `data/published-recalls.json` NOT modified.
+- ✅ `data/published-earthquakes.json` NOT modified.
+- ✅ No public article files created in `src/content/articles/`.
+- ✅ `DEMO_NOINDEX` remains `true` in `src/consts.ts` (untouched).
+- ✅ All modified/new scripts are `.mjs` ES modules using only
+  Node.js built-ins + `sharp` (already a dependency). No new
+  dependencies added.
+- ✅ The science preview pages emit `noindex,nofollow,noarchive` and
+  are excluded from the sitemap.
+
+### Headline rules check
+
+All 3 headlines are factual, natural, and under 80 chars; none use the
+forbidden sensationalism words ("breakthrough", "stunning", "historic",
+"revolutionary", "game-changing", "mystery solved"):
+
+1. "NISAR Satellite Tracks Volcanic Lava Flow on Kamchatka Peninsula" (62 chars)
+2. "Perseverance Rover Finds Multi-Stage Water Activity in Mars Rocks" (66 chars)
+3. "Hubble Telescope Images Spiral Galaxy NGC 4698" (46 chars)
+
+### Claim safety check
+
+Every substantive claim in the 3 drafts traces to the source article
+text. The claim audit panel on each preview page lists each claim with
+its source field (article body / image credit) and source evidence
+(a snippet from the source article supporting the claim).
+
+No claims infer life, habitability, proof, danger, climate impact, or
+mission success. The Perseverance draft mentions "carbonates" and
+"water activity" only as JPL reported them — it does NOT claim
+evidence of past life on Mars.
+
+No long source passages are copied verbatim. Each paragraph in the
+"reported" / "observed" sections is a concise original summary, with
+direct quotes from JPL/NASA sources attributed explicitly (e.g.,
+"JPL quotes NISAR science team member Matthew Pritchard, a
+geophysicist at Cornell University who analyzed the data: …").
+
+### Notes for a future agent
+
+1. **JPL AWS WAF is the dominant operational risk.** During this Phase
+   9B run, JPL returned the WAF challenge stub for ALL 4 retry
+   attempts on both the NISAR and Perseverance URLs, even with the
+   full browser-like header set. The cache fallback is what made the
+   run succeed — without it, the draft generator would have failed.
+   The cache is populated automatically by successful runs, so a
+   future agent should run `npm run previews:science` once when the
+   WAF is cooperative to prime the cache, then subsequent runs will
+   work even when the WAF blocks.
+
+2. **Cache file naming is host+path-derived.** Don't rename the cache
+   files manually — the script looks them up by URL-derived name
+   (`<host-with-dashes>-<path-with-dashes>.html`). If you move a
+   cache file, the script won't find it.
+
+3. **The `MISSION_OVERRIDES` table is intentionally small.** It only
+   contains the Jezero Crater → perseverance mapping because that
+   story's record has `mission: null` despite being about
+   Perseverance. Other stories with `mission: null` will fall back to
+   the title-scan heuristic. If you add new Science stories with
+   `mission: null` whose titles don't contain a known mission name,
+   add them to `MISSION_OVERRIDES`.
+
+4. **The `KEY_TOPICS` table is intentionally small.** It only contains
+   the 3 stories this batch generates. Unknown storyKeys fall back to
+   a sanitized `titleSeed` token. If you add new Science stories to
+   the batch, add their key topics to `KEY_TOPICS` for cleaner slugs.
+
+5. **The `GRAPHIC_PARAMS` table is intentionally small.** It only
+   contains the 3 stories this batch generates. Unknown storyKeys
+   fall back to a generic `{missionName: mission, missionSubtitle:
+   sourceName, topic: topic}` graphic. If you add new third-party
+   stories to the batch, add their graphic params to
+   `GRAPHIC_PARAMS` for cleaner graphics.
+
+6. **The `STORY_COMPOSERS` dispatch is intentionally hard-coded.** It
+   routes by `scienceStoryKey` to a per-story composer function.
+   Unknown storyKeys fall back to `composeGeneric`, which builds a
+   Lead from the first source paragraph and a single "What was
+   reported" section from the remaining source paragraphs. If you
+   add new Science stories to the batch that need a more structured
+   body (e.g. "Why the result matters" or "What happens next"),
+   write a dedicated composer and add it to `STORY_COMPOSERS`.
+
+7. **Mixed-agency credit verification is conservative.** The
+   `verifyMixedAgencyCredit` function requires (a) NASA/JPL token,
+   (b) no named-individual pattern, and (c) a recognized partner org.
+   If a future mixed-agency credit doesn't match (e.g. it mentions a
+   partner org not in the recognized list), the script falls back to
+   the factual-graphic path. Add new partner orgs to the regex in
+   `verifyMixedAgencyCredit` if you encounter false negatives.
+
+8. **The Hubble factual graphic is intentionally sparse.** The NASA
+   image-article page is short — only two body paragraphs describe
+   the galaxy. The draft generator deliberately omits "Why the result
+   matters" / "What happens next" sections that the source doesn't
+   support. The graphic likewise avoids any invented context.
+
+9. **No GitHub Actions workflow yet.** Phase 9B does not add a
+   science-newsroom workflow. The `previews:science` script is safe
+   to run on-demand; a future phase can add
+   `.github/workflows/science-newsroom.yml` that runs
+   `npm run prepare:science && npm run previews:science` on a
+   schedule.

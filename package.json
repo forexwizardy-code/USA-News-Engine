@@ -49,6 +49,9 @@
     "filter:science": "node scripts/filter-science-news.mjs",
     "stories:science": "node scripts/build-science-stories.mjs",
     "validate:science": "node scripts/validate-science.mjs",
+    "draft:science": "node scripts/generate-science-draft.mjs",
+    "image:science": "node scripts/generate-science-image.mjs",
+    "previews:science": "node scripts/generate-science-previews.mjs",
     "prepare:science": "npm run fetch:science && npm run registry:science && npm run filter:science && npm run stories:science && npm run validate:science"
   },
   "dependencies": {

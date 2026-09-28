@@ -1,0 +1,35 @@
+{
+  "scienceStoryKey": "jpl__a0b05eee4e3af8ae",
+  "slug": "nisar-volcanic-eruption-time-lapse-2026-09-24",
+  "status": "draft",
+  "type": "official-source-image",
+  "visualType": "official-source-image",
+  "imageMode": "verified-agency",
+  "width": 1200,
+  "height": 675,
+  "source": "NASA Jet Propulsion Laboratory",
+  "agency": "NASA Jet Propulsion Laboratory",
+  "agencyShort": "JPL",
+  "sourceUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
+  "sourcePageUrl": "https://www.jpl.nasa.gov/news/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption",
+  "originalImageUrl": "https://d2pn8kiwq2w21t.cloudfront.net/original_images/NISAR-Kamchatka-still-volcano.jpg",
+  "credit": "NASA’s Scientific Visualization Studio",
+  "rightsStatus": "verified-agency",
+  "caption": "A still image from an animated view swoops down on a three-dimensional map of the region of Russia’s Kamchatka Peninsula. It settles on a view of a two volcanoes arranged left and right, shown in shades of dark and light orange.",
+  "alt": "NISAR-Kamchatka-still-volcano",
+  "copyrightRisk": "none-known (NASA / NASA-affiliated agency work; public domain or NASA media-usage policy)",
+  "licenseNotes": "Official source image. Credit: NASA’s Scientific Visualization Studio. NASA/JPL imagery is generally a U.S. government work or released under NASA's media-usage policy.",
+  "creditVerification": {
+    "verified": true,
+    "reason": "verified-agency (no further check needed)"
+  },
+  "mission": "NISAR",
+  "topic": "volcanic-eruption-time-lapse",
+  "storyType": "earth-science",
+  "primarySource": "JPL",
+  "sourcePublishedAt": "2026-09-24T16:00:00.000Z",
+  "generatedAt": "2026-09-28T09:53:16.556Z",
+  "files": {
+    "image": "data/draft-images/nisar-volcanic-eruption-time-lapse-2026-09-24.jpg"
+  }
+}
