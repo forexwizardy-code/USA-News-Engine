@@ -4,7 +4,7 @@ title: "U.S. and China release product lists for tariff cuts after Trump-Xi meet
 description: "The United States and China have released lists of products worth about $30 billion each that will see tariff cuts. This deal is expected to help boost bilateral trade."
 category: business
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T19:17:17.820Z
+publishedAt: 2026-09-28T19:45:58.437Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: U.S. and China release product lists for tariff cuts after Trump-Xi meeting"
 imageMode: "factual-graphic-fallback"
