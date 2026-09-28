@@ -5,6 +5,7 @@ description: "The NWS said moderate flooding is occurring along Wapsipinicon Riv
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-28T14:35:39.817Z
+updatedAt: 2026-09-28T16:34:25.197Z
 image: "/images/flood-warning-clinton-county-iowa-september-27-2026-map.png"
 imageAlt: "Flood Warning for Clinton County, Iowa"
 imageMode: "map-data"
