@@ -9,6 +9,15 @@ on:
 permissions:
   contents: write
 
+# Phase 10A concurrency safety: only one newsroom run at a time per
+# branch. A scheduled run that fires while another is in-flight (or
+# while a manual dispatch is running) is cancelled rather than racing
+# on the same git ref. This prevents two runs from pulling the same
+# old main, both creating commits, and one failing to push.
+concurrency:
+  group: newsroom-nws-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   newsroom:
     runs-on: ubuntu-latest
@@ -66,6 +75,11 @@ jobs:
           git config user.email "newsroom@users.noreply.github.com"
           git add src/ public/ data/published-stories.json data/image-provenance.json
           git commit -m "Automated NWS newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          # Phase 10A: rebase onto the latest remote main before pushing
+          # so concurrent workflow runs (e.g. NWS + Recall at 08:17/20:17)
+          # do not collide. If the rebase fails, the run aborts safely
+          # rather than force-pushing or overwriting another desk's commit.
+          git pull --rebase origin main
           git push
 
       - name: Deploy to Cloudflare Workers

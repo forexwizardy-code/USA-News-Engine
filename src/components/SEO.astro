@@ -70,11 +70,6 @@ const websiteSchema = {
   name: SITE_NAME,
   url: SITE_URL,
   inLanguage: 'en-US',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${SITE_URL}/?s={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 const articleSchema =
@@ -112,12 +107,21 @@ const breadcrumbSchema =
     ? {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        itemListElement: breadcrumbs.map((c, i) => ({
-          '@type': 'ListItem',
-          position: i + 1,
-          name: c.name,
-          item: new URL(c.path, SITE_URL).href,
-        })),
+        itemListElement: breadcrumbs
+          .filter((c) => c && c.name)
+          .map((c, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: c.name,
+            // Phase 10A: guard against missing `path` — a crumb without
+            // a path (e.g. the current page on a static page) must NOT
+            // emit a `…/undefined` URL. Omit `item` when path is missing;
+            // Google's BreadcrumbList spec allows the last (current) item
+            // to omit `item`.
+            ...(c.path
+              ? { item: new URL(c.path, SITE_URL).href }
+              : {}),
+          })),
       }
     : null;
 ---

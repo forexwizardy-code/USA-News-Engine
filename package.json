@@ -53,7 +53,8 @@
     "image:science": "node scripts/generate-science-image.mjs",
     "previews:science": "node scripts/generate-science-previews.mjs",
     "newsroom:science": "node scripts/run-science-newsroom.mjs",
-    "prepare:science": "npm run fetch:science && npm run registry:science && npm run filter:science && npm run stories:science && npm run validate:science"
+    "prepare:science": "npm run fetch:science && npm run registry:science && npm run filter:science && npm run stories:science && npm run validate:science",
+    "validate:launch": "node scripts/validate-launch.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

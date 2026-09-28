@@ -10,6 +10,12 @@ on:
 permissions:
   contents: write
 
+# Phase 10A concurrency safety: only one newsroom run at a time per
+# branch. Prevents races with other desks or manual dispatches.
+concurrency:
+  group: newsroom-earthquake-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   newsroom:
     runs-on: ubuntu-latest
@@ -69,6 +75,9 @@ jobs:
           git config user.email "newsroom@users.noreply.github.com"
           git add src/ public/ data/published-earthquakes.json
           git commit -m "Automated earthquake newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          # Phase 10A: rebase onto the latest remote main before pushing
+          # so concurrent workflow runs do not collide. Never force-push main.
+          git pull --rebase origin main
           git push
 
       - name: Deploy to Cloudflare Workers
