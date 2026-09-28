@@ -59,7 +59,8 @@
     "registry:general": "node scripts/build-general-news-registry.mjs",
     "stories:general": "node scripts/build-general-news-stories.mjs",
     "draft:general": "node scripts/generate-general-news-draft.mjs",
-    "validate:general": "node scripts/validate-general-news.mjs"
+    "validate:general": "node scripts/validate-general-news.mjs",
+    "newsroom:general": "node scripts/run-general-newsroom.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

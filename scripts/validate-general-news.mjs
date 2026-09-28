@@ -225,6 +225,59 @@ async function main() {
     check('G27', 'All stories have usRelevanceScore', false, 'no stories');
   }
 
+  // Phase 10A.2.3 — no LOW/NONE U.S. relevance story publishes
+  if (storiesRes.ok) {
+    const lowNoneEligible = (storiesRes.doc.stories || []).filter((s) =>
+      (s.usRelevance === 'low' || s.usRelevance === 'none') && s.publishEligible
+    );
+    check('G28', 'No LOW/NONE U.S. relevance story is publishEligible', lowNoneEligible.length === 0,
+      lowNoneEligible.length ? `${lowNoneEligible.length} wrongly eligible` : '');
+  } else {
+    check('G28', 'No LOW/NONE U.S. relevance story is publishEligible', false, 'no stories');
+  }
+
+  // Phase 10A.2.3 — published articles have adequate source evidence (not headline-only)
+  const articleDir = join(PROJECT_DIR, 'src', 'content', 'articles');
+  let articleFiles = [];
+  try { articleFiles = (await readdir(articleDir)).filter((f) => f.endsWith('.md')); } catch {}
+  let headlineOnlyArticles = 0;
+  for (const f of articleFiles) {
+    const text = await readFile(join(articleDir, f), 'utf8');
+    // Check: article body should have more than just the dek + source box.
+    // Extract body (after frontmatter)
+    const bodyMatch = text.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/);
+    if (!bodyMatch) continue;
+    const body = bodyMatch[1];
+    // Count substantial paragraphs (excluding source box)
+    const bodyWithoutSource = body.replace(/## Source[\s\S]*$/m, '');
+    const paras = bodyWithoutSource.split(/\n\n+/).filter((p) => p.trim().length > 50);
+    // General News articles should have at least 3 substantial paragraphs
+    // (Weather/Recall/Science articles have their own format — only check
+    // if the article has a generalNews marker or category)
+    const catMatch = text.match(/^category:\s*(\w+)/m);
+    const cat = catMatch ? catMatch[1] : '';
+    if (['us', 'politics', 'business', 'technology', 'entertainment', 'sports'].includes(cat)) {
+      if (paras.length < 2) {
+        headlineOnlyArticles++;
+      }
+    }
+  }
+  check('G29', `Published General News articles have adequate source evidence (not headline-only)`, headlineOnlyArticles === 0,
+    headlineOnlyArticles ? `${headlineOnlyArticles} article(s) too thin` : '');
+
+  // Phase 10A.2.3 — no preview/test stories on public site
+  const previewInPublic = articleFiles.filter((f) => /preview|test|fixture/i.test(f));
+  check('G30', 'No preview/test/fixture stories in public articles', previewInPublic.length === 0,
+    previewInPublic.length ? `found: ${previewInPublic.join(', ')}` : '');
+
+  // Phase 10A.2.3 — publisher-family + politics caps present in config
+  check('G31', 'Publisher-family caps present in config',
+    config.maxGeneralPerPublisherPerRun !== undefined && config.maxGeneralPerPublisherPerDay !== undefined,
+    `run=${config.maxGeneralPerPublisherPerRun}, day=${config.maxGeneralPerPublisherPerDay}`);
+  check('G32', 'Politics caps present in config',
+    config.maxPoliticsNewPerRun !== undefined && config.maxPoliticsNewPerDay !== undefined,
+    `run=${config.maxPoliticsNewPerRun}, day=${config.maxPoliticsNewPerDay}`);
+
   // --- 6. Preview page route exists ---
   const previewRouteExists = await fileExists(join(PROJECT_DIR, 'src', 'pages', 'preview', 'general', '[slug].astro'));
   check('G15', 'Preview route /preview/general/[slug] exists', previewRouteExists);

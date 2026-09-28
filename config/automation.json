@@ -11,7 +11,7 @@
   "sciencePublishingEnabled": true,
   "maxScienceNewPerRun": 1,
   "maxScienceNewPerDay": 3,
-  "generalPublishingEnabled": false,
+  "generalPublishingEnabled": true,
   "maxGeneralNewPerRun": 2,
   "maxGeneralNewPerDay": 24,
   "maxGeneralPerPublisherPerRun": 2,

@@ -1,0 +1,125 @@
+name: General News Newsroom Automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Phase 10A.2.3: run every 30 minutes at :07 and :37.
+    # Offset to avoid top-of-hour load on GitHub Actions runners.
+    - cron: '7,37 * * * *'
+
+permissions:
+  contents: write
+
+# Phase 10A concurrency safety: only one newsroom run at a time per branch.
+concurrency:
+  group: newsroom-general-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  newsroom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run General News Newsroom Automation
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npm run newsroom:general
+
+      - name: Read automation config
+        id: config
+        run: |
+          PUBLISHING=$(node -e "const c=JSON.parse(require('fs').readFileSync('config/automation.json','utf8'));console.log(c.generalPublishingEnabled)")
+          echo "publishing=$PUBLISHING" >> $GITHUB_OUTPUT
+
+      - name: Check for content changes
+        id: content
+        run: |
+          # Content changes = published articles, public images, published-general-news registry.
+          if git diff --quiet -- src/ public/ data/published-general-news.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for registry changes
+        id: registry
+        run: |
+          # The General News source registry is durable state.
+          if git diff --quiet -- data/general-news/general-news-source-registry.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build for deployment
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        run: npm run build
+
+      - name: Commit and push changes
+        if: |
+          (steps.content.outputs.changed == 'true' || steps.registry.outputs.changed == 'true') &&
+          steps.config.outputs.publishing == 'true'
+        run: |
+          git config user.name "US News Engine Bot"
+          git config user.email "newsroom@users.noreply.github.com"
+          git add src/ public/ data/published-general-news.json 2>/dev/null || true
+          git add data/general-news/general-news-source-registry.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing staged — skipping commit."
+          else
+            git commit -m "Automated general news newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git pull --rebase --autostash origin main
+            git push
+          fi
+
+      - name: Deploy to Cloudflare Workers
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
+
+      - name: Verify live site
+        if: steps.content.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        run: |
+          sleep 8
+          BASE="https://usa-news-engine.forexwizardy.workers.dev"
+          fail=0
+          for path in "/" "/latest/"; do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "${BASE}${path}")
+            echo "Live check ${path} -> HTTP ${HTTP_CODE}"
+            if [ "$HTTP_CODE" != "200" ]; then
+              echo "LIVE CHECK FAILED — ${path} returned ${HTTP_CODE}"
+              fail=1
+            fi
+          done
+          if [ "$fail" = "1" ]; then
+            exit 1
+          fi
+          echo "LIVE CHECK: PASS"
+
+      - name: No-change notification
+        if: steps.content.outputs.changed == 'false' && steps.registry.outputs.changed == 'false'
+        run: echo "✓ Run completed — no content or registry changes (publishing=$(steps.config.outputs.publishing))."
+
+      - name: Registry-only notification
+        if: steps.content.outputs.changed == 'false' && steps.registry.outputs.changed == 'true' && steps.config.outputs.publishing == 'true'
+        run: echo "✓ Run completed — source registry updated (durable identity persisted); no public content change, no deploy."

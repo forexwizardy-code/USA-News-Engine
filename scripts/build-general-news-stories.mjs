@@ -313,6 +313,14 @@ function scoreCluster(cluster, now) {
   const catBonus = { us: 10, politics: 8, business: 6, technology: 6, entertainment: 4, sports: 4 }[category] || 5;
   score += catBonus;
 
+  // Phase 10A.2.3 — DOMESTIC PRIORITY: substantial U.S. relevance bonus.
+  // HIGH gets +15 (ensures HIGH ranks above comparable MEDIUM).
+  // MEDIUM gets +5 (only when U.S. impact is significant).
+  // LOW/NONE get 0 (and are already not publishEligible).
+  const usRel = assessUsRelevance(cluster);
+  const usBonus = { high: 15, medium: 5, low: 0, none: 0 }[usRel.usRelevance] || 0;
+  score += usBonus;
+
   // Public-safety / economic significance keywords
   const text = cluster.map((r) => `${r.title} ${r.description}`).join(' ').toLowerCase();
   if (/\b(recall|safety|hazard|injury|death|outbreak|emergency|disaster|evacuat|warning|alert|crisis)\b/.test(text)) score += 5;
