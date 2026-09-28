@@ -4292,3 +4292,32 @@ Stage Summary:
 - 29 sources, 12 publisher families, 599 raw items, 259 clusters, 127 U.S.-relevant, 61 publishEligible.
 - Sports: 1 eligible candidate (Commanders QB story) — SPORTS COVERAGE NOW READY.
 - GENERAL NEWS AUTO-PUBLISHING = OFF. Existing 4 desks ON. DEMO_NOINDEX = true.
+
+---
+Task ID: 10A.2.3
+Agent: Z.ai Code (main)
+Task: Phase 10A.2.3 — Final General News activation safety pass. Fix domestic priority, improve clustering, enforce single-source rule, create workflow, enable publishing, manual production test. Existing 4 desks unchanged. DEMO_NOINDEX stays true.
+
+Work Log:
+- Fixed domestic priority: HIGH usRelevance gets +15 score bonus; MEDIUM +5; LOW/NONE get 0. HIGH ranks above comparable MEDIUM on homepage/Top Stories.
+- Improved cross-publisher clustering: named-entity matching + lowered Jaccard threshold (0.40 + shared entity + 18h). Publisher family = independent-source identity.
+- Enforced single-source rule: independentPublisherCount=1 needs gov source OR low-dispute factual; politics contested needs 2 families or official+reporting, else needs-more-sourcing. 27 stories gated.
+- Added category diversity + politics 30% homepage cap. maxPoliticsNewPerRun=1, maxPoliticsNewPerDay=6.
+- Created scripts/run-general-newsroom.mjs: master automation with all gates (U.S. relevance, single-source, publisher concentration, politics cap, category diversity, daily caps, article evidence). Dry-run + live publish.
+- Created .github/workflows/general-newsroom.yml: schedule 7,37 * * * * (every 30 min). git pull --rebase --autostash, no force push, deploy on reader-facing content change.
+- Extended validate:general to 36 checks (G28-G32: no LOW/NONE eligible, article evidence, no preview on public, caps present).
+- Set generalPublishingEnabled=true. Config: maxGeneralNewPerRun=2, maxGeneralNewPerDay=24, maxPoliticsNewPerRun=1, maxPoliticsNewPerDay=6, maxGeneralPerPublisherPerRun=2, maxGeneralPerPublisherPerDay=6.
+- Dry-run test: 93 eligible, 27 needs-more-sourcing, 0 LOW/NONE eligible, 74 HIGH + 20 MEDIUM. All 36 validation checks PASS.
+- Fixed 3 validation bugs found during GHA runs: G1 (publishing now ON), G25 (exclude published-article drafts from preview count), G18 (sitemap check for fresh runner without dist/).
+- Manual workflow_dispatch run #5: SUCCESS! Published 2 real articles:
+  1. politics-ftc-states-win-protections-to-lower-pesticide (FTC, us=high, gov source)
+  2. entertainment-here-s-what-fans-paid-for-harry-styles-tickets (NYT, us=high)
+  Bot commit 5001562 pushed. Cloudflare deploy succeeded. Live articles HTTP 200.
+- All validation: general 36/36, launch 24/24, publishing 67/67, science 83/83. Build 58 pages.
+- DEMO_NOINDEX = true. No Google indexing.
+
+Stage Summary:
+- GENERAL NEWS AUTO-PUBLISHING = ON (generalPublishingEnabled=true).
+- Manual workflow_dispatch succeeded end-to-end. Waiting for real scheduled run.
+- Existing 4 desks ON (Weather/Recall/Earthquake/Science unchanged).
+- 2 real General News articles published and live.
