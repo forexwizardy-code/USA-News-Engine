@@ -4,7 +4,7 @@ title: "Here’s What Fans Paid for Harry Styles Tickets at M.S.G."
 description: "We talked to 34 concertgoers about the time, money and effort they spent getting tickets for the star’s New York City residency."
 category: business
 author: "US News Engine General News Desk"
-publishedAt: 2026-09-28T16:47:51.946Z
+publishedAt: 2026-09-28T17:18:01.153Z
 image: "/images/og-default.svg"
 imageAlt: "Editorial graphic for: Here’s What Fans Paid for Harry Styles Tickets at M.S.G."
 imageMode: "factual-graphic-fallback"
@@ -34,7 +34,7 @@ Location details are available in the linked source coverage.
 
 
 ## When
-Source coverage began September 28, 2026 (ET). The story is approximately 0 hours old.
+Source coverage began September 28, 2026 (ET). The story is approximately 1 hours old.
 
 
 ## Why it matters
