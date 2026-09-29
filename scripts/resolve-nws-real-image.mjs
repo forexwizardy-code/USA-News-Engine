@@ -19,206 +19,16 @@
  *   (or) bun run scripts/resolve-nws-real-image.mjs
  */
 
-import { readFile, writeFile, mkdir, stat, unlink } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import sharp from 'sharp';
+import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 const DRAFTS_DIR = join(PROJECT_DIR, 'data', 'drafts');
 const OUTPUT_DIR = join(PROJECT_DIR, 'data', 'draft-images');
 
-const W = 1200;
-const H = 675;
-
-// ===========================================================================
-// Wikimedia Commons search
-// ===========================================================================
-
-const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
-const UA = 'USNewsEngine/1.0 (https://usa-news-engine.forexwizardy.workers.dev)';
-
-/**
- * Search Wikimedia Commons for files matching a query.
- * Returns an array of candidate image objects with full metadata.
- */
-async function searchCommons(query, limit = 10) {
-  const params = new URLSearchParams({
-    action: 'query',
-    format: 'json',
-    generator: 'search',
-    gsrsearch: query,
-    gsrnamespace: '6', // File namespace
-    gsrlimit: String(limit),
-    prop: 'imageinfo',
-    iiprop: 'url|extmetadata|size|mime|timestamp|user',
-    iiurlwidth: '1200',
-  });
-  const url = `${COMMONS_API}?${params}`;
-  const res = await fetch(url, { headers: { 'User-Agent': UA } });
-  if (!res.ok) throw new Error(`Commons API returned ${res.status}`);
-  const data = await res.json();
-  const pages = data.query?.pages || {};
-  return Object.values(pages)
-    .map((p) => {
-      const ii = p.imageinfo?.[0];
-      if (!ii) return null;
-      const em = ii.extmetadata || {};
-      return {
-        title: p.title,
-        originalUrl: ii.url,
-        thumbUrl: ii.thumburl,
-        width: ii.width,
-        height: ii.height,
-        mime: ii.mime,
-        user: ii.user,
-        timestamp: ii.timestamp,
-        description: stripHtml(em.ImageDescription?.value || ''),
-        artist: stripHtml(em.Artist?.value || ''),
-        credit: stripHtml(em.Credit?.value || ''),
-        license: stripHtml(em.LicenseShortName?.value || em.License?.value || ''),
-        licenseUrl: stripHtml(em.LicenseUrl?.value || ''),
-        usageTerms: stripHtml(em.UsageTerms?.value || ''),
-        attributionRequired: stripHtml(em.AttributionRequired?.value || '').toLowerCase() === 'true',
-        nonFree: stripHtml(em.NonFree?.value || '').toLowerCase() === 'true',
-        date: stripHtml(em.DateTimeOriginal?.value || ''),
-        categories: stripHtml(em.Categories?.value || ''),
-        descriptionUrl: `https://commons.wikimedia.org/wiki/${encodeURIComponent(p.title)}`,
-      };
-    })
-    .filter(Boolean);
-}
-
-function stripHtml(s) {
-  return String(s || '').replace(/<[^>]+>/g, '').trim();
-}
-
-// ===========================================================================
-// Suitability scoring
-// ===========================================================================
-
-/**
- * Score a candidate image for suitability (0-100). Conservative threshold.
- *
- * Positive factors:
- *   + exact location match in description/title
- *   + landscape orientation
- *   + high resolution (>= 2000px)
- *   + clear reusable license (CC BY, CC BY-SA, Public Domain)
- *   + official government source
- *   + recent date
- *
- * Negative factors:
- *   - nonFree
- *   - unclear license
- *   - portrait orientation
- *   - low resolution
- *   - unrelated to story
- */
-function scoreImage(img, storyKeywords) {
-  let score = 50; // baseline
-  const reasons = [];
-
-  // Location match
-  const text = `${img.title} ${img.description} ${img.categories}`.toLowerCase();
-  let locationMatches = 0;
-  for (const kw of storyKeywords) {
-    if (text.includes(kw.toLowerCase())) {
-      locationMatches++;
-      score += 8;
-      reasons.push(`keyword match: "${kw}"`);
-    }
-  }
-  if (locationMatches === 0) {
-    score -= 20;
-    reasons.push('no location keyword match');
-  }
-
-  // License
-  const lic = (img.license || '').toLowerCase();
-  if (lic.includes('cc-by') || lic.includes('cc by')) {
-    score += 15;
-    reasons.push(`clear license: ${img.license}`);
-  } else if (lic.includes('public domain') || lic.includes('pd')) {
-    score += 18;
-    reasons.push('public domain');
-  } else if (lic) {
-    score += 5;
-    reasons.push(`license: ${img.license}`);
-  } else {
-    score -= 25;
-    reasons.push('no clear license');
-  }
-
-  // NonFree
-  if (img.nonFree) {
-    score -= 50;
-    reasons.push('marked NonFree');
-  }
-
-  // Orientation
-  if (img.width >= img.height) {
-    score += 8;
-    reasons.push('landscape orientation');
-  } else {
-    score -= 10;
-    reasons.push('portrait orientation');
-  }
-
-  // Resolution
-  if (img.width >= 2000) {
-    score += 8;
-    reasons.push(`high res (${img.width}x${img.height})`);
-  } else if (img.width >= 1000) {
-    score += 4;
-    reasons.push(`adequate res (${img.width}x${img.height})`);
-  } else {
-    score -= 10;
-    reasons.push(`low res (${img.width}x${img.height})`);
-  }
-
-  // Official source
-  const artist = (img.artist || '').toLowerCase();
-  if (artist.includes('county') || artist.includes('noaa') || artist.includes('nws') || artist.includes('usgs') || artist.includes('fema') || artist.includes('government')) {
-    score += 10;
-    reasons.push(`official source: ${img.artist}`);
-  }
-
-  return { score: Math.max(0, Math.min(100, score)), reasons };
-}
-
-// ===========================================================================
-// Image download + processing
-// ===========================================================================
-
-/**
- * Download an image from a URL to a local file.
- */
-async function downloadImage(url, destPath) {
-  const res = await fetch(url, { headers: { 'User-Agent': UA } });
-  if (!res.ok) throw new Error(`Download failed: ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  await writeFile(destPath, buf);
-  return buf;
-}
-
-/**
- * Process the downloaded image into a 1200x675 hero derivative.
- * Uses cover cropping (fills the frame, may crop edges) to maintain aspect
- * ratio without distortion. No factual content is altered.
- */
-async function processToHero(srcPath, destPath) {
-  await sharp(srcPath)
-    .resize(W, H, {
-      fit: 'cover',
-      position: 'center',
-    })
-    .jpeg({ quality: 88, progressive: true })
-    .toFile(destPath);
-  const meta = await sharp(destPath).metadata();
-  return { width: meta.width, height: meta.height };
-}
 
 // ===========================================================================
 // Main
@@ -244,7 +54,7 @@ async function main() {
   // Build story-specific keywords from the draft location and event
   const event = draft.weatherMetadata?.event || 'Weather Alert';
   const location = draft.location || '';
-  const firstArea = String(draft.weatherMetadata?.areaDesc || '').split(';')[0].trim();
+  const firstArea = String(draft.location || draft.weatherMetadata?.areaDesc || '').split(';')[0].trim();
 
   const storyKeywords = [
     river,
@@ -272,47 +82,28 @@ async function main() {
     river ? river : null,
   ].filter(Boolean).slice(0, 3); // max 3 queries
 
-  let allCandidates = [];
-  for (const q of queries) {
-    console.log(`\n  Searching Commons: "${q}"`);
-    try {
-      const results = await searchCommons(q, 10);
-      console.log(`    Found ${results.length} results`);
-      allCandidates.push(...results);
-    } catch (err) {
-      console.log(`    Search failed: ${err.message}`);
-    }
-  }
-
-  // Deduplicate by title
-  const seen = new Set();
-  allCandidates = allCandidates.filter((c) => {
-    if (seen.has(c.title)) return false;
-    seen.add(c.title);
-    return true;
+  const imageSearch = await findBestCommonsImage({
+    queries,
+    keywords: storyKeywords,
+    minScore: 68,
+    minKeywordMatches: 1,
+    requirePhoto: true,
+    perQuery: 12,
   });
-  console.log(`\n  Total unique candidates: ${allCandidates.length}`);
 
-  // --- Score and rank candidates -------------------------------------------
-  const scored = allCandidates
-    .map((img) => {
-      const { score, reasons } = scoreImage(img, storyKeywords);
-      return { img, score, reasons };
-    })
-    .sort((a, b) => b.score - a.score);
+  console.log(`\n  Candidates evaluated: ${imageSearch.candidatesEvaluated}`);
+  console.log(`  Eligible candidates: ${imageSearch.eligibleCandidates}`);
+  console.log(`  Top score: ${imageSearch.topScore}`);
 
-  // Print top 5
-  console.log('\n  Top 5 candidates:');
-  for (const s of scored.slice(0, 5)) {
-    console.log(`    [${s.score}] ${s.img.title}`);
-    console.log(`         desc: ${s.img.description.slice(0, 80)}`);
-    console.log(`         license: ${s.img.license} | nonFree: ${s.img.nonFree}`);
-    console.log(`         ${s.reasons.join('; ')}`);
-  }
-
-  // --- Conservative threshold: score >= 60 --------------------------------
-  const THRESHOLD = 60;
-  const best = scored.find((s) => s.score >= THRESHOLD);
+  const THRESHOLD = 68;
+  const best = imageSearch.best
+    ? {
+        img: imageSearch.best.image,
+        score: imageSearch.best.score,
+        reasons: imageSearch.best.reasons,
+        keywordMatches: imageSearch.best.keywordMatches,
+      }
+    : null;
 
   if (!best) {
     console.log(`\n  No candidate met the threshold (${THRESHOLD}).`);
@@ -330,9 +121,9 @@ async function main() {
           realPhotoFound: false,
           searchedAt: new Date().toISOString(),
           searchesPerformed: queries,
-          candidatesEvaluated: allCandidates.length,
+          candidatesEvaluated: imageSearch.candidatesEvaluated,
           threshold: THRESHOLD,
-          topScore: scored[0]?.score || 0,
+          topScore: imageSearch.topScore || 0,
           recommendation: 'Use Phase 4A map-data image as fallback.',
         },
         null,
@@ -348,26 +139,56 @@ async function main() {
   const selected = best.img;
   console.log(`\n  SELECTED: ${selected.title} (score: ${best.score})`);
 
-  // --- Download ------------------------------------------------------------
-  await mkdir(OUTPUT_DIR, { recursive: true });
-  const originalPath = join(OUTPUT_DIR, `${draft.slug}-real-original.jpg`);
-  const downloadUrl = selected.thumbUrl || selected.originalUrl;
-  console.log(`  Downloading from: ${downloadUrl}`);
-  await downloadImage(downloadUrl, originalPath);
-  const dlStats = await stat(originalPath);
-  console.log(`  Downloaded: ${dlStats.size.toLocaleString()} bytes`);
+  // --- Download and process through the shared legal gate ------------------
+  const processed = await downloadAndProcessHero({
+    candidate: selected,
+    outputDir: OUTPUT_DIR,
+    slug: draft.slug,
+    suffix: 'real',
+    keepOriginal: true,
+  });
 
-  // --- Process to 1200x675 -------------------------------------------------
-  const heroPath = join(OUTPUT_DIR, `${draft.slug}-real.jpg`);
-  const { width, height } = await processToHero(originalPath, heroPath);
-  const heroStats = await stat(heroPath);
-  console.log(`  Hero image: ${heroPath} (${width}x${height}, ${heroStats.size.toLocaleString()} bytes)`);
+  if (!processed.ok) {
+    console.log(`  Reusable image processing failed: ${processed.reason}`);
+    console.log('  realPhotoFound: false');
+    console.log('  Phase 4A map-data image remains the correct fallback.');
+    return;
+  }
 
-  // --- Determine image relation --------------------------------------------
-  // This photo is from 2013 — it shows the exact location but NOT the current
-  // 2026 flood event. Therefore imageRelation = "exact-location".
-  const imageRelation = 'exact-location';
-  const caption = `File photo of the Des Plaines River near Gurnee, Illinois. Photo: ${selected.artist}, ${selected.license}.`;
+  const heroPath = processed.heroPath;
+  const originalPath = processed.originalPath;
+  const width = processed.width;
+  const height = processed.height;
+  console.log(`  Hero image: ${heroPath} (${width}x${height})`);
+  // --- Determine image relation from source metadata -----------------------
+  const creator =
+    selected.artist ||
+    selected.credit ||
+    selected.user ||
+    'Wikimedia Commons contributor';
+
+  const candidateText = [
+    selected.title,
+    selected.description,
+    selected.categories,
+  ].filter(Boolean).join(' ').toLowerCase();
+
+  const countyNeedle = String(countyName || firstArea || '').trim().toLowerCase();
+  const stateNeedle = String(stateName || '').trim().toLowerCase();
+  const countyMatched =
+    Boolean(countyNeedle) && candidateText.includes(countyNeedle);
+  const stateMatched =
+    !stateNeedle || candidateText.includes(stateNeedle);
+
+  const exactLocationProven = countyMatched && stateMatched;
+
+  const imageRelation = exactLocationProven
+    ? 'exact-location'
+    : 'illustrative-file-photo';
+
+  const caption = exactLocationProven
+    ? `File photo associated with ${firstArea}; it does not depict the current ${event}. Photo: ${creator}${selected.license ? `, ${selected.license}` : ''}.`
+    : `Illustrative file photo related to ${event}; it is not presented as the current event or exact alert location. Photo: ${creator}${selected.license ? `, ${selected.license}` : ''}.`;
 
   // --- Write metadata ------------------------------------------------------
   const metadata = {
@@ -379,28 +200,29 @@ async function main() {
     width,
     height,
     source: 'Wikimedia Commons',
-    sourceOrganization: 'Lake County, Illinois (LakeCountyIL)',
+    sourceOrganization: `${creator} (Wikimedia Commons)`,
     dataSource: 'Wikimedia Commons API',
     originalImageUrl: selected.originalUrl,
-    sourcePageUrl: selected.descriptionUrl,
-    creator: selected.artist,
-    credit: selected.credit || selected.artist,
+    sourcePageUrl: selected.sourcePageUrl,
+    creator,
+    credit: selected.credit || creator,
     license: selected.license,
     licenseUrl: selected.licenseUrl,
     attributionRequired: selected.attributionRequired,
     originalDate: selected.date,
     downloadedAt: new Date().toISOString(),
-    alt: `File photo of the Des Plaines River near Gurnee, Illinois (Lake County).`,
+    title: selected.title || '',
+    description: selected.description || '',
+    alt: selected.description || selected.title || 'Weather file photo',
     caption,
-    copyrightCheck: 'passed — CC BY 2.0, attribution required, non-free=false',
+    copyrightCheck: `passed — ${processed.rights?.reason || selected.license || 'reusable license verified'}`,
     selectionReason: best.reasons.join('; '),
     suitabilityScore: best.score,
+    keywordMatches: best.keywordMatches,
     files: {
       heroJpg: `data/draft-images/${draft.slug}-real.jpg`,
-      originalJpg: `data/draft-images/${draft.slug}-real-original.jpg`,
     },
   };
-
   const metaPath = join(OUTPUT_DIR, `${draft.slug}-real.json`);
   await writeFile(metaPath, JSON.stringify(metadata, null, 2) + '\n', 'utf8');
   console.log(`  Metadata: ${metaPath}`);
