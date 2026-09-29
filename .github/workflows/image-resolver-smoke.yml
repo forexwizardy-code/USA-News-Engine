@@ -1,0 +1,21 @@
+name: Image Resolver Smoke Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test shared image resolver
+        run: |
+          node -e "import('./scripts/lib/shared-image-resolver.mjs').then(async m=>{const r=await m.findBestCommonsImage({queries:['Lake County Illinois river'],keywords:['lake county','illinois','river'],minScore:60,minKeywordMatches:1,requirePhoto:true,perQuery:5});console.log(JSON.stringify({found:r.found,candidatesEvaluated:r.candidatesEvaluated,eligibleCandidates:r.eligibleCandidates,topScore:r.topScore,searches:r.searches,best:r.best?{title:r.best.image.title,license:r.best.image.license,sourcePageUrl:r.best.image.sourcePageUrl,score:r.best.score,keywordMatches:r.best.keywordMatches}:null},null,2));if(!r.searches.some(s=>s.ok))process.exit(2);})"
