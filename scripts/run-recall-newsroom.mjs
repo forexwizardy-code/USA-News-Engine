@@ -1,4 +1,4 @@
-﻿/**
+/**
  * US News Engine â€” master recall newsroom automation script (Phase 7D).
  *
  * Orchestrates the full recall pipeline:
@@ -29,6 +29,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
+import { upsertSharedPublishedStory } from './lib/shared-published-registry.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -626,6 +627,35 @@ ${bodyMarkdown}
   await mkdir(dirname(articlePath), { recursive: true });
   await writeFile(articlePath, articleContent, 'utf8');
 
+  const heroImageRelation =
+    sidecar?.imageRelation ||
+    (imageKind === 'photo' ? 'exact-subject' : 'current-alert-data');
+
+  await upsertSharedPublishedStory({
+    storyKey: slug,
+    slug,
+    articlePath: `src/content/articles/${slug}.md`,
+    publishedAt: now,
+    updatedAt: null,
+    currentAlertIds: story.sourceRecallIds || [],
+    allAlertIds: story.sourceRecallIds || [],
+    event: 'Recall',
+    location: 'Unknown',
+    sourceOffice: sourceName,
+    lifecycleStatus: 'active',
+    lastNwsEffectiveAt: null,
+    lastNwsExpiresAt: null,
+    lastNwsEndsAt: null,
+    lastCheckedAt: now,
+    heroImageMode: imageKind === 'photo' ? 'licensed-photo' : 'agency-graphic',
+    heroImageSource: heroImagePath,
+    heroImageRelation,
+    heroImageCreator,
+    heroImageLicense,
+    heroImageLicenseUrl,
+    heroImageSourcePageUrl: heroImageSourceUrl,
+    breaking: draft.breaking === true,
+  });
   // 6. Add entry to registry (caller will save)
   registry.stories.push({
     recallStoryKey: story.recallStoryKey,
