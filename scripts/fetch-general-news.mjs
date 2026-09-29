@@ -373,6 +373,16 @@ function categorizeItem(title, description, feedCategory) {
   if (/\b(nfl|nba|mlb|nhl|soccer|football|basketball|baseball|hockey|tennis|golf|olympic|championship|playoff|super bowl|world series|tournament|coach|athlete|team )\b/i.test(t)) {
     return 'sports';
   }
+  // Safety guard: section feeds occasionally carry stories outside their
+  // normal topic. Do not let Entertainment/Sports force obvious crime,
+  // public-safety, terrorism, policing, or court stories into those sections.
+  if (
+    ['entertainment', 'sports'].includes(feedCategory) &&
+    /\b(terror|terrorism|terrorist|shooting|shot|gunman|murder|homicide|killed|death|dead|assault|attack|arrest|arrested|charged|charges|crime|criminal|police|sheriff|law enforcement|fbi|ice agent|immigration enforcement|prosecutor|indictment|trial|court case|hostage|bomb|explosion)\b/i.test(t)
+  ) {
+    return 'us';
+  }
+
   // Default to feed's category (or 'us' for general)
   return feedCategory || 'us';
 }

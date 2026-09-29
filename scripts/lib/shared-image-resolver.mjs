@@ -163,6 +163,32 @@ function isLikelyPhoto(image) {
   return true;
 }
 
+function isLikelyGraphic(image) {
+  const mime = String(image?.mime || '').toLowerCase();
+
+  const text = `
+    ${image?.title || ''}
+    ${image?.description || ''}
+    ${image?.categories || ''}
+  `.toLowerCase();
+
+  // Explicit editorial / informational artwork.
+  if (
+    /\b(illustration|drawing|diagram|map|chart|infographic|poster|graphic|schematic|visualization|render)\b/i.test(text)
+  ) {
+    return true;
+  }
+
+  // PNG/SVG are common graphic formats, but exclude logos and identity marks.
+  if (
+    ['image/svg+xml', 'image/png'].includes(mime) &&
+    !/\b(logo|coat of arms|seal|trademark|brand mark)\b/i.test(text)
+  ) {
+    return true;
+  }
+
+  return false;
+}
 export function scoreImageCandidate(image, keywords = []) {
   const rights = checkReusableLicense(image);
   if (!rights.allowed) {
@@ -265,7 +291,7 @@ export async function safeSearchCommons(query, limit = 12) {
   }
 }
 
-export async function findBestCommonsImage({ queries = [], keywords = [], minScore = 60, minKeywordMatches = 0, requirePhoto = false, perQuery = 12 } = {}) {
+export async function findBestCommonsImage({ queries = [], keywords = [], minScore = 60, minKeywordMatches = 0, requirePhoto = false, requireGraphic = false, perQuery = 12 } = {}) {
   const uniqueQueries = [...new Set(
     queries
       .map((q) => String(q || '').trim())
@@ -298,7 +324,12 @@ export async function findBestCommonsImage({ queries = [], keywords = [], minSco
     .map((image) => ({ image, ...scoreImageCandidate(image, keywords) }))
     .sort((a, b) => b.score - a.score);
 
-  const eligible = evaluated.filter((item) => item.eligible && item.keywordMatches >= minKeywordMatches && (!requirePhoto || isLikelyPhoto(item.image)));
+  const eligible = evaluated.filter((item) =>
+    item.eligible &&
+    item.keywordMatches >= minKeywordMatches &&
+    (!requirePhoto || isLikelyPhoto(item.image)) &&
+    (!requireGraphic || isLikelyGraphic(item.image))
+  );
   const best = eligible.find((item) => item.score >= minScore) || null;
 
   return {

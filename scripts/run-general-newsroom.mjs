@@ -30,6 +30,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
+import { generateGeneralEditorialGraphic } from './lib/general-editorial-graphic.mjs';
 
 import { upsertSharedPublishedStory } from './lib/shared-published-registry.mjs';
 
@@ -374,7 +375,7 @@ async function publishNewArticle(story, registry) {
     titleKeywords.slice(0, 3).join(' '),
   ].filter(Boolean);
 
-  const imageSearch = await findBestCommonsImage({
+  let imageSearch = await findBestCommonsImage({
     queries: imageQueries,
     keywords: [...titleKeywords, draft.category].filter(Boolean),
     minScore: 58,
@@ -383,6 +384,56 @@ async function publishNewArticle(story, registry) {
     perQuery: 18,
   });
 
+  // Rescue pass: only use strong named-entity context.
+  // If we cannot identify enough specific context, keep the safe fallback
+  // instead of risking a misleading real photograph.
+  if (!imageSearch.found) {
+    const genericEntityWords = new Set([
+      'British', 'American', 'United', 'States', 'News', 'Live',
+      'Latest', 'Five', 'Three', 'Four', 'Two', 'Men', 'Women',
+      'President', 'Government', 'Officials', 'Police'
+    ]);
+
+    const descriptionEntities = (
+      String(draft.description || '')
+        .match(/\b[A-Z][A-Za-z0-9.'-]{2,}(?:\s+[A-Z][A-Za-z0-9.'-]{2,}){0,3}\b/g)
+      || []
+    )
+      .map((item) => item.trim())
+      .filter((item) => {
+        const words = item.split(/\s+/);
+        return words.some((word) => !genericEntityWords.has(word));
+      });
+
+    const strongEntities = [...new Set([
+      ...entityKeywords,
+      ...descriptionEntities,
+    ])]
+      .filter(Boolean)
+      .slice(0, 8);
+
+    if (strongEntities.length >= 2) {
+      const rescueQueries = [
+        strongEntities.slice(0, 3).join(' '),
+        strongEntities.slice(0, 2).join(' '),
+      ].filter(Boolean);
+
+      imageSearch = await findBestCommonsImage({
+        queries: rescueQueries,
+        keywords: strongEntities,
+        minScore: 58,
+        minKeywordMatches: 2,
+        requirePhoto: true,
+        perQuery: 18,
+      });
+
+      if (imageSearch.found && imageSearch.best?.image) {
+        console.log(`  General News image rescue found: ${imageSearch.best.image.title}`);
+      }
+    } else {
+      console.log('  General News image rescue skipped: insufficient specific entity context.');
+    }
+  }
   if (imageSearch.found && imageSearch.best?.image) {
     const selected = imageSearch.best.image;
     const processed = await downloadAndProcessHero({
@@ -429,6 +480,166 @@ async function publishNewArticle(story, registry) {
     }
   }
 
+  // Licensed existing graphic search.
+  // This runs only after the real-photo searches fail and before we create
+  // our own editorial graphic.
+  if (heroImagePath === '/images/og-default.svg') {
+    const graphicKeywords = [...new Set([
+      ...entityKeywords,
+      ...titleKeywords,
+    ])]
+      .filter(Boolean)
+      .slice(0, 8);
+
+    if (graphicKeywords.length >= 2) {
+      const graphicQueries = [
+        `${graphicKeywords.slice(0, 3).join(' ')} illustration`,
+        `${graphicKeywords.slice(0, 3).join(' ')} graphic`,
+        `${graphicKeywords.slice(0, 2).join(' ')} map`,
+      ];
+
+      const graphicSearch = await findBestCommonsImage({
+        queries: graphicQueries,
+        keywords: graphicKeywords,
+        minScore: 70,
+        minKeywordMatches: 2,
+        requireGraphic: true,
+        perQuery: 18,
+      });
+
+      if (graphicSearch.found && graphicSearch.best?.image) {
+        const selectedGraphic = graphicSearch.best.image;
+
+        console.log(
+          `  Licensed General News graphic found: ${selectedGraphic.title}`
+        );
+
+        const processedGraphic = await downloadAndProcessHero({
+          candidate: selectedGraphic,
+          outputDir: DRAFT_IMAGES_DIR,
+          slug: finalSlug,
+          suffix: 'licensed-graphic',
+          keepOriginal: true,
+        });
+
+        if (processedGraphic.ok) {
+          await mkdir(PUBLIC_IMAGES_DIR, { recursive: true });
+
+          const publicFilename =
+            `${finalSlug}-licensed-graphic.jpg`;
+
+          await copyFile(
+            processedGraphic.heroPath,
+            join(PUBLIC_IMAGES_DIR, publicFilename)
+          );
+
+          const creator =
+            selectedGraphic.artist ||
+            selectedGraphic.credit ||
+            selectedGraphic.user ||
+            'Wikimedia Commons contributor';
+
+          heroImagePath =
+            `/images/${publicFilename}`;
+
+          heroImageAlt =
+            selectedGraphic.description ||
+            selectedGraphic.title ||
+            draft.title;
+
+          // Keep the existing graphic-compatible mode so current validators
+          // and article rendering continue to work.
+          heroImageMode =
+            'factual-graphic-fallback';
+
+          heroImageCaption =
+            `Licensed illustrative graphic from Wikimedia Commons, selected for relevance to the story subject. Graphic: ${creator}${selectedGraphic.license ? `, ${selectedGraphic.license}` : ''}.`;
+
+          heroImageCreator = creator;
+
+          heroImageLicense =
+            selectedGraphic.license ||
+            selectedGraphic.usageTerms ||
+            'Reusable Wikimedia Commons license';
+
+          heroImageLicenseUrl =
+            selectedGraphic.licenseUrl || '';
+
+          heroImageSourcePageUrl =
+            selectedGraphic.sourcePageUrl || '';
+
+          heroImageRelation =
+            'licensed-illustrative-graphic';
+
+          const graphicProvenance = {
+            provider: 'Wikimedia Commons',
+            type: 'licensed-illustrative-graphic',
+            title: selectedGraphic.title || null,
+            creator,
+            license: heroImageLicense,
+            licenseUrl: heroImageLicenseUrl,
+            sourcePageUrl: heroImageSourcePageUrl,
+            originalImageUrl: selectedGraphic.originalUrl || '',
+            relation: heroImageRelation,
+            score: graphicSearch.best.score,
+            keywordMatches: graphicSearch.best.keywordMatches,
+            width: processedGraphic.width,
+            height: processedGraphic.height,
+            generatedAt: new Date().toISOString(),
+          };
+
+          await writeFile(
+            join(
+              DRAFT_IMAGES_DIR,
+              `${finalSlug}-licensed-graphic.json`
+            ),
+            JSON.stringify(graphicProvenance, null, 2) + '\n',
+            'utf8'
+          );
+        }
+      } else {
+        console.log(
+          '  No sufficiently relevant licensed existing graphic found.'
+        );
+      }
+    } else {
+      console.log(
+        '  Licensed graphic search skipped: insufficient story-specific keywords.'
+      );
+    }
+  }
+  // Final visual fallback: create a story-specific editorial graphic when
+  // no safe/relevant licensed photograph was found.
+  if (heroImagePath === '/images/og-default.svg') {
+    try {
+      const generated = await generateGeneralEditorialGraphic({
+        draft,
+        slug: finalSlug,
+        draftImagesDir: DRAFT_IMAGES_DIR,
+        publicImagesDir: PUBLIC_IMAGES_DIR,
+      });
+
+      if (generated?.ok) {
+        heroImagePath = generated.imagePath;
+        heroImageAlt = generated.alt;
+        heroImageMode = 'factual-graphic-fallback';
+        heroImageCaption = generated.caption;
+        heroImageCreator = generated.creator;
+        heroImageLicense = generated.license;
+        heroImageLicenseUrl = generated.licenseUrl;
+        heroImageSourcePageUrl = generated.sourcePageUrl;
+        heroImageRelation = generated.relation;
+
+        console.log(
+          `  General News editorial fallback generated: ${generated.imagePath}`
+        );
+      }
+    } catch (err) {
+      console.warn(
+        `  General News editorial fallback failed; keeping og-default.svg: ${err.message}`
+      );
+    }
+  }
   // 3. Build article markdown
   const now = new Date().toISOString();
   const bodyMarkdown = draft.body
