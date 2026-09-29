@@ -290,13 +290,8 @@ async function main() {
 
   // --- Step 12: Update registries ---
   console.log('\n--- Step 12: Update registries ---');
-  // Rebuild the published-stories registry
-  try {
-    execSync('node scripts/build-published-registry.mjs', { cwd: PROJECT_DIR, stdio: 'pipe' });
-    console.log('  Registry rebuilt.');
-  } catch (err) {
-    console.error('  Registry rebuild failed — continuing');
-  }
+  // Shared published-stories registry is maintained by the newsroom publish/update paths.
+  // Do not run the legacy full rebuild here because it can drop cross-desk metadata.
   // Rebuild image provenance
   try {
     execSync('node scripts/create-image-provenance.mjs', { cwd: PROJECT_DIR, stdio: 'pipe' });
