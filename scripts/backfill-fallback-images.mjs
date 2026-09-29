@@ -72,10 +72,21 @@ for (const file of files) {
     .filter(x => x.length >= 4 && !stop.has(x.toLowerCase()))
     .slice(0, 8);
 
+  const entityKeywords = (String(title || '').match(/[A-Za-z0-9][A-Za-z0-9.'-]*/g) || [])
+    .filter((word, index) => {
+      const clean = word.replace(/[.'-]/g, '');
+      if (clean.length < 3 || stop.has(clean.toLowerCase())) return false;
+      const acronym = /^[A-Z0-9]{2,}$/.test(clean);
+      const proper = index > 0 && /^[A-Z][a-z0-9]+$/.test(clean);
+      const brand = /[a-z][A-Z]|[A-Z].*[A-Z]/.test(word);
+      return acronym || proper || brand;
+    });
+
   const queries = [
+    entityKeywords.slice(0, 4).join(' '),
+    entityKeywords.slice(0, 2).join(' '),
     title,
-    keywords.slice(0, 6).join(' '),
-    `${keywords.slice(0, 4).join(' ')} ${category}`.trim()
+    keywords.slice(0, 3).join(' ')
   ].filter(Boolean);
 
   console.log(`\n[${attempted}] ${title}`);

@@ -357,10 +357,21 @@ async function publishNewArticle(story, registry) {
     .filter((word) => word.length >= 4 && !imageStopWords.has(word.toLowerCase()))
     .slice(0, 8);
 
+  const entityKeywords = (String(draft.title || '').match(/[A-Za-z0-9][A-Za-z0-9.'-]*/g) || [])
+    .filter((word, index) => {
+      const clean = word.replace(/[.'-]/g, '');
+      if (clean.length < 3 || imageStopWords.has(clean.toLowerCase())) return false;
+      const acronym = /^[A-Z0-9]{2,}$/.test(clean);
+      const proper = index > 0 && /^[A-Z][a-z0-9]+$/.test(clean);
+      const brand = /[a-z][A-Z]|[A-Z].*[A-Z]/.test(word);
+      return acronym || proper || brand;
+    });
+
   const imageQueries = [
+    entityKeywords.slice(0, 4).join(' '),
+    entityKeywords.slice(0, 2).join(' '),
     draft.title,
-    titleKeywords.slice(0, 6).join(' '),
-    `${titleKeywords.slice(0, 4).join(' ')} ${draft.category || ''}`.trim(),
+    titleKeywords.slice(0, 3).join(' '),
   ].filter(Boolean);
 
   const imageSearch = await findBestCommonsImage({
