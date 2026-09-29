@@ -5,7 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Dona Ana County, New 
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-29T14:29:37.242Z
-updatedAt: 2026-09-29T18:32:07.853Z
+updatedAt: 2026-09-29T20:29:10.310Z
 image: "/images/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026-map.png"
 imageAlt: "Flash Flood Warning for Dona Ana County, New Mexico"
 imageMode: "map-data"
