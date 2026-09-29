@@ -1,7 +1,7 @@
 ---
 slug: "technology-openai-halts-releasing-newest-model-over-safety-2026-09-29"
 title: "OpenAI halts releasing newest model over safety concerns"
-description: "OpenAI on Monday halted the release of its newest artificial intelligence model over safety concerns as tech companies grapple with potential risks as a result of more advanced AI software. Saachi Jai"
+description: "OpenAI on Monday halted the release of its newest artificial intelligence model over safety concerns as tech companies grapple with potential risks as a result of more advanced AI software."
 category: technology
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-29T15:01:10.775Z
@@ -27,20 +27,11 @@ views: 0
 OpenAI on Monday halted the release of its newest artificial intelligence model over safety concerns as tech companies grapple with potential risks as a result of more advanced AI software. Saachi Jain, OpenAI’s head of safety systems, told The New York Times that the new model, called GPT-6.1 Astra, “didn’t quite meet the bar in…
 
 
-## Who is involved
-Specific individuals or organizations are identified in the linked source coverage.
-
-
-## Where
-Location details are available in the linked source coverage.
 
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 1 hours old.
 
-
-## Why it matters
-This story has technology significance. It is supported by 1 source(s).
 
 
 ## What is confirmed

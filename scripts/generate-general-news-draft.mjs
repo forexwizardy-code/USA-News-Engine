@@ -29,6 +29,29 @@ const DRAFTS_DIR = join(PROJECT_DIR, 'data', 'general-news', 'drafts');
 
 const now = new Date();
 
+function truncateClean(text, maxLength = 200) {
+  const s = String(text || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= maxLength) return s;
+
+  const head = s.slice(0, maxLength + 1);
+  const sentenceEnd = Math.max(
+    head.lastIndexOf('. '),
+    head.lastIndexOf('! '),
+    head.lastIndexOf('? ')
+  );
+
+  if (sentenceEnd >= Math.floor(maxLength * 0.5)) {
+    return head.slice(0, sentenceEnd + 1).trim();
+  }
+
+  const wordEnd = head.lastIndexOf(' ');
+  const cut = head
+    .slice(0, wordEnd > 0 ? wordEnd : maxLength)
+    .replace(/[,:;–—-]+$/u, '')
+    .trim();
+
+  return `${cut}…`;
+}
 function slugify(text) {
   // Phase 10A.2.1 — clean slug generation: word-boundary truncation,
   // no dangling word fragments, readable, stable, lowercase, hyphenated.
@@ -72,7 +95,7 @@ function buildHeadline(story) {
 
 function buildDeck(story) {
   const d = story.description || '';
-  if (d) return d.replace(/\s+/g, ' ').trim().slice(0, 200);
+  if (d) return truncateClean(d, 200);
   // Fallback: synthesize from title + category
   return `${story.title} — coverage from ${story.sourceCount} source(s).`;
 }
@@ -102,10 +125,8 @@ function buildBody(story) {
   )];
   if (entities.length > 0) {
     whoParas.push(`Entities referenced in coverage include ${entities.join(', ')}.`);
-  } else {
-    whoParas.push('Specific individuals or organizations are identified in the linked source coverage.');
   }
-  sections.push({ heading: 'Who is involved', paragraphs: whoParas });
+  if (whoParas.length > 0) sections.push({ heading: 'Who is involved', paragraphs: whoParas });
 
   // Where
   const whereParas = [];
@@ -114,10 +135,8 @@ function buildBody(story) {
   const found = states.filter((s) => text.includes(s));
   if (found.length > 0) {
     whereParas.push(`Coverage references ${titleCase(found[0])} and related locations.`);
-  } else {
-    whereParas.push('Location details are available in the linked source coverage.');
   }
-  sections.push({ heading: 'Where', paragraphs: whereParas });
+  if (whereParas.length > 0) sections.push({ heading: 'Where', paragraphs: whereParas });
 
   // When
   const whenParas = [];
@@ -127,18 +146,6 @@ function buildBody(story) {
   }
   sections.push({ heading: 'When', paragraphs: whenParas });
 
-  // Why it matters
-  const whyParas = [];
-  const catLabels = {
-    us: 'national significance',
-    politics: 'government and public-policy significance',
-    business: 'economic and market significance',
-    technology: 'technology significance',
-    entertainment: 'cultural significance',
-    sports: 'sports significance',
-  };
-  whyParas.push(`This story has ${catLabels[story.category] || 'general significance'}. It is supported by ${story.sourceCount} source(s)${story.hasGovernmentSource ? ', including an official government source' : ''}.`);
-  sections.push({ heading: 'Why it matters', paragraphs: whyParas });
 
   // What is confirmed
   const confirmedParas = [];

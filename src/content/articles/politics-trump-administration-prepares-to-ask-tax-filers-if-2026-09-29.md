@@ -31,16 +31,10 @@ The new question, included on a draft version of the primary tax form, comes as 
 Entities referenced in coverage include Trump Administration Prepares, Ask Tax Filers, They Are, Citizens Trump Administration Prepares.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 2 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 3 source(s).
 
 
 ## What is confirmed

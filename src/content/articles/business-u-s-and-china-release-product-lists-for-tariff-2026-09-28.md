@@ -37,9 +37,6 @@ Coverage references China and related locations.
 Source coverage began September 28, 2026 (ET). The story is approximately 2 hours old.
 
 
-## Why it matters
-This story has economic and market significance. It is supported by 1 source(s).
-
 
 ## What is confirmed
 The following facts are drawn from the linked source coverage:

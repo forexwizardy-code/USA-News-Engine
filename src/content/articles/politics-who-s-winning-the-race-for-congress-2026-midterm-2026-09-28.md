@@ -29,16 +29,10 @@ It’s Sept. 28 — 36 days away from the midterms. Here’s the state of play.
 Entities referenced in coverage include Who, Winning, Race, Congress, Midterm Elections Who.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 0 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 2 source(s).
 
 
 ## What is confirmed

@@ -29,16 +29,10 @@ What is a concert really worth? We asked 34 fans about the time, money and effor
 Entities referenced in coverage include Here, What Fans Paid, Harry Styles Tickets.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 0 hours old.
 
-
-## Why it matters
-This story has cultural significance. It is supported by 2 source(s).
 
 
 ## What is confirmed

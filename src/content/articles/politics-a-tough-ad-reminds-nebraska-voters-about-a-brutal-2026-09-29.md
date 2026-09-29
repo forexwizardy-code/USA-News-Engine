@@ -31,16 +31,10 @@ A group supporting Dan Osborn, the independent Senate candidate in Nebraska, is 
 Entities referenced in coverage include Tough Ad Reminds Nebraska Voters About, Brutal Crime, Pardon.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 1 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 2 source(s).
 
 
 ## What is confirmed

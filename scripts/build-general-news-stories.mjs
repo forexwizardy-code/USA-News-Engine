@@ -33,6 +33,29 @@ const HOUR_MS = 60 * 60 * 1000;
 // Helpers
 // ===========================================================================
 
+function truncateClean(text, maxLength = 200) {
+  const s = String(text || '').replace(/\s+/g, ' ').trim();
+  if (s.length <= maxLength) return s;
+
+  const head = s.slice(0, maxLength + 1);
+  const sentenceEnd = Math.max(
+    head.lastIndexOf('. '),
+    head.lastIndexOf('! '),
+    head.lastIndexOf('? ')
+  );
+
+  if (sentenceEnd >= Math.floor(maxLength * 0.5)) {
+    return head.slice(0, sentenceEnd + 1).trim();
+  }
+
+  const wordEnd = head.lastIndexOf(' ');
+  const cut = head
+    .slice(0, wordEnd > 0 ? wordEnd : maxLength)
+    .replace(/[,:;–—-]+$/u, '')
+    .trim();
+
+  return `${cut}…`;
+}
 function loadJsonOptional(path) {
   return readFile(path, 'utf8').then((raw) => ({ ok: true, doc: JSON.parse(raw) })).catch((err) => {
     if (err && err.code === 'ENOENT') return { ok: false, reason: 'missing' };
@@ -462,7 +485,7 @@ async function main() {
         publisherFamily: r.publisherFamily || null,
         sourceUrl: r.sourceUrl,
         title: r.title,
-        description: (r.description || '').slice(0, 200),
+        description: truncateClean(r.description || '', 200),
         publishedAtSource: r.publishedAtSource,
       })),
     });

@@ -31,16 +31,10 @@ Jonathan McKinsey, an engineer who worked in the games department for The New Yo
 Entities referenced in coverage include Couple Accused, Killing Their Son, Law, Bay Area Park.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 2 hours old.
 
-
-## Why it matters
-This story has national significance. It is supported by 1 source(s).
 
 
 ## What is confirmed

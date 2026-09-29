@@ -29,16 +29,10 @@ Five years after the assassination of Haitian President Jovenel Moïse, dozens o
 Entities referenced in coverage include Haiti, Miami.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 1 hours old.
 
-
-## Why it matters
-This story has national significance. It is supported by 1 source(s).
 
 
 ## What is confirmed

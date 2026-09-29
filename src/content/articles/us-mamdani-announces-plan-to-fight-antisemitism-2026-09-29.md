@@ -31,16 +31,10 @@ A report issued by Mayor Zohran Mamdani describes ways that New York City is fun
 Entities referenced in coverage include Mamdani Announces Plan, Fight Antisemitism, Without Discussing Israel.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 0 hours old.
 
-
-## Why it matters
-This story has national significance. It is supported by 1 source(s).
 
 
 ## What is confirmed

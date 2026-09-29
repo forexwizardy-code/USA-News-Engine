@@ -1,7 +1,7 @@
 ---
 slug: "politics-live-updates-trump-set-to-reveal-iowa-steel-mill-2026-09-28"
 title: "Live updates: Trump set to reveal Iowa steel mill plans; Senate tees up college sports bill vote"
-description: "President Trump is expected to announce a $15 billion steel mill plan for eastern Iowa in the Oval Office on Monday afternoon. Earlier in the day, the Trump administration released a rollback of fuel "
+description: "President Trump is expected to announce a $15 billion steel mill plan for eastern Iowa in the Oval Office on Monday afternoon."
 category: politics
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-28T16:47:52.006Z
@@ -29,16 +29,10 @@ President Trump is expected to announce a $15 billion steel mill plan for easter
 Entities referenced in coverage include Live, Trump, Iowa, Senate.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 1 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 1 source(s).
 
 
 ## What is confirmed

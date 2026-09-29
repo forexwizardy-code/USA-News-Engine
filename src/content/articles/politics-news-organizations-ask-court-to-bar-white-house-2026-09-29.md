@@ -31,16 +31,10 @@ Three news outlets that President Trump banished from White House grounds asked 
 Entities referenced in coverage include White House.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 29, 2026 (ET). The story is approximately 7 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 3 source(s).
 
 
 ## What is confirmed

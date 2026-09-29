@@ -29,16 +29,10 @@ President Trump has brought his New York real estate background to the White Hou
 Entities referenced in coverage include Trump.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 8 hours old.
 
-
-## Why it matters
-This story has national significance. It is supported by 2 source(s).
 
 
 ## What is confirmed

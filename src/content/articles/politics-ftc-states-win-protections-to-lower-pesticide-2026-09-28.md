@@ -29,16 +29,10 @@ The Federal Trade Commission and a coalition of state attorneys general have sec
 Entities referenced in coverage include States Win Protections, Lower Pesticide Prices, American Farmers, Antitrust Case Against Corteva.
 
 
-## Where
-Location details are available in the linked source coverage.
-
 
 ## When
 Source coverage began September 28, 2026 (ET). The story is approximately 4 hours old.
 
-
-## Why it matters
-This story has government and public-policy significance. It is supported by 1 source(s), including an official government source.
 
 
 ## What is confirmed
