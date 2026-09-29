@@ -614,7 +614,7 @@ function buildMapSvg(draft, theme, geoData) {
     <!-- Leader line to label -->
     <line x1="${countyCenter.x}" y1="${countyCenter.y}" x2="${countyCenter.x + 40}" y2="${countyCenter.y - 35}" stroke="${accentDark}" stroke-width="1.5"/>
     <!-- Label text -->
-    <text x="${countyCenter.x + 44}" y="${countyCenter.y - 32}" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="${accentDark}">LAKE COUNTY</text>
+    <text x="${countyCenter.x + 44}" y="${countyCenter.y - 32}" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="${accentDark}">${escapeXml(location.split(",")[0].trim().toUpperCase())}</text>
     <text x="${countyCenter.x + 44}" y="${countyCenter.y - 18}" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="${accentDark}" opacity="0.8">Warned area</text>
     ` : ''}
   </g>
@@ -786,7 +786,7 @@ function buildEditorialSvg(draft, theme, geoData) {
     ${countyCenter ? `
     <circle cx="${countyCenter.x}" cy="${countyCenter.y}" r="6" fill="${accentDark}" stroke="#ffffff" stroke-width="2"/>
     <line x1="${countyCenter.x}" y1="${countyCenter.y}" x2="${countyCenter.x - 60}" y2="${countyCenter.y + 45}" stroke="${accentDark}" stroke-width="1.5"/>
-    <text x="${countyCenter.x - 64}" y="${countyCenter.y + 42}" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="${accentDark}" text-anchor="end">LAKE COUNTY</text>
+    <text x="${countyCenter.x - 64}" y="${countyCenter.y + 42}" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="${accentDark}" text-anchor="end">${escapeXml(location.split(",")[0].trim().toUpperCase())}</text>
     <text x="${countyCenter.x - 64}" y="${countyCenter.y + 56}" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="${accentDark}" text-anchor="end" opacity="0.8">Warned area</text>
     ` : ''}
   </g>

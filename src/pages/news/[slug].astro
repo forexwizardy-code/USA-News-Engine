@@ -1,4 +1,4 @@
-﻿---
+---
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -227,21 +227,41 @@ const attributionText = a.imageMode === 'licensed-photo'
                 </div>
               )}
               <div class="source-row">
-                <span class="source-key">{a.category === 'recalls' ? 'Original recall' : 'Original alert'}</span>
+                <span class="source-key">{
+                  a.category === 'recalls' ? 'Original recall' :
+                  a.category === 'weather' ? 'Original alert' :
+                  (a.sourceName === 'U.S. Geological Survey' || a.sourceOffice === 'U.S. Geological Survey') ? 'Original USGS event' :
+                  a.category === 'science' ? 'Original release' :
+                  'Original report'
+                }</span>
                 <a
                   class="source-link"
                   href={a.sourceUrl}
                   rel="nofollow noopener"
                   target="_blank"
                 >
-                  {a.category === 'recalls' ? 'View official recall' : 'View official NWS alert'} &rarr;
+                  {
+                    a.category === 'recalls' ? 'View official recall' :
+                    a.category === 'weather' ? 'View official NWS alert' :
+                    (a.sourceName === 'U.S. Geological Survey' || a.sourceOffice === 'U.S. Geological Survey') ? 'View official USGS event' :
+                    a.category === 'science' ? 'View original release' :
+                    'View original report'
+                  } &rarr;
                 </a>
               </div>
             </div>
             <p class="source-note">
-              {a.category === 'recalls'
-                ? `This article was produced from ${a.sourceName === 'Consumer Product Safety Commission' ? 'an official recall notice from the U.S. Consumer Product Safety Commission' : 'official U.S. Food and Drug Administration recall data'}. US News Engine is not the original source of this recall.`
-                : 'This article was produced from official National Weather Service alert data. US News Engine is not the original source of this alert.'}
+              {
+                a.category === 'recalls'
+                  ? 'This article was produced from official recall data from the cited agency. US News Engine is not the original source of this recall.'
+                  : a.category === 'weather'
+                    ? 'This article was produced from official National Weather Service alert data. US News Engine is not the original source of this alert.'
+                    : (a.sourceName === 'U.S. Geological Survey' || a.sourceOffice === 'U.S. Geological Survey')
+                      ? 'This article was produced from U.S. Geological Survey earthquake data. US News Engine is not the original source of the event data.'
+                      : a.category === 'science'
+                        ? 'This article was produced from the cited science source. US News Engine is not the original source of the release.'
+                        : 'This article was produced from the cited source coverage. US News Engine is not the original source.'
+              }
             </p>
           </div>
         </div>
