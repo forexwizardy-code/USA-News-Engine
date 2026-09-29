@@ -83,11 +83,24 @@ function yamlEscape(value) {
 }
 
 function setField(text, field, value) {
+  const line = `${field}: "${yamlEscape(value)}"`;
   const re = new RegExp(`^${field}:\\s*.*$`, 'm');
-  if (!re.test(text)) {
-    throw new Error(`Missing ${field}`);
+
+  if (re.test(text)) {
+    return text.replace(re, line);
   }
-  return text.replace(re, `${field}: "${yamlEscape(value)}"`);
+
+  const sourceNameRe = /^sourceName:\s*.*$/m;
+  if (sourceNameRe.test(text)) {
+    return text.replace(sourceNameRe, `${line}\n$&`);
+  }
+
+  const end = text.indexOf('\n---', 4);
+  if (end !== -1) {
+    return `${text.slice(0, end)}\n${line}${text.slice(end)}`;
+  }
+
+  throw new Error(`Could not insert ${field}`);
 }
 
 async function exists(path) {
