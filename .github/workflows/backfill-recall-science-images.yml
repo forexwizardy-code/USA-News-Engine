@@ -1,0 +1,65 @@
+name: Backfill Recall and Science Images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: newsroom-shared-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Backfill licensed images
+        run: node scripts/backfill-recall-science-images.mjs
+
+      - name: Validate Recalls
+        run: node scripts/validate-recalls.mjs
+
+      - name: Validate Science
+        run: node scripts/validate-science.mjs
+
+      - name: Validate General News
+        run: npm run validate:general
+
+      - name: Build site
+        run: npm run build
+
+      - name: Commit results
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A -- public/images src/content/articles data
+          git commit -m "Backfill Recall and Science licensed images"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
