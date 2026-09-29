@@ -5,6 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Maricopa County, Ariz
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-29T12:40:11.511Z
+updatedAt: 2026-09-29T14:29:34.625Z
 image: "/images/flash-flood-warning-maricopa-county-arizona-september-29-2026-map.png"
 imageAlt: "Flash Flood Warning for Maricopa County, Arizona"
 imageMode: "map-data"
