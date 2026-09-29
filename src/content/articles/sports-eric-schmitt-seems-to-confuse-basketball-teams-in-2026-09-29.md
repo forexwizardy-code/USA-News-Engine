@@ -1,7 +1,7 @@
 ---
 slug: "sports-eric-schmitt-seems-to-confuse-basketball-teams-in-2026-09-29"
 title: "Eric Schmitt seems to confuse basketball teams in attempt to link Jack Smith, Fani Willis"
-description: "Apparent confusion over team names derailed a line of questioning as Sen. Eric Schmitt (R-Mo.) grilled former special counsel Jack Smith on Tuesday about his attendance at a basketball game…"
+description: "Apparent confusion over team names derailed a line of questioning as Sen. Eric Schmitt (R-Mo.) grilled former special counsel Jack Smith on Tuesday about his attendance at a basketball game."
 category: sports
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-29T19:23:46.704Z

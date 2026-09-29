@@ -1,6 +1,6 @@
 ---
 slug: "foods-alive-inc-foods-alive-organic-moringa-leaf-2026-09-23"
-title: "FOODS ALIVE INC. Foods Alive organic moringa leaf… Recalled Over Salmonella Risk"
+title: "FOODS ALIVE INC. Foods Alive Organic Moringa Leaf Powder Recalled Over Salmonella Risk"
 description: "FOODS ALIVE INC. is recalling Foods Alive organic moringa leaf powder over a salmonella risk."
 category: recalls
 author: "US News Engine Consumer Safety Desk"

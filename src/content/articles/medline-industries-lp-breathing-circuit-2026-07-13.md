@@ -1,6 +1,6 @@
 ---
 slug: "medline-industries-lp-breathing-circuit-2026-07-13"
-title: "Medline Industries, LP breathing circuit… Recalled Over Potential Device Failure"
+title: "Medline Industries, LP Breathing Circuits Recalled Over Potential Device Failure"
 description: "Medline Industries, LP is recalling breathing circuits over a potential device failure. Distribution: worldwide distribution."
 category: recalls
 author: "US News Engine Consumer Safety Desk"

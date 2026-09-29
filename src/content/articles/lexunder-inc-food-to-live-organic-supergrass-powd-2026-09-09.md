@@ -1,6 +1,6 @@
 ---
 slug: "lexunder-inc-food-to-live-organic-supergrass-powd-2026-09-09"
-title: "Lexunder Inc Food to Live Organic SuperGrass Powd… Recalled Over Salmonella Risk"
+title: "Lexunder Inc Food to Live Organic SuperGrass Powder Recalled Over Salmonella Risk"
 description: "Lexunder Inc is recalling Food to Live Organic SuperGrass Powder over a salmonella risk. Distribution: 41 states."
 category: recalls
 author: "US News Engine Consumer Safety Desk"
