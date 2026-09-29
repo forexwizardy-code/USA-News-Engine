@@ -15,7 +15,7 @@ permissions:
 # Phase 10A concurrency safety: only one newsroom run at a time per
 # branch. Prevents races with other desks or manual dispatches.
 concurrency:
-  group: newsroom-science-${{ github.ref }}
+  group: newsroom-shared-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -109,7 +109,7 @@ jobs:
           git config user.name "US News Engine Bot"
           git config user.email "newsroom@users.noreply.github.com"
           # Content changes (articles, images, published-science registry).
-          git add src/ public/ data/published-science.json 2>/dev/null || true
+          git add src/ public/ data/published-science.json data/published-stories.json 2>/dev/null || true
           # Durable source identity/history (canonical resilience fallback).
           git add data/science/science-source-registry.json 2>/dev/null || true
           # Only commit if there is something staged.

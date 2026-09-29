@@ -1,4 +1,4 @@
-﻿/**
+/**
  * US News Engine â€” master General News newsroom automation script (Phase 10A.2.3).
  *
  * Orchestrates: fetch â†’ registry â†’ stories â†’ selection (with all gates) â†’
@@ -30,6 +30,8 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
+
+import { upsertSharedPublishedStory } from './lib/shared-published-registry.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -471,6 +473,31 @@ ${sourceNote}
   await mkdir(dirname(articlePath), { recursive: true });
   await writeFile(articlePath, articleContent, 'utf8');
 
+  await upsertSharedPublishedStory({
+    storyKey: finalSlug,
+    slug: finalSlug,
+    articlePath: `src/content/articles/${finalSlug}.md`,
+    publishedAt: now,
+    updatedAt: null,
+    currentAlertIds: [story.generalStoryKey].filter(Boolean),
+    allAlertIds: [story.generalStoryKey].filter(Boolean),
+    event: draft.category || 'General News',
+    location: 'Unknown',
+    sourceOffice: draft.primarySource?.name || 'Unknown',
+    lifecycleStatus: 'active',
+    lastNwsEffectiveAt: null,
+    lastNwsExpiresAt: null,
+    lastNwsEndsAt: null,
+    lastCheckedAt: now,
+    heroImageMode,
+    heroImageSource: heroImagePath,
+    heroImageRelation: heroImageRelation || 'current-alert-data',
+    heroImageCreator,
+    heroImageLicense,
+    heroImageLicenseUrl,
+    heroImageSourcePageUrl,
+    breaking: draft.breaking === true,
+  });
   // 4. Add to registry
   if (!registry.stories) registry.stories = [];
   registry.stories.push({

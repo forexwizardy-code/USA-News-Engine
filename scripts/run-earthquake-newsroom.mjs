@@ -41,6 +41,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 import { findBestCommonsImage, downloadAndProcessHero } from './lib/shared-image-resolver.mjs';
+import { upsertSharedPublishedStory } from './lib/shared-published-registry.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
@@ -687,6 +688,35 @@ ${bodyMarkdown}
   await mkdir(dirname(articlePath), { recursive: true });
   await writeFile(articlePath, articleContent, 'utf8');
 
+  const sharedImageRelation =
+    sidecar?.imageRelation ||
+    (imageKind === 'photo' ? 'illustrative-file-photo' : 'current-alert-data');
+
+  await upsertSharedPublishedStory({
+    storyKey: slug,
+    slug,
+    articlePath: `src/content/articles/${slug}.md`,
+    publishedAt: now,
+    updatedAt: null,
+    currentAlertIds: [story.eventId || story.sourceId].filter(Boolean),
+    allAlertIds: [story.eventId || story.sourceId].filter(Boolean),
+    event: 'Earthquake',
+    location: story.place || story.state || 'Unknown',
+    sourceOffice: 'U.S. Geological Survey',
+    lifecycleStatus: 'active',
+    lastNwsEffectiveAt: null,
+    lastNwsExpiresAt: null,
+    lastNwsEndsAt: null,
+    lastCheckedAt: now,
+    heroImageMode: imageKind === 'photo' ? 'licensed-photo' : (imageKind === 'shakemap' ? 'source-image' : 'agency-graphic'),
+    heroImageSource: heroImagePath,
+    heroImageRelation: sharedImageRelation,
+    heroImageCreator,
+    heroImageLicense,
+    heroImageLicenseUrl,
+    heroImageSourcePageUrl: heroImageSourceUrl,
+    breaking: draft.breaking === true,
+  });
   // 6. Add entry to registry (caller will save)
   registry.stories.push({
     earthquakeKey: story.earthquakeKey,

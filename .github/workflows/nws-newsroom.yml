@@ -16,7 +16,7 @@ permissions:
 # on the same git ref. This prevents two runs from pulling the same
 # old main, both creating commits, and one failing to push.
 concurrency:
-  group: newsroom-nws-${{ github.ref }}
+  group: newsroom-shared-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:

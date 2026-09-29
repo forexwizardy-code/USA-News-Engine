@@ -13,7 +13,7 @@ permissions:
 # branch. Recall runs at 08:17 and 20:17 — the SAME minute NWS fires
 # hourly. This group prevents the two from racing on the git ref.
 concurrency:
-  group: newsroom-recall-${{ github.ref }}
+  group: newsroom-shared-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -72,7 +72,7 @@ jobs:
         run: |
           git config user.name "US News Engine Bot"
           git config user.email "newsroom@users.noreply.github.com"
-          git add src/ public/ data/published-recalls.json
+          git add src/ public/ data/published-recalls.json data/published-stories.json
           git commit -m "Automated recall newsroom update: $(date -u '+%Y-%m-%d %H:%M UTC')"
           # Phase 10A: rebase onto the latest remote main before pushing
           # so concurrent workflow runs (e.g. Recall + NWS at 08:17/20:17)

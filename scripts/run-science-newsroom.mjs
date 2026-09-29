@@ -71,6 +71,8 @@ import {
   SOURCE_KEYS,
 } from './science-source-resilience-rules.mjs';
 
+import { upsertSharedPublishedStory } from './lib/shared-published-registry.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 const CONFIG_FILE = join(PROJECT_DIR, 'config', 'automation.json');
@@ -1431,6 +1433,31 @@ ${bodyMarkdown}
     // next newsroom run.
   }
 
+  await upsertSharedPublishedStory({
+    storyKey: slug,
+    slug,
+    articlePath: `src/content/articles/${slug}.md`,
+    publishedAt: now,
+    updatedAt: null,
+    currentAlertIds: Array.isArray(story.allSourceKeys) ? story.allSourceKeys : [story.scienceStoryKey].filter(Boolean),
+    allAlertIds: Array.isArray(story.allSourceKeys) ? story.allSourceKeys : [story.scienceStoryKey].filter(Boolean),
+    event: 'Science',
+    location: 'Unknown',
+    sourceOffice: story.primarySource || 'NASA',
+    lifecycleStatus: 'active',
+    lastNwsEffectiveAt: null,
+    lastNwsExpiresAt: null,
+    lastNwsEndsAt: null,
+    lastCheckedAt: now,
+    heroImageMode,
+    heroImageSource: heroImagePath,
+    heroImageRelation: heroImageMode === 'licensed-photo' ? 'illustrative-file-photo' : 'current-alert-data',
+    heroImageCreator,
+    heroImageLicense,
+    heroImageLicenseUrl,
+    heroImageSourcePageUrl: heroImageSourceUrl,
+    breaking: draft.breaking === true,
+  });
   // 7. Add entry to registry (caller will save)
   registry.stories.push({
     scienceStoryKey: story.scienceStoryKey,

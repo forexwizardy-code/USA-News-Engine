@@ -23,6 +23,8 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 
+import { refreshSharedRegistryMetadata } from './lib/shared-published-registry.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_DIR = join(__dirname, '..');
 const CONFIG_FILE = join(PROJECT_DIR, 'config', 'automation.json');
@@ -292,6 +294,9 @@ async function main() {
   console.log('\n--- Step 12: Update registries ---');
   // Shared published-stories registry is maintained by the newsroom publish/update paths.
   // Do not run the legacy full rebuild here because it can drop cross-desk metadata.
+  await refreshSharedRegistryMetadata();
+  console.log('  Shared registry metadata refreshed.');
+
   // Rebuild image provenance
   try {
     execSync('node scripts/create-image-provenance.mjs', { cwd: PROJECT_DIR, stdio: 'pipe' });
