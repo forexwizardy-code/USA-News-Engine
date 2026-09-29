@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T18:27:10.652Z",
+  "generatedAt": "2026-09-29T18:32:07.856Z",
   "storyCount": 47,
   "stories": [
     {
@@ -854,27 +854,34 @@
       "slug": "flash-flood-warning-dona-ana-county-new-mexico-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026.md",
       "publishedAt": "2026-09-29T14:29:37.242Z",
-      "updatedAt": "2026-09-29T16:30:46.763Z",
+      "updatedAt": "2026-09-29T18:32:07.853Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.2cf6c7eb8b520eb44c9fa50cafded942ef8611c6.001.1",
-        "urn:oid:2.49.0.1.840.0.1d835be177102f728561bf53a8eac10b5fa2355a.001.1",
-        "urn:oid:2.49.0.1.840.0.8d8a238bac45bf16c3354b6034e5b3ebc8618cc0.001.1"
+        "urn:oid:2.49.0.1.840.0.310cbf03ed262e7f9b593d06dfe0824f241d6251.001.1",
+        "urn:oid:2.49.0.1.840.0.1d19fa81a2183635699675ff5ac8d057b69fdf1f.001.1",
+        "urn:oid:2.49.0.1.840.0.817f5e9b593a0c0cc8c00d6ecfe239a8c4cbcbfe.001.1",
+        "urn:oid:2.49.0.1.840.0.9cc5e3b3eda9220cf26a21e926ee5d7a1d356009.001.1",
+        "urn:oid:2.49.0.1.840.0.69aa8df525f02c826fd686be2fbd452248987c0e.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.ad8bdce9ba7ee0203953fecfcb86899c7d3dc70a.001.1",
         "urn:oid:2.49.0.1.840.0.3c34ff9a9285272dac03720d0b8e7b34f0a84da3.001.1",
         "urn:oid:2.49.0.1.840.0.2cf6c7eb8b520eb44c9fa50cafded942ef8611c6.001.1",
         "urn:oid:2.49.0.1.840.0.1d835be177102f728561bf53a8eac10b5fa2355a.001.1",
-        "urn:oid:2.49.0.1.840.0.8d8a238bac45bf16c3354b6034e5b3ebc8618cc0.001.1"
+        "urn:oid:2.49.0.1.840.0.8d8a238bac45bf16c3354b6034e5b3ebc8618cc0.001.1",
+        "urn:oid:2.49.0.1.840.0.310cbf03ed262e7f9b593d06dfe0824f241d6251.001.1",
+        "urn:oid:2.49.0.1.840.0.1d19fa81a2183635699675ff5ac8d057b69fdf1f.001.1",
+        "urn:oid:2.49.0.1.840.0.817f5e9b593a0c0cc8c00d6ecfe239a8c4cbcbfe.001.1",
+        "urn:oid:2.49.0.1.840.0.9cc5e3b3eda9220cf26a21e926ee5d7a1d356009.001.1",
+        "urn:oid:2.49.0.1.840.0.69aa8df525f02c826fd686be2fbd452248987c0e.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Dona Ana County, New Mexico",
       "sourceOffice": "NWS El Paso Tx/Santa Teresa NM",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T10:07:00-06:00",
-      "lastNwsExpiresAt": "2026-09-29T12:00:00-06:00",
-      "lastNwsEndsAt": "2026-09-29T12:00:00-06:00",
-      "lastCheckedAt": "2026-09-29T16:30:46.763Z",
+      "lastNwsEffectiveAt": "2026-09-29T12:18:00-06:00",
+      "lastNwsExpiresAt": "2026-09-29T15:15:00-06:00",
+      "lastNwsEndsAt": "2026-09-29T15:15:00-06:00",
+      "lastCheckedAt": "2026-09-29T18:32:07.853Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
