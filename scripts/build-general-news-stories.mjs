@@ -54,7 +54,7 @@ function truncateClean(text, maxLength = 200) {
     .replace(/[,:;–—-]+$/u, '')
     .trim();
 
-  return `${cut}…`;
+  return cut;
 }
 function loadJsonOptional(path) {
   return readFile(path, 'utf8').then((raw) => ({ ok: true, doc: JSON.parse(raw) })).catch((err) => {
@@ -485,7 +485,7 @@ async function main() {
         publisherFamily: r.publisherFamily || null,
         sourceUrl: r.sourceUrl,
         title: r.title,
-        description: truncateClean(r.description || '', 200),
+        description: truncateClean(r.description || '', 320),
         publishedAtSource: r.publishedAtSource,
       })),
     });

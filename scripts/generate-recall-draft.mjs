@@ -333,12 +333,12 @@ function buildHeadline(story) {
       ? `${brand} ${product} Recalled Over ${hazardLabel}`
       : `${product} Recalled Over ${hazardLabel}`;
     // Hard cap at 80 chars — truncate the product portion if needed.
-    if (headline.length > 80) {
-      const over = headline.length - 80;
-      const trimmedProduct = product.slice(0, Math.max(8, product.length - over - 1)).trim();
+    if (headline.length > 120) {
+      const over = headline.length - 120;
+      const trimmedProduct = product.slice(0, Math.max(8, product.length - over - 1)).replace(/\s+\S*$/, '').trim() || product.slice(0, Math.max(8, product.length - over - 1)).trim();
       headline = brand
-        ? `${brand} ${trimmedProduct}… Recalled Over ${hazardLabel}`
-        : `${trimmedProduct}… Recalled Over ${hazardLabel}`;
+        ? `${brand} ${trimmedProduct} Recalled Over ${hazardLabel}`
+        : `${trimmedProduct} Recalled Over ${hazardLabel}`;
     }
     return headline;
   }
@@ -358,10 +358,10 @@ function buildHeadline(story) {
   product = product.replace(/^(medline|hudson rci)\s+/i, '').trim();
 
   let headline = `${firm} ${product} Recalled Over ${hazardLabel}`;
-  if (headline.length > 80) {
-    const over = headline.length - 80;
-    const trimmedProduct = product.slice(0, Math.max(8, product.length - over - 1)).trim();
-    headline = `${firm} ${trimmedProduct}… Recalled Over ${hazardLabel}`;
+  if (headline.length > 120) {
+    const over = headline.length - 120;
+    const trimmedProduct = product.slice(0, Math.max(8, product.length - over - 1)).replace(/\s+\S*$/, '').trim() || product.slice(0, Math.max(8, product.length - over - 1)).trim();
+    headline = `${firm} ${trimmedProduct} Recalled Over ${hazardLabel}`;
   }
   return headline;
 }

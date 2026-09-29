@@ -50,7 +50,7 @@ function truncateClean(text, maxLength = 200) {
     .replace(/[,:;–—-]+$/u, '')
     .trim();
 
-  return `${cut}…`;
+  return cut;
 }
 function slugify(text) {
   // Phase 10A.2.1 — clean slug generation: word-boundary truncation,
@@ -95,7 +95,7 @@ function buildHeadline(story) {
 
 function buildDeck(story) {
   const d = story.description || '';
-  if (d) return truncateClean(d, 200);
+  if (d) return truncateClean(d, 320);
   // Fallback: synthesize from title + category
   return `${story.title} — coverage from ${story.sourceCount} source(s).`;
 }
@@ -151,7 +151,7 @@ function buildBody(story) {
   const confirmedParas = [];
   confirmedParas.push(`The following facts are drawn from the linked source coverage:`);
   for (const c of story.cluster.slice(0, 3)) {
-    confirmedParas.push(`• ${c.sourceName}: "${c.title}"${c.description ? ` — ${c.description.slice(0, 150)}` : ''}`);
+    confirmedParas.push(`• ${c.sourceName}: "${c.title}"${c.description ? ` — ${truncateClean(c.description, 220)}` : ''}`);
   }
   sections.push({ heading: 'What is confirmed', paragraphs: confirmedParas });
 
