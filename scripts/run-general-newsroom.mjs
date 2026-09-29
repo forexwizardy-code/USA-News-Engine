@@ -366,10 +366,10 @@ async function publishNewArticle(story, registry) {
   const imageSearch = await findBestCommonsImage({
     queries: imageQueries,
     keywords: [...titleKeywords, draft.category].filter(Boolean),
-    minScore: 60,
+    minScore: 58,
     minKeywordMatches: 1,
     requirePhoto: true,
-    perQuery: 12,
+    perQuery: 18,
   });
 
   if (imageSearch.found && imageSearch.best?.image) {

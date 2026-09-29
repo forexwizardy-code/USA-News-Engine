@@ -84,10 +84,10 @@ for (const file of files) {
     const result = await findBestCommonsImage({
       queries,
       keywords: [...keywords, category].filter(Boolean),
-      minScore: 60,
+      minScore: 58,
       minKeywordMatches: 1,
       requirePhoto: true,
-      perQuery: 12
+      perQuery: 18
     });
 
     if (!result.found || !result.best?.image) {
