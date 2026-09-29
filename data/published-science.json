@@ -72,13 +72,16 @@
       "storyType": "discovery",
       "mission": "Hubble",
       "topic": "Astronomy",
-      "imageMode": "factual-graphic-fallback",
-      "imageSourceUrl": "/images/hubble-spiral-galaxy-ngc-4698-2026-09-25.png",
-      "imageCredit": "US News Engine using NASA source information",
+      "imageMode": "licensed-photo",
+      "imageSourceUrl": "/images/hubble-spiral-galaxy-ngc-4698-2026-09-25-real.jpg",
+      "imageCredit": "NASA/ESA Hubble WFC3; David Thilker et al. & Melina Thévenot",
       "status": "active",
       "firstSeenAt": "2026-09-28T11:25:41.000Z",
       "lastSeenAt": "2026-09-28T11:25:41.000Z",
-      "lastCheckedAt": "2026-09-28T11:25:41.000Z"
+      "lastCheckedAt": "2026-09-28T11:25:41.000Z",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANGC%204698%20Hubble.jpg"
     }
   ]
 }
