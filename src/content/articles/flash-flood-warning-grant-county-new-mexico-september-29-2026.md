@@ -5,7 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Grant County, New Mex
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-29T12:40:06.130Z
-updatedAt: 2026-09-29T14:29:34.627Z
+updatedAt: 2026-09-29T16:30:46.765Z
 image: "/images/flash-flood-warning-grant-county-new-mexico-september-29-2026-map.png"
 imageAlt: "Flash Flood Warning for Grant County, New Mexico"
 imageMode: "map-data"

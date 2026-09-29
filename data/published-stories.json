@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:26:07.180Z",
+  "generatedAt": "2026-09-29T16:30:46.768Z",
   "storyCount": 39,
   "stories": [
     {
@@ -757,24 +757,28 @@
       "slug": "flash-flood-warning-grant-county-new-mexico-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-grant-county-new-mexico-september-29-2026.md",
       "publishedAt": "2026-09-29T12:40:06.130Z",
-      "updatedAt": "2026-09-29T14:29:34.627Z",
+      "updatedAt": "2026-09-29T16:30:46.765Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.bd1a8b6678737e0ceebdb9ad766630c55285ad0c.001.1",
-        "urn:oid:2.49.0.1.840.0.2d6e39f71cc173bb4416ef74853e89609286aeac.001.1"
+        "urn:oid:2.49.0.1.840.0.ce31c88e2e9a8002ba4b63f102858b8cededbe7b.001.1",
+        "urn:oid:2.49.0.1.840.0.7617c118d7f50f6aaf20bfb69923dfa24cdc86ae.001.1",
+        "urn:oid:2.49.0.1.840.0.f28512defb3fda1b44a3e7fcdf2ad33cf2108cd9.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.6793b493c0c1ecc926aeefb6cb052fce10203d6b.001.1",
         "urn:oid:2.49.0.1.840.0.bd1a8b6678737e0ceebdb9ad766630c55285ad0c.001.1",
-        "urn:oid:2.49.0.1.840.0.2d6e39f71cc173bb4416ef74853e89609286aeac.001.1"
+        "urn:oid:2.49.0.1.840.0.2d6e39f71cc173bb4416ef74853e89609286aeac.001.1",
+        "urn:oid:2.49.0.1.840.0.ce31c88e2e9a8002ba4b63f102858b8cededbe7b.001.1",
+        "urn:oid:2.49.0.1.840.0.7617c118d7f50f6aaf20bfb69923dfa24cdc86ae.001.1",
+        "urn:oid:2.49.0.1.840.0.f28512defb3fda1b44a3e7fcdf2ad33cf2108cd9.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Grant County, New Mexico",
       "sourceOffice": "NWS El Paso Tx/Santa Teresa NM",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T07:16:00-06:00",
-      "lastNwsExpiresAt": "2026-09-29T10:15:00-06:00",
-      "lastNwsEndsAt": "2026-09-29T10:15:00-06:00",
-      "lastCheckedAt": "2026-09-29T14:29:34.627Z",
+      "lastNwsEffectiveAt": "2026-09-29T09:52:00-06:00",
+      "lastNwsExpiresAt": "2026-09-29T11:45:00-06:00",
+      "lastNwsEndsAt": "2026-09-29T11:45:00-06:00",
+      "lastCheckedAt": "2026-09-29T16:30:46.765Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-grant-county-new-mexico-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -850,23 +854,27 @@
       "slug": "flash-flood-warning-dona-ana-county-new-mexico-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026.md",
       "publishedAt": "2026-09-29T14:29:37.242Z",
-      "updatedAt": null,
+      "updatedAt": "2026-09-29T16:30:46.763Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.ad8bdce9ba7ee0203953fecfcb86899c7d3dc70a.001.1",
-        "urn:oid:2.49.0.1.840.0.3c34ff9a9285272dac03720d0b8e7b34f0a84da3.001.1"
+        "urn:oid:2.49.0.1.840.0.2cf6c7eb8b520eb44c9fa50cafded942ef8611c6.001.1",
+        "urn:oid:2.49.0.1.840.0.1d835be177102f728561bf53a8eac10b5fa2355a.001.1",
+        "urn:oid:2.49.0.1.840.0.8d8a238bac45bf16c3354b6034e5b3ebc8618cc0.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.ad8bdce9ba7ee0203953fecfcb86899c7d3dc70a.001.1",
-        "urn:oid:2.49.0.1.840.0.3c34ff9a9285272dac03720d0b8e7b34f0a84da3.001.1"
+        "urn:oid:2.49.0.1.840.0.3c34ff9a9285272dac03720d0b8e7b34f0a84da3.001.1",
+        "urn:oid:2.49.0.1.840.0.2cf6c7eb8b520eb44c9fa50cafded942ef8611c6.001.1",
+        "urn:oid:2.49.0.1.840.0.1d835be177102f728561bf53a8eac10b5fa2355a.001.1",
+        "urn:oid:2.49.0.1.840.0.8d8a238bac45bf16c3354b6034e5b3ebc8618cc0.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Dona Ana County, New Mexico",
       "sourceOffice": "NWS El Paso Tx/Santa Teresa NM",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T08:23:00-06:00",
-      "lastNwsExpiresAt": "2026-09-29T10:30:00-06:00",
-      "lastNwsEndsAt": "2026-09-29T10:30:00-06:00",
-      "lastCheckedAt": "2026-09-29T14:29:37.242Z",
+      "lastNwsEffectiveAt": "2026-09-29T10:07:00-06:00",
+      "lastNwsExpiresAt": "2026-09-29T12:00:00-06:00",
+      "lastNwsEndsAt": "2026-09-29T12:00:00-06:00",
+      "lastCheckedAt": "2026-09-29T16:30:46.763Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -881,23 +889,27 @@
       "slug": "flash-flood-warning-yavapai-county-arizona-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-yavapai-county-arizona-september-29-2026.md",
       "publishedAt": "2026-09-29T14:29:40.705Z",
-      "updatedAt": null,
+      "updatedAt": "2026-09-29T16:30:46.766Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.f3416fd6289cfd6d3f1e0482152ab320389019db.001.1",
-        "urn:oid:2.49.0.1.840.0.e5dcce8919d01d3fa0ba509621965487376ab545.001.1"
+        "urn:oid:2.49.0.1.840.0.6f20796873f85551b3f0b735e72eb8e6b9ed3ee7.001.1",
+        "urn:oid:2.49.0.1.840.0.3c03f5df265227cd6948a79920c9a28a3f2746a6.001.1",
+        "urn:oid:2.49.0.1.840.0.3b9bd63bfe32c78536f342fcef4abfe799a3afc7.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.f3416fd6289cfd6d3f1e0482152ab320389019db.001.1",
-        "urn:oid:2.49.0.1.840.0.e5dcce8919d01d3fa0ba509621965487376ab545.001.1"
+        "urn:oid:2.49.0.1.840.0.e5dcce8919d01d3fa0ba509621965487376ab545.001.1",
+        "urn:oid:2.49.0.1.840.0.6f20796873f85551b3f0b735e72eb8e6b9ed3ee7.001.1",
+        "urn:oid:2.49.0.1.840.0.3c03f5df265227cd6948a79920c9a28a3f2746a6.001.1",
+        "urn:oid:2.49.0.1.840.0.3b9bd63bfe32c78536f342fcef4abfe799a3afc7.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Yavapai County, Arizona",
       "sourceOffice": "NWS Flagstaff AZ",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T05:48:00-07:00",
-      "lastNwsExpiresAt": "2026-09-29T08:45:00-07:00",
-      "lastNwsEndsAt": "2026-09-29T08:45:00-07:00",
-      "lastCheckedAt": "2026-09-29T14:29:40.705Z",
+      "lastNwsEffectiveAt": "2026-09-29T08:24:00-07:00",
+      "lastNwsExpiresAt": "2026-09-29T12:00:00-07:00",
+      "lastNwsEndsAt": "2026-09-29T12:00:00-07:00",
+      "lastCheckedAt": "2026-09-29T16:30:46.766Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-yavapai-county-arizona-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
