@@ -510,8 +510,11 @@ async function publishNewArticle(story, registry) {
         .filter((word) => word.length >= 4 && !['recalled', 'recall', 'hazard', 'risk', 'product', 'products', 'brand'].includes(word)),
     )].slice(0, 8);
 
-    const imageSearch = await findBestCommonsImage({
-      queries: [draft.title, `${story.recallingFirm || ''} ${story.headlineSeed || ''}`.trim()].filter(Boolean),
+    let imageSearch = await findBestCommonsImage({
+      queries: [
+        draft.title,
+        `${story.recallingFirm || ''} ${story.headlineSeed || ''}`.trim(),
+      ].filter(Boolean),
       keywords: recallKeywords,
       minScore: 72,
       minKeywordMatches: 2,
@@ -519,6 +522,53 @@ async function publishNewArticle(story, registry) {
       perQuery: 10,
     });
 
+    // Rescue pass: if an exact/strict search cannot find a safe photo,
+    // search using product-focused terms instead of company/hazard wording.
+    if (!imageSearch.found) {
+      const titleWithoutFirm = String(draft.title || '')
+        .toLowerCase()
+        .replace(String(story.recallingFirm || '').toLowerCase(), ' ');
+
+      const productKeywords = [...new Set(
+        [
+          titleWithoutFirm,
+          ...(Array.isArray(story.brands) ? story.brands : []),
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]+/g, ' ')
+          .split(/\s+/)
+          .filter((word) =>
+            word.length >= 4 &&
+            ![
+              'recalled','recall','hazard','risk','over','potential',
+              'product','products','brand','company','device',
+              'salmonella','listeria','coli','contamination',
+              'failure','injury','fire'
+            ].includes(word)
+          ),
+      )].slice(0, 8);
+
+      const broadQueries = [
+        productKeywords.slice(0, 5).join(' '),
+        productKeywords.slice(-4).join(' '),
+        story.headlineSeed || '',
+      ].filter(Boolean);
+
+      imageSearch = await findBestCommonsImage({
+        queries: broadQueries,
+        keywords: productKeywords.length ? productKeywords : recallKeywords,
+        minScore: 58,
+        minKeywordMatches: 1,
+        requirePhoto: true,
+        perQuery: 16,
+      });
+
+      if (imageSearch.found && imageSearch.best?.image) {
+        console.log(`  Image rescue pass found: ${imageSearch.best.image.title}`);
+      }
+    }
     if (imageSearch.found && imageSearch.best?.image) {
       const selected = imageSearch.best.image;
       const processed = await downloadAndProcessHero({ candidate: selected, outputDir: draftImagesDir, slug, suffix: '', keepOriginal: true });
