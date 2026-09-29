@@ -351,8 +351,8 @@ async function publishNewArticle(story, registry) {
   ]);
 
   const titleKeywords = String(draft.title || '')
-    .replace(/[^A-Za-z0-9\\s-]/g, ' ')
-    .split(/\\s+/)
+    .replace(/[^A-Za-z0-9\s-]/g, ' ')
+    .split(/\s+/)
     .map((word) => word.trim())
     .filter((word) => word.length >= 4 && !imageStopWords.has(word.toLowerCase()))
     .slice(0, 8);
@@ -425,7 +425,7 @@ async function publishNewArticle(story, registry) {
         height: processed.height,
         generatedAt: new Date().toISOString(),
       };
-      await writeFile(join(DRAFT_IMAGES_DIR, `-real.json`), JSON.stringify(provenance, null, 2) + '\n', 'utf8');
+      await writeFile(join(DRAFT_IMAGES_DIR, `${finalSlug}-real.json`), JSON.stringify(provenance, null, 2) + '\n', 'utf8');
     }
   }
 

@@ -21,10 +21,23 @@ function setField(text, name, value) {
     .replace(/"/g, '\\"');
 
   const re = new RegExp(`^${name}:.*$`, 'm');
-  if (!re.test(text)) throw new Error(`Missing frontmatter field: ${name}`);
-  return text.replace(re, `${name}: "${safe}"`);
-}
 
+  if (re.test(text)) {
+    return text.replace(re, `${name}: "${safe}"`);
+  }
+
+  const closingFrontmatter = text.indexOf('\n---', 4);
+
+  if (closingFrontmatter === -1) {
+    throw new Error(`Could not locate closing frontmatter while adding ${name}`);
+  }
+
+  return (
+    text.slice(0, closingFrontmatter) +
+    `\n${name}: "${safe}"` +
+    text.slice(closingFrontmatter)
+  );
+}
 const stop = new Set([
   'the','and','for','with','from','into','over','after','before','amid','about',
   'that','this','these','those','will','would','could','should','have','has',

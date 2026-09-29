@@ -1,4 +1,4 @@
-﻿import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import sharp from 'sharp';
 
@@ -110,6 +110,7 @@ export async function searchCommons(query, limit = 12) {
 
   const response = await fetch(`${COMMONS_API}?${params}`, {
     headers: { 'User-Agent': UA },
+    signal: AbortSignal.timeout(10000),
   });
 
   if (!response.ok) {
@@ -348,7 +349,7 @@ export async function downloadAndProcessHero({
 
   let response;
   try {
-    response = await fetch(sourceUrl, { headers: { 'User-Agent': UA } });
+    response = await fetch(sourceUrl, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(15000) });
   } catch (error) {
     return {
       ok: false,
