@@ -11,7 +11,7 @@
 
 export const SITE_URL = 'https://usa-news-engine.forexwizardy.workers.dev';
 export const SITE_NAME = 'US News Engine';
-export const SITE_TAGLINE = 'Independent reporting from across America';
+export const SITE_TAGLINE = 'Source-driven news from across America';
 export const SITE_DESCRIPTION =
   'US News Engine delivers fast, factual coverage of U.S. news, weather, recalls, consumer affairs, and science — all in one place.';
 export const SITE_LOCALE = 'en_US';

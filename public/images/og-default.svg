@@ -12,6 +12,6 @@
     <text x="43" y="62" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff" text-anchor="middle">US</text>
   </g>
   <text x="120" y="370" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" fill="#ffffff">US News Engine</text>
-  <text x="122" y="430" font-family="Arial, sans-serif" font-size="30" fill="#b8bdc4">Independent reporting from across America</text>
+  <text x="122" y="430" font-family="Arial, sans-serif" font-size="30" fill="#b8bdc4">Source-driven news from across America</text>
   <rect x="120" y="470" width="180" height="6" fill="#c8102e"/>
 </svg>

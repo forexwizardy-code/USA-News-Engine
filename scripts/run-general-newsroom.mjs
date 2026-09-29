@@ -367,7 +367,7 @@ async function publishNewArticle(story, registry) {
     queries: imageQueries,
     keywords: [...titleKeywords, draft.category].filter(Boolean),
     minScore: 60,
-    minKeywordMatches: 2,
+    minKeywordMatches: 1,
     requirePhoto: true,
     perQuery: 12,
   });
