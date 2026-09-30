@@ -2,7 +2,7 @@
 slug: "entertainment-la-mayor-candidates-set-for-forum-as-city-2026-09-29"
 title: "LA mayor candidates set for forum as city struggles with homelessness, Hollywood job losses"
 description: "Two Democratic rivals seeking to become the next mayor of Los Angeles are meeting on the same stage just days before mail ballots go to voters."
-category: entertainment
+category: politics
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-29T18:52:45.122Z
 image: "/images/entertainment-la-mayor-candidates-set-for-forum-as-city-2026-09-29-real.jpg"

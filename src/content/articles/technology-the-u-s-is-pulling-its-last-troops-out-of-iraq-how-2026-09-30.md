@@ -2,7 +2,7 @@
 slug: "technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30"
 title: "The U.S. is pulling its last troops out of Iraq. How will it affect the Middle East"
 description: "NPR's Michel Martin speaks with retired Lt. Gen. H. R. McMaster, former U.S. National Security Advisor, about the impact the final withdrawal of U.S. troops from Iraq will have on the Middle East."
-category: technology
+category: politics
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-30T11:21:54.905Z
 image: "/images/technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30-real.jpg"

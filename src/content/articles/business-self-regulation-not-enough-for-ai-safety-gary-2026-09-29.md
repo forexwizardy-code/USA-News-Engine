@@ -2,7 +2,7 @@
 slug: "business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29"
 title: "Self-regulation 'not enough' for AI safety, Gary Marcus says"
 description: "Top tech executives met with President Trump on Tuesday to discuss the future of artificial intelligence amid growing concerns over AI models losing control. Researchers and lawmakers are calling for stronger safeguards, but Trump said the technology is transforming the economy and that the U.S."
-category: business
+category: technology
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-30T00:31:24.600Z
 image: "/images/business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29-real.jpg"

@@ -1,3 +1,4 @@
+import { classifyGeneralNewsCategory } from './lib/general-news-category.mjs';
 /**
  * US News Engine — Phase 10A.2 General News filter + cluster + score + story builder.
  *
@@ -332,7 +333,7 @@ function scoreCluster(cluster, now) {
 
   // Category significance (national relevance)
   const primary = pickPrimary(cluster);
-  const category = primary.category || 'us';
+  const category = classifyGeneralNewsCategory(primary.title, primary.description, primary.category || primary.sourceCategory);
   const catBonus = { us: 10, politics: 8, business: 6, technology: 6, entertainment: 4, sports: 4 }[category] || 5;
   score += catBonus;
 
@@ -400,7 +401,7 @@ async function main() {
   let foreignRejected = 0;
   for (const cluster of clusters) {
     const primary = pickPrimary(cluster);
-    const category = classifyCategory(primary.title, primary.description, primary.category || primary.sourceCategory);
+    const category = classifyGeneralNewsCategory(primary.title, primary.description, primary.category || primary.sourceCategory);
     const supportingSources = cluster
       .filter((r) => r !== primary)
       .map((r) => ({ sourceName: r.sourceName, sourceUrl: r.sourceUrl, sourceType: r.sourceType, publisherFamily: r.publisherFamily || null }));

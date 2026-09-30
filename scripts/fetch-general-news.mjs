@@ -1,3 +1,4 @@
+import { classifyGeneralNewsCategory } from './lib/general-news-category.mjs';
 /**
  * US News Engine — Phase 10A.2 General U.S. News source fetcher.
  *
@@ -475,7 +476,7 @@ async function fetchSource(source) {
     const publishedAtSource = parsePubDate(pubDateRaw);
     const descriptionRaw = textOf(item.description) || '';
     const description = stripHtml(descriptionRaw).slice(0, 400);
-    const category = categorizeItem(title, description, source.category);
+    const category = classifyGeneralNewsCategory(title, description, source.category);
 
     records.push({
       sourceName: source.sourceName,
@@ -507,7 +508,7 @@ async function fetchSource(source) {
     const pubRaw = textOf(entry.published) || textOf(entry.updated);
     const publishedAtSource = parsePubDate(pubRaw);
     const summary = stripHtml(textOf(entry.summary) || textOf(entry.content) || '').slice(0, 400);
-    const category = categorizeItem(title, summary, source.category);
+    const category = classifyGeneralNewsCategory(title, summary, source.category);
 
     records.push({
       sourceName: source.sourceName,

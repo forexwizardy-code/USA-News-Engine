@@ -1383,7 +1383,7 @@
       "allAlertIds": [
         "gn__b2f44116640a6b53"
       ],
-      "event": "sports",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "PBS NewsHour",
       "lifecycleStatus": "active",
@@ -1391,13 +1391,13 @@
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
       "lastCheckedAt": "2026-09-29T18:27:10.651Z",
-      "heroImageMode": "licensed-photo",
-      "heroImageSource": "/images/sports-watch-schmitt-suggests-jack-smith-perjured-himself-2026-09-29-real.jpg",
-      "heroImageRelation": "illustrative-file-photo",
-      "heroImageCreator": "Derzsi Elekes Andor",
-      "heroImageLicense": "CC BY-SA 3.0",
-      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASchmitt%20P%C3%A1l%20-%20Kossuth%20t%C3%A9r%2C%202014.05.10%20(22).JPG",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/sports-watch-schmitt-suggests-jack-smith-perjured-himself-2026-09-29-editorial.png",
+      "heroImageRelation": "generated-editorial-graphic",
+      "heroImageCreator": "US News Engine (original editorial artwork)",
+      "heroImageLicense": "Original editorial artwork by US News Engine",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
       "breaking": false
     },
     {
@@ -1441,7 +1441,7 @@
       "allAlertIds": [
         "gn__b8891cd4cbab9732"
       ],
-      "event": "entertainment",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "PBS NewsHour",
       "lifecycleStatus": "active",
@@ -1499,7 +1499,7 @@
       "allAlertIds": [
         "gn__0f4850c90a745d79"
       ],
-      "event": "sports",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "The Hill",
       "lifecycleStatus": "active",
@@ -1507,13 +1507,13 @@
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
       "lastCheckedAt": "2026-09-29T19:23:46.704Z",
-      "heroImageMode": "licensed-photo",
-      "heroImageSource": "/images/sports-eric-schmitt-seems-to-confuse-basketball-teams-in-2026-09-29-real.jpg",
-      "heroImageRelation": "illustrative-file-photo",
-      "heroImageCreator": "Eugene A. CernanPhotomontage by User:Grunpfnul",
-      "heroImageLicense": "Public domain",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/sports-eric-schmitt-seems-to-confuse-basketball-teams-in-2026-09-29-editorial.png",
+      "heroImageRelation": "generated-editorial-graphic",
+      "heroImageCreator": "US News Engine (original editorial artwork)",
+      "heroImageLicense": "Original editorial artwork by US News Engine",
       "heroImageLicenseUrl": "",
-      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AApollo%2017%20Harrison%20H.%20Schmitt%20and%20Tracy's%20Rock%20-%20AS17-140-21493%2BAS17-140-21497%202025.jpg",
+      "heroImageSourcePageUrl": "",
       "breaking": false
     },
     {
@@ -1708,7 +1708,7 @@
       "allAlertIds": [
         "gn__a9d8b419c2ecdc1b"
       ],
-      "event": "business",
+      "event": "technology",
       "location": "Unknown",
       "sourceOffice": "PBS NewsHour",
       "lifecycleStatus": "active",
@@ -2238,7 +2238,7 @@
       "allAlertIds": [
         "gn__495a4ac1e08c33ab"
       ],
-      "event": "technology",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "NPR Technology",
       "lifecycleStatus": "active",
@@ -2325,7 +2325,7 @@
       "allAlertIds": [
         "gn__01ccc67d7f2a1379"
       ],
-      "event": "technology",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "NPR Technology",
       "lifecycleStatus": "active",

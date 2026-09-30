@@ -2,7 +2,7 @@
 slug: "technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30"
 title: "Negotiator of 2015 Iran nuclear deal discusses Trump rejecting Iran's latest proposal"
 description: "NPR's Michel Martin speaks with Robert Malley, a negotiator of the 2015 Iran nuclear deal, about where talks stand after President Trump rejected Iran's offer to reopen the Strait of Hormuz."
-category: technology
+category: politics
 author: "US News Engine General News Desk"
 publishedAt: 2026-09-30T09:52:03.494Z
 image: "/images/technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30-real.jpg"
