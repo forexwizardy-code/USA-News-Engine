@@ -23,11 +23,13 @@ const today = new Date().toLocaleDateString('en-US', {
 
 const navItems = [
   { label: 'Home', href: '/', match: '/' },
-  ...CATEGORIES.map((c) => ({
-    label: c.label,
-    href: `/${c.slug}/`,
-    match: `/${c.slug}`,
-  })),
+  ...CATEGORIES
+    .filter((c) => c.nav)
+    .map((c) => ({
+      label: c.label,
+      href: `/${c.slug}/`,
+      match: `/${c.slug}`,
+    })),
   { label: LATEST.label, href: `/${LATEST.slug}/`, match: `/${LATEST.slug}` },
 ];
 
