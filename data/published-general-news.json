@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T02:49:28.953Z",
-  "storyCount": 43,
+  "generatedAt": "2026-09-30T03:23:46.928Z",
+  "storyCount": 45,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1069,6 +1069,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250905DT-2193%20President%20Donald%20Trump%20hosts%20a%20dinner%20in%20the%20newly%20renovated%20White%20House%20Rose%20Garden.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1d6b8c40d2834656",
+      "slug": "politics-senate-blocks-democratic-effort-to-force-report-on-2026-09-30",
+      "articlePath": "src/content/articles/politics-senate-blocks-democratic-effort-to-force-report-on-2026-09-30.md",
+      "title": "Senate blocks Democratic effort to force report on West Bank violence",
+      "publishedAt": "2026-09-30T03:23:43.960Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/senate/6119354-senate-blocks-west-bank-resolution/"
+      ],
+      "imagePath": "/images/politics-senate-blocks-democratic-effort-to-force-report-on-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Christian Alexander Tietgen",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A100%25%20erneuerbare%20Energien.%20Mit%20der%20CDU..jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__d245de7f50914154",
+      "slug": "us-nikole-hannah-jones-reflects-on-her-daughter-s-2026-09-29",
+      "articlePath": "src/content/articles/us-nikole-hannah-jones-reflects-on-her-daughter-s-2026-09-29.md",
+      "title": "Nikole Hannah-Jones reflects on her daughter's school experience",
+      "publishedAt": "2026-09-30T03:23:46.928Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/nikole-hannah-jones-reflects-on-her-daughters-school-experience"
+      ],
+      "imagePath": "/images/us-nikole-hannah-jones-reflects-on-her-daughter-s-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Associação Brasileira de Jornalismo Investigativo",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANikole%20Hannah-Jones%20(42609599814).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
