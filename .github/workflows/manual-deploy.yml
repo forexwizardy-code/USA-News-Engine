@@ -6,6 +6,12 @@ on:
 permissions:
   contents: read
 
+# Share the same deployment lock as automated newsrooms so a manual deploy
+# cannot race a content-writing workflow on main.
+concurrency:
+  group: newsroom-shared-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
