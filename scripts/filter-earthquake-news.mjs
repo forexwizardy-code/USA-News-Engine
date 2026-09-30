@@ -319,23 +319,33 @@ async function inspectUsgsProducts(eq) {
     const data = await res.json();
     const products = data.properties?.products || {};
 
-    const hasShakeMap = !!products.shakemap;
+    // USGS detail feeds expose each product type as an array of product
+    // objects. Treat shakemap as an array directly; the previous code
+    // incorrectly indexed into the first product a second time, which could
+    // leave hasShakeMap=true while shakeMapImageUrl stayed null.
+    const shakeMapProducts = Array.isArray(products.shakemap)
+      ? products.shakemap
+      : [];
+    const hasShakeMap = shakeMapProducts.length > 0;
     let shakeMapProductUrl = null;
     let shakeMapImageUrl = null;
 
     if (hasShakeMap) {
-      const sm = products.shakemap;
-      // Get the first available ShakeMap product
-      const firstKey = Object.keys(sm)[0];
-      const smEntry = sm[firstKey]?.[0];
+      // USGS orders products with the preferred/current product first.
+      const smEntry = shakeMapProducts[0];
       if (smEntry) {
-        shakeMapProductUrl = smEntry.properties?.map || smEntry.properties?.url || null;
-        // Look for the intensity image
-        if (smEntry.contents) {
-          const intensityImage = smEntry.contents['intensity.jpg'] || smEntry.contents['download/intensity.jpg'];
-          if (intensityImage?.url) {
-            shakeMapImageUrl = intensityImage.url;
-          }
+        shakeMapProductUrl =
+          smEntry.properties?.map ||
+          smEntry.properties?.url ||
+          null;
+
+        // Prefer the canonical download path but support the shorter key too.
+        const intensityImage =
+          smEntry.contents?.['download/intensity.jpg'] ||
+          smEntry.contents?.['intensity.jpg'];
+
+        if (intensityImage?.url) {
+          shakeMapImageUrl = intensityImage.url;
         }
       }
     }
