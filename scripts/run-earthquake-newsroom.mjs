@@ -173,8 +173,14 @@ async function main() {
         runNpm('validate:earthquakes', 'Validate earthquake data');
         console.log('  validate:earthquakes: PASS');
       } catch (err) {
-        console.warn('  validate:earthquakes: FAIL — continuing in dry-run-friendly mode.');
-        console.warn(`    ${String(err.message || err).split('\n')[0]}`);
+        if (dryRunMode) {
+          console.warn('  validate:earthquakes: FAIL — continuing because this is dry-run test mode.');
+          console.warn(`    ${String(err.message || err).split('\n')[0]}`);
+        } else {
+          console.error('  validate:earthquakes: FAIL — aborting before any production article is generated.');
+          console.error(err.message);
+          process.exit(1);
+        }
       }
     } catch (err) {
       console.error('\nFATAL: earthquake ingestion pipeline failed. Aborting.');
