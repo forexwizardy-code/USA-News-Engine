@@ -1,11 +1,9 @@
 /**
- * US News Engine — Phase 10A launch-readiness validation.
+ * US News Engine — production launch validation.
  *
- * Audits the built site and source for invariants that must hold BEFORE
- * the site is opened to search indexing (Phase 10B). This script does
- * NOT enable indexing — DEMO_NOINDEX must remain true. It reports
- * PASS/WARN/FAIL for each launch invariant so the team can see exactly
- * what blocks indexing.
+ * Audits the built site and source for invariants that must hold while the
+ * public site is open to search indexing. It reports PASS/WARN/FAIL so the
+ * newsroom can catch launch regressions before deployment.
  *
  * Run:
  *   npm run validate:launch
@@ -68,15 +66,15 @@ async function collectFiles(dir, test) {
 
 async function main() {
   console.log('============================================================');
-  console.log('Phase 10A — Launch Readiness Validation');
+  console.log('Production Launch Validation');
   console.log('============================================================');
   console.log(`Started: ${new Date().toISOString()}\n`);
 
-  // --- 1. DEMO_NOINDEX must remain true (Phase 10A = audit only) ---
+  // --- 1. Production indexing must be enabled ---
   const constsText = await readText(join(SRC_DIR, 'consts.ts'));
-  const noindexTrue = /DEMO_NOINDEX\s*=\s*true/.test(constsText || '');
-  check('L1', 'DEMO_NOINDEX = true (indexing OFF during audit)', noindexTrue ? 'pass' : 'fail',
-    noindexTrue ? '' : 'DEMO_NOINDEX is NOT true — indexing may be enabled prematurely');
+  const indexingEnabled = /DEMO_NOINDEX\s*=\s*false/.test(constsText || '');
+  check('L1', 'DEMO_NOINDEX = false (production indexing ON)', indexingEnabled ? 'pass' : 'fail',
+    indexingEnabled ? '' : 'DEMO_NOINDEX is not false — public pages may be blocked from indexing');
 
   // --- 2. Built site exists ---
   const distExists = await fileExists(DIST_DIR);
@@ -88,20 +86,24 @@ async function main() {
     return report();
   }
 
-  // --- 3. Every public HTML page carries noindex,nofollow (while DEMO_NOINDEX=true) ---
+  // --- 3. Indexable public pages are not noindexed and allow large previews ---
   const htmlFiles = (await collectFiles(DIST_DIR, (n) => n.endsWith('.html')))
     .filter((p) => !p.replaceAll('\\', '/').includes('/preview/'));
-  let noindexMissing = 0;
-  for (const f of htmlFiles) {
+  const indexableHtmlFiles = htmlFiles.filter((p) => !p.replaceAll('\\', '/').endsWith('/404.html') && !p.replaceAll('\\', '/').endsWith('\\404.html'));
+  let indexingMetaFailures = 0;
+  for (const f of indexableHtmlFiles) {
     const html = await readText(f);
     if (!html) continue;
-    if (!/name="robots"\s+content="noindex,nofollow"/.test(html)) {
-      noindexMissing++;
-      results.push(`          (no-robots-meta) ${f.replace(DIST_DIR, '')}`);
+    const hasNoindex = /name="robots"\s+content="[^"]*noindex/i.test(html);
+    const allowsLargePreview = /name="robots"\s+content="[^"]*max-image-preview:large/i.test(html);
+    if (hasNoindex || !allowsLargePreview) {
+      indexingMetaFailures++;
+      results.push(`          (indexing-meta) ${f.replace(DIST_DIR, '')} noindex=${hasNoindex} max-image-preview=${allowsLargePreview}`);
     }
   }
-  check('L3', `All ${htmlFiles.length} public HTML pages carry noindex,nofollow`,
-    noindexMissing === 0 ? 'pass' : 'fail', noindexMissing === 0 ? '' : `${noindexMissing} page(s) missing noindex meta`);
+  check('L3', `All ${indexableHtmlFiles.length} indexable HTML pages allow indexing + large image previews`,
+    indexingMetaFailures === 0 ? 'pass' : 'fail',
+    indexingMetaFailures === 0 ? '' : `${indexingMetaFailures} page(s) have incorrect robots meta`);
 
   // --- 4. Preview pages carry noindex,nofollow,noarchive ---
   const previewHtml = (await collectFiles(DIST_DIR, (n) => n.endsWith('.html')))
@@ -122,9 +124,11 @@ async function main() {
   const robotsBlocksPreview = /Disallow:\s*\/preview\//.test(robotsText || '');
   check('L5', 'robots.txt Disallow: /preview/', robotsBlocksPreview ? 'pass' : 'fail');
 
-  // --- 6. robots.txt references sitemap ---
+  // --- 6. robots.txt references standard + news sitemaps ---
   const robotsHasSitemap = /Sitemap:\s*https:\/\/.*\/sitemap-index\.xml/.test(robotsText || '');
+  const robotsHasNewsSitemap = /Sitemap:\s*https:\/\/.*\/news-sitemap\.xml/.test(robotsText || '');
   check('L6', 'robots.txt references sitemap-index.xml', robotsHasSitemap ? 'pass' : 'fail');
+  check('L6N', 'robots.txt references news-sitemap.xml', robotsHasNewsSitemap ? 'pass' : 'fail');
 
   // --- 7. Sitemap exists and excludes preview URLs ---
   const sitemapText = await readText(join(DIST_DIR, 'sitemap-0.xml'));
@@ -138,6 +142,16 @@ async function main() {
     check('L7', 'Sitemap exists', 'warn', 'No sitemap-0.xml in dist/');
     check('L8', 'Sitemap contains URLs', 'warn', 'No sitemap');
   }
+
+  // --- 8N. Rolling Google News sitemap exists and uses the News namespace ---
+  const newsSitemapText = await readText(join(DIST_DIR, 'news-sitemap.xml'));
+  const newsSitemapValid = !!newsSitemapText &&
+    /xmlns:news="http:\/\/www\.google\.com\/schemas\/sitemap-news\/0\.9"/.test(newsSitemapText) &&
+    /<news:publication_date>/.test(newsSitemapText) &&
+    /<news:title>/.test(newsSitemapText);
+  check('L8N', 'news-sitemap.xml exists with Google News markup',
+    newsSitemapValid ? 'pass' : 'fail',
+    newsSitemapValid ? '' : 'Missing or invalid rolling news sitemap');
 
   // --- 9. No public page emits a BreadcrumbList with /undefined URL ---
   let undefinedBreadcrumbs = 0;
