@@ -333,6 +333,15 @@ async function main() {
   check('L23', 'No non-U.S. timezone usage in public UI source', nonUsTzLeaks === 0 ? 'pass' : 'fail',
     nonUsTzLeaks === 0 ? '' : `${nonUsTzLeaks} file(s) with non-U.S. timezone usage`);
 
+  // --- 25. Google Search Console verification file remains present and exact ---
+  const googleVerificationPath = join(PROJECT_DIR, 'public', 'googled0f9d56f69cf9cd9.html');
+  const googleVerificationText = await readText(googleVerificationPath);
+  const googleVerificationOk =
+    (googleVerificationText || '').trim() === 'google-site-verification: googled0f9d56f69cf9cd9.html';
+  check('L25', 'Google Search Console verification file is present and exact',
+    googleVerificationOk ? 'pass' : 'fail',
+    googleVerificationOk ? '' : 'public/googled0f9d56f69cf9cd9.html is missing or changed');
+
   // --- 24. Stored article publishedAt timestamps remain ISO UTC ---
   // Verify frontmatter publishedAt values are ISO 8601 UTC (end in Z or +00:00).
   let nonUtcTimestamps = 0;
