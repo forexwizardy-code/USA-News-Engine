@@ -372,6 +372,11 @@ async function publishNewArticle(story, registry) {
     'the', 'and', 'for', 'with', 'from', 'into', 'over', 'after', 'before',
     'amid', 'about', 'that', 'this', 'these', 'those', 'will', 'would', 'could',
     'should', 'have', 'has', 'had', 'are', 'was', 'were', 'its', 'their', 'says',
+    'said', 'here', 'very', 'more', 'most', 'latest', 'live', 'news', 'report',
+    'reports', 'story', 'stories', 'new', 'old', 'big', 'three', 'four', 'five',
+    'two', 'one', 'first', 'last', 'today', 'tomorrow', 'yesterday', 'change',
+    'changes', 'january', 'february', 'march', 'april', 'may', 'june', 'july',
+    'august', 'september', 'october', 'november', 'december',
   ]);
 
   const titleKeywords = String(draft.title || '')
@@ -401,8 +406,8 @@ async function publishNewArticle(story, registry) {
   let imageSearch = await findBestCommonsImage({
     queries: imageQueries,
     keywords: [...titleKeywords, draft.category].filter(Boolean),
-    minScore: 58,
-    minKeywordMatches: 1,
+    minScore: 70,
+    minKeywordMatches: 2,
     requirePhoto: true,
     perQuery: 18,
   });
@@ -444,7 +449,7 @@ async function publishNewArticle(story, registry) {
       imageSearch = await findBestCommonsImage({
         queries: rescueQueries,
         keywords: strongEntities,
-        minScore: 58,
+        minScore: 72,
         minKeywordMatches: 2,
         requirePhoto: true,
         perQuery: 18,
@@ -457,7 +462,15 @@ async function publishNewArticle(story, registry) {
       console.log('  General News image rescue skipped: insufficient specific entity context.');
     }
   }
-  if (imageSearch.found && imageSearch.best?.image && checkGeneralPhotoContext(draft.title, imageSearch.best.image).ok) {
+  const photoContext = imageSearch.found && imageSearch.best?.image
+    ? checkGeneralPhotoContext(draft.title, imageSearch.best.image, draft.description)
+    : { ok: false, reason: 'no candidate' };
+
+  if (imageSearch.found && imageSearch.best?.image && !photoContext.ok) {
+    console.log(`  General News photo rejected: ${photoContext.reason}`);
+  }
+
+  if (imageSearch.found && imageSearch.best?.image && photoContext.ok) {
     const selected = imageSearch.best.image;
     const processed = await downloadAndProcessHero({
       candidate: selected,
@@ -524,13 +537,17 @@ async function publishNewArticle(story, registry) {
       const graphicSearch = await findBestCommonsImage({
         queries: graphicQueries,
         keywords: graphicKeywords,
-        minScore: 70,
+        minScore: 75,
         minKeywordMatches: 2,
         requireGraphic: true,
         perQuery: 18,
       });
 
-      if (graphicSearch.found && graphicSearch.best?.image) {
+      const graphicContext = graphicSearch.found && graphicSearch.best?.image
+        ? checkGeneralPhotoContext(draft.title, graphicSearch.best.image, draft.description)
+        : { ok: false, reason: 'no candidate' };
+
+      if (graphicSearch.found && graphicSearch.best?.image && graphicContext.ok) {
         const selectedGraphic = graphicSearch.best.image;
 
         console.log(
@@ -621,9 +638,13 @@ async function publishNewArticle(story, registry) {
           );
         }
       } else {
-        console.log(
-          '  No sufficiently relevant licensed existing graphic found.'
-        );
+        if (graphicSearch.found && graphicSearch.best?.image && !graphicContext.ok) {
+          console.log(`  Licensed General News graphic rejected: ${graphicContext.reason}`);
+        } else {
+          console.log(
+            '  No sufficiently relevant licensed existing graphic found.'
+          );
+        }
       }
     } else {
       console.log(
