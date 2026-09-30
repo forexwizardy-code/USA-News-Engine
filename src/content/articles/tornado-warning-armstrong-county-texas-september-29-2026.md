@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.97b2edb816998a
 sourceOffice: "NWS Amarillo TX"
 tags: ["Tornado Warning", "Weather", "Extreme"]
 state: "TX"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---

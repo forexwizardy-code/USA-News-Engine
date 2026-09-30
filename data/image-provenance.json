@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:36:06.655Z",
-  "imageCount": 6,
+  "generatedAt": "2026-09-30T02:26:18.179Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -12,19 +12,6 @@
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:47.231Z",
       "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/4/49/Flash_Flood_Sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFlash%20Flood%20Sign.jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flash_Flood_Sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "Qwexcxewq",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "sourceOrganization": "Qwexcxewq (Wikimedia Commons)",
-      "imageRelation": "exact-location",
-      "firstUsedAt": "2026-09-30T00:36:06.614Z",
-      "storiesUsingImage": [
-        "flash-flood-warning__cochise-az__2026-09-29"
-      ]
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a3/Christmas_flood_1717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChristmas%20flood%201717.jpg",
