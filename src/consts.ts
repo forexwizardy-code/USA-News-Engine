@@ -18,16 +18,13 @@ export const SITE_LOCALE = 'en_US';
 export const SITE_LANG = 'en';
 
 /**
- * DEMO CONTENT SAFETY — temporary, Phase 1 only.
+ * Search indexing switch.
  *
- * While the site serves fictional sample articles, this flag emits
- * `<meta name="robots" content="noindex,nofollow">` on every page so the
- * demo content can never be accidentally indexed by search engines.
- *
- * Set this to `false` (and remove the flag) once real, automated news
- * replaces the demo content and the site is ready to be crawled.
+ * Production is live with real, automated news content, so public pages are
+ * indexable. Preview/editorial-review pages and explicitly noindex pages remain
+ * blocked independently.
  */
-export const DEMO_NOINDEX = true;
+export const DEMO_NOINDEX = false;
 
 /** Default OpenGraph / Twitter share image (lives in /public). */
 export const DEFAULT_SHARE_IMAGE = '/images/og-default.svg';
