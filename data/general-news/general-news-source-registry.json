@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-30T17:23:36.074Z",
+  "generatedAt": "2026-09-30T17:49:24.040Z",
   "source": "Phase 10A.2 General News source registry",
-  "sourceCount": 1548,
+  "sourceCount": 1568,
   "firstRun": false,
   "bootstrapCount": 80,
-  "nonBootstrapCount": 1468,
+  "nonBootstrapCount": 1488,
   "sourcesByFeed": {
     "NPR News": 58,
     "NPR Entertainment": 24,
     "NPR Business": 18,
-    "PBS NewsHour": 87,
+    "PBS NewsHour": 89,
     "NPR Politics": 24,
     "NPR Technology": 22,
     "Federal Trade Commission": 10,
-    "The Hill": 303,
+    "The Hill": 309,
     "New York Times — Arts": 89,
     "New York Times — Business": 81,
     "New York Times — Technology": 42,
-    "New York Times — HomePage": 143,
-    "New York Times — Politics": 71,
+    "New York Times — HomePage": 146,
+    "New York Times — Politics": 74,
     "BBC News — US & Canada": 60,
     "New York Times — College Basketball": 20,
     "Engadget": 95,
-    "Washington Post — Sports": 19,
+    "Washington Post — Sports": 20,
     "New York Times — College Football": 20,
     "New York Times — Baseball": 20,
-    "TechCrunch": 92,
+    "TechCrunch": 94,
     "Ars Technica": 49,
     "New York Times — Pro Football": 20,
     "CNET News": 68,
     "Washington Post — Entertainment": 7,
-    "The Verge": 56,
+    "The Verge": 59,
     "New York Times — Pro Basketball": 20,
     "Washington Post — National": 30
   },
@@ -104,7 +104,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-25T20:08:37.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -200,7 +200,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-26T20:08:28.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -236,7 +236,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T12:15:05.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -332,7 +332,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-10T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -356,7 +356,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-22T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -392,7 +392,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-17T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -428,7 +428,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-27T12:17:42.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -464,7 +464,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-17T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -476,7 +476,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-16T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -584,7 +584,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-15T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -728,7 +728,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-17T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -776,7 +776,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T10:45:23.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -860,7 +860,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-24T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -884,7 +884,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-24T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -896,7 +896,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T10:45:14.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -908,7 +908,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T12:00:00.000Z",
       "firstSeenAt": "2026-09-28T15:02:46.165Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": true
     },
     {
@@ -1028,7 +1028,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T18:30:17.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1040,7 +1040,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T09:00:54.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1052,7 +1052,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-28T21:32:53.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1088,7 +1088,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T15:02:21.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1100,7 +1100,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T16:42:59.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1124,7 +1124,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T17:41:28.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1220,7 +1220,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T16:18:53.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1232,7 +1232,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-27T09:01:00.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1316,7 +1316,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T15:00:09.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1472,7 +1472,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-26T01:52:12.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1520,7 +1520,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T19:59:05.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1544,7 +1544,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-25T03:57:09.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1556,7 +1556,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T09:02:22.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1640,7 +1640,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-25T20:05:56.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1712,7 +1712,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T13:06:03.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1760,7 +1760,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T20:11:51.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1772,7 +1772,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T11:00:03.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1856,7 +1856,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T00:37:36.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1880,7 +1880,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T09:03:26.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1928,7 +1928,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-24T00:16:28.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1940,7 +1940,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-26T09:00:20.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -1988,7 +1988,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T16:31:05.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2120,7 +2120,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T15:58:35.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2132,7 +2132,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-23T20:05:47.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2288,7 +2288,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-27T20:23:35.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2324,7 +2324,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T09:05:13.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2420,7 +2420,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-26T02:48:20.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2456,7 +2456,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-27T11:22:48.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2516,7 +2516,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T16:42:59.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2564,7 +2564,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T20:11:51.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2588,7 +2588,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T14:00:09.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2612,7 +2612,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-26T14:48:22.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2624,7 +2624,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T20:26:50.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2720,7 +2720,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T09:01:26.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2732,7 +2732,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T14:03:49.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2768,7 +2768,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T17:01:33.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2828,7 +2828,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T19:48:45.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2840,7 +2840,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-25T11:22:48.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2852,7 +2852,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-27T11:22:48.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2888,7 +2888,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T04:00:15.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -2900,7 +2900,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T12:03:35.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3008,7 +3008,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T15:22:56.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3116,7 +3116,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-27T22:12:24.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3248,7 +3248,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-24T22:34:49.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3296,7 +3296,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-26T21:35:54.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3308,7 +3308,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-27T15:41:28.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3332,7 +3332,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T01:23:05.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3404,7 +3404,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-26T09:00:26.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3428,7 +3428,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-24T16:49:20.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3440,7 +3440,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T15:37:14.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3548,7 +3548,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T16:46:59.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3560,7 +3560,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T01:12:39.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3584,7 +3584,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T09:02:18.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3656,7 +3656,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T20:39:59.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3668,7 +3668,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T15:07:49.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3716,7 +3716,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-23T23:54:20.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3764,7 +3764,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-24T21:15:07.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3896,7 +3896,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-26T09:01:56.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3956,7 +3956,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-24T01:17:18.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3968,7 +3968,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-24T13:48:42.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -3980,7 +3980,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T20:08:39.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4028,7 +4028,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-26T09:02:06.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4052,7 +4052,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T06:22:52.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4064,7 +4064,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-25T20:02:42.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4076,7 +4076,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-25T18:41:13.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4100,7 +4100,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T02:30:00.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4148,7 +4148,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T09:02:22.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4208,7 +4208,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T19:09:12.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4220,7 +4220,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T16:25:45.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4256,7 +4256,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T21:59:29.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4268,7 +4268,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T17:23:18.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4340,7 +4340,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-26T23:04:08.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4376,7 +4376,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-24T19:02:55.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4424,7 +4424,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T20:08:47.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4460,7 +4460,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T15:14:24.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4496,7 +4496,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-26T16:55:24.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4508,7 +4508,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-25T17:04:49.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4556,7 +4556,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T05:00:05.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4652,7 +4652,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-26T01:37:20.000Z",
       "firstSeenAt": "2026-09-28T15:17:04.481Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4664,7 +4664,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-15T19:45:31.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4700,7 +4700,7 @@
       "category": "sports",
       "publishedAtSource": "2024-11-13T23:07:53.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4712,7 +4712,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-14T20:41:39.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4784,7 +4784,7 @@
       "category": "sports",
       "publishedAtSource": "2023-08-19T13:00:33.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4808,7 +4808,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-18T13:35:03.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4880,7 +4880,7 @@
       "category": "sports",
       "publishedAtSource": "2026-08-18T21:16:40.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4928,7 +4928,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-11T21:44:03.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4976,7 +4976,7 @@
       "category": "sports",
       "publishedAtSource": "2024-05-27T18:29:16.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -4988,7 +4988,7 @@
       "category": "politics",
       "publishedAtSource": "2025-01-15T18:52:59.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5012,7 +5012,7 @@
       "category": "sports",
       "publishedAtSource": "2024-08-06T22:33:56.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5096,7 +5096,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-09T05:51:59.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5120,7 +5120,7 @@
       "category": "sports",
       "publishedAtSource": "2023-07-26T02:06:55.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5132,7 +5132,7 @@
       "category": "sports",
       "publishedAtSource": "2024-05-18T20:37:53.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5180,7 +5180,7 @@
       "category": "politics",
       "publishedAtSource": "2026-08-15T22:56:38.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5192,7 +5192,7 @@
       "category": "entertainment",
       "publishedAtSource": "2023-08-17T01:04:07.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5204,7 +5204,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-11T13:00:25.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5252,7 +5252,7 @@
       "category": "politics",
       "publishedAtSource": "2024-12-17T20:40:12.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5264,7 +5264,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-27T20:08:39.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5276,7 +5276,7 @@
       "category": "entertainment",
       "publishedAtSource": "2023-08-18T17:42:27.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5288,7 +5288,7 @@
       "category": "sports",
       "publishedAtSource": "2022-10-20T09:00:23.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5300,7 +5300,7 @@
       "category": "sports",
       "publishedAtSource": "2024-03-22T16:02:22.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5312,7 +5312,7 @@
       "category": "sports",
       "publishedAtSource": "2026-06-04T15:56:13.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5324,7 +5324,7 @@
       "category": "sports",
       "publishedAtSource": "2024-10-17T18:50:41.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5336,7 +5336,7 @@
       "category": "sports",
       "publishedAtSource": "2026-03-10T22:29:34.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5372,7 +5372,7 @@
       "category": "sports",
       "publishedAtSource": "2026-05-27T12:07:39.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5396,7 +5396,7 @@
       "category": "sports",
       "publishedAtSource": "2022-06-26T18:09:10.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5408,7 +5408,7 @@
       "category": "politics",
       "publishedAtSource": "2026-02-09T20:45:40.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5432,7 +5432,7 @@
       "category": "sports",
       "publishedAtSource": "2024-12-01T06:12:54.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5444,7 +5444,7 @@
       "category": "sports",
       "publishedAtSource": "2023-07-27T21:02:25.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5468,7 +5468,7 @@
       "category": "sports",
       "publishedAtSource": "2025-12-14T23:36:12.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5516,7 +5516,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-15T20:22:10.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5552,7 +5552,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-28T19:56:01.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5564,7 +5564,7 @@
       "category": "sports",
       "publishedAtSource": "2024-08-16T14:31:09.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5576,7 +5576,7 @@
       "category": "sports",
       "publishedAtSource": "2026-07-02T09:02:07.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5648,7 +5648,7 @@
       "category": "politics",
       "publishedAtSource": "2024-12-17T20:40:12.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5684,7 +5684,7 @@
       "category": "sports",
       "publishedAtSource": "2025-02-25T17:46:53.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5696,7 +5696,7 @@
       "category": "politics",
       "publishedAtSource": "2024-07-23T03:22:28.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5744,7 +5744,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-10T22:12:04.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5756,7 +5756,7 @@
       "category": "sports",
       "publishedAtSource": "2026-03-19T03:28:14.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5768,7 +5768,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T15:21:50.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5804,7 +5804,7 @@
       "category": "sports",
       "publishedAtSource": "2025-02-13T10:01:03.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5816,7 +5816,7 @@
       "category": "sports",
       "publishedAtSource": "2021-02-24T15:51:53.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5828,7 +5828,7 @@
       "category": "sports",
       "publishedAtSource": "2021-09-14T22:45:38.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5864,7 +5864,7 @@
       "category": "sports",
       "publishedAtSource": "2024-03-06T10:01:05.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5876,7 +5876,7 @@
       "category": "sports",
       "publishedAtSource": "2026-06-01T23:57:38.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5888,7 +5888,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-09T19:47:15.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5900,7 +5900,7 @@
       "category": "sports",
       "publishedAtSource": "2024-05-27T18:29:16.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5924,7 +5924,7 @@
       "category": "sports",
       "publishedAtSource": "2023-08-05T02:37:48.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5936,7 +5936,7 @@
       "category": "sports",
       "publishedAtSource": "2021-12-24T16:40:36.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -5972,7 +5972,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-20T05:36:53.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6008,7 +6008,7 @@
       "category": "politics",
       "publishedAtSource": "2026-07-03T19:21:32.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6020,7 +6020,7 @@
       "category": "sports",
       "publishedAtSource": "2025-12-11T19:06:58.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6044,7 +6044,7 @@
       "category": "sports",
       "publishedAtSource": "2022-08-24T00:57:03.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6056,7 +6056,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-14T19:27:46.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6068,7 +6068,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-11T10:00:48.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6092,7 +6092,7 @@
       "category": "sports",
       "publishedAtSource": "2023-06-30T11:07:43.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6140,7 +6140,7 @@
       "category": "sports",
       "publishedAtSource": "2025-11-25T10:00:37.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6188,7 +6188,7 @@
       "category": "sports",
       "publishedAtSource": "2023-11-02T15:22:16.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6224,7 +6224,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-17T16:27:13.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6236,7 +6236,7 @@
       "category": "sports",
       "publishedAtSource": "2026-08-17T13:27:57.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6272,7 +6272,7 @@
       "category": "sports",
       "publishedAtSource": "2025-01-18T04:24:51.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6296,7 +6296,7 @@
       "category": "sports",
       "publishedAtSource": "2022-04-15T09:43:21.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6332,7 +6332,7 @@
       "category": "politics",
       "publishedAtSource": "2024-01-11T00:33:30.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6344,7 +6344,7 @@
       "category": "sports",
       "publishedAtSource": "2023-08-05T02:37:48.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6380,7 +6380,7 @@
       "category": "sports",
       "publishedAtSource": "2024-12-17T13:58:06.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6416,7 +6416,7 @@
       "category": "sports",
       "publishedAtSource": "2025-10-10T19:25:31.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6428,7 +6428,7 @@
       "category": "sports",
       "publishedAtSource": "2026-08-24T22:54:49.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6440,7 +6440,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-08T18:09:46.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6464,7 +6464,7 @@
       "category": "sports",
       "publishedAtSource": "2024-03-28T18:54:27.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6476,7 +6476,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-12T19:48:58.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6488,7 +6488,7 @@
       "category": "sports",
       "publishedAtSource": "2025-04-28T20:09:27.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6500,7 +6500,7 @@
       "category": "sports",
       "publishedAtSource": "2022-05-18T18:39:06.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6512,7 +6512,7 @@
       "category": "sports",
       "publishedAtSource": "2025-01-15T21:28:50.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6524,7 +6524,7 @@
       "category": "sports",
       "publishedAtSource": "2023-02-14T16:28:08.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6548,7 +6548,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-03-18T13:00:13.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6560,7 +6560,7 @@
       "category": "sports",
       "publishedAtSource": "2023-09-01T20:12:36.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6572,7 +6572,7 @@
       "category": "sports",
       "publishedAtSource": "2025-11-13T11:00:37.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6596,7 +6596,7 @@
       "category": "sports",
       "publishedAtSource": "2023-08-24T23:07:49.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6632,7 +6632,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-09T04:47:18.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6644,7 +6644,7 @@
       "category": "sports",
       "publishedAtSource": "2025-01-17T15:04:04.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6680,7 +6680,7 @@
       "category": "sports",
       "publishedAtSource": "2024-03-30T12:44:55.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6704,7 +6704,7 @@
       "category": "sports",
       "publishedAtSource": "2023-12-04T10:02:24.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6716,7 +6716,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-05T18:48:49.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6728,7 +6728,7 @@
       "category": "sports",
       "publishedAtSource": "2026-02-15T20:33:00.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6740,7 +6740,7 @@
       "category": "sports",
       "publishedAtSource": "2026-03-05T15:46:05.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6752,7 +6752,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-04T00:52:01.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6800,7 +6800,7 @@
       "category": "sports",
       "publishedAtSource": "2026-08-10T15:30:02.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6812,7 +6812,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-30T04:01:00.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6872,7 +6872,7 @@
       "category": "sports",
       "publishedAtSource": "2025-01-27T16:30:48.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6896,7 +6896,7 @@
       "category": "sports",
       "publishedAtSource": "2024-12-09T17:28:43.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6908,7 +6908,7 @@
       "category": "sports",
       "publishedAtSource": "2022-08-17T14:27:51.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6932,7 +6932,7 @@
       "category": "sports",
       "publishedAtSource": "2024-09-19T16:19:34.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6956,7 +6956,7 @@
       "category": "sports",
       "publishedAtSource": "2024-11-13T19:32:11.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -6980,7 +6980,7 @@
       "category": "sports",
       "publishedAtSource": "2024-10-23T01:18:38.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7016,7 +7016,7 @@
       "category": "sports",
       "publishedAtSource": "2024-11-20T16:59:00.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7028,7 +7028,7 @@
       "category": "sports",
       "publishedAtSource": "2025-01-15T21:28:50.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7040,7 +7040,7 @@
       "category": "sports",
       "publishedAtSource": "2023-08-28T23:06:56.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7100,7 +7100,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-04-23T04:58:56.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7148,7 +7148,7 @@
       "category": "sports",
       "publishedAtSource": "2024-03-30T12:44:55.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7196,7 +7196,7 @@
       "category": "sports",
       "publishedAtSource": "2023-07-28T03:34:36.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7220,7 +7220,7 @@
       "category": "sports",
       "publishedAtSource": "2025-03-15T18:42:51.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7292,7 +7292,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-02-09T19:45:19.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7328,7 +7328,7 @@
       "category": "sports",
       "publishedAtSource": "2025-08-31T08:42:07.000Z",
       "firstSeenAt": "2026-09-28T15:44:46.017Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7520,7 +7520,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T16:07:15.000Z",
       "firstSeenAt": "2026-09-28T16:21:44.182Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -7796,7 +7796,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T11:53:13.000Z",
       "firstSeenAt": "2026-09-28T17:18:00.843Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8228,7 +8228,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-28T17:50:05.000Z",
       "firstSeenAt": "2026-09-28T18:21:19.042Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8396,7 +8396,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T17:48:49.000Z",
       "firstSeenAt": "2026-09-28T18:21:19.042Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8696,7 +8696,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T19:15:55.000Z",
       "firstSeenAt": "2026-09-28T19:17:17.358Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8732,7 +8732,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T19:40:47.000Z",
       "firstSeenAt": "2026-09-28T19:45:57.964Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8840,7 +8840,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-28T19:30:00.000Z",
       "firstSeenAt": "2026-09-28T19:45:57.964Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -8852,7 +8852,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T15:05:22.000Z",
       "firstSeenAt": "2026-09-28T19:45:57.964Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9092,7 +9092,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T20:31:06.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9104,7 +9104,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T12:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9128,7 +9128,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T10:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9176,7 +9176,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T18:26:51.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9224,7 +9224,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T01:30:07.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9236,7 +9236,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T15:31:45.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9248,7 +9248,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T18:46:45.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9296,7 +9296,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T09:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9332,7 +9332,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T07:11:33.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9404,7 +9404,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T10:00:01.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9500,7 +9500,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T15:47:14.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9536,7 +9536,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T14:27:48.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9572,7 +9572,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T08:46:49.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9680,7 +9680,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T21:27:32.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9740,7 +9740,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T15:02:24.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9788,7 +9788,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T00:32:19.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9824,7 +9824,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T09:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9932,7 +9932,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T21:22:31.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -9992,7 +9992,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T14:10:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10016,7 +10016,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-28T23:46:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10088,7 +10088,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T19:53:37.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10112,7 +10112,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T09:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10124,7 +10124,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T14:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10148,7 +10148,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T12:41:27.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10172,7 +10172,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T20:49:39.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10208,7 +10208,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T10:51:25.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10280,7 +10280,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T02:14:02.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10412,7 +10412,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-28T22:10:02.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10424,7 +10424,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T21:49:10.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10484,7 +10484,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T11:36:24.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10496,7 +10496,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T21:26:19.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10568,7 +10568,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T04:00:08.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10592,7 +10592,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-28T22:24:33.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10616,7 +10616,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T19:35:51.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10952,7 +10952,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T09:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10976,7 +10976,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T12:41:27.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -10988,7 +10988,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T11:58:36.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11000,7 +11000,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T01:32:04.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11012,7 +11012,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-28T21:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11024,7 +11024,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T09:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11060,7 +11060,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T04:01:13.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11096,7 +11096,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T14:22:31.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11144,7 +11144,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T08:42:38.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11156,7 +11156,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T01:12:52.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11192,7 +11192,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T21:03:57.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11216,7 +11216,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T09:03:12.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11240,7 +11240,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T03:59:22.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11276,7 +11276,7 @@
       "category": "technology",
       "publishedAtSource": "2025-01-26T11:00:10.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11324,7 +11324,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T13:15:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11384,7 +11384,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T00:09:48.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11444,7 +11444,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T13:00:19.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11564,7 +11564,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T13:38:06.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11588,7 +11588,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T08:13:11.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11600,7 +11600,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-28T19:59:09.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11708,7 +11708,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T14:00:00.000Z",
       "firstSeenAt": "2026-09-29T15:01:08.428Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11816,7 +11816,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T15:00:06.000Z",
       "firstSeenAt": "2026-09-29T15:25:23.277Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11888,7 +11888,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T15:01:00.000Z",
       "firstSeenAt": "2026-09-29T15:25:23.277Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -11900,7 +11900,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T08:46:41.000Z",
       "firstSeenAt": "2026-09-29T15:25:23.277Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12044,7 +12044,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-28T18:18:30.000Z",
       "firstSeenAt": "2026-09-29T15:51:39.683Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12056,7 +12056,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T09:01:00.000Z",
       "firstSeenAt": "2026-09-29T15:51:39.683Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12164,7 +12164,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T15:31:45.000Z",
       "firstSeenAt": "2026-09-29T15:51:39.683Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12188,7 +12188,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-28T13:59:06.000Z",
       "firstSeenAt": "2026-09-29T15:51:39.683Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12212,7 +12212,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T10:00:01.000Z",
       "firstSeenAt": "2026-09-29T15:51:39.683Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12284,7 +12284,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:15:02.000Z",
       "firstSeenAt": "2026-09-29T16:26:03.766Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12380,7 +12380,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T16:01:05.000Z",
       "firstSeenAt": "2026-09-29T16:26:03.766Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12440,7 +12440,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T21:19:45.000Z",
       "firstSeenAt": "2026-09-29T16:26:03.766Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12452,7 +12452,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T12:43:04.000Z",
       "firstSeenAt": "2026-09-29T16:26:03.766Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12512,7 +12512,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:21:14.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12524,7 +12524,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:41:02.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12560,7 +12560,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:30:59.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12584,7 +12584,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:30:00.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12596,7 +12596,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T19:59:11.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12632,7 +12632,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:38:39.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12656,7 +12656,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:30:00.000Z",
       "firstSeenAt": "2026-09-29T16:52:06.441Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12776,7 +12776,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T18:29:40.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12800,7 +12800,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:17:04.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12824,7 +12824,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T16:42:07.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12848,7 +12848,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T16:48:59.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12872,7 +12872,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:00:00.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12908,7 +12908,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:01:43.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12932,7 +12932,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T17:13:30.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12944,7 +12944,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:50:39.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12956,7 +12956,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T22:53:40.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -12980,7 +12980,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T16:52:19.000Z",
       "firstSeenAt": "2026-09-29T17:22:17.466Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13004,7 +13004,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T17:17:04.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13076,7 +13076,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T17:18:35.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13124,7 +13124,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-21T21:36:26.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13184,7 +13184,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T14:39:25.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13244,7 +13244,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:30:00.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13268,7 +13268,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T14:49:44.000Z",
       "firstSeenAt": "2026-09-29T17:49:37.098Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13304,7 +13304,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T18:07:19.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13352,7 +13352,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T15:59:44.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13376,7 +13376,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:57:05.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13388,7 +13388,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T18:07:58.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13400,7 +13400,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T17:51:22.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13424,7 +13424,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T17:15:07.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13448,7 +13448,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T18:40:43.000Z",
       "firstSeenAt": "2026-09-29T18:27:06.643Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13520,7 +13520,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T18:26:52.000Z",
       "firstSeenAt": "2026-09-29T18:52:42.533Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13532,7 +13532,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T19:55:21.000Z",
       "firstSeenAt": "2026-09-29T18:52:42.533Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13556,7 +13556,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:31:28.000Z",
       "firstSeenAt": "2026-09-29T18:52:42.533Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13604,7 +13604,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T18:58:43.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13628,7 +13628,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T18:11:09.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13640,7 +13640,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T17:29:14.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13664,7 +13664,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:02:21.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13724,7 +13724,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T19:05:23.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13736,7 +13736,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T18:34:00.000Z",
       "firstSeenAt": "2026-09-29T19:23:40.366Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13760,7 +13760,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:22:07.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13772,7 +13772,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:20:49.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13784,7 +13784,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:34:29.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13808,7 +13808,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T19:30:02.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13844,7 +13844,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:36:36.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13868,7 +13868,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:30:38.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13892,7 +13892,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T19:35:31.000Z",
       "firstSeenAt": "2026-09-29T19:48:58.307Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13904,7 +13904,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:08:27.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13916,7 +13916,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:01:02.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13940,7 +13940,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T10:16:20.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -13988,7 +13988,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:51:24.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14012,7 +14012,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T19:43:23.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14036,7 +14036,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T19:58:07.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14048,7 +14048,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T17:31:30.000Z",
       "firstSeenAt": "2026-09-29T20:23:59.103Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14096,7 +14096,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:27:13.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14120,7 +14120,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:47:41.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14132,7 +14132,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:35:35.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14144,7 +14144,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:27:41.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14156,7 +14156,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T20:31:52.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14180,7 +14180,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:13:36.000Z",
       "firstSeenAt": "2026-09-29T20:49:34.012Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14192,7 +14192,7 @@
       "category": "technology",
       "publishedAtSource": "2026-05-07T12:54:50.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14204,7 +14204,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-29T20:46:04.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14240,7 +14240,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T21:11:09.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14264,7 +14264,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:56:39.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14276,7 +14276,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T20:56:39.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14300,7 +14300,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T20:55:48.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14324,7 +14324,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T20:53:04.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14336,7 +14336,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T20:57:28.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14348,7 +14348,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T20:51:13.000Z",
       "firstSeenAt": "2026-09-29T21:22:28.024Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14384,7 +14384,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T21:18:29.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14396,7 +14396,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T20:23:40.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14432,7 +14432,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T21:19:21.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14444,7 +14444,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T21:21:33.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14456,7 +14456,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T02:12:49.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14468,7 +14468,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T21:22:50.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14480,7 +14480,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T21:14:49.000Z",
       "firstSeenAt": "2026-09-29T21:48:08.603Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14492,7 +14492,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:20:50.000Z",
       "firstSeenAt": "2026-09-29T22:22:19.346Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14516,7 +14516,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T20:09:23.000Z",
       "firstSeenAt": "2026-09-29T22:22:19.346Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14564,7 +14564,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T22:00:43.000Z",
       "firstSeenAt": "2026-09-29T22:22:19.346Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14600,7 +14600,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:09:19.000Z",
       "firstSeenAt": "2026-09-29T22:22:19.346Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14636,7 +14636,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T21:40:39.000Z",
       "firstSeenAt": "2026-09-29T22:22:19.346Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14660,7 +14660,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:21:44.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14672,7 +14672,7 @@
       "category": "technology",
       "publishedAtSource": "2026-08-29T12:00:00.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14684,7 +14684,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:40:04.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14696,7 +14696,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T23:20:44.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14732,7 +14732,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:32:05.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14756,7 +14756,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:16:58.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14768,7 +14768,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-29T22:30:03.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14780,7 +14780,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T23:20:44.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14816,7 +14816,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T22:02:47.000Z",
       "firstSeenAt": "2026-09-29T22:47:23.758Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14876,7 +14876,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:52:19.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14900,7 +14900,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T23:08:45.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14912,7 +14912,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:50:28.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14924,7 +14924,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-29T22:55:34.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14948,7 +14948,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:45:07.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14972,7 +14972,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:25:53.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14984,7 +14984,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T23:06:01.000Z",
       "firstSeenAt": "2026-09-29T23:20:30.612Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -14996,7 +14996,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T23:39:58.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15008,7 +15008,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T22:30:37.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15056,7 +15056,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T23:27:47.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15068,7 +15068,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T00:10:27.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15080,7 +15080,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-29T21:52:58.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15092,7 +15092,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T22:35:55.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15104,7 +15104,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T00:10:27.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15116,7 +15116,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:20:02.000Z",
       "firstSeenAt": "2026-09-29T23:46:30.092Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15152,7 +15152,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T23:45:28.000Z",
       "firstSeenAt": "2026-09-30T00:31:13.377Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15164,7 +15164,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:30:57.000Z",
       "firstSeenAt": "2026-09-30T00:31:13.377Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15200,7 +15200,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T23:39:49.000Z",
       "firstSeenAt": "2026-09-30T00:31:13.377Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15224,7 +15224,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T00:46:16.000Z",
       "firstSeenAt": "2026-09-30T00:31:13.377Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15284,7 +15284,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T00:32:59.000Z",
       "firstSeenAt": "2026-09-30T00:55:21.473Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15296,7 +15296,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T00:37:21.000Z",
       "firstSeenAt": "2026-09-30T00:55:21.473Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15332,7 +15332,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T00:39:01.000Z",
       "firstSeenAt": "2026-09-30T00:55:21.473Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15344,7 +15344,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-29T23:40:05.000Z",
       "firstSeenAt": "2026-09-30T01:49:22.429Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15368,7 +15368,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T01:40:19.000Z",
       "firstSeenAt": "2026-09-30T01:49:22.429Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15380,7 +15380,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:32:35.000Z",
       "firstSeenAt": "2026-09-30T01:49:22.429Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15404,7 +15404,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:47:14.000Z",
       "firstSeenAt": "2026-09-30T02:21:51.717Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15440,7 +15440,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T04:01:52.000Z",
       "firstSeenAt": "2026-09-30T02:49:20.041Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15464,7 +15464,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-29T22:33:13.000Z",
       "firstSeenAt": "2026-09-30T03:23:39.078Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15488,7 +15488,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:36:49.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15512,7 +15512,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15524,7 +15524,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:03:07.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15536,7 +15536,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:02:10.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15560,7 +15560,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:26:34.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15584,7 +15584,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:48:03.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15596,7 +15596,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T13:19:44.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15620,7 +15620,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:24:08.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15632,7 +15632,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T05:21:14.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15656,7 +15656,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:00:48.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15668,7 +15668,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:03:21.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15680,7 +15680,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T07:55:04.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15704,7 +15704,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T08:43:39.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15716,7 +15716,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:26:34.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15728,7 +15728,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T15:57:04.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15740,7 +15740,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T09:01:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15764,7 +15764,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15800,7 +15800,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T07:07:42.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15812,7 +15812,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T04:08:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15824,7 +15824,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:06:35.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15836,7 +15836,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T09:01:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15848,7 +15848,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T08:43:34.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15860,7 +15860,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:02:17.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15896,7 +15896,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:03:14.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15930,9 +15930,9 @@
       "sourceUrl": "https://www.nytimes.com/video/arts/100000011167965/can-trump-demolish-the-kennedy-center.html",
       "title": "Can Trump Demolish the Kennedy Center?",
       "category": "entertainment",
-      "publishedAtSource": "2026-09-30T09:11:57.000Z",
+      "publishedAtSource": "2026-09-30T17:27:07.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15968,7 +15968,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:03:07.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -15992,7 +15992,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:04:27.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16004,7 +16004,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16028,7 +16028,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:06:42.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16040,7 +16040,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T09:01:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16052,7 +16052,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16076,7 +16076,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16088,7 +16088,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:26:32.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16100,7 +16100,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T16:53:54.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16112,7 +16112,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T06:54:43.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16136,7 +16136,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T08:40:00.000Z",
       "firstSeenAt": "2026-09-30T09:23:57.158Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16148,7 +16148,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-30T09:00:00.000Z",
       "firstSeenAt": "2026-09-30T09:52:01.174Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16160,7 +16160,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T09:48:35.000Z",
       "firstSeenAt": "2026-09-30T09:52:01.174Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16184,7 +16184,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T12:29:23.000Z",
       "firstSeenAt": "2026-09-30T09:52:01.174Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16194,9 +16194,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/world/middleeast/iraq-us-troop-withdrawal.html",
       "title": "American Forces Withdraw From Iraq 23 Years After Invading",
       "category": "us",
-      "publishedAtSource": "2026-09-30T12:58:56.000Z",
+      "publishedAtSource": "2026-09-30T17:32:35.000Z",
       "firstSeenAt": "2026-09-30T09:52:01.174Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16220,7 +16220,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:36:53.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16242,9 +16242,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/nyregion/e-bike-scooter-deaths-safety.html",
       "title": "As E-Bikes and Scooters Surge on New York Streets, So Do Fatal Crashes",
       "category": "us",
-      "publishedAtSource": "2026-09-30T15:56:50.000Z",
+      "publishedAtSource": "2026-09-30T17:36:42.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16256,7 +16256,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T10:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16268,7 +16268,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T08:43:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16280,7 +16280,7 @@
       "category": "technology",
       "publishedAtSource": "2026-07-20T19:17:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16304,7 +16304,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T10:46:14.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16328,7 +16328,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T08:43:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16340,7 +16340,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T11:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16352,7 +16352,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T11:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16364,7 +16364,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T10:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16388,7 +16388,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T10:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16424,7 +16424,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:00:48.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16436,7 +16436,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T11:13:17.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16460,7 +16460,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-30T11:07:36.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16472,7 +16472,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T10:00:01.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16508,7 +16508,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T10:30:18.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16520,7 +16520,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T11:13:17.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16532,7 +16532,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T10:48:47.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16556,7 +16556,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T10:00:00.000Z",
       "firstSeenAt": "2026-09-30T11:21:48.027Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16592,7 +16592,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T12:42:52.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16604,7 +16604,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:27:08.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16616,7 +16616,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:34:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16628,7 +16628,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T12:25:02.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16640,7 +16640,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T14:38:12.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16652,7 +16652,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16664,7 +16664,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T09:03:50.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16676,7 +16676,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T12:25:02.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16712,7 +16712,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16724,7 +16724,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16748,7 +16748,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16760,7 +16760,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T11:30:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16796,7 +16796,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T12:43:42.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16808,7 +16808,7 @@
       "category": "sports",
       "publishedAtSource": "2026-09-30T12:35:14.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16832,7 +16832,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T11:50:58.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16844,7 +16844,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16856,7 +16856,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:29:05.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16868,7 +16868,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T12:30:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16880,7 +16880,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T12:00:00.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16892,7 +16892,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T12:25:02.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16916,7 +16916,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T11:15:14.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16928,7 +16928,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T11:45:13.000Z",
       "firstSeenAt": "2026-09-30T12:57:22.865Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -16976,7 +16976,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T17:01:42.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17000,7 +17000,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T01:24:18.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17012,7 +17012,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:57:50.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17024,7 +17024,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17036,7 +17036,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T02:28:17.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17048,7 +17048,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17072,7 +17072,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T03:00:41.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17084,7 +17084,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:00:21.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17096,7 +17096,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:29:51.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17108,7 +17108,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:58:51.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17120,7 +17120,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T15:04:12.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17132,7 +17132,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:04:17.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17144,7 +17144,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:50:18.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17156,7 +17156,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17180,7 +17180,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T15:07:40.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17192,7 +17192,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17204,7 +17204,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T13:52:27.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17216,7 +17216,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:58:51.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17228,7 +17228,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17240,7 +17240,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T15:00:13.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17264,7 +17264,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:29:09.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17276,7 +17276,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:00:36.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17288,7 +17288,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17300,7 +17300,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:31:58.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17312,7 +17312,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17324,7 +17324,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T08:42:46.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17336,7 +17336,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:07:39.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17348,7 +17348,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T16:12:08.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17360,7 +17360,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17372,7 +17372,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:59:59.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17396,7 +17396,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:50:55.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17408,7 +17408,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T08:42:46.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17420,7 +17420,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17432,7 +17432,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:59:17.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17444,7 +17444,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:51:49.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17468,7 +17468,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:16:07.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17480,7 +17480,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17492,7 +17492,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:50:16.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17504,7 +17504,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:32:03.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17516,7 +17516,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T15:29:11.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17528,7 +17528,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T08:42:46.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17540,7 +17540,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:24:35.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17550,9 +17550,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/world/middleeast/flydubai-dubai-israel-flight-diverted.html",
       "title": "FlyDubai Flight to Israel Diverted After Clash Between Pilots: What We Know and Don’t Know",
       "category": "us",
-      "publishedAtSource": "2026-09-30T16:18:16.000Z",
+      "publishedAtSource": "2026-09-30T17:41:35.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17564,7 +17564,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:16:07.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17576,7 +17576,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T15:07:40.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17588,7 +17588,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:30:03.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17600,7 +17600,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17612,7 +17612,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T15:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17624,7 +17624,7 @@
       "category": "business",
       "publishedAtSource": "2026-09-30T14:36:41.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17636,7 +17636,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:27:11.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17648,7 +17648,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:27:17.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17672,7 +17672,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17696,7 +17696,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17708,7 +17708,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17720,7 +17720,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17732,7 +17732,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:15:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17744,7 +17744,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:36:53.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17756,7 +17756,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:43:54.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17768,7 +17768,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T13:39:49.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17780,7 +17780,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17792,7 +17792,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:15:14.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17804,7 +17804,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:26:02.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17816,7 +17816,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:41:34.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17828,7 +17828,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17840,7 +17840,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T14:59:54.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17852,7 +17852,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:40:03.000Z",
       "firstSeenAt": "2026-09-30T15:26:46.100Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17864,7 +17864,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T15:23:11.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17876,7 +17876,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:18:49.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17888,7 +17888,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T15:33:19.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17900,7 +17900,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T15:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17912,7 +17912,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:00:00.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17936,7 +17936,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:40:19.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17946,9 +17946,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/business/economy/harvard-eeoc-diversity-hiring.html",
       "title": "E.E.O.C. Sues Harvard for Data on Diversity in Hiring Practices",
       "category": "business",
-      "publishedAtSource": "2026-09-30T17:01:01.000Z",
+      "publishedAtSource": "2026-09-30T17:44:10.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17960,7 +17960,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T15:33:19.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17972,7 +17972,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:30:00.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17982,9 +17982,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/business/economy/harvard-eeoc-diversity-hiring.html",
       "title": "E.E.O.C. Sues Harvard for Data on Diversity in Hiring Practices",
       "category": "politics",
-      "publishedAtSource": "2026-09-30T17:01:01.000Z",
+      "publishedAtSource": "2026-09-30T17:44:10.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -17996,7 +17996,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:23:57.000Z",
       "firstSeenAt": "2026-09-30T15:52:24.686Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18032,7 +18032,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:00:24.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18044,7 +18044,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:00:00.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18056,7 +18056,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:02:55.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18068,7 +18068,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:08:02.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18080,7 +18080,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:00:00.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18092,7 +18092,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T08:59:38.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18104,7 +18104,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:24:23.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18116,7 +18116,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T15:56:28.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18126,9 +18126,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/technology/ftc-openai-anthropic-investigation.html",
       "title": "F.T.C. Investigates OpenAI and Anthropic Over Potential Consumer Harms",
       "category": "technology",
-      "publishedAtSource": "2026-09-30T15:58:41.000Z",
+      "publishedAtSource": "2026-09-30T17:30:07.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18140,7 +18140,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:00:00.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18152,7 +18152,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T13:18:24.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18176,7 +18176,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:07:24.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18188,7 +18188,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:00:00.000Z",
       "firstSeenAt": "2026-09-30T16:26:51.328Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18200,7 +18200,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:24:30.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18212,7 +18212,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:30:00.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18224,7 +18224,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T13:35:11.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18236,7 +18236,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T13:35:11.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18248,7 +18248,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:32:12.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18260,7 +18260,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T13:51:52.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18272,7 +18272,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:33:50.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18284,7 +18284,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T14:10:38.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18296,7 +18296,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:22:25.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18308,7 +18308,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:32:12.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18320,7 +18320,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T14:30:00.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18330,9 +18330,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/technology/ftc-openai-anthropic-investigation.html",
       "title": "F.T.C. Investigates OpenAI and Anthropic Over Potential Consumer Harms",
       "category": "technology",
-      "publishedAtSource": "2026-09-30T15:58:41.000Z",
+      "publishedAtSource": "2026-09-30T17:30:07.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18344,7 +18344,7 @@
       "category": "entertainment",
       "publishedAtSource": "2026-09-30T13:35:11.000Z",
       "firstSeenAt": "2026-09-30T16:50:33.225Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18356,7 +18356,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:19:10.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18368,7 +18368,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T17:11:37.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18380,7 +18380,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T17:19:24.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18392,7 +18392,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:44:20.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18404,7 +18404,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:45:29.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18416,7 +18416,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:58:03.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18428,7 +18428,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T17:11:15.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18440,7 +18440,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:59:39.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18452,7 +18452,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:56:19.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18462,9 +18462,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/business/fed-renovations-trump-powell-report.html",
       "title": "Fed’s Watchdog Finds No Misconduct or Illegal Activity in Costly Renovations",
       "category": "business",
-      "publishedAtSource": "2026-09-30T17:11:08.000Z",
+      "publishedAtSource": "2026-09-30T17:34:55.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18476,7 +18476,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:58:16.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18500,7 +18500,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T17:00:00.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18510,9 +18510,9 @@
       "sourceUrl": "https://www.nytimes.com/2026/09/30/briefing/30-the-good-list-keanu-stowaway.html",
       "title": "The Good List: 6 Things to Add Delight to Your Day",
       "category": "entertainment",
-      "publishedAtSource": "2026-09-30T17:20:08.000Z",
+      "publishedAtSource": "2026-09-30T17:45:00.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18524,7 +18524,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T17:11:00.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18536,7 +18536,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T17:13:10.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18548,7 +18548,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T16:54:09.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18560,7 +18560,7 @@
       "category": "technology",
       "publishedAtSource": "2026-09-30T17:01:12.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18572,7 +18572,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:50:43.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18584,7 +18584,7 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T16:58:33.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18596,7 +18596,7 @@
       "category": "us",
       "publishedAtSource": "2026-09-30T16:26:00.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     },
     {
@@ -18608,7 +18608,247 @@
       "category": "politics",
       "publishedAtSource": "2026-09-30T17:00:00.000Z",
       "firstSeenAt": "2026-09-30T17:23:36.074Z",
-      "lastSeenAt": "2026-09-30T17:23:36.074Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__1e40d7eb33d06434",
+      "sourceName": "New York Times — Politics",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/us/politics/democrats-block-stock-trading-bill.html",
+      "title": "Democrats Block Stock-Trading Bill, Denying the G.O.P. a Pre-Midterm Win",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:38:33.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__25b1ac900f480ae1",
+      "sourceName": "New York Times — HomePage",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/business/media/google-hollywood-krya-sedgwick.html",
+      "title": "Google Wants Hollywood to Stop Being So Afraid of Technology",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T15:16:07.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__33d46754d0192443",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/business/6120881-powell-cleared-fed-renovation-report/",
+      "title": "Fed watchdog finds no criminality in renovation probe",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:38:28.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__3643eda3aaf1ef8d",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/opinion/civil-rights/6119337-flock-safety-utility/",
+      "title": "Why opponents mistake Flock cameras for tools of totalitarian control",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:30:00.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__3ba523880458c45e",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/homenews/state-watch/6120872-newsom-democratic-political-disrupter/",
+      "title": "Newsom says he’s a ‘disrupter at heart’",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:35:19.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__42d844fdeb08d8a5",
+      "sourceName": "New York Times — HomePage",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/us/politics/congress-ai-safety.html",
+      "title": "Congress Set to Leave Washington for the Midterms With No A.I. Progress",
+      "category": "us",
+      "publishedAtSource": "2026-09-30T17:45:34.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__51761c544360ab08",
+      "sourceName": "PBS NewsHour",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.pbs.org/newshour/nation/gentle-giant-backpack-declared-winner-of-alaskas-fat-bear-week",
+      "title": "Gentle giant Backpack declared winner of Alaska's Fat Bear Week",
+      "category": "us",
+      "publishedAtSource": "2026-09-30T17:39:49.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__6c7f23851676e1cf",
+      "sourceName": "New York Times — HomePage",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/business/fed-renovations-trump-powell-report.html",
+      "title": "Fed’s Watchdog Finds No Misconduct or Illegal Activity in Costly Renovations",
+      "category": "us",
+      "publishedAtSource": "2026-09-30T17:34:55.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__744adea7cf7c872f",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/video-clips/6120796-watch-live-pete-hegseth-state-of-force-address-trump-administration/",
+      "title": "Watch live: Hegseth to lay out Pentagon shake-up in State of the Force address",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:42:12.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__805f8e321cd56dbd",
+      "sourceName": "New York Times — Politics",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/us/politics/congress-ai-safety.html",
+      "title": "Congress Set to Leave Washington for the Midterms With No A.I. Progress",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:45:34.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__a3e3d0641c6f533a",
+      "sourceName": "The Verge",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.theverge.com/tech/1002766/amazon-delivery-driver-smart-glasses-privacy",
+      "title": "Amazon’s delivery driver smart glasses will reportedly take photos ‘almost constantly’",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:21:29.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__a4ff77e940345343",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/blogs/in-the-know/6120723-donald-trump-controversial-ad-jmsn-cease-and-desist/",
+      "title": "JMSN lawyers demand White House drop R&B artist’s song from controversial Trump ad",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:21:37.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__b0c1f3ecd3f2e292",
+      "sourceName": "The Verge",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.theverge.com/tech/1002788/old-reddit-ai-scraping",
+      "title": "Reddit says it has to cut back access to ‘Old Reddit’ because of AI bots",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:45:00.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__b17d1b610645b949",
+      "sourceName": "Washington Post — Sports",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.washingtonpost.com/sports/2026/10/01/pope-leo-sent-letter-blessing-white-sox-ahead-playoffs-win/",
+      "title": "Pope Leo sent a letter blessing the White Sox ahead of playoffs win",
+      "category": "sports",
+      "publishedAtSource": "2026-09-30T17:35:00.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__b8a2818f63dc36c5",
+      "sourceName": "The Verge",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.theverge.com/ai-artificial-intelligence/1002636/ai-execs-trump-self-policing-deal-comments",
+      "title": "Here’s what AI leaders are saying about Trump’s new safety plan",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:15:49.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__c0657c3785c28ef2",
+      "sourceName": "TechCrunch",
+      "sourceType": "publisher",
+      "sourceUrl": "https://techcrunch.com/2026/09/30/the-ugly-economics-of-consumer-ai/",
+      "title": "The ugly economics of consumer AI",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:24:45.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__c5a33b05de1b6f62",
+      "sourceName": "New York Times — Politics",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.nytimes.com/2026/09/30/science/pancreatic-cancer-drug-daraxonrasib-ben-sasse-resistance.html",
+      "title": "Clues to Why a Breakthrough Pancreatic Cancer Drug Eventually Stops Working",
+      "category": "politics",
+      "publishedAtSource": "2026-09-30T17:39:11.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__c7bc65dc6edf15d1",
+      "sourceName": "The Hill",
+      "sourceType": "publisher",
+      "sourceUrl": "https://thehill.com/policy/energy-environment/6119834-senate-data-center-bill-ratepayer-protection-act/",
+      "title": "Dems block data center electricity bill, calling it ‘toothless’",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:43:28.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__ca4889602d243c5a",
+      "sourceName": "TechCrunch",
+      "sourceType": "publisher",
+      "sourceUrl": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/",
+      "title": "Reddit is killing RSS feeds and ending public API access because of AI bots",
+      "category": "technology",
+      "publishedAtSource": "2026-09-30T17:45:00.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
+      "bootstrapSeen": false
+    },
+    {
+      "sourceKey": "gn__cd6c5ba7d3bf1245",
+      "sourceName": "PBS NewsHour",
+      "sourceType": "publisher",
+      "sourceUrl": "https://www.pbs.org/newshour/politics/watch-live-vance-addresses-gop-midterm-election-rally-in-texas",
+      "title": "WATCH LIVE: Vance addresses GOP midterm election rally in Texas",
+      "category": "us",
+      "publishedAtSource": "2026-09-30T17:23:43.000Z",
+      "firstSeenAt": "2026-09-30T17:49:24.040Z",
+      "lastSeenAt": "2026-09-30T17:49:24.040Z",
       "bootstrapSeen": false
     }
   ]
