@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T08:31:39.086Z",
-  "storyCount": 72,
+  "generatedAt": "2026-09-30T08:35:23.453Z",
+  "storyCount": 73,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2137,6 +2137,35 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANikole%20Hannah-Jones%20(42609599814).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "taylor-fresh-foods-inc-tomato-salsa-fresca-ingredients-tomatoes-2026-09-23",
+      "slug": "taylor-fresh-foods-inc-tomato-salsa-fresca-ingredients-tomatoes-2026-09-23",
+      "articlePath": "src/content/articles/taylor-fresh-foods-inc-tomato-salsa-fresca-ingredients-tomatoes-2026-09-23.md",
+      "publishedAt": "2026-09-30T08:35:23.452Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "H-1364-2026"
+      ],
+      "allAlertIds": [
+        "H-1364-2026"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T08:35:23.452Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/taylor-fresh-foods-inc-tomato-salsa-fresca-ingredients-tomatoes-2026-09-23.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Horacio Cambeiro",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AArgentine-style%20hand-chopped%20roasted%20beef%20tacos%2C%20with%20mozzarella%2C%20caramelized%20onions%2C%20and%20salsas.jpg",
       "breaking": false
     }
   ]
