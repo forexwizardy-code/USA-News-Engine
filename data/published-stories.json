@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T12:37:39.464Z",
-  "storyCount": 79,
+  "generatedAt": "2026-09-30T12:57:27.569Z",
+  "storyCount": 81,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2340,6 +2340,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOil%20Fires%20in%20Iraq%20(88666).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30",
+      "slug": "technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30",
+      "articlePath": "src/content/articles/technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30.md",
+      "publishedAt": "2026-09-30T12:57:24.971Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a39bb32223926991"
+      ],
+      "allAlertIds": [
+        "gn__a39bb32223926991"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "The Verge",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T12:57:24.971Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Steve Jurvetson from Los Altos, USA",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurchill%20Club%20Top%20Ten%20Tech%20Trends%20(3552090794).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30",
+      "slug": "sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30",
+      "articlePath": "src/content/articles/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30.md",
+      "publishedAt": "2026-09-30T12:57:27.568Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__ab5cbfeee90e00ae"
+      ],
+      "allAlertIds": [
+        "gn__ab5cbfeee90e00ae"
+      ],
+      "event": "sports",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T12:57:27.568Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "NASA.gov",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAn%20Astronaut's%20Snapshot%20of%20the%20Moon.jpg",
       "breaking": false
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T11:21:54.905Z",
-  "storyCount": 51,
+  "generatedAt": "2026-09-30T12:57:27.568Z",
+  "storyCount": 53,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1277,6 +1277,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOil%20Fires%20in%20Iraq%20(88666).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a39bb32223926991",
+      "slug": "technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30",
+      "articlePath": "src/content/articles/technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30.md",
+      "title": "Here’s how tech leaders will self-police AI safety under Trump’s deal",
+      "publishedAt": "2026-09-30T12:57:24.971Z",
+      "category": "technology",
+      "primarySource": "The Verge",
+      "primaryPublisherFamily": "The Verge",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Verge"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.theverge.com/ai-artificial-intelligence/1002584/trump-us-ai-safety-deal-self-regulation-tech-execs"
+      ],
+      "imagePath": "/images/technology-here-s-how-tech-leaders-will-self-police-ai-safety-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Steve Jurvetson from Los Altos, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurchill%20Club%20Top%20Ten%20Tech%20Trends%20(3552090794).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__ab5cbfeee90e00ae",
+      "slug": "sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30",
+      "articlePath": "src/content/articles/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30.md",
+      "title": "Raskin rips Schmitt questioning of Jack Smith: ‘He’s basically disgraced himself’",
+      "publishedAt": "2026-09-30T12:57:27.568Z",
+      "category": "sports",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://thehill.com/homenews/house/6119619-jamie-raskin-eric-schmitt-basketball-mix-up-jack-smith-hearing-criticism/"
+      ],
+      "imagePath": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NASA.gov",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAn%20Astronaut's%20Snapshot%20of%20the%20Moon.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
