@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:55:38.777Z",
-  "storyCount": 62,
+  "generatedAt": "2026-09-30T01:23:15.910Z",
+  "storyCount": 64,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -1847,6 +1847,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMortier%2C%20Situation%20du%20Paradise%20Terrestre%2C%201700%20Cornell%20CUL%20PJM%201014%2001.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29",
+      "slug": "politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29",
+      "articlePath": "src/content/articles/politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29.md",
+      "publishedAt": "2026-09-30T01:23:12.548Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__50f6f428686e1fd3"
+      ],
+      "allAlertIds": [
+        "gn__50f6f428686e1fd3"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "BBC News — US & Canada",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T01:23:12.548Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Photo by Mr. Kjetil Ree.",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUS%20Supreme%20Court.JPG",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29",
+      "slug": "us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29",
+      "articlePath": "src/content/articles/us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29.md",
+      "publishedAt": "2026-09-30T01:23:15.909Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__58b9d68f4edcd223"
+      ],
+      "allAlertIds": [
+        "gn__58b9d68f4edcd223"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T01:23:15.909Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Andre Carrotflower",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFormer%20B'rith%20Israel%20Anshe%20Ames%20Synagogue%2C%20Buffalo%2C%20New%20York%20-%2020200413.jpg",
       "breaking": false
     }
   ]

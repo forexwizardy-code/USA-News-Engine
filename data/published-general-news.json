@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:55:38.776Z",
-  "storyCount": 35,
+  "generatedAt": "2026-09-30T01:23:15.909Z",
+  "storyCount": 37,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -861,6 +861,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMortier%2C%20Situation%20du%20Paradise%20Terrestre%2C%201700%20Cornell%20CUL%20PJM%201014%2001.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__50f6f428686e1fd3",
+      "slug": "politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29",
+      "articlePath": "src/content/articles/politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29.md",
+      "title": "US Supreme Court denies Christa Pike's last-ditch bid to halt execution",
+      "publishedAt": "2026-09-30T01:23:12.548Z",
+      "category": "politics",
+      "primarySource": "BBC News — US & Canada",
+      "primaryPublisherFamily": "BBC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "BBC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 63,
+      "sourceUrls": [
+        "https://www.bbc.co.uk/news/articles/cwe879654mj7o?at_medium=RSS&at_campaign=rss"
+      ],
+      "imagePath": "/images/politics-us-supreme-court-denies-christa-pike-s-last-ditch-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Photo by Mr. Kjetil Ree.",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUS%20Supreme%20Court.JPG",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__58b9d68f4edcd223",
+      "slug": "us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29",
+      "articlePath": "src/content/articles/us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29.md",
+      "title": "Mamdani releases plan to combat antisemitism in New York amid concerns over his criticism of Israel",
+      "publishedAt": "2026-09-30T01:23:15.909Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/politics/mamdani-releases-plan-to-combat-antisemitism-in-new-york-amid-concerns-over-his-criticism-of-israel"
+      ],
+      "imagePath": "/images/us-mamdani-releases-plan-to-combat-antisemitism-in-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Andre Carrotflower",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFormer%20B'rith%20Israel%20Anshe%20Ames%20Synagogue%2C%20Buffalo%2C%20New%20York%20-%2020200413.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
