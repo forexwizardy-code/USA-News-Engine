@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 3000 2>&1 | tee dev.log",
     "start": "astro dev --host 0.0.0.0 --port 3000 2>&1 | tee dev.log",
-    "build": "astro build",
+    "build": "node scripts/validate-article-images.mjs && astro build",
     "preview": "astro preview --port 3000",
     "check": "astro check",
     "fetch:nws": "node scripts/fetch-nws-alerts.mjs",
@@ -60,7 +60,8 @@
     "stories:general": "node scripts/build-general-news-stories.mjs",
     "draft:general": "node scripts/generate-general-news-draft.mjs",
     "validate:general": "node scripts/validate-general-news.mjs",
-    "newsroom:general": "node scripts/run-general-newsroom.mjs"
+    "newsroom:general": "node scripts/run-general-newsroom.mjs",
+    "validate:images": "node scripts/validate-article-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
