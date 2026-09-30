@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T02:22:02.297Z",
-  "storyCount": 41,
+  "generatedAt": "2026-09-30T02:49:28.953Z",
+  "storyCount": 43,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1017,6 +1017,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20at%20a%20U.N.%20Security%20Council%20Luncheon%20(49174998287).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__733fe01ce5a08380",
+      "slug": "politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30",
+      "articlePath": "src/content/articles/politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30.md",
+      "title": "NYC appeals Staten Island judge’s ruling against Mamdani’s pied-à-terre tax",
+      "publishedAt": "2026-09-30T02:49:23.350Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6119432-nyc-mayor-appeals-pied-a-terre-tax/"
+      ],
+      "imagePath": "/images/politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Daniel Schwen",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANYC%20Staten%20Island%20Ferry%20Andrew%20J.%20Barberi.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__d4a63ac668beeaf0",
+      "slug": "us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29",
+      "articlePath": "src/content/articles/us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29.md",
+      "title": "Trump Hosts A.I. Executives at the White House",
+      "publishedAt": "2026-09-30T02:49:28.953Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/29/briefing/trump-ai-ice-hiring-surge.html"
+      ],
+      "imagePath": "/images/us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250905DT-2193%20President%20Donald%20Trump%20hosts%20a%20dinner%20in%20the%20newly%20renovated%20White%20House%20Rose%20Garden.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

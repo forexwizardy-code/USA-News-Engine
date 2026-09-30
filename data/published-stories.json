@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T02:26:18.138Z",
-  "storyCount": 68,
+  "generatedAt": "2026-09-30T02:49:28.954Z",
+  "storyCount": 70,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2021,6 +2021,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20at%20a%20U.N.%20Security%20Council%20Luncheon%20(49174998287).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30",
+      "slug": "politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30",
+      "articlePath": "src/content/articles/politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30.md",
+      "publishedAt": "2026-09-30T02:49:23.350Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__733fe01ce5a08380"
+      ],
+      "allAlertIds": [
+        "gn__733fe01ce5a08380"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T02:49:23.350Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-nyc-appeals-staten-island-judge-s-ruling-against-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Daniel Schwen",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANYC%20Staten%20Island%20Ferry%20Andrew%20J.%20Barberi.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29",
+      "slug": "us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29",
+      "articlePath": "src/content/articles/us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29.md",
+      "publishedAt": "2026-09-30T02:49:28.953Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__d4a63ac668beeaf0"
+      ],
+      "allAlertIds": [
+        "gn__d4a63ac668beeaf0"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T02:49:28.953Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-trump-hosts-a-i-executives-at-the-white-house-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250905DT-2193%20President%20Donald%20Trump%20hosts%20a%20dinner%20in%20the%20newly%20renovated%20White%20House%20Rose%20Garden.jpg",
       "breaking": false
     }
   ]
