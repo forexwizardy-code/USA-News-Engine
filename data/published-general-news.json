@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T03:23:46.928Z",
-  "storyCount": 45,
+  "generatedAt": "2026-09-30T09:24:02.165Z",
+  "storyCount": 47,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1121,6 +1121,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANikole%20Hannah-Jones%20(42609599814).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a806f9d0931ebebd",
+      "slug": "technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30",
+      "articlePath": "src/content/articles/technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30.md",
+      "title": "Trump says top tech firms have signed accord to 'self-police' AI development",
+      "publishedAt": "2026-09-30T09:23:59.774Z",
+      "category": "technology",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 63,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/30/nx-s1-5985699/trump-self-police-ai-development"
+      ],
+      "imagePath": "/images/technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20in%20India%20(49583082033).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__89a9309aabd0fbc7",
+      "slug": "us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30",
+      "articlePath": "src/content/articles/us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30.md",
+      "title": "Carnegie Mellon nets $3 billion gift, most ever given to a university",
+      "publishedAt": "2026-09-30T09:24:02.165Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/education/2026/09/30/carnegie-mellon-nets-3-billion-gift-most-ever-given-university/"
+      ],
+      "imagePath": "/images/us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Dllu",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarnegie%20Mellon%20University%20as%20seen%20from%20the%20Cathedral%20of%20Learning.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

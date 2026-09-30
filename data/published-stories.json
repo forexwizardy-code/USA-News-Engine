@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T08:35:23.453Z",
-  "storyCount": 73,
+  "generatedAt": "2026-09-30T09:24:02.166Z",
+  "storyCount": 75,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2166,6 +2166,64 @@
       "heroImageLicense": "CC BY-SA 3.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AArgentine-style%20hand-chopped%20roasted%20beef%20tacos%2C%20with%20mozzarella%2C%20caramelized%20onions%2C%20and%20salsas.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30",
+      "slug": "technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30",
+      "articlePath": "src/content/articles/technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30.md",
+      "publishedAt": "2026-09-30T09:23:59.774Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a806f9d0931ebebd"
+      ],
+      "allAlertIds": [
+        "gn__a806f9d0931ebebd"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T09:23:59.774Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-trump-says-top-tech-firms-have-signed-accord-to-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20in%20India%20(49583082033).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30",
+      "slug": "us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30",
+      "articlePath": "src/content/articles/us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30.md",
+      "publishedAt": "2026-09-30T09:24:02.165Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__89a9309aabd0fbc7"
+      ],
+      "allAlertIds": [
+        "gn__89a9309aabd0fbc7"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — National",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T09:24:02.165Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-carnegie-mellon-nets-3-billion-gift-most-ever-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Dllu",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarnegie%20Mellon%20University%20as%20seen%20from%20the%20Cathedral%20of%20Learning.jpg",
       "breaking": false
     }
   ]
