@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-29T20:24:02.726Z",
-  "storyCount": 31,
+  "generatedAt": "2026-09-30T00:31:24.600Z",
+  "storyCount": 33,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -758,6 +758,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.npr.org/2026/09/28/nx-s1-5983550/british-men-released-on-bail-after-suspected-terror-plot",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__ee52458b389a72ec",
+      "slug": "technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29",
+      "articlePath": "src/content/articles/technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29.md",
+      "title": "At A.I. Event, Trump Asks Meta, OpenAI and Microsoft to Make Safety Decisions Themselves",
+      "publishedAt": "2026-09-30T00:31:20.521Z",
+      "category": "technology",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 75,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/29/us/politics/ai-trump-meta-microsoft-openai.html"
+      ],
+      "imagePath": "/images/technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Marc Nozell from Merrimack, New Hampshire, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump%20Dudebro%20asking%20a%20question%20(24076988539).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a9d8b419c2ecdc1b",
+      "slug": "business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29",
+      "articlePath": "src/content/articles/business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29.md",
+      "title": "Self-regulation 'not enough' for AI safety, Gary Marcus says",
+      "publishedAt": "2026-09-30T00:31:24.600Z",
+      "category": "business",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/self-regulation-not-enough-for-ai-safety-gary-marcus-says"
+      ],
+      "imagePath": "/images/business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Keith Allison",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMarcus%20Mason%20Gary%20Guyton.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }

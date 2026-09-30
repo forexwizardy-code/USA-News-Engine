@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-29T22:26:59.511Z",
-  "storyCount": 56,
+  "generatedAt": "2026-09-30T00:31:24.601Z",
+  "storyCount": 58,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -1663,6 +1663,64 @@
       "imageLicense": "CC BY-SA 3.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStrawberry-1.jpg"
+    },
+    {
+      "storyKey": "technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29",
+      "slug": "technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29",
+      "articlePath": "src/content/articles/technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29.md",
+      "publishedAt": "2026-09-30T00:31:20.521Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__ee52458b389a72ec"
+      ],
+      "allAlertIds": [
+        "gn__ee52458b389a72ec"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T00:31:20.521Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-at-a-i-event-trump-asks-meta-openai-and-microsoft-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Marc Nozell from Merrimack, New Hampshire, USA",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump%20Dudebro%20asking%20a%20question%20(24076988539).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29",
+      "slug": "business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29",
+      "articlePath": "src/content/articles/business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29.md",
+      "publishedAt": "2026-09-30T00:31:24.600Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a9d8b419c2ecdc1b"
+      ],
+      "allAlertIds": [
+        "gn__a9d8b419c2ecdc1b"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T00:31:24.600Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-self-regulation-not-enough-for-ai-safety-gary-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Keith Allison",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMarcus%20Mason%20Gary%20Guyton.jpg",
+      "breaking": false
     }
   ]
 }
