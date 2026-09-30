@@ -50,6 +50,29 @@ const heroRail = await getLatest(4, new Set([featuredSlug]));
 const heroSlugs = new Set([featuredSlug, ...heroRail.map((a) => a.data.slug)]);
 const latest = await getLatest(6, heroSlugs);
 
+// Topic sections — compact internal-link hubs for discovery without
+// repeating the hero/latest stories already shown above.
+const alreadyShown = new Set([
+  ...heroSlugs,
+  ...latest.map((a) => a.data.slug),
+]);
+
+async function getTopicStories(category: string, limit = 3) {
+  const items = await getByCategory(category);
+  return items
+    .filter((a) => isCurrentArticle(a.data.slug) && !alreadyShown.has(a.data.slug))
+    .slice(0, limit);
+}
+
+const topicSections = [
+  { slug: 'us', label: 'U.S. News', stories: await getTopicStories('us') },
+  { slug: 'politics', label: 'Politics', stories: await getTopicStories('politics') },
+  { slug: 'business', label: 'Business', stories: await getTopicStories('business') },
+  { slug: 'technology', label: 'Technology', stories: await getTopicStories('technology') },
+  { slug: 'sports', label: 'Sports', stories: await getTopicStories('sports') },
+  { slug: 'entertainment', label: 'Entertainment', stories: await getTopicStories('entertainment') },
+].filter((section) => section.stories.length > 0);
+
 // Weather & Alerts — only show current (non-archived) stories
 const allWeather = await getByCategory('weather');
 const weather = allWeather.filter((a) => isCurrentArticle(a.data.slug));
@@ -100,6 +123,33 @@ const mostRead = await getMostRead(5);
         <SectionHeader title="Latest News" href="/latest/" linkLabel="All latest" />
         <div class="grid grid--3">
           {latest.map((a) => <ArticleCard article={a} variant="default" />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- =================== NEWS BY TOPIC =================== -->
+  {topicSections.length > 0 && (
+    <section class="section section--topics" aria-label="News by topic">
+      <div class="container">
+        <SectionHeader
+          title="News by Topic"
+          subtitle="More of the latest coverage across major U.S. news categories"
+        />
+        <div class="topic-grid">
+          {topicSections.map((section) => (
+            <section class="topic-block" aria-label={section.label}>
+              <div class="topic-head">
+                <h2><a href={`/${section.slug}/`}>{section.label}</a></h2>
+                <a class="topic-more" href={`/${section.slug}/`}>More &rarr;</a>
+              </div>
+              <div class="topic-list">
+                {section.stories.map((article) => (
+                  <ArticleCard article={article} variant="compact" showDescription={false} />
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
     </section>
@@ -241,6 +291,53 @@ const mostRead = await getMostRead(5);
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* News by topic */
+  .section--topics {
+    background: var(--color-surface);
+  }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 28px;
+  }
+  .topic-block {
+    min-width: 0;
+    border-top: 3px solid var(--color-text);
+    padding-top: 12px;
+  }
+  .topic-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .topic-head h2 {
+    font-size: 1.2rem;
+    line-height: 1.15;
+  }
+  .topic-head h2 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .topic-head h2 a:hover {
+    color: var(--color-red);
+  }
+  .topic-more {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-red-dark);
+    text-decoration: none;
+  }
+  .topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+  }
+
   /* Weather split */
   .split {
     display: grid;
@@ -322,6 +419,9 @@ const mostRead = await getMostRead(5);
     .grid--3 {
       grid-template-columns: repeat(2, 1fr);
     }
+    .topic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     .split {
       grid-template-columns: 1fr;
     }
@@ -345,6 +445,9 @@ const mostRead = await getMostRead(5);
   }
   @media (max-width: 620px) {
     .grid--3 {
+      grid-template-columns: 1fr;
+    }
+    .topic-grid {
       grid-template-columns: 1fr;
     }
     .section {
