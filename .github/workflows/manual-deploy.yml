@@ -59,4 +59,13 @@ jobs:
             echo "LIVE CHECK FAILED"
             exit 1
           fi
+
+          VERIFY_URL="https://usa-news-engine.forexwizardy.workers.dev/googled0f9d56f69cf9cd9.html"
+          VERIFY_BODY=$(curl -fsS --max-time 20 "$VERIFY_URL")
+          echo "Google verification URL fetched"
+          if [ "$VERIFY_BODY" != "google-site-verification: googled0f9d56f69cf9cd9.html" ]; then
+            echo "GOOGLE VERIFICATION CHECK FAILED"
+            exit 1
+          fi
+
           echo "LIVE CHECK: PASS"
