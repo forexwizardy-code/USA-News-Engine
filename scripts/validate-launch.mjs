@@ -89,7 +89,11 @@ async function main() {
   // --- 3. Indexable public pages are not noindexed and allow large previews ---
   const htmlFiles = (await collectFiles(DIST_DIR, (n) => n.endsWith('.html')))
     .filter((p) => !p.replaceAll('\\', '/').includes('/preview/'));
-  const indexableHtmlFiles = htmlFiles.filter((p) => !p.replaceAll('\\', '/').endsWith('/404.html') && !p.replaceAll('\\', '/').endsWith('\\404.html'));
+  const indexableHtmlFiles = htmlFiles.filter((p) => {
+    const normalized = p.replaceAll('\\', '/');
+    return !normalized.endsWith('/404.html') &&
+      !normalized.endsWith('/googled0f9d56f69cf9cd9.html');
+  });
   let indexingMetaFailures = 0;
   for (const f of indexableHtmlFiles) {
     const html = await readText(f);
