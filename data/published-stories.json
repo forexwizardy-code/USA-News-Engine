@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T01:49:34.040Z",
-  "storyCount": 66,
+  "generatedAt": "2026-09-30T02:22:02.298Z",
+  "storyCount": 68,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -1963,6 +1963,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADarwin%20(AU)%2C%20Supreme%20Court%20--%202019%20--%204347.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-a-very-american-makeover-for-the-state-department-2026-09-30",
+      "slug": "politics-a-very-american-makeover-for-the-state-department-2026-09-30",
+      "articlePath": "src/content/articles/politics-a-very-american-makeover-for-the-state-department-2026-09-30.md",
+      "publishedAt": "2026-09-30T02:21:58.264Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__bef1be0176cfee95"
+      ],
+      "allAlertIds": [
+        "gn__bef1be0176cfee95"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T02:21:58.264Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-a-very-american-makeover-for-the-state-department-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Department of Defense. Department of the Army. Office of the Deputy Chief of Staff for Operations. U.S. Army Audiovisual Center. ca. 1974-5/15/1984",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATHE%20TOWN%20OF%20VERY%2C%20USED%20AS%201ST%20AID%20STATION%20BY%2091ST%20DIV.%2C%20VERY%2C%20MEUSE%2C%20FRANCE%20-%20DPLA%20-%202a8057bcab5ee48ae61f51138434902b.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30",
+      "slug": "technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30",
+      "articlePath": "src/content/articles/technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30.md",
+      "publishedAt": "2026-09-30T02:22:02.297Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__0094785ba080bd31"
+      ],
+      "allAlertIds": [
+        "gn__0094785ba080bd31"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T02:22:02.297Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20at%20a%20U.N.%20Security%20Council%20Luncheon%20(49174998287).jpg",
       "breaking": false
     }
   ]

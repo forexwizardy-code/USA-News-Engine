@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T01:49:34.039Z",
-  "storyCount": 39,
+  "generatedAt": "2026-09-30T02:22:02.297Z",
+  "storyCount": 41,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -965,6 +965,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADarwin%20(AU)%2C%20Supreme%20Court%20--%202019%20--%204347.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__bef1be0176cfee95",
+      "slug": "politics-a-very-american-makeover-for-the-state-department-2026-09-30",
+      "articlePath": "src/content/articles/politics-a-very-american-makeover-for-the-state-department-2026-09-30.md",
+      "title": "A Very American Makeover for the State Department’s ‘Hall of Flags’",
+      "publishedAt": "2026-09-30T02:21:58.264Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/29/us/politics/state-department-flags.html"
+      ],
+      "imagePath": "/images/politics-a-very-american-makeover-for-the-state-department-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Department of Defense. Department of the Army. Office of the Deputy Chief of Staff for Operations. U.S. Army Audiovisual Center. ca. 1974-5/15/1984",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATHE%20TOWN%20OF%20VERY%2C%20USED%20AS%201ST%20AID%20STATION%20BY%2091ST%20DIV.%2C%20VERY%2C%20MEUSE%2C%20FRANCE%20-%20DPLA%20-%202a8057bcab5ee48ae61f51138434902b.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__0094785ba080bd31",
+      "slug": "technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30",
+      "articlePath": "src/content/articles/technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30.md",
+      "title": "Who Attended Trump’s AI Luncheon, and Who Sat Where",
+      "publishedAt": "2026-09-30T02:22:02.297Z",
+      "category": "technology",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/29/us/politics/trump-ai-luncheon-guests-ceos.html"
+      ],
+      "imagePath": "/images/technology-who-attended-trump-s-ai-luncheon-and-who-sat-where-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20at%20a%20U.N.%20Security%20Council%20Luncheon%20(49174998287).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
