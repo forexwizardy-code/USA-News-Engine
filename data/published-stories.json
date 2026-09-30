@@ -2383,7 +2383,7 @@
       "allAlertIds": [
         "gn__ab5cbfeee90e00ae"
       ],
-      "event": "sports",
+      "event": "politics",
       "location": "Unknown",
       "sourceOffice": "The Hill",
       "lifecycleStatus": "active",
@@ -2391,13 +2391,13 @@
       "lastNwsExpiresAt": null,
       "lastNwsEndsAt": null,
       "lastCheckedAt": "2026-09-30T12:57:27.568Z",
-      "heroImageMode": "licensed-photo",
-      "heroImageSource": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-real.jpg",
-      "heroImageRelation": "illustrative-file-photo",
-      "heroImageCreator": "NASA.gov",
-      "heroImageLicense": "Public domain",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-editorial.png",
+      "heroImageRelation": "generated-editorial-graphic",
+      "heroImageCreator": "US News Engine (original editorial artwork)",
+      "heroImageLicense": "Original editorial artwork by US News Engine",
       "heroImageLicenseUrl": "",
-      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAn%20Astronaut's%20Snapshot%20of%20the%20Moon.jpg",
+      "heroImageSourcePageUrl": "",
       "breaking": false
     }
   ]

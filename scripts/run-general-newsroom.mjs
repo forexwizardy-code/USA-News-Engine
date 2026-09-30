@@ -1,3 +1,4 @@
+import { checkGeneralPhotoContext } from './lib/general-image-context.mjs';
 /**
  * US News Engine â€” master General News newsroom automation script (Phase 10A.2.3).
  *
@@ -456,7 +457,7 @@ async function publishNewArticle(story, registry) {
       console.log('  General News image rescue skipped: insufficient specific entity context.');
     }
   }
-  if (imageSearch.found && imageSearch.best?.image) {
+  if (imageSearch.found && imageSearch.best?.image && checkGeneralPhotoContext(draft.title, imageSearch.best.image).ok) {
     const selected = imageSearch.best.image;
     const processed = await downloadAndProcessHero({
       candidate: selected,

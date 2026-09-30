@@ -30,3 +30,9 @@ const samples = [
 for (const [title, desc, source, expected] of samples) {
   test(`${title || '(untitled)'} -> ${expected}`, () => assert.equal(classify(title, desc, source), expected));
 }
+
+test('Raskin / Schmitt / Jack Smith hearing criticism is politics even with basketball reference', () => {
+  const h = 'Raskin rips Schmitt questioning of Jack Smith: He is basically disgraced himself';
+  const d = 'Rep. Raskin criticised Sen. Eric Schmitt at a hearing over a basketball-team mix-up.';
+  assert.equal(classify(h, d, 'sports'), 'politics');
+});

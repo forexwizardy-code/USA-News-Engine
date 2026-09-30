@@ -1311,7 +1311,7 @@
       "articlePath": "src/content/articles/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30.md",
       "title": "Raskin rips Schmitt questioning of Jack Smith: ‘He’s basically disgraced himself’",
       "publishedAt": "2026-09-30T12:57:27.568Z",
-      "category": "sports",
+      "category": "politics",
       "primarySource": "The Hill",
       "primaryPublisherFamily": "The Hill",
       "independentPublisherCount": 1,
@@ -1323,13 +1323,13 @@
       "sourceUrls": [
         "https://thehill.com/homenews/house/6119619-jamie-raskin-eric-schmitt-basketball-mix-up-jack-smith-hearing-criticism/"
       ],
-      "imagePath": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-real.jpg",
-      "imageMode": "licensed-photo",
-      "imageCreator": "NASA.gov",
-      "imageLicense": "Public domain",
+      "imagePath": "/images/sports-raskin-rips-schmitt-questioning-of-jack-smith-he-s-2026-09-30-editorial.png",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "US News Engine (original editorial artwork)",
+      "imageLicense": "Original editorial artwork by US News Engine",
       "imageLicenseUrl": "",
-      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAn%20Astronaut's%20Snapshot%20of%20the%20Moon.jpg",
-      "imageRelation": "illustrative-file-photo"
+      "imageSourcePageUrl": "",
+      "imageRelation": "generated-editorial-graphic"
     }
   ]
 }

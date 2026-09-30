@@ -14,7 +14,7 @@ export function classifyGeneralNewsCategory(title, description = '', feedCategor
   const mayoralEvent = /\b(mayor|mayoral)\b/.test(h) &&
     /\b(candidates?|forum|election|race|debate|council|policy|plan)\b/.test(h);
   const senatorLegalEvent = /\b(jack smith|fani willis|schmitt)\b/.test(h) &&
-    /\b(perjur(?:y|ed)?|testif(?:y|ied)|investigat(?:e|ion)|attempt to link|hearing|alleg(?:e|ed|ation)|prosecut(?:or|ion))\b/.test(h);
+    /\b(perjur(?:y|ed)?|testif(?:y|ied)|investigat(?:e|ion)|attempt to link|hearing|question(?:ing|ed|s)?|alleg(?:e|ed|ation)|prosecut(?:or|ion))\b/.test(h);
   const legislativeEvent = /\b(senate|senator|congress|lawmakers?|democrats?|republicans?|house of representatives|legislatur(?:e|es))\b/.test(h) &&
     /\b(bill|vote|voting|passes?|blocks?|legislat(?:ion|ive)|committee|hearing|impeach(?:ment)?|propos(?:al|e|ed)|election|campaign)\b/.test(h);
   const electoralEvent = /\b(election|electoral|ballot|voters?|midterm|mayoral race|presidential race|campaign)\b/.test(h) &&
