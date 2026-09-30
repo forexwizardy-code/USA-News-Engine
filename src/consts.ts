@@ -85,8 +85,9 @@ export const CATEGORIES: CategoryDef[] = [
     description:
       'Discoveries, research, and breakthroughs from the worlds of space, health, and technology.',
   },
-  // Phase 10A.2 — General U.S. News categories. nav=false: not in top
-  // navigation yet (previews only; will surface after publishing enables).
+  // General U.S. News categories. nav=false keeps the top navigation
+  // compact; these sections are surfaced through homepage topic hubs and
+  // their dedicated category pages.
   {
     slug: 'politics',
     label: 'Politics',
