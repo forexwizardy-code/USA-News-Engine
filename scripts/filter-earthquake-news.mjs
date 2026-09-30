@@ -326,11 +326,11 @@ async function inspectUsgsProducts(eq) {
     const shakeMapProducts = Array.isArray(products.shakemap)
       ? products.shakemap
       : [];
-    const hasShakeMap = shakeMapProducts.length > 0;
+    const hasShakeMapProduct = shakeMapProducts.length > 0;
     let shakeMapProductUrl = null;
     let shakeMapImageUrl = null;
 
-    if (hasShakeMap) {
+    if (hasShakeMapProduct) {
       // USGS orders products with the preferred/current product first.
       const smEntry = shakeMapProducts[0];
       if (smEntry) {
@@ -349,6 +349,11 @@ async function inspectUsgsProducts(eq) {
         }
       }
     }
+
+    // Downstream image generation needs an actual downloadable image URL.
+    // A ShakeMap product can exist without the expected JPEG asset, so only
+    // claim hasShakeMap when a usable image URL was found.
+    const hasShakeMap = typeof shakeMapImageUrl === 'string' && shakeMapImageUrl.trim() !== '';
 
     return {
       hasShakeMap,
