@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T09:52:11.863Z",
-  "storyCount": 49,
+  "generatedAt": "2026-09-30T11:21:54.905Z",
+  "storyCount": 51,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1226,6 +1226,58 @@
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAncient%20Korea%20Map%20Byeonhan.png",
       "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__59ec8d87a2dbffa7",
+      "slug": "us-travel-plans-here-s-what-to-know-as-measles-2026-09-30",
+      "articlePath": "src/content/articles/us-travel-plans-here-s-what-to-know-as-measles-2026-09-30.md",
+      "title": "Travel plans? Here's what to know as measles exposures reach trains and games",
+      "publishedAt": "2026-09-30T11:21:52.361Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/30/nx-s1-5978940/traveling-measles-exposure-vaccines-transportation"
+      ],
+      "imagePath": "/images/us-travel-plans-here-s-what-to-know-as-measles-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Charles J. Sharp",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABlue%20pansy%20(junonia%20orithya%20here).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__01ccc67d7f2a1379",
+      "slug": "technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30",
+      "articlePath": "src/content/articles/technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30.md",
+      "title": "The U.S. is pulling its last troops out of Iraq. How will it affect the Middle East",
+      "publishedAt": "2026-09-30T11:21:54.905Z",
+      "category": "technology",
+      "primarySource": "NPR Technology",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/30/nx-s1-5984953/the-u-s-is-pulling-its-last-troops-out-of-iraq-how-will-it-affect-the-middle-east"
+      ],
+      "imagePath": "/images/technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NASA Earth Observatory images by Joshua Stevens, using Landsat data from the U.S. Geological Survey. Caption by Pola Lem.",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOil%20Fires%20in%20Iraq%20(88666).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T10:29:23.005Z",
-  "storyCount": 77,
+  "generatedAt": "2026-09-30T11:21:54.906Z",
+  "storyCount": 79,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2282,6 +2282,64 @@
       "heroImageLicense": "CC BY-SA 3.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAncient%20Korea%20Map%20Byeonhan.png",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-travel-plans-here-s-what-to-know-as-measles-2026-09-30",
+      "slug": "us-travel-plans-here-s-what-to-know-as-measles-2026-09-30",
+      "articlePath": "src/content/articles/us-travel-plans-here-s-what-to-know-as-measles-2026-09-30.md",
+      "publishedAt": "2026-09-30T11:21:52.361Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__59ec8d87a2dbffa7"
+      ],
+      "allAlertIds": [
+        "gn__59ec8d87a2dbffa7"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T11:21:52.361Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-travel-plans-here-s-what-to-know-as-measles-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Charles J. Sharp",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABlue%20pansy%20(junonia%20orithya%20here).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30",
+      "slug": "technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30",
+      "articlePath": "src/content/articles/technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30.md",
+      "publishedAt": "2026-09-30T11:21:54.905Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__01ccc67d7f2a1379"
+      ],
+      "allAlertIds": [
+        "gn__01ccc67d7f2a1379"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "NPR Technology",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T11:21:54.905Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-the-u-s-is-pulling-its-last-troops-out-of-iraq-how-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "NASA Earth Observatory images by Joshua Stevens, using Landsat data from the U.S. Geological Survey. Caption by Pola Lem.",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOil%20Fires%20in%20Iraq%20(88666).jpg",
       "breaking": false
     }
   ]
