@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Repair confirmed General News image mismatches
+        run: npm run repair:general-images
+
       - name: Run General News Newsroom Automation
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
