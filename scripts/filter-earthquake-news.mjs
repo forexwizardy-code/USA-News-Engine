@@ -331,8 +331,15 @@ async function inspectUsgsProducts(eq) {
     let shakeMapImageUrl = null;
 
     if (hasShakeMapProduct) {
-      // USGS orders products with the preferred/current product first.
-      const smEntry = shakeMapProducts[0];
+      // Prefer a product that actually exposes a downloadable intensity JPEG.
+      // Fall back to the first product only for metadata/provenance.
+      const smEntry =
+        shakeMapProducts.find((entry) =>
+          entry?.contents?.['download/intensity.jpg']?.url ||
+          entry?.contents?.['intensity.jpg']?.url
+        ) ||
+        shakeMapProducts[0];
+
       if (smEntry) {
         shakeMapProductUrl =
           smEntry.properties?.map ||
