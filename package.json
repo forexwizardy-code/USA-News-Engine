@@ -61,7 +61,8 @@
     "draft:general": "node scripts/generate-general-news-draft.mjs",
     "validate:general": "node scripts/validate-general-news.mjs",
     "newsroom:general": "node scripts/run-general-newsroom.mjs",
-    "validate:images": "node scripts/validate-article-images.mjs"
+    "validate:images": "node scripts/validate-article-images.mjs",
+    "repair:general-images": "node scripts/repair-general-image-mismatches.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
