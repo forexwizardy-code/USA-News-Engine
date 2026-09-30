@@ -111,12 +111,26 @@ async function main() {
       throw new Error(`Editorial graphic generation failed for ${slug}`);
     }
 
-    const imageBlockRegex = /^image:\s*.*?^imageSourcePageUrl:\s*.*$/ms;
-    if (!imageBlockRegex.test(raw)) {
+    const lines = raw.split(/\r?\n/);
+    const frontmatterEnd = lines.findIndex((line, index) => index > 0 && line.trim() === '---');
+    if (frontmatterEnd < 0) {
+      throw new Error(`Frontmatter terminator not found for ${slug}`);
+    }
+
+    const imageStart = lines.findIndex(
+      (line, index) => index > 0 && index < frontmatterEnd && /^image:\s*/.test(line),
+    );
+    const imageEnd = lines.findIndex(
+      (line, index) => index >= imageStart && index < frontmatterEnd && /^imageSourcePageUrl:\s*/.test(line),
+    );
+
+    if (imageStart < 0 || imageEnd < imageStart) {
       throw new Error(`Image frontmatter block not found for ${slug}`);
     }
 
-    raw = raw.replace(imageBlockRegex, imageBlock(generated, title));
+    const replacement = imageBlock(generated, title).split('\n');
+    lines.splice(imageStart, imageEnd - imageStart + 1, ...replacement);
+    raw = lines.join('\n');
     await writeFile(articlePath, raw, 'utf8');
 
     const general = generalRegistry.stories?.find((story) => story.slug === slug);
