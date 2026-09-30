@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T14:31:56.210Z",
-  "storyCount": 81,
+  "generatedAt": "2026-09-30T15:26:53.547Z",
+  "storyCount": 83,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2398,6 +2398,64 @@
       "heroImageLicense": "Original editorial artwork by US News Engine",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30",
+      "slug": "us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30",
+      "articlePath": "src/content/articles/us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30.md",
+      "publishedAt": "2026-09-30T15:26:49.517Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__19b46b7ecea09287"
+      ],
+      "allAlertIds": [
+        "gn__19b46b7ecea09287"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T15:26:49.517Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Department of Defense. American Forces Information Service. Defense Visual Information Center. 1994",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIraqi%20Army%20(IA)%20Soldiers%2C%202nd%20Commando%20Battalion%20(BN)%2C%20Iraq%20Ministry%20of%20the%20Interior%2C%20prepare%20to%20practice%20the%20proper%20technique%20to%20board%20and%20exit%20a%20US%20Marine%20Corps%20(USMC)%20CH-46E%20Sea%20-%20DPLA%20-%2078e915c7d3127083831afe3c14f93e2a.jpeg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30",
+      "slug": "business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30",
+      "articlePath": "src/content/articles/business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30.md",
+      "publishedAt": "2026-09-30T15:26:53.544Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__131c5663f2a8738e"
+      ],
+      "allAlertIds": [
+        "gn__131c5663f2a8738e"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T15:26:53.544Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Martin Falbisoner",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStockholm%20August%202020%20-%20Kastellet%2C%20Vasa%20Museum%2C%20and%20Nordic%20Museum.jpg",
       "breaking": false
     }
   ]

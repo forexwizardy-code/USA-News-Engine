@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T12:57:27.568Z",
-  "storyCount": 53,
+  "generatedAt": "2026-09-30T15:26:53.544Z",
+  "storyCount": 55,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1330,6 +1330,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__19b46b7ecea09287",
+      "slug": "us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30",
+      "articlePath": "src/content/articles/us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30.md",
+      "title": "U.S. forces exit Iraq amid Iran war. And, SCOTUS revives Trump deportation policy",
+      "publishedAt": "2026-09-30T15:26:49.517Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/30/g-s1-145604/up-first-newsletter-iraq-us-troops-scotus-deportations-trump-ai"
+      ],
+      "imagePath": "/images/us-u-s-forces-exit-iraq-amid-iran-war-and-scotus-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Department of Defense. American Forces Information Service. Defense Visual Information Center. 1994",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIraqi%20Army%20(IA)%20Soldiers%2C%202nd%20Commando%20Battalion%20(BN)%2C%20Iraq%20Ministry%20of%20the%20Interior%2C%20prepare%20to%20practice%20the%20proper%20technique%20to%20board%20and%20exit%20a%20US%20Marine%20Corps%20(USMC)%20CH-46E%20Sea%20-%20DPLA%20-%2078e915c7d3127083831afe3c14f93e2a.jpeg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__131c5663f2a8738e",
+      "slug": "business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30",
+      "articlePath": "src/content/articles/business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30.md",
+      "title": "Fed’s preferred measure of inflation dips to 3.4 percent in August",
+      "publishedAt": "2026-09-30T15:26:53.544Z",
+      "category": "business",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://thehill.com/business/6118496-fed-pce-inflation-down-august/"
+      ],
+      "imagePath": "/images/business-fed-s-preferred-measure-of-inflation-dips-to-3-4-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Martin Falbisoner",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStockholm%20August%202020%20-%20Kastellet%2C%20Vasa%20Museum%2C%20and%20Nordic%20Museum.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
