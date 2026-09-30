@@ -38,11 +38,13 @@ const {
   noindex = false,
 } = Astro.props;
 
-// While DEMO_NOINDEX is true (Phase 1, fictional content), the whole site is
-// blocked from indexing. Individual pages can still opt out via `noindex`,
-// but nothing can opt IN while the demo flag is on. Flip DEMO_NOINDEX to false
-// in src/consts.ts when real content is live.
+// Production pages are indexable when DEMO_NOINDEX is false. Explicit
+// noindex pages (404/editorial previews) remain blocked. Indexed pages allow
+// large image previews for eligible Search/Discover surfaces.
 const blockRobots = DEMO_NOINDEX || noindex;
+const robotsContent = blockRobots
+  ? 'noindex,nofollow'
+  : 'max-image-preview:large';
 
 const canonical = new URL(canonicalPath, SITE_URL).href;
 const imageUrl = ogImage.startsWith('http')
@@ -130,7 +132,7 @@ const breadcrumbSchema =
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{blockRobots && <meta name="robots" content="noindex,nofollow" />}
+<meta name="robots" content={robotsContent} />
 <meta name="generator" content={Astro.generator} />
 
 <!-- OpenGraph -->
