@@ -142,6 +142,7 @@ const breadcrumbSchema =
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+<link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS`} href={new URL('/rss.xml', SITE_URL).href} />
 <meta name="robots" content={robotsContent} />
 <meta name="generator" content={Astro.generator} />
 
