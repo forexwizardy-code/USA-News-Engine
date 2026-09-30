@@ -74,6 +74,18 @@ const websiteSchema = {
   inLanguage: 'en-US',
 };
 
+const authorSchema = author
+  ? {
+      '@type': /desk$/i.test(author) ? 'Organization' : 'Person',
+      name: author,
+      url: new URL('/about/', SITE_URL).href,
+    }
+  : {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    };
+
 const articleSchema =
   type === 'article'
     ? {
@@ -84,13 +96,11 @@ const articleSchema =
         image: [imageUrl],
         datePublished: publishedTime ? iso(publishedTime) : undefined,
         dateModified: modifiedTime ? iso(modifiedTime) : undefined,
-        author: {
-          '@type': 'Person',
-          name: author || SITE_NAME,
-        },
+        author: authorSchema,
         publisher: {
-          '@type': 'Organization',
+          '@type': 'NewsMediaOrganization',
           name: SITE_NAME,
+          url: SITE_URL,
           logo: { '@type': 'ImageObject', url: ORG.logo },
         },
         mainEntityOfPage: {
