@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T09:24:02.166Z",
-  "storyCount": 75,
+  "generatedAt": "2026-09-30T09:52:11.864Z",
+  "storyCount": 77,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2224,6 +2224,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarnegie%20Mellon%20University%20as%20seen%20from%20the%20Cathedral%20of%20Learning.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30",
+      "slug": "technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30",
+      "articlePath": "src/content/articles/technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30.md",
+      "publishedAt": "2026-09-30T09:52:03.494Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__495a4ac1e08c33ab"
+      ],
+      "allAlertIds": [
+        "gn__495a4ac1e08c33ab"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "NPR Technology",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T09:52:03.494Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Elvert Barnes",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A05.Before.StopIranDeal.WDC.9September2015%20(21255533526).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30",
+      "slug": "sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30",
+      "articlePath": "src/content/articles/sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30.md",
+      "publishedAt": "2026-09-30T09:52:11.863Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5b61c28ef97909bb"
+      ],
+      "allAlertIds": [
+        "gn__5b61c28ef97909bb"
+      ],
+      "event": "sports",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — Sports",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T09:52:11.863Z",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30-licensed-graphic.jpg",
+      "heroImageRelation": "licensed-illustrative-graphic",
+      "heroImageCreator": "South_Korea_location_map.svg: NordNordWest\nderivative work: AKMB",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAncient%20Korea%20Map%20Byeonhan.png",
       "breaking": false
     }
   ]

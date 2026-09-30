@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T09:24:02.165Z",
-  "storyCount": 47,
+  "generatedAt": "2026-09-30T09:52:11.863Z",
+  "storyCount": 49,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1174,6 +1174,58 @@
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarnegie%20Mellon%20University%20as%20seen%20from%20the%20Cathedral%20of%20Learning.jpg",
       "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__495a4ac1e08c33ab",
+      "slug": "technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30",
+      "articlePath": "src/content/articles/technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30.md",
+      "title": "Negotiator of 2015 Iran nuclear deal discusses Trump rejecting Iran's latest proposal",
+      "publishedAt": "2026-09-30T09:52:03.494Z",
+      "category": "technology",
+      "primarySource": "NPR Technology",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://www.npr.org/2026/09/30/nx-s1-5984947/negotiator-of-2015-iran-nuclear-deal-discusses-trump-rejecting-irans-latest-proposal"
+      ],
+      "imagePath": "/images/technology-negotiator-of-2015-iran-nuclear-deal-discusses-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Elvert Barnes",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A05.Before.StopIranDeal.WDC.9September2015%20(21255533526).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5b61c28ef97909bb",
+      "slug": "sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30",
+      "articlePath": "src/content/articles/sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30.md",
+      "title": "Wizards’ big three aims to ‘change the narrative’ as training camp commences",
+      "publishedAt": "2026-09-30T09:52:11.863Z",
+      "category": "sports",
+      "primarySource": "Washington Post — Sports",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/sports/2026/09/30/wizards-big-three-aims-change-narrative-training-camp-commences/"
+      ],
+      "imagePath": "/images/sports-wizards-big-three-aims-to-change-the-narrative-as-2026-09-30-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "South_Korea_location_map.svg: NordNordWest\nderivative work: AKMB",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAncient%20Korea%20Map%20Byeonhan.png",
+      "imageRelation": "licensed-illustrative-graphic"
     }
   ]
 }
