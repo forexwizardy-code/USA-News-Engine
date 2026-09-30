@@ -25,6 +25,7 @@
  *   (or) node scripts/run-general-newsroom.mjs [--dry-run]
  */
 
+import { findEventDuplicate } from './lib/general-event-duplicate.mjs';
 import { readFile, writeFile, mkdir, access, readdir, copyFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -129,6 +130,7 @@ function buildPublishedIdentitySet(registry) {
     slugs: new Set(),
     sourceUrls: new Set(),
     normalizedUrls: new Set(),
+    publishedTitles: [],
   };
   if (!registry || !Array.isArray(registry.stories)) return published;
   for (const s of registry.stories) {
@@ -149,6 +151,7 @@ function buildPublishedIdentitySet(registry) {
       published.sourceUrls.add(s.primarySourceUrl);
     }
   }
+  published.publishedTitles = registry.stories.filter((s) => s && s.title);
   return published;
 }
 
@@ -167,6 +170,12 @@ function isAlreadyPublished(story, publishedSet) {
       const nu = new URL(u);
       if (publishedSet.normalizedUrls.has(`${nu.hostname.replace(/^www\./, '')}${nu.pathname.replace(/\/+$/, '')}`.toLowerCase())) return true;
     } catch {}
+  }
+  // Extra, conservative event-level guard across DIFFERENT publisher URLs.
+  const related = findEventDuplicate(story, publishedSet.publishedTitles);
+  if (related) {
+    console.log(`  [event-${related.status}] holding "${story.title}"; related to "${related.oldTitle}" (overlap=${related.score})`);
+    return true;
   }
   return false;
 }
@@ -281,6 +290,12 @@ function selectStories(eligible, opts) {
       if (otherCats.length > 0) continue; // prefer diversity
     }
 
+    const relatedInBatch = findEventDuplicate(story, selected);
+    if (relatedInBatch) {
+      console.log(`  [event-in-batch-${relatedInBatch.status}] holding "${story.title}"; related to "${relatedInBatch.oldTitle}"`);
+      continue;
+    }
+
     selected.push(story);
     familyCountThisRun[fam] = (familyCountThisRun[fam] || 0) + 1;
     if (story.category === 'politics') politicsCountThisRun++;
@@ -304,6 +319,13 @@ async function publishNewArticle(story, registry) {
     console.log(`    [skip-duplicate] ${story.generalStoryKey} already published (slug=${existing.slug}, publishedAt=${existing.publishedAt}) â€” skipping`);
     return null;
   }
+  // Last-minute event-level protection, including stories published earlier in this run.
+  const relatedBeforePublish = findEventDuplicate(story, registry.stories || []);
+  if (relatedBeforePublish) {
+    console.log(`    [skip-event-${relatedBeforePublish.status}] "${story.title}" resembles "${relatedBeforePublish.oldTitle}"; holding publication`);
+    return null;
+  }
+
   // 1. Generate draft
   runNode(
     `scripts/generate-general-news-draft.mjs "${story.generalStoryKey}"`,
