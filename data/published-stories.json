@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:31:24.601Z",
-  "storyCount": 58,
+  "generatedAt": "2026-09-30T00:36:06.616Z",
+  "storyCount": 60,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -853,11 +853,10 @@
       "slug": "flash-flood-warning-dona-ana-county-new-mexico-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026.md",
       "publishedAt": "2026-09-29T14:29:37.242Z",
-      "updatedAt": "2026-09-29T22:26:59.503Z",
+      "updatedAt": "2026-09-30T00:35:59.478Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.3eda87a01df6b71074431507a35af997b66ac873.001.1",
-        "urn:oid:2.49.0.1.840.0.74591eeaa62d9fb8576f7cf73d7a64743b3a153b.001.1",
-        "urn:oid:2.49.0.1.840.0.fa4038a7992b1186450a8bd8baee7922582e787c.001.1"
+        "urn:oid:2.49.0.1.840.0.dbe1c6d5f54edafe8c765e0806086732215358ef.002.1",
+        "urn:oid:2.49.0.1.840.0.57642ea7e6a3c9740bac335ba8849cefaff833c3.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.ad8bdce9ba7ee0203953fecfcb86899c7d3dc70a.001.1",
@@ -877,16 +876,18 @@
         "urn:oid:2.49.0.1.840.0.d6234837a10bb219845380c8ac7bea71aa48f4fc.001.1",
         "urn:oid:2.49.0.1.840.0.685274e8f35de533a7b8f51565866c674e941aca.001.1",
         "urn:oid:2.49.0.1.840.0.3eda87a01df6b71074431507a35af997b66ac873.001.1",
-        "urn:oid:2.49.0.1.840.0.74591eeaa62d9fb8576f7cf73d7a64743b3a153b.001.1"
+        "urn:oid:2.49.0.1.840.0.74591eeaa62d9fb8576f7cf73d7a64743b3a153b.001.1",
+        "urn:oid:2.49.0.1.840.0.dbe1c6d5f54edafe8c765e0806086732215358ef.002.1",
+        "urn:oid:2.49.0.1.840.0.57642ea7e6a3c9740bac335ba8849cefaff833c3.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Dona Ana County, New Mexico",
       "sourceOffice": "NWS El Paso Tx/Santa Teresa NM",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T16:22:00-06:00",
+      "lastNwsEffectiveAt": "2026-09-29T17:34:00-06:00",
       "lastNwsExpiresAt": "2026-09-29T19:15:00-06:00",
       "lastNwsEndsAt": "2026-09-29T19:15:00-06:00",
-      "lastCheckedAt": "2026-09-29T22:26:59.503Z",
+      "lastCheckedAt": "2026-09-30T00:35:59.478Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-dona-ana-county-new-mexico-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -901,10 +902,10 @@
       "slug": "flash-flood-warning-yavapai-county-arizona-september-29-2026",
       "articlePath": "src/content/articles/flash-flood-warning-yavapai-county-arizona-september-29-2026.md",
       "publishedAt": "2026-09-29T14:29:40.705Z",
-      "updatedAt": "2026-09-29T22:26:59.506Z",
+      "updatedAt": "2026-09-30T00:35:59.480Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.64dfff5c3d23f3a8424e163d48e25a5a1c68ca0b.001.1",
-        "urn:oid:2.49.0.1.840.0.b298e1ae41d68a722adadc09991ad33b5b449ca8.001.1"
+        "urn:oid:2.49.0.1.840.0.5252c7e3ba002f11ae91381cd13e94fb4277bc42.001.1",
+        "urn:oid:2.49.0.1.840.0.613e3867489711e8916f97edbe34628959c1b3fc.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.f3416fd6289cfd6d3f1e0482152ab320389019db.001.1",
@@ -914,16 +915,18 @@
         "urn:oid:2.49.0.1.840.0.3b9bd63bfe32c78536f342fcef4abfe799a3afc7.001.1",
         "urn:oid:2.49.0.1.840.0.dc65536268a1c4a412c1fd1774bcedc3917a68be.001.1",
         "urn:oid:2.49.0.1.840.0.64dfff5c3d23f3a8424e163d48e25a5a1c68ca0b.001.1",
-        "urn:oid:2.49.0.1.840.0.b298e1ae41d68a722adadc09991ad33b5b449ca8.001.1"
+        "urn:oid:2.49.0.1.840.0.b298e1ae41d68a722adadc09991ad33b5b449ca8.001.1",
+        "urn:oid:2.49.0.1.840.0.5252c7e3ba002f11ae91381cd13e94fb4277bc42.001.1",
+        "urn:oid:2.49.0.1.840.0.613e3867489711e8916f97edbe34628959c1b3fc.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Yavapai County, Arizona",
       "sourceOffice": "NWS Flagstaff AZ",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-09-29T15:22:00-07:00",
+      "lastNwsEffectiveAt": "2026-09-29T16:27:00-07:00",
       "lastNwsExpiresAt": "2026-09-29T18:15:00-07:00",
       "lastNwsEndsAt": "2026-09-29T18:15:00-07:00",
-      "lastCheckedAt": "2026-09-29T22:26:59.506Z",
+      "lastCheckedAt": "2026-09-30T00:35:59.480Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-yavapai-county-arizona-september-29-2026-map.png",
       "heroImageRelation": "current-alert-data",
@@ -1721,6 +1724,72 @@
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMarcus%20Mason%20Gary%20Guyton.jpg",
       "breaking": false
+    },
+    {
+      "storyKey": "tornado-warning__armstrong-tx__2026-09-30",
+      "slug": "tornado-warning-armstrong-county-texas-september-29-2026",
+      "articlePath": "src/content/articles/tornado-warning-armstrong-county-texas-september-29-2026.md",
+      "publishedAt": "2026-09-30T00:36:03.177Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.97b2edb816998ac7a3f7c974c1cd5ba9382148ce.001.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.97b2edb816998ac7a3f7c974c1cd5ba9382148ce.001.1"
+      ],
+      "event": "Tornado Warning",
+      "location": "Armstrong County, Texas",
+      "sourceOffice": "NWS Amarillo TX",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": "2026-09-29T19:34:00-05:00",
+      "lastNwsExpiresAt": "2026-09-29T19:45:00-05:00",
+      "lastNwsEndsAt": "2026-09-29T19:45:00-05:00",
+      "lastCheckedAt": "2026-09-30T00:36:03.177Z",
+      "heroImageMode": "map-data",
+      "heroImageSource": "/images/tornado-warning-armstrong-county-texas-september-29-2026-map.png",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "US News Engine",
+      "heroImageLicense": "Original graphic generated by US News Engine from factual NWS data",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "",
+      "breaking": true
+    },
+    {
+      "storyKey": "flash-flood-warning__cochise-az__2026-09-29",
+      "slug": "flash-flood-warning-cochise-county-arizona-september-29-2026",
+      "articlePath": "src/content/articles/flash-flood-warning-cochise-county-arizona-september-29-2026.md",
+      "publishedAt": "2026-09-30T00:36:06.614Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "urn:oid:2.49.0.1.840.0.aca398fa856ae344bd2c2f99a00725238c5303cc.001.1",
+        "urn:oid:2.49.0.1.840.0.270c93bc9e6c2f439c4180a145b0fc25a0b91827.001.1",
+        "urn:oid:2.49.0.1.840.0.61aefc9662732eff0b4a22ce23b274196e233793.001.1",
+        "urn:oid:2.49.0.1.840.0.7ad856de398b796e2ddac4a9f9a8af26cf5bd5a5.001.1",
+        "urn:oid:2.49.0.1.840.0.3d8f41591b869e6c642f20d83978c0ce0f768273.001.1"
+      ],
+      "allAlertIds": [
+        "urn:oid:2.49.0.1.840.0.aca398fa856ae344bd2c2f99a00725238c5303cc.001.1",
+        "urn:oid:2.49.0.1.840.0.270c93bc9e6c2f439c4180a145b0fc25a0b91827.001.1",
+        "urn:oid:2.49.0.1.840.0.61aefc9662732eff0b4a22ce23b274196e233793.001.1",
+        "urn:oid:2.49.0.1.840.0.7ad856de398b796e2ddac4a9f9a8af26cf5bd5a5.001.1",
+        "urn:oid:2.49.0.1.840.0.3d8f41591b869e6c642f20d83978c0ce0f768273.001.1"
+      ],
+      "event": "Flash Flood Warning",
+      "location": "Cochise County, Arizona",
+      "sourceOffice": "NWS Tucson AZ",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": "2026-09-29T16:56:00-07:00",
+      "lastNwsExpiresAt": "2026-09-29T19:15:00-07:00",
+      "lastNwsEndsAt": "2026-09-29T19:15:00-07:00",
+      "lastCheckedAt": "2026-09-30T00:36:06.614Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/flash-flood-warning-cochise-county-arizona-september-29-2026-real.jpg",
+      "heroImageRelation": "exact-location",
+      "heroImageCreator": "Qwexcxewq",
+      "heroImageLicense": "CC BY 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFlash%20Flood%20Sign.jpg",
+      "breaking": true
     }
   ]
 }

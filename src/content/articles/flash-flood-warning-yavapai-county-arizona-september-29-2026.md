@@ -5,7 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Yavapai County, Arizo
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-09-29T14:29:40.705Z
-updatedAt: 2026-09-29T22:26:59.506Z
+updatedAt: 2026-09-30T00:35:59.480Z
 image: "/images/flash-flood-warning-yavapai-county-arizona-september-29-2026-map.png"
 imageAlt: "Flash Flood Warning for Yavapai County, Arizona"
 imageMode: "map-data"
