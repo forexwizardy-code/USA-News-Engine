@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:36:06.616Z",
-  "storyCount": 60,
+  "generatedAt": "2026-09-30T00:55:38.777Z",
+  "storyCount": 62,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -1790,6 +1790,64 @@
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFlash%20Flood%20Sign.jpg",
       "breaking": true
+    },
+    {
+      "storyKey": "politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30",
+      "slug": "politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30",
+      "articlePath": "src/content/articles/politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30.md",
+      "publishedAt": "2026-09-30T00:55:33.753Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__aa980d01ab94f0cd"
+      ],
+      "allAlertIds": [
+        "gn__aa980d01ab94f0cd"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T00:55:33.753Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Heath, William (1794-1840). Graveur",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APolitical%20-%20Dandies%20-%20A%20kiss%20at%20the%20congress%2C%20a%20legitimate%20embrace%20at%20Aix%20la%20Chapelle%2C%20between%20Alexander%20the%20Great%20and%20Louis%20the%20Large%2C%20%26%20others%20of%20the%20dramatis%20persona%20-%20estampe%20-%20William%20Heath%20-%20btv1b6955661j.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-new-york-prosecutors-reopen-investigation-into-2026-09-29",
+      "slug": "us-new-york-prosecutors-reopen-investigation-into-2026-09-29",
+      "articlePath": "src/content/articles/us-new-york-prosecutors-reopen-investigation-into-2026-09-29.md",
+      "publishedAt": "2026-09-30T00:55:38.776Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3c9e0c00a618d7fd"
+      ],
+      "allAlertIds": [
+        "gn__3c9e0c00a618d7fd"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T00:55:38.776Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-new-york-prosecutors-reopen-investigation-into-2026-09-29-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Pierre Mortier",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMortier%2C%20Situation%20du%20Paradise%20Terrestre%2C%201700%20Cornell%20CUL%20PJM%201014%2001.jpg",
+      "breaking": false
     }
   ]
 }

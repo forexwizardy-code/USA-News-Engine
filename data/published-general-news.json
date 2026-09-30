@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T00:31:24.600Z",
-  "storyCount": 33,
+  "generatedAt": "2026-09-30T00:55:38.776Z",
+  "storyCount": 35,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -809,6 +809,58 @@
       "imageLicense": "CC BY-SA 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMarcus%20Mason%20Gary%20Guyton.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__aa980d01ab94f0cd",
+      "slug": "politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30",
+      "articlePath": "src/content/articles/politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30.md",
+      "title": "Democrats in Congress Embrace a More Punitive Posture Toward Israel",
+      "publishedAt": "2026-09-30T00:55:33.753Z",
+      "category": "politics",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/09/29/us/politics/democrats-congress-israel.html"
+      ],
+      "imagePath": "/images/politics-democrats-in-congress-embrace-a-more-punitive-2026-09-30-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Heath, William (1794-1840). Graveur",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APolitical%20-%20Dandies%20-%20A%20kiss%20at%20the%20congress%2C%20a%20legitimate%20embrace%20at%20Aix%20la%20Chapelle%2C%20between%20Alexander%20the%20Great%20and%20Louis%20the%20Large%2C%20%26%20others%20of%20the%20dramatis%20persona%20-%20estampe%20-%20William%20Heath%20-%20btv1b6955661j.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3c9e0c00a618d7fd",
+      "slug": "us-new-york-prosecutors-reopen-investigation-into-2026-09-29",
+      "articlePath": "src/content/articles/us-new-york-prosecutors-reopen-investigation-into-2026-09-29.md",
+      "title": "New York prosecutors reopen investigation into alleged rape at Cornell University",
+      "publishedAt": "2026-09-30T00:55:38.776Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/new-york-prosecutors-reopen-investigation-into-alleged-rape-at-cornell-university"
+      ],
+      "imagePath": "/images/us-new-york-prosecutors-reopen-investigation-into-2026-09-29-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Pierre Mortier",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMortier%2C%20Situation%20du%20Paradise%20Terrestre%2C%201700%20Cornell%20CUL%20PJM%201014%2001.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
