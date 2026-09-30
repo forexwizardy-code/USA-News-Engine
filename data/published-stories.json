@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T18:30:40.454Z",
-  "storyCount": 83,
+  "generatedAt": "2026-09-30T19:18:08.647Z",
+  "storyCount": 84,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -2456,6 +2456,35 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStockholm%20August%202020%20-%20Kastellet%2C%20Vasa%20Museum%2C%20and%20Nordic%20Museum.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "m415-earthquake-wauna-washington-2026-09-29",
+      "slug": "m415-earthquake-wauna-washington-2026-09-29",
+      "articlePath": "src/content/articles/m415-earthquake-wauna-washington-2026-09-29.md",
+      "publishedAt": "2026-09-30T19:18:08.646Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "uw714111952"
+      ],
+      "allAlertIds": [
+        "uw714111952"
+      ],
+      "event": "Earthquake",
+      "location": "6 km WNW of Wauna, Washington",
+      "sourceOffice": "U.S. Geological Survey",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-09-30T19:18:08.646Z",
+      "heroImageMode": "source-image",
+      "heroImageSource": "/images/m415-earthquake-wauna-washington-2026-09-29.jpg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "U.S. Geological Survey (official ShakeMap)",
+      "heroImageLicense": "Official USGS ShakeMap. USGS products are works of the U.S. federal government and are in the public domain.",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/uw714111952",
       "breaking": false
     }
   ]
