@@ -153,6 +153,15 @@ async function main() {
     newsSitemapValid ? 'pass' : 'fail',
     newsSitemapValid ? '' : 'Missing or invalid rolling news sitemap');
 
+  // --- 8R. RSS feed exists and contains at least one item ---
+  const rssText = await readText(join(DIST_DIR, 'rss.xml'));
+  const rssValid = !!rssText &&
+    /<rss\s+version="2\.0">/.test(rssText) &&
+    /<item>/.test(rssText);
+  check('L8R', 'rss.xml exists with at least one news item',
+    rssValid ? 'pass' : 'fail',
+    rssValid ? '' : 'Missing or invalid RSS feed');
+
   // --- 9. No public page emits a BreadcrumbList with /undefined URL ---
   let undefinedBreadcrumbs = 0;
   for (const f of htmlFiles) {
