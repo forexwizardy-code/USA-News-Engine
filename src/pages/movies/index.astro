@@ -30,12 +30,13 @@ const formatRelease = (date: string) => new Date(date + 'T12:00:00Z').toLocaleDa
 // Hollywood articles refresh automatically when the existing General News
 // newsroom publishes and redeploys new entertainment content.
 const allEntertainment = await getByCategory('entertainment');
-const filmTerms = /\b(movies?|films?|cinema|screenplay|screenwriter|film festival|director|directed|casting|cast|box office|trailer|premiere|theaters?|hollywood|oscars?|academy awards|sequel|franchise|starring|studio)\b/i;
+const filmTerms = /\b(movies?|films?|cinema|screenplay|screenwriter|film festival|director|directed|casting|cast|box office|trailer|premiere|theaters?|oscars?|academy awards|sequel|franchise|starring|studio)\b/i;
 const movieNews = allEntertainment
   .filter((article) => filmTerms.test(article.data.title + ' ' + article.data.description))
   .slice(0, 9);
-const movieSlugs = new Set(movieNews.map((article) => article.data.slug));
-const celebrityNews = allEntertainment.filter((article) => !movieSlugs.has(article.data.slug)).slice(0, 6);
+const celebrityNews = allEntertainment
+  .filter((article) => !filmTerms.test(article.data.title + ' ' + article.data.description))
+  .slice(0, 6);
 const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Movies' }];
 ---
 
