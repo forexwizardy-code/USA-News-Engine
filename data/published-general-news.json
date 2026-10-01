@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T13:27:51.192Z",
-  "storyCount": 75,
+  "generatedAt": "2026-10-01T13:52:37.251Z",
+  "storyCount": 77,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1902,6 +1902,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.washingtonpost.com/education/2026/10/01/treasury-introduces-rules-nations-first-federal-school-voucher-program/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__eb10569bda60b934",
+      "slug": "us-what-is-a-botched-execution-and-what-happened-in-2026-10-01",
+      "articlePath": "src/content/articles/us-what-is-a-botched-execution-and-what-happened-in-2026-10-01.md",
+      "title": "What is a botched execution — and what happened in previous cases",
+      "publishedAt": "2026-10-01T13:52:33.639Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/nation/2026/10/01/christa-pikes-botched-execution-is-latest-several-recent-cases/"
+      ],
+      "imagePath": "/images/us-what-is-a-botched-execution-and-what-happened-in-2026-10-01-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "National Weather Service",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWwa%20202603041520.png",
+      "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__b4a61fe04af74a36",
+      "slug": "entertainment-ebenezer-new-trailer-johnny-depp-s-first-hollywood-2026-10-01",
+      "articlePath": "src/content/articles/entertainment-ebenezer-new-trailer-johnny-depp-s-first-hollywood-2026-10-01.md",
+      "title": "‘Ebenezer’ New Trailer: Johnny Depp’s First Hollywood Studio Movie in 8 Years Reimagines ‘A Christmas Carol’",
+      "publishedAt": "2026-10-01T13:52:37.251Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/news/ebenezer-new-trailer-johnny-depp-first-hollywood-movie-8-years-1236894742/"
+      ],
+      "imagePath": "/images/entertainment-ebenezer-new-trailer-johnny-depp-s-first-hollywood-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Cjp24",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABoom%20Trike%20with%20Volkswagen%20trailer%20(3).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
