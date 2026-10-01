@@ -137,7 +137,7 @@ jobs:
           sleep 8
           BASE="https://usa-news-engine.forexwizardy.workers.dev"
           fail=0
-          for path in "/" "/latest/"; do
+          for path in "/" "/latest/" "/entertainment/"; do
             HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "${BASE}${path}")
             echo "Live check ${path} -> HTTP ${HTTP_CODE}"
             if [ "$HTTP_CODE" != "200" ]; then
