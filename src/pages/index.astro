@@ -15,6 +15,7 @@ import {
   relativeTime,
 } from '../lib/articles';
 import { SITE_NAME, SITE_DESCRIPTION } from '../consts';
+import movieCalendar from '../../data/upcoming-movies.json';
 
 // ---- Load the published-stories registry for lifecycle filtering ----
 const registry = await getPublishedRegistry();
@@ -72,6 +73,16 @@ const topicSections = [
   { slug: 'sports', label: 'Sports', stories: await getTopicStories('sports') },
   { slug: 'entertainment', label: 'Hollywood & Celebrities', stories: await getTopicStories('entertainment') },
 ].filter((section) => section.stories.length > 0);
+
+// Upcoming U.S. movie releases (editorially sourced; naturally rolls forward
+// on every scheduled newsroom build without assuming release dates are final).
+const movieToday = new Intl.DateTimeFormat('sv-SE', {
+  timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit',
+}).format(new Date());
+const upcomingFilms = movieCalendar.movies
+  .filter((m) => m.releaseDate >= movieToday)
+  .sort((a, b) => a.releaseDate.localeCompare(b.releaseDate))
+  .slice(0, 3);
 
 // Weather & Alerts — only show current (non-archived) stories
 const allWeather = await getByCategory('weather');
@@ -149,6 +160,24 @@ const mostRead = await getMostRead(5);
                 ))}
               </div>
             </section>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- =================== MOVIES / COMING SOON =================== -->
+  {upcomingFilms.length > 0 && (
+    <section class="section" aria-label="Upcoming US movie releases">
+      <div class="container">
+        <SectionHeader title="Coming to Theaters" subtitle="Confirmed listings and announced U.S. dates — schedules can change" href="/movies/" linkLabel="Full movies calendar" />
+        <div class="film-preview">
+          {upcomingFilms.map((movie) => (
+            <a class="film-preview-item" href="/movies/#release-calendar">
+              <span class="film-preview-date">{new Date(movie.releaseDate + 'T12:00:00Z').toLocaleDateString('en-US', {month:'short',day:'numeric',timeZone:'UTC'})}</span>
+              <strong>{movie.title}</strong>
+              <span class="film-preview-studio">{movie.distributor}</span>
+            </a>
           ))}
         </div>
       </div>
@@ -242,6 +271,14 @@ const mostRead = await getMostRead(5);
 </BaseLayout>
 
 <style>
+  .film-preview { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+  .film-preview-item { border:1px solid var(--color-border); padding:17px; display:flex; flex-direction:column; gap:7px; color:var(--color-text); }
+  .film-preview-item:hover { border-color:var(--color-red); color:var(--color-red); }
+  .film-preview-date { color:var(--color-red); font:800 .74rem var(--font-sans); text-transform:uppercase; letter-spacing:.07em; }
+  .film-preview-item strong { font-family:var(--font-serif); font-size:1.2rem; line-height:1.25; }
+  .film-preview-studio { color:var(--color-text-muted); font-size:.78rem; }
+  @media (max-width:650px) { .film-preview { grid-template-columns:1fr; } }
+
   /* Hero */
   .hero {
     padding: 28px 0 40px;
