@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T11:51:37.360Z",
-  "storyCount": 69,
+  "generatedAt": "2026-10-01T12:30:31.280Z",
+  "storyCount": 71,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1746,6 +1746,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/homenews/senate/6121776-gop-worried-data-center-midterms/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__056ce0f079054242",
+      "slug": "entertainment-julianne-moore-to-receive-lifetime-achievement-2026-10-01",
+      "articlePath": "src/content/articles/entertainment-julianne-moore-to-receive-lifetime-achievement-2026-10-01.md",
+      "title": "Julianne Moore to Receive Lifetime Achievement Award From ‘The Debut’ Director Jesse Eisenberg at Rome Film Festival",
+      "publishedAt": "2026-10-01T12:30:29.247Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/festivals/julianne-moore-award-jesse-eisenberg-rome-film-festival-1236894605/"
+      ],
+      "imagePath": "/images/entertainment-julianne-moore-to-receive-lifetime-achievement-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Air Force photo by Staff Sgt. Douglas Lorance",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStaff%20Sgt%20Moore%20receives%20STEP%20promotion%20(8744656).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__7e029912568b2e6b",
+      "slug": "sports-with-alex-ovechkin-back-and-a-young-core-locked-in-2026-10-01",
+      "articlePath": "src/content/articles/sports-with-alex-ovechkin-back-and-a-young-core-locked-in-2026-10-01.md",
+      "title": "With Alex Ovechkin back and a young core locked in, Capitals have ‘no excuses’",
+      "publishedAt": "2026-10-01T12:30:31.280Z",
+      "category": "sports",
+      "primarySource": "Washington Post — Sports",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/sports/2026/10/01/with-alex-ovechkin-back-young-core-locked-capitals-have-no-excuses/"
+      ],
+      "imagePath": "/images/sports-with-alex-ovechkin-back-and-a-young-core-locked-in-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Chip Griffin from Bow, NH, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAlex%20Ovechkin%20(2289428513).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
