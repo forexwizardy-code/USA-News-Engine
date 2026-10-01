@@ -47,6 +47,9 @@ jobs:
           node --check scripts/build-general-news-stories.mjs
           node --test scripts/tests/general-news-category.test.mjs
 
+      - name: Validate Movies release data
+        run: npm run validate:movies
+
       - name: Build
         run: npm run build
 
