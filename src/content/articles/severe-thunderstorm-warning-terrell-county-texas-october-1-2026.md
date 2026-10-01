@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a3f51785b5462e
 sourceOffice: "NWS Midland/Odessa TX"
 tags: ["Severe Thunderstorm Warning", "Weather", "Severe"]
 state: "TX"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
