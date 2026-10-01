@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T13:52:37.257Z",
-  "storyCount": 116,
+  "generatedAt": "2026-10-01T14:26:30.794Z",
+  "storyCount": 118,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -3427,6 +3427,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABoom%20Trike%20with%20Volkswagen%20trailer%20(3).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01",
+      "slug": "entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01",
+      "articlePath": "src/content/articles/entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01.md",
+      "publishedAt": "2026-10-01T14:26:25.230Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__311c5f422574d527"
+      ],
+      "allAlertIds": [
+        "gn__311c5f422574d527"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-01T14:26:25.230Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "https://www.flickr.com/photos/julioenriquez/",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarly%20Rae%20Jepsen%20-%20Gothic%20Theatre%2003.05.16%20(25568296865).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01",
+      "slug": "us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01",
+      "articlePath": "src/content/articles/us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01.md",
+      "publishedAt": "2026-10-01T14:26:30.793Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__c9fb833cbc8a433a"
+      ],
+      "allAlertIds": [
+        "gn__c9fb833cbc8a433a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-01T14:26:30.793Z",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01-licensed-graphic.jpg",
+      "heroImageRelation": "licensed-illustrative-graphic",
+      "heroImageCreator": "NOAA Library",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANOAA%20Commissioned%20Officer%20Corps%20101.webm",
       "breaking": false
     }
   ]

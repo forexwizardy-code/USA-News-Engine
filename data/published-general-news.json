@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T13:52:37.251Z",
-  "storyCount": 77,
+  "generatedAt": "2026-10-01T14:26:30.793Z",
+  "storyCount": 79,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1954,6 +1954,58 @@
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABoom%20Trike%20with%20Volkswagen%20trailer%20(3).jpg",
       "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__311c5f422574d527",
+      "slug": "entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01",
+      "articlePath": "src/content/articles/entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01.md",
+      "title": "Carly Rae Jepsen Announces ‘Day and Night’ North American 2027 Tour Dates",
+      "publishedAt": "2026-10-01T14:26:25.230Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/music/news/carly-rae-jepsen-day-and-night-2027-tour-dates-1236894169/"
+      ],
+      "imagePath": "/images/entertainment-carly-rae-jepsen-announces-day-and-night-north-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "https://www.flickr.com/photos/julioenriquez/",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarly%20Rae%20Jepsen%20-%20Gothic%20Theatre%2003.05.16%20(25568296865).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__c9fb833cbc8a433a",
+      "slug": "us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01",
+      "articlePath": "src/content/articles/us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01.md",
+      "title": "Studying this super El Niño could save lives. NOAA is scaling back research",
+      "publishedAt": "2026-10-01T14:26:30.793Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/01/nx-s1-5976905/super-el-nino-research-noaa-floods"
+      ],
+      "imagePath": "/images/us-studying-this-super-el-ni-o-could-save-lives-noaa-2026-10-01-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "NOAA Library",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANOAA%20Commissioned%20Officer%20Corps%20101.webm",
+      "imageRelation": "licensed-illustrative-graphic"
     }
   ]
 }
