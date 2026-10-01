@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T09:25:35.519Z",
-  "storyCount": 59,
+  "generatedAt": "2026-10-01T09:52:00.826Z",
+  "storyCount": 61,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1485,6 +1485,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACanada%20-%20United%20States%20border%20crossing%20at%20Vanceboro%2C%20Maine%20from%20St.%20Croix%2C%20New%20Brunswick.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1f98ced71577fc53",
+      "slug": "us-comic-how-the-census-gives-your-state-power-and-2026-10-01",
+      "articlePath": "src/content/articles/us-comic-how-the-census-gives-your-state-power-and-2026-10-01.md",
+      "title": "COMIC: How the census gives your state power (and what Trump wants to change)",
+      "publishedAt": "2026-10-01T09:51:54.073Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/01/nx-s1-5983684/trump-2030-census-overhaul-changes"
+      ],
+      "imagePath": "/images/us-comic-how-the-census-gives-your-state-power-and-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Christopher Brown from Houston, United States",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AComic%20Con%202013%20-%20How%20To%20Train%20Your%20Dragon%20(9336002952).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__22878a7f7406a7d6",
+      "slug": "politics-john-roberts-retreated-to-his-island-supreme-court-2026-10-01",
+      "articlePath": "src/content/articles/politics-john-roberts-retreated-to-his-island-supreme-court-2026-10-01.md",
+      "title": "John Roberts Retreated to His Island. Supreme Court Critics Found Him.",
+      "publishedAt": "2026-10-01T09:52:00.826Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/01/us/politics/supreme-court-roberts-maine.html"
+      ],
+      "imagePath": "/images/politics-john-roberts-retreated-to-his-island-supreme-court-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "James Maubert",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJohn%20Dryden%2C%20Poet%20and%20Playwright%20(3959224502).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
