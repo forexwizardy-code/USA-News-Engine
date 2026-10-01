@@ -24,6 +24,11 @@ const samples = [
   ['New film wins Oscar for best picture', 'The prime minister sent congratulations.', 'entertainment', 'entertainment'],
   ['Court blocks administration effort to withhold federal grants', '', 'us', 'politics'],
   ['Company reports quarterly earnings and revenue', 'Administration comments on stock market.', 'business', 'business'],
+  ['Hollywood actor announces starring role in upcoming movie', '', 'us', 'entertainment'],
+  ['Oscars ceremony reveals new film nominees', '', 'us', 'entertainment'],
+  ['Celebrity walks the red carpet at Los Angeles premiere', '', 'us', 'entertainment'],
+  ['Actor announces new television series on streaming service', '', 'us', 'entertainment'],
+  ['LA mayor candidates debate Hollywood job losses', '', 'entertainment', 'politics'],
   ['Unknown topic', 'A single incidental tech mention.', 'sports', 'sports'],
   ['', '', 'entertainment', 'entertainment'],
 ];
