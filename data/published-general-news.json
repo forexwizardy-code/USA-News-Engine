@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T10:25:16.992Z",
-  "storyCount": 63,
+  "generatedAt": "2026-10-01T10:51:15.619Z",
+  "storyCount": 65,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1589,6 +1589,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANew%20York-%20NEW%20YORK%20County%2C%20Enumeration%20District%20727%2C%20Sheet%20No.%2020B%20-%20DPLA%20-%20fb7d8d0639fe0298fcc99951a50b6da5.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__05c6bddfeaada86a",
+      "slug": "us-president-trump-s-kennedy-center-2026-10-01",
+      "articlePath": "src/content/articles/us-president-trump-s-kennedy-center-2026-10-01.md",
+      "title": "President Trump’s Kennedy Center",
+      "publishedAt": "2026-10-01T10:51:05.470Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/01/briefing/president-trumps-kennedy-center.html"
+      ],
+      "imagePath": "/images/us-president-trump-s-kennedy-center-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250813DT-0264%20President%20Donald%20Trump%20makes%20an%20announcement%20and%20holds%20a%20press%20conference%20in%20the%20Hall%20of%20Nations%20at%20the%20John%20F.%20Kennedy%20Center%20for%20the%20Performing%20Arts.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5b1095055c7ad538",
+      "slug": "politics-senate-adjourns-until-november-with-republicans-2026-10-01",
+      "articlePath": "src/content/articles/politics-senate-adjourns-until-november-with-republicans-2026-10-01.md",
+      "title": "Senate adjourns until November with Republicans fearful of losing majority",
+      "publishedAt": "2026-10-01T10:51:15.619Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/senate/6121941-senate-adjourns-midterm-campaigns/"
+      ],
+      "imagePath": "/images/politics-senate-adjourns-until-november-with-republicans-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Senate Democrats",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASenate%20Democrats%20urge%20Senate%20Republicans%20to%20do%20their%20job%2C%20(24628623674).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

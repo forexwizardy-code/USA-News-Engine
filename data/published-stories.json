@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T10:29:38.318Z",
-  "storyCount": 102,
+  "generatedAt": "2026-10-01T10:51:15.620Z",
+  "storyCount": 104,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -3021,6 +3021,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANew%20York-%20NEW%20YORK%20County%2C%20Enumeration%20District%20727%2C%20Sheet%20No.%2020B%20-%20DPLA%20-%20fb7d8d0639fe0298fcc99951a50b6da5.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-president-trump-s-kennedy-center-2026-10-01",
+      "slug": "us-president-trump-s-kennedy-center-2026-10-01",
+      "articlePath": "src/content/articles/us-president-trump-s-kennedy-center-2026-10-01.md",
+      "publishedAt": "2026-10-01T10:51:05.470Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__05c6bddfeaada86a"
+      ],
+      "allAlertIds": [
+        "gn__05c6bddfeaada86a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-01T10:51:05.470Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-president-trump-s-kennedy-center-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250813DT-0264%20President%20Donald%20Trump%20makes%20an%20announcement%20and%20holds%20a%20press%20conference%20in%20the%20Hall%20of%20Nations%20at%20the%20John%20F.%20Kennedy%20Center%20for%20the%20Performing%20Arts.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-senate-adjourns-until-november-with-republicans-2026-10-01",
+      "slug": "politics-senate-adjourns-until-november-with-republicans-2026-10-01",
+      "articlePath": "src/content/articles/politics-senate-adjourns-until-november-with-republicans-2026-10-01.md",
+      "publishedAt": "2026-10-01T10:51:15.619Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5b1095055c7ad538"
+      ],
+      "allAlertIds": [
+        "gn__5b1095055c7ad538"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-01T10:51:15.619Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-senate-adjourns-until-november-with-republicans-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Senate Democrats",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASenate%20Democrats%20urge%20Senate%20Republicans%20to%20do%20their%20job%2C%20(24628623674).jpg",
       "breaking": false
     }
   ]
