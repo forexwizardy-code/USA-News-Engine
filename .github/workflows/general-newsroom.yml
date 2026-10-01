@@ -37,6 +37,37 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      # Test the actual deployed sitemap endpoints (including a Googlebot user agent).
+      # A successful Astro build alone cannot prove that Cloudflare serves these URLs.
+      - name: Diagnose public sitemap access
+        continue-on-error: true
+        run: |
+          set -e
+          BASE="https://usa-news-engine.forexwizardy.workers.dev"
+          for path in "/robots.txt" "/sitemap-index.xml" "/sitemap-0.xml" "/news-sitemap.xml"; do
+            for agent in "Mozilla/5.0" "Googlebot"; do
+              header=$(mktemp)
+              body=$(mktemp)
+              code=$(curl -sSL --retry 2 --max-time 20 -A "$agent" -D "$header" -o "$body" -w "%{http_code}" "$BASE$path")
+              type=$(grep -i '^content-type:' "$header" | tail -1 | tr -d '\r' || true)
+              echo "SITEMAP CHECK path=$path agent=$agent status=$code $type bytes=$(wc -c < "$body")"
+              test "$code" = "200"
+              if [ "$path" = "/robots.txt" ]; then
+                grep -q 'Sitemap:' "$body"
+              else
+                python3 - "$body" <<'PY'
+          import sys
+          import xml.etree.ElementTree as ET
+          root=ET.parse(sys.argv[1]).getroot()
+          assert root.tag in ('{http://www.sitemaps.org/schemas/sitemap/0.9}sitemapindex',
+                              '{http://www.sitemaps.org/schemas/sitemap/0.9}urlset'), root.tag
+          print('XML parse: PASS', root.tag, len(root))
+          PY
+              fi
+              rm -f "$header" "$body"
+            done
+          done
+
       - name: Repair confirmed General News image mismatches
         run: npm run repair:general-images
 
