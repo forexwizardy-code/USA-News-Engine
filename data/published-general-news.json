@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T09:52:00.826Z",
-  "storyCount": 61,
+  "generatedAt": "2026-10-01T10:25:16.992Z",
+  "storyCount": 63,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -1537,6 +1537,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJohn%20Dryden%2C%20Poet%20and%20Playwright%20(3959224502).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2e36f44718d027e0",
+      "slug": "us-new-york-times-reporting-through-a-front-page-that-2026-10-01",
+      "articlePath": "src/content/articles/us-new-york-times-reporting-through-a-front-page-that-2026-10-01.md",
+      "title": "New York Times Reporting Through a Front Page That Never Published and More",
+      "publishedAt": "2026-10-01T10:25:02.166Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/01/business/new-york-times-journalism-reporting-objects.html"
+      ],
+      "imagePath": "/images/us-new-york-times-reporting-through-a-front-page-that-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The New York Times",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHall%E2%80%93Mills%20murder%20case%20in%20The%20New%20York%20Times%20on%20September%2017%2C%201922.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__6066b5e89437d06a",
+      "slug": "politics-lawler-trails-conley-in-battleground-new-york-2026-10-01",
+      "articlePath": "src/content/articles/politics-lawler-trails-conley-in-battleground-new-york-2026-10-01.md",
+      "title": "Lawler trails Conley in battleground New York House contest: Poll",
+      "publishedAt": "2026-10-01T10:25:16.992Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6121535-conley-leads-lawler-polling-ny-17/"
+      ],
+      "imagePath": "/images/politics-lawler-trails-conley-in-battleground-new-york-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Department of Commerce. Bureau of the Census. 1913-1/1/1972",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANew%20York-%20NEW%20YORK%20County%2C%20Enumeration%20District%20727%2C%20Sheet%20No.%2020B%20-%20DPLA%20-%20fb7d8d0639fe0298fcc99951a50b6da5.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
