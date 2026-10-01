@@ -41,6 +41,12 @@ jobs:
       - name: Validate publishing
         run: npm run validate:publishing
 
+      - name: Check Hollywood newsroom logic
+        run: |
+          node --check scripts/fetch-general-news.mjs
+          node --check scripts/build-general-news-stories.mjs
+          node --test scripts/tests/general-news-category.test.mjs
+
       - name: Build
         run: npm run build
 
