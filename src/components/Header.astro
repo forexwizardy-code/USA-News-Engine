@@ -30,6 +30,7 @@ const navItems = [
       href: `/${c.slug}/`,
       match: `/${c.slug}`,
     })),
+  { label: 'Movies', href: '/movies/', match: '/movies' },
   { label: LATEST.label, href: `/${LATEST.slug}/`, match: `/${LATEST.slug}` },
 ];
 
@@ -233,9 +234,9 @@ const isActive = (match: string) =>
     border-bottom-color: var(--color-red);
   }
 
-  /* The Hollywood tab makes eight primary links; keep medium-width desktop
+  /* Hollywood and Movies expand the primary links; keep medium-width desktop
      navigation compact without wrapping into an awkward second toolbar row. */
-  @media (min-width: 768px) and (max-width: 1150px) {
+  @media (min-width: 1024px) and (max-width: 1330px) {
     .nav-link {
       padding: 14px 8px;
       font-size: 0.75rem;
@@ -243,10 +244,10 @@ const isActive = (match: string) =>
     }
   }
 
-  /* Mobile / small tablets: below 768px the full eight-link nav no longer fits
+  /* Mobile / small tablets: below 1024px the full nine-link nav no longer fits
      comfortably, so we switch to the hamburger menu. Tablets (768px+) and
      desktops keep the full horizontal navigation. */
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     .masthead-inner {
       justify-content: flex-start;
     }
@@ -323,7 +324,7 @@ const isActive = (match: string) =>
   });
   // Close on resize to desktop/tablet (where the hamburger is hidden).
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 767) {
+    if (window.innerWidth > 1023) {
       menu?.setAttribute('data-open', 'false');
       toggle?.setAttribute('aria-expanded', 'false');
     }
