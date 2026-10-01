@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 3000 2>&1 | tee dev.log",
     "start": "astro dev --host 0.0.0.0 --port 3000 2>&1 | tee dev.log",
-    "build": "node scripts/validate-article-images.mjs && astro build && node scripts/validate-launch.mjs",
+    "build": "node scripts/validate-movies.mjs && node scripts/validate-article-images.mjs && astro build && node scripts/validate-launch.mjs",
     "preview": "astro preview --port 3000",
     "check": "astro check",
     "fetch:nws": "node scripts/fetch-nws-alerts.mjs",
@@ -62,7 +62,8 @@
     "validate:general": "node scripts/validate-general-news.mjs",
     "newsroom:general": "node scripts/run-general-newsroom.mjs",
     "validate:images": "node scripts/validate-article-images.mjs",
-    "repair:general-images": "node scripts/repair-general-image-mismatches.mjs"
+    "repair:general-images": "node scripts/repair-general-image-mismatches.mjs",
+    "validate:movies": "node scripts/validate-movies.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
