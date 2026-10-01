@@ -108,4 +108,6 @@ jobs:
 
       - name: No-change notification
         if: steps.changes.outputs.changed == 'false' || steps.config.outputs.publishing != 'true'
-        run: echo "✓ Run completed — no content changes to publish or deploy (publishing=$(steps.config.outputs.publishing))."
+        env:
+          PUBLISHING: ${{ steps.config.outputs.publishing }}
+        run: echo "✓ Run completed — no content changes to publish or deploy (publishing=$PUBLISHING)."
