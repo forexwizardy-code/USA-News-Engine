@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bffa433c5fc839
 sourceOffice: "NWS Topeka KS"
 tags: ["Tornado Watch", "Weather", "Extreme"]
 state: "KS"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T02:27:29.075Z",
-  "imageCount": 6,
+  "generatedAt": "2026-10-01T04:29:38.527Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -59,17 +59,6 @@
       "sourceOrganization": "John Myers (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:48.901Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/d/d2/Heavy_Snow_Over_Kansas_%28MODIS_2026-01-14%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHeavy%20Snow%20Over%20Kansas%20(MODIS%202026-01-14).jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Heavy_Snow_Over_Kansas_%28MODIS_2026-01-14%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "MODIS Land Rapid Response Team, NASA GSFC",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "MODIS Land Rapid Response Team, NASA GSFC (Wikimedia Commons)",
-      "imageRelation": "illustrative-file-photo",
-      "firstUsedAt": "2026-10-01T02:27:25.083Z",
       "storiesUsingImage": []
     }
   }
