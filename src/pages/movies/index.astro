@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getByCategory } from '../../lib/articles';
+import calendar from '../../../data/upcoming-movies.json';
+
+// Show the date in the publication's U.S. editorial timezone. Expired release
+// entries disappear on the next static build; their source data remains auditable.
+const todayUS = new Intl.DateTimeFormat('sv-SE', {
+  timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit',
+}).format(new Date());
+const upcoming = calendar.movies
+  .filter((movie) => movie.releaseDate >= todayUS)
+  .sort((a, b) => a.releaseDate.localeCompare(b.releaseDate) || a.title.localeCompare(b.title));
+
+const monthMap = new Map<string, typeof upcoming>();
+for (const movie of upcoming) {
+  const key = new Date(movie.releaseDate + 'T12:00:00Z').toLocaleDateString('en-US', {
+    month: 'long', year: 'numeric', timeZone: 'UTC',
+  });
+  if (!monthMap.has(key)) monthMap.set(key, []);
+  monthMap.get(key)!.push(movie);
+}
+const months = [...monthMap].map(([label, movies]) => ({ label, movies }));
+const formatRelease = (date: string) => new Date(date + 'T12:00:00Z').toLocaleDateString('en-US', {
+  weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+});
+
+// Hollywood articles refresh automatically when the existing General News
+// newsroom publishes and redeploys new entertainment content.
+const allEntertainment = await getByCategory('entertainment');
+const filmTerms = /\b(movies?|films?|cinema|screenplay|screenwriter|film festival|director|directed|casting|cast|box office|trailer|premiere|theaters?|hollywood|oscars?|academy awards|sequel|franchise|starring|studio)\b/i;
+const movieNews = allEntertainment
+  .filter((article) => filmTerms.test(article.data.title + ' ' + article.data.description))
+  .slice(0, 9);
+const movieSlugs = new Set(movieNews.map((article) => article.data.slug));
+const celebrityNews = allEntertainment.filter((article) => !movieSlugs.has(article.data.slug)).slice(0, 6);
+const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Movies' }];
+---
+
+<BaseLayout
+  title="Upcoming Movies 2026–27: Release Dates, Cast & Hollywood News"
+  description="Track announced U.S. movie release dates and verified casts, with source links, trailers and fresh Hollywood and celebrity reporting."
+  canonicalPath="/movies/"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="container movies-container">
+    <Breadcrumbs items={breadcrumbs} />
+    <header class="movies-intro">
+      <p class="eyebrow">US NEWS ENGINE / ENTERTAINMENT DESK</p>
+      <h1>Movies <span>&amp; Hollywood</span></h1>
+      <p class="dek">Coming to U.S. theaters: announced release dates, confirmed film information, cast and crew, official trailer links and our latest entertainment reporting.</p>
+      <div class="quick-links" aria-label="Movie page sections">
+        <a href="#release-calendar">Release calendar</a>
+        <a href="#movie-news">Movie news</a>
+        <a href="#celebrity-news">Celebrity updates</a>
+        <a href="/entertainment/">All Hollywood news →</a>
+      </div>
+    </header>
+
+    <section id="release-calendar" class="calendar-section" aria-labelledby="release-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMING SOON / U.S. THEATRICAL</p>
+          <h2 id="release-heading">Upcoming movie releases</h2>
+        </div>
+        <p class="calendar-count">{upcoming.length} scheduled films</p>
+      </div>
+      <p class="calendar-note">
+        A curated schedule for {calendar.market}. Dates are provisional and can shift.
+        Calendar last source-checked <time datetime={calendar.updatedAt}>{formatRelease(calendar.updatedAt)}</time>.
+        Where cast or trailer details are not linked to evidence, we do not guess them.
+      </p>
+
+      {months.length === 0 ? (
+        <p class="empty">No future titles currently verified. See <a href="/entertainment/">Hollywood updates</a> while the release calendar is refreshed.</p>
+      ) : months.map((month) => (
+        <div class="month-block">
+          <h3 class="month-title">{month.label}</h3>
+          <div class="release-grid">
+            {month.movies.map((movie) => (
+              <article class="release-card">
+                <div class="release-top">
+                  <div class="date-tile">
+                    <span>{new Date(movie.releaseDate + 'T12:00:00Z').toLocaleDateString('en-US', {month: 'short',timeZone:'UTC'})}</span>
+                    <strong>{movie.releaseDate.slice(8)}</strong>
+                  </div>
+                  <div class="release-main">
+                    <p class="release-label">{movie.releaseFormat} · {movie.releaseMarket}</p>
+                    <h4>{movie.title}</h4>
+                    <p class="film-date"><time datetime={movie.releaseDate}>{formatRelease(movie.releaseDate)}</time></p>
+                    <p class="studio">{movie.distributor}</p>
+                  </div>
+                </div>
+                {movie.description && <p class="description">{movie.description}</p>}
+                {movie.genres.length > 0 && (
+                  <p class="genres">{movie.genres.join(' / ')}</p>
+                )}
+                <details class="more-details">
+                  <summary>Cast, crew &amp; verified sources</summary>
+                  <div class="details-body">
+                    <p><strong>Cast:</strong> {movie.cast.length ? movie.cast.join(', ') : 'Not independently verified for this listing yet.'}</p>
+                    <p><strong>Director:</strong> {movie.director || 'Not yet independently verified for this listing.'}</p>
+                    <p><strong>Planned release:</strong> {formatRelease(movie.releaseDate)} — subject to change.</p>
+                    <div class="source-links">
+                      <a href={movie.sourceUrl} target="_blank" rel="noopener noreferrer">Release-date source ↗</a>
+                      {movie.castSourceUrl && <a href={movie.castSourceUrl} target="_blank" rel="noopener noreferrer">Cast source ↗</a>}
+                      {movie.officialUrl && <a href={movie.officialUrl} target="_blank" rel="noopener noreferrer">Official film site ↗</a>}
+                      {movie.officialTrailerUrl && <a href={movie.officialTrailerUrl} target="_blank" rel="noopener noreferrer">Official trailer ↗</a>}
+                    </div>
+                  </div>
+                </details>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+      <p class="source-policy">
+        Release information is checked against distributor announcements and the
+        <a href="https://www.the-numbers.com/movies/release-schedule/2026" target="_blank" rel="noopener noreferrer">North American theatrical schedule</a>.
+        This is not a real-time ticketing service. Revisit the cited distributor shortly before a planned release.
+      </p>
+    </section>
+
+    <section id="movie-news" class="news-section" aria-labelledby="movie-news-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE LATEST REPORTING</p>
+          <h2 id="movie-news-heading">Movies, premieres &amp; film news</h2>
+        </div>
+        <a class="more-link" href="/entertainment/">Hollywood archive →</a>
+      </div>
+      {movieNews.length ? (
+        <div class="news-grid">
+          {movieNews.map((article) => <ArticleCard article={article} variant="default" />)}
+        </div>
+      ) : <p class="empty">Movie stories are being collected from our entertainment news sources. Check back after the next newsroom update.</p>}
+    </section>
+
+    <section id="celebrity-news" class="news-section celebrity-section" aria-labelledby="celebrity-news-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STARS &amp; ENTERTAINMENT</p>
+          <h2 id="celebrity-news-heading">Celebrity &amp; Hollywood updates</h2>
+        </div>
+        <a class="more-link" href="/entertainment/">All celebrity news →</a>
+      </div>
+      <p class="disclosure">Interviews, appearances, announcements and sourced entertainment coverage. Private rumors and serious personal allegations are not auto-published as fact.</p>
+      {celebrityNews.length ? (
+        <div class="news-grid">
+          {celebrityNews.map((article) => <ArticleCard article={article} variant="default" />)}
+        </div>
+      ) : <p class="empty">Verified celebrity updates will appear here as they are published.</p>}
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .movies-container { padding-bottom: 64px; }
+  .movies-intro { margin: 18px 0 48px; padding: 36px 34px; background: var(--color-ink); color: #fff; border-top: 5px solid var(--color-red); }
+  .eyebrow { font-family: var(--font-sans); color: #a72b34; font-size: .73rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .movies-intro .eyebrow { color: #ff949a; }
+  .movies-intro h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.08; margin: 10px 0 18px; }
+  .movies-intro h1 span { color: #f2a4a7; }
+  .dek { font-size: 1.08rem; max-width: 68ch; line-height: 1.65; color: #e6e8eb; }
+  .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .quick-links a { color: #fff; border: 1px solid #657080; padding: 9px 13px; font-size: .82rem; font-weight: 700; }
+  .quick-links a:hover { border-color: #fff; background: #3b424a; }
+  .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin: 0 0 20px; padding-bottom: 18px; border-bottom: 2px solid var(--color-text); }
+  .section-heading h2 { font-family: var(--font-serif); font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: 7px; }
+  .calendar-count { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--color-text-muted); }
+  .calendar-note, .source-policy, .disclosure { font-size: .9rem; line-height: 1.65; color: var(--color-text-muted); max-width: 91ch; }
+  .calendar-note { margin: 0 0 27px; }
+  .calendar-note time { font-weight: 700; color: var(--color-text); }
+  .month-block { margin: 0 0 35px; }
+  .month-title { border-left: 4px solid var(--color-red); padding: 4px 0 4px 12px; font-family: var(--font-sans); font-size: 1.03rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 15px; }
+  .release-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; }
+  .release-card { background: var(--color-surface); border: 1px solid var(--color-border); padding: 20px; display:flex; flex-direction: column; min-width: 0; }
+  .release-top { display: flex; align-items: flex-start; gap: 15px; }
+  .date-tile { background: var(--color-ink); color: white; min-width: 59px; padding: 8px; text-align: center; }
+  .date-tile span { display: block; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing:.08em; }
+  .date-tile strong { display:block; font-size: 1.7rem; line-height: 1.15; }
+  .release-main { flex: 1; min-width: 0; }
+  .release-label { text-transform: uppercase; font-size: .67rem; letter-spacing: .05em; color: var(--color-text-muted); font-weight: 700; }
+  .release-main h4 { font-family: var(--font-serif); font-size: 1.43rem; line-height: 1.23; margin: 6px 0 7px; }
+  .film-date { color: var(--color-red); font-weight: 800; font-size: .83rem; }
+  .studio { margin-top: 5px; color: var(--color-text-muted); font-size: .8rem; }
+  .description { margin-top: 14px; font-size: .91rem; line-height: 1.55; }
+  .genres { margin-top: 10px; font-size: .74rem; font-weight: 800; color: var(--color-text-muted); letter-spacing: .06em; text-transform: uppercase; }
+  .more-details { margin-top: auto; padding-top: 16px; }
+  .more-details summary { cursor: pointer; font-size: .83rem; font-weight: 800; color: var(--color-red); padding: 9px 0 2px; }
+  .more-details summary:hover { text-decoration: underline; }
+  .details-body { margin-top: 13px; padding-top: 13px; border-top: 1px solid var(--color-border); }
+  .details-body p { font-size: .83rem; line-height: 1.55; margin-bottom: 7px; }
+  .source-links { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 14px; }
+  .source-links a { color: var(--color-red); font-size:.79rem; font-weight:700; text-decoration: underline; }
+  .source-policy { border-top: 1px solid var(--color-border); padding-top: 14px; margin: 6px 0 52px; }
+  .source-policy a { color: var(--color-red); text-decoration:underline; }
+  .news-section { margin-top: 50px; }
+  .news-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px; margin-top: 22px; }
+  .more-link { white-space: nowrap; font-size: .82rem; color: var(--color-red); font-weight: 800; }
+  .disclosure { margin: -3px 0 17px; }
+  .celebrity-section { padding-top: 12px; }
+  .empty { border: 1px dashed var(--color-border); padding: 25px; color: var(--color-text-muted); font-size: .95rem; }
+  .empty a { color: var(--color-red); }
+  @media (max-width: 960px) { .news-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 690px) {
+    .movies-intro { padding: 27px 20px; }
+    .release-grid, .news-grid { grid-template-columns: 1fr; }
+    .section-heading { align-items: start; }
+    .section-heading h2 { font-size: 1.65rem; }
+    .more-link, .calendar-count { font-size: .72rem; }
+  }
+</style>
