@@ -13,7 +13,7 @@ export const SITE_URL = 'https://usa-news-engine.forexwizardy.workers.dev';
 export const SITE_NAME = 'US News Engine';
 export const SITE_TAGLINE = 'Source-driven news from across America';
 export const SITE_DESCRIPTION =
-  'US News Engine delivers fast, factual coverage of U.S. news, weather, recalls, consumer affairs, and science — all in one place.';
+  'US News Engine delivers source-driven coverage of U.S. news, weather, recalls, consumer affairs, science, Hollywood and entertainment — all in one place.';
 export const SITE_LOCALE = 'en_US';
 export const SITE_LANG = 'en';
 
@@ -110,11 +110,13 @@ export const CATEGORIES: CategoryDef[] = [
       'Artificial intelligence, cybersecurity, consumer tech, and the industry shaping America\u2019s future.',
   },
   {
+    // Keep the existing /entertainment/ URL to preserve canonical URLs and SEO.
+    // "Hollywood" is the visible destination for celebrity and entertainment coverage.
     slug: 'entertainment',
-    label: 'Entertainment',
-    nav: false,
+    label: 'Hollywood',
+    nav: true,
     description:
-      'Film, music, streaming, and cultural developments from across the entertainment industry.',
+      'U.S. actors and celebrities, film and television, casting, premieres, awards, streaming, and verified entertainment developments. Controversial claims require documented sourcing and editorial review.',
   },
   {
     slug: 'sports',
