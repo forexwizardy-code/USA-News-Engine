@@ -146,6 +146,9 @@ function freshnessStatus(ageMs) {
 const US_HIGH_SIGNALS = [
   /\bunited states\b/i, /\bu\.s\.\b/i, /\bamerican\b/i, /\bwashington\b/i,
   /\bwhite house\b/i, /\bcongress\b/i, /\bsenate\b/i, /\bhouse of representatives\b/i,
+  // U.S.-based film and awards coverage can be nationally relevant even when
+  // a specific headline doesn't repeat "United States" or "Los Angeles".
+  /\bhollywood\b/i, /\bacademy awards\b/i, /\boscars?\b/i, /\bemmys?\b/i,
   /\bsupreme court\b/i, /\bdepartment of\b/i, /\bfederal\b/i, /\bpresident (?:trump|biden|harris)\b/i,
   /\bU\.S\. (?:military|troops|forces|officials|government|embassy|citizens|personnel)\b/i,
   /\bamerican (?:troops|soldiers|citizens|officials|companies|workers|consumers)\b/i,
@@ -230,6 +233,14 @@ function isRoutineSportsScore(story) {
  * publisher families. Otherwise: status = needs-more-sourcing.
  */
 function assessSingleSourceRule(story) {
+  // A multi-feed headline is not evidence that a personal allegation is true:
+  // multiple entertainment outlets sometimes repeat a single rumor. Keep
+  // sensitive celebrity claims out of unattended autopublishing altogether.
+  const entertainmentText = `${story.title || ''} ${story.description || ''}`.toLowerCase();
+  if (story.category === 'entertainment' &&
+      /\b(rumou?rs?|unconfirmed|alleg(?:e|ed|ation|ations)?|accus(?:e|ed|ation|ations)?|scandal|controvers(?:y|ies|ial)|cheat(?:ing|ed)?|affair|divorc(?:e|ing)|breakup|break-up|dating rumor|relationship rumor|feud|restraining order|lawsuit|harass(?:ment|ed)?|abuse|assault|arrest(?:ed)?|charg(?:e|ed|es)|investigat(?:e|ed|ion)|leaked? (?:photo|video|message)|secret relationship)\b/i.test(entertainmentText)) {
+    return { ok: false, reason: 'Sensitive celebrity claim requires editorial review and primary-source verification', status: 'needs-editorial-review' };
+  }
   if (story.independentPublisherCount >= 2) {
     return { ok: true, reason: 'multiple independent publishers' };
   }
