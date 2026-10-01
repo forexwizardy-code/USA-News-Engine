@@ -107,6 +107,37 @@ const SOURCES = [
     feedUrl: 'https://feeds.npr.org/1004/rss.xml',
   },
   {
+    sourceName: 'NPR Movies',
+    sourceType: 'publisher',
+    publisherFamily: 'NPR',
+    category: 'entertainment',
+    feedUrl: 'https://feeds.npr.org/1045/rss.xml',
+  },
+  // Dedicated Hollywood coverage; individual source failures are isolated by
+  // the existing feed-health system, and content is for discovery/attribution.
+  {
+    sourceName: 'Variety',
+    sourceType: 'publisher',
+    publisherFamily: 'Variety',
+    category: 'entertainment',
+    feedUrl: 'https://variety.com/feed/',
+  },
+  {
+    sourceName: 'Deadline',
+    sourceType: 'publisher',
+    publisherFamily: 'Deadline',
+    category: 'entertainment',
+    feedUrl: 'https://deadline.com/feed/',
+  },
+  {
+    sourceName: 'The Hollywood Reporter',
+    sourceType: 'publisher',
+    publisherFamily: 'Hollywood Reporter',
+    category: 'entertainment',
+    feedUrl: 'https://www.hollywoodreporter.com/feed/',
+  },
+
+  {
     sourceName: 'NPR Sports',
     sourceType: 'publisher',
     publisherFamily: 'NPR',
