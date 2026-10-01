@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.489130e5f87f9a
 sourceOffice: "NWS Wichita KS"
 tags: ["Tornado Warning", "Weather", "Extreme"]
 state: "KS"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
