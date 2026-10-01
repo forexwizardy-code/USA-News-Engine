@@ -36,6 +36,9 @@ const rest = showLead ? items.slice(1) : items;
       <h1 class="listing-title">{title}</h1>
       <p class="listing-desc">{description}</p>
       <p class="listing-count">{items.length} stor{items.length === 1 ? 'y' : 'ies'}</p>
+      {canonicalPath === '/entertainment/' && (
+        <p class="movies-bridge"><a href="/movies/">Explore the Movies desk → Release calendar, confirmed casts, official trailers and film news</a></p>
+      )}
     </header>
 
     {
@@ -87,6 +90,9 @@ const rest = showLead ? items.slice(1) : items;
     margin-top: 10px;
     max-width: 70ch;
   }
+  .movies-bridge { margin-top: 20px; padding: 13px 17px; background: var(--color-ink); }
+  .movies-bridge a { color: #fff; font-size: .89rem; font-weight: 700; text-decoration: none; }
+  .movies-bridge a:hover { text-decoration: underline; }
   .listing-count {
     margin-top: 12px;
     font-size: 0.78rem;
