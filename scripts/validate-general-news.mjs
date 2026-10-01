@@ -413,9 +413,9 @@ async function main() {
     check('G18', 'Sitemap excludes /preview/general/ URLs', true, 'dist not built yet — sitemap will be checked after build');
   }
 
-  // --- 9. DEMO_NOINDEX remains true ---
+  // --- 9. Production articles must be indexable; preview pages remain noindex ---
   const constsText = await readFile(join(PROJECT_DIR, 'src', 'consts.ts'), 'utf8');
-  check('G19', 'DEMO_NOINDEX = true (indexing OFF)', /DEMO_NOINDEX\s*=\s*true/.test(constsText));
+  check('G19', 'DEMO_NOINDEX = false (production indexing ON)', /DEMO_NOINDEX\s*=\s*false/.test(constsText));
 
   // --- Report ---
   console.log('------------------------------------------------------------');
