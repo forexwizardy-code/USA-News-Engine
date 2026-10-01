@@ -38,7 +38,7 @@ export function classifyGeneralNewsCategory(title, description = '', feedCategor
   if (/\b(tariffs?|stocks?|shares?|wall street|nasdaq|s&p 500|inflation|interest rates?|federal reserve|economic|economy|earnings?|quarterly revenue|ipo|bankruptcy|merger|acquisition|investors?|trade deal|business)\b/.test(h)) {
     return 'business';
   }
-  if (/\b(film|movies?|actor|actress|celebrity|album|concert|music|musician|hollywood|grammys?|oscars?|netflix|disney|spotify|box office|tv show|television|harry styles|taylor swift|jimmy fallon|streaming series)\b/.test(h)) {
+  if (/\b(films?|movies?|actors?|actresses|actress|celebrit(?:y|ies)|album|concert|music|musician|hollywood|red carpet|film premiere|movie premiere|casting|grammys?|oscars?|emmys?|academy awards|netflix|disney|spotify|box office|tv show|television|harry styles|taylor swift|jimmy fallon|streaming series)\b/.test(h)) {
     return 'entertainment';
   }
   if (/\b(nfl|nba|wnba|mlb|nhl|soccer|football|basketball|baseball|hockey|tennis|golf|olympics?|playoffs?|championship|training camp|wizards|super bowl|world series|tournament)\b/.test(h)) {
