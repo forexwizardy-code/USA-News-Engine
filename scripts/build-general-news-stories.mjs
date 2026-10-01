@@ -237,7 +237,7 @@ function assessSingleSourceRule(story) {
   // multiple entertainment outlets sometimes repeat a single rumor. Keep
   // sensitive celebrity claims out of unattended autopublishing altogether.
   const entertainmentText = `${story.title || ''} ${story.description || ''}`.toLowerCase();
-  if (story.category === 'entertainment' &&
+  if ((story.category === 'entertainment' || story.fromEntertainmentFeed) &&
       /\b(rumou?rs?|unconfirmed|alleg(?:e|ed|ation|ations)?|accus(?:e|ed|ation|ations)?|scandal|controvers(?:y|ies|ial)|cheat(?:ing|ed)?|affair|divorc(?:e|ing)|breakup|break-up|dating rumor|relationship rumor|feud|restraining order|lawsuit|harass(?:ment|ed)?|abuse|assault|arrest(?:ed)?|charg(?:e|ed|es)|investigat(?:e|ed|ion)|leaked? (?:photo|video|message)|secret relationship)\b/i.test(entertainmentText)) {
     return { ok: false, reason: 'Sensitive celebrity claim requires editorial review and primary-source verification', status: 'needs-editorial-review' };
   }
@@ -437,6 +437,9 @@ async function main() {
       independentPublisherCount,
       hasGovernmentSource: cluster.some((r) => r.sourceType === 'government'),
       category,
+      // Use the originating feed as a second signal: a celebrity allegation
+      // misclassified as general U.S. news must not bypass editorial review.
+      fromEntertainmentFeed: cluster.some((r) => r.sourceCategory === 'entertainment'),
       title: primary.title,
       description: primary.description,
     });
