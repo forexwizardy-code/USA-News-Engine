@@ -173,7 +173,7 @@ const mostRead = await getMostRead(5);
         <SectionHeader title="Coming to Theaters" subtitle="Confirmed listings and announced U.S. dates — schedules can change" href="/movies/" linkLabel="Full movies calendar" />
         <div class="film-preview">
           {upcomingFilms.map((movie) => (
-            <a class="film-preview-item" href="/movies/#release-calendar">
+            <a class="film-preview-item" href={`/movies/#${movie.slug}`}>
               <span class="film-preview-date">{new Date(movie.releaseDate + 'T12:00:00Z').toLocaleDateString('en-US', {month:'short',day:'numeric',timeZone:'UTC'})}</span>
               <strong>{movie.title}</strong>
               <span class="film-preview-studio">{movie.distributor}</span>
