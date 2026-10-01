@@ -67,8 +67,20 @@ jobs:
           fi
 
           VERIFY_URL="https://usa-news-engine.forexwizardy.workers.dev/googled0f9d56f69cf9cd9.html"
-          VERIFY_BODY=$(curl -fsS --max-time 20 "$VERIFY_URL")
-          echo "Google verification URL fetched"
+          # Workers static assets default to auto-trailing-slash: /file.html
+          # responds with 307 to /file. Follow the redirect before comparing
+          # the token, rather than comparing the HTML redirect response.
+          VERIFY_FILE=$(mktemp)
+          VERIFY_HTTP=$(curl -sSL --retry 2 --max-time 25 -o "$VERIFY_FILE" -w "%{http_code}" "$VERIFY_URL")
+          echo "Google verification final HTTP status (following redirects): $VERIFY_HTTP"
+          if [ "$VERIFY_HTTP" != "200" ]; then
+            echo "GOOGLE VERIFICATION URL FAILED — expected 200"
+            rm -f "$VERIFY_FILE"
+            exit 1
+          fi
+          VERIFY_BODY=$(cat "$VERIFY_FILE")
+          rm -f "$VERIFY_FILE"
+          echo "Google verification content fetched after redirects"
           if [ "$VERIFY_BODY" != "google-site-verification: googled0f9d56f69cf9cd9.html" ]; then
             echo "GOOGLE VERIFICATION CHECK FAILED"
             exit 1
