@@ -233,7 +233,17 @@ const isActive = (match: string) =>
     border-bottom-color: var(--color-red);
   }
 
-  /* Mobile / small tablets: below 768px the full 7-link nav no longer fits
+  /* The Hollywood tab makes eight primary links; keep medium-width desktop
+     navigation compact without wrapping into an awkward second toolbar row. */
+  @media (min-width: 768px) and (max-width: 1150px) {
+    .nav-link {
+      padding: 14px 8px;
+      font-size: 0.75rem;
+      letter-spacing: 0.035em;
+    }
+  }
+
+  /* Mobile / small tablets: below 768px the full eight-link nav no longer fits
      comfortably, so we switch to the hamburger menu. Tablets (768px+) and
      desktops keep the full horizontal navigation. */
   @media (max-width: 767px) {
