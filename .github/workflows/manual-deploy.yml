@@ -69,6 +69,13 @@ jobs:
             exit 1
           fi
 
+          MOVIES_HTTP=$(curl -sSL -o /dev/null -w "%{http_code}" --max-time 20 "https://usa-news-engine.forexwizardy.workers.dev/movies/")
+          echo "Movies hub HTTP status: $MOVIES_HTTP"
+          if [ "$MOVIES_HTTP" != "200" ]; then
+            echo "MOVIES HUB LIVE CHECK FAILED"
+            exit 1
+          fi
+
           VERIFY_URL="https://usa-news-engine.forexwizardy.workers.dev/googled0f9d56f69cf9cd9.html"
           # Workers static assets default to auto-trailing-slash: /file.html
           # responds with 307 to /file. Follow the redirect before comparing
