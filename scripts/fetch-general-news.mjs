@@ -136,6 +136,21 @@ const SOURCES = [
     category: 'entertainment',
     feedUrl: 'https://www.hollywoodreporter.com/feed/',
   },
+  // U.S. broadcaster feeds offer a fallback if specialist sites rate-limit RSS.
+  {
+    sourceName: 'ABC News — Entertainment',
+    sourceType: 'publisher',
+    publisherFamily: 'ABC',
+    category: 'entertainment',
+    feedUrl: 'https://feeds.abcnews.com/abcnews/entertainmentheadlines',
+  },
+  {
+    sourceName: 'CBS News — Entertainment',
+    sourceType: 'publisher',
+    publisherFamily: 'CBS',
+    category: 'entertainment',
+    feedUrl: 'https://www.cbsnews.com/latest/rss/entertainment',
+  },
 
   {
     sourceName: 'NPR Sports',
