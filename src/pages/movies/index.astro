@@ -81,7 +81,7 @@ const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Movies' }];
           <h3 class="month-title">{month.label}</h3>
           <div class="release-grid">
             {month.movies.map((movie) => (
-              <article class="release-card">
+              <article id={movie.slug} class="release-card">
                 <div class="release-top">
                   <div class="date-tile">
                     <span>{new Date(movie.releaseDate + 'T12:00:00Z').toLocaleDateString('en-US', {month: 'short',timeZone:'UTC'})}</span>
