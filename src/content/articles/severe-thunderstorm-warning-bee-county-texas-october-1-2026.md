@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f113c309c8031d
 sourceOffice: "NWS Corpus Christi TX"
 tags: ["Severe Thunderstorm Warning", "Weather", "Severe"]
 state: "TX"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
