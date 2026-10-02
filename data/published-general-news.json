@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T04:50:51.650Z",
-  "storyCount": 99,
+  "generatedAt": "2026-10-02T05:22:32.800Z",
+  "storyCount": 101,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -2525,6 +2525,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20delivers%20remarks%20at%20a%20reception%20for%20Republican%20members%20of%20congress%20(54673042492).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2c01aaf0efb77162",
+      "slug": "us-investigators-search-for-motive-after-alleged-2026-10-01",
+      "articlePath": "src/content/articles/us-investigators-search-for-motive-after-alleged-2026-10-01.md",
+      "title": "Investigators search for motive after alleged attack by FlyDubai co-pilot",
+      "publishedAt": "2026-10-02T05:22:29.862Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/investigators-search-for-motive-after-alleged-attack-by-flydubai-co-pilot"
+      ],
+      "imagePath": "/images/us-investigators-search-for-motive-after-alleged-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Press Office of the Governor of Rostov Oblast",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%B8%2C%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9%20%D0%B2%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B8%20%D1%81%20%D0%B0%D0%B2%D0%B0%D1%80%D0%B8%D0%B5%D0%B9%20%D0%BB%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%20%C2%AB%D0%91%D0%BE%D0%B8%D0%BD%D0%B3-737-800%C2%BB%20(5).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__28e422b2b64258b9",
+      "slug": "entertainment-nicolas-cage-calls-current-mcu-a-glorified-wwe-2026-10-02",
+      "articlePath": "src/content/articles/entertainment-nicolas-cage-calls-current-mcu-a-glorified-wwe-2026-10-02.md",
+      "title": "Nicolas Cage Calls Current MCU A “Glorified WWE,” Wants It To Stop “Cutting To The Wrestling Match”",
+      "publishedAt": "2026-10-02T05:22:32.800Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 48,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/nicolas-cage-calls-mcu-glorified-wwe-1237145142/"
+      ],
+      "imagePath": "/images/entertainment-nicolas-cage-calls-current-mcu-a-glorified-wwe-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "nicolas genin",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANicolas%20Cage%2066%C3%A8me%20Festival%20de%20Venise%20(Mostra)%202.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
