@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T03:23:34.760Z",
-  "storyCount": 93,
+  "generatedAt": "2026-10-02T03:50:47.077Z",
+  "storyCount": 95,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -2369,6 +2369,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AProposed%20Ames%20M2-F1%2C%20M1-L%20half-cone%2C%20and%20Langley%20lenticular%20bodies.%20DVIDS688357.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a22ef8ec346fe8c8",
+      "slug": "us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01",
+      "articlePath": "src/content/articles/us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01.md",
+      "title": "The family of Renee Good files lawsuits over her death during Minneapolis ICE raids",
+      "publishedAt": "2026-10-02T03:50:42.389Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/01/nx-s1-5986224/renee-good-ice-lawsuit-minneapolis"
+      ],
+      "imagePath": "/images/us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Chad Davis",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AICE%20Agents%20in%20Minneapolis%20After%20Shooting.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__311c53934e544664",
+      "slug": "politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02",
+      "articlePath": "src/content/articles/politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02.md",
+      "title": "Trump quips Paxton is ‘pain in the ass,’ ‘a little controversial’",
+      "publishedAt": "2026-10-02T03:50:47.077Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6124986-trump-paxton-talarico-texas-senate-race/"
+      ],
+      "imagePath": "/images/politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Departs%20for%20Texas%20(49096459668).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

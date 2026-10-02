@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T03:23:34.761Z",
-  "storyCount": 135,
+  "generatedAt": "2026-10-02T03:50:47.078Z",
+  "storyCount": 137,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -3978,6 +3978,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AProposed%20Ames%20M2-F1%2C%20M1-L%20half-cone%2C%20and%20Langley%20lenticular%20bodies.%20DVIDS688357.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01",
+      "slug": "us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01",
+      "articlePath": "src/content/articles/us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01.md",
+      "publishedAt": "2026-10-02T03:50:42.389Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a22ef8ec346fe8c8"
+      ],
+      "allAlertIds": [
+        "gn__a22ef8ec346fe8c8"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-02T03:50:42.389Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-the-family-of-renee-good-files-lawsuits-over-her-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Chad Davis",
+      "heroImageLicense": "CC BY 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AICE%20Agents%20in%20Minneapolis%20After%20Shooting.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02",
+      "slug": "politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02",
+      "articlePath": "src/content/articles/politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02.md",
+      "publishedAt": "2026-10-02T03:50:47.077Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__311c53934e544664"
+      ],
+      "allAlertIds": [
+        "gn__311c53934e544664"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-02T03:50:47.077Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-quips-paxton-is-pain-in-the-ass-a-little-2026-10-02-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Departs%20for%20Texas%20(49096459668).jpg",
       "breaking": false
     }
   ]
