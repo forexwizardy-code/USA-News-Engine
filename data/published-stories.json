@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T01:23:06.651Z",
-  "storyCount": 127,
+  "generatedAt": "2026-10-02T01:49:46.645Z",
+  "storyCount": 129,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -3746,6 +3746,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJay%20L%20King%2C%20Joseph%20D%20Huxman%2C%20and%20Orion%20D%20Billeter%20Assist%20Pilot%20Milt%20Thompson%20into%20the%20M2-F2%20Attached%20to%20B-52%20Mothership%20(EC66-1154).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-inside-binance-founder-changpeng-zhao-s-life-after-2026-10-01",
+      "slug": "us-inside-binance-founder-changpeng-zhao-s-life-after-2026-10-01",
+      "articlePath": "src/content/articles/us-inside-binance-founder-changpeng-zhao-s-life-after-2026-10-01.md",
+      "publishedAt": "2026-10-02T01:49:41.318Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__65f28bade6d39dd5"
+      ],
+      "allAlertIds": [
+        "gn__65f28bade6d39dd5"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-02T01:49:41.318Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-inside-binance-founder-changpeng-zhao-s-life-after-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Web Summit",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A2022%20-%20Press%20Conferences%20BE6%201609%20(52472405299).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-swedish-company-uses-a-i-likeness-of-greta-garbo-2026-10-01",
+      "slug": "business-swedish-company-uses-a-i-likeness-of-greta-garbo-2026-10-01",
+      "articlePath": "src/content/articles/business-swedish-company-uses-a-i-likeness-of-greta-garbo-2026-10-01.md",
+      "publishedAt": "2026-10-02T01:49:46.644Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__2362cb5a04119101"
+      ],
+      "allAlertIds": [
+        "gn__2362cb5a04119101"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Business",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-02T01:49:46.644Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-swedish-company-uses-a-i-likeness-of-greta-garbo-2026-10-01-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Jim Evans",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACheek%20Neal%20Coffee%20Company%20Building%20--%20Houston%2C%20Texas.jpg",
       "breaking": false
     }
   ]
