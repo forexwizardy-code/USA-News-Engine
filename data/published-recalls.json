@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T20:34:23.526Z",
-  "storyCount": 12,
+  "generatedAt": "2026-10-02T08:34:41.327Z",
+  "storyCount": 13,
   "stories": [
     {
       "recallStoryKey": "fda-food__H-1341-2026",
@@ -351,6 +351,34 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourceUrl": "https://commons.wikimedia.org/wiki/File%3ASeven%20layer%20dip.jpg"
+    },
+    {
+      "recallStoryKey": "fda-food__H-1349-2026",
+      "slug": "taylor-fresh-foods-inc-taco-dip-ingredients-refried-vegetarian-beans-guacamole-2026-09-23",
+      "articlePath": "src/content/articles/taylor-fresh-foods-inc-taco-dip-ingredients-refried-vegetarian-beans-guacamole-2026-09-23.md",
+      "publishedAt": "2026-10-02T08:34:41.324Z",
+      "updatedAt": null,
+      "sourceType": "food",
+      "sourceRecallIds": [
+        "H-1349-2026"
+      ],
+      "allSourceRecallIds": [
+        "H-1349-2026"
+      ],
+      "sourceUrls": [
+        "https://open.fda.gov/data/downloads/food/enforcement/"
+      ],
+      "storyStatus": "active",
+      "classification": "Class I",
+      "hazardNormalized": "Salmonella Risk",
+      "lastSeenAt": "2026-10-02T08:34:38.345Z",
+      "lastCheckedAt": "2026-10-02T08:34:41.324Z",
+      "imageMode": "licensed-photo",
+      "imageSource": "/images/taylor-fresh-foods-inc-taco-dip-ingredients-refried-vegetarian-beans-guacamole-2026-09-23.jpg",
+      "imageCreator": "Daderot",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File%3ATaco%20with%20refried%20beans%2C%20textured%20vegetable%20protein%2C%20salsa%2C%20guacamole%2C%20and%20cheese%20-%20Massachusetts.jpg"
     }
   ]
 }
