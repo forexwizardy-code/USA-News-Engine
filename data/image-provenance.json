@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T22:26:45.851Z",
-  "imageCount": 5,
+  "generatedAt": "2026-10-03T00:33:48.379Z",
+  "imageCount": 6,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -11,6 +11,17 @@
       "sourceOrganization": "NPS Climate Change Response (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:47.231Z",
+      "storiesUsingImage": []
+    },
+    "https://upload.wikimedia.org/wikipedia/commons/4/4e/FEMA_-_21496_-_Photograph_by_Bob_McMillan_taken_on_05-09-2002_in_West_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFEMA%20-%2021496%20-%20Photograph%20by%20Bob%20McMillan%20taken%20on%2005-09-2002%20in%20West%20Virginia.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/FEMA_-_21496_-_Photograph_by_Bob_McMillan_taken_on_05-09-2002_in_West_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "creator": "Bob McMillan",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceOrganization": "Bob McMillan (Wikimedia Commons)",
+      "imageRelation": "exact-location",
+      "firstUsedAt": "2026-10-03T00:33:46.429Z",
       "storiesUsingImage": []
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a3/Christmas_flood_1717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
