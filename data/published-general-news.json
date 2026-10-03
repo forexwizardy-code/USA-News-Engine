@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T00:53:35.441Z",
-  "storyCount": 107,
+  "generatedAt": "2026-10-03T01:21:34.569Z",
+  "storyCount": 109,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -2734,6 +2734,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.pbs.org/newshour/show/what-a-hiring-slowdown-signals-about-the-state-of-the-u-s-economy",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__95cab7950aa0d25b",
+      "slug": "us-san-francisco-s-car-crime-has-plunged-how-much-2026-10-02",
+      "articlePath": "src/content/articles/us-san-francisco-s-car-crime-has-plunged-how-much-2026-10-02.md",
+      "title": "San Francisco's car crime has plunged. How much credit does Flock deserve?",
+      "publishedAt": "2026-10-03T01:21:25.387Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve"
+      ],
+      "imagePath": "/images/us-san-francisco-s-car-crime-has-plunged-how-much-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Amadeo de Souza Cardoso",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACrime%20Abysmo%20Azul%20Remorso%20Phisico%20(%22Crime%20Blue%20Abyss%20Physical%20Remorse%22)%20(1914-1915)%20-%20Amadeo%20Souza-Cardoso%20(1887-1918)%20(32850202421).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__f274dd7163e587dd",
+      "slug": "politics-trump-suggests-cornell-defendants-won-t-get-a-fair-2026-10-03",
+      "articlePath": "src/content/articles/politics-trump-suggests-cornell-defendants-won-t-get-a-fair-2026-10-03.md",
+      "title": "Trump Suggests Cornell Defendants Won’t Get a ‘Fair Shake’ From Letitia James",
+      "publishedAt": "2026-10-03T01:21:34.569Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/02/us/politics/trump-cornell-letitia-james.html"
+      ],
+      "imagePath": "/images/politics-trump-suggests-cornell-defendants-won-t-get-a-fair-2026-10-03-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Lorie Shaull from Washington, United States",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACornell%20William%20Brooks%2C%20NAACP%20President%20%26%20CEO%2C%20We%20Shall%20Not%20Be%20Moved%20Rally%2C%20Washington%20DC%20(31934483580).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
