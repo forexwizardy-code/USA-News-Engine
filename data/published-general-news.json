@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T03:58:56.787Z",
-  "storyCount": 119,
+  "generatedAt": "2026-10-03T04:23:48.508Z",
+  "storyCount": 121,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3045,6 +3045,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACornell%20University%20-%20closed%20programs%20for%20minorities%20-%20sign.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__96286a3698d0733d",
+      "slug": "us-who-s-spending-big-and-where-in-most-expensive-2026-10-02",
+      "articlePath": "src/content/articles/us-who-s-spending-big-and-where-in-most-expensive-2026-10-02.md",
+      "title": "Who's spending big, and where, in most expensive election cycle ever",
+      "publishedAt": "2026-10-03T04:23:44.950Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/whos-spending-big-and-where-in-most-expensive-election-cycle-ever"
+      ],
+      "imagePath": "/images/us-who-s-spending-big-and-where-in-most-expensive-2026-10-02-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "Miller, C.",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABildliche%20Darstellung%20der%20Materialverwendungen%20mit%20Angabe%20der%20Materialgattungen%20bei%20Unterhaltung%20der%20Staatsstrassen%20des%20(IA%20dr%20bildliche-darstellung-der-materialverwendungen-mit-angabe-der-materialgattu-10614001).jpg",
+      "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__0528d4c5e7ce9938",
+      "slug": "entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02",
+      "articlePath": "src/content/articles/entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02.md",
+      "title": "The G7 will release 100 million reserve barrels of diesel fuel over the next 4 months",
+      "publishedAt": "2026-10-03T04:23:48.508Z",
+      "category": "entertainment",
+      "primarySource": "NPR Entertainment",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 53,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/02/nx-s1-5989397/the-g7-will-release-100-million-reserve-barrels-of-diesel-fuel-over-the-next-4-months"
+      ],
+      "imagePath": "/images/entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "ENERGY.GOV",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStrategic%20Petroleum%20Reserve%202011%20Drawdown%20Team%20(8080652576).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

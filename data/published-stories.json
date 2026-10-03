@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T03:58:56.789Z",
-  "storyCount": 165,
+  "generatedAt": "2026-10-03T04:23:48.509Z",
+  "storyCount": 167,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -4848,6 +4848,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACornell%20University%20-%20closed%20programs%20for%20minorities%20-%20sign.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-who-s-spending-big-and-where-in-most-expensive-2026-10-02",
+      "slug": "us-who-s-spending-big-and-where-in-most-expensive-2026-10-02",
+      "articlePath": "src/content/articles/us-who-s-spending-big-and-where-in-most-expensive-2026-10-02.md",
+      "publishedAt": "2026-10-03T04:23:44.950Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__96286a3698d0733d"
+      ],
+      "allAlertIds": [
+        "gn__96286a3698d0733d"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-03T04:23:44.950Z",
+      "heroImageMode": "factual-graphic-fallback",
+      "heroImageSource": "/images/us-who-s-spending-big-and-where-in-most-expensive-2026-10-02-licensed-graphic.jpg",
+      "heroImageRelation": "licensed-illustrative-graphic",
+      "heroImageCreator": "Miller, C.",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABildliche%20Darstellung%20der%20Materialverwendungen%20mit%20Angabe%20der%20Materialgattungen%20bei%20Unterhaltung%20der%20Staatsstrassen%20des%20(IA%20dr%20bildliche-darstellung-der-materialverwendungen-mit-angabe-der-materialgattu-10614001).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02",
+      "slug": "entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02",
+      "articlePath": "src/content/articles/entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02.md",
+      "publishedAt": "2026-10-03T04:23:48.508Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__0528d4c5e7ce9938"
+      ],
+      "allAlertIds": [
+        "gn__0528d4c5e7ce9938"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "NPR Entertainment",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-03T04:23:48.508Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-the-g7-will-release-100-million-reserve-barrels-of-2026-10-02-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "ENERGY.GOV",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AStrategic%20Petroleum%20Reserve%202011%20Drawdown%20Team%20(8080652576).jpg",
       "breaking": false
     }
   ]
