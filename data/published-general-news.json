@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T02:59:19.637Z",
-  "storyCount": 115,
+  "generatedAt": "2026-10-03T03:27:49.831Z",
+  "storyCount": 117,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -2942,6 +2942,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/homenews/campaign/6127360-karl-rove-paxton-talarico-debate-warning/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__5c4d14ce6e24893a",
+      "slug": "business-white-house-filing-claims-president-has-authority-2026-10-03",
+      "articlePath": "src/content/articles/business-white-house-filing-claims-president-has-authority-2026-10-03.md",
+      "title": "White House Filing Claims President Has Authority to Bar News Outlets",
+      "publishedAt": "2026-10-03T03:27:44.217Z",
+      "category": "business",
+      "primarySource": "New York Times — Business",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/02/business/trump-white-house-ban-cnn-politico-ms-now.html"
+      ],
+      "imagePath": "/images/business-white-house-filing-claims-president-has-authority-2026-10-03-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Pete Souza\n\nThe White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Barack%20Obama%20meets%20with%20President%20Nicolas%20Sarkozy%20of%20France%20in%20the%20Oval%20Office%2C%20March%2030%2C%202010.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__f72fc8f9c4aa03e0",
+      "slug": "entertainment-new-york-s-inaugural-muslim-film-festival-aims-to-2026-10-03",
+      "articlePath": "src/content/articles/entertainment-new-york-s-inaugural-muslim-film-festival-aims-to-2026-10-03.md",
+      "title": "New York’s Inaugural Muslim Film Festival Aims to Move Past Counter-Narratives, Unveils Lineup, Jury (EXCLUSIVE)",
+      "publishedAt": "2026-10-03T03:27:49.831Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/festivals/new-yorks-muslim-film-festival-counter-narratives-1236898067/"
+      ],
+      "imagePath": "/images/entertainment-new-york-s-inaugural-muslim-film-festival-aims-to-2026-10-03-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Abbie Rowe",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20New%20York%20float%20in%20President%20Truman's%20inaugural%20parade%20-%20NARA%20-%20200052.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
