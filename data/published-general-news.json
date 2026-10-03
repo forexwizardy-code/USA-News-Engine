@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T01:21:34.569Z",
-  "storyCount": 109,
+  "generatedAt": "2026-10-03T01:48:43.329Z",
+  "storyCount": 111,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -2785,6 +2785,58 @@
       "imageLicense": "CC BY-SA 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACornell%20William%20Brooks%2C%20NAACP%20President%20%26%20CEO%2C%20We%20Shall%20Not%20Be%20Moved%20Rally%2C%20Washington%20DC%20(31934483580).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5730a8f4e5e7121a",
+      "slug": "us-judge-halts-border-wall-construction-in-texas-big-2026-10-02",
+      "articlePath": "src/content/articles/us-judge-halts-border-wall-construction-in-texas-big-2026-10-02.md",
+      "title": "Judge halts border wall construction in Texas' Big Bend region for now",
+      "publishedAt": "2026-10-03T01:48:40.348Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/nation/judge-halts-border-wall-construction-in-texas-big-bend-region-for-now"
+      ],
+      "imagePath": "/images/us-judge-halts-border-wall-construction-in-texas-big-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "John Cummings",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOpuntia%20-%20Big%20Bend%20National%20Park%2C%20Texas%2092.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__35c67e5c4701e6cd",
+      "slug": "politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02",
+      "articlePath": "src/content/articles/politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02.md",
+      "title": "Alito: ‘I thought about’ retiring at end of last term",
+      "publishedAt": "2026-10-03T01:48:43.329Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6127267-alito-considered-supreme-court-retirement/"
+      ],
+      "imagePath": "/images/politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Department of State",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASamuel%20Alito%20swears%20in%20Mike%20Pompeo.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

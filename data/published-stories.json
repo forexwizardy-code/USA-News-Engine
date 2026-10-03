@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T01:21:34.570Z",
-  "storyCount": 155,
+  "generatedAt": "2026-10-03T01:48:43.331Z",
+  "storyCount": 157,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -4558,6 +4558,64 @@
       "heroImageLicense": "CC BY-SA 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACornell%20William%20Brooks%2C%20NAACP%20President%20%26%20CEO%2C%20We%20Shall%20Not%20Be%20Moved%20Rally%2C%20Washington%20DC%20(31934483580).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-judge-halts-border-wall-construction-in-texas-big-2026-10-02",
+      "slug": "us-judge-halts-border-wall-construction-in-texas-big-2026-10-02",
+      "articlePath": "src/content/articles/us-judge-halts-border-wall-construction-in-texas-big-2026-10-02.md",
+      "publishedAt": "2026-10-03T01:48:40.348Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5730a8f4e5e7121a"
+      ],
+      "allAlertIds": [
+        "gn__5730a8f4e5e7121a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-03T01:48:40.348Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-judge-halts-border-wall-construction-in-texas-big-2026-10-02-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "John Cummings",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOpuntia%20-%20Big%20Bend%20National%20Park%2C%20Texas%2092.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02",
+      "slug": "politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02",
+      "articlePath": "src/content/articles/politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02.md",
+      "publishedAt": "2026-10-03T01:48:43.329Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__35c67e5c4701e6cd"
+      ],
+      "allAlertIds": [
+        "gn__35c67e5c4701e6cd"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-03T01:48:43.329Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-alito-i-thought-about-retiring-at-end-of-last-term-2026-10-02-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Department of State",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASamuel%20Alito%20swears%20in%20Mike%20Pompeo.jpg",
       "breaking": false
     }
   ]
