@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T05:29:22.695Z",
-  "storyCount": 125,
+  "generatedAt": "2026-10-03T05:52:07.063Z",
+  "storyCount": 127,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3202,6 +3202,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-secures-settlement-protects-small-businesses-illegal-price-discrimination",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__82f0d6c0f3ae8158",
+      "slug": "politics-alito-overturning-roe-v-wade-took-courage-from-2026-10-02",
+      "articlePath": "src/content/articles/politics-alito-overturning-roe-v-wade-took-courage-from-2026-10-02.md",
+      "title": "Alito: Overturning Roe v. Wade took ‘courage’ from Supreme Court justices",
+      "publishedAt": "2026-10-03T05:52:04.962Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6127182-alito-roe-wade-overturn-abortion/"
+      ],
+      "imagePath": "/images/politics-alito-overturning-roe-v-wade-took-courage-from-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Susan Ruggles from Milwaukee, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADefend%20Roe%20v%20Wade%200015%20(52062165920).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__b5dec75a4e1164ee",
+      "slug": "us-us-jobs-market-sees-sharp-slowdown-ahead-of-2026-10-02",
+      "articlePath": "src/content/articles/us-us-jobs-market-sees-sharp-slowdown-ahead-of-2026-10-02.md",
+      "title": "US jobs market sees sharp slowdown ahead of midterm elections",
+      "publishedAt": "2026-10-03T05:52:07.063Z",
+      "category": "us",
+      "primarySource": "BBC News — US & Canada",
+      "primaryPublisherFamily": "BBC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "BBC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 51,
+      "sourceUrls": [
+        "https://www.bbc.co.uk/news/articles/cm2d6gg0642yo?at_medium=RSS&at_campaign=rss"
+      ],
+      "imagePath": "/images/us-us-jobs-market-sees-sharp-slowdown-ahead-of-2026-10-02-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Joi Ito from Inbamura, Japan",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASteve%20Jobs%20and%20Bill%20Gates%20(522695099).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
