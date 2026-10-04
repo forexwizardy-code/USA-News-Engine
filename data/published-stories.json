@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T13:01:55.551Z",
-  "storyCount": 184,
+  "generatedAt": "2026-10-04T15:48:29.437Z",
+  "storyCount": 185,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5407,6 +5407,35 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGov.%20Wolf%20Announces%20Initiative%20for%20a%20Lead-Free%20Pennsylvania.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "taylor-fresh-foods-inc-bh-bold-chef-salad-kit-ingredients-iceberg-lettuce-2026-09-23",
+      "slug": "taylor-fresh-foods-inc-bh-bold-chef-salad-kit-ingredients-iceberg-lettuce-2026-09-23",
+      "articlePath": "src/content/articles/taylor-fresh-foods-inc-bh-bold-chef-salad-kit-ingredients-iceberg-lettuce-2026-09-23.md",
+      "publishedAt": "2026-10-04T15:48:29.435Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "H-1368-2026"
+      ],
+      "allAlertIds": [
+        "H-1368-2026"
+      ],
+      "event": "Recall",
+      "location": "Unknown",
+      "sourceOffice": "U.S. Food and Drug Administration",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T15:48:29.435Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/taylor-fresh-foods-inc-bh-bold-chef-salad-kit-ingredients-iceberg-lettuce-2026-09-23.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "JaguarJulie",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASeven%20layer%20salad.jpg",
       "breaking": false
     }
   ]
