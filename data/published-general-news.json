@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T22:48:22.791Z",
-  "storyCount": 143,
+  "generatedAt": "2026-10-04T23:20:45.717Z",
+  "storyCount": 145,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3670,6 +3670,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.bbc.co.uk/news/articles/cwr5y48p89vvo?at_medium=RSS&at_campaign=rss",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__8d7016489a5db60a",
+      "slug": "entertainment-marvel-canceled-blade-but-the-gory-vampire-brawler-2026-10-04",
+      "articlePath": "src/content/articles/entertainment-marvel-canceled-blade-but-the-gory-vampire-brawler-2026-10-04.md",
+      "title": "Marvel Canceled ‘Blade,’ But the Gory Vampire Brawler ‘Half’ Will Thrill Genre Fans",
+      "publishedAt": "2026-10-04T23:20:39.342Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/features/half-vampire-action-movie-india-blade-1236898106/"
+      ],
+      "imagePath": "/images/entertainment-marvel-canceled-blade-but-the-gory-vampire-brawler-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Riley from Christchurch, New Zealand",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AToyota%20Blade%20Master%20G%20(8750396266).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__49e714a4176a941a",
+      "slug": "us-search-ongoing-for-missing-medical-flight-from-2026-10-04",
+      "articlePath": "src/content/articles/us-search-ongoing-for-missing-medical-flight-from-2026-10-04.md",
+      "title": "Search ongoing for missing medical flight from Bermuda to Boston as crews plan to scour ocean floor",
+      "publishedAt": "2026-10-04T23:20:45.717Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/nation/search-ongoing-for-missing-medical-flight-from-bermuda-to-boston-as-crews-plan-to-scour-ocean-floor"
+      ],
+      "imagePath": "/images/us-search-ongoing-for-missing-medical-flight-from-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Staff Sgt. Nathan Hoskins",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWarriors%2C%20Commandos%20team%20up%2C%20continue%20search%20for%20missing%20Soldiers%20DVIDS44981.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
