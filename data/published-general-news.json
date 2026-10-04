@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T21:13:05.462Z",
-  "storyCount": 137,
+  "generatedAt": "2026-10-04T21:52:33.824Z",
+  "storyCount": 139,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3513,6 +3513,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20J.%20Trump%20Visits%20Arlington%20National%20Cemetery%20(46303267902).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a432ebbca9a1c5f6",
+      "slug": "politics-trump-takes-red-state-midterm-blitz-to-nebraska-as-2026-10-04",
+      "articlePath": "src/content/articles/politics-trump-takes-red-state-midterm-blitz-to-nebraska-as-2026-10-04.md",
+      "title": "Trump takes red state midterm blitz to Nebraska as GOP frets over Senate race",
+      "publishedAt": "2026-10-04T21:52:30.696Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6127091-trump-nebraska-senate-rally-ricketts-osborn/"
+      ],
+      "imagePath": "/images/politics-trump-takes-red-state-midterm-blitz-to-nebraska-as-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADonald%20Trump%20state%20visit%20to%20Saudi%20Arabia%2C%202025-05-13%20P20250513DT-0736.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5bb3fd587555d7c5",
+      "slug": "business-trump-shares-meme-labeling-obama-not-nixon-as-most-2026-10-04",
+      "articlePath": "src/content/articles/business-trump-shares-meme-labeling-obama-not-nixon-as-most-2026-10-04.md",
+      "title": "Trump shares meme labeling Obama, not Nixon, as ‘most corrupt president’",
+      "publishedAt": "2026-10-04T21:52:33.824Z",
+      "category": "business",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6128392-trump-compares-obama-nixon-corruption/"
+      ],
+      "imagePath": "/images/business-trump-shares-meme-labeling-obama-not-nixon-as-most-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Pete Souza (Executive Office of the President of the United States)",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABarack%20Obama%20on%20the%20phone%20in%20Dublin.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
