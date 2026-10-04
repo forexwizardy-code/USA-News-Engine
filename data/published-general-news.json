@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T05:52:07.063Z",
-  "storyCount": 127,
+  "generatedAt": "2026-10-04T02:34:08.226Z",
+  "storyCount": 129,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3253,6 +3253,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASteve%20Jobs%20and%20Bill%20Gates%20(522695099).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5c5904162378367c",
+      "slug": "us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04",
+      "articlePath": "src/content/articles/us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04.md",
+      "title": "U.S.-Russia Talks on Ukraine Now Involve an Oil Deal Tied to Trump Allies",
+      "publishedAt": "2026-10-04T02:34:03.469Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/03/us/politics/kushner-witkoff-russia-oil-deal.html"
+      ],
+      "imagePath": "/images/us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Alisdare Hickson from Woolwich, United Kingdom",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIt%20was%20the%20Russians%20(52716917096).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__8461c14e007fa461",
+      "slug": "entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03",
+      "articlePath": "src/content/articles/entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03.md",
+      "title": "Paul Rudd Says He Stopped Bringing His Phone to Film Sets Because He’s ‘Addicted Like Everybody Else’: ‘They’re Facilitating Our Own Destruction’",
+      "publishedAt": "2026-10-04T02:34:08.226Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://variety.com/2026/film/news/paul-rudd-phone-addiction-a-statement-nyff-1236898348/"
+      ],
+      "imagePath": "/images/entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Arturo Pardavila III from Hoboken, NJ, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarlos%20Correa%20interviews%20Paul%20Rudd%20(22442209789).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

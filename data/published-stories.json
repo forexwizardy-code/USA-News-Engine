@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T20:06:04.612Z",
-  "storyCount": 174,
+  "generatedAt": "2026-10-04T02:34:08.227Z",
+  "storyCount": 176,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5110,6 +5110,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://open.fda.gov/data/downloads/device/enforcement/",
       "breaking": true
+    },
+    {
+      "storyKey": "us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04",
+      "slug": "us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04",
+      "articlePath": "src/content/articles/us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04.md",
+      "publishedAt": "2026-10-04T02:34:03.469Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5c5904162378367c"
+      ],
+      "allAlertIds": [
+        "gn__5c5904162378367c"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T02:34:03.469Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-u-s-russia-talks-on-ukraine-now-involve-an-oil-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Alisdare Hickson from Woolwich, United Kingdom",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIt%20was%20the%20Russians%20(52716917096).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03",
+      "slug": "entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03",
+      "articlePath": "src/content/articles/entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03.md",
+      "publishedAt": "2026-10-04T02:34:08.226Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__8461c14e007fa461"
+      ],
+      "allAlertIds": [
+        "gn__8461c14e007fa461"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T02:34:08.226Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-paul-rudd-says-he-stopped-bringing-his-phone-to-2026-10-03-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Arturo Pardavila III from Hoboken, NJ, USA",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACarlos%20Correa%20interviews%20Paul%20Rudd%20(22442209789).jpg",
+      "breaking": false
     }
   ]
 }
