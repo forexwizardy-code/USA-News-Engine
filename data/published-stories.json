@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T23:20:45.718Z",
-  "storyCount": 198,
+  "generatedAt": "2026-10-04T23:48:23.968Z",
+  "storyCount": 200,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5817,6 +5817,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWarriors%2C%20Commandos%20team%20up%2C%20continue%20search%20for%20missing%20Soldiers%20DVIDS44981.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-latter-day-saints-women-turn-away-from-2026-10-04",
+      "slug": "us-latter-day-saints-women-turn-away-from-2026-10-04",
+      "articlePath": "src/content/articles/us-latter-day-saints-women-turn-away-from-2026-10-04.md",
+      "publishedAt": "2026-10-04T23:48:18.155Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__9d8cb22e98ce12d6"
+      ],
+      "allAlertIds": [
+        "gn__9d8cb22e98ce12d6"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T23:48:18.155Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-latter-day-saints-women-turn-away-from-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Ken Lund from Reno, Nevada, USA",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKen%2C%20S.R.%2012%2C%20Grand%20Staircase-Escalante%20National%20Monument%20(2519212817).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04",
+      "slug": "politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04",
+      "articlePath": "src/content/articles/politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04.md",
+      "publishedAt": "2026-10-04T23:48:23.967Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__d99e1ceb01ca9078"
+      ],
+      "allAlertIds": [
+        "gn__d99e1ceb01ca9078"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T23:48:23.967Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Navy graphic by Seaman Brianna Bonilla",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHispanic%20Heritage%20Month%20(8664684).jpg",
       "breaking": false
     }
   ]

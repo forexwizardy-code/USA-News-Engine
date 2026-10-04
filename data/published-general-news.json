@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T23:20:45.717Z",
-  "storyCount": 145,
+  "generatedAt": "2026-10-04T23:48:23.967Z",
+  "storyCount": 147,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3721,6 +3721,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWarriors%2C%20Commandos%20team%20up%2C%20continue%20search%20for%20missing%20Soldiers%20DVIDS44981.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__9d8cb22e98ce12d6",
+      "slug": "us-latter-day-saints-women-turn-away-from-2026-10-04",
+      "articlePath": "src/content/articles/us-latter-day-saints-women-turn-away-from-2026-10-04.md",
+      "title": "Latter-day Saints women turn away from scandal-plagued Republican candidate in Arizona",
+      "publishedAt": "2026-10-04T23:48:18.155Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/04/nx-s1-5950536/arizona-house-race-mark-lamb-lds-church"
+      ],
+      "imagePath": "/images/us-latter-day-saints-women-turn-away-from-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Ken Lund from Reno, Nevada, USA",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKen%2C%20S.R.%2012%2C%20Grand%20Staircase-Escalante%20National%20Monument%20(2519212817).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__d99e1ceb01ca9078",
+      "slug": "politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04",
+      "articlePath": "src/content/articles/politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04.md",
+      "title": "Trump’s 2024 support from Hispanic voters dips in new poll",
+      "publishedAt": "2026-10-04T23:48:23.967Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6128414-trump-hispanic-support-plummeted/"
+      ],
+      "imagePath": "/images/politics-trump-s-2024-support-from-hispanic-voters-dips-in-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Navy graphic by Seaman Brianna Bonilla",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHispanic%20Heritage%20Month%20(8664684).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
