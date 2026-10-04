@@ -5,6 +5,7 @@ description: "The NWS said minor flooding is forecast along Grand River near Bru
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-10-04T06:04:42.851Z
+updatedAt: 2026-10-04T20:04:10.314Z
 image: "/images/flood-warning-carroll-county-missouri-october-3-2026-map.png"
 imageAlt: "Flood Warning for Carroll County, Missouri"
 imageMode: "map-data"

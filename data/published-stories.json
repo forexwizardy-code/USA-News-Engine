@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T17:56:38.455Z",
+  "generatedAt": "2026-10-04T20:04:10.318Z",
   "storyCount": 187,
   "stories": [
     {
@@ -5321,27 +5321,31 @@
       "slug": "flood-warning-carroll-county-missouri-october-3-2026",
       "articlePath": "src/content/articles/flood-warning-carroll-county-missouri-october-3-2026.md",
       "publishedAt": "2026-10-04T06:04:42.851Z",
-      "updatedAt": null,
+      "updatedAt": "2026-10-04T20:04:10.314Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.454e8d0a91c20ef5980d81e32b83ce60e92eabae.001.1",
-        "urn:oid:2.49.0.1.840.0.e086cebf0608488b3b6c1333c748ab206e9b0cab.004.1",
-        "urn:oid:2.49.0.1.840.0.e086cebf0608488b3b6c1333c748ab206e9b0cab.003.1",
-        "urn:oid:2.49.0.1.840.0.22cfd18ec6bcf40ebc6a9e32a0151fddf005ea75.002.1"
+        "urn:oid:2.49.0.1.840.0.1dc133a6e9976b60d800c6ceb1a3fb48fd11f07b.003.1",
+        "urn:oid:2.49.0.1.840.0.1dc133a6e9976b60d800c6ceb1a3fb48fd11f07b.002.1",
+        "urn:oid:2.49.0.1.840.0.9f4af73bf0c08b9587d10511be1d9b165ed2d000.001.1",
+        "urn:oid:2.49.0.1.840.0.9f4af73bf0c08b9587d10511be1d9b165ed2d000.004.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.454e8d0a91c20ef5980d81e32b83ce60e92eabae.001.1",
         "urn:oid:2.49.0.1.840.0.e086cebf0608488b3b6c1333c748ab206e9b0cab.004.1",
         "urn:oid:2.49.0.1.840.0.e086cebf0608488b3b6c1333c748ab206e9b0cab.003.1",
-        "urn:oid:2.49.0.1.840.0.22cfd18ec6bcf40ebc6a9e32a0151fddf005ea75.002.1"
+        "urn:oid:2.49.0.1.840.0.22cfd18ec6bcf40ebc6a9e32a0151fddf005ea75.002.1",
+        "urn:oid:2.49.0.1.840.0.1dc133a6e9976b60d800c6ceb1a3fb48fd11f07b.003.1",
+        "urn:oid:2.49.0.1.840.0.1dc133a6e9976b60d800c6ceb1a3fb48fd11f07b.002.1",
+        "urn:oid:2.49.0.1.840.0.9f4af73bf0c08b9587d10511be1d9b165ed2d000.001.1",
+        "urn:oid:2.49.0.1.840.0.9f4af73bf0c08b9587d10511be1d9b165ed2d000.004.1"
       ],
       "event": "Flood Warning",
       "location": "Carroll County, Missouri",
       "sourceOffice": "NWS Kansas City/Pleasant Hill MO",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-10-03T19:58:00-05:00",
-      "lastNwsExpiresAt": "2026-10-04T20:00:00-05:00",
-      "lastNwsEndsAt": "2026-10-06T17:00:00-05:00",
-      "lastCheckedAt": "2026-10-04T06:04:42.851Z",
+      "lastNwsEffectiveAt": "2026-10-04T10:17:00-05:00",
+      "lastNwsExpiresAt": "2026-10-05T10:30:00-05:00",
+      "lastNwsEndsAt": "2026-10-06T23:17:00-05:00",
+      "lastCheckedAt": "2026-10-04T20:04:10.314Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flood-warning-carroll-county-missouri-october-3-2026-map.png",
       "heroImageRelation": "current-alert-data",
