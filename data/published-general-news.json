@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T04:29:15.574Z",
-  "storyCount": 131,
+  "generatedAt": "2026-10-04T10:53:46.076Z",
+  "storyCount": 133,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3357,6 +3357,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOhio%20State%20Senate.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__7d6ea0c50c3a00de",
+      "slug": "us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04",
+      "articlePath": "src/content/articles/us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04.md",
+      "title": "Superpowers Race to Put Nuclear Reactors on the Moon",
+      "publishedAt": "2026-10-04T10:53:39.247Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/04/world/asia/nuclear-reactors-moon.html"
+      ],
+      "imagePath": "/images/us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Tdadamemd",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASpace%20Race%201957-1975.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__511c9ac6c90e6cbb",
+      "slug": "politics-democrats-lead-governor-races-deep-in-republican-2026-10-04",
+      "articlePath": "src/content/articles/politics-democrats-lead-governor-races-deep-in-republican-2026-10-04.md",
+      "title": "Democrats Lead Governor Races Deep in Republican Territory, Polls Show",
+      "publishedAt": "2026-10-04T10:53:46.076Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/04/us/politics/governors-poll-democrats-lead.html"
+      ],
+      "imagePath": "/images/politics-democrats-lead-governor-races-deep-in-republican-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Governor Tom Wolf",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGov.%20Wolf%20Announces%20Initiative%20for%20a%20Lead-Free%20Pennsylvania.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

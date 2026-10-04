@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T06:04:42.858Z",
-  "storyCount": 182,
+  "generatedAt": "2026-10-04T10:53:46.078Z",
+  "storyCount": 184,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5350,6 +5350,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04",
+      "slug": "us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04",
+      "articlePath": "src/content/articles/us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04.md",
+      "publishedAt": "2026-10-04T10:53:39.247Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__7d6ea0c50c3a00de"
+      ],
+      "allAlertIds": [
+        "gn__7d6ea0c50c3a00de"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T10:53:39.247Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-superpowers-race-to-put-nuclear-reactors-on-the-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Tdadamemd",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASpace%20Race%201957-1975.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-democrats-lead-governor-races-deep-in-republican-2026-10-04",
+      "slug": "politics-democrats-lead-governor-races-deep-in-republican-2026-10-04",
+      "articlePath": "src/content/articles/politics-democrats-lead-governor-races-deep-in-republican-2026-10-04.md",
+      "publishedAt": "2026-10-04T10:53:46.076Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__511c9ac6c90e6cbb"
+      ],
+      "allAlertIds": [
+        "gn__511c9ac6c90e6cbb"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-04T10:53:46.076Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-democrats-lead-governor-races-deep-in-republican-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Governor Tom Wolf",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGov.%20Wolf%20Announces%20Initiative%20for%20a%20Lead-Free%20Pennsylvania.jpg",
+      "breaking": false
     }
   ]
 }
