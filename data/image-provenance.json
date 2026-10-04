@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T02:38:32.934Z",
-  "imageCount": 5,
+  "generatedAt": "2026-10-04T06:04:42.936Z",
+  "imageCount": 6,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -22,6 +22,17 @@
       "sourceOrganization": "Unknown authorUnknown author (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:26:35.706Z",
+      "storiesUsingImage": []
+    },
+    "https://upload.wikimedia.org/wikipedia/commons/2/22/Grand_River_Trail_Bridge_Washout.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGrand%20River%20Trail%20Bridge%20Washout.jpg",
+      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Grand_River_Trail_Bridge_Washout.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "creator": "Mac Armstrong",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceOrganization": "Mac Armstrong (Wikimedia Commons)",
+      "imageRelation": "illustrative-file-photo",
+      "firstUsedAt": "2026-10-04T06:04:42.839Z",
       "storiesUsingImage": []
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a2/Astor_FL_St_Johns_river_south01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
