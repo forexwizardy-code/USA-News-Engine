@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T02:51:24.872Z",
-  "storyCount": 159,
+  "generatedAt": "2026-10-05T03:25:39.296Z",
+  "storyCount": 161,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -4085,6 +4085,58 @@
       "imageLicense": "CC BY 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Dimly%20Lit%20Old%20Supreme%20Court%20Chamber%20I.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__37e84b1d87ec34b7",
+      "slug": "us-as-midterms-near-justice-alito-says-he-considers-2026-10-03",
+      "articlePath": "src/content/articles/us-as-midterms-near-justice-alito-says-he-considers-2026-10-03.md",
+      "title": "As Midterms Near, Justice Alito Says He Considers Each Year Whether to Retire",
+      "publishedAt": "2026-10-05T03:25:34.502Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 47,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/03/us/politics/justice-alito-retirement-supreme-court.html"
+      ],
+      "imagePath": "/images/us-as-midterms-near-justice-alito-says-he-considers-2026-10-03-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NOAA",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AElection%20Day%20Storm%20Brings%20Rain%20and%20Wind%20to%20Eastern%20U%20S%20(NESDIS%202018-11-06%2020181106-eastcoast).webp",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1b935e11a485c614",
+      "slug": "politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04",
+      "articlePath": "src/content/articles/politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04.md",
+      "title": "Alito on Trump’s praise of him, criticism of fellow justices: ‘I put all of that out of my mind’",
+      "publishedAt": "2026-10-05T03:25:39.296Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 45,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6128234-alito-fox-news-interview-trump/"
+      ],
+      "imagePath": "/images/politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASwearing-in%20Ceremony%20for%20Secretary%20of%20Defense%20Mark%20Esper%20(48374478966).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

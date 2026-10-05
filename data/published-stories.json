@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T02:51:24.874Z",
-  "storyCount": 214,
+  "generatedAt": "2026-10-05T03:25:39.297Z",
+  "storyCount": 216,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6282,6 +6282,64 @@
       "heroImageLicense": "CC BY 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Dimly%20Lit%20Old%20Supreme%20Court%20Chamber%20I.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-as-midterms-near-justice-alito-says-he-considers-2026-10-03",
+      "slug": "us-as-midterms-near-justice-alito-says-he-considers-2026-10-03",
+      "articlePath": "src/content/articles/us-as-midterms-near-justice-alito-says-he-considers-2026-10-03.md",
+      "publishedAt": "2026-10-05T03:25:34.502Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__37e84b1d87ec34b7"
+      ],
+      "allAlertIds": [
+        "gn__37e84b1d87ec34b7"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T03:25:34.502Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-as-midterms-near-justice-alito-says-he-considers-2026-10-03-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "NOAA",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AElection%20Day%20Storm%20Brings%20Rain%20and%20Wind%20to%20Eastern%20U%20S%20(NESDIS%202018-11-06%2020181106-eastcoast).webp",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04",
+      "slug": "politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04",
+      "articlePath": "src/content/articles/politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04.md",
+      "publishedAt": "2026-10-05T03:25:39.296Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1b935e11a485c614"
+      ],
+      "allAlertIds": [
+        "gn__1b935e11a485c614"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T03:25:39.296Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-alito-on-trump-s-praise-of-him-criticism-of-fellow-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASwearing-in%20Ceremony%20for%20Secretary%20of%20Defense%20Mark%20Esper%20(48374478966).jpg",
       "breaking": false
     }
   ]
