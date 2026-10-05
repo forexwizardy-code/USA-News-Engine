@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T00:57:54.648Z",
-  "storyCount": 151,
+  "generatedAt": "2026-10-05T01:23:10.756Z",
+  "storyCount": 153,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3877,6 +3877,58 @@
       "imageLicense": "CC0",
       "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGerard%20de%20Lairesse%2C%20Joseph%20Reveals%20Himself%20to%20His%20Brothers%2C%20NGA%2056523.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__c9feb0ca3ebd5c3d",
+      "slug": "us-search-for-missing-medical-plane-near-nantucket-2026-10-05",
+      "articlePath": "src/content/articles/us-search-for-missing-medical-plane-near-nantucket-2026-10-05.md",
+      "title": "Search for Missing Medical Plane Near Nantucket Called Off. What to Know.",
+      "publishedAt": "2026-10-05T01:23:06.838Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/04/us/missing-medical-plane-nantucket-what-to-know.html"
+      ],
+      "imagePath": "/images/us-search-for-missing-medical-plane-near-nantucket-2026-10-05-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Staff Sgt. Nathan Hoskins",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWarriors%2C%20Commandos%20team%20up%2C%20continue%20search%20for%20missing%20Soldiers%20DVIDS44981.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__688b95866df2b581",
+      "slug": "politics-with-elon-musk-s-return-to-washington-possible-2026-10-04",
+      "articlePath": "src/content/articles/politics-with-elon-musk-s-return-to-washington-possible-2026-10-04.md",
+      "title": "With Elon Musk’s Return to Washington, Possible Conflicts of Interest Resurface",
+      "publishedAt": "2026-10-05T01:23:10.756Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/03/us/politics/elon-musk-pentagon-returns-to-washington.html"
+      ],
+      "imagePath": "/images/politics-with-elon-musk-s-return-to-washington-possible-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Elvert Barnes from Silver Spring MD, USA",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ARally.HandsOff.CFPB.WDC.10February2025%20IMG%203528a%20(54322990127).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T00:57:54.650Z",
-  "storyCount": 206,
+  "generatedAt": "2026-10-05T01:23:10.761Z",
+  "storyCount": 208,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6049,6 +6049,64 @@
       "heroImageLicense": "CC0",
       "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGerard%20de%20Lairesse%2C%20Joseph%20Reveals%20Himself%20to%20His%20Brothers%2C%20NGA%2056523.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-search-for-missing-medical-plane-near-nantucket-2026-10-05",
+      "slug": "us-search-for-missing-medical-plane-near-nantucket-2026-10-05",
+      "articlePath": "src/content/articles/us-search-for-missing-medical-plane-near-nantucket-2026-10-05.md",
+      "publishedAt": "2026-10-05T01:23:06.838Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__c9feb0ca3ebd5c3d"
+      ],
+      "allAlertIds": [
+        "gn__c9feb0ca3ebd5c3d"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T01:23:06.838Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-search-for-missing-medical-plane-near-nantucket-2026-10-05-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Staff Sgt. Nathan Hoskins",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWarriors%2C%20Commandos%20team%20up%2C%20continue%20search%20for%20missing%20Soldiers%20DVIDS44981.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-with-elon-musk-s-return-to-washington-possible-2026-10-04",
+      "slug": "politics-with-elon-musk-s-return-to-washington-possible-2026-10-04",
+      "articlePath": "src/content/articles/politics-with-elon-musk-s-return-to-washington-possible-2026-10-04.md",
+      "publishedAt": "2026-10-05T01:23:10.756Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__688b95866df2b581"
+      ],
+      "allAlertIds": [
+        "gn__688b95866df2b581"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T01:23:10.756Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-with-elon-musk-s-return-to-washington-possible-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Elvert Barnes from Silver Spring MD, USA",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ARally.HandsOff.CFPB.WDC.10February2025%20IMG%203528a%20(54322990127).jpg",
       "breaking": false
     }
   ]
