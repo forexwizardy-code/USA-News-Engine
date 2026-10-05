@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T23:48:23.967Z",
-  "storyCount": 147,
+  "generatedAt": "2026-10-05T00:32:58.575Z",
+  "storyCount": 149,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3773,6 +3773,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHispanic%20Heritage%20Month%20(8664684).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__515c3e35f4a2528f",
+      "slug": "us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04",
+      "articlePath": "src/content/articles/us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04.md",
+      "title": "At Trump’s Rallies, a Familiar Mix of Rituals and a Plea to ‘Please Pretend’",
+      "publishedAt": "2026-10-05T00:32:56.324Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/04/us/politics/trump-rallies-midterms-rituals.html"
+      ],
+      "imagePath": "/images/us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Ted Eytan",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APro-Trump%20Rallies%20Washington%20DC%20March%202017.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__7e5016c5ba2cc187",
+      "slug": "politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05",
+      "articlePath": "src/content/articles/politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05.md",
+      "title": "Brazil's presidential race heads to Lula–Bolsonaro run-off as right gains ground",
+      "publishedAt": "2026-10-05T00:32:58.575Z",
+      "category": "politics",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/04/nx-s1-5981181/brazil-presidential-lula-bolsonaro"
+      ],
+      "imagePath": "/images/politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Lula Oficial",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A16.10.2022-Lula%20no%20debate%20da%20Band%2C%20Cultura%2C%20Folha%20e%20UOL%20-%2052433971208.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T23:48:23.968Z",
-  "storyCount": 200,
+  "generatedAt": "2026-10-05T00:32:58.576Z",
+  "storyCount": 202,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5875,6 +5875,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHispanic%20Heritage%20Month%20(8664684).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04",
+      "slug": "us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04",
+      "articlePath": "src/content/articles/us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04.md",
+      "publishedAt": "2026-10-05T00:32:56.324Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__515c3e35f4a2528f"
+      ],
+      "allAlertIds": [
+        "gn__515c3e35f4a2528f"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T00:32:56.324Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-at-trump-s-rallies-a-familiar-mix-of-rituals-and-a-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Ted Eytan",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APro-Trump%20Rallies%20Washington%20DC%20March%202017.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05",
+      "slug": "politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05",
+      "articlePath": "src/content/articles/politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05.md",
+      "publishedAt": "2026-10-05T00:32:58.575Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__7e5016c5ba2cc187"
+      ],
+      "allAlertIds": [
+        "gn__7e5016c5ba2cc187"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T00:32:58.575Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-brazil-s-presidential-race-heads-to-lula-bolsonaro-2026-10-05-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Lula Oficial",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A16.10.2022-Lula%20no%20debate%20da%20Band%2C%20Cultura%2C%20Folha%20e%20UOL%20-%2052433971208.jpg",
       "breaking": false
     }
   ]
