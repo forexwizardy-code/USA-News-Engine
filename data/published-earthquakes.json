@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T19:18:08.649Z",
-  "storyCount": 1,
+  "generatedAt": "2026-10-05T11:59:46.792Z",
+  "storyCount": 2,
   "stories": [
     {
       "earthquakeKey": "usgs__uw714111952",
@@ -23,6 +23,28 @@
       "imageLicenseUrl": "",
       "imageSourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/uw714111952",
       "breaking": false
+    },
+    {
+      "earthquakeKey": "usgs__us6000tzna",
+      "eventId": "us6000tzna",
+      "slug": "m5-earthquake-saipan-northern-mariana-islands-2026-10-05",
+      "articlePath": "src/content/articles/m5-earthquake-saipan-northern-mariana-islands-2026-10-05.md",
+      "publishedAt": "2026-10-05T11:59:46.787Z",
+      "updatedAt": null,
+      "lastMagnitude": 5,
+      "lastAlert": null,
+      "lastTsunami": false,
+      "lastFelt": null,
+      "storyStatus": "active",
+      "lastSeenAt": "2026-10-05T11:59:44.350Z",
+      "lastCheckedAt": "2026-10-05T11:59:46.787Z",
+      "imageMode": "licensed-photo",
+      "imageSource": "/images/m5-earthquake-saipan-northern-mariana-islands-2026-10-05.jpg",
+      "imageCreator": "David Burdick",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File%3ANorthern%20Mariana%20Islands%20banner%20Bird%20Island%20at%20Saipan.jpg",
+      "breaking": true
     }
   ]
 }

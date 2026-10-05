@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T10:31:09.148Z",
-  "storyCount": 227,
+  "generatedAt": "2026-10-05T11:59:46.789Z",
+  "storyCount": 228,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6661,6 +6661,35 @@
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASeven%20layer%20dip.jpg",
       "breaking": false
+    },
+    {
+      "storyKey": "m5-earthquake-saipan-northern-mariana-islands-2026-10-05",
+      "slug": "m5-earthquake-saipan-northern-mariana-islands-2026-10-05",
+      "articlePath": "src/content/articles/m5-earthquake-saipan-northern-mariana-islands-2026-10-05.md",
+      "publishedAt": "2026-10-05T11:59:46.787Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "us6000tzna"
+      ],
+      "allAlertIds": [
+        "us6000tzna"
+      ],
+      "event": "Earthquake",
+      "location": "187 km ENE of Saipan, Northern Mariana Islands",
+      "sourceOffice": "U.S. Geological Survey",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T11:59:46.787Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/m5-earthquake-saipan-northern-mariana-islands-2026-10-05.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "David Burdick",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANorthern%20Mariana%20Islands%20banner%20Bird%20Island%20at%20Saipan.jpg",
+      "breaking": true
     }
   ]
 }
