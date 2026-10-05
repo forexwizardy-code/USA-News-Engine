@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T00:38:05.774Z",
-  "storyCount": 204,
+  "generatedAt": "2026-10-05T00:57:54.650Z",
+  "storyCount": 206,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -5992,6 +5992,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05",
+      "slug": "us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05",
+      "articlePath": "src/content/articles/us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05.md",
+      "publishedAt": "2026-10-05T00:57:46.528Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3b3a0e05bc381f0e"
+      ],
+      "allAlertIds": [
+        "gn__3b3a0e05bc381f0e"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T00:57:46.528Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "European Parliament from EU",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Week%20Ahead%2016%20%E2%80%93%2022%20December%202019%20(49234551397).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05",
+      "slug": "entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05",
+      "articlePath": "src/content/articles/entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05.md",
+      "publishedAt": "2026-10-05T00:57:54.648Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__2596003b66471765"
+      ],
+      "allAlertIds": [
+        "gn__2596003b66471765"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Deadline",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T00:57:54.648Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Gerard de Lairesse",
+      "heroImageLicense": "CC0",
+      "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGerard%20de%20Lairesse%2C%20Joseph%20Reveals%20Himself%20to%20His%20Brothers%2C%20NGA%2056523.jpg",
+      "breaking": false
     }
   ]
 }

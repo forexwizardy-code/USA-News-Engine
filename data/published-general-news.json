@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T00:32:58.575Z",
-  "storyCount": 149,
+  "generatedAt": "2026-10-05T00:57:54.648Z",
+  "storyCount": 151,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -3825,6 +3825,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A16.10.2022-Lula%20no%20debate%20da%20Band%2C%20Cultura%2C%20Folha%20e%20UOL%20-%2052433971208.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3b3a0e05bc381f0e",
+      "slug": "us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05",
+      "articlePath": "src/content/articles/us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05.md",
+      "title": "After Week of Turmoil at Cornell, a Heavy Cloud Hangs Over Student Life",
+      "publishedAt": "2026-10-05T00:57:46.528Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/04/nyregion/cornell-university-campus-students.html"
+      ],
+      "imagePath": "/images/us-after-week-of-turmoil-at-cornell-a-heavy-cloud-2026-10-05-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "European Parliament from EU",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Week%20Ahead%2016%20%E2%80%93%2022%20December%202019%20(49234551397).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2596003b66471765",
+      "slug": "entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05",
+      "articlePath": "src/content/articles/entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05.md",
+      "title": "Isaiah Washington Reveals His Wife’s 2025 Death In Social Media Post: “It Came As A Huge Shock to Me”",
+      "publishedAt": "2026-10-05T00:57:54.648Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/isaiah-washington-reveals-wife-2025-death-instagram-1237146372/"
+      ],
+      "imagePath": "/images/entertainment-isaiah-washington-reveals-his-wife-s-2025-death-in-2026-10-05-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Gerard de Lairesse",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGerard%20de%20Lairesse%2C%20Joseph%20Reveals%20Himself%20to%20His%20Brothers%2C%20NGA%2056523.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
