@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T05:11:15.641Z",
-  "storyCount": 167,
+  "generatedAt": "2026-10-05T05:53:21.746Z",
+  "storyCount": 169,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -4293,6 +4293,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAaron%20Sorkin%20-%20Jesse%20Eisenberg%20-%20David%20Fincher%20-%20Andrew%20Garfield%20-%20Justin%20Timberlake%20-%20The%20Social%20Network%20-%202010%20New%20York%20Film%20Festival%20-%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1fe70b7ffffc9edc",
+      "slug": "entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04",
+      "articlePath": "src/content/articles/entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04.md",
+      "title": "Aaron Sorkin on \"The Social Reckoning\"",
+      "publishedAt": "2026-10-05T05:53:18.838Z",
+      "category": "entertainment",
+      "primarySource": "CBS News — Entertainment",
+      "primaryPublisherFamily": "CBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "CBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 41,
+      "sourceUrls": [
+        "https://www.cbsnews.com/video/aaron-sorkin-on-the-social-reckoning/"
+      ],
+      "imagePath": "/images/entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Raffi Asdourian",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAaron%20Sorkin%20-%20Jesse%20Eisenberg%20-%20David%20Fincher%20-%20Andrew%20Garfield%20-%20Justin%20Timberlake%20-%20The%20Social%20Network%20-%202010%20New%20York%20Film%20Festival%20-%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1a63b3ca52541f2a",
+      "slug": "us-why-you-should-think-about-getting-your-flu-shot-2026-10-04",
+      "articlePath": "src/content/articles/us-why-you-should-think-about-getting-your-flu-shot-2026-10-04.md",
+      "title": "Why you should think about getting your flu shot right now",
+      "publishedAt": "2026-10-05T05:53:21.746Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 40,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/health/2026/10/04/why-you-should-think-about-getting-your-flu-shot-now/"
+      ],
+      "imagePath": "/images/us-why-you-should-think-about-getting-your-flu-shot-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Unknown authorUnknown author",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIt%20is%20more%20serious%20than%20you%20think.%20The%20barbarian%20is%20almost%20at%20your%20gates.%20He%20violates%2C%20plunders%2C%20murders.%20Don't%20let%20him%20get%20a%20footing%20on%20British%20soil.%20Help%20to%20repel%20the%20invasion%20by%20enlisting%20now%20LCCN2003675355.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

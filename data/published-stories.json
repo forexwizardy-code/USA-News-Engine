@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T05:11:15.643Z",
-  "storyCount": 222,
+  "generatedAt": "2026-10-05T05:53:21.747Z",
+  "storyCount": 224,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6515,6 +6515,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAaron%20Sorkin%20-%20Jesse%20Eisenberg%20-%20David%20Fincher%20-%20Andrew%20Garfield%20-%20Justin%20Timberlake%20-%20The%20Social%20Network%20-%202010%20New%20York%20Film%20Festival%20-%2002.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04",
+      "slug": "entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04",
+      "articlePath": "src/content/articles/entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04.md",
+      "publishedAt": "2026-10-05T05:53:18.838Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1fe70b7ffffc9edc"
+      ],
+      "allAlertIds": [
+        "gn__1fe70b7ffffc9edc"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "CBS News — Entertainment",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T05:53:18.838Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-aaron-sorkin-on-the-social-reckoning-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Raffi Asdourian",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAaron%20Sorkin%20-%20Jesse%20Eisenberg%20-%20David%20Fincher%20-%20Andrew%20Garfield%20-%20Justin%20Timberlake%20-%20The%20Social%20Network%20-%202010%20New%20York%20Film%20Festival%20-%2002.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-why-you-should-think-about-getting-your-flu-shot-2026-10-04",
+      "slug": "us-why-you-should-think-about-getting-your-flu-shot-2026-10-04",
+      "articlePath": "src/content/articles/us-why-you-should-think-about-getting-your-flu-shot-2026-10-04.md",
+      "publishedAt": "2026-10-05T05:53:21.746Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1a63b3ca52541f2a"
+      ],
+      "allAlertIds": [
+        "gn__1a63b3ca52541f2a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — National",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T05:53:21.746Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-why-you-should-think-about-getting-your-flu-shot-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Unknown authorUnknown author",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIt%20is%20more%20serious%20than%20you%20think.%20The%20barbarian%20is%20almost%20at%20your%20gates.%20He%20violates%2C%20plunders%2C%20murders.%20Don't%20let%20him%20get%20a%20footing%20on%20British%20soil.%20Help%20to%20repel%20the%20invasion%20by%20enlisting%20now%20LCCN2003675355.jpg",
       "breaking": false
     }
   ]
