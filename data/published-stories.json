@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T01:23:10.761Z",
-  "storyCount": 208,
+  "generatedAt": "2026-10-05T01:50:09.852Z",
+  "storyCount": 210,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6107,6 +6107,64 @@
       "heroImageLicense": "CC BY-SA 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ARally.HandsOff.CFPB.WDC.10February2025%20IMG%203528a%20(54322990127).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-cornell-case-carries-far-reaching-implications-for-2026-10-04",
+      "slug": "us-cornell-case-carries-far-reaching-implications-for-2026-10-04",
+      "articlePath": "src/content/articles/us-cornell-case-carries-far-reaching-implications-for-2026-10-04.md",
+      "publishedAt": "2026-10-05T01:50:06.885Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__706356450cfdc24b"
+      ],
+      "allAlertIds": [
+        "gn__706356450cfdc24b"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T01:50:06.885Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-cornell-case-carries-far-reaching-implications-for-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "maczter from Austin, TX, United States",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Items%20Maczter%20Carries%20v3.0%20(3528437339).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-emanuel-urges-democrats-to-prioritize-ethics-2026-10-04",
+      "slug": "politics-emanuel-urges-democrats-to-prioritize-ethics-2026-10-04",
+      "articlePath": "src/content/articles/politics-emanuel-urges-democrats-to-prioritize-ethics-2026-10-04.md",
+      "publishedAt": "2026-10-05T01:50:09.850Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__c7f483fe5e7fd696"
+      ],
+      "allAlertIds": [
+        "gn__c7f483fe5e7fd696"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T01:50:09.850Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-emanuel-urges-democrats-to-prioritize-ethics-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "United States House of Representatives - Office of Paul Gosar",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APaul%20Gosar%20with%20Donald%20Trump.jpg",
       "breaking": false
     }
   ]
