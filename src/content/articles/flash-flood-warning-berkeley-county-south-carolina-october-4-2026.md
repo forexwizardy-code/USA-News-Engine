@@ -5,6 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Berkeley County, Sout
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-10-05T00:38:03.393Z
+updatedAt: 2026-10-05T02:28:13.522Z
 image: "/images/flash-flood-warning-berkeley-county-south-carolina-october-4-2026-map.png"
 imageAlt: "Flash Flood Warning for Berkeley County, South Carolina"
 imageMode: "map-data"
