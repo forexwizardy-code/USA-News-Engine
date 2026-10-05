@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T04:25:45.901Z",
-  "storyCount": 165,
+  "generatedAt": "2026-10-05T05:11:15.641Z",
+  "storyCount": 167,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -4242,6 +4242,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://deadline.com/2026/10/white-house-slams-chuck-lorre-roasts-trump-1237146214/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__1585b4251c78ea85",
+      "slug": "technology-live-updates-trump-taps-clayton-to-lead-ai-force-2026-10-04",
+      "articlePath": "src/content/articles/technology-live-updates-trump-taps-clayton-to-lead-ai-force-2026-10-04.md",
+      "title": "Live updates: Trump taps Clayton to lead AI force; Cornell victim’s attorney alleges more involved in gang rape",
+      "publishedAt": "2026-10-05T05:11:11.533Z",
+      "category": "technology",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 43,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6127907-trump-nebraska-gop-midterms-cornell-case-alito/"
+      ],
+      "imagePath": "/images/technology-live-updates-trump-taps-clayton-to-lead-ai-force-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20White%20House%20-%2054437612958.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5f19ec31090f4743",
+      "slug": "entertainment-aaron-sorkin-on-the-social-reckoning-maybe-we-can-2026-10-04",
+      "articlePath": "src/content/articles/entertainment-aaron-sorkin-on-the-social-reckoning-maybe-we-can-2026-10-04.md",
+      "title": "Aaron Sorkin on \"The Social Reckoning\": \"Maybe we can't handle the truth\"",
+      "publishedAt": "2026-10-05T05:11:15.641Z",
+      "category": "entertainment",
+      "primarySource": "CBS News — Entertainment",
+      "primaryPublisherFamily": "CBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "CBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 41,
+      "sourceUrls": [
+        "https://www.cbsnews.com/news/aaron-sorkin-on-the-social-reckoning/"
+      ],
+      "imagePath": "/images/entertainment-aaron-sorkin-on-the-social-reckoning-maybe-we-can-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Raffi Asdourian",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAaron%20Sorkin%20-%20Jesse%20Eisenberg%20-%20David%20Fincher%20-%20Andrew%20Garfield%20-%20Justin%20Timberlake%20-%20The%20Social%20Network%20-%202010%20New%20York%20Film%20Festival%20-%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
