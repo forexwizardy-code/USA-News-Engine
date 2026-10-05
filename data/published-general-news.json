@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T02:23:53.775Z",
-  "storyCount": 157,
+  "generatedAt": "2026-10-05T02:51:24.872Z",
+  "storyCount": 159,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -4033,6 +4033,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMark%20Ruffalo%20Signing%20Autograph%202014.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__64373f8467246a37",
+      "slug": "us-the-toxic-family-strife-before-a-new-york-times-2026-10-04",
+      "articlePath": "src/content/articles/us-the-toxic-family-strife-before-a-new-york-times-2026-10-04.md",
+      "title": "The toxic family strife before a New York Times engineer was gunned down",
+      "publishedAt": "2026-10-05T02:51:22.189Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 47,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/nation/2026/10/04/before-in-laws-arrest-slaying-engineer-park-years-domestic-strife/"
+      ],
+      "imagePath": "/images/us-the-toxic-family-strife-before-a-new-york-times-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Anthony Quintano",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20Ball%20from%20above.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__642c23a66ff8e180",
+      "slug": "politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04",
+      "articlePath": "src/content/articles/politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04.md",
+      "title": "3 classes after Supreme Court’s admissions ruling: What the data show",
+      "publishedAt": "2026-10-05T02:51:24.872Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 45,
+      "sourceUrls": [
+        "https://thehill.com/opinion/education/6127046-higher-education-post-ruling-trends/"
+      ],
+      "imagePath": "/images/politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Michael Savidge",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Dimly%20Lit%20Old%20Supreme%20Court%20Chamber%20I.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

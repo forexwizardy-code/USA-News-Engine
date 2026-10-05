@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T02:28:13.529Z",
-  "storyCount": 212,
+  "generatedAt": "2026-10-05T02:51:24.874Z",
+  "storyCount": 214,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6224,6 +6224,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMark%20Ruffalo%20Signing%20Autograph%202014.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-the-toxic-family-strife-before-a-new-york-times-2026-10-04",
+      "slug": "us-the-toxic-family-strife-before-a-new-york-times-2026-10-04",
+      "articlePath": "src/content/articles/us-the-toxic-family-strife-before-a-new-york-times-2026-10-04.md",
+      "publishedAt": "2026-10-05T02:51:22.189Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__64373f8467246a37"
+      ],
+      "allAlertIds": [
+        "gn__64373f8467246a37"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — National",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T02:51:22.189Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-the-toxic-family-strife-before-a-new-york-times-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Anthony Quintano",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20Ball%20from%20above.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04",
+      "slug": "politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04",
+      "articlePath": "src/content/articles/politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04.md",
+      "publishedAt": "2026-10-05T02:51:24.872Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__642c23a66ff8e180"
+      ],
+      "allAlertIds": [
+        "gn__642c23a66ff8e180"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-05T02:51:24.872Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-3-classes-after-supreme-court-s-admissions-ruling-2026-10-04-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Michael Savidge",
+      "heroImageLicense": "CC BY 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Dimly%20Lit%20Old%20Supreme%20Court%20Chamber%20I.jpg",
       "breaking": false
     }
   ]
