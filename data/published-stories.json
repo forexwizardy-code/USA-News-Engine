@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T04:25:45.903Z",
+  "generatedAt": "2026-10-05T04:31:21.738Z",
   "storyCount": 220,
   "stories": [
     {
@@ -5940,22 +5940,23 @@
       "slug": "flash-flood-warning-berkeley-county-south-carolina-october-4-2026",
       "articlePath": "src/content/articles/flash-flood-warning-berkeley-county-south-carolina-october-4-2026.md",
       "publishedAt": "2026-10-05T00:38:03.393Z",
-      "updatedAt": "2026-10-05T02:28:13.522Z",
+      "updatedAt": "2026-10-05T04:31:21.731Z",
       "currentAlertIds": [
-        "urn:oid:2.49.0.1.840.0.b16734e82032f2ed23364e5d5a2605e21a53014d.001.1"
+        "urn:oid:2.49.0.1.840.0.2734a86c7d5097b14ee26a8e5ddea73e34f9315d.001.1"
       ],
       "allAlertIds": [
         "urn:oid:2.49.0.1.840.0.79668bc24367d120360b7e80d6574c5d4947622d.001.1",
-        "urn:oid:2.49.0.1.840.0.b16734e82032f2ed23364e5d5a2605e21a53014d.001.1"
+        "urn:oid:2.49.0.1.840.0.b16734e82032f2ed23364e5d5a2605e21a53014d.001.1",
+        "urn:oid:2.49.0.1.840.0.2734a86c7d5097b14ee26a8e5ddea73e34f9315d.001.1"
       ],
       "event": "Flash Flood Warning",
       "location": "Berkeley County, South Carolina",
       "sourceOffice": "NWS Charleston SC",
       "lifecycleStatus": "active",
-      "lastNwsEffectiveAt": "2026-10-04T21:50:00-04:00",
-      "lastNwsExpiresAt": "2026-10-04T23:00:00-04:00",
-      "lastNwsEndsAt": "2026-10-04T23:00:00-04:00",
-      "lastCheckedAt": "2026-10-05T02:28:13.522Z",
+      "lastNwsEffectiveAt": "2026-10-04T23:48:00-04:00",
+      "lastNwsExpiresAt": "2026-10-05T01:00:00-04:00",
+      "lastNwsEndsAt": "2026-10-05T01:00:00-04:00",
+      "lastCheckedAt": "2026-10-05T04:31:21.731Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/flash-flood-warning-berkeley-county-south-carolina-october-4-2026-map.png",
       "heroImageRelation": "current-alert-data",
