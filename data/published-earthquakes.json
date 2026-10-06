@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T11:59:46.792Z",
-  "storyCount": 2,
+  "generatedAt": "2026-10-06T19:00:06.388Z",
+  "storyCount": 3,
   "stories": [
     {
       "earthquakeKey": "usgs__uw714111952",
@@ -44,6 +44,28 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourceUrl": "https://commons.wikimedia.org/wiki/File%3ANorthern%20Mariana%20Islands%20banner%20Bird%20Island%20at%20Saipan.jpg",
+      "breaking": true
+    },
+    {
+      "earthquakeKey": "usgs__aka2026tuxgky",
+      "eventId": "aka2026tuxgky",
+      "slug": "m55-earthquake-aleneva-alaska-2026-10-06",
+      "articlePath": "src/content/articles/m55-earthquake-aleneva-alaska-2026-10-06.md",
+      "publishedAt": "2026-10-06T19:00:06.382Z",
+      "updatedAt": null,
+      "lastMagnitude": 5.5,
+      "lastAlert": "green",
+      "lastTsunami": false,
+      "lastFelt": 265,
+      "storyStatus": "active",
+      "lastSeenAt": "2026-10-06T19:00:05.846Z",
+      "lastCheckedAt": "2026-10-06T19:00:06.382Z",
+      "imageMode": "agency-graphic",
+      "imageSource": "/images/m55-earthquake-aleneva-alaska-2026-10-06.jpg",
+      "imageCreator": "U.S. Geological Survey (official ShakeMap)",
+      "imageLicense": "Official USGS ShakeMap. USGS products are works of the U.S. federal government and are in the public domain.",
+      "imageLicenseUrl": "",
+      "imageSourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tuxgky",
       "breaking": true
     }
   ]

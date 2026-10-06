@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-06T18:31:18.986Z",
-  "storyCount": 254,
+  "generatedAt": "2026-10-06T19:00:06.384Z",
+  "storyCount": 255,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -7446,6 +7446,35 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATo%20Become%20a%20Martial%20Arts%20Instructor%20in%20Hawaii%20161208-M-QH615-014.jpg",
       "breaking": false
+    },
+    {
+      "storyKey": "m55-earthquake-aleneva-alaska-2026-10-06",
+      "slug": "m55-earthquake-aleneva-alaska-2026-10-06",
+      "articlePath": "src/content/articles/m55-earthquake-aleneva-alaska-2026-10-06.md",
+      "publishedAt": "2026-10-06T19:00:06.382Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "aka2026tuxgky"
+      ],
+      "allAlertIds": [
+        "aka2026tuxgky"
+      ],
+      "event": "Earthquake",
+      "location": "92 km NNW of Aleneva, Alaska",
+      "sourceOffice": "U.S. Geological Survey",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-06T19:00:06.382Z",
+      "heroImageMode": "source-image",
+      "heroImageSource": "/images/m55-earthquake-aleneva-alaska-2026-10-06.jpg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "U.S. Geological Survey (official ShakeMap)",
+      "heroImageLicense": "Official USGS ShakeMap. USGS products are works of the U.S. federal government and are in the public domain.",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tuxgky",
+      "breaking": true
     }
   ]
 }
