@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-06T08:52:35.621Z",
-  "storyCount": 191,
+  "generatedAt": "2026-10-06T09:25:13.295Z",
+  "storyCount": 193,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -4918,6 +4918,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://variety.com/2026/film/news/michael-douglas-nepo-baby-debate-1236899927/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__8aa05a09a5591beb",
+      "slug": "us-fbi-s-spy-hunting-squads-hit-with-deep-cuts-even-2026-10-06",
+      "articlePath": "src/content/articles/us-fbi-s-spy-hunting-squads-hit-with-deep-cuts-even-2026-10-06.md",
+      "title": "FBI's spy hunting squads hit with deep cuts even as foreign espionage threats soar",
+      "publishedAt": "2026-10-06T09:25:11.257Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/06/g-s1-145511/fbi-trump-counterintelligence-units-cuts"
+      ],
+      "imagePath": "/images/us-fbi-s-spy-hunting-squads-hit-with-deep-cuts-even-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Webber, Charles W. (Charles Wilkins), 1819-1856",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWild%20scenes%20and%20wild%20hunters%20of%20the%20world%20(1852)%20(14780026734).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__e0b42d991aa8f837",
+      "slug": "entertainment-busan-film-festival-director-jung-hanseok-talks-2026-10-06",
+      "articlePath": "src/content/articles/entertainment-busan-film-festival-director-jung-hanseok-talks-2026-10-06.md",
+      "title": "Busan Film Festival Director Jung Hanseok Talks Oscars Pathway, New Competition Section & Korean Cinema Recovery",
+      "publishedAt": "2026-10-06T09:25:13.295Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 48,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/busan-film-festival-jung-hanseok-korea-oscars-1237146438/"
+      ],
+      "imagePath": "/images/entertainment-busan-film-festival-director-jung-hanseok-talks-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Outhere505",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMaggie%20Kang%20at%20the%20Busan%20International%20Film%20Festival%202025%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
