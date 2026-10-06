@@ -46,6 +46,24 @@ const CLUSTERS_FILE = join(
 // Helpers
 // ===========================================================================
 
+const IMAGE_KEYWORD_STOPWORDS = new Set([
+  'recalled', 'recall', 'recalls', 'recalling',
+  'hazard', 'risk', 'product', 'products', 'brand', 'company',
+  'potential', 'possible', 'over', 'due', 'because',
+  'inc', 'llc', 'ltd', 'corp', 'corporation',
+  'food', 'foods', 'device',
+  'packed', 'packing', 'package', 'packaging', 'bag', 'bags', 'plastic', 'sealed',
+  'yellow', 'white', 'black', 'red', 'blue', 'green',
+  'salmonella', 'listeria', 'coli', 'contamination', 'contaminated',
+  'failure', 'injury', 'fire',
+]);
+
+function tailOutput(value, maxChars = 6000) {
+  const text = String(value || '');
+  if (text.length <= maxChars) return text;
+  return `[...truncated ${text.length - maxChars} earlier characters...]\n${text.slice(-maxChars)}`;
+}
+
 /** Run an npm script under PROJECT_DIR; throw with stderr on failure. */
 function runNpm(script, label) {
   console.log(`  $ npm run ${script}`);
@@ -55,7 +73,7 @@ function runNpm(script, label) {
     const stderr = err.stderr?.toString?.() || '';
     const stdout = err.stdout?.toString?.() || '';
     throw new Error(
-      `${label} failed.\n-- stderr --\n${stderr.slice(0, 800)}\n-- stdout --\n${stdout.slice(0, 400)}`,
+      `${label} failed.\n-- stderr (tail) --\n${tailOutput(stderr, 2500)}\n-- stdout (tail) --\n${tailOutput(stdout, 8000)}`,
     );
   }
 }
@@ -69,7 +87,7 @@ function runNode(scriptWithArgs, label) {
     const stderr = err.stderr?.toString?.() || '';
     const stdout = err.stdout?.toString?.() || '';
     throw new Error(
-      `${label} failed.\n-- stderr --\n${stderr.slice(0, 800)}\n-- stdout --\n${stdout.slice(0, 400)}`,
+      `${label} failed.\n-- stderr (tail) --\n${tailOutput(stderr, 2500)}\n-- stdout (tail) --\n${tailOutput(stdout, 8000)}`,
     );
   }
 }
@@ -498,8 +516,11 @@ async function publishNewArticle(story, registry) {
   const pngPath = join(draftImagesDir, `${slug}.png`);
   const publicImagesDir = join(PROJECT_DIR, 'public', 'images');
 
-  // Keep official recall JPG first; otherwise try a verified reusable photo before the graphic fallback.
+  // Keep an official recall JPG first. FDA stories only accept strongly
+  // matched reusable photos; otherwise the generated agency graphic is safer
+  // than a broad one-keyword image rescue.
   if (!(await fileExists(jpgPath))) {
+    const isFdaStory = story?.source === 'FDA';
     const recallKeywords = [...new Set(
       [draft.title, story.recallingFirm, story.headlineSeed, ...(Array.isArray(story.brands) ? story.brands : [])]
         .filter(Boolean)
@@ -507,7 +528,7 @@ async function publishNewArticle(story, registry) {
         .toLowerCase()
         .replace(/[^a-z0-9\s-]+/g, ' ')
         .split(/\s+/)
-        .filter((word) => word.length >= 4 && !['recalled', 'recall', 'hazard', 'risk', 'product', 'products', 'brand'].includes(word)),
+        .filter((word) => word.length >= 4 && !IMAGE_KEYWORD_STOPWORDS.has(word)),
     )].slice(0, 8);
 
     let imageSearch = await findBestCommonsImage({
@@ -524,7 +545,7 @@ async function publishNewArticle(story, registry) {
 
     // Rescue pass: if an exact/strict search cannot find a safe photo,
     // search using product-focused terms instead of company/hazard wording.
-    if (!imageSearch.found) {
+    if (!imageSearch.found && !isFdaStory) {
       const titleWithoutFirm = String(draft.title || '')
         .toLowerCase()
         .replace(String(story.recallingFirm || '').toLowerCase(), ' ');
@@ -540,13 +561,7 @@ async function publishNewArticle(story, registry) {
           .replace(/[^a-z0-9\s-]+/g, ' ')
           .split(/\s+/)
           .filter((word) =>
-            word.length >= 4 &&
-            ![
-              'recalled','recall','hazard','risk','over','potential',
-              'product','products','brand','company','device',
-              'salmonella','listeria','coli','contamination',
-              'failure','injury','fire'
-            ].includes(word)
+            word.length >= 4 && !IMAGE_KEYWORD_STOPWORDS.has(word)
           ),
       )].slice(0, 8);
 
@@ -569,6 +584,11 @@ async function publishNewArticle(story, registry) {
         console.log(`  Image rescue pass found: ${imageSearch.best.image.title}`);
       }
     }
+
+    if (isFdaStory && !imageSearch.found) {
+      console.log('  No strongly matched FDA photo found; keeping generated agency graphic.');
+    }
+
     if (imageSearch.found && imageSearch.best?.image) {
       const selected = imageSearch.best.image;
       const processed = await downloadAndProcessHero({ candidate: selected, outputDir: draftImagesDir, slug, suffix: '', keepOriginal: true });
