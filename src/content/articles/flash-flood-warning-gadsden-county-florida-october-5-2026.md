@@ -5,7 +5,7 @@ description: "The NWS has issued a Flash Flood Warning for Gadsden County, Flori
 category: weather
 author: "US News Engine Weather Desk"
 publishedAt: 2026-10-06T00:39:07.372Z
-updatedAt: 2026-10-06T02:28:15.902Z
+updatedAt: 2026-10-06T04:29:24.417Z
 image: "/images/flash-flood-warning-gadsden-county-florida-october-5-2026-map.png"
 imageAlt: "Flash Flood Warning for Gadsden County, Florida"
 imageMode: "map-data"
