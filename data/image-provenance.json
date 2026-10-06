@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-06T00:39:10.791Z",
-  "imageCount": 6,
+  "generatedAt": "2026-10-06T02:28:15.988Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -11,17 +11,6 @@
       "sourceOrganization": "NPS Climate Change Response (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:47.231Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/2/2b/Extreme_Heat_Danger_sign_at_Death_Valley_%2870a2d6e6-8802-43e6-89c9-1cc336246944%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AExtreme%20Heat%20Danger%20sign%20at%20Death%20Valley%20(70a2d6e6-8802-43e6-89c9-1cc336246944).jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Extreme_Heat_Danger_sign_at_Death_Valley_%2870a2d6e6-8802-43e6-89c9-1cc336246944%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "NPS",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "NPS (Wikimedia Commons)",
-      "imageRelation": "exact-location",
-      "firstUsedAt": "2026-10-06T00:39:10.685Z",
       "storiesUsingImage": []
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a3/Christmas_flood_1717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
