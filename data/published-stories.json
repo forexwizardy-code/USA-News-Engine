@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-06T01:23:34.467Z",
-  "storyCount": 236,
+  "generatedAt": "2026-10-06T01:48:38.740Z",
+  "storyCount": 238,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -6921,6 +6921,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Ronald%20Reagan%20Announcing%20to%20The%20Press%20The%20Nomination%20of%20Judge%20Anthony%20Kennedy%20As%20Associate%20Justice%20of%20The%20United%20States%20Supreme%20Court%20in%20The%20Press%20Room%20-%20DPLA%20-%208611e9d3f5cbf0b894c1bb68d788a995.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-white-house-blocked-politico-from-air-force-one-2026-10-06",
+      "slug": "us-white-house-blocked-politico-from-air-force-one-2026-10-06",
+      "articlePath": "src/content/articles/us-white-house-blocked-politico-from-air-force-one-2026-10-06.md",
+      "publishedAt": "2026-10-06T01:48:34.951Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__261b934645eb86dd"
+      ],
+      "allAlertIds": [
+        "gn__261b934645eb86dd"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-06T01:48:34.951Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-white-house-blocked-politico-from-air-force-one-2026-10-06-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "A.-K. D.",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWhite%20House%20Ballylarkin%20Northwest%20wall%20detail.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-supreme-court-hears-case-on-holding-energy-2026-10-05",
+      "slug": "politics-supreme-court-hears-case-on-holding-energy-2026-10-05",
+      "articlePath": "src/content/articles/politics-supreme-court-hears-case-on-holding-energy-2026-10-05.md",
+      "publishedAt": "2026-10-06T01:48:38.738Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__459921b7128b900e"
+      ],
+      "allAlertIds": [
+        "gn__459921b7128b900e"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-06T01:48:38.738Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-supreme-court-hears-case-on-holding-energy-2026-10-05-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Harris & Ewing, photographer",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJudiciary%20Committee%20hears%20N.Y.%20Supreme%20Justice%20on%20proposed%20Court%20reform%20plan.%20Washington%2C%20D.C.%2C%20March%2020.%20Ferdinand%20Pecora%20(left)%20New%20York%20Supreme%20Court%20Justice%20and%20former%20member%20of%20the%20LCCN2016871414.jpg",
       "breaking": false
     }
   ]
