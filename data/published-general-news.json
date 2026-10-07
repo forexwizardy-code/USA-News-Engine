@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T01:00:05.000Z",
-  "storyCount": 199,
+  "generatedAt": "2026-10-07T01:23:49.904Z",
+  "storyCount": 201,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5125,6 +5125,58 @@
       "imageLicense": "CC BY-SA 3.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurch%20of%20Saint%20Marie%20Interior%201%2C%20Palanga%2C%20Lithuania%20-%20Diliff.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__9d3110beb65ac9be",
+      "slug": "us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06",
+      "articlePath": "src/content/articles/us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06.md",
+      "title": "What, Exactly, Did Trump Say About Iran Taking Out Los Angeles and San Diego?",
+      "publishedAt": "2026-10-07T01:23:43.886Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/06/us/politics/trump-iran-take-out-los-angeles.html"
+      ],
+      "imagePath": "/images/us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "shankar s. from Dubai, united arab emirates",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADeluxe%20and%20war%20don't%20exactly%20go%20together%2C%20what%3F%20(24237753344).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__387fa39baee551f2",
+      "slug": "politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06",
+      "articlePath": "src/content/articles/politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06.md",
+      "title": "Planned Parenthood Votes adds $1M to ad campaigns in Maine, Michigan",
+      "publishedAt": "2026-10-07T01:23:49.904Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6132846-planned-parenthood-votes-senate-ads/"
+      ],
+      "imagePath": "/images/politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Senate Democrats",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADSC%208483%20(28901550173).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

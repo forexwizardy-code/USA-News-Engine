@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T01:00:05.008Z",
-  "storyCount": 261,
+  "generatedAt": "2026-10-07T01:23:49.906Z",
+  "storyCount": 263,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -7650,6 +7650,64 @@
       "heroImageLicense": "CC BY-SA 3.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurch%20of%20Saint%20Marie%20Interior%201%2C%20Palanga%2C%20Lithuania%20-%20Diliff.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06",
+      "slug": "us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06",
+      "articlePath": "src/content/articles/us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06.md",
+      "publishedAt": "2026-10-07T01:23:43.886Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__9d3110beb65ac9be"
+      ],
+      "allAlertIds": [
+        "gn__9d3110beb65ac9be"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-07T01:23:43.886Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-what-exactly-did-trump-say-about-iran-taking-out-2026-10-06-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "shankar s. from Dubai, united arab emirates",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADeluxe%20and%20war%20don't%20exactly%20go%20together%2C%20what%3F%20(24237753344).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06",
+      "slug": "politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06",
+      "articlePath": "src/content/articles/politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06.md",
+      "publishedAt": "2026-10-07T01:23:49.904Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__387fa39baee551f2"
+      ],
+      "allAlertIds": [
+        "gn__387fa39baee551f2"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-07T01:23:49.904Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-planned-parenthood-votes-adds-1m-to-ad-campaigns-2026-10-06-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Senate Democrats",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADSC%208483%20(28901550173).jpg",
       "breaking": false
     }
   ]
