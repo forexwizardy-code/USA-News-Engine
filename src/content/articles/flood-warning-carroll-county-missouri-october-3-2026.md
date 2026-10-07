@@ -17,7 +17,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.454e8d0a91c20e
 sourceOffice: "NWS Kansas City/Pleasant Hill MO"
 tags: ["Flood Warning", "Weather", "Severe"]
 state: "MO"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
