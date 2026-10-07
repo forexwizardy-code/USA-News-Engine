@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T05:24:53.677Z",
-  "storyCount": 217,
+  "generatedAt": "2026-10-07T05:51:47.907Z",
+  "storyCount": 219,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5594,6 +5594,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-issues-redress-payments-consumers-impacted-goats-deceptive-shipping-refund-policies",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__709df2e16dace7c0",
+      "slug": "politics-girl-asks-supreme-court-to-block-wash-state-rules-2026-10-06",
+      "articlePath": "src/content/articles/politics-girl-asks-supreme-court-to-block-wash-state-rules-2026-10-06.md",
+      "title": "Girl asks Supreme Court to block Wash. state rules allowing trans athletes",
+      "publishedAt": "2026-10-07T05:51:43.630Z",
+      "category": "politics",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/politics/2026/10/06/wash-state-teen-asks-supreme-court-bar-trans-athletes-competing/"
+      ],
+      "imagePath": "/images/politics-girl-asks-supreme-court-to-block-wash-state-rules-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Photo by Mr. Kjetil Ree.",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUS%20Supreme%20Court.JPG",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__00fc37a700728872",
+      "slug": "us-fbi-georgia-officials-arrest-suspect-in-new-york-2026-10-06",
+      "articlePath": "src/content/articles/us-fbi-georgia-officials-arrest-suspect-in-new-york-2026-10-06.md",
+      "title": "FBI, Georgia officials arrest suspect in New York for death threat against Collins, son-in-law",
+      "publishedAt": "2026-10-07T05:51:47.907Z",
+      "category": "us",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://thehill.com/homenews/state-watch/6131653-mike-collins-fbi-suspect-charged-terroristic-threats/"
+      ],
+      "imagePath": "/images/us-fbi-georgia-officials-arrest-suspect-in-new-york-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "FBI Field Offices",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFBI%20Atlanta%20Glynn%20County%2C%20Georgia%20Operation%20Photos%20260204-D-D0355-9070.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
