@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T04:25:06.966Z",
-  "storyCount": 213,
+  "generatedAt": "2026-10-07T04:53:57.154Z",
+  "storyCount": 215,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5490,6 +5490,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.pbs.org/newshour/show/haitian-students-suicide-reveals-human-toll-of-immigration-crackdown",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__1bdef7dfe8430224",
+      "slug": "entertainment-paramount-completes-its-takeover-of-warner-bros-to-2026-10-07",
+      "articlePath": "src/content/articles/entertainment-paramount-completes-its-takeover-of-warner-bros-to-2026-10-07.md",
+      "title": "Paramount completes its takeover of Warner Bros to become one Hollywood giant known as Skydance",
+      "publishedAt": "2026-10-07T04:53:54.217Z",
+      "category": "entertainment",
+      "primarySource": "ABC News — Entertainment",
+      "primaryPublisherFamily": "ABC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "ABC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://abcnews.com/Entertainment/wireStory/paramount-completes-takeover-warner-bros-become-hollywood-giant-137031061"
+      ],
+      "imagePath": "/images/entertainment-paramount-completes-its-takeover-of-warner-bros-to-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Ank Kumar",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHogwart%E2%80%98s%20Great%20Hall%2C%20Warner%20Bros%20Harry%20Potter%20Studios%2004.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__b409166833c5112f",
+      "slug": "us-brett-mcgurk-chronicles-negotiations-to-free-oct-7-2026-10-06",
+      "articlePath": "src/content/articles/us-brett-mcgurk-chronicles-negotiations-to-free-oct-7-2026-10-06.md",
+      "title": "Brett McGurk chronicles negotiations to free Oct. 7 hostages in 'Brink'",
+      "publishedAt": "2026-10-07T04:53:57.154Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/brett-mcgurk-chronicles-negotiations-to-free-oct-7-hostages-in-brink"
+      ],
+      "imagePath": "/images/us-brett-mcgurk-chronicles-negotiations-to-free-oct-7-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Chairman of the Joint Chiefs of Staff from Washington D.C, United States",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABrett%20McGurk%20and%20Joseph%20Dunford%20171024-D-PB383-001%20(26167954559).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
