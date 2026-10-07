@@ -15,7 +15,7 @@ sourceName: "National Weather Service"
 sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b6061c7f638a956197d8756e4bd294e95186a497.004.1"
 sourceOffice: "NWS Anchorage AK"
 tags: ["Hurricane Force Wind Warning", "Weather", "Extreme"]
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
