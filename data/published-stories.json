@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T00:39:33.502Z",
-  "storyCount": 259,
+  "generatedAt": "2026-10-07T01:00:05.008Z",
+  "storyCount": 261,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -7593,6 +7593,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06",
+      "slug": "politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06",
+      "articlePath": "src/content/articles/politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06.md",
+      "publishedAt": "2026-10-07T01:00:01.902Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__55a59a61bd16de5c"
+      ],
+      "allAlertIds": [
+        "gn__55a59a61bd16de5c"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-07T01:00:01.902Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Jeff Kubina from the milky way galaxy",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASparrows%20Point%20Steel%20Plant.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06",
+      "slug": "entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06",
+      "articlePath": "src/content/articles/entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06.md",
+      "publishedAt": "2026-10-07T01:00:05.000Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__691911b1d6bc825c"
+      ],
+      "allAlertIds": [
+        "gn__691911b1d6bc825c"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-07T01:00:05.000Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Diliff",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurch%20of%20Saint%20Marie%20Interior%201%2C%20Palanga%2C%20Lithuania%20-%20Diliff.jpg",
+      "breaking": false
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T00:34:52.880Z",
-  "storyCount": 197,
+  "generatedAt": "2026-10-07T01:00:05.000Z",
+  "storyCount": 199,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5073,6 +5073,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFrom%20left%2C%20U.S.%20Army%20Command%20Sgt.%20Maj.%20Donna%20A.%20Brock%2C%20the%20command%20sergeant%20major%20of%20U.S.%20Army%20Medical%20Command%20(MEDCOM)%3B%20World%20Wrestling%20Entertainment%20(WWE)%20Diva%20Eva%20Marie%3B%20Sgt.%20Sarah%20M.%20Deckert%2C%20the%20Enlisted%20131113-D-HU462-185.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__55a59a61bd16de5c",
+      "slug": "politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06",
+      "articlePath": "src/content/articles/politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06.md",
+      "title": "How a Maryland Shipyard Turned Into a Squabble Between Trump and Wes Moore",
+      "publishedAt": "2026-10-07T01:00:01.902Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/06/us/politics/trump-maryland-submarines-anduril-baltimore.html"
+      ],
+      "imagePath": "/images/politics-how-a-maryland-shipyard-turned-into-a-squabble-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Jeff Kubina from the milky way galaxy",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASparrows%20Point%20Steel%20Plant.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__691911b1d6bc825c",
+      "slug": "entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06",
+      "articlePath": "src/content/articles/entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06.md",
+      "title": "Eva Marie Saint, Oscar Winner for ‘On the Waterfront,’ Is Dead at 102",
+      "publishedAt": "2026-10-07T01:00:05.000Z",
+      "category": "entertainment",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/06/movies/eva-marie-saint-dead.html"
+      ],
+      "imagePath": "/images/entertainment-eva-marie-saint-oscar-winner-for-on-the-waterfront-2026-10-06-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Diliff",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChurch%20of%20Saint%20Marie%20Interior%201%2C%20Palanga%2C%20Lithuania%20-%20Diliff.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
