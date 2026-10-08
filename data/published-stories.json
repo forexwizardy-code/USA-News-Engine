@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T01:52:25.118Z",
-  "storyCount": 291,
+  "generatedAt": "2026-10-08T02:22:36.880Z",
+  "storyCount": 293,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -8528,6 +8528,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADr.%20Lee%20Hood%20receiving%20the%20National%20Medal%20of%20Science%20from%20President%20Obama.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07",
+      "slug": "politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07",
+      "articlePath": "src/content/articles/politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07.md",
+      "publishedAt": "2026-10-08T02:22:32.071Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__95247931a4d204e5"
+      ],
+      "allAlertIds": [
+        "gn__95247931a4d204e5"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T02:22:32.071Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Designism",
+      "heroImageLicense": "CC0",
+      "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AButler%20Farm%20Show%20Airport%20Trump%20Rally%202024%2003.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07",
+      "slug": "business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07",
+      "articlePath": "src/content/articles/business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07.md",
+      "publishedAt": "2026-10-08T02:22:36.878Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__fa932bded43348a2"
+      ],
+      "allAlertIds": [
+        "gn__fa932bded43348a2"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T02:22:36.878Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Consumer Financial Protection Bureau",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMiami%2C%20FL%20-%20Field%20Hearing%20on%20Student%20Loan%20Borrowers.jpg",
       "breaking": false
     }
   ]

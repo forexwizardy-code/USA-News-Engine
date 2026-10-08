@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T01:52:25.116Z",
-  "storyCount": 227,
+  "generatedAt": "2026-10-08T02:22:36.878Z",
+  "storyCount": 229,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5853,6 +5853,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADr.%20Lee%20Hood%20receiving%20the%20National%20Medal%20of%20Science%20from%20President%20Obama.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__95247931a4d204e5",
+      "slug": "politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07",
+      "articlePath": "src/content/articles/politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07.md",
+      "title": "Live updates: Trump rallies in San Antonio; Iowa, Pennsylvania in debate spotlight",
+      "publishedAt": "2026-10-08T02:22:32.071Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6133060-live-updates-candidates-trump-texas-midterm-debates/"
+      ],
+      "imagePath": "/images/politics-live-updates-trump-rallies-in-san-antonio-iowa-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Designism",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AButler%20Farm%20Show%20Airport%20Trump%20Rally%202024%2003.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__fa932bded43348a2",
+      "slug": "business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07",
+      "articlePath": "src/content/articles/business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07.md",
+      "title": "Student loan borrowers have more time to reduce interest rates. Here's what to know",
+      "publishedAt": "2026-10-08T02:22:36.878Z",
+      "category": "business",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/education/student-loan-borrowers-have-more-time-to-reduce-interest-rates-heres-what-to-know"
+      ],
+      "imagePath": "/images/business-student-loan-borrowers-have-more-time-to-reduce-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Consumer Financial Protection Bureau",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMiami%2C%20FL%20-%20Field%20Hearing%20on%20Student%20Loan%20Borrowers.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
