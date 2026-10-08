@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T04:30:04.135Z",
-  "storyCount": 301,
+  "generatedAt": "2026-10-08T04:52:35.985Z",
+  "storyCount": 303,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -8818,6 +8818,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUSDA%20and%20the%20Conference%20on%20Asian%20Pacific%20American%20Leadership%20(CAPAL)%20MOU%20Signing%20(20240925-USDA-OSEC-TEW-0127).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08",
+      "slug": "us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08",
+      "articlePath": "src/content/articles/us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08.md",
+      "publishedAt": "2026-10-08T04:52:31.845Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__029e914edfcf9e15"
+      ],
+      "allAlertIds": [
+        "gn__029e914edfcf9e15"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T04:52:31.845Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Euthman",
+      "heroImageLicense": "CC BY 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOct%202025%20No%20Kings%20rally%20Richmond%20Texas%20NZ7%206841.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07",
+      "slug": "technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07",
+      "articlePath": "src/content/articles/technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07.md",
+      "publishedAt": "2026-10-08T04:52:35.984Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__bfe94484483be4e5"
+      ],
+      "allAlertIds": [
+        "gn__bfe94484483be4e5"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "TechCrunch",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T04:52:35.984Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Unknown authorUnknown author",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThomas%20Edison%20placing%20plaque%20on%20ground%20while%20a%20crowd%20including%20Mina%20Edison%20and%20Harvey%20Firestone%20look%20on%20at%20Panama-Pacific%20(50cba2e37c07486c95e054a81afc7abc).jpg",
       "breaking": false
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T04:25:17.976Z",
-  "storyCount": 237,
+  "generatedAt": "2026-10-08T04:52:35.984Z",
+  "storyCount": 239,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6113,6 +6113,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUSDA%20and%20the%20Conference%20on%20Asian%20Pacific%20American%20Leadership%20(CAPAL)%20MOU%20Signing%20(20240925-USDA-OSEC-TEW-0127).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__029e914edfcf9e15",
+      "slug": "us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08",
+      "articlePath": "src/content/articles/us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08.md",
+      "title": "At Texas Rally, Trump and Paxton Make for an Awkward Pair",
+      "publishedAt": "2026-10-08T04:52:31.845Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/07/us/elections/in-texas-trump-and-paxton-make-for-an-awkward-pair.html"
+      ],
+      "imagePath": "/images/us-at-texas-rally-trump-and-paxton-make-for-an-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Euthman",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOct%202025%20No%20Kings%20rally%20Richmond%20Texas%20NZ7%206841.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__bfe94484483be4e5",
+      "slug": "technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07",
+      "articlePath": "src/content/articles/technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07.md",
+      "title": "While VCs crowd into San Francisco, Endeavor Catalyst raises $320M for founders ‘elsewhere’",
+      "publishedAt": "2026-10-08T04:52:35.984Z",
+      "category": "technology",
+      "primarySource": "TechCrunch",
+      "primaryPublisherFamily": "TechCrunch",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "TechCrunch"
+      ],
+      "usRelevance": "high",
+      "storyScore": 50,
+      "sourceUrls": [
+        "https://techcrunch.com/2026/10/07/while-vcs-crowd-into-san-francisco-endeavor-catalyst-raises-320m-for-founders-elsewhere/"
+      ],
+      "imagePath": "/images/technology-while-vcs-crowd-into-san-francisco-endeavor-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Unknown authorUnknown author",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThomas%20Edison%20placing%20plaque%20on%20ground%20while%20a%20crowd%20including%20Mina%20Edison%20and%20Harvey%20Firestone%20look%20on%20at%20Panama-Pacific%20(50cba2e37c07486c95e054a81afc7abc).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
