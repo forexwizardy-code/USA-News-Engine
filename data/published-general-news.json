@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T05:24:50.401Z",
-  "storyCount": 241,
+  "generatedAt": "2026-10-08T05:51:46.022Z",
+  "storyCount": 243,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6218,6 +6218,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://deadline.com/2026/10/spider-man-beyond-the-spider-verse-sony-pictures-animation-1237149251/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__e461181a82170df9",
+      "slug": "entertainment-alfonso-cuar-n-and-jon-s-cuar-n-on-future-of-2026-10-08",
+      "articlePath": "src/content/articles/entertainment-alfonso-cuar-n-and-jon-s-cuar-n-on-future-of-2026-10-08.md",
+      "title": "Alfonso Cuarón & Jonás Cuarón On Future Of Cinema: “The Theatrical Experience Will Continue, But It Will Co-Exist With Many Different Forms”",
+      "publishedAt": "2026-10-08T05:51:42.330Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/alfonso-cuaron-jonas-cuaron-gravity-campeon-gabacho-busan-1237149661/"
+      ],
+      "imagePath": "/images/entertainment-alfonso-cuar-n-and-jon-s-cuar-n-on-future-of-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Gage Skidmore; Please attribute to Gage Skidmore if used elsewhere.",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAlfonso%20Cuar%C3%B3n.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5c68b59cd97fb0cc",
+      "slug": "us-she-got-trump-s-500-check-for-health-insurance-to-2026-10-07",
+      "articlePath": "src/content/articles/us-she-got-trump-s-500-check-for-health-insurance-to-2026-10-07.md",
+      "title": "She got Trump's $500 check for health insurance. To her, it's a 'political stunt'",
+      "publishedAt": "2026-10-08T05:51:46.022Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/07/nx-s1-5991687/trump-medicare-aca-payments-midterms"
+      ],
+      "imagePath": "/images/us-she-got-trump-s-500-check-for-health-insurance-to-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. National Guard",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANational%20Guard%20supports%20the%20Inauguration%20of%20Trump%2003.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
