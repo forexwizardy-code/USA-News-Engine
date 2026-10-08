@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T02:22:36.878Z",
-  "storyCount": 229,
+  "generatedAt": "2026-10-08T02:50:07.429Z",
+  "storyCount": 231,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5905,6 +5905,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMiami%2C%20FL%20-%20Field%20Hearing%20on%20Student%20Loan%20Borrowers.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__f80f610d33c87031",
+      "slug": "politics-turek-hinson-spar-in-first-iowa-senate-debate-3-2026-10-08",
+      "articlePath": "src/content/articles/politics-turek-hinson-spar-in-first-iowa-senate-debate-3-2026-10-08.md",
+      "title": "Turek, Hinson spar in first Iowa Senate debate: 3 takeaways",
+      "publishedAt": "2026-10-08T02:50:04.946Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6135522-turek-hinson-spar-in-first-iowa-senate-debate-3-takeaways/"
+      ],
+      "imagePath": "/images/politics-turek-hinson-spar-in-first-iowa-senate-debate-3-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "DHSgov",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIowa%20Faith%20%26%20Freedom%20Banquet%20(54806138882).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__be24395dbb89b8cd",
+      "slug": "entertainment-how-chicago-fire-star-dermot-mulroney-exits-series-2026-10-08",
+      "articlePath": "src/content/articles/entertainment-how-chicago-fire-star-dermot-mulroney-exits-series-2026-10-08.md",
+      "title": "How ‘Chicago Fire’ Star Dermot Mulroney Exits Series",
+      "publishedAt": "2026-10-08T02:50:07.429Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/chicago-fire-star-dermot-mulroney-exit-series-1237148817/"
+      ],
+      "imagePath": "/images/entertainment-how-chicago-fire-star-dermot-mulroney-exits-series-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Harvardton",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChicago%2C%20Fire%20and%20Red%20Stars%20mascots%2C%20Sparky%20and%20Supernova.JPG",
       "imageRelation": "illustrative-file-photo"
     }
   ]
