@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T01:24:04.102Z",
-  "storyCount": 225,
+  "generatedAt": "2026-10-08T01:52:25.116Z",
+  "storyCount": 227,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5801,6 +5801,58 @@
       "imageLicense": "CC BY-SA 3.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHard%20Rock%20Cafe%20San%20Diego%20at%20night.JPG",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__ad11d6dc4525e43f",
+      "slug": "us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07",
+      "articlePath": "src/content/articles/us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07.md",
+      "title": "Eva Marie Saint, star of 'On the Waterfront' and 'North by Northwest,' dies at 102",
+      "publishedAt": "2026-10-08T01:52:20.877Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/arts/eva-marie-saint-star-of-on-the-waterfront-and-north-by-northwest-dies-at-102"
+      ],
+      "imagePath": "/images/us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Seattle Public Library",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATown%20Crier%20Card%20Index%20-%20DPLA%20-%2060b9d3a65a1e6ac6b4d4a128fcad911b.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__4596c48eddb6054d",
+      "slug": "politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08",
+      "articlePath": "src/content/articles/politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08.md",
+      "title": "Trump to award National Medal of Science to Elon Musk",
+      "publishedAt": "2026-10-08T01:52:25.116Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6135421-trump-awards-national-medal-science/"
+      ],
+      "imagePath": "/images/politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "White House photographer",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADr.%20Lee%20Hood%20receiving%20the%20National%20Medal%20of%20Science%20from%20President%20Obama.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

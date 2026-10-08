@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T01:24:04.104Z",
-  "storyCount": 289,
+  "generatedAt": "2026-10-08T01:52:25.118Z",
+  "storyCount": 291,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -8470,6 +8470,64 @@
       "heroImageLicense": "CC BY-SA 3.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHard%20Rock%20Cafe%20San%20Diego%20at%20night.JPG",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07",
+      "slug": "us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07",
+      "articlePath": "src/content/articles/us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07.md",
+      "publishedAt": "2026-10-08T01:52:20.877Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__ad11d6dc4525e43f"
+      ],
+      "allAlertIds": [
+        "gn__ad11d6dc4525e43f"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T01:52:20.877Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-eva-marie-saint-star-of-on-the-waterfront-and-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Seattle Public Library",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATown%20Crier%20Card%20Index%20-%20DPLA%20-%2060b9d3a65a1e6ac6b4d4a128fcad911b.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08",
+      "slug": "politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08",
+      "articlePath": "src/content/articles/politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08.md",
+      "publishedAt": "2026-10-08T01:52:25.116Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__4596c48eddb6054d"
+      ],
+      "allAlertIds": [
+        "gn__4596c48eddb6054d"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T01:52:25.116Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-to-award-national-medal-of-science-to-elon-2026-10-08-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "White House photographer",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADr.%20Lee%20Hood%20receiving%20the%20National%20Medal%20of%20Science%20from%20President%20Obama.jpg",
       "breaking": false
     }
   ]
