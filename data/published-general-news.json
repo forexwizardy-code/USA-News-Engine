@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T05:51:47.907Z",
-  "storyCount": 219,
+  "generatedAt": "2026-10-08T00:33:19.928Z",
+  "storyCount": 221,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5645,6 +5645,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFBI%20Atlanta%20Glynn%20County%2C%20Georgia%20Operation%20Photos%20260204-D-D0355-9070.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__7459dcaba6738f16",
+      "slug": "us-flight-attendants-union-raises-safety-concerns-2026-10-07",
+      "articlePath": "src/content/articles/us-flight-attendants-union-raises-safety-concerns-2026-10-07.md",
+      "title": "Flight attendants' union raises safety concerns over Trump's Washington arch",
+      "publishedAt": "2026-10-08T00:33:16.218Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/politics/flight-attendants-union-raises-safety-concerns-over-trumps-washington-arch"
+      ],
+      "imagePath": "/images/us-flight-attendants-union-raises-safety-concerns-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Isilamhoj",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHK%20Bonham%20Strand%20Taxi%20ads%20FAU%20Cathay%20Pacific%20Airways%20Flight%20Attendants%20Union%20Chong%20Hing%20%E8%B1%90%E6%A8%82%20Fung%20Lok%20Comm%20Bldg.JPG",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2b6670df8a43a668",
+      "slug": "politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07",
+      "articlePath": "src/content/articles/politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07.md",
+      "title": "Fed officials view another rate hike as ‘likely,’ meeting minutes show",
+      "publishedAt": "2026-10-08T00:33:19.928Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://thehill.com/business/6135206-fed-officials-project-future-increases/"
+      ],
+      "imagePath": "/images/politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "National Oceanic and Atmospheric Administration",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAnother%20view%20of%20low-end%20EF4%20damage%20in%20Caviness%2C%20Texas.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

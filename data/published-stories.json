@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T22:26:51.180Z",
-  "storyCount": 281,
+  "generatedAt": "2026-10-08T00:33:19.929Z",
+  "storyCount": 283,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -8230,6 +8230,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFBI%20Atlanta%20Glynn%20County%2C%20Georgia%20Operation%20Photos%20260204-D-D0355-9070.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-flight-attendants-union-raises-safety-concerns-2026-10-07",
+      "slug": "us-flight-attendants-union-raises-safety-concerns-2026-10-07",
+      "articlePath": "src/content/articles/us-flight-attendants-union-raises-safety-concerns-2026-10-07.md",
+      "publishedAt": "2026-10-08T00:33:16.218Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__7459dcaba6738f16"
+      ],
+      "allAlertIds": [
+        "gn__7459dcaba6738f16"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T00:33:16.218Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-flight-attendants-union-raises-safety-concerns-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Isilamhoj",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHK%20Bonham%20Strand%20Taxi%20ads%20FAU%20Cathay%20Pacific%20Airways%20Flight%20Attendants%20Union%20Chong%20Hing%20%E8%B1%90%E6%A8%82%20Fung%20Lok%20Comm%20Bldg.JPG",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07",
+      "slug": "politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07",
+      "articlePath": "src/content/articles/politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07.md",
+      "publishedAt": "2026-10-08T00:33:19.928Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__2b6670df8a43a668"
+      ],
+      "allAlertIds": [
+        "gn__2b6670df8a43a668"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T00:33:19.928Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-fed-officials-view-another-rate-hike-as-likely-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "National Oceanic and Atmospheric Administration",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAnother%20view%20of%20low-end%20EF4%20damage%20in%20Caviness%2C%20Texas.jpg",
       "breaking": false
     }
   ]
