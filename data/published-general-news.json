@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T00:59:43.157Z",
-  "storyCount": 223,
+  "generatedAt": "2026-10-08T01:24:04.102Z",
+  "storyCount": 225,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -5749,6 +5749,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOrdot%20Dump%20aerial.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1f77eb98f50751d9",
+      "slug": "us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07",
+      "articlePath": "src/content/articles/us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07.md",
+      "title": "From Iran to the U.K., Trump Is Being Forced Into Retreat",
+      "publishedAt": "2026-10-08T01:24:00.650Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/07/us/politics/trump-iran-retreat.html"
+      ],
+      "imagePath": "/images/us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Signs%20an%20EO%20Sanctioning%20Iran%20(48122937917).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__981040893aa45248",
+      "slug": "politics-trump-doubles-down-on-california-comments-let-them-2026-10-08",
+      "articlePath": "src/content/articles/politics-trump-doubles-down-on-california-comments-let-them-2026-10-08.md",
+      "title": "Trump doubles down on California comments: ‘Let them hit San Diego, let them hit Los Angeles’",
+      "publishedAt": "2026-10-08T01:24:04.102Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6135448-trump-threatened-la-san-diego/"
+      ],
+      "imagePath": "/images/politics-trump-doubles-down-on-california-comments-let-them-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "BrokenSphere",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHard%20Rock%20Cafe%20San%20Diego%20at%20night.JPG",
       "imageRelation": "illustrative-file-photo"
     }
   ]

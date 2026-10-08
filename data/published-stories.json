@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-08T00:59:43.159Z",
-  "storyCount": 287,
+  "generatedAt": "2026-10-08T01:24:04.104Z",
+  "storyCount": 289,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -8412,6 +8412,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOrdot%20Dump%20aerial.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07",
+      "slug": "us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07",
+      "articlePath": "src/content/articles/us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07.md",
+      "publishedAt": "2026-10-08T01:24:00.650Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1f77eb98f50751d9"
+      ],
+      "allAlertIds": [
+        "gn__1f77eb98f50751d9"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T01:24:00.650Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-from-iran-to-the-u-k-trump-is-being-forced-into-2026-10-07-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Signs%20an%20EO%20Sanctioning%20Iran%20(48122937917).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-doubles-down-on-california-comments-let-them-2026-10-08",
+      "slug": "politics-trump-doubles-down-on-california-comments-let-them-2026-10-08",
+      "articlePath": "src/content/articles/politics-trump-doubles-down-on-california-comments-let-them-2026-10-08.md",
+      "publishedAt": "2026-10-08T01:24:04.102Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__981040893aa45248"
+      ],
+      "allAlertIds": [
+        "gn__981040893aa45248"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-08T01:24:04.102Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-doubles-down-on-california-comments-let-them-2026-10-08-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "BrokenSphere",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHard%20Rock%20Cafe%20San%20Diego%20at%20night.JPG",
       "breaking": false
     }
   ]
