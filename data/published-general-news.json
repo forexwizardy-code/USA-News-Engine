@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T02:23:31.848Z",
-  "storyCount": 253,
+  "generatedAt": "2026-10-09T02:51:18.654Z",
+  "storyCount": 255,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6530,6 +6530,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/homenews/campaign/6137958-michigan-senate-debate-el-sayed-rogers-takeaways/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__4c12ebc5026c8548",
+      "slug": "us-ice-officer-shoots-wounds-man-in-new-york-city-2026-10-09",
+      "articlePath": "src/content/articles/us-ice-officer-shoots-wounds-man-in-new-york-city-2026-10-09.md",
+      "title": "ICE officer shoots, wounds man in New York City",
+      "publishedAt": "2026-10-09T02:51:09.844Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/immigration/2026/10/08/ice-officer-shoots-wounds-man-new-york-city/"
+      ],
+      "imagePath": "/images/us-ice-officer-shoots-wounds-man-in-new-york-city-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Department of Homeland Security",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASecretary%20Noem%20leading%20an%20ICE%20raid%20on%20illegal%20immigrants%20in%20New%20York%20City%2C%202025.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__84765cae6ff3aef4",
+      "slug": "politics-5-key-moments-from-hostile-michigan-senate-debate-2026-10-09",
+      "articlePath": "src/content/articles/politics-5-key-moments-from-hostile-michigan-senate-debate-2026-10-09.md",
+      "title": "5 Key Moments From Hostile Michigan Senate Debate Between El-Sayed and Rogers",
+      "publishedAt": "2026-10-09T02:51:18.654Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/08/us/politics/michigan-senate-debate-moments-el-sayed-rogers.html"
+      ],
+      "imagePath": "/images/politics-5-key-moments-from-hostile-michigan-senate-debate-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NASA Stennis Space Center / Danny Nowlin",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A-%20Key%20Moments%20Lead%20to%20Fulfilling%20NASA%20Stennis%20Career%20(SSC-20240807-s00808).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
