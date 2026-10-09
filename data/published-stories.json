@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T06:36:12.665Z",
-  "storyCount": 329,
+  "generatedAt": "2026-10-09T06:59:00.378Z",
+  "storyCount": 331,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -9630,6 +9630,64 @@
       "heroImageLicense": "CC BY-SA 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20New%20York%20City%20FLICKR%201.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-federal-agents-involved-in-shooting-that-wounded-2026-10-09",
+      "slug": "us-federal-agents-involved-in-shooting-that-wounded-2026-10-09",
+      "articlePath": "src/content/articles/us-federal-agents-involved-in-shooting-that-wounded-2026-10-09.md",
+      "publishedAt": "2026-10-09T06:58:55.625Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__9a132bfdfef7eb30"
+      ],
+      "allAlertIds": [
+        "gn__9a132bfdfef7eb30"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-09T06:58:55.625Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-federal-agents-involved-in-shooting-that-wounded-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Customs and Border Protection",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AYuma%20BP%20Agents%20Arrest%208%20Involved%20in%20Alien%20Smuggling%20(27536773769).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09",
+      "slug": "entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09",
+      "articlePath": "src/content/articles/entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09.md",
+      "publishedAt": "2026-10-09T06:59:00.376Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__aa62a3af3f7b5318"
+      ],
+      "allAlertIds": [
+        "gn__aa62a3af3f7b5318"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "The Hollywood Reporter",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-09T06:59:00.376Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "John Thomson",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMANCHU%20LADIES%20AND%20A%20MANCHU%20MARRIAGE%201.jpg",
       "breaking": false
     }
   ]

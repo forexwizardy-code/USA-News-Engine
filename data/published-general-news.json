@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T06:30:46.040Z",
-  "storyCount": 263,
+  "generatedAt": "2026-10-09T06:59:00.376Z",
+  "storyCount": 265,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6789,6 +6789,58 @@
       "imageLicense": "CC BY-SA 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20New%20York%20City%20FLICKR%201.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__9a132bfdfef7eb30",
+      "slug": "us-federal-agents-involved-in-shooting-that-wounded-2026-10-09",
+      "articlePath": "src/content/articles/us-federal-agents-involved-in-shooting-that-wounded-2026-10-09.md",
+      "title": "Federal agents involved in shooting that wounded person in New York, police say",
+      "publishedAt": "2026-10-09T06:58:55.625Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/nation/federal-agents-involved-in-shooting-that-wounded-person-in-new-york-police-say"
+      ],
+      "imagePath": "/images/us-federal-agents-involved-in-shooting-that-wounded-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Customs and Border Protection",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AYuma%20BP%20Agents%20Arrest%208%20Involved%20in%20Alien%20Smuggling%20(27536773769).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__aa62a3af3f7b5318",
+      "slug": "entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09",
+      "articlePath": "src/content/articles/entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09.md",
+      "title": "‘Social Reckoning’ Faces Box Office Challenge With ‘Other Mommy’ Set to Scare Away Competition",
+      "publishedAt": "2026-10-09T06:59:00.376Z",
+      "category": "entertainment",
+      "primarySource": "The Hollywood Reporter",
+      "primaryPublisherFamily": "Hollywood Reporter",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Hollywood Reporter"
+      ],
+      "usRelevance": "high",
+      "storyScore": 48,
+      "sourceUrls": [
+        "https://www.hollywoodreporter.com/movies/movie-news/social-reckoning-box-office-other-mommy-chastain-sorkin-1236725913/"
+      ],
+      "imagePath": "/images/entertainment-social-reckoning-faces-box-office-challenge-with-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "John Thomson",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMANCHU%20LADIES%20AND%20A%20MANCHU%20MARRIAGE%201.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
