@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T05:52:30.169Z",
-  "storyCount": 261,
+  "generatedAt": "2026-10-09T06:30:46.040Z",
+  "storyCount": 263,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6738,6 +6738,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-secures-settlement-auto-dealership-group-price-transparency-win-consumers",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__d476fe1a3012d249",
+      "slug": "entertainment-south-asian-filmmakers-to-vie-for-150-000-at-2026-10-09",
+      "articlePath": "src/content/articles/entertainment-south-asian-filmmakers-to-vie-for-150-000-at-2026-10-09.md",
+      "title": "South Asian Filmmakers to Vie for $150,000 at Tasveer Film Market as Netflix, Aamir Khan Pictures Attend",
+      "publishedAt": "2026-10-09T06:30:42.709Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://variety.com/2026/film/news/south-asian-filmmakers-tasveer-film-market-1236906336/"
+      ],
+      "imagePath": "/images/entertainment-south-asian-filmmakers-to-vie-for-150-000-at-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Sriya Sarkar",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMadhureeta%20Anand%20at%20the%202025%20Jaipur%20Literature%20Festival.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__cba6414172f9d399",
+      "slug": "us-man-shot-by-ice-in-new-york-city-2026-10-09",
+      "articlePath": "src/content/articles/us-man-shot-by-ice-in-new-york-city-2026-10-09.md",
+      "title": "Man shot by ICE in New York City",
+      "publishedAt": "2026-10-09T06:30:46.040Z",
+      "category": "us",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6137882-ice-agent-shoots-nyc-man/"
+      ],
+      "imagePath": "/images/us-man-shot-by-ice-in-new-york-city-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "click-see",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20New%20York%20City%20FLICKR%201.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
