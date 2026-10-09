@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T00:41:38.595Z",
-  "storyCount": 311,
+  "generatedAt": "2026-10-09T01:03:33.389Z",
+  "storyCount": 313,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -9109,6 +9109,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08",
+      "slug": "us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08",
+      "articlePath": "src/content/articles/us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08.md",
+      "publishedAt": "2026-10-09T01:03:31.673Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__8791a6d8fa5c7a73"
+      ],
+      "allAlertIds": [
+        "gn__8791a6d8fa5c7a73"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-09T01:03:31.673Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Navy photo by Photographer's Mate 2nd Class Dennis Cantrell.",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20030427-N-8157C-031%20The%20guided%20missile%20frigate%20USS%20Reuben%20James%20(FFG%2057)%20returns%20to%20her%20homeport%20Pearl%20Harbor%20after%20a%20deployment%20with%20the%20USS%20Abraham%20Lincoln%20(CVN%2072)%20strike%20force%20spanning%20nearly%2010%20months.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08",
+      "slug": "politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08",
+      "articlePath": "src/content/articles/politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08.md",
+      "publishedAt": "2026-10-09T01:03:33.387Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__c2269de81469c375"
+      ],
+      "allAlertIds": [
+        "gn__c2269de81469c375"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-09T01:03:33.387Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Hynek Moravec",
+      "heroImageLicense": "CC BY 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIsraeli%20embassy%20residence%203221.JPG",
+      "breaking": false
     }
   ]
 }

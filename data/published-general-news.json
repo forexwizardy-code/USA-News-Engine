@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T00:36:50.693Z",
-  "storyCount": 245,
+  "generatedAt": "2026-10-09T01:03:33.387Z",
+  "storyCount": 247,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6322,6 +6322,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/homenews/administration/6135113-live-updates-trump-midterm-elections-debates-tech-iran/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__8791a6d8fa5c7a73",
+      "slug": "us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08",
+      "articlePath": "src/content/articles/us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08.md",
+      "title": "U.S.S. Abraham Lincoln Returns Home After Long and Grueling Deployment",
+      "publishedAt": "2026-10-09T01:03:31.673Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/08/us/politics/uss-abraham-lincoln-san-diego.html"
+      ],
+      "imagePath": "/images/us-u-s-s-abraham-lincoln-returns-home-after-long-and-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Navy photo by Photographer's Mate 2nd Class Dennis Cantrell.",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUS%20Navy%20030427-N-8157C-031%20The%20guided%20missile%20frigate%20USS%20Reuben%20James%20(FFG%2057)%20returns%20to%20her%20homeport%20Pearl%20Harbor%20after%20a%20deployment%20with%20the%20USS%20Abraham%20Lincoln%20(CVN%2072)%20strike%20force%20spanning%20nearly%2010%20months.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__c2269de81469c375",
+      "slug": "politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08",
+      "articlePath": "src/content/articles/politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08.md",
+      "title": "Huckabee aide suppressed US Embassy reports critical of Israeli government: Report",
+      "publishedAt": "2026-10-09T01:03:33.387Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6137880-huckabee-aide-blocked-israel-memo-report/"
+      ],
+      "imagePath": "/images/politics-huckabee-aide-suppressed-us-embassy-reports-2026-10-08-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Hynek Moravec",
+      "imageLicense": "CC BY 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIsraeli%20embassy%20residence%203221.JPG",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
