@@ -15,7 +15,7 @@ sourceName: "National Weather Service"
 sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cffcddedcf944f5f5efcd5f57c5f04c433c9bb7.004.1"
 sourceOffice: "NWS Tallahassee FL"
 tags: ["Hurricane Warning", "Weather", "Extreme"]
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
