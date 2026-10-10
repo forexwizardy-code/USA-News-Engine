@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T04:23:22.437Z",
+  "generatedAt": "2026-10-10T04:29:02.832Z",
   "storyCount": 353,
   "stories": [
     {
@@ -6795,11 +6795,11 @@
       "event": "Extreme Heat Warning",
       "location": "Death Valley National Park",
       "sourceOffice": "NWS Las Vegas NV",
-      "lifecycleStatus": "active",
+      "lifecycleStatus": "expired",
       "lastNwsEffectiveAt": "2026-10-05T15:32:00-07:00",
       "lastNwsExpiresAt": "2026-10-06T05:00:00-07:00",
       "lastNwsEndsAt": "2026-10-09T20:00:00-07:00",
-      "lastCheckedAt": "2026-10-06T00:39:10.698Z",
+      "lastCheckedAt": "2026-10-10T04:29:02.820Z",
       "heroImageMode": "map-data",
       "heroImageSource": "/images/extreme-heat-warning-death-valley-national-park-october-5-2026-map.png",
       "heroImageRelation": "current-alert-data",
