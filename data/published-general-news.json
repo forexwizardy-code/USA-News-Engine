@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T07:25:46.777Z",
-  "storyCount": 267,
+  "generatedAt": "2026-10-10T00:34:49.161Z",
+  "storyCount": 269,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6894,6 +6894,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://deadline.com/2026/10/charlie-cox-save-daredevil-campaign-1237150712/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__ba2411465772509b",
+      "slug": "us-anthropic-says-its-a-i-agents-attempted-to-access-2026-10-09",
+      "articlePath": "src/content/articles/us-anthropic-says-its-a-i-agents-attempted-to-access-2026-10-09.md",
+      "title": "Anthropic Says Its A.I. Agents Attempted to Access a Range of Government Sites",
+      "publishedAt": "2026-10-10T00:34:45.905Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/09/technology/anthropic-rogue-ai-agents.html"
+      ],
+      "imagePath": "/images/us-anthropic-says-its-a-i-agents-attempted-to-access-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Unknown authorUnknown author or not provided",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APhotograph%20of%20Secret%20Service%20Agents%20Rushing%20President%20Gerald%20Ford%20Towards%20the%20California%20State%20Capitol%20following%20the%20Assassination%20Attempt%20on%20the%20President%20by%20Lynette%20%22Squeaky%22%20Fromme%2C%20in%20Sacramento%2C%20California%20-%20NARA%20-%207065140.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__0b2f5f3c4194c19b",
+      "slug": "business-trump-announces-white-house-inquiry-into-fed-2026-10-09",
+      "articlePath": "src/content/articles/business-trump-announces-white-house-inquiry-into-fed-2026-10-09.md",
+      "title": "Trump Announces White House Inquiry Into Fed Governor Lisa Cook",
+      "publishedAt": "2026-10-10T00:34:49.161Z",
+      "category": "business",
+      "primarySource": "New York Times — Business",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/09/business/trump-lisa-cook-fed.html"
+      ],
+      "imagePath": "/images/business-trump-announces-white-house-inquiry-into-fed-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADonald%20Trump%20announces%20the%20Golden%20Dome%20missile%20defense%20system%20inside%20the%20White%20House%20Oval%20Office%20on%20May%2020%2C%202025.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
