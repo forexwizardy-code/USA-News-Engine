@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T02:51:47.632Z",
-  "storyCount": 279,
+  "generatedAt": "2026-10-10T03:23:30.176Z",
+  "storyCount": 281,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7207,6 +7207,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMilitary%20Administration%20-%20Theater%20of%20Operations%20-%20Supply%20Service%20-%20Issuance%20of%20Rations%20in%20Camp%20-%20MESS%20LINE%20AT%20SHANKHURST%2C%20Northern%20Russia%2C%20which%20place%20we%20had%20to%20evacuate%20-%20NARA%20-%2045501326.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a83d20c509bfcc96",
+      "slug": "entertainment-michael-douglas-tells-bill-maher-about-smuggling-2026-10-10",
+      "articlePath": "src/content/articles/entertainment-michael-douglas-tells-bill-maher-about-smuggling-2026-10-10.md",
+      "title": "Michael Douglas Tells Bill Maher About Smuggling Marijuana in Suitcases, Slams ‘Nepo Baby’ Label",
+      "publishedAt": "2026-10-10T03:23:24.965Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/tv/news/michael-douglas-bill-maher-real-time-smuggling-marijuana-nepo-baby-1236907300/"
+      ],
+      "imagePath": "/images/entertainment-michael-douglas-tells-bill-maher-about-smuggling-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Bill Abbott",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMcDonnell%20Douglas%20F%20A-18A%20Blue%20Angels%20Delta%20over%20the%20sail%20boat%20fleet%20(5063876215)%20(3).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__6fc4ef3aaa4324a7",
+      "slug": "sports-more-than-500-trees-may-be-removed-from-d-c-golf-2026-10-10",
+      "articlePath": "src/content/articles/sports-more-than-500-trees-may-be-removed-from-d-c-golf-2026-10-10.md",
+      "title": "More than 500 trees may be removed from D.C. golf course Trump wants to redesign",
+      "publishedAt": "2026-10-10T03:23:30.176Z",
+      "category": "sports",
+      "primarySource": "Washington Post — Sports",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/sports/2026/10/09/more-than-500-trees-may-be-removed-dc-golf-course-trump-wants-redesign/"
+      ],
+      "imagePath": "/images/sports-more-than-500-trees-may-be-removed-from-d-c-golf-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Hejhje",
+      "imageLicense": "CC BY-SA 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrees%20are%20more%20than%20just%20trees.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
