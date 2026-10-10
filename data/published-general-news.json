@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T01:00:32.171Z",
-  "storyCount": 271,
+  "generatedAt": "2026-10-10T01:23:45.180Z",
+  "storyCount": 273,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6997,6 +6997,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMeranti%20PIA17309.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__c009a6ee2cb6f8aa",
+      "slug": "us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09",
+      "articlePath": "src/content/articles/us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09.md",
+      "title": "News Wrap: Trump announces diesel deal with Russia",
+      "publishedAt": "2026-10-10T01:23:37.408Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 64,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/news-wrap-trump-announces-diesel-deal-with-russia"
+      ],
+      "imagePath": "/images/us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Alex Hanson from Ames, Iowa",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump%20in%20Des%20Moines%20(23061258434).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__137419671f45816e",
+      "slug": "politics-trump-administration-hits-international-criminal-2026-10-09",
+      "articlePath": "src/content/articles/politics-trump-administration-hits-international-criminal-2026-10-09.md",
+      "title": "Trump Administration Hits International Criminal Court With Severe Sanctions",
+      "publishedAt": "2026-10-10T01:23:45.180Z",
+      "category": "politics",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/09/us/politics/trump-international-criminal-court-sanctions.html"
+      ],
+      "imagePath": "/images/politics-trump-administration-hits-international-criminal-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250602JB-0903%20Professional%20golfer%20Bryson%20DeChambeau%20visits%20President%20Donald%20Trump%20in%20the%20White%20House.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

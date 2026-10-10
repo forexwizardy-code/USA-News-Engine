@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T01:00:32.172Z",
-  "storyCount": 339,
+  "generatedAt": "2026-10-10T01:23:45.182Z",
+  "storyCount": 341,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -9920,6 +9920,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMeranti%20PIA17309.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09",
+      "slug": "us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09",
+      "articlePath": "src/content/articles/us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09.md",
+      "publishedAt": "2026-10-10T01:23:37.408Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__c009a6ee2cb6f8aa"
+      ],
+      "allAlertIds": [
+        "gn__c009a6ee2cb6f8aa"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:23:37.408Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-news-wrap-trump-announces-diesel-deal-with-russia-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Alex Hanson from Ames, Iowa",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump%20in%20Des%20Moines%20(23061258434).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-administration-hits-international-criminal-2026-10-09",
+      "slug": "politics-trump-administration-hits-international-criminal-2026-10-09",
+      "articlePath": "src/content/articles/politics-trump-administration-hits-international-criminal-2026-10-09.md",
+      "publishedAt": "2026-10-10T01:23:45.180Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__137419671f45816e"
+      ],
+      "allAlertIds": [
+        "gn__137419671f45816e"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:23:45.180Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-administration-hits-international-criminal-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250602JB-0903%20Professional%20golfer%20Bryson%20DeChambeau%20visits%20President%20Donald%20Trump%20in%20the%20White%20House.jpg",
       "breaking": false
     }
   ]
