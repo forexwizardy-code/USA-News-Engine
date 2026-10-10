@@ -15,7 +15,7 @@ sourceName: "National Weather Service"
 sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3da645802322bc6612d71b8dfb08ee667c229d61.017.1"
 sourceOffice: "NWS Mobile AL"
 tags: ["Hurricane Warning", "Weather", "Extreme"]
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
