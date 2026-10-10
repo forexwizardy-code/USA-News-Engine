@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T00:40:00.773Z",
-  "storyCount": 337,
+  "generatedAt": "2026-10-10T01:00:32.172Z",
+  "storyCount": 339,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -9863,6 +9863,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09",
+      "slug": "us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09",
+      "articlePath": "src/content/articles/us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09.md",
+      "publishedAt": "2026-10-10T01:00:29.161Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__8353953dd0dcbc00"
+      ],
+      "allAlertIds": [
+        "gn__8353953dd0dcbc00"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:00:29.161Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Максим Барбухин",
+      "heroImageLicense": "CC0",
+      "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Russian%20Academy%20Of%20Sciences%20(203653027).jpeg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09",
+      "slug": "entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09",
+      "articlePath": "src/content/articles/entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09.md",
+      "publishedAt": "2026-10-10T01:00:32.171Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3e75c679a69300ee"
+      ],
+      "allAlertIds": [
+        "gn__3e75c679a69300ee"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Deadline",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:00:32.171Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "NASA MISR",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMeranti%20PIA17309.jpg",
+      "breaking": false
     }
   ]
 }

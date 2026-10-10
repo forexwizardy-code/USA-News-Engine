@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T00:34:49.161Z",
-  "storyCount": 269,
+  "generatedAt": "2026-10-10T01:00:32.171Z",
+  "storyCount": 271,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -6945,6 +6945,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADonald%20Trump%20announces%20the%20Golden%20Dome%20missile%20defense%20system%20inside%20the%20White%20House%20Oval%20Office%20on%20May%2020%2C%202025.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__8353953dd0dcbc00",
+      "slug": "us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09",
+      "articlePath": "src/content/articles/us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09.md",
+      "title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
+      "publishedAt": "2026-10-10T01:00:29.161Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html"
+      ],
+      "imagePath": "/images/us-trump-says-he-will-import-russian-diesel-fuel-amid-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Максим Барбухин",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AThe%20Russian%20Academy%20Of%20Sciences%20(203653027).jpeg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3e75c679a69300ee",
+      "slug": "entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09",
+      "articlePath": "src/content/articles/entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09.md",
+      "title": "Ella Langley Cancels Tulsa Show Over “Serious Security Threat”",
+      "publishedAt": "2026-10-10T01:00:32.171Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/ella-langley-cancels-tulsa-show-serious-security-threat-1237153723/"
+      ],
+      "imagePath": "/images/entertainment-ella-langley-cancels-tulsa-show-over-serious-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NASA MISR",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMeranti%20PIA17309.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
