@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T02:23:06.112Z",
-  "storyCount": 277,
+  "generatedAt": "2026-10-10T02:51:47.632Z",
+  "storyCount": 279,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7156,6 +7156,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__dadb665a38499e67",
+      "slug": "us-us-immigration-officials-defend-ice-agents-who-2026-10-10",
+      "articlePath": "src/content/articles/us-us-immigration-officials-defend-ice-agents-who-2026-10-10.md",
+      "title": "US immigration officials defend ICE agents who shot man in same car as child",
+      "publishedAt": "2026-10-10T02:51:41.516Z",
+      "category": "us",
+      "primarySource": "BBC News — US & Canada",
+      "primaryPublisherFamily": "BBC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "BBC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.bbc.co.uk/news/articles/cq78px5y1zmzo?at_medium=RSS&at_campaign=rss"
+      ],
+      "imagePath": "/images/us-us-immigration-officials-defend-ice-agents-who-2026-10-10-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "usicegov",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AU.S.%20Immigration%20and%20Customs%20Enforcement%20(ICE)%20Enforcement%20and%20Removal%20Operations'%20(ERO)%20officers%20in%20West%20Palm%20Beach%2C%20Florida%20on%20February%2014%2C%202025%20-%2016.jpg",
+      "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__1e2888bbc1284b9c",
+      "slug": "politics-russia-will-supply-us-and-global-markets-with-2026-10-09",
+      "articlePath": "src/content/articles/politics-russia-will-supply-us-and-global-markets-with-2026-10-09.md",
+      "title": "Russia will supply US and global markets with diesel, Trump says",
+      "publishedAt": "2026-10-10T02:51:47.632Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 56,
+      "sourceUrls": [
+        "https://thehill.com/policy/energy-environment/6139544-trump-putin-us-diesel-supply-high-costs/"
+      ],
+      "imagePath": "/images/politics-russia-will-supply-us-and-global-markets-with-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Unknown authorUnknown author or not provided",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMilitary%20Administration%20-%20Theater%20of%20Operations%20-%20Supply%20Service%20-%20Issuance%20of%20Rations%20in%20Camp%20-%20MESS%20LINE%20AT%20SHANKHURST%2C%20Northern%20Russia%2C%20which%20place%20we%20had%20to%20evacuate%20-%20NARA%20-%2045501326.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
