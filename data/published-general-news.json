@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T03:51:48.684Z",
-  "storyCount": 283,
+  "generatedAt": "2026-10-10T04:23:22.436Z",
+  "storyCount": 285,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7312,6 +7312,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.hollywoodreporter.com/movies/movie-news/blumfest-new-york-comic-con-2026-highlights-1236726806/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__a589fd947c780733",
+      "slug": "us-ice-shooting-stirs-fresh-clash-between-trump-2026-10-10",
+      "articlePath": "src/content/articles/us-ice-shooting-stirs-fresh-clash-between-trump-2026-10-10.md",
+      "title": "ICE shooting stirs fresh clash between Trump officials and New York City",
+      "publishedAt": "2026-10-10T04:23:20.367Z",
+      "category": "us",
+      "primarySource": "Washington Post — National",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/immigration/2026/10/09/mullin-says-ice-didnt-know-5-year-old-boy-was-car-when-officer-fired/"
+      ],
+      "imagePath": "/images/us-ice-shooting-stirs-fresh-clash-between-trump-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Vincent Desjardins from Paris, France",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChicago%20(ILL)%20River%20North%2C%20Marina%20city%2C%201964.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__11ca98405c6b8a85",
+      "slug": "politics-watch-live-trump-takes-midterm-campaign-push-to-2026-10-09",
+      "articlePath": "src/content/articles/politics-watch-live-trump-takes-midterm-campaign-push-to-2026-10-09.md",
+      "title": "Watch live: Trump takes midterm campaign push to deep-blue New York",
+      "publishedAt": "2026-10-10T04:23:22.436Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://thehill.com/video-clips/6139465-watch-live-donald-trump-syracuse-new-york-rally-2026-midterms/"
+      ],
+      "imagePath": "/images/politics-watch-live-trump-takes-midterm-campaign-push-to-2026-10-09-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Emil Engler",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump%20Tower%20Entrance%202015-08.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
