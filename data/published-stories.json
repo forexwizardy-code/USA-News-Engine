@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T04:53:25.617Z",
-  "storyCount": 355,
+  "generatedAt": "2026-10-10T04:59:29.554Z",
+  "storyCount": 356,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -10385,6 +10385,35 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://thehill.com/homenews/administration/6139979-trump-mixed-hasan-execution-livestream/",
       "breaking": false
+    },
+    {
+      "storyKey": "m53-earthquake-yigo-village-guam-2026-10-10",
+      "slug": "m53-earthquake-yigo-village-guam-2026-10-10",
+      "articlePath": "src/content/articles/m53-earthquake-yigo-village-guam-2026-10-10.md",
+      "publishedAt": "2026-10-10T04:59:29.550Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "us6000u1cd"
+      ],
+      "allAlertIds": [
+        "us6000u1cd"
+      ],
+      "event": "Earthquake",
+      "location": "41 km NNE of Yigo Village, Guam",
+      "sourceOffice": "U.S. Geological Survey",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T04:59:29.550Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/m53-earthquake-yigo-village-guam-2026-10-10.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Senior Airman Katrina Brisbin",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFather%2C%20son%2C%20squadron%20team%20renovates%20massacre%20memorial%20140714-F-EP111-058.jpg",
+      "breaking": true
     }
   ]
 }

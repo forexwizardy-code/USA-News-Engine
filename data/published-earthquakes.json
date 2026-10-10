@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-06T19:00:06.388Z",
-  "storyCount": 3,
+  "generatedAt": "2026-10-10T04:59:29.558Z",
+  "storyCount": 4,
   "stories": [
     {
       "earthquakeKey": "usgs__uw714111952",
@@ -66,6 +66,28 @@
       "imageLicense": "Official USGS ShakeMap. USGS products are works of the U.S. federal government and are in the public domain.",
       "imageLicenseUrl": "",
       "imageSourceUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tuxgky",
+      "breaking": true
+    },
+    {
+      "earthquakeKey": "usgs__us6000u1cd",
+      "eventId": "us6000u1cd",
+      "slug": "m53-earthquake-yigo-village-guam-2026-10-10",
+      "articlePath": "src/content/articles/m53-earthquake-yigo-village-guam-2026-10-10.md",
+      "publishedAt": "2026-10-10T04:59:29.550Z",
+      "updatedAt": null,
+      "lastMagnitude": 5.3,
+      "lastAlert": null,
+      "lastTsunami": false,
+      "lastFelt": 30,
+      "storyStatus": "active",
+      "lastSeenAt": "2026-10-10T04:59:26.201Z",
+      "lastCheckedAt": "2026-10-10T04:59:29.550Z",
+      "imageMode": "licensed-photo",
+      "imageSource": "/images/m53-earthquake-yigo-village-guam-2026-10-10.jpg",
+      "imageCreator": "Senior Airman Katrina Brisbin",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourceUrl": "https://commons.wikimedia.org/wiki/File%3AFather%2C%20son%2C%20squadron%20team%20renovates%20massacre%20memorial%20140714-F-EP111-058.jpg",
       "breaking": true
     }
   ]
