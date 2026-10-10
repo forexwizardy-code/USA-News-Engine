@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-10T01:23:45.182Z",
-  "storyCount": 341,
+  "generatedAt": "2026-10-10T01:51:38.100Z",
+  "storyCount": 343,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -9978,6 +9978,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250602JB-0903%20Professional%20golfer%20Bryson%20DeChambeau%20visits%20President%20Donald%20Trump%20in%20the%20White%20House.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-some-g-o-p-lawmakers-pan-hegseth-s-plan-to-stream-2026-10-09",
+      "slug": "us-some-g-o-p-lawmakers-pan-hegseth-s-plan-to-stream-2026-10-09",
+      "articlePath": "src/content/articles/us-some-g-o-p-lawmakers-pan-hegseth-s-plan-to-stream-2026-10-09.md",
+      "publishedAt": "2026-10-10T01:51:31.950Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__d859d0a904c97d22"
+      ],
+      "allAlertIds": [
+        "gn__d859d0a904c97d22"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:51:31.950Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-some-g-o-p-lawmakers-pan-hegseth-s-plan-to-stream-2026-10-09-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Governor Jim Justice",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJim%20Justice%20DSC%204201%20(32759628343).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-live-updates-trump-rallies-voters-in-upstate-new-2026-10-10",
+      "slug": "politics-live-updates-trump-rallies-voters-in-upstate-new-2026-10-10",
+      "articlePath": "src/content/articles/politics-live-updates-trump-rallies-voters-in-upstate-new-2026-10-10.md",
+      "publishedAt": "2026-10-10T01:51:38.097Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__228675b22bbe7869"
+      ],
+      "allAlertIds": [
+        "gn__228675b22bbe7869"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-10T01:51:38.097Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-live-updates-trump-rallies-voters-in-upstate-new-2026-10-10-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Porrester",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AProtest%20against%20Trump%20.jpg",
       "breaking": false
     }
   ]
