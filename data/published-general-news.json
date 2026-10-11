@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T02:22:49.708Z",
-  "storyCount": 301,
+  "generatedAt": "2026-10-11T02:51:25.504Z",
+  "storyCount": 303,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7780,6 +7780,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/policy/healthcare/6140802-us-measles-cases-surpass-4000-pennsylvania/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__26276ce15c6ca919",
+      "slug": "politics-trump-continues-red-state-campaign-swing-with-2026-10-11",
+      "articlePath": "src/content/articles/politics-trump-continues-red-state-campaign-swing-with-2026-10-11.md",
+      "title": "Trump continues red state campaign swing with Montana, Arizona rallies next week",
+      "publishedAt": "2026-10-11T02:51:21.004Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6140976-trump-rallies-montana-arizona/"
+      ],
+      "imagePath": "/images/politics-trump-continues-red-state-campaign-swing-with-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20speaks%20with%20workers%20while%20construction%20continues%20on%20the%20Rose%20Garden%20(54675983592).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__bd7205a375b9beac",
+      "slug": "entertainment-in-a-violent-nature-part-2-gets-2027-premiere-date-2026-10-10",
+      "articlePath": "src/content/articles/entertainment-in-a-violent-nature-part-2-gets-2027-premiere-date-2026-10-10.md",
+      "title": "‘In a Violent Nature: Part 2’ Gets 2027 Premiere Date With IFC & Shudder — NYCC",
+      "publishedAt": "2026-10-11T02:51:25.504Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/in-a-violent-nature-part-2-2027-premiere-date-1237154118/"
+      ],
+      "imagePath": "/images/entertainment-in-a-violent-nature-part-2-gets-2027-premiere-date-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "James St. John",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGeyserite%20rubble%20from%20a%20violent%20September%202018%20eruption%20of%20Ear%20Spring%20(morning%2C%202%20June%202019)%201.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
