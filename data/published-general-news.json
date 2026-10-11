@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T01:22:49.054Z",
-  "storyCount": 297,
+  "generatedAt": "2026-10-11T01:50:16.175Z",
+  "storyCount": 299,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7675,6 +7675,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20and%20Speaker%20of%20the%20House%20Mike%20Johnson%20speak%20to%20members%20of%20the%20media%20at%20the%20U.S.%20Capitol%20P20250520MR-0346%20(54536150498).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__07226e9dd3545c1a",
+      "slug": "business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11",
+      "articlePath": "src/content/articles/business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11.md",
+      "title": "Hollywood economy suffering as film jobs lost, production money moved out of state",
+      "publishedAt": "2026-10-11T01:50:10.229Z",
+      "category": "business",
+      "primarySource": "CBS News — Entertainment",
+      "primaryPublisherFamily": "CBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "CBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.cbsnews.com/video/hollywood-economy-suffering-as-film-jobs-lost-production-money-moved-out-of-state/"
+      ],
+      "imagePath": "/images/business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Dietmar Rabich",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALos%20Angeles%20(California%2C%20USA)%2C%20Hollywood%20Boulevard%2C%20'The%20Beatles'%20--%202012%20--%205102.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__8f36a10e78ee6212",
+      "slug": "entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11",
+      "articlePath": "src/content/articles/entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11.md",
+      "title": "Lego Is Bringing Marvel and ‘Star Wars’ Together for First-Ever Fan-Designed Crossover Set",
+      "publishedAt": "2026-10-11T01:50:16.175Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/shopping/news/lego-marvel-star-wars-lego-ideas-set-nycc-1236906728/"
+      ],
+      "imagePath": "/images/entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Miguel Discart & Kiri Karma",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AComiccon%20Brussels%202023%20-%20Cosplay%20of%20Marvel%20DC%20superheroes.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

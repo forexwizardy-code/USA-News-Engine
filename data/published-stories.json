@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T01:22:49.057Z",
-  "storyCount": 368,
+  "generatedAt": "2026-10-11T01:50:16.177Z",
+  "storyCount": 370,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -10763,6 +10763,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20and%20Speaker%20of%20the%20House%20Mike%20Johnson%20speak%20to%20members%20of%20the%20media%20at%20the%20U.S.%20Capitol%20P20250520MR-0346%20(54536150498).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11",
+      "slug": "business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11",
+      "articlePath": "src/content/articles/business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11.md",
+      "publishedAt": "2026-10-11T01:50:10.229Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__07226e9dd3545c1a"
+      ],
+      "allAlertIds": [
+        "gn__07226e9dd3545c1a"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "CBS News — Entertainment",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T01:50:10.229Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-hollywood-economy-suffering-as-film-jobs-lost-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Dietmar Rabich",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALos%20Angeles%20(California%2C%20USA)%2C%20Hollywood%20Boulevard%2C%20'The%20Beatles'%20--%202012%20--%205102.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11",
+      "slug": "entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11",
+      "articlePath": "src/content/articles/entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11.md",
+      "publishedAt": "2026-10-11T01:50:16.175Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__8f36a10e78ee6212"
+      ],
+      "allAlertIds": [
+        "gn__8f36a10e78ee6212"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T01:50:16.175Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-lego-is-bringing-marvel-and-star-wars-together-for-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Miguel Discart & Kiri Karma",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AComiccon%20Brussels%202023%20-%20Cosplay%20of%20Marvel%20DC%20superheroes.jpg",
       "breaking": false
     }
   ]
