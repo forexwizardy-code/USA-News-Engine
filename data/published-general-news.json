@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T05:50:38.365Z",
-  "storyCount": 311,
+  "generatedAt": "2026-10-11T06:29:01.975Z",
+  "storyCount": 313,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8039,6 +8039,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATechCrunch%20Disrupt%20San%20Francisco%202018%20-%20day%201%20(42694003110).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2adf61ad01d6cf6a",
+      "slug": "us-us-justice-department-investigates-tv-networks-2026-10-11",
+      "articlePath": "src/content/articles/us-us-justice-department-investigates-tv-networks-2026-10-11.md",
+      "title": "US justice department investigates TV networks over Trump pool coverage",
+      "publishedAt": "2026-10-11T06:28:58.130Z",
+      "category": "us",
+      "primarySource": "BBC News — US & Canada",
+      "primaryPublisherFamily": "BBC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "BBC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.bbc.co.uk/news/articles/c9vgregzk6gro?at_medium=RSS&at_campaign=rss"
+      ],
+      "imagePath": "/images/us-us-justice-department-investigates-tv-networks-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Department of Justice",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJustice%20Department%20in%20January%202019.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__229c9f14bcd58ca2",
+      "slug": "technology-photos-what-a-year-of-ceasefire-in-gaza-looks-like-2026-10-10",
+      "articlePath": "src/content/articles/technology-photos-what-a-year-of-ceasefire-in-gaza-looks-like-2026-10-10.md",
+      "title": "Photos: What a year of ceasefire in Gaza looks like",
+      "publishedAt": "2026-10-11T06:29:01.975Z",
+      "category": "technology",
+      "primarySource": "NPR Technology",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 43,
+      "sourceUrls": [
+        "https://www.npr.org/sections/the-picture-show/2026/10/10/nx-s1-5991619/gaza-ceasefire-israel-life"
+      ],
+      "imagePath": "/images/technology-photos-what-a-year-of-ceasefire-in-gaza-looks-like-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Alisdare Hickson from Woolwich, United Kingdom",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIt's%20Literally%20Genocide!%20Israel's%20war%20on%20Gaza.%20(53248367523).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
