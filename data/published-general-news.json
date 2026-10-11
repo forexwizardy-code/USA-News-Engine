@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T00:33:19.939Z",
-  "storyCount": 293,
+  "generatedAt": "2026-10-11T00:59:29.773Z",
+  "storyCount": 295,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7572,6 +7572,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://deadline.com/2026/10/jimmy-kimmel-mourns-costume-designer-rodney-munoz-death-60-1237154094/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__86000007114df2f6",
+      "slug": "us-some-republicans-reject-trump-s-move-to-import-2026-10-10",
+      "articlePath": "src/content/articles/us-some-republicans-reject-trump-s-move-to-import-2026-10-10.md",
+      "title": "Some Republicans Reject Trump’s Move to Import Diesel Fuel From Russia",
+      "publishedAt": "2026-10-11T00:59:27.436Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/10/us/politics/republicans-midterms-trump-diesel-russia.html"
+      ],
+      "imagePath": "/images/us-some-republicans-reject-trump-s-move-to-import-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Republicans for Harris",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABanner%20Republicans%20for%20Harris%201500x500.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__faf85c4ad5cb7b92",
+      "slug": "politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10",
+      "articlePath": "src/content/articles/politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10.md",
+      "title": "Trump says he will ‘ultimately make decision’ on Fort Hood shooter execution livestream",
+      "publishedAt": "2026-10-11T00:59:29.773Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/administration/6140915-trump-reviews-hasan-execution-plan/"
+      ],
+      "imagePath": "/images/politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Exchange Associate",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFort%20Hood%20Exchange%20(24374999350).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }

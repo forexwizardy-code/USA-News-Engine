@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T00:38:25.365Z",
-  "storyCount": 364,
+  "generatedAt": "2026-10-11T00:59:29.776Z",
+  "storyCount": 366,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -10648,6 +10648,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-some-republicans-reject-trump-s-move-to-import-2026-10-10",
+      "slug": "us-some-republicans-reject-trump-s-move-to-import-2026-10-10",
+      "articlePath": "src/content/articles/us-some-republicans-reject-trump-s-move-to-import-2026-10-10.md",
+      "publishedAt": "2026-10-11T00:59:27.436Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__86000007114df2f6"
+      ],
+      "allAlertIds": [
+        "gn__86000007114df2f6"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T00:59:27.436Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-some-republicans-reject-trump-s-move-to-import-2026-10-10-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Republicans for Harris",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABanner%20Republicans%20for%20Harris%201500x500.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10",
+      "slug": "politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10",
+      "articlePath": "src/content/articles/politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10.md",
+      "publishedAt": "2026-10-11T00:59:29.773Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__faf85c4ad5cb7b92"
+      ],
+      "allAlertIds": [
+        "gn__faf85c4ad5cb7b92"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T00:59:29.773Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-says-he-will-ultimately-make-decision-on-2026-10-10-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Exchange Associate",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFort%20Hood%20Exchange%20(24374999350).jpg",
+      "breaking": false
     }
   ]
 }
