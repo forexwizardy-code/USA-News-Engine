@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T04:52:06.379Z",
-  "storyCount": 307,
+  "generatedAt": "2026-10-11T05:23:04.440Z",
+  "storyCount": 309,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -7935,6 +7935,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANong%20Khai%20Saturday%20Night%20Market%202.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__b8c090e5259a1349",
+      "slug": "politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10",
+      "articlePath": "src/content/articles/politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10.md",
+      "title": "Kalshi investigating suspicious bets tied to White house press secretary pick: Report",
+      "publishedAt": "2026-10-11T05:22:57.942Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 49,
+      "sourceUrls": [
+        "https://thehill.com/policy/technology/6140504-kalshi-investigates-press-secretary-bets/"
+      ],
+      "imagePath": "/images/politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Louis Le Breton",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIll%20dict%20infernal%20p0572%20prediction%20osman.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__51f231967e20a8e3",
+      "slug": "entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10",
+      "articlePath": "src/content/articles/entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10.md",
+      "title": "Chris Rock Takes a Scalpel to L.A. in ‘Misty Green,’ Makes a Star of Rosalind Eleazar",
+      "publishedAt": "2026-10-11T05:23:04.440Z",
+      "category": "entertainment",
+      "primarySource": "The Hollywood Reporter",
+      "primaryPublisherFamily": "Hollywood Reporter",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Hollywood Reporter"
+      ],
+      "usRelevance": "high",
+      "storyScore": 48,
+      "sourceUrls": [
+        "https://www.hollywoodreporter.com/movies/movie-features/misty-green-chris-rock-rosalind-eleazar-nyff-1236727022/"
+      ],
+      "imagePath": "/images/entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Laubenstein Karen, U.S. Fish and Wildlife Service",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWoman%20on%20boat%20takes%20pictures%20of%20birds%20and%20rock%20outcropping%20on%20shore.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

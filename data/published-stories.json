@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T04:52:06.382Z",
-  "storyCount": 378,
+  "generatedAt": "2026-10-11T05:23:04.443Z",
+  "storyCount": 380,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11053,6 +11053,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANong%20Khai%20Saturday%20Night%20Market%202.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10",
+      "slug": "politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10",
+      "articlePath": "src/content/articles/politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10.md",
+      "publishedAt": "2026-10-11T05:22:57.942Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__b8c090e5259a1349"
+      ],
+      "allAlertIds": [
+        "gn__b8c090e5259a1349"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T05:22:57.942Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-kalshi-investigating-suspicious-bets-tied-to-white-2026-10-10-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Louis Le Breton",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AIll%20dict%20infernal%20p0572%20prediction%20osman.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10",
+      "slug": "entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10",
+      "articlePath": "src/content/articles/entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10.md",
+      "publishedAt": "2026-10-11T05:23:04.440Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__51f231967e20a8e3"
+      ],
+      "allAlertIds": [
+        "gn__51f231967e20a8e3"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "The Hollywood Reporter",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-11T05:23:04.440Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-chris-rock-takes-a-scalpel-to-l-a-in-misty-green-2026-10-10-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Laubenstein Karen, U.S. Fish and Wildlife Service",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWoman%20on%20boat%20takes%20pictures%20of%20birds%20and%20rock%20outcropping%20on%20shore.jpg",
       "breaking": false
     }
   ]
