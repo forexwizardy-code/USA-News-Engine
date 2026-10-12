@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T00:36:06.149Z",
-  "storyCount": 317,
+  "generatedAt": "2026-10-12T01:04:41.914Z",
+  "storyCount": 319,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8195,6 +8195,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJim%20Justice%20DSC%200543%20t%20(34158602891).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__852bea7bd3a9e6d5",
+      "slug": "us-justice-department-investigates-tv-networks-citing-2026-10-11",
+      "articlePath": "src/content/articles/us-justice-department-investigates-tv-networks-citing-2026-10-11.md",
+      "title": "Justice Department investigates TV networks, citing possible anti-trust violations",
+      "publishedAt": "2026-10-12T01:04:35.796Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/11/nx-s1-5997574/the-doj-is-investigating-5-tv-networks-for-suspending-pool-coverage-of-trump"
+      ],
+      "imagePath": "/images/us-justice-department-investigates-tv-networks-citing-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Department of Justice",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJustice%20Department%20in%20January%202019.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1394be1980504a7c",
+      "slug": "politics-judge-orders-cancellation-of-trump-s-2026-10-12",
+      "articlePath": "src/content/articles/politics-judge-orders-cancellation-of-trump-s-2026-10-12.md",
+      "title": "Judge orders cancellation of Trump’s government-funded ads",
+      "publishedAt": "2026-10-12T01:04:41.914Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6141904-judge-blocks-trump-ads/"
+      ],
+      "imagePath": "/images/politics-judge-orders-cancellation-of-trump-s-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20First%20Lady%20Melania%20Trump%20at%20the%20Governor's%20Ball%20(49521887923).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

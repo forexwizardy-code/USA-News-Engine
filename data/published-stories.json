@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T00:41:35.692Z",
-  "storyCount": 390,
+  "generatedAt": "2026-10-12T01:04:41.917Z",
+  "storyCount": 392,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11402,6 +11402,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-justice-department-investigates-tv-networks-citing-2026-10-11",
+      "slug": "us-justice-department-investigates-tv-networks-citing-2026-10-11",
+      "articlePath": "src/content/articles/us-justice-department-investigates-tv-networks-citing-2026-10-11.md",
+      "publishedAt": "2026-10-12T01:04:35.796Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__852bea7bd3a9e6d5"
+      ],
+      "allAlertIds": [
+        "gn__852bea7bd3a9e6d5"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T01:04:35.796Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-justice-department-investigates-tv-networks-citing-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Department of Justice",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJustice%20Department%20in%20January%202019.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-judge-orders-cancellation-of-trump-s-2026-10-12",
+      "slug": "politics-judge-orders-cancellation-of-trump-s-2026-10-12",
+      "articlePath": "src/content/articles/politics-judge-orders-cancellation-of-trump-s-2026-10-12.md",
+      "publishedAt": "2026-10-12T01:04:41.914Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1394be1980504a7c"
+      ],
+      "allAlertIds": [
+        "gn__1394be1980504a7c"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T01:04:41.914Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-judge-orders-cancellation-of-trump-s-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20First%20Lady%20Melania%20Trump%20at%20the%20Governor's%20Ball%20(49521887923).jpg",
+      "breaking": false
     }
   ]
 }
