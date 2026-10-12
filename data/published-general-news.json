@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T08:56:39.614Z",
-  "storyCount": 331,
+  "generatedAt": "2026-10-12T09:28:41.316Z",
+  "storyCount": 333,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8559,6 +8559,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKellyanne%20Conway%20at%20ACU%20CPAC%202017%20Feb%2023rd%202017%20by%20Michael%20Vadon%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a768d35edcf1a00f",
+      "slug": "us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12",
+      "articlePath": "src/content/articles/us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12.md",
+      "title": "U.S. restrictions on Chinese drones are leaving police departments in the lurch",
+      "publishedAt": "2026-10-12T09:28:35.974Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5888604/police-chinese-drones-bans-costs"
+      ],
+      "imagePath": "/images/us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Department of State from United States",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChinese%20President%20Xi%20Addresses%20the%20Opening%20Session%20of%20the%20U.S.-China%20Strategic%20Dialogue%20in%20Beijing%20(27544685075).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__0b07110f48cf61c2",
+      "slug": "entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12.md",
+      "title": "Cannes Festival Winning Producer Quijote Films Launches In-House Scripted Series Division (EXCLUSIVE)",
+      "publishedAt": "2026-10-12T09:28:41.316Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/global/cannes-winning-quijote-films-launches-scripted-series-arm-1236907725/"
+      ],
+      "imagePath": "/images/entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Kevin Payravi",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJean-Pierre%20Dardenne%20and%20Luc%20Dardenne%20awardee%20interview%20at%202025%20Cannes%20Film%20Festival.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

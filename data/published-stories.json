@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T08:56:39.617Z",
-  "storyCount": 404,
+  "generatedAt": "2026-10-12T09:28:41.319Z",
+  "storyCount": 406,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11807,6 +11807,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKellyanne%20Conway%20at%20ACU%20CPAC%202017%20Feb%2023rd%202017%20by%20Michael%20Vadon%2002.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12",
+      "slug": "us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12",
+      "articlePath": "src/content/articles/us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12.md",
+      "publishedAt": "2026-10-12T09:28:35.974Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a768d35edcf1a00f"
+      ],
+      "allAlertIds": [
+        "gn__a768d35edcf1a00f"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T09:28:35.974Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-u-s-restrictions-on-chinese-drones-are-leaving-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Department of State from United States",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AChinese%20President%20Xi%20Addresses%20the%20Opening%20Session%20of%20the%20U.S.-China%20Strategic%20Dialogue%20in%20Beijing%20(27544685075).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12",
+      "slug": "entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12.md",
+      "publishedAt": "2026-10-12T09:28:41.316Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__0b07110f48cf61c2"
+      ],
+      "allAlertIds": [
+        "gn__0b07110f48cf61c2"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T09:28:41.316Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-cannes-festival-winning-producer-quijote-films-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Kevin Payravi",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJean-Pierre%20Dardenne%20and%20Luc%20Dardenne%20awardee%20interview%20at%202025%20Cannes%20Film%20Festival.jpg",
       "breaking": false
     }
   ]
