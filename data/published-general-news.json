@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T03:57:17.004Z",
-  "storyCount": 327,
+  "generatedAt": "2026-10-12T07:05:54.573Z",
+  "storyCount": 329,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8456,6 +8456,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.nytimes.com/2026/10/11/us/hurricane-isaias-damage-photos-video.html",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__ff9605718dfd8824",
+      "slug": "us-trump-says-russia-and-ukraine-agree-to-an-energy-2026-10-12",
+      "articlePath": "src/content/articles/us-trump-says-russia-and-ukraine-agree-to-an-energy-2026-10-12.md",
+      "title": "Trump says Russia and Ukraine agree to an 'energy ceasefire'",
+      "publishedAt": "2026-10-12T07:05:50.977Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5998614/trump-russia-ukraine-energy-ceasefire"
+      ],
+      "imagePath": "/images/us-trump-says-russia-and-ukraine-agree-to-an-energy-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AF20251010AH-1325%20First%20Lady%20Melania%20Trump%20makes%20an%20announcement%20concerning%20the%20reunification%20of%20Ukrainian%20Children%20with%20their%20families%20in%20the%20Russia-Ukraine%20conflict.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__cfac4291685c1e14",
+      "slug": "entertainment-cineflix-rights-sells-nordic-blue-crime-hit-hildur-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-cineflix-rights-sells-nordic-blue-crime-hit-hildur-2026-10-12.md",
+      "title": "Cineflix Rights Sells Nordic Blue Crime Hit ‘Hildur’ to Canal+ in France, Australia’s SBS in Multi-Territory Deal (EXCLUSIVE)",
+      "publishedAt": "2026-10-12T07:05:54.573Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/tv/global/cineflix-rights-hildur-canal-multi-deals-1236908198/"
+      ],
+      "imagePath": "/images/entertainment-cineflix-rights-sells-nordic-blue-crime-hit-hildur-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Hilarmont",
+      "imageLicense": "CC BY-SA 3.0 de",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASex%20sells%20Tuning%20World%20(Foto%20Hilarmont).JPG",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
