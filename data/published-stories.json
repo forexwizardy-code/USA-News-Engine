@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T10:32:53.825Z",
-  "storyCount": 410,
+  "generatedAt": "2026-10-12T10:54:51.984Z",
+  "storyCount": 412,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11981,6 +11981,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATechCrunch%20Disrupt%20Berlin%202019%20-%20Day%201%20-%20Techcrunch%20Disrupt%20-%2011%20December%202019%20-%20Berlin%2C%20Germany%20-%20Dan%20Taylor%20photo-28%20(49202644828).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12",
+      "slug": "entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12.md",
+      "publishedAt": "2026-10-12T10:54:50.308Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__0366f475a9ddead4"
+      ],
+      "allAlertIds": [
+        "gn__0366f475a9ddead4"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — Entertainment",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T10:54:50.308Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Paul Conklin",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMRS.%20HUNTER%20IS%20WELL-KNOWN%20ON%20JOHN'S%20ISLAND%20FOR%20HER%20BEAUTIFUL%20QUILTS%20-%20NARA%20-%20546981.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11",
+      "slug": "sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11",
+      "articlePath": "src/content/articles/sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11.md",
+      "publishedAt": "2026-10-12T10:54:51.981Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__ee45cdf1dda659d0"
+      ],
+      "allAlertIds": [
+        "gn__ee45cdf1dda659d0"
+      ],
+      "event": "sports",
+      "location": "Unknown",
+      "sourceOffice": "Washington Post — Sports",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T10:54:51.981Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Photo by Capt. Peter Mrvos, 19th Public Affairs Detachment",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALt.%20Gen.%20Koichi%20Isobe%2C%20the%20Eastern%20Army%20Commander%20of%20the%20Japanese%20Ground%20Self%20Defense%20Force%2C%20and%20Lt.%20Gen.%20Stephen%20Lanza%2C%20the%20commander%20of%20I%20Corps%2C%20make%20their%20way%20to%20a%20commanders%20briefing%20on%20JBLM%2C%20Wash.jpg",
       "breaking": false
     }
   ]

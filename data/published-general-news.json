@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T10:27:15.882Z",
-  "storyCount": 337,
+  "generatedAt": "2026-10-12T10:54:51.981Z",
+  "storyCount": 339,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8715,6 +8715,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATechCrunch%20Disrupt%20Berlin%202019%20-%20Day%201%20-%20Techcrunch%20Disrupt%20-%2011%20December%202019%20-%20Berlin%2C%20Germany%20-%20Dan%20Taylor%20photo-28%20(49202644828).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__0366f475a9ddead4",
+      "slug": "entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12.md",
+      "title": "These African American quilts did more than keep people warm. They told stories.",
+      "publishedAt": "2026-10-12T10:54:50.308Z",
+      "category": "entertainment",
+      "primarySource": "Washington Post — Entertainment",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/entertainment/2026/10/12/national-museum-women-arts-displays-african-american-quilts/"
+      ],
+      "imagePath": "/images/entertainment-these-african-american-quilts-did-more-than-keep-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Paul Conklin",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMRS.%20HUNTER%20IS%20WELL-KNOWN%20ON%20JOHN'S%20ISLAND%20FOR%20HER%20BEAUTIFUL%20QUILTS%20-%20NARA%20-%20546981.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__ee45cdf1dda659d0",
+      "slug": "sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11",
+      "articlePath": "src/content/articles/sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11.md",
+      "title": "Commanders can’t make up ground in NFC East after calamitous tie vs. Giants",
+      "publishedAt": "2026-10-12T10:54:51.981Z",
+      "category": "sports",
+      "primarySource": "Washington Post — Sports",
+      "primaryPublisherFamily": "WaPo",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "WaPo"
+      ],
+      "usRelevance": "high",
+      "storyScore": 41,
+      "sourceUrls": [
+        "https://www.washingtonpost.com/sports/2026/10/11/commanders-cant-make-up-ground-nfc-east-after-calamitous-tie-vs-giants/"
+      ],
+      "imagePath": "/images/sports-commanders-can-t-make-up-ground-in-nfc-east-after-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Photo by Capt. Peter Mrvos, 19th Public Affairs Detachment",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALt.%20Gen.%20Koichi%20Isobe%2C%20the%20Eastern%20Army%20Commander%20of%20the%20Japanese%20Ground%20Self%20Defense%20Force%2C%20and%20Lt.%20Gen.%20Stephen%20Lanza%2C%20the%20commander%20of%20I%20Corps%2C%20make%20their%20way%20to%20a%20commanders%20briefing%20on%20JBLM%2C%20Wash.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
