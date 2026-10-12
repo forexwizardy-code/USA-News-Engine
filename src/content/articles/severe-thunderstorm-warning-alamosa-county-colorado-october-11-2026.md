@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dc9ea50b355103
 sourceOffice: "NWS Pueblo CO"
 tags: ["Severe Thunderstorm Warning", "Weather", "Severe"]
 state: "CO"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---

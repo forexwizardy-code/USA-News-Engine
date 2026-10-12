@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56e4dcb81648b6
 sourceOffice: "NWS Albuquerque NM"
 tags: ["Severe Thunderstorm Warning", "Weather", "Severe"]
 state: "NM"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
