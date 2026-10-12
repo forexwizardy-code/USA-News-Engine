@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T09:28:41.319Z",
-  "storyCount": 406,
+  "generatedAt": "2026-10-12T09:56:33.469Z",
+  "storyCount": 408,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11865,6 +11865,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJean-Pierre%20Dardenne%20and%20Luc%20Dardenne%20awardee%20interview%20at%202025%20Cannes%20Film%20Festival.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-gnome-alone-sequel-game-of-gnomes-from-the-nut-job-2026-10-12",
+      "slug": "entertainment-gnome-alone-sequel-game-of-gnomes-from-the-nut-job-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-gnome-alone-sequel-game-of-gnomes-from-the-nut-job-2026-10-12.md",
+      "publishedAt": "2026-10-12T09:56:29.336Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__55ec503b83e18a5b"
+      ],
+      "allAlertIds": [
+        "gn__55ec503b83e18a5b"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Deadline",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T09:56:29.336Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-gnome-alone-sequel-game-of-gnomes-from-the-nut-job-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Chas Demster",
+      "heroImageLicense": "CC BY-SA 3.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHome%20Alone%203%20house.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-bipartisan-group-of-senators-calls-on-trump-to-2026-10-11",
+      "slug": "us-bipartisan-group-of-senators-calls-on-trump-to-2026-10-11",
+      "articlePath": "src/content/articles/us-bipartisan-group-of-senators-calls-on-trump-to-2026-10-11.md",
+      "publishedAt": "2026-10-12T09:56:33.466Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__6de5942b9c2fef10"
+      ],
+      "allAlertIds": [
+        "gn__6de5942b9c2fef10"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T09:56:33.466Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-bipartisan-group-of-senators-calls-on-trump-to-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Office of White House Press Secretary",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20speaks%20with%20Russian%20President%20Vladimir%20Putin%20from%20the%20Oval%20Office.jpg",
       "breaking": false
     }
   ]
