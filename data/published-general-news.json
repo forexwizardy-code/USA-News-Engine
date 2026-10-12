@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T07:05:54.573Z",
-  "storyCount": 329,
+  "generatedAt": "2026-10-12T08:56:39.614Z",
+  "storyCount": 331,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8507,6 +8507,58 @@
       "imageLicense": "CC BY-SA 3.0 de",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASex%20sells%20Tuning%20World%20(Foto%20Hilarmont).JPG",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__209b3433d681a4d7",
+      "slug": "technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12",
+      "articlePath": "src/content/articles/technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12.md",
+      "title": "Deadly Houthi attacks on Saudi Arabia raise stakes for US",
+      "publishedAt": "2026-10-12T08:56:33.972Z",
+      "category": "technology",
+      "primarySource": "NPR Technology",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 63,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5998041/deadly-houthi-attacks-on-saudi-arabia-raise-stakes-for-us"
+      ],
+      "imagePath": "/images/technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Felton Davis",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AVictims%20of%20Saudi-led%20airstrikes%20on%20a%20university%20that%20had%20been%20used%20as%20a%20detention%20center%20by%20Houthi%20rebels%20in%20Dhamar%2C%20in%20southwestern%20Yemen.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__84989b20d7d0e047",
+      "slug": "politics-republican-strategist-on-how-trump-s-personal-2026-10-12",
+      "articlePath": "src/content/articles/politics-republican-strategist-on-how-trump-s-personal-2026-10-12.md",
+      "title": "Republican strategist on how Trump's personal grievances could affect the GOP",
+      "publishedAt": "2026-10-12T08:56:39.614Z",
+      "category": "politics",
+      "primarySource": "NPR Politics",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5996646/republican-strategist-on-how-trumps-personal-grievances-could-affect-the-gop"
+      ],
+      "imagePath": "/images/politics-republican-strategist-on-how-trump-s-personal-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Michael Vadon",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKellyanne%20Conway%20at%20ACU%20CPAC%202017%20Feb%2023rd%202017%20by%20Michael%20Vadon%2002.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T08:35:47.941Z",
-  "storyCount": 402,
+  "generatedAt": "2026-10-12T08:56:39.617Z",
+  "storyCount": 404,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11749,6 +11749,64 @@
       "heroImageLicense": "CC BY-SA 3.0 de",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASex%20sells%20Tuning%20World%20(Foto%20Hilarmont).JPG",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12",
+      "slug": "technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12",
+      "articlePath": "src/content/articles/technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12.md",
+      "publishedAt": "2026-10-12T08:56:33.972Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__209b3433d681a4d7"
+      ],
+      "allAlertIds": [
+        "gn__209b3433d681a4d7"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "NPR Technology",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T08:56:33.972Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-deadly-houthi-attacks-on-saudi-arabia-raise-stakes-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Felton Davis",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AVictims%20of%20Saudi-led%20airstrikes%20on%20a%20university%20that%20had%20been%20used%20as%20a%20detention%20center%20by%20Houthi%20rebels%20in%20Dhamar%2C%20in%20southwestern%20Yemen.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-republican-strategist-on-how-trump-s-personal-2026-10-12",
+      "slug": "politics-republican-strategist-on-how-trump-s-personal-2026-10-12",
+      "articlePath": "src/content/articles/politics-republican-strategist-on-how-trump-s-personal-2026-10-12.md",
+      "publishedAt": "2026-10-12T08:56:39.614Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__84989b20d7d0e047"
+      ],
+      "allAlertIds": [
+        "gn__84989b20d7d0e047"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "NPR Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T08:56:39.614Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-republican-strategist-on-how-trump-s-personal-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Michael Vadon",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKellyanne%20Conway%20at%20ACU%20CPAC%202017%20Feb%2023rd%202017%20by%20Michael%20Vadon%2002.jpg",
       "breaking": false
     }
   ]
