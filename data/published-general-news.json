@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T01:04:41.914Z",
-  "storyCount": 319,
+  "generatedAt": "2026-10-12T01:27:54.527Z",
+  "storyCount": 321,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8247,6 +8247,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20First%20Lady%20Melania%20Trump%20at%20the%20Governor's%20Ball%20(49521887923).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__d3d4ac8196e68a93",
+      "slug": "us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11",
+      "articlePath": "src/content/articles/us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11.md",
+      "title": "Mamdani to Skip Columbus Day Parade. Some Italian Americans Are Glad.",
+      "publishedAt": "2026-10-12T01:27:50.433Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/11/nyregion/mamdani-columbus-day-parade-nyc.html"
+      ],
+      "imagePath": "/images/us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Eric",
+      "imageLicense": "CC BY-SA 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAbandoned%20former%20Spaghetti%20Warehouse%20(originally%20Crystal%20Ice%20Building%2C%201891)%2C%20featuring%20a%20brick%20facade%20with%20boarded%20windows%2C%20Columbus%2C%20Ohio.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3753aa488b93ce47",
+      "slug": "politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12",
+      "articlePath": "src/content/articles/politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12.md",
+      "title": "Trump says new press secretary to hold first press conference next week",
+      "publishedAt": "2026-10-12T01:27:54.527Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/media/6141936-zacharia-to-hold-first-white-house-briefing/"
+      ],
+      "imagePath": "/images/politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Department of State from United States",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASecretary%20Pompeo%20Participates%20in%20Press%20Conference%20With%20President%20Trump%20at%20NATO%20(41551661440).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

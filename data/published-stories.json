@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T01:04:41.917Z",
-  "storyCount": 392,
+  "generatedAt": "2026-10-12T01:27:54.529Z",
+  "storyCount": 394,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11459,6 +11459,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20First%20Lady%20Melania%20Trump%20at%20the%20Governor's%20Ball%20(49521887923).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11",
+      "slug": "us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11",
+      "articlePath": "src/content/articles/us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11.md",
+      "publishedAt": "2026-10-12T01:27:50.433Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__d3d4ac8196e68a93"
+      ],
+      "allAlertIds": [
+        "gn__d3d4ac8196e68a93"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T01:27:50.433Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-mamdani-to-skip-columbus-day-parade-some-italian-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Eric",
+      "heroImageLicense": "CC BY-SA 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAbandoned%20former%20Spaghetti%20Warehouse%20(originally%20Crystal%20Ice%20Building%2C%201891)%2C%20featuring%20a%20brick%20facade%20with%20boarded%20windows%2C%20Columbus%2C%20Ohio.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12",
+      "slug": "politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12",
+      "articlePath": "src/content/articles/politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12.md",
+      "publishedAt": "2026-10-12T01:27:54.527Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3753aa488b93ce47"
+      ],
+      "allAlertIds": [
+        "gn__3753aa488b93ce47"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T01:27:54.527Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-trump-says-new-press-secretary-to-hold-first-press-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Department of State from United States",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASecretary%20Pompeo%20Participates%20in%20Press%20Conference%20With%20President%20Trump%20at%20NATO%20(41551661440).jpg",
       "breaking": false
     }
   ]
