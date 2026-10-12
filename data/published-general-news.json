@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T09:56:33.466Z",
-  "storyCount": 335,
+  "generatedAt": "2026-10-12T10:27:15.882Z",
+  "storyCount": 337,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8663,6 +8663,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20speaks%20with%20Russian%20President%20Vladimir%20Putin%20from%20the%20Oval%20Office.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1d5d9168aaacf432",
+      "slug": "entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12.md",
+      "title": "Mahershala Ali is still hungry as an actor: 'Let's fail on camera until we find it'",
+      "publishedAt": "2026-10-12T10:27:12.060Z",
+      "category": "entertainment",
+      "primarySource": "NPR Movies",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5996551/mahershala-ali-your-mother"
+      ],
+      "imagePath": "/images/entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Indrajit Das",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGrave%20of%20Youza%20Asouph%20or%20Yuz%20Asaph%20inside%20Rozabal%20shrine%20in%20Srinagar%2002.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5a6a779c902cea48",
+      "slug": "technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11",
+      "articlePath": "src/content/articles/technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11.md",
+      "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+      "publishedAt": "2026-10-12T10:27:15.882Z",
+      "category": "technology",
+      "primarySource": "TechCrunch",
+      "primaryPublisherFamily": "TechCrunch",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "TechCrunch"
+      ],
+      "usRelevance": "high",
+      "storyScore": 43,
+      "sourceUrls": [
+        "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/"
+      ],
+      "imagePath": "/images/technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "TechCrunch",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATechCrunch%20Disrupt%20Berlin%202019%20-%20Day%201%20-%20Techcrunch%20Disrupt%20-%2011%20December%202019%20-%20Berlin%2C%20Germany%20-%20Dan%20Taylor%20photo-28%20(49202644828).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

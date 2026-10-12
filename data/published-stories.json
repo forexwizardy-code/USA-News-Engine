@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T09:56:33.469Z",
-  "storyCount": 408,
+  "generatedAt": "2026-10-12T10:27:15.886Z",
+  "storyCount": 410,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11923,6 +11923,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20speaks%20with%20Russian%20President%20Vladimir%20Putin%20from%20the%20Oval%20Office.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12",
+      "slug": "entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12",
+      "articlePath": "src/content/articles/entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12.md",
+      "publishedAt": "2026-10-12T10:27:12.060Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1d5d9168aaacf432"
+      ],
+      "allAlertIds": [
+        "gn__1d5d9168aaacf432"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "NPR Movies",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T10:27:12.060Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-mahershala-ali-is-still-hungry-as-an-actor-let-s-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Indrajit Das",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGrave%20of%20Youza%20Asouph%20or%20Yuz%20Asaph%20inside%20Rozabal%20shrine%20in%20Srinagar%2002.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11",
+      "slug": "technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11",
+      "articlePath": "src/content/articles/technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11.md",
+      "publishedAt": "2026-10-12T10:27:15.882Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5a6a779c902cea48"
+      ],
+      "allAlertIds": [
+        "gn__5a6a779c902cea48"
+      ],
+      "event": "technology",
+      "location": "Unknown",
+      "sourceOffice": "TechCrunch",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T10:27:15.882Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/technology-48-hours-to-techcrunch-disrupt-2026-hear-directly-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "TechCrunch",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATechCrunch%20Disrupt%20Berlin%202019%20-%20Day%201%20-%20Techcrunch%20Disrupt%20-%2011%20December%202019%20-%20Berlin%2C%20Germany%20-%20Dan%20Taylor%20photo-28%20(49202644828).jpg",
       "breaking": false
     }
   ]
