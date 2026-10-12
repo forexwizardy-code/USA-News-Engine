@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T22:28:12.189Z",
-  "storyCount": 386,
+  "generatedAt": "2026-10-12T00:36:06.153Z",
+  "storyCount": 388,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -11285,6 +11285,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKe%20Huy%20Quan%20at%20the%20White%20House%20(52902390767).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11",
+      "slug": "us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11",
+      "articlePath": "src/content/articles/us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11.md",
+      "publishedAt": "2026-10-12T00:36:04.122Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__165fab6c4ab06d22"
+      ],
+      "allAlertIds": [
+        "gn__165fab6c4ab06d22"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T00:36:04.122Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Royalbroil",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMaine%20Senate.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11",
+      "slug": "politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11",
+      "articlePath": "src/content/articles/politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11.md",
+      "publishedAt": "2026-10-12T00:36:06.149Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__0a29fc9b5d30745a"
+      ],
+      "allAlertIds": [
+        "gn__0a29fc9b5d30745a"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-12T00:36:06.149Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Governor Jim Justice",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJim%20Justice%20DSC%200543%20t%20(34158602891).jpg",
       "breaking": false
     }
   ]

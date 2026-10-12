@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T06:56:42.370Z",
-  "storyCount": 315,
+  "generatedAt": "2026-10-12T00:36:06.149Z",
+  "storyCount": 317,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8143,6 +8143,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKe%20Huy%20Quan%20at%20the%20White%20House%20(52902390767).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__165fab6c4ab06d22",
+      "slug": "us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11",
+      "articlePath": "src/content/articles/us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11.md",
+      "title": "In Maine Senate Race, Anxious Democrats Turn to Bernie Sanders for a Jolt",
+      "publishedAt": "2026-10-12T00:36:04.122Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/11/us/politics/maine-bernie-sanders-troy-jackson-seante-democrats.html"
+      ],
+      "imagePath": "/images/us-in-maine-senate-race-anxious-democrats-turn-to-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Royalbroil",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMaine%20Senate.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__0a29fc9b5d30745a",
+      "slug": "politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11",
+      "articlePath": "src/content/articles/politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11.md",
+      "title": "Lawmakers in bipartisan statement push back on Trump over Russian oil",
+      "publishedAt": "2026-10-12T00:36:06.149Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://thehill.com/homenews/senate/6141837-senate-lawmakers-condemn-russian-oil-deal/"
+      ],
+      "imagePath": "/images/politics-lawmakers-in-bipartisan-statement-push-back-on-2026-10-11-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Governor Jim Justice",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJim%20Justice%20DSC%200543%20t%20(34158602891).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
