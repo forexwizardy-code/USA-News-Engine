@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T01:54:23.703Z",
-  "storyCount": 420,
+  "generatedAt": "2026-10-13T02:25:05.547Z",
+  "storyCount": 422,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12275,6 +12275,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKansas%20Senate%20District%202%20(2010).png",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12",
+      "slug": "us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12",
+      "articlePath": "src/content/articles/us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12.md",
+      "publishedAt": "2026-10-13T02:25:02.131Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__12098cc7a03e4c44"
+      ],
+      "allAlertIds": [
+        "gn__12098cc7a03e4c44"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T02:25:02.131Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "https://wellcomeimages.org/indexplus/obf_images/29/6f/971a8bdeaebb0c274bf347280f3c.jpg\n\nGallery: https://wellcomeimages.org/indexplus/image/V0015168.html\nWellcome Collection gallery (2018-03-21): https://wellcomecollection.org/works/ahkyxkje CC-BY-4.0",
+      "heroImageLicense": "CC BY 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AA%20dying%20little%20girl%20is%20held%20by%20her%20mother%20in%20bed%2C%20while%20anot%20Wellcome%20V0015168.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13",
+      "slug": "politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13",
+      "articlePath": "src/content/articles/politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13.md",
+      "publishedAt": "2026-10-13T02:25:05.543Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__b3c98699808bc735"
+      ],
+      "allAlertIds": [
+        "gn__b3c98699808bc735"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T02:25:05.543Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Immigration and Customs Enforcement",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHSI%20Special%20Agents%20execute%20federal%20criminal%20search%20warrants%20in%20North%20Texas.jpg",
       "breaking": false
     }
   ]

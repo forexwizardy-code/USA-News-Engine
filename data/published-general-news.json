@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T01:54:23.699Z",
-  "storyCount": 345,
+  "generatedAt": "2026-10-13T02:25:05.543Z",
+  "storyCount": 347,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8926,6 +8926,58 @@
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKansas%20Senate%20District%202%20(2010).png",
       "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__12098cc7a03e4c44",
+      "slug": "us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12",
+      "articlePath": "src/content/articles/us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12.md",
+      "title": "In Grief, a Mother Asks Strangers to ‘Sit Here’ at a Ballgame",
+      "publishedAt": "2026-10-13T02:25:02.131Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/12/us/grieving-mother-seattle-mariners-tickets.html"
+      ],
+      "imagePath": "/images/us-in-grief-a-mother-asks-strangers-to-sit-here-at-a-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "https://wellcomeimages.org/indexplus/obf_images/29/6f/971a8bdeaebb0c274bf347280f3c.jpg\n\nGallery: https://wellcomeimages.org/indexplus/image/V0015168.html\nWellcome Collection gallery (2018-03-21): https://wellcomecollection.org/works/ahkyxkje CC-BY-4.0",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AA%20dying%20little%20girl%20is%20held%20by%20her%20mother%20in%20bed%2C%20while%20anot%20Wellcome%20V0015168.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__b3c98699808bc735",
+      "slug": "politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13",
+      "articlePath": "src/content/articles/politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13.md",
+      "title": "Federal Agents Search Home of Rep. Ilhan Omar",
+      "publishedAt": "2026-10-13T02:25:05.543Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/12/us/politics/ilhan-omar-home-searched.html"
+      ],
+      "imagePath": "/images/politics-federal-agents-search-home-of-rep-ilhan-omar-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Immigration and Customs Enforcement",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHSI%20Special%20Agents%20execute%20federal%20criminal%20search%20warrants%20in%20North%20Texas.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
