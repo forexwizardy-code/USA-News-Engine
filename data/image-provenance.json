@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T00:43:20.660Z",
-  "imageCount": 7,
+  "generatedAt": "2026-10-13T02:31:03.272Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -22,28 +22,6 @@
       "sourceOrganization": "Unknown authorUnknown author (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:26:35.706Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/e/e5/Mississippi_River_Delta%2C_Louisiana_%28MODIS_2019-01-12%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMississippi%20River%20Delta%2C%20Louisiana%20(MODIS%202019-01-12).jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Mississippi_River_Delta%2C_Louisiana_%28MODIS_2019-01-12%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "MODIS Land Rapid Response Team, NASA GSFC",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "MODIS Land Rapid Response Team, NASA GSFC (Wikimedia Commons)",
-      "imageRelation": "illustrative-file-photo",
-      "firstUsedAt": "2026-10-13T00:43:15.335Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/8/8b/South_Carolina_flood_151006-Z-II459-002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASouth%20Carolina%20flood%20151006-Z-II459-002.jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/South_Carolina_flood_151006-Z-II459-002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "Staff Sgt. Roberto Di Giovine",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "Staff Sgt. Roberto Di Giovine (Wikimedia Commons)",
-      "imageRelation": "illustrative-file-photo",
-      "firstUsedAt": "2026-10-13T00:43:20.539Z",
       "storiesUsingImage": []
     },
     "https://upload.wikimedia.org/wikipedia/commons/a/a2/Astor_FL_St_Johns_river_south01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
