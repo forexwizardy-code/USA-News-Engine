@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T03:56:08.635Z",
-  "storyCount": 353,
+  "generatedAt": "2026-10-13T04:26:44.625Z",
+  "storyCount": 355,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9134,6 +9134,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20Mrs.%20Trump%20Depart%20for%20Ohio%20and%20Texas%20(48480648476).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5ec9273395cba525",
+      "slug": "entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13",
+      "articlePath": "src/content/articles/entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13.md",
+      "title": "Toni Collette’s Directorial Debut ‘The Best Of’ Among 75 Projects Backed by Screen Australia",
+      "publishedAt": "2026-10-13T04:26:41.181Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/news/toni-collette-directorial-debut-75-projects-screen-australia-1236909731/"
+      ],
+      "imagePath": "/images/entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "PunkToad",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHereditary%20Director%20Ari%20Aster%20with%20Toni%20Collette.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3f934df6b9890f9f",
+      "slug": "us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12",
+      "articlePath": "src/content/articles/us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12.md",
+      "title": "Rep. Omar accuses Trump of political intimidation after agents search her home",
+      "publishedAt": "2026-10-13T04:26:44.625Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/rep-omar-accuses-trump-of-political-intimidation-after-agents-search-her-home"
+      ],
+      "imagePath": "/images/us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20Participates%20in%20a%20Wreath%20Laying%20Ceremony%20(50057866893).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

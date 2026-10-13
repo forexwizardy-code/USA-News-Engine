@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T03:56:08.637Z",
-  "storyCount": 428,
+  "generatedAt": "2026-10-13T04:26:44.629Z",
+  "storyCount": 430,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12507,6 +12507,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20Mrs.%20Trump%20Depart%20for%20Ohio%20and%20Texas%20(48480648476).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13",
+      "slug": "entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13",
+      "articlePath": "src/content/articles/entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13.md",
+      "publishedAt": "2026-10-13T04:26:41.181Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5ec9273395cba525"
+      ],
+      "allAlertIds": [
+        "gn__5ec9273395cba525"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T04:26:41.181Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-toni-collette-s-directorial-debut-the-best-of-2026-10-13-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "PunkToad",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHereditary%20Director%20Ari%20Aster%20with%20Toni%20Collette.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12",
+      "slug": "us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12",
+      "articlePath": "src/content/articles/us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12.md",
+      "publishedAt": "2026-10-13T04:26:44.625Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3f934df6b9890f9f"
+      ],
+      "allAlertIds": [
+        "gn__3f934df6b9890f9f"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T04:26:44.625Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-rep-omar-accuses-trump-of-political-intimidation-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20Participates%20in%20a%20Wreath%20Laying%20Ceremony%20(50057866893).jpg",
       "breaking": false
     }
   ]
