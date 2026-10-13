@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T10:54:51.981Z",
-  "storyCount": 339,
+  "generatedAt": "2026-10-13T00:37:44.191Z",
+  "storyCount": 341,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8767,6 +8767,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALt.%20Gen.%20Koichi%20Isobe%2C%20the%20Eastern%20Army%20Commander%20of%20the%20Japanese%20Ground%20Self%20Defense%20Force%2C%20and%20Lt.%20Gen.%20Stephen%20Lanza%2C%20the%20commander%20of%20I%20Corps%2C%20make%20their%20way%20to%20a%20commanders%20briefing%20on%20JBLM%2C%20Wash.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__f2e5373580cff68c",
+      "slug": "us-rj-mitte-who-played-walter-white-s-son-on-breaking-2026-10-13",
+      "articlePath": "src/content/articles/us-rj-mitte-who-played-walter-white-s-son-on-breaking-2026-10-13.md",
+      "title": "RJ Mitte, Who Played Walter White’s Son on ‘Breaking Bad,’ Dies at 34",
+      "publishedAt": "2026-10-13T00:37:40.306Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/12/arts/television/rj-mitte-dead.html"
+      ],
+      "imagePath": "/images/us-rj-mitte-who-played-walter-white-s-son-on-breaking-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "popculturegeek.com from Los Angeles, CA, USA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ADean%20Norris%20and%20RJ%20Mitte.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__54ce27bb35165a1a",
+      "slug": "politics-judge-orders-trump-administration-to-answer-for-2026-10-12",
+      "articlePath": "src/content/articles/politics-judge-orders-trump-administration-to-answer-for-2026-10-12.md",
+      "title": "Judge Orders Trump Administration to Answer for Tree Removals at D.C. Golf Course",
+      "publishedAt": "2026-10-13T00:37:44.191Z",
+      "category": "politics",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 65,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/12/us/politics/judge-trees-golf-trump.html"
+      ],
+      "imagePath": "/images/politics-judge-orders-trump-administration-to-answer-for-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AP20250925JB-0568%20President%20Donald%20Trump%20signs%20proclamations%20and%20executive%20orders.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
