@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T02:25:05.543Z",
-  "storyCount": 347,
+  "generatedAt": "2026-10-13T02:54:36.322Z",
+  "storyCount": 349,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -8977,6 +8977,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AHSI%20Special%20Agents%20execute%20federal%20criminal%20search%20warrants%20in%20North%20Texas.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__06c5ecb031d0166f",
+      "slug": "us-new-white-house-press-secretary-a-devoted-fan-of-2026-10-12",
+      "articlePath": "src/content/articles/us-new-white-house-press-secretary-a-devoted-fan-of-2026-10-12.md",
+      "title": "New White House press secretary a \"devoted fan\" of Trump and MAGA",
+      "publishedAt": "2026-10-13T02:54:33.645Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5998948/new-white-house-press-secretary-a-devoted-fan-of-trump-and-maga"
+      ],
+      "imagePath": "/images/us-new-white-house-press-secretary-a-devoted-fan-of-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABTS%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022%20(cropped).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__52f6edddb5d0d553",
+      "slug": "politics-trump-repeatedly-attacks-minnesota-omar-during-2026-10-13",
+      "articlePath": "src/content/articles/politics-trump-repeatedly-attacks-minnesota-omar-during-2026-10-13.md",
+      "title": "Trump repeatedly attacks Minnesota, Omar during Ohio campaign stop",
+      "publishedAt": "2026-10-13T02:54:36.322Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/6144416-trump-attacks-omar-ohio/"
+      ],
+      "imagePath": "/images/politics-trump-repeatedly-attacks-minnesota-omar-during-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Tony Webster",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMonica%20Meyer%20Endorses%20Ilhan%20Omar%20for%20Congress%20-%20Minnesota%20DFL.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
