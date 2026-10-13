@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T04:33:03.087Z",
-  "storyCount": 430,
+  "generatedAt": "2026-10-13T04:56:16.714Z",
+  "storyCount": 432,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12565,6 +12565,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20Participates%20in%20a%20Wreath%20Laying%20Ceremony%20(50057866893).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12",
+      "slug": "us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12",
+      "articlePath": "src/content/articles/us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12.md",
+      "publishedAt": "2026-10-13T04:56:11.455Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__1c6ac34e22edb45d"
+      ],
+      "allAlertIds": [
+        "gn__1c6ac34e22edb45d"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T04:56:11.455Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House from Washington, DC",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Meets%20with%20Russian%20Foreign%20Minister%20Sergey%20Lavrov%20(33754471884).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12",
+      "slug": "business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12",
+      "articlePath": "src/content/articles/business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12.md",
+      "publishedAt": "2026-10-13T04:56:16.708Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__be11ca460f2e0c25"
+      ],
+      "allAlertIds": [
+        "gn__be11ca460f2e0c25"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "NPR Business",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T04:56:16.708Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "A7madMalik93",
+      "heroImageLicense": "CC BY-SA 4.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFarmers%20take%20care%20of%20almost%20everything.jpg",
       "breaking": false
     }
   ]

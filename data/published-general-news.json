@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T04:26:44.625Z",
-  "storyCount": 355,
+  "generatedAt": "2026-10-13T04:56:16.708Z",
+  "storyCount": 357,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9186,6 +9186,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20and%20the%20First%20Lady%20Participates%20in%20a%20Wreath%20Laying%20Ceremony%20(50057866893).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__1c6ac34e22edb45d",
+      "slug": "us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12",
+      "articlePath": "src/content/articles/us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12.md",
+      "title": "Ukraine disputes Trump's claim of energy ceasefire as Russian diesel deal draws fire",
+      "publishedAt": "2026-10-13T04:56:11.455Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/ukraine-disputes-trumps-claim-of-energy-ceasefire-as-russian-diesel-deal-draws-fire"
+      ],
+      "imagePath": "/images/us-ukraine-disputes-trump-s-claim-of-energy-ceasefire-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House from Washington, DC",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Trump%20Meets%20with%20Russian%20Foreign%20Minister%20Sergey%20Lavrov%20(33754471884).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__be11ca460f2e0c25",
+      "slug": "business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12",
+      "articlePath": "src/content/articles/business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12.md",
+      "title": "Farmers say they'll take the relief of Trump's EO — but they're still hurting",
+      "publishedAt": "2026-10-13T04:56:16.708Z",
+      "category": "business",
+      "primarySource": "NPR Business",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 50,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/12/nx-s1-5993837/farmers-say-theyll-take-the-relief-of-trumps-eo-but-theyre-still-hurting"
+      ],
+      "imagePath": "/images/business-farmers-say-they-ll-take-the-relief-of-trump-s-eo-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "A7madMalik93",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFarmers%20take%20care%20of%20almost%20everything.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
