@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T04:56:16.708Z",
-  "storyCount": 357,
+  "generatedAt": "2026-10-13T05:26:42.448Z",
+  "storyCount": 359,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9238,6 +9238,58 @@
       "imageLicense": "CC BY-SA 4.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFarmers%20take%20care%20of%20almost%20everything.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__77f87a915ae58b9b",
+      "slug": "us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12",
+      "articlePath": "src/content/articles/us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12.md",
+      "title": "Tamara Keith and Amy Walter on the GOP's vulnerability in the midterms",
+      "publishedAt": "2026-10-13T05:26:36.393Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/tamara-keith-and-amy-walter-on-the-gops-vulnerability-in-the-midterms"
+      ],
+      "imagePath": "/images/us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "NASA Stennis Space Center",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANASA%20honors%20employees%20for%20flight%20safety%20(ssc-2010-00634).jpeg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__3b9bc93fa77b3e7f",
+      "slug": "entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13",
+      "articlePath": "src/content/articles/entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13.md",
+      "title": "Antitrust Experts Doubt Donald Trump’s DOJ Has A Case In Going After Networks For Suspending White House TV Pool",
+      "publishedAt": "2026-10-13T05:26:42.448Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 48,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/doj-tv-press-pool-boycott-may-not-get-far-1237155017/"
+      ],
+      "imagePath": "/images/entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "quapan",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A%22On%20January%2014%2C%202020%2C%20the%20World%20Health%20Organization%20gratuitously%20reaffirmed%20China's%20now-debunked%20claim%20that%20the%20coronavirus%20could%20not%20be%20transmitted%20between%20humans.%22%20(White%20House%2C%20May%2018%2C%202020)%20-%20(49935459078).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

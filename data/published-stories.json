@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T04:56:16.714Z",
-  "storyCount": 432,
+  "generatedAt": "2026-10-13T05:26:42.452Z",
+  "storyCount": 434,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12623,6 +12623,64 @@
       "heroImageLicense": "CC BY-SA 4.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFarmers%20take%20care%20of%20almost%20everything.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12",
+      "slug": "us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12",
+      "articlePath": "src/content/articles/us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12.md",
+      "publishedAt": "2026-10-13T05:26:36.393Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__77f87a915ae58b9b"
+      ],
+      "allAlertIds": [
+        "gn__77f87a915ae58b9b"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T05:26:36.393Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-tamara-keith-and-amy-walter-on-the-gop-s-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "NASA Stennis Space Center",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANASA%20honors%20employees%20for%20flight%20safety%20(ssc-2010-00634).jpeg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13",
+      "slug": "entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13",
+      "articlePath": "src/content/articles/entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13.md",
+      "publishedAt": "2026-10-13T05:26:42.448Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3b9bc93fa77b3e7f"
+      ],
+      "allAlertIds": [
+        "gn__3b9bc93fa77b3e7f"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Deadline",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T05:26:42.448Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-antitrust-experts-doubt-donald-trump-s-doj-has-a-2026-10-13-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "quapan",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A%22On%20January%2014%2C%202020%2C%20the%20World%20Health%20Organization%20gratuitously%20reaffirmed%20China's%20now-debunked%20claim%20that%20the%20coronavirus%20could%20not%20be%20transmitted%20between%20humans.%22%20(White%20House%2C%20May%2018%2C%202020)%20-%20(49935459078).jpg",
       "breaking": false
     }
   ]
