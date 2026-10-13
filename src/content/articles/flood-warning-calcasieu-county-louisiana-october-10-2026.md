@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.baf7245f9e32ca
 sourceOffice: "NWS Lake Charles LA"
 tags: ["Flood Warning", "Weather", "Severe"]
 state: "LA"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
