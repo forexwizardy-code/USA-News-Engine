@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T02:54:36.325Z",
-  "storyCount": 424,
+  "generatedAt": "2026-10-13T03:25:48.372Z",
+  "storyCount": 426,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12391,6 +12391,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMonica%20Meyer%20Endorses%20Ilhan%20Omar%20for%20Congress%20-%20Minnesota%20DFL.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-government-spent-10-million-on-pro-trump-ads-after-2026-10-12",
+      "slug": "us-government-spent-10-million-on-pro-trump-ads-after-2026-10-12",
+      "articlePath": "src/content/articles/us-government-spent-10-million-on-pro-trump-ads-after-2026-10-12.md",
+      "publishedAt": "2026-10-13T03:25:42.847Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__b9119a1e095140ce"
+      ],
+      "allAlertIds": [
+        "gn__b9119a1e095140ce"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T03:25:42.847Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-government-spent-10-million-on-pro-trump-ads-after-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Photo by Sgt. 1st Class Randall Jackson, 10th AAMDC Public Affairs",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AUSAREUR%20Soldiers%20train%20with%20Polish%20partners%20150320-A-RJ227-4011.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-federal-agents-search-omar-s-home-in-criminal-2026-10-12",
+      "slug": "politics-federal-agents-search-omar-s-home-in-criminal-2026-10-12",
+      "articlePath": "src/content/articles/politics-federal-agents-search-omar-s-home-in-criminal-2026-10-12.md",
+      "publishedAt": "2026-10-13T03:25:48.369Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__f70d6cbb1f65b8ed"
+      ],
+      "allAlertIds": [
+        "gn__f70d6cbb1f65b8ed"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-13T03:25:48.369Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-federal-agents-search-omar-s-home-in-criminal-2026-10-12-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Taylor Dahlin",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A2025-06-03--Demonstrators%20face%20federal%20agents%20during%20enforcement%20operations%20on%20Lake%20Street%2C%20Minneapolis%2003.jpg",
       "breaking": false
     }
   ]
