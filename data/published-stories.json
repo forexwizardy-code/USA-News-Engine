@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T06:52:01.082Z",
-  "storyCount": 460,
+  "generatedAt": "2026-10-14T07:42:50.776Z",
+  "storyCount": 462,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -13437,6 +13437,64 @@
       "heroImageLicense": "Public domain",
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABTS%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022%20(cropped).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14",
+      "slug": "us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14",
+      "articlePath": "src/content/articles/us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14.md",
+      "publishedAt": "2026-10-14T07:42:45.210Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__622bc8fb46214fc1"
+      ],
+      "allAlertIds": [
+        "gn__622bc8fb46214fc1"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T07:42:45.210Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Mercator, Gerhard, 1512-1594",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A(Text%20page%20to)%20(con't)%20De%20Politico%20Statu%20Regni%20Galliae.%20(IA%20dr%20text-page-to-cont-de-politico-statu-regni-galliae-10554007).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14",
+      "slug": "entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14",
+      "articlePath": "src/content/articles/entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14.md",
+      "publishedAt": "2026-10-14T07:42:50.771Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__5d1289f35869305a"
+      ],
+      "allAlertIds": [
+        "gn__5d1289f35869305a"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "Variety",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T07:42:50.771Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Unknown authorUnknown author or not provided",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A1940%20Census%20Enumeration%20District%20Descriptions%20-%20New%20Mexico%20-%20Rio%20Arriba%20County%20-%20ED%2020-42%2C%20ED%2020-43%2C%20ED%2020-44%2C%20ED%2020-45%2C%20ED%2020-46%2C%20ED%2020-47%2C%20ED%2020-48%20-%20NARA%20-%205850529.jpg",
       "breaking": false
     }
   ]

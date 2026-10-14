@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T06:45:08.845Z",
-  "storyCount": 383,
+  "generatedAt": "2026-10-14T07:42:50.771Z",
+  "storyCount": 385,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9914,6 +9914,58 @@
       "imageLicense": "Public domain",
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABTS%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022%20(cropped).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__622bc8fb46214fc1",
+      "slug": "us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14",
+      "articlePath": "src/content/articles/us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14.md",
+      "title": "CNN, MS NOW and Politico prevail against White House — for now",
+      "publishedAt": "2026-10-14T07:42:45.210Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban"
+      ],
+      "imagePath": "/images/us-cnn-ms-now-and-politico-prevail-against-white-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Mercator, Gerhard, 1512-1594",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A(Text%20page%20to)%20(con't)%20De%20Politico%20Statu%20Regni%20Galliae.%20(IA%20dr%20text-page-to-cont-de-politico-statu-regni-galliae-10554007).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5d1289f35869305a",
+      "slug": "entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14",
+      "articlePath": "src/content/articles/entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14.md",
+      "title": "Todd Haynes on Pedro Pascal-Led ‘De Noche,’ What You Can’t See on Screen and the Radical Power of Love",
+      "publishedAt": "2026-10-14T07:42:50.771Z",
+      "category": "entertainment",
+      "primarySource": "Variety",
+      "primaryPublisherFamily": "Variety",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Variety"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://variety.com/2026/film/global/todd-haynes-pedro-pascal-de-noche-christine-vachon-1236910991/"
+      ],
+      "imagePath": "/images/entertainment-todd-haynes-on-pedro-pascal-led-de-noche-what-you-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Unknown authorUnknown author or not provided",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3A1940%20Census%20Enumeration%20District%20Descriptions%20-%20New%20Mexico%20-%20Rio%20Arriba%20County%20-%20ED%2020-42%2C%20ED%2020-43%2C%20ED%2020-44%2C%20ED%2020-45%2C%20ED%2020-46%2C%20ED%2020-47%2C%20ED%2020-48%20-%20NARA%20-%205850529.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
