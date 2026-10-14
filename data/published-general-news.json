@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-13T06:33:22.903Z",
-  "storyCount": 363,
+  "generatedAt": "2026-10-14T00:44:25.532Z",
+  "storyCount": 365,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9395,6 +9395,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.washingtonpost.com/health/2026/10/12/sixth-person-who-had-measles-died-pennsylvania-local-coroner-says/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__a6e807533f09f747",
+      "slug": "us-lawyer-for-fed-governor-cook-denounces-trump-s-new-2026-10-14",
+      "articlePath": "src/content/articles/us-lawyer-for-fed-governor-cook-denounces-trump-s-new-2026-10-14.md",
+      "title": "Lawyer for Fed Governor Cook Denounces Trump’s New Investigation",
+      "publishedAt": "2026-10-14T00:44:23.359Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 71,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/13/business/fed-governor-lisa-cook-trump-investigation.html"
+      ],
+      "imagePath": "/images/us-lawyer-for-fed-governor-cook-denounces-trump-s-new-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Federalreserve",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AL1040570%20(52094755389).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__7a1a46aac72cf298",
+      "slug": "entertainment-new-york-times-op-docs-acquires-the-revolution-2026-10-13",
+      "articlePath": "src/content/articles/entertainment-new-york-times-op-docs-acquires-the-revolution-2026-10-13.md",
+      "title": "New York Times Op-Docs Acquires ‘The Revolution Against Death,’ Oscar Nominee Joshua Oppenheimer’s Film On Quest For Immortality",
+      "publishedAt": "2026-10-14T00:44:25.532Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 59,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/the-revolution-against-death-new-york-times-op-docs-acquisition-1237156214/"
+      ],
+      "imagePath": "/images/entertainment-new-york-times-op-docs-acquires-the-revolution-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Anthony Quintano",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATimes%20Square%20Ball%20from%20above.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
