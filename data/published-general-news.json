@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T03:38:31.312Z",
-  "storyCount": 375,
+  "generatedAt": "2026-10-14T04:37:03.263Z",
+  "storyCount": 377,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9706,6 +9706,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump-Inauguration2017-1050724%20(31620558383).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__90c5c7589c9d2e4a",
+      "slug": "us-government-spent-millions-on-trump-ads-and-federal-2026-10-13",
+      "articlePath": "src/content/articles/us-government-spent-millions-on-trump-ads-and-federal-2026-10-13.md",
+      "title": "Government spent millions on Trump ads. And, federal agents raid Ilhan Omar's home",
+      "publishedAt": "2026-10-14T04:36:59.476Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/13/g-s1-147822/up-first-newsletter-trump-ads-funding-campaign-rallies-ilhan-omar"
+      ],
+      "imagePath": "/images/us-government-spent-millions-on-trump-ads-and-federal-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "United States Senate - The Office of Mazie Hirono",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMaize%20Hirono%20speaking%20against%20the%20Muslim%20Ban.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__881c2b948c4ac515",
+      "slug": "politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14",
+      "articlePath": "src/content/articles/politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14.md",
+      "title": "Judge extends order allowing CNN, Politico, MS NOW White House press access",
+      "publishedAt": "2026-10-14T04:37:03.263Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/regulation/court-battles/6147113-judge-extends-block-trump-media-ban/"
+      ],
+      "imagePath": "/images/politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "White House Photographic Office",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AReagan%20and%20Gorbachev%20signing.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

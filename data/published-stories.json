@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T03:38:31.314Z",
-  "storyCount": 452,
+  "generatedAt": "2026-10-14T04:37:03.267Z",
+  "storyCount": 454,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -13205,6 +13205,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump-Inauguration2017-1050724%20(31620558383).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-government-spent-millions-on-trump-ads-and-federal-2026-10-13",
+      "slug": "us-government-spent-millions-on-trump-ads-and-federal-2026-10-13",
+      "articlePath": "src/content/articles/us-government-spent-millions-on-trump-ads-and-federal-2026-10-13.md",
+      "publishedAt": "2026-10-14T04:36:59.476Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__90c5c7589c9d2e4a"
+      ],
+      "allAlertIds": [
+        "gn__90c5c7589c9d2e4a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T04:36:59.476Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-government-spent-millions-on-trump-ads-and-federal-2026-10-13-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "United States Senate - The Office of Mazie Hirono",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMaize%20Hirono%20speaking%20against%20the%20Muslim%20Ban.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14",
+      "slug": "politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14",
+      "articlePath": "src/content/articles/politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14.md",
+      "publishedAt": "2026-10-14T04:37:03.263Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__881c2b948c4ac515"
+      ],
+      "allAlertIds": [
+        "gn__881c2b948c4ac515"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T04:37:03.263Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-judge-extends-order-allowing-cnn-politico-ms-now-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "White House Photographic Office",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AReagan%20and%20Gorbachev%20signing.jpg",
       "breaking": false
     }
   ]
