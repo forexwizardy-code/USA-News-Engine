@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57b7a6a9332731
 sourceOffice: "NWS Amarillo TX"
 tags: ["Severe Thunderstorm Warning", "Weather", "Severe"]
 state: "OK"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---

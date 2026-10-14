@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T00:52:25.861Z",
-  "imageCount": 6,
+  "generatedAt": "2026-10-14T02:41:11.017Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -59,17 +59,6 @@
       "sourceOrganization": "John Myers (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:48.901Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/8/88/FEMA_-_7919_-_Photograph_by_Adam_Dubrowa_taken_on_05-10-2003_in_Missouri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AFEMA%20-%207919%20-%20Photograph%20by%20Adam%20Dubrowa%20taken%20on%2005-10-2003%20in%20Missouri.jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/FEMA_-_7919_-_Photograph_by_Adam_Dubrowa_taken_on_05-10-2003_in_Missouri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "Adam Dubrowa",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "Adam Dubrowa (Wikimedia Commons)",
-      "imageRelation": "exact-location",
-      "firstUsedAt": "2026-10-14T00:52:23.739Z",
       "storiesUsingImage": []
     }
   }

@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43e4590def1513
 sourceOffice: "NWS Kansas City/Pleasant Hill MO"
 tags: ["Tornado Warning", "Weather", "Extreme"]
 state: "MO"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
