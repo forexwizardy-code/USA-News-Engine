@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T03:06:33.875Z",
-  "storyCount": 373,
+  "generatedAt": "2026-10-14T03:38:31.312Z",
+  "storyCount": 375,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9655,6 +9655,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://thehill.com/homenews/campaign/6147062-bannon-questions-election-legitimacy/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__31372dc473e2957f",
+      "slug": "us-bipartisan-group-of-senators-call-on-trump-to-2026-10-13",
+      "articlePath": "src/content/articles/us-bipartisan-group-of-senators-call-on-trump-to-2026-10-13.md",
+      "title": "Bipartisan group of senators call on Trump to rescind Russian diesel deal",
+      "publishedAt": "2026-10-14T03:38:28.874Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/13/g-s1-147871/trump-russia-diesel-deal-congressional-response"
+      ],
+      "imagePath": "/images/us-bipartisan-group-of-senators-call-on-trump-to-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Office of White House Press Secretary",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APresident%20Donald%20Trump%20speaks%20with%20Russian%20President%20Vladimir%20Putin%20from%20the%20Oval%20Office.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__d878b397cc8525ab",
+      "slug": "politics-hinson-breaks-with-trump-on-russia-diesel-deal-2026-10-14",
+      "articlePath": "src/content/articles/politics-hinson-breaks-with-trump-on-russia-diesel-deal-2026-10-14.md",
+      "title": "Hinson breaks with Trump on Russia diesel deal",
+      "publishedAt": "2026-10-14T03:38:31.312Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6147090-hinson-opposes-russia-diesel-deal/"
+      ],
+      "imagePath": "/images/politics-hinson-breaks-with-trump-on-russia-diesel-deal-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Mark Dixon from Pittsburgh, PA",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATrump-Inauguration2017-1050724%20(31620558383).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
