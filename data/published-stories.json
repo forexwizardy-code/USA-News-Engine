@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T06:04:13.594Z",
-  "storyCount": 458,
+  "generatedAt": "2026-10-14T06:45:08.849Z",
+  "storyCount": 460,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -13379,6 +13379,64 @@
       "heroImageLicense": "CC BY 2.0",
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGolden%20Globe%20Awards%20signs.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14",
+      "slug": "entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14",
+      "articlePath": "src/content/articles/entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14.md",
+      "publishedAt": "2026-10-14T06:45:07.161Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__508c8994acb6bdf9"
+      ],
+      "allAlertIds": [
+        "gn__508c8994acb6bdf9"
+      ],
+      "event": "entertainment",
+      "location": "Unknown",
+      "sourceOffice": "ABC News — Entertainment",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T06:45:07.161Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Pete Souza",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWhite%20House%20teleconference%20for%20Hurricane%20Sandy.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13",
+      "slug": "us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13",
+      "articlePath": "src/content/articles/us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13.md",
+      "publishedAt": "2026-10-14T06:45:08.845Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a3740cf529b26357"
+      ],
+      "allAlertIds": [
+        "gn__a3740cf529b26357"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "PBS NewsHour",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T06:45:08.845Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The White House",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABTS%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022%20(cropped).jpg",
       "breaking": false
     }
   ]

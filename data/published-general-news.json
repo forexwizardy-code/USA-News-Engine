@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T06:04:13.589Z",
-  "storyCount": 381,
+  "generatedAt": "2026-10-14T06:45:08.845Z",
+  "storyCount": 383,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -9862,6 +9862,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AGolden%20Globe%20Awards%20signs.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__508c8994acb6bdf9",
+      "slug": "entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14",
+      "articlePath": "src/content/articles/entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14.md",
+      "title": "New White House press secretary's debut: Brief, limited questions and some harsh reviews",
+      "publishedAt": "2026-10-14T06:45:07.161Z",
+      "category": "entertainment",
+      "primarySource": "ABC News — Entertainment",
+      "primaryPublisherFamily": "ABC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "ABC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://abcnews.com/Entertainment/wireStory/new-white-house-press-secretarys-debut-brief-limited-137246964"
+      ],
+      "imagePath": "/images/entertainment-new-white-house-press-secretary-s-debut-brief-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Pete Souza",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWhite%20House%20teleconference%20for%20Hurricane%20Sandy.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a3740cf529b26357",
+      "slug": "us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13",
+      "articlePath": "src/content/articles/us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13.md",
+      "title": "White House press secretary's debut brings news of Guilfoyle's exit",
+      "publishedAt": "2026-10-14T06:45:08.845Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/white-house-press-secretarys-debut-brings-news-of-guilfoyles-exit"
+      ],
+      "imagePath": "/images/us-white-house-press-secretary-s-debut-brings-news-of-2026-10-13-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABTS%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022%20(cropped).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
