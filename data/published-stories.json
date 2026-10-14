@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T00:52:25.707Z",
-  "storyCount": 442,
+  "generatedAt": "2026-10-14T01:34:47.463Z",
+  "storyCount": 444,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -12916,6 +12916,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-joni-mitchell-is-now-an-american-after-60-years-of-2026-10-14",
+      "slug": "us-joni-mitchell-is-now-an-american-after-60-years-of-2026-10-14",
+      "articlePath": "src/content/articles/us-joni-mitchell-is-now-an-american-after-60-years-of-2026-10-14.md",
+      "publishedAt": "2026-10-14T01:34:41.798Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__9da50d4ef12d0769"
+      ],
+      "allAlertIds": [
+        "gn__9da50d4ef12d0769"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T01:34:41.798Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-joni-mitchell-is-now-an-american-after-60-years-of-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Eden, Janine and Jim from New York City",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJoni%20Mitchell's%201978%20Ibanez%20GB10NT%20George%20Benson%20Signature%20(serial%20no.%200745%EF%BC%8F%20I786634)%20-%20Play%20It%20Loud.%20MET%20(2019-05-13%2018-51-45%20by%20Eden%2C%20Janine%20and%20Jim).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-ossoff-commits-to-6-year-senate-term-amid-2028-2026-10-14",
+      "slug": "politics-ossoff-commits-to-6-year-senate-term-amid-2028-2026-10-14",
+      "articlePath": "src/content/articles/politics-ossoff-commits-to-6-year-senate-term-amid-2028-2026-10-14.md",
+      "publishedAt": "2026-10-14T01:34:47.458Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__e7c100ed3640b673"
+      ],
+      "allAlertIds": [
+        "gn__e7c100ed3640b673"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-14T01:34:47.458Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-ossoff-commits-to-6-year-senate-term-amid-2028-2026-10-14-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Senate Democrats",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMC0%202028%20(34629389884).jpg",
+      "breaking": false
     }
   ]
 }
