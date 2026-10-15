@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T00:50:15.961Z",
-  "storyCount": 468,
+  "generatedAt": "2026-10-15T01:35:11.001Z",
+  "storyCount": 470,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -13672,6 +13672,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-the-trump-administration-and-the-shrinking-number-2026-10-15",
+      "slug": "us-the-trump-administration-and-the-shrinking-number-2026-10-15",
+      "articlePath": "src/content/articles/us-the-trump-administration-and-the-shrinking-number-2026-10-15.md",
+      "publishedAt": "2026-10-15T01:35:02.613Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3a1c56fd5ae6390a"
+      ],
+      "allAlertIds": [
+        "gn__3a1c56fd5ae6390a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-15T01:35:02.613Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-the-trump-administration-and-the-shrinking-number-2026-10-15-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Seattle City Council from Seattle",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASuing%20Trump%20Administration%20announcement%20(34345403236).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "business-inflation-data-shows-prices-are-up-worrying-2026-10-15",
+      "slug": "business-inflation-data-shows-prices-are-up-worrying-2026-10-15",
+      "articlePath": "src/content/articles/business-inflation-data-shows-prices-are-up-worrying-2026-10-15.md",
+      "publishedAt": "2026-10-15T01:35:10.996Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__b00adb69422bb6d2"
+      ],
+      "allAlertIds": [
+        "gn__b00adb69422bb6d2"
+      ],
+      "event": "business",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-15T01:35:10.996Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/business-inflation-data-shows-prices-are-up-worrying-2026-10-15-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "European Space Agency",
+      "heroImageLicense": "CC BY-SA 3.0 igo",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AComparing%20surface%20deformation%20data%20ESA341141.jpg",
+      "breaking": false
     }
   ]
 }

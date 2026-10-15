@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T00:43:35.867Z",
-  "storyCount": 389,
+  "generatedAt": "2026-10-15T01:35:10.996Z",
+  "storyCount": 391,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -10071,6 +10071,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.nytimes.com/2026/10/14/business/economy/inflation-cpi.html",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__3a1c56fd5ae6390a",
+      "slug": "us-the-trump-administration-and-the-shrinking-number-2026-10-15",
+      "articlePath": "src/content/articles/us-the-trump-administration-and-the-shrinking-number-2026-10-15.md",
+      "title": "The Trump Administration and the Shrinking Number of Women in Top Roles",
+      "publishedAt": "2026-10-15T01:35:02.613Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/14/us/politics/trump-administration-kimberly-guilfoyle-women.html"
+      ],
+      "imagePath": "/images/us-the-trump-administration-and-the-shrinking-number-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Seattle City Council from Seattle",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASuing%20Trump%20Administration%20announcement%20(34345403236).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__b00adb69422bb6d2",
+      "slug": "business-inflation-data-shows-prices-are-up-worrying-2026-10-15",
+      "articlePath": "src/content/articles/business-inflation-data-shows-prices-are-up-worrying-2026-10-15.md",
+      "title": "Inflation Data Shows Prices Are Up, Worrying Republicans Ahead of the Midterms",
+      "publishedAt": "2026-10-15T01:35:10.996Z",
+      "category": "business",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 60,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/14/us/politics/inflation-republicans-midterms-trump.html"
+      ],
+      "imagePath": "/images/business-inflation-data-shows-prices-are-up-worrying-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "European Space Agency",
+      "imageLicense": "CC BY-SA 3.0 igo",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AComparing%20surface%20deformation%20data%20ESA341141.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
