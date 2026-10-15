@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T05:04:09.942Z",
-  "storyCount": 401,
+  "generatedAt": "2026-10-15T05:35:25.954Z",
+  "storyCount": 403,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -10383,6 +10383,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.pbs.org/newshour/show/news-wrap-iran-says-cargo-ship-sank-after-hitting-a-mine-in-strait-of-hormuz",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__2b6bdf91d155617a",
+      "slug": "us-attorney-for-banned-outlets-on-legal-fight-over-2026-10-14",
+      "articlePath": "src/content/articles/us-attorney-for-banned-outlets-on-legal-fight-over-2026-10-14.md",
+      "title": "Attorney for banned outlets on legal fight over White House press access",
+      "publishedAt": "2026-10-15T05:35:18.323Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/attorney-for-banned-outlets-on-legal-fight-over-white-house-press-access"
+      ],
+      "imagePath": "/images/us-attorney-for-banned-outlets-on-legal-fight-over-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AWhite%20House%20rainbow%20for%20SCOTUS%20ruling%20on%20same-sex%20marriage.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__aa7583261977fdd5",
+      "slug": "politics-doj-faces-legal-threats-after-pushing-california-2026-10-14",
+      "articlePath": "src/content/articles/politics-doj-faces-legal-threats-after-pushing-california-2026-10-14.md",
+      "title": "DOJ faces legal threats after pushing California to match voter list with USB drive",
+      "publishedAt": "2026-10-15T05:35:25.954Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 52,
+      "sourceUrls": [
+        "https://thehill.com/homenews/state-watch/6149368-voting-rights-group-warns-doj-citizenship-usb-drive/"
+      ],
+      "imagePath": "/images/politics-doj-faces-legal-threats-after-pushing-california-2026-10-14-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "California Department of Justice",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACA%20DOJ%20BI.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
