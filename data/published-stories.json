@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T10:42:42.321Z",
-  "storyCount": 490,
+  "generatedAt": "2026-10-15T11:13:26.281Z",
+  "storyCount": 491,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -14310,6 +14310,35 @@
       "heroImageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACalifornia%20Department%20of%20Health%20Care%20Services%204.jpg",
       "breaking": false
+    },
+    {
+      "storyKey": "m56-earthquake-lake-minchumina-alaska-2026-10-15",
+      "slug": "m56-earthquake-lake-minchumina-alaska-2026-10-15",
+      "articlePath": "src/content/articles/m56-earthquake-lake-minchumina-alaska-2026-10-15.md",
+      "publishedAt": "2026-10-15T11:13:26.276Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "aka2026ukynnb"
+      ],
+      "allAlertIds": [
+        "aka2026ukynnb"
+      ],
+      "event": "Earthquake",
+      "location": "43 km NNW of Lake Minchumina, Alaska",
+      "sourceOffice": "U.S. Geological Survey",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-15T11:13:26.276Z",
+      "heroImageMode": "source-image",
+      "heroImageSource": "/images/m56-earthquake-lake-minchumina-alaska-2026-10-15.jpg",
+      "heroImageRelation": "current-alert-data",
+      "heroImageCreator": "U.S. Geological Survey (official ShakeMap)",
+      "heroImageLicense": "Official USGS ShakeMap. USGS products are works of the U.S. federal government and are in the public domain.",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026ukynnb",
+      "breaking": true
     }
   ]
 }
