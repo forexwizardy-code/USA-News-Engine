@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T01:34:26.581Z",
-  "storyCount": 415,
+  "generatedAt": "2026-10-16T02:06:48.084Z",
+  "storyCount": 417,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -10746,6 +10746,58 @@
       "imageLicense": "CC0",
       "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATroy%20Jackson%20in%20the%20Senate%20Chamber.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__8c9c4d19931439d9",
+      "slug": "us-u-s-historic-preservation-law-faces-the-most-2026-10-15",
+      "articlePath": "src/content/articles/us-u-s-historic-preservation-law-faces-the-most-2026-10-15.md",
+      "title": "U.S. historic preservation law faces the most serious threat in its 60-year history",
+      "publishedAt": "2026-10-16T02:06:44.772Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/15/nx-s1-6001504/section-106-historic-preservation-act-threats-anniversary"
+      ],
+      "imagePath": "/images/us-u-s-historic-preservation-law-faces-the-most-2026-10-15-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "USDAgov",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ALyles%20Station%20Historic%20Preservation%20Corporation%20(20210114-BO-NRCS-008).jpg",
+      "imageRelation": "licensed-illustrative-graphic"
+    },
+    {
+      "generalStoryKey": "gn__5dc55e0cb23dcee0",
+      "slug": "politics-fda-advances-peptide-push-to-white-house-2026-10-15",
+      "articlePath": "src/content/articles/politics-fda-advances-peptide-push-to-white-house-2026-10-15.md",
+      "title": "FDA advances peptide push to White House",
+      "publishedAt": "2026-10-16T02:06:48.084Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/newsletters/healthcare/6152770-rfk-jr-fda-peptides-white-house/"
+      ],
+      "imagePath": "/images/politics-fda-advances-peptide-push-to-white-house-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The U.S. Food and Drug Administration",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACommissioner%20Hamburg%20at%20the%20White%20House%20(16802808461).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]
