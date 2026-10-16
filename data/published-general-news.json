@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T03:34:40.234Z",
-  "storyCount": 421,
+  "generatedAt": "2026-10-16T04:09:00.525Z",
+  "storyCount": 423,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -10903,6 +10903,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://variety.com/2026/film/news/netflix-bela-bajaria-why-did-she-leave-1236913635/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__38e1aac2d68311f5",
+      "slug": "entertainment-kylie-minogue-jonathan-groff-and-catherine-tate-2026-10-16",
+      "articlePath": "src/content/articles/entertainment-kylie-minogue-jonathan-groff-and-catherine-tate-2026-10-16.md",
+      "title": "Kylie Minogue, Jonathan Groff & Catherine Tate Join ‘Bad Fairies’ Cast With Cynthia Erivo",
+      "publishedAt": "2026-10-16T04:08:54.913Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/kylie-minogue-jonathan-groff-catherine-tate-bad-fairies-1237158983/"
+      ],
+      "imagePath": "/images/entertainment-kylie-minogue-jonathan-groff-and-catherine-tate-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Chic Bee",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASome%20People%20With%20Severe%20Depression%20-%20People%20With%20Mental%20Illnesses%20Who%20Enrich%20Or%20Have%20Enriched%20Our%20Lives%20(22741192277).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__a0161427c571e419",
+      "slug": "us-paxton-partied-in-dubai-with-fugitives-charged-2026-10-15",
+      "articlePath": "src/content/articles/us-paxton-partied-in-dubai-with-fugitives-charged-2026-10-15.md",
+      "title": "Paxton Partied in Dubai With Fugitives Charged With Fraud, Lawsuit Says",
+      "publishedAt": "2026-10-16T04:09:00.525Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/15/us/paxton-dubai-fugitive-fraud-allegations-texas.html"
+      ],
+      "imagePath": "/images/us-paxton-partied-in-dubai-with-fugitives-charged-2026-10-15-licensed-graphic.jpg",
+      "imageMode": "factual-graphic-fallback",
+      "imageCreator": "The original uploader was Snow storm in Eastern Asia at English Wikipedia.",
+      "imageLicense": "CC BY 3.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APIIGS%20Mk%204%20map.png",
+      "imageRelation": "licensed-illustrative-graphic"
     }
   ]
 }
