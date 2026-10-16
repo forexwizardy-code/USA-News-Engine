@@ -16,7 +16,7 @@ sourceUrl: "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.32db65d206425f
 sourceOffice: "NWS Columbia SC"
 tags: ["Flood Warning", "Weather", "Severe"]
 state: "SC"
-breaking: true
+breaking: false
 featured: false
 views: 0
 ---
