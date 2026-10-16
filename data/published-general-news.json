@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T05:06:35.160Z",
-  "storyCount": 425,
+  "generatedAt": "2026-10-16T05:37:13.401Z",
+  "storyCount": 427,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -11007,6 +11007,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-sues-ticket-broker-over-unlawful-tactics-used-buy-millions-tickets-popular-live-events",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__1697998397bccd08",
+      "slug": "us-ukraine-resumes-strikes-on-energy-targets-saying-2026-10-15",
+      "articlePath": "src/content/articles/us-ukraine-resumes-strikes-on-energy-targets-saying-2026-10-15.md",
+      "title": "Ukraine resumes strikes on energy targets, saying Russia never stopped its attacks",
+      "publishedAt": "2026-10-16T05:37:08.555Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/ukraine-resumes-strikes-on-energy-targets-saying-russia-never-stopped-its-attacks"
+      ],
+      "imagePath": "/images/us-ukraine-resumes-strikes-on-energy-targets-saying-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "National Police of Ukraine",
+      "imageLicense": "CC BY 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AKostiantynivka%20after%20Russian%20rocket%20strikes%2C%202023-04-02%20(01).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__2f86f6b3deba82e0",
+      "slug": "business-ftc-sends-more-than-9-8-million-to-consumers-2026-10-15",
+      "articlePath": "src/content/articles/business-ftc-sends-more-than-9-8-million-to-consumers-2026-10-15.md",
+      "title": "FTC Sends More than $9.8 Million to Consumers Harmed by Walmart’s Failure to Stop Scammers that Used its Wire Transfer Services to Take Millions from Customers",
+      "publishedAt": "2026-10-16T05:37:13.401Z",
+      "category": "business",
+      "primarySource": "Federal Trade Commission",
+      "primaryPublisherFamily": "FTC",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "FTC"
+      ],
+      "usRelevance": "high",
+      "storyScore": 53,
+      "sourceUrls": [
+        "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-sends-more-98-million-consumers-harmed-walmarts-failure-stop-scammers-used-its-wire-transfer"
+      ],
+      "imagePath": "/images/business-ftc-sends-more-than-9-8-million-to-consumers-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Sgt. Brent Powell",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ACargo%20Management%20Team%20Sends%20Millions%20of%20Pounds%20of%20Supplies%20Across%20Afghan%20Skies%20DVIDS310805.jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
