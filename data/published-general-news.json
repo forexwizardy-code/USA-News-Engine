@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T00:43:41.995Z",
-  "storyCount": 413,
+  "generatedAt": "2026-10-16T01:34:26.581Z",
+  "storyCount": 415,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -10694,6 +10694,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMould%20made%20from%20reverse%20of%20the%20token%20issued%20to%20Richard%20Washbourne%20of%20the%20Tilt%20yard%20now%20Horse%20Guards%20Parade%2C%20Westminster%20dated%20AD1666%20(FindID%20857094).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__481f489377ddc094",
+      "slug": "us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15",
+      "articlePath": "src/content/articles/us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15.md",
+      "title": "How U.S. Support to Ukraine Has Evolved Under Trump",
+      "publishedAt": "2026-10-16T01:34:21.848Z",
+      "category": "us",
+      "primarySource": "New York Times — HomePage",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 67,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/15/us/politics/ukraine-us-aid-trump.html"
+      ],
+      "imagePath": "/images/us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Ilya Sergeevich Roi",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ARally%20in%20support%20of%20Ukraine%20in%20front%20of%20Pantheon.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__51ec37aa6df11d37",
+      "slug": "politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16",
+      "articlePath": "src/content/articles/politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16.md",
+      "title": "Collins, Jackson trade jabs in final Maine Senate debate: 3 takeaways",
+      "publishedAt": "2026-10-16T01:34:26.581Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 62,
+      "sourceUrls": [
+        "https://thehill.com/homenews/campaign/6152820-susan-collins-troy-jackson-debate-takeaways/"
+      ],
+      "imagePath": "/images/politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "ArenLeBrun",
+      "imageLicense": "CC0",
+      "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATroy%20Jackson%20in%20the%20Senate%20Chamber.jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

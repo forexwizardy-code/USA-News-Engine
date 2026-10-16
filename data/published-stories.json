@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T00:50:06.339Z",
-  "storyCount": 495,
+  "generatedAt": "2026-10-16T01:34:26.584Z",
+  "storyCount": 497,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -14465,6 +14465,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15",
+      "slug": "us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15",
+      "articlePath": "src/content/articles/us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15.md",
+      "publishedAt": "2026-10-16T01:34:21.848Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__481f489377ddc094"
+      ],
+      "allAlertIds": [
+        "gn__481f489377ddc094"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-16T01:34:21.848Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-how-u-s-support-to-ukraine-has-evolved-under-trump-2026-10-15-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Ilya Sergeevich Roi",
+      "heroImageLicense": "CC0",
+      "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ARally%20in%20support%20of%20Ukraine%20in%20front%20of%20Pantheon.jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16",
+      "slug": "politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16",
+      "articlePath": "src/content/articles/politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16.md",
+      "publishedAt": "2026-10-16T01:34:26.581Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__51ec37aa6df11d37"
+      ],
+      "allAlertIds": [
+        "gn__51ec37aa6df11d37"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "The Hill",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-16T01:34:26.581Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-collins-jackson-trade-jabs-in-final-maine-senate-2026-10-16-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "ArenLeBrun",
+      "heroImageLicense": "CC0",
+      "heroImageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATroy%20Jackson%20in%20the%20Senate%20Chamber.jpg",
+      "breaking": false
     }
   ]
 }
