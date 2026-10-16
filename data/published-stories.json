@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T22:40:06.762Z",
-  "storyCount": 491,
+  "generatedAt": "2026-10-16T00:43:41.998Z",
+  "storyCount": 493,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -14339,6 +14339,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026ukynnb",
       "breaking": true
+    },
+    {
+      "storyKey": "us-trump-s-deal-with-russia-inflames-ukraine-war-he-2026-10-15",
+      "slug": "us-trump-s-deal-with-russia-inflames-ukraine-war-he-2026-10-15",
+      "articlePath": "src/content/articles/us-trump-s-deal-with-russia-inflames-ukraine-war-he-2026-10-15.md",
+      "publishedAt": "2026-10-16T00:43:36.434Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__a73e428d8c224d8e"
+      ],
+      "allAlertIds": [
+        "gn__a73e428d8c224d8e"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — HomePage",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-16T00:43:36.434Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-trump-s-deal-with-russia-inflames-ukraine-war-he-2026-10-15-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Pete Souza",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJANUS-T%C3%AAte-%C3%A0-T%C3%AAte-%20Sitting%20President%20%26%20President-elect%2C%20Barack%20Obama%20%26%20Donald%20Trump%20squatting%20next%20to%20each%20other%20on%20arm-chairs%20in%20the%20Oval%20Office%20on%20November%2010th%202016.%20(31196987133).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-judge-refuses-to-reverse-penalties-against-crypto-2026-10-16",
+      "slug": "politics-judge-refuses-to-reverse-penalties-against-crypto-2026-10-16",
+      "articlePath": "src/content/articles/politics-judge-refuses-to-reverse-penalties-against-crypto-2026-10-16.md",
+      "publishedAt": "2026-10-16T00:43:41.995Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__3bec079960abee91"
+      ],
+      "allAlertIds": [
+        "gn__3bec079960abee91"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-16T00:43:41.995Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-judge-refuses-to-reverse-penalties-against-crypto-2026-10-16-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "The Portable Antiquities Scheme, Stuart Wyatt, 2017-07-21 23:54:42",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AMould%20made%20from%20reverse%20of%20the%20token%20issued%20to%20Richard%20Washbourne%20of%20the%20Tilt%20yard%20now%20Horse%20Guards%20Parade%2C%20Westminster%20dated%20AD1666%20(FindID%20857094).jpg",
+      "breaking": false
     }
   ]
 }
