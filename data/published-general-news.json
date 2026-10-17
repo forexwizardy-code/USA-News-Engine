@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-17T03:05:11.002Z",
-  "storyCount": 445,
+  "generatedAt": "2026-10-17T03:35:01.560Z",
+  "storyCount": 447,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -11528,6 +11528,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://variety.com/2026/film/news/netflix-peter-rice-bajaria-messy-dan-lin-jinny-howe-nbcu-1236914573/",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__2c07bad20261ee8d",
+      "slug": "entertainment-diablo-cody-teases-jennifer-s-body-2-explores-a-2026-10-17",
+      "articlePath": "src/content/articles/entertainment-diablo-cody-teases-jennifer-s-body-2-explores-a-2026-10-17.md",
+      "title": "Diablo Cody Teases ‘Jennifer’s Body 2’ Explores A More “Sympathetic” Side Of Megan Fox’s Character",
+      "publishedAt": "2026-10-17T03:34:59.557Z",
+      "category": "entertainment",
+      "primarySource": "Deadline",
+      "primaryPublisherFamily": "Deadline",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "Deadline"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://deadline.com/2026/10/diablo-cody-jennifers-body-2-more-sympathetic-1237166245/"
+      ],
+      "imagePath": "/images/entertainment-diablo-cody-teases-jennifer-s-body-2-explores-a-2026-10-17-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Staff Sgt. Cody Ramirez",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AJapanese-American%20Friendship%20Festival%20150919-F-WE773-006.jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__f72f88a73e62dc39",
+      "slug": "us-what-makes-the-oregon-school-shooting-different-2026-10-16",
+      "articlePath": "src/content/articles/us-what-makes-the-oregon-school-shooting-different-2026-10-16.md",
+      "title": "What makes the Oregon school shooting different &ndash; and what can be learned",
+      "publishedAt": "2026-10-17T03:35:01.560Z",
+      "category": "us",
+      "primarySource": "PBS NewsHour",
+      "primaryPublisherFamily": "PBS",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "PBS"
+      ],
+      "usRelevance": "high",
+      "storyScore": 54,
+      "sourceUrls": [
+        "https://www.pbs.org/newshour/show/what-makes-the-oregon-school-shooting-different-and-what-can-be-learned"
+      ],
+      "imagePath": "/images/us-what-makes-the-oregon-school-shooting-different-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "BLM Oregon & Washington",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AOregon%20Trail%20-%20Keeney%20Historic%20Site%20(44240164391).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
