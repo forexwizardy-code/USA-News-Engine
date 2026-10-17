@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-17T00:44:52.256Z",
-  "storyCount": 437,
+  "generatedAt": "2026-10-17T01:33:31.503Z",
+  "storyCount": 439,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -11319,6 +11319,58 @@
       "imageLicense": "CC BY 2.0",
       "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
       "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANRC%20and%20the%20Federal%20Energy%20Regulatory%20Commission%20Joint%20Meeting%20(42724183492).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__09629da98d804b6a",
+      "slug": "us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16",
+      "articlePath": "src/content/articles/us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16.md",
+      "title": "Israeli settlers beat Palestinians and a U.S. photojournalist in West Bank attacks",
+      "publishedAt": "2026-10-17T01:33:26.508Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/16/nx-s1-6004904/israeli-settlers-beat-us-photojournalist-washington-post-west-bank"
+      ],
+      "imagePath": "/images/us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Foreign, Commonwealth & Development Office",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABaroness%20Chapman%20meets%20Palestinians%20displaced%20from%20their%20homes%20by%20Israeli%20settlers%20in%20the%20West%20Bank%20(54536181249).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__049fd9abd39662f3",
+      "slug": "politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17",
+      "articlePath": "src/content/articles/politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17.md",
+      "title": "Ilhan Omar’s Sister’s Phone was Seized Before Search of Lawmaker’s Home",
+      "publishedAt": "2026-10-17T01:33:31.503Z",
+      "category": "politics",
+      "primarySource": "New York Times — Politics",
+      "primaryPublisherFamily": "NYT",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NYT"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://www.nytimes.com/2026/10/16/us/politics/ilhan-omar-investigation-phone.html"
+      ],
+      "imagePath": "/images/politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "U.S. Air Force photo by Senior Airman Joseph Bartoszek",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATask%20Force%20Associator%20opens%20Joint%20Light%20Leaders%20Course%20to%20sister%20services%20(9007158).jpg",
       "imageRelation": "illustrative-file-photo"
     }
   ]

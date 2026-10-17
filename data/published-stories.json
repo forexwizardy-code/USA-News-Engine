@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-17T00:51:36.341Z",
-  "storyCount": 521,
+  "generatedAt": "2026-10-17T01:33:31.508Z",
+  "storyCount": 523,
   "stories": [
     {
       "storyKey": "business-u-s-and-china-release-product-lists-for-tariff-2026-09-28",
@@ -15219,6 +15219,64 @@
       "heroImageLicenseUrl": "",
       "heroImageSourcePageUrl": "",
       "breaking": true
+    },
+    {
+      "storyKey": "us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16",
+      "slug": "us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16",
+      "articlePath": "src/content/articles/us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16.md",
+      "publishedAt": "2026-10-17T01:33:26.508Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__09629da98d804b6a"
+      ],
+      "allAlertIds": [
+        "gn__09629da98d804b6a"
+      ],
+      "event": "us",
+      "location": "Unknown",
+      "sourceOffice": "NPR News",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-17T01:33:26.508Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/us-israeli-settlers-beat-palestinians-and-a-u-s-2026-10-16-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "Foreign, Commonwealth & Development Office",
+      "heroImageLicense": "CC BY 2.0",
+      "heroImageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ABaroness%20Chapman%20meets%20Palestinians%20displaced%20from%20their%20homes%20by%20Israeli%20settlers%20in%20the%20West%20Bank%20(54536181249).jpg",
+      "breaking": false
+    },
+    {
+      "storyKey": "politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17",
+      "slug": "politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17",
+      "articlePath": "src/content/articles/politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17.md",
+      "publishedAt": "2026-10-17T01:33:31.503Z",
+      "updatedAt": null,
+      "currentAlertIds": [
+        "gn__049fd9abd39662f3"
+      ],
+      "allAlertIds": [
+        "gn__049fd9abd39662f3"
+      ],
+      "event": "politics",
+      "location": "Unknown",
+      "sourceOffice": "New York Times — Politics",
+      "lifecycleStatus": "active",
+      "lastNwsEffectiveAt": null,
+      "lastNwsExpiresAt": null,
+      "lastNwsEndsAt": null,
+      "lastCheckedAt": "2026-10-17T01:33:31.503Z",
+      "heroImageMode": "licensed-photo",
+      "heroImageSource": "/images/politics-ilhan-omar-s-sister-s-phone-was-seized-before-2026-10-17-real.jpg",
+      "heroImageRelation": "illustrative-file-photo",
+      "heroImageCreator": "U.S. Air Force photo by Senior Airman Joseph Bartoszek",
+      "heroImageLicense": "Public domain",
+      "heroImageLicenseUrl": "",
+      "heroImageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ATask%20Force%20Associator%20opens%20Joint%20Light%20Leaders%20Course%20to%20sister%20services%20(9007158).jpg",
+      "breaking": false
     }
   ]
 }
