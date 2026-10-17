@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-17T00:51:36.513Z",
-  "imageCount": 7,
+  "generatedAt": "2026-10-17T02:39:30.942Z",
+  "imageCount": 5,
   "images": {
     "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asan_Beach_flooding_%2820634853246%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
       "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3AAsan%20Beach%20flooding%20(20634853246).jpg",
@@ -59,28 +59,6 @@
       "sourceOrganization": "John Myers (Wikimedia Commons)",
       "imageRelation": "exact-location",
       "firstUsedAt": "2026-09-27T19:28:48.901Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/7/7d/Super_Typhoon_Bavi_Approaching_Guam_%28MODIS_2026-07-07%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASuper%20Typhoon%20Bavi%20Approaching%20Guam%20(MODIS%202026-07-07).jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Super_Typhoon_Bavi_Approaching_Guam_%28MODIS_2026-07-07%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "MODIS Land Rapid Response Team, NASA GSFC",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "MODIS Land Rapid Response Team, NASA GSFC (Wikimedia Commons)",
-      "imageRelation": "exact-location",
-      "firstUsedAt": "2026-10-17T00:51:34.492Z",
-      "storiesUsingImage": []
-    },
-    "https://upload.wikimedia.org/wikipedia/commons/a/aa/Super_Typhoon_Bavi_%28super-typhoon-bavi_-_20260705%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original": {
-      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ASuper%20Typhoon%20Bavi%20(super-typhoon-bavi%20-%2020260705).jpg",
-      "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Super_Typhoon_Bavi_%28super-typhoon-bavi_-_20260705%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "creator": "NASA Earth Observatory/Michala Garrison",
-      "license": "Public domain",
-      "licenseUrl": "",
-      "sourceOrganization": "NASA Earth Observatory/Michala Garrison (Wikimedia Commons)",
-      "imageRelation": "exact-location",
-      "firstUsedAt": "2026-10-17T00:51:36.312Z",
       "storiesUsingImage": []
     }
   }
