@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T09:08:14.319Z",
-  "storyCount": 435,
+  "generatedAt": "2026-10-17T00:44:52.256Z",
+  "storyCount": 437,
   "stories": [
     {
       "generalStoryKey": "gn__e53a35b440983c2e",
@@ -11268,6 +11268,58 @@
       "imageLicenseUrl": "",
       "imageSourcePageUrl": "https://www.npr.org/2026/10/16/nx-s1-6003516/remembering-oscar-winning-actor-eva-marie-saint",
       "imageRelation": "generated-editorial-graphic"
+    },
+    {
+      "generalStoryKey": "gn__696d4fc8a45a5f2b",
+      "slug": "us-katie-zacharia-is-out-as-press-secretary-white-2026-10-16",
+      "articlePath": "src/content/articles/us-katie-zacharia-is-out-as-press-secretary-white-2026-10-16.md",
+      "title": "Katie Zacharia is out as press secretary, White House says",
+      "publishedAt": "2026-10-17T00:44:49.820Z",
+      "category": "us",
+      "primarySource": "NPR News",
+      "primaryPublisherFamily": "NPR",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "NPR"
+      ],
+      "usRelevance": "high",
+      "storyScore": 61,
+      "sourceUrls": [
+        "https://www.npr.org/2026/10/16/nx-s1-6005302/katie-zacharia-is-out-as-press-secretary-white-house-says"
+      ],
+      "imagePath": "/images/us-katie-zacharia-is-out-as-press-secretary-white-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "The White House",
+      "imageLicense": "Public domain",
+      "imageLicenseUrl": "",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3APress%20Secretary%20Katie%20Zacharia%20holds%20first%20press%20briefing%20in%20the%20James%20S%20Brady%20Press%20Briefing%20Room%2C%20October%2013%2C%202026%20(P20261013AH-0248).jpg",
+      "imageRelation": "illustrative-file-photo"
+    },
+    {
+      "generalStoryKey": "gn__5fef0a3b5663d295",
+      "slug": "politics-ferc-moves-to-ease-gas-approvals-2026-10-16",
+      "articlePath": "src/content/articles/politics-ferc-moves-to-ease-gas-approvals-2026-10-16.md",
+      "title": "FERC moves to ease gas approvals",
+      "publishedAt": "2026-10-17T00:44:52.256Z",
+      "category": "politics",
+      "primarySource": "The Hill",
+      "primaryPublisherFamily": "The Hill",
+      "independentPublisherCount": 1,
+      "publisherFamilies": [
+        "The Hill"
+      ],
+      "usRelevance": "high",
+      "storyScore": 58,
+      "sourceUrls": [
+        "https://thehill.com/newsletters/energy-environment/6155469-ferc-proposes-lng-approval-speedup/"
+      ],
+      "imagePath": "/images/politics-ferc-moves-to-ease-gas-approvals-2026-10-16-real.jpg",
+      "imageMode": "licensed-photo",
+      "imageCreator": "Nuclear Regulatory Commission from US",
+      "imageLicense": "CC BY 2.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "imageSourcePageUrl": "https://commons.wikimedia.org/wiki/File%3ANRC%20and%20the%20Federal%20Energy%20Regulatory%20Commission%20Joint%20Meeting%20(42724183492).jpg",
+      "imageRelation": "illustrative-file-photo"
     }
   ]
 }
